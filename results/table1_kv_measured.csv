@@ -1,0 +1,5 @@
+tree_depth_proxy,approach,peak_vram_gb,notes
+1,kv_tensor_measured,0.022,bf16 K/V tensors only; seq = depth * tokens_per_depth_step
+5,kv_tensor_measured,0.1101,bf16 K/V tensors only; seq = depth * tokens_per_depth_step
+10,kv_tensor_measured,0.2202,bf16 K/V tensors only; seq = depth * tokens_per_depth_step
+15,kv_tensor_measured,0.3303,bf16 K/V tensors only; seq = depth * tokens_per_depth_step

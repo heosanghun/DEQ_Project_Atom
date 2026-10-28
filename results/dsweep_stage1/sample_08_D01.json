@@ -1,0 +1,150 @@
+{
+  "sample_index": 8,
+  "target_depth": 1,
+  "solver": "picard",
+  "act_override": "disable",
+  "ruler": "B_5e-3_sust100",
+  "c": 0.92,
+  "tol": 0.005,
+  "max_depth_reached": 1,
+  "target_depth_reached": true,
+  "total_nodes": 4,
+  "depth_node_counts": {
+    "0": 1,
+    "1": 3
+  },
+  "converged_per_depth": {
+    "1": 3
+  },
+  "pruned_per_depth": {},
+  "r0_summary_per_depth": {
+    "1": {
+      "count": 3,
+      "mean": 0.22669693809944355,
+      "min": 0.22668896244877768,
+      "max": 0.2267072920803496,
+      "std": 7.669688800247199e-06,
+      "values": [
+        0.2267072920803496,
+        0.22668896244877768,
+        0.2266945597692034
+      ]
+    }
+  },
+  "mac_per_depth": {
+    "0": 0.0,
+    "1": 796726182334.3604
+  },
+  "logical_mac_accumulated": 796746507966.3604,
+  "total_executed_mac": 796746507966.3604,
+  "peak_vram_mb": 30563.21533203125,
+  "peak_vram_bytes": 32047854080,
+  "device": "cuda:6",
+  "device_name": "NVIDIA RTX A6000",
+  "no_grad_verified": true,
+  "wall_time_s": 34.76649045944214,
+  "decoded_answer_text": "\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\end{1}\n\\",
+  "stats": {
+    "tree_size": 4,
+    "max_depth": 1,
+    "best_node_id": 0,
+    "best_q": -Infinity,
+    "k_override_used": 3,
+    "w_override_used": 5,
+    "sim_count": 5,
+    "logical_mac_accumulated": 796746507966.3604,
+    "root_logical_mac": 0.0,
+    "total_executed_mac": 796746507966.3604,
+    "meta_policy_mac_accumulated": 657152.0,
+    "critic_mac_accumulated": 19668480.0,
+    "post_search_critic_mac": 0.0,
+    "mac_unit": "MAC",
+    "mac_headline_eligible": true,
+    "mac_lut_schema_version": 2,
+    "mac_lut_sha256": "6ae2466a9e97a5f41bfd3ddd368d6721911208f3547429d3c06e9e2654dcc5d0",
+    "root_iterations": 0,
+    "root_converged": true,
+    "root_residual_norm": NaN,
+    "root_absolute_residual_norm": NaN,
+    "root_failure_reason": null,
+    "root_routing_module_ids": [],
+    "root_initialization": "prompt_full_stack",
+    "context_encode_calls": 1,
+    "intermediate_decode_calls": 0,
+    "faiss_retrieval_calls": 0,
+    "act_override": "disable",
+    "solver": "picard",
+    "decode_prompt_separate": false,
+    "batch_siblings_requested": false,
+    "batch_siblings_used": false,
+    "timing_s": {
+      "root": 0.3701157569885254,
+      "search": 30.389341115951538,
+      "transitions": 30.376286029815674,
+      "critic": 0.004723787307739258,
+      "decode": 4.006785154342651,
+      "total": 34.76627039909363
+    }
+  },
+  "nodes": [
+    {
+      "node_id": 0,
+      "parent_id": null,
+      "depth": 0,
+      "is_terminal": true,
+      "converged": true,
+      "r_0": null,
+      "iterations": 0,
+      "logical_mac": 0.0,
+      "ruler": "B_5e-3_sust100",
+      "c": 0.92,
+      "tol": 0.005,
+      "solver": "picard"
+    },
+    {
+      "node_id": 1,
+      "parent_id": 0,
+      "depth": 1,
+      "is_terminal": true,
+      "converged": true,
+      "r_0": 0.2267072920803496,
+      "iterations": 234,
+      "logical_mac": 265205602192.43445,
+      "ruler": "B_5e-3_sust100",
+      "c": 0.92,
+      "tol": 0.005,
+      "solver": "picard"
+    },
+    {
+      "node_id": 2,
+      "parent_id": 0,
+      "depth": 1,
+      "is_terminal": true,
+      "converged": true,
+      "r_0": 0.22668896244877768,
+      "iterations": 235,
+      "logical_mac": 266316006018.7114,
+      "ruler": "B_5e-3_sust100",
+      "c": 0.92,
+      "tol": 0.005,
+      "solver": "picard"
+    },
+    {
+      "node_id": 3,
+      "parent_id": 0,
+      "depth": 1,
+      "is_terminal": true,
+      "converged": true,
+      "r_0": 0.2266945597692034,
+      "iterations": 234,
+      "logical_mac": 265204574123.21445,
+      "ruler": "B_5e-3_sust100",
+      "c": 0.92,
+      "tol": 0.005,
+      "solver": "picard"
+    }
+  ],
+  "sim_cap": 5,
+  "faiss_active": false,
+  "faiss_threshold_depth": 10
+}

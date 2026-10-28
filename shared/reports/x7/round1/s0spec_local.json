@@ -1,0 +1,30 @@
+{
+ "C_fmt": [
+  "handoff/codex/data/gen_C.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7A47": [
+  "shared/reports/x7/round1/gen_X7A47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7A47": [
+  "shared/reports/x7/round1/genB1_X7A47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7E47": [
+  "shared/reports/x7/round1/gen_X7E47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7E47": [
+  "shared/reports/x7/round1/genB1_X7E47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7A49": [
+  "shared/reports/x7/round1/gen_X7A49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7A49": [
+  "shared/reports/x7/round1/genB1_X7A49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ]
+}

@@ -1,0 +1,130 @@
+﻿diff --git a/scripts/s5_eval_gate_v2.py b/scripts/s5_eval_gate_v2.py
+index 391027e..abca517 100644
+--- a/scripts/s5_eval_gate_v2.py
++++ b/scripts/s5_eval_gate_v2.py
+@@ -513,11 +513,13 @@ def run_phase2_eval(
+     manifest_path: str = DEFAULT_MANIFEST_PATH,
+     device_str: str = "cuda:0",
+     seed: int = 2030,
++    prefix_source: str = "zstar",
+ ) -> Dict[str, Any]:
+     """Execute S5 Phase 2 Gate Evaluation across 3 strata and 5 conditions."""
+     print("=" * 80)
+     print("S5 Phase 2 Gate Evaluation (3 Strata x 5 Conditions)")
+     print(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
++    print(f"Prefix Source:      {prefix_source}")
+     print(f"Decoder (lambda=1): {decoder_ckpt_path}")
+     print(f"Control (lambda=0): {control_ckpt_path}")
+     print(f"Held-out Items:     {items_path}")
+@@ -534,49 +536,60 @@ def run_phase2_eval(
+     assert len(heldout_indices) == 80, f"Expected 80 held-out items, got {len(heldout_indices)}"
+     dataset_records = load_dataset_records(dataset_path)
+ 
+-    if not os.path.exists(zstar_path):
+-        raise FileNotFoundError(f"z* tensor file not found: {zstar_path}")
+-    zstar_dict = torch.load(zstar_path, map_location="cpu")
+-    print(f"Loaded z* tensor file from {zstar_path} (Keys: {len(zstar_dict)})")
++    # 2. Load Canonical Backbone Model & Tokenizer
++    from cts.model.canonical_loader import get_canonical_backbone
++    print(f"[MODEL-LOAD] Loading canonical backbone on {device_str}...")
++    bb = get_canonical_backbone(device_str, dtype=torch.bfloat16)
++    tokenizer = bb.tokenizer
++    lm = bb.cg.model.language_model
+ 
+-    # Pre-index z* by integer question ID for fast, robust lookup
+     zstar_by_q: Dict[int, Any] = {}
+-    for k, v in zstar_dict.items():
+-        k_str = str(k)
+-        m = re.match(r"^q(\d+)", k_str)
+-        if m:
+-            zstar_by_q[int(m.group(1))] = v
+-        elif isinstance(v, dict) and "meta" in v and "question_idx" in v["meta"]:
+-            zstar_by_q[int(v["meta"]["question_idx"])] = v
+-        elif str(k).isdigit():
+-            zstar_by_q[int(k)] = v
+-
+-    # Determine convergence status of heldout items
+     converged_flags: Dict[int, bool] = {}
+-    for q in heldout_indices:
+-        entry = zstar_by_q.get(q)
+-        if entry is None:
+-            for k_cand in [f"q{q:04d}", f"q{q:02d}", str(q), q]:
+-                if k_cand in zstar_dict:
+-                    entry = zstar_dict[k_cand]
+-                    break
+-        assert entry is not None, f"Held-out item {q} not found in z* dict"
+-        conv = entry.get("converged", None)
+-        if conv is None:
+-            conv = bool(entry.get("rho", 1.0) < 0.005)
+-        converged_flags[q] = bool(conv)
++    if prefix_source == "text_hidden64":
++        print(f"[PREFIX-SOURCE] Computing text_hidden64 embeddings for 80 held-out items...")
++        with torch.no_grad():
++            for q in heldout_indices:
++                p_text = dataset_records[q]["prompt"]
++                p_ids = tokenizer(p_text, return_tensors="pt").input_ids.to(device)
++                out = lm(input_ids=p_ids, output_hidden_states=True)
++                h = out.last_hidden_state  # [1, L, 2560]
++                p_slot = F.adaptive_avg_pool1d(h.transpose(1, 2), output_size=64).transpose(1, 2).squeeze(0)  # [64, 2560]
++                zstar_by_q[q] = {"z_star": p_slot.to(dtype=torch.float32, device="cpu"), "converged": True}
++                converged_flags[q] = True
++        print(f"[PREFIX-SOURCE] text_hidden64 computed for 80 items.")
++    else:
++        if not os.path.exists(zstar_path):
++            raise FileNotFoundError(f"z* tensor file not found: {zstar_path}")
++        zstar_dict = torch.load(zstar_path, map_location="cpu")
++        print(f"Loaded z* tensor file from {zstar_path} (Keys: {len(zstar_dict)})")
++
++        for k, v in zstar_dict.items():
++            k_str = str(k)
++            m = re.match(r"^q(\d+)", k_str)
++            if m:
++                zstar_by_q[int(m.group(1))] = v
++            elif isinstance(v, dict) and "meta" in v and "question_idx" in v["meta"]:
++                zstar_by_q[int(v["meta"]["question_idx"])] = v
++            elif str(k).isdigit():
++                zstar_by_q[int(k)] = v
++
++        for q in heldout_indices:
++            entry = zstar_by_q.get(q)
++            if entry is None:
++                for k_cand in [f"q{q:04d}", f"q{q:02d}", str(q), q]:
++                    if k_cand in zstar_dict:
++                        entry = zstar_dict[k_cand]
++                        break
++            assert entry is not None, f"Held-out item {q} not found in z* dict"
++            conv = entry.get("converged", None)
++            if conv is None:
++                conv = bool(entry.get("rho", 1.0) < 0.005)
++            converged_flags[q] = bool(conv)
+ 
+     conv_count = sum(1 for v in converged_flags.values() if v)
+     non_conv_count = 80 - conv_count
+     print(f"[HELD-OUT] Loaded 80 items: {conv_count} converged, {non_conv_count} non-converged.")
+ 
+-    # 2. Load Canonical Backbone Model & Tokenizer
+-    from cts.model.canonical_loader import get_canonical_backbone
+-    print(f"[MODEL-LOAD] Loading canonical backbone on {device_str}...")
+-    bb = get_canonical_backbone(device_str, dtype=torch.bfloat16)
+-    tokenizer = bb.tokenizer
+-    lm = bb.cg.model.language_model
+-
+     # 3. Load Decoder (lambda=1.0)
+     print(f"[PROJECTOR] Loading primary decoder (lambda=1.0) from {decoder_ckpt_path}...")
+     projector_l1 = PrefixProjector(d_in=2560, d_model=2560, use_spectral_norm=True).to(device)
+@@ -1031,6 +1044,7 @@ def main():
+     parser.add_argument("--out", "--output", type=str, default=DEFAULT_OUT_JSON, help="Path to output phase2_gate.json")
+     parser.add_argument("--outputs", type=str, default=DEFAULT_OUTPUTS_JSONL, help="Path to output phase2_outputs.jsonl")
+     parser.add_argument("--seed", type=int, default=2030, help="Random seed (default 2030)")
++    parser.add_argument("--prefix_source", type=str, default="zstar", choices=["zstar", "text_hidden64"], help="Prefix source: zstar or text_hidden64")
+     args = parser.parse_args()
+ 
+     if args.dry_run:
+@@ -1067,6 +1081,7 @@ def main():
+         manifest_path=args.manifest,
+         device_str=args.device,
+         seed=args.seed,
++        prefix_source=args.prefix_source,
+     )
+     print(json.dumps(res, indent=2))
+ 

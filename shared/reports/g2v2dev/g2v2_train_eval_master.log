@@ -1,0 +1,31 @@
+=== g2v2 train/eval chain start 2026-10-08 14:43:26 ===
+=== g2v2 train/eval chain start 2026-10-08 14:49:49 ===
+=== g2v2 train/eval chain start 2026-10-08 15:07:18 ===
+[FLAG] compute done 17:17:18
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TRAIN] Ap on GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a lambda=0.0 z=results_s7/g2v2/zstar_zsrcinj_train1000.pt 17:17:19
+[TRAIN] Ep on GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c lambda=0.0 z=results_s7/zsrc_train1000_P4.pt 17:17:19
+[TRAIN] Aq on GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b lambda=1.0 z=results_s7/g2v2/zstar_zsrcinj_train1000.pt 17:17:19
+[TRAIN-DONE] Ep rc=0 19:47:38
+[TRAIN-DONE] Ap rc=0 19:47:57
+[TRAIN-DONE] Aq rc=0 21:36:45
+-rw-rw-r-- 1 shoon shoon 236027245 10월  8 19:47 results_s7/g2v2/decoder_Ap_v36.pt
+-rw-rw-r-- 1 shoon shoon 236027245 10월  8 21:36 results_s7/g2v2/decoder_Aq_v36.pt
+-rw-rw-r-- 1 shoon shoon 236027245 10월  8 19:47 results_s7/g2v2/decoder_Ep_v36.pt
+26aae4a618aacc25c53cd4d87409952de5b2e8e0a276971f78491c24bc198c46  results_s7/g2v2/decoder_Ap_v36.pt
+91c594fb8d93cc6def161caa9232d68c7e02672350a2fee61beaa01cf4d879ad  results_s7/g2v2/decoder_Aq_v36.pt
+202a653c3d899cb1b9970cbe808af9c657fa389f61445b14dc05afc168440b0a  results_s7/g2v2/decoder_Ep_v36.pt
+[NLL-DONE] Ep rc=0 rows=600 21:38:52
+[NLL-DONE] Aq rc=0 rows=600 21:38:53
+[NLL-DONE] Ap rc=0 rows=600 21:38:56
+[GEN-DONE] Ap rc=0 rows=600 23:05:26
+[GEN-DONE] Ep rc=0 rows=600 23:11:12
+[GEN-DONE] Aq rc=0 rows=600 00:02:42
+[CHECK] gen Ap rows=600
+[CHECK] gen Ep rows=600
+[CHECK] gen Aq rows=600
+[SCORE] ApEp rc=0
+[SCORE] AqE rc=0
+=== g2v2 train/eval chain end 2026-10-09 00:03:31 ===

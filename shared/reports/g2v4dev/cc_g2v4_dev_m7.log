@@ -1,0 +1,32 @@
+=== m7 dev start 2026-10-11 14:22:57 ===
+fd6c2d03e3ed18d1597950edc79a01af8331d192c9f84b821a5b5bcf3f71cfe1  scripts/s7_eval_gate_p6_v36f.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+73db9dafd33e49e963d48aad4797c6b0eb7856e5e8e847fbb3b8dc0e5109921b  scripts/g2v3_m3_eval_latents_v2.py
+b43de6b0eeb0a16a5f04762ac9c6a95979e504bc48f8b52249213490d6485cf7  results_s7/g2v4m7rep/deq_Ah.pt
+7e9dc5feb1e563996e90cc825c3567e54caadb86f5a9a25ce03435df37be9788  results_s7/g2v4m7rep/deq_Eh.pt
+46977c2db533888dc13a8defe21ac287b26bd7ff1e08bb83eb22a4ca4bb99670  results_s7/g2v4m7rep/decoder_Ah.pt
+d0c33599c9586d3ed131877a2439ee09d5d48804a0408965daaa0238705afd5a  results_s7/g2v4m7rep/decoder_Eh.pt
+6c76ddb7cc4a1ee901291eee76ed99763ec5ebfec202cb30ba17f9bcee487e7c  results_s7/p6_item_order.json
+24c82d97ff0a786dbf135b4673273fedf79bec371d9868eb98e6d2f541bbee77  results_s7/p6r/p6_gen_C.jsonl
+[SPLIT] 600
+[SHA] h0 9c943e416056bab7bd499b47088153c913a0e118ab3c37eb6274d8634ea17c3b h1 8876cb1e345b6cf887cba2bc51615ecef38229f2081d42a130946889bcfe6d62
+46977c2db533888dc13a8defe21ac287b26bd7ff1e08bb83eb22a4ca4bb99670  results_s7/g2v2/decoder_M7A_v36.pt
+d0c33599c9586d3ed131877a2439ee09d5d48804a0408965daaa0238705afd5a  results_s7/g2v2/decoder_M7E_v36.pt
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+4b6c84ac0576fe6657789a60006186ef3da02bccc4aab1fbdba28ecaff7bc444  results_s7/g2v4m7rep/dev600_latent_A.pt
+81f28a648231e60f6bf7f61362565f94a7a5da99a3d65d3d1d182c2708d7084d  results_s7/g2v4m7rep/dev600_latent_E.pt
+[GEN-DONE] h0 15:42:41
+[GEN-DONE] h1 16:27:29
+[PROJ-V2] PrefixProjectorV2 (centre + RMS-normalised in/out)
+[PROJ-V2] PrefixProjectorV2 (centre + RMS-normalised in/out)
+[CHECK] results_s7/p6r/g2v4dev/dev_gen_A.jsonl 600 600 True
+[CHECK] results_s7/p6r/g2v4dev/dev_gen_E1.jsonl 600 600 True
+[SCORE] rc=0
+e8e8959920cc3a596605bec13f90185b26399ca6dd99e4cf0a62b19ef1a86838  results_s7/p6r/g2v4dev/dev_gen_A.jsonl
+8de4066a39be9854bd707bd1272dffd55aa6f1ba29f8c311235cc32b0c0156a6  results_s7/p6r/g2v4dev/dev_gen_E1.jsonl
+e890c3c2d6fcf5981a195b785925ae7e3963f700809b9bfa0b66411b83e4f695  results_s7/p6r/g2v4dev/dev_score.json
+[G4] {'acc_c1': 0.07833333333333334, 'acc_c2': 0.04833333333333333, 'delta': 0.03, 'ci_95': [0.005, 0.05667], 'mcnemar_b': 39, 'mcnemar_c': 21, 'mcnemar_one_sided_p': 0.01367}
+[G3] {'acc_c1': 0.07833333333333334, 'acc_c2': 0.0033333333333333335, 'delta': 0.075, 'ci_95': [0.055, 0.09667], 'mcnemar_b': 45, 'mcnemar_c': 0, 'mcnemar_one_sided_p': 0.0}
+[ACC] {'A': {'count': 600, 'strict_acc': 0.07833, 'lenient_acc': 0.12667}, 'B1': {'count': 600, 'strict_acc': 0.01167, 'lenient_acc': 0.05}, 'C': {'count': 600, 'strict_acc': 0.00333, 'lenient_acc': 0.07167}, 'E1': {'count': 600, 'strict_acc': 0.04833, 'lenient_acc': 0.10167}}
+=== m7 dev end 2026-10-11 16:27:51 ===

@@ -1,0 +1,17 @@
+{
+  "mode": "E",
+  "steps": 3000,
+  "batch_size": 4,
+  "final_task_loss": 1.294921875,
+  "text_drop": 0.5,
+  "ift_e": false,
+  "no_step": true,
+  "lambda_ift": 0.0,
+  "n_text_dropped": 6061,
+  "seed": 2047,
+  "init_decoder": "",
+  "init_deq": "",
+  "final_ift_loss": 0.0,
+  "avg_step_time_s": 0.8096893598238627,
+  "peak_vram_mb": 44215.2783203125
+}

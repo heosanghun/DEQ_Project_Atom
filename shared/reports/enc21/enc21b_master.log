@@ -1,0 +1,49 @@
+=== ENC21b fresh start 2026-10-28 03:18:29 launcher_sha 666ac4d6e0ea6cd98588f3f9ed33d22e17d6a9719929719b016869ad9f2aed63 ===
+enc_helpers.py: OK
+info_probe_feat.py: OK
+enc31_latents.py: OK
+g2v13_enc_zstar_run.py: OK
+c21_compare.py: OK
+[ENC31] reuse /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21/enc31.pt sha 576cb980a61fd711ea393fc0cf525230fcbcbc1d49843a46a0be1efee39e369d
+f2119bbe5c0ad914ee00c34e9109674d15de07c5e028e288ab05b88dd448d1f9  /home/shoon/checkpoints/m1_final_frozen.pt
+5fb768a8f56add15c7cdca069f5e1a7f80d16fd231f8ecae1fca4fcf6920bf52  /home/shoon/cts_e1/scratch/harness_A_v1.py
+7024f1f2d9ff534c3ec43251ac9c8177fa0e384717e8752b330481f6aed91650  cts/deq/zstar_inject_v2.py
+bd8e4e96cf971de37c518dd09bf90dae2a38c22e59da664a5786ff64c7ef2157  configs/zstar_canonical.yaml
+[DISK] avail 146827358208
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=19 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=19 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=19 apps=0
+=== ENC21b resume start 2026-10-28 07:08:35 launcher_sha 666ac4d6e0ea6cd98588f3f9ed33d22e17d6a9719929719b016869ad9f2aed63 ===
+enc_helpers.py: OK
+info_probe_feat.py: OK
+enc31_latents.py: OK
+g2v13_enc_zstar_run.py: OK
+c21_compare.py: OK
+[ENC31] reuse /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21/enc31.pt sha 576cb980a61fd711ea393fc0cf525230fcbcbc1d49843a46a0be1efee39e369d
+f2119bbe5c0ad914ee00c34e9109674d15de07c5e028e288ab05b88dd448d1f9  /home/shoon/checkpoints/m1_final_frozen.pt
+5fb768a8f56add15c7cdca069f5e1a7f80d16fd231f8ecae1fca4fcf6920bf52  /home/shoon/cts_e1/scratch/harness_A_v1.py
+7024f1f2d9ff534c3ec43251ac9c8177fa0e384717e8752b330481f6aed91650  cts/deq/zstar_inject_v2.py
+bd8e4e96cf971de37c518dd09bf90dae2a38c22e59da664a5786ff64c7ef2157  configs/zstar_canonical.yaml
+[DISK] avail 146204123136
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=19 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=19 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=19 apps=0
+[DEQ s0] rc=0 [SAVE] /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21b/zstar31_s0.pt items 531 r_1000<1e-2 501/531 median 4.734e-04 total 8380s
+[DEQ s1] rc=1 
+[PART] /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21b/zstar31_s1.pt.part0006.pt items 25
+[0175/0531] q4277 r_1000 4.391e-03 r_lowest 4.364e-03 k* 811 (18.7s)
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21_stage/g2v13_enc_zstar_run.py", line 96, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21_stage/g2v13_enc_zstar_run.py", line 40, in main
+    done |= set(torch.load(f, map_location='cpu', weights_only=False).keys())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1603, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1855, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: Ran out of input
+[FATAL] deq s1
+=== ENC21b FAILED 2026-10-28 09:34:30 ===

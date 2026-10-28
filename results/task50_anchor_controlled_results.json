@@ -1,0 +1,990 @@
+{
+  "condition_1_plain_new_grader": {
+    "correct": 3,
+    "total": 30,
+    "pass_at_1": 0.1,
+    "details": [
+      {
+        "idx": 0,
+        "correct": true,
+        "extracted": "(3, \\pi/2)",
+        "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 1,
+        "correct": false,
+        "extracted": "",
+        "gold": "p - q",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 2,
+        "correct": false,
+        "extracted": "\\frac{11}{3}",
+        "gold": "\\frac{14}{3}",
+        "gen_len": 150,
+        "hit_eos": true
+      },
+      {
+        "idx": 3,
+        "correct": false,
+        "extracted": "",
+        "gold": "9",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 4,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\text{Evelyn}",
+        "gen_len": 5,
+        "hit_eos": true
+      },
+      {
+        "idx": 5,
+        "correct": false,
+        "extracted": "",
+        "gold": "42",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 6,
+        "correct": false,
+        "extracted": "",
+        "gold": "27",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 7,
+        "correct": false,
+        "extracted": "66.5",
+        "gold": "90^\\circ",
+        "gen_len": 370,
+        "hit_eos": true
+      },
+      {
+        "idx": 8,
+        "correct": false,
+        "extracted": "\\sqrt{85}",
+        "gold": "3\\sqrt{13}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 9,
+        "correct": false,
+        "extracted": "",
+        "gold": "4",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 10,
+        "correct": false,
+        "extracted": "",
+        "gold": "2220",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 11,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{3}{56}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 12,
+        "correct": true,
+        "extracted": "",
+        "gold": "284",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 13,
+        "correct": true,
+        "extracted": "5",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 14,
+        "correct": false,
+        "extracted": "4.9",
+        "gold": "\\sqrt{51}",
+        "gen_len": 69,
+        "hit_eos": true
+      },
+      {
+        "idx": 15,
+        "correct": false,
+        "extracted": "",
+        "gold": "6 - 5i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 16,
+        "correct": false,
+        "extracted": "",
+        "gold": "-50",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 17,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\pi",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 18,
+        "correct": false,
+        "extracted": "2^{\\circ}",
+        "gold": "28",
+        "gen_len": 255,
+        "hit_eos": true
+      },
+      {
+        "idx": 19,
+        "correct": false,
+        "extracted": "0",
+        "gold": "3",
+        "gen_len": 336,
+        "hit_eos": true
+      },
+      {
+        "idx": 20,
+        "correct": false,
+        "extracted": "",
+        "gold": "6+9i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 21,
+        "correct": false,
+        "extracted": "1",
+        "gold": "13535",
+        "gen_len": 158,
+        "hit_eos": true
+      },
+      {
+        "idx": 22,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 23,
+        "correct": false,
+        "extracted": "",
+        "gold": "x=5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 24,
+        "correct": false,
+        "extracted": "",
+        "gold": "10",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 25,
+        "correct": false,
+        "extracted": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131",
+        "gold": "1,-2",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 26,
+        "correct": false,
+        "extracted": "24",
+        "gold": "144",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 27,
+        "correct": false,
+        "extracted": "",
+        "gold": "78",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 28,
+        "correct": false,
+        "extracted": "",
+        "gold": "-2 + 7i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 29,
+        "correct": false,
+        "extracted": "",
+        "gold": "225",
+        "gen_len": 512,
+        "hit_eos": false
+      }
+    ]
+  },
+  "condition_2_think_chat_new_grader": {
+    "correct": 1,
+    "total": 30,
+    "pass_at_1": 0.03333333333333333,
+    "details": [
+      {
+        "idx": 0,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 1,
+        "correct": false,
+        "extracted": "",
+        "gold": "p - q",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 2,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{14}{3}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 3,
+        "correct": false,
+        "extracted": "",
+        "gold": "9",
+        "gen_len": 119,
+        "hit_eos": true
+      },
+      {
+        "idx": 4,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\text{Evelyn}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 5,
+        "correct": false,
+        "extracted": "",
+        "gold": "42",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 6,
+        "correct": false,
+        "extracted": "",
+        "gold": "27",
+        "gen_len": 50,
+        "hit_eos": true
+      },
+      {
+        "idx": 7,
+        "correct": false,
+        "extracted": "",
+        "gold": "90^\\circ",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 8,
+        "correct": false,
+        "extracted": "",
+        "gold": "3\\sqrt{13}",
+        "gen_len": 195,
+        "hit_eos": true
+      },
+      {
+        "idx": 9,
+        "correct": false,
+        "extracted": "",
+        "gold": "4",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 10,
+        "correct": false,
+        "extracted": "",
+        "gold": "2220",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 11,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{3}{56}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 12,
+        "correct": true,
+        "extracted": "",
+        "gold": "284",
+        "gen_len": 138,
+        "hit_eos": true
+      },
+      {
+        "idx": 13,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 14,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\sqrt{51}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 15,
+        "correct": false,
+        "extracted": "",
+        "gold": "6 - 5i",
+        "gen_len": 198,
+        "hit_eos": true
+      },
+      {
+        "idx": 16,
+        "correct": false,
+        "extracted": "",
+        "gold": "-50",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 17,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\pi",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 18,
+        "correct": false,
+        "extracted": "",
+        "gold": "28",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 19,
+        "correct": false,
+        "extracted": "",
+        "gold": "3",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 20,
+        "correct": false,
+        "extracted": "",
+        "gold": "6+9i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 21,
+        "correct": false,
+        "extracted": "",
+        "gold": "13535",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 22,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 23,
+        "correct": false,
+        "extracted": "",
+        "gold": "x=5",
+        "gen_len": 260,
+        "hit_eos": true
+      },
+      {
+        "idx": 24,
+        "correct": false,
+        "extracted": "",
+        "gold": "10",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 25,
+        "correct": false,
+        "extracted": "",
+        "gold": "1,-2",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 26,
+        "correct": false,
+        "extracted": "",
+        "gold": "144",
+        "gen_len": 237,
+        "hit_eos": true
+      },
+      {
+        "idx": 27,
+        "correct": false,
+        "extracted": "",
+        "gold": "78",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 28,
+        "correct": false,
+        "extracted": "",
+        "gold": "-2 + 7i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 29,
+        "correct": false,
+        "extracted": "",
+        "gold": "225",
+        "gen_len": 512,
+        "hit_eos": false
+      }
+    ]
+  },
+  "condition_3_plain_legacy_grader": {
+    "correct": 3,
+    "total": 30,
+    "pass_at_1": 0.1,
+    "details": [
+      {
+        "idx": 0,
+        "correct": true,
+        "extracted": "(3, \\pi/2)",
+        "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 1,
+        "correct": false,
+        "extracted": "",
+        "gold": "p - q",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 2,
+        "correct": false,
+        "extracted": "\\frac{11}{3}",
+        "gold": "\\frac{14}{3}",
+        "gen_len": 150,
+        "hit_eos": true
+      },
+      {
+        "idx": 3,
+        "correct": false,
+        "extracted": "",
+        "gold": "9",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 4,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\text{Evelyn}",
+        "gen_len": 5,
+        "hit_eos": true
+      },
+      {
+        "idx": 5,
+        "correct": false,
+        "extracted": "",
+        "gold": "42",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 6,
+        "correct": false,
+        "extracted": "",
+        "gold": "27",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 7,
+        "correct": false,
+        "extracted": "66.5",
+        "gold": "90^\\circ",
+        "gen_len": 370,
+        "hit_eos": true
+      },
+      {
+        "idx": 8,
+        "correct": false,
+        "extracted": "\\sqrt{85}",
+        "gold": "3\\sqrt{13}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 9,
+        "correct": false,
+        "extracted": "",
+        "gold": "4",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 10,
+        "correct": false,
+        "extracted": "",
+        "gold": "2220",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 11,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{3}{56}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 12,
+        "correct": true,
+        "extracted": "",
+        "gold": "284",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 13,
+        "correct": true,
+        "extracted": "5",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 14,
+        "correct": false,
+        "extracted": "4.9",
+        "gold": "\\sqrt{51}",
+        "gen_len": 69,
+        "hit_eos": true
+      },
+      {
+        "idx": 15,
+        "correct": false,
+        "extracted": "",
+        "gold": "6 - 5i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 16,
+        "correct": false,
+        "extracted": "",
+        "gold": "-50",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 17,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\pi",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 18,
+        "correct": false,
+        "extracted": "2^{\\circ}",
+        "gold": "28",
+        "gen_len": 255,
+        "hit_eos": true
+      },
+      {
+        "idx": 19,
+        "correct": false,
+        "extracted": "0",
+        "gold": "3",
+        "gen_len": 336,
+        "hit_eos": true
+      },
+      {
+        "idx": 20,
+        "correct": false,
+        "extracted": "",
+        "gold": "6+9i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 21,
+        "correct": false,
+        "extracted": "1",
+        "gold": "13535",
+        "gen_len": 158,
+        "hit_eos": true
+      },
+      {
+        "idx": 22,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 23,
+        "correct": false,
+        "extracted": "",
+        "gold": "x=5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 24,
+        "correct": false,
+        "extracted": "",
+        "gold": "10",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 25,
+        "correct": false,
+        "extracted": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131",
+        "gold": "1,-2",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 26,
+        "correct": false,
+        "extracted": "24",
+        "gold": "144",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 27,
+        "correct": false,
+        "extracted": "",
+        "gold": "78",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 28,
+        "correct": false,
+        "extracted": "",
+        "gold": "-2 + 7i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 29,
+        "correct": false,
+        "extracted": "",
+        "gold": "225",
+        "gen_len": 512,
+        "hit_eos": false
+      }
+    ]
+  },
+  "condition_4_think_chat_legacy_grader": {
+    "correct": 1,
+    "total": 30,
+    "pass_at_1": 0.03333333333333333,
+    "details": [
+      {
+        "idx": 0,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 1,
+        "correct": false,
+        "extracted": "",
+        "gold": "p - q",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 2,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{14}{3}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 3,
+        "correct": false,
+        "extracted": "",
+        "gold": "9",
+        "gen_len": 119,
+        "hit_eos": true
+      },
+      {
+        "idx": 4,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\text{Evelyn}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 5,
+        "correct": false,
+        "extracted": "",
+        "gold": "42",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 6,
+        "correct": false,
+        "extracted": "",
+        "gold": "27",
+        "gen_len": 50,
+        "hit_eos": true
+      },
+      {
+        "idx": 7,
+        "correct": false,
+        "extracted": "",
+        "gold": "90^\\circ",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 8,
+        "correct": false,
+        "extracted": "",
+        "gold": "3\\sqrt{13}",
+        "gen_len": 195,
+        "hit_eos": true
+      },
+      {
+        "idx": 9,
+        "correct": false,
+        "extracted": "",
+        "gold": "4",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 10,
+        "correct": false,
+        "extracted": "",
+        "gold": "2220",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 11,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\frac{3}{56}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 12,
+        "correct": true,
+        "extracted": "",
+        "gold": "284",
+        "gen_len": 138,
+        "hit_eos": true
+      },
+      {
+        "idx": 13,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 14,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\sqrt{51}",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 15,
+        "correct": false,
+        "extracted": "",
+        "gold": "6 - 5i",
+        "gen_len": 198,
+        "hit_eos": true
+      },
+      {
+        "idx": 16,
+        "correct": false,
+        "extracted": "",
+        "gold": "-50",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 17,
+        "correct": false,
+        "extracted": "",
+        "gold": "\\pi",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 18,
+        "correct": false,
+        "extracted": "",
+        "gold": "28",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 19,
+        "correct": false,
+        "extracted": "",
+        "gold": "3",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 20,
+        "correct": false,
+        "extracted": "",
+        "gold": "6+9i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 21,
+        "correct": false,
+        "extracted": "",
+        "gold": "13535",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 22,
+        "correct": false,
+        "extracted": "",
+        "gold": "5",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 23,
+        "correct": false,
+        "extracted": "",
+        "gold": "x=5",
+        "gen_len": 260,
+        "hit_eos": true
+      },
+      {
+        "idx": 24,
+        "correct": false,
+        "extracted": "",
+        "gold": "10",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 25,
+        "correct": false,
+        "extracted": "",
+        "gold": "1,-2",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 26,
+        "correct": false,
+        "extracted": "",
+        "gold": "144",
+        "gen_len": 237,
+        "hit_eos": true
+      },
+      {
+        "idx": 27,
+        "correct": false,
+        "extracted": "",
+        "gold": "78",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 28,
+        "correct": false,
+        "extracted": "",
+        "gold": "-2 + 7i",
+        "gen_len": 512,
+        "hit_eos": false
+      },
+      {
+        "idx": 29,
+        "correct": false,
+        "extracted": "",
+        "gold": "225",
+        "gen_len": 512,
+        "hit_eos": false
+      }
+    ]
+  }
+}

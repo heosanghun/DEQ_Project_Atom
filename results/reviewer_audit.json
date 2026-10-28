@@ -1,0 +1,298 @@
+{
+  "schema": "cts_neurips2026.reviewer_audit.v1",
+  "verdict": "ALL_GREEN",
+  "passed": 52,
+  "total": 52,
+  "ratio": "52/52",
+  "timestamp_utc": "2026-04-29T08:18:43+00:00",
+  "sections": [
+    {
+      "name": "Section 1: Headline-claim coverage",
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "name": "Paper Table 1 - O(1) active VRAM measurement path",
+          "ok": true,
+          "evidence": "hybrid_kv / kv_measured / profile_vram_latency present (triton aux: True)"
+        },
+        {
+          "name": "Paper Section 6 - L-Broyden DEQ solver",
+          "ok": true,
+          "evidence": "broyden marker found in cts/deq/"
+        },
+        {
+          "name": "Paper Section 5 - meta-policy + neuro-critic",
+          "ok": true,
+          "evidence": "cts/policy/meta_policy.py + cts/critic/neuro_critic.py"
+        },
+        {
+          "name": "Paper Section 4 - PUCT selection rule",
+          "ok": true,
+          "evidence": "PUCT marker in cts/mcts/"
+        },
+        {
+          "name": "Paper Section 6 - ACT halting penalty",
+          "ok": true,
+          "evidence": "halt marker in cts/train/"
+        },
+        {
+          "name": "Paper Section 4.5 - nu-vector adaptive control",
+          "ok": true,
+          "evidence": "nu_{expl,tol,temp,act} markers in cts/policy/meta_policy.py"
+        },
+        {
+          "name": "Paper Section 6 - two-stage training (DEQ warm-up + PPO)",
+          "ok": true,
+          "evidence": "stage1=True stage2=True"
+        },
+        {
+          "name": "Paper Appendix - contamination screening (FAISS / MinHash / BM25)",
+          "ok": true,
+          "evidence": "results/contamination/ or scripts/contamination_screen.py present"
+        }
+      ]
+    },
+    {
+      "name": "Section 2: D-7 patch-site presence",
+      "passed": 6,
+      "total": 6,
+      "checks": [
+        {
+          "name": "Q14 fix #1 - decode_from_z_star(problem_text=...) kwarg",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Q14 fix #1 - cts_episode forwards prompt",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Q14 fix #2 - dispatcher garbage-math fallback",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Partial-save snapshot - table2_results.partial.json",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Pipeline knobs - --table2-limit / --table17-limit",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Watcher forwards --table*-limit / --skip-verify",
+          "ok": true,
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "name": "Section 3: Reproducibility checklist hooks",
+      "passed": 25,
+      "total": 25,
+      "checks": [
+        {
+          "name": "Configs - paper-faithful + default presets shipped",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Regression tests - test directory non-empty",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Anonymous-submission helper - make_anonymous_submission.py",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Post-Stage-2 pipeline orchestrator",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Reproducibility checklist - REPRODUCIBILITY.md",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Stage 2 ckpt validator - test_stage2_ppo_paper_parity.py",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Static D-7 validation suite (torch-free, runs in 0.4 s)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Author's D12 sanity script",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Garbage-math fallback helper (Q14 Fix B factored out)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Mock-based dispatcher fallback test (torch-free)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Reviewer one-command replication script (Linux GPU)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Paper-code mapping table validator (5-pent contract)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Stage 2 training_meta static contract test",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "run_cts_eval_full --dry-run mode (no torch)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "ZIP byte-invariants test (third leak-defence layer)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Paper-section alignment test (cross-doc \u00a7-numbering)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Reviewer walkthrough script (drilldown navigation)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "_d12_final_check --export-verdict mode",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "replicate_neurips_2026.sh --ci-mode",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q16 (CI runnability guide)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q17 (paper-section to claim crossref)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "Walkthrough invariants regression test",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "CHANGELOG D-7 completeness regression test",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "_d12_final_check Section 5 (byte-invariants integrated)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "CI workflow uploads D12 verdict artefact",
+          "ok": true,
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "name": "Section 4: Documentation marker presence",
+      "passed": 13,
+      "total": 13,
+      "checks": [
+        {
+          "name": "REVIEWER_FAQ Q1 present",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q11 present",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q13 present",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q14 present",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q15 present",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "CHANGELOG D-7 entries (morning + afternoon)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-bis (Audit-fix lineage)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-ter (Pipeline guarantees)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-quat (single-host blocker)",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "PAPER_VS_LOCAL.md status banner",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "PAPER_VS_LOCAL.md Why-the-Gap appendix",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "LIMITATIONS.md - consolidated reviewer-facing limitations doc",
+          "ok": true,
+          "evidence": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-pent paper-claim mapping (extended)",
+          "ok": true,
+          "evidence": ""
+        }
+      ]
+    }
+  ]
+}

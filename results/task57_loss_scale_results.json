@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-25T18:04:42+09:00",
+  "total_samples": 100,
+  "mean_loss_fp_sum": 1793957.89875,
+  "mean_loss_fp_mean": 10.949450065612794,
+  "mean_loss_ce": 2.443429175615311,
+  "current_baseline": {
+    "lambda_lm": 0.1,
+    "effective_lm_loss": 0.2443429175615311,
+    "ratio_fp_to_lm": 7341968.069519513
+  },
+  "option_A": {
+    "formula": "loss_fp / 163840 + 0.1 * loss_ce",
+    "loss_fp_mean": 10.949450065612794,
+    "effective_lm_loss": 0.2443429175615311,
+    "ratio_fp_to_lm": 44.81181683056344
+  },
+  "option_B": {
+    "lambda_25": {
+      "effective_lm_loss": 61.08572939038277,
+      "ratio_fp_to_lm": 29367.872278078055
+    },
+    "lambda_50": {
+      "effective_lm_loss": 122.17145878076553,
+      "ratio_fp_to_lm": 14683.936139039028
+    },
+    "lambda_100": {
+      "effective_lm_loss": 244.34291756153107,
+      "ratio_fp_to_lm": 7341.968069519514
+    }
+  },
+  "option_C": {
+    "formula": "(loss_fp / S_fp) + (loss_ce / S_ce)",
+    "S_fp_initial": 1793957.89875,
+    "S_ce_initial": 2.443429175615311,
+    "ratio_fp_to_lm": 1.0
+  }
+}

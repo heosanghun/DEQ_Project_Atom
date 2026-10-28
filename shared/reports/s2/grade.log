@@ -1,0 +1,9 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] S2O47: n 600 strict 55 lenient 69 boxed 236
+[S0] shuf_S2O47: n 600 strict 45 lenient 58 boxed 236
+[S0] S2O49: n 600 strict 22 lenient 33 boxed 116
+[S0] shuf_S2O49: n 600 strict 20 lenient 32 boxed 127
+[S0] S2O50: n 600 strict 0 lenient 2 boxed 7
+[S0] shuf_S2O50: n 600 strict 1 lenient 3 boxed 13
+[S0-DONE] /tmp/cts_s2/s2_items.json

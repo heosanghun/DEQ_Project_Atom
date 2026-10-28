@@ -1,0 +1,287 @@
+# Phase 1: greedy baseline (Gemma 4 E4B, no scaffold)
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\run_cts_eval_full.py --benchmarks aime humaneval --methods greedy --seeds 1 --output-dir D:\AI\cts\results\local_gemma4\phase1_greedy --device cuda:0 --limit 30
+# start: 2026-04-30T06:54:30Z
+
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [greedy] aime seed=0
+
+Loading weights:   0%|          | 0/2130 [00:00<?, ?it/s]
+Loading weights:   1%|          | 12/2130 [00:00<00:19, 106.32it/s]
+Loading weights:   1%|▏         | 28/2130 [00:00<00:18, 111.23it/s]
+Loading weights:   2%|▏         | 49/2130 [00:00<00:14, 148.00it/s]
+Loading weights:   3%|▎         | 65/2130 [00:00<00:15, 130.42it/s]
+Loading weights:   4%|▎         | 79/2130 [00:00<00:18, 113.39it/s]
+Loading weights:   4%|▍         | 92/2130 [00:00<00:18, 112.79it/s]
+Loading weights:   5%|▍         | 105/2130 [00:00<00:17, 113.31it/s]
+Loading weights:   5%|▌         | 117/2130 [00:01<00:18, 109.24it/s]
+Loading weights:   6%|▌         | 129/2130 [00:01<00:19, 102.16it/s]
+Loading weights:   7%|▋         | 140/2130 [00:01<00:20, 95.52it/s] 
+Loading weights:   7%|▋         | 153/2130 [00:01<00:19, 102.72it/s]
+Loading weights:   9%|▊         | 182/2130 [00:01<00:14, 138.23it/s]
+Loading weights:   9%|▉         | 196/2130 [00:01<00:15, 125.65it/s]
+Loading weights:  10%|▉         | 209/2130 [00:01<00:16, 113.19it/s]
+Loading weights:  11%|█         | 229/2130 [00:01<00:14, 127.86it/s]
+Loading weights:  12%|█▏        | 251/2130 [00:02<00:15, 124.39it/s]
+Loading weights:  12%|█▏        | 264/2130 [00:02<00:20, 92.74it/s] 
+Loading weights:  13%|█▎        | 278/2130 [00:02<00:18, 100.63it/s]
+Loading weights:  14%|█▍        | 302/2130 [00:02<00:14, 122.92it/s]
+Loading weights:  15%|█▍        | 316/2130 [00:02<00:15, 119.14it/s]
+Loading weights:  15%|█▌        | 329/2130 [00:02<00:16, 109.66it/s]
+Loading weights:  16%|█▌        | 344/2130 [00:03<00:16, 110.29it/s]
+Loading weights:  18%|█▊        | 374/2130 [00:03<00:12, 137.76it/s]
+Loading weights:  18%|█▊        | 388/2130 [00:03<00:14, 117.16it/s]
+Loading weights:  19%|█▉        | 403/2130 [00:03<00:14, 122.64it/s]
+Loading weights:  20%|█▉        | 425/2130 [00:03<00:11, 142.50it/s]
+Loading weights:  21%|██        | 440/2130 [00:03<00:12, 133.63it/s]
+Loading weights:  21%|██▏       | 454/2130 [00:03<00:15, 105.09it/s]
+Loading weights:  22%|██▏       | 472/2130 [00:04<00:14, 118.30it/s]
+Loading weights:  23%|██▎       | 491/2130 [00:04<00:12, 134.18it/s]
+Loading weights:  24%|██▍       | 506/2130 [00:04<00:13, 117.10it/s]
+Loading weights:  24%|██▍       | 519/2130 [00:04<00:15, 104.89it/s]
+Loading weights:  26%|██▌       | 547/2130 [00:04<00:11, 141.34it/s]
+Loading weights:  26%|██▋       | 563/2130 [00:04<00:11, 136.59it/s]
+Loading weights:  27%|██▋       | 578/2130 [00:04<00:14, 105.74it/s]
+Loading weights:  28%|██▊       | 599/2130 [00:05<00:13, 116.58it/s]
+Loading weights:  29%|██▉       | 618/2130 [00:05<00:12, 123.32it/s]
+Loading weights:  30%|██▉       | 632/2130 [00:05<00:13, 115.05it/s]
+Loading weights:  30%|███       | 645/2130 [00:05<00:13, 110.83it/s]
+Loading weights:  32%|███▏      | 674/2130 [00:05<00:09, 148.64it/s]
+Loading weights:  32%|███▏      | 690/2130 [00:05<00:11, 125.63it/s]
+Loading weights:  33%|███▎      | 704/2130 [00:05<00:11, 119.66it/s]
+Loading weights:  34%|███▍      | 724/2130 [00:06<00:10, 129.07it/s]
+Loading weights:  35%|███▍      | 744/2130 [00:06<00:11, 122.47it/s]
+Loading weights:  36%|███▌      | 757/2130 [00:17<04:33,  5.02it/s] 
+Loading weights:  36%|███▌      | 758/2130 [00:17<04:38,  4.93it/s]
+Loading weights:  36%|███▌      | 768/2130 [00:18<03:54,  5.81it/s]
+Loading weights:  36%|███▋      | 775/2130 [00:18<03:30,  6.45it/s]
+Loading weights:  37%|███▋      | 781/2130 [00:19<03:21,  6.70it/s]
+Loading weights:  37%|███▋      | 786/2130 [00:19<02:47,  8.03it/s]
+Loading weights:  37%|███▋      | 792/2130 [00:19<02:11, 10.21it/s]
+Loading weights:  38%|███▊      | 818/2130 [00:20<00:53, 24.49it/s]
+Loading weights:  40%|███▉      | 844/2130 [00:20<00:30, 42.09it/s]
+Loading weights:  41%|████      | 877/2130 [00:20<00:18, 69.04it/s]
+Loading weights:  43%|████▎     | 912/2130 [00:20<00:11, 101.66it/s]
+Loading weights:  44%|████▍     | 936/2130 [00:21<00:25, 47.66it/s] 
+Loading weights:  45%|████▍     | 953/2130 [00:23<00:42, 27.64it/s]
+Loading weights:  45%|████▌     | 966/2130 [00:24<01:02, 18.75it/s]
+Loading weights:  46%|████▌     | 975/2130 [00:24<00:56, 20.32it/s]
+Loading weights:  46%|████▌     | 983/2130 [00:26<01:14, 15.32it/s]
+Loading weights:  46%|████▋     | 989/2130 [00:26<01:06, 17.05it/s]
+Loading weights:  47%|████▋     | 994/2130 [00:26<01:10, 16.14it/s]
+Loading weights:  47%|████▋     | 998/2130 [00:27<01:37, 11.57it/s]
+Loading weights:  47%|████▋     | 1005/2130 [00:27<01:16, 14.77it/s]
+Loading weights:  47%|████▋     | 1009/2130 [00:27<01:11, 15.69it/s]
+Loading weights:  48%|████▊     | 1013/2130 [00:28<01:21, 13.64it/s]
+Loading weights:  48%|████▊     | 1016/2130 [00:28<01:52,  9.88it/s]
+Loading weights:  48%|████▊     | 1023/2130 [00:29<01:17, 14.26it/s]
+Loading weights:  48%|████▊     | 1027/2130 [00:29<01:29, 12.34it/s]
+Loading weights:  48%|████▊     | 1031/2130 [00:30<01:41, 10.88it/s]
+Loading weights:  48%|████▊     | 1033/2130 [00:30<01:48, 10.11it/s]
+Loading weights:  49%|████▉     | 1041/2130 [00:30<01:12, 14.95it/s]
+Loading weights:  49%|████▉     | 1047/2130 [00:30<01:15, 14.35it/s]
+Loading weights:  49%|████▉     | 1049/2130 [00:31<01:55,  9.33it/s]
+Loading weights:  50%|████▉     | 1056/2130 [00:31<01:14, 14.36it/s]
+Loading weights:  50%|████▉     | 1059/2130 [00:32<01:17, 13.89it/s]
+Loading weights:  50%|████▉     | 1062/2130 [00:32<01:21, 13.13it/s]
+Loading weights:  50%|█████     | 1065/2130 [00:33<02:29,  7.12it/s]
+Loading weights:  50%|█████     | 1075/2130 [00:33<01:23, 12.60it/s]
+Loading weights:  51%|█████     | 1081/2130 [00:33<01:19, 13.12it/s]
+Loading weights:  51%|█████     | 1083/2130 [00:34<01:58,  8.82it/s]
+Loading weights:  51%|█████▏    | 1092/2130 [00:34<01:11, 14.47it/s]
+Loading weights:  51%|█████▏    | 1095/2130 [00:34<01:07, 15.37it/s]
+Loading weights:  52%|█████▏    | 1098/2130 [00:35<01:20, 12.86it/s]
+Loading weights:  52%|█████▏    | 1101/2130 [00:36<01:57,  8.75it/s]
+Loading weights:  52%|█████▏    | 1108/2130 [00:36<01:13, 13.97it/s]
+Loading weights:  52%|█████▏    | 1112/2130 [00:36<01:26, 11.72it/s]
+Loading weights:  52%|█████▏    | 1115/2130 [00:36<01:19, 12.75it/s]
+Loading weights:  52%|█████▏    | 1118/2130 [00:37<01:55,  8.78it/s]
+Loading weights:  53%|█████▎    | 1126/2130 [00:37<01:13, 13.66it/s]
+Loading weights:  53%|█████▎    | 1132/2130 [00:38<01:10, 14.26it/s]
+Loading weights:  53%|█████▎    | 1135/2130 [00:38<01:48,  9.13it/s]
+Loading weights:  53%|█████▎    | 1138/2130 [00:39<01:34, 10.49it/s]
+Loading weights:  54%|█████▎    | 1142/2130 [00:39<01:17, 12.81it/s]
+Loading weights:  54%|█████▍    | 1145/2130 [00:39<01:37, 10.07it/s]
+Loading weights:  54%|█████▍    | 1147/2130 [00:40<02:01,  8.07it/s]
+Loading weights:  54%|█████▍    | 1149/2130 [00:40<01:50,  8.84it/s]
+Loading weights:  54%|█████▍    | 1151/2130 [00:41<02:59,  5.44it/s]
+Loading weights:  54%|█████▍    | 1153/2130 [00:41<02:34,  6.31it/s]
+Loading weights:  54%|█████▍    | 1159/2130 [00:41<01:46,  9.14it/s]
+Loading weights:  55%|█████▍    | 1161/2130 [00:41<01:46,  9.10it/s]
+Loading weights:  55%|█████▍    | 1163/2130 [00:42<01:34, 10.20it/s]
+Loading weights:  55%|█████▍    | 1165/2130 [00:42<02:11,  7.32it/s]
+Loading weights:  55%|█████▍    | 1167/2130 [00:42<02:18,  6.95it/s]
+Loading weights:  55%|█████▍    | 1168/2130 [00:43<02:58,  5.40it/s]
+Loading weights:  55%|█████▍    | 1169/2130 [00:43<02:45,  5.80it/s]
+Loading weights:  55%|█████▍    | 1170/2130 [00:43<02:36,  6.15it/s]
+Loading weights:  55%|█████▌    | 1176/2130 [00:43<01:14, 12.75it/s]
+Loading weights:  55%|█████▌    | 1179/2130 [00:43<01:05, 14.57it/s]
+Loading weights:  55%|█████▌    | 1181/2130 [00:44<01:50,  8.57it/s]
+Loading weights:  56%|█████▌    | 1184/2130 [00:45<02:37,  6.02it/s]
+Loading weights:  56%|█████▌    | 1186/2130 [00:45<02:46,  5.68it/s]
+Loading weights:  56%|█████▌    | 1190/2130 [00:45<01:49,  8.57it/s]
+Loading weights:  56%|█████▌    | 1192/2130 [00:46<02:09,  7.24it/s]
+Loading weights:  56%|█████▌    | 1196/2130 [00:46<01:30, 10.28it/s]
+Loading weights:  56%|█████▋    | 1200/2130 [00:47<02:03,  7.50it/s]
+Loading weights:  56%|█████▋    | 1202/2130 [00:47<02:10,  7.10it/s]
+Loading weights:  57%|█████▋    | 1210/2130 [00:47<01:09, 13.30it/s]
+Loading weights:  57%|█████▋    | 1214/2130 [00:48<01:21, 11.28it/s]
+Loading weights:  57%|█████▋    | 1218/2130 [00:48<01:29, 10.15it/s]
+Loading weights:  57%|█████▋    | 1220/2130 [00:48<01:43,  8.81it/s]
+Loading weights:  58%|█████▊    | 1226/2130 [00:49<01:16, 11.86it/s]
+Loading weights:  58%|█████▊    | 1232/2130 [00:49<01:09, 12.99it/s]
+Loading weights:  58%|█████▊    | 1235/2130 [00:50<01:40,  8.86it/s]
+Loading weights:  58%|█████▊    | 1244/2130 [00:50<01:05, 13.47it/s]
+Loading weights:  59%|█████▊    | 1248/2130 [00:51<01:12, 12.19it/s]
+Loading weights:  59%|█████▉    | 1252/2130 [00:51<01:35,  9.19it/s]
+Loading weights:  59%|█████▉    | 1261/2130 [00:52<01:03, 13.72it/s]
+Loading weights:  59%|█████▉    | 1263/2130 [00:52<01:06, 12.95it/s]
+Loading weights:  59%|█████▉    | 1267/2130 [00:52<01:26,  9.98it/s]
+Loading weights:  60%|█████▉    | 1269/2130 [00:53<01:24, 10.19it/s]
+Loading weights:  60%|█████▉    | 1271/2130 [00:53<01:33,  9.23it/s]
+Loading weights:  60%|█████▉    | 1275/2130 [00:53<01:08, 12.53it/s]
+Loading weights:  60%|██████    | 1278/2130 [00:53<00:58, 14.68it/s]
+Loading weights:  60%|██████    | 1282/2130 [00:53<00:57, 14.64it/s]
+Loading weights:  60%|██████    | 1285/2130 [00:54<01:24,  9.97it/s]
+Loading weights:  60%|██████    | 1287/2130 [00:54<01:39,  8.48it/s]
+Loading weights:  61%|██████    | 1295/2130 [00:55<00:54, 15.21it/s]
+Loading weights:  61%|██████    | 1299/2130 [00:55<00:47, 17.45it/s]
+Loading weights:  61%|██████    | 1302/2130 [00:55<01:15, 10.90it/s]
+Loading weights:  61%|██████    | 1304/2130 [00:56<01:47,  7.65it/s]
+Loading weights:  62%|██████▏   | 1313/2130 [00:56<01:02, 13.07it/s]
+Loading weights:  62%|██████▏   | 1316/2130 [00:57<01:15, 10.84it/s]
+Loading weights:  62%|██████▏   | 1320/2130 [00:57<01:39,  8.11it/s]
+Loading weights:  62%|██████▏   | 1330/2130 [00:58<00:59, 13.52it/s]
+Loading weights:  63%|██████▎   | 1336/2130 [00:58<01:03, 12.60it/s]
+Loading weights:  63%|██████▎   | 1338/2130 [00:59<01:29,  8.87it/s]
+Loading weights:  63%|██████▎   | 1346/2130 [00:59<00:59, 13.26it/s]
+Loading weights:  63%|██████▎   | 1350/2130 [01:00<01:09, 11.17it/s]
+Loading weights:  64%|██████▎   | 1354/2130 [01:00<01:29,  8.67it/s]
+Loading weights:  64%|██████▍   | 1363/2130 [01:01<00:55, 13.81it/s]
+Loading weights:  64%|██████▍   | 1366/2130 [01:01<00:57, 13.32it/s]
+Loading weights:  64%|██████▍   | 1369/2130 [01:01<01:05, 11.61it/s]
+Loading weights:  64%|██████▍   | 1371/2130 [01:02<01:16,  9.96it/s]
+Loading weights:  64%|██████▍   | 1373/2130 [01:02<01:31,  8.24it/s]
+Loading weights:  65%|██████▍   | 1381/2130 [01:02<00:52, 14.33it/s]
+Loading weights:  65%|██████▍   | 1384/2130 [01:03<01:07, 10.99it/s]
+Loading weights:  65%|██████▌   | 1388/2130 [01:03<01:09, 10.64it/s]
+Loading weights:  65%|██████▌   | 1390/2130 [01:04<01:23,  8.83it/s]
+Loading weights:  66%|██████▌   | 1398/2130 [01:04<00:51, 14.21it/s]
+Loading weights:  66%|██████▌   | 1402/2130 [01:04<01:02, 11.59it/s]
+Loading weights:  66%|██████▌   | 1405/2130 [01:05<01:41,  7.14it/s]
+Loading weights:  66%|██████▌   | 1407/2130 [01:06<01:49,  6.58it/s]
+Loading weights:  66%|██████▋   | 1414/2130 [01:06<01:03, 11.26it/s]
+Loading weights:  67%|██████▋   | 1417/2130 [01:06<00:57, 12.50it/s]
+Loading weights:  68%|██████▊   | 1439/2130 [01:06<00:18, 36.56it/s]
+Loading weights:  69%|██████▉   | 1471/2130 [01:06<00:08, 76.02it/s]
+Loading weights:  91%|█████████ | 1941/2130 [01:06<00:00, 849.55it/s]
+Loading weights: 100%|██████████| 2130/2130 [01:06<00:00, 31.87it/s] 
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    [greedy/aime] gold='277' pred='47' match=False
+    [greedy/aime] gold='062' pred='13' match=False
+    [greedy/aime] gold='079' pred='Let $O$ be the center of the disk and $A' match=False
+    [greedy/aime] gold='070' pred='1' match=False
+    [greedy/aime] gold='065' pred='2' match=False
+    [greedy/aime] gold='441' pred='120' match=False
+    [greedy/aime] gold='396' pred='1' match=False
+    [greedy/aime] gold='244' pred='17' match=False
+    [greedy/aime] gold='029' pred='' match=False
+    [greedy/aime] gold='156' pred='' match=False
+    [greedy/aime] gold='896' pred='$80$' match=False
+    [greedy/aime] gold='161' pred='3' match=False
+    [greedy/aime] gold='039' pred='2' match=False
+    [greedy/aime] gold='681' pred='' match=False
+    [greedy/aime] gold='083' pred='90' match=False
+    [greedy/aime] gold='178' pred='$-16$' match=False
+    [greedy/aime] gold='243' pred='10' match=False
+    [greedy/aime] gold='503' pred='20' match=False
+    [greedy/aime] gold='279' pred='1' match=False
+    [greedy/aime] gold='190' pred='' match=False
+    [greedy/aime] gold='050' pred='\sqrt{145}' match=False
+    [greedy/aime] gold='754' pred='46657' match=False
+    [greedy/aime] gold='245' pred='\frac{23}{3}' match=False
+    [greedy/aime] gold='669' pred='90' match=False
+    [greedy/aime] gold='340' pred='' match=False
+    [greedy/aime] gold='132' pred='6' match=False
+    [greedy/aime] gold='223' pred='2' match=False
+    [greedy/aime] gold='107' pred='4040' match=False
+    [greedy/aime] gold='157' pred='1' match=False
+    [greedy/aime] gold='393' pred='' match=False
+  [greedy] humaneval seed=0
+    [greedy/humaneval] gold='    for idx, elem in enumerate(numbers):' pred='def has_close_elements(numbers: List[flo' match=False
+    [greedy/humaneval] gold='    result = []
+    current_string = []
+' pred='def separate_paren_groups(paren_string: ' match=False
+    [greedy/humaneval] gold='    return number % 1.0
+' pred='def truncate_number(number: float) -> fl' match=False
+    [greedy/humaneval] gold='    balance = 0
+
+    for op in operation' pred='def below_zero(operations: List[int]) ->' match=False
+    [greedy/humaneval] gold='    mean = sum(numbers) / len(numbers)
+ ' pred='def mean_absolute_deviation(numbers: Lis' match=False
+    [greedy/humaneval] gold='    if not numbers:
+        return []
+
+ ' pred='def intersperse(numbers: List[int], deli' match=False
+    [greedy/humaneval] gold='    def parse_paren_group(s):
+        de' pred='def parse_nested_parens(paren_string: st' match=False
+    [greedy/humaneval] gold='    return [x for x in strings if substr' pred='def filter_by_substring(strings: List[st' match=False
+    [greedy/humaneval] gold='    sum_value = 0
+    prod_value = 1
+
+  ' pred='def sum_product(numbers: List[int]) -> T' match=False
+    [greedy/humaneval] gold='    running_max = None
+    result = []
+
+' pred='def rolling_max(numbers: List[int]) -> L' match=False
+    [greedy/humaneval] gold='    if not string:
+        return ''
+
+  ' pred='def make_palindrome(string: str) -> str:' match=False
+    [greedy/humaneval] gold='    def xor(i, j):
+        if i == j:
+  ' pred='def string_xor(a: str, b: str) -> str:
+ ' match=False
+    [greedy/humaneval] gold='    if not strings:
+        return None
+' pred='def longest(strings: List[str]) -> Optio' match=False
+    [greedy/humaneval] gold='    while b:
+        a, b = b, a % b
+   ' pred='def greatest_common_divisor(a: int, b: i' match=False
+    [greedy/humaneval] gold='    result = []
+
+    for i in range(len(' pred='def all_prefixes(string: str) -> List[st' match=False
+    [greedy/humaneval] gold='    return ' '.join([str(x) for x in ran' pred='def string_sequence(n: int) -> str:
+    ' match=False
+    [greedy/humaneval] gold='    return len(set(string.lower()))
+' pred='def count_distinct_characters(string: st' match=False
+    [greedy/humaneval] gold='    note_map = {'o': 4, 'o|': 2, '.|': 1' pred='def parse_music(music_string: str) -> Li' match=False
+    [greedy/humaneval] gold='    times = 0
+
+    for i in range(len(st' pred='def how_many_times(string: str, substrin' match=False
+    [greedy/humaneval] gold='    value_map = {
+        'zero': 0,
+   ' pred='def sort_numbers(numbers: str) -> str:
+ ' match=False
+    [greedy/humaneval] gold='    closest_pair = None
+    distance = N' pred='def find_closest_elements(numbers: List[' match=False
+    [greedy/humaneval] gold='    min_number = min(numbers)
+    max_nu' pred='def rescale_to_unit(numbers: List[float]' match=False
+    [greedy/humaneval] gold='    return [x for x in values if isinsta' pred='def filter_integers(values: List[Any]) -' match=False
+    [greedy/humaneval] gold='    return len(string)
+' pred='def strlen(string: str) -> int:
+    """ ' match=False
+    [greedy/humaneval] gold='    for i in reversed(range(n)):
+       ' pred='def largest_divisor(n: int) -> int:
+    ' match=False
+    [greedy/humaneval] gold='    import math
+    fact = []
+    i = 2
+' pred='def factorize(n: int) -> List[int]:
+    ' match=False
+    [greedy/humaneval] gold='    import collections
+    c = collectio' pred='def remove_duplicates(numbers: List[int]' match=False

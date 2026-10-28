@@ -1,0 +1,265 @@
+{
+  "schema": "cts_neurips2026.d12_sanity.v1",
+  "verdict": "ALL_PASS",
+  "passed": 44,
+  "total": 44,
+  "ratio": "44/44",
+  "timestamp_utc": "2026-04-29T12:26:28+00:00",
+  "sections": [
+    {
+      "name": "Section 1: D-7 patch sites (AST + regex)",
+      "passed": 6,
+      "total": 6,
+      "checks": [
+        {
+          "name": "decode_from_z_star kw-only problem_text",
+          "ok": true,
+          "detail": "kwonly=['max_new_tokens', 'problem_text']"
+        },
+        {
+          "name": "cts_episode forwards problem_text=prompt",
+          "ok": true,
+          "detail": "regex match"
+        },
+        {
+          "name": "--table2-limit + --table17-limit knobs",
+          "ok": true,
+          "detail": "both present"
+        },
+        {
+          "name": "partial-save (path+helper+call)",
+          "ok": true,
+          "detail": "path=True helper=True call=True"
+        },
+        {
+          "name": "garbage-math fallback (Fix A via helper)",
+          "ok": true,
+          "detail": "helper import + call"
+        },
+        {
+          "name": "watcher forwards --table*-limit / --skip-verify",
+          "ok": true,
+          "detail": "T2=True T17=True skip=True"
+        }
+      ]
+    },
+    {
+      "name": "Section 2: Documentation markers",
+      "passed": 29,
+      "total": 29,
+      "checks": [
+        {
+          "name": "REVIEWER_FAQ Q14 (AIME garbage)",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q15 (single-host blocker)",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "CHANGELOG D-7 morning entry",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "CHANGELOG D-7 afternoon entry",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-bis Audit-fix lineage",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-ter Pipeline guarantees",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-quat single-host blocker",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "PAPER_VS_LOCAL.md status banner",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "PAPER_VS_LOCAL.md Why the Gap appendix",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "LIMITATIONS.md consolidated reviewer-facing doc",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_aime_garbage_fix.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_pipeline_partial_save.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_watcher_invariants.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_d7_static_validation.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_dispatcher_fallback_mock.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "scripts/_reviewer_local_audit.py present",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "scripts/replicate_neurips_2026.sh present",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "cts/eval/garbage_filter.py present",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REPRODUCIBILITY 5-pent paper-claim mapping",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_paper_code_mapping_table.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_stage2_training_meta_static.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "run_cts_eval_full --dry-run mode plumbed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "README.md has Reviewer Quick Start section",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_anon_zip_byte_invariants.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "tests/test_paper_section_alignment.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "scripts/reviewer_walkthrough.py exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "_d12_final_check --export-verdict + --quiet plumbed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "replicate_neurips_2026.sh --ci-mode plumbed",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "REVIEWER_FAQ Q16 (CI runnability guide) present",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "Section 3: Anonymous ZIP build + audit",
+      "passed": 2,
+      "total": 2,
+      "checks": [
+        {
+          "name": "anonymous ZIP rebuild",
+          "ok": true,
+          "detail": "       see README.md > Local Reproduction Snapshot > Re-experiment #1"
+        },
+        {
+          "name": "anonymous ZIP audit",
+          "ok": true,
+          "detail": "[AUDIT] VERDICT: PASS  (NeurIPS double-blind safe)"
+        }
+      ]
+    },
+    {
+      "name": "Section 4: Reviewer-side static audit",
+      "passed": 1,
+      "total": 1,
+      "checks": [
+        {
+          "name": "reviewer-side static audit (34 checks expected)",
+          "ok": true,
+          "detail": "    your end (REVIEWER_FAQ Q15 has the canonical command)."
+        }
+      ]
+    },
+    {
+      "name": "Section 5: ZIP byte-invariants (structural + content)",
+      "passed": 6,
+      "total": 6,
+      "checks": [
+        {
+          "name": "byte-invariant: zip_compression_invariant",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "byte-invariant: zip_contains_all_reviewer_entry_points",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "byte-invariant: zip_contains_no_author_draft_content",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "byte-invariant: zip_exists_and_is_readable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "byte-invariant: zip_has_no_unexpected_dotfiles",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "byte-invariant: zip_no_large_files",
+          "ok": true,
+          "detail": ""
+        }
+      ]
+    }
+  ]
+}

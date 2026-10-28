@@ -1,0 +1,41 @@
+=== TASK 54: RUNNING ALPHA = 0.25 ON cuda:3 ===
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   8%|▊         | 162/2076 [00:00<00:01, 1590.70it/s]Loading weights:  16%|█▌        | 322/2076 [00:00<00:01, 1494.97it/s]Loading weights:  23%|██▎       | 475/2076 [00:00<00:01, 1500.06it/s]Loading weights:  30%|███       | 626/2076 [00:00<00:00, 1477.34it/s]Loading weights:  37%|███▋      | 774/2076 [00:03<00:08, 151.95it/s] Loading weights:  42%|████▏     | 871/2076 [00:03<00:06, 180.27it/s]Loading weights:  46%|████▌     | 949/2076 [00:03<00:05, 196.49it/s]Loading weights:  49%|████▊     | 1011/2076 [00:03<00:04, 215.29it/s]Loading weights:  51%|█████▏    | 1065/2076 [00:03<00:04, 220.42it/s]Loading weights:  53%|█████▎    | 1110/2076 [00:04<00:04, 229.53it/s]Loading weights:  55%|█████▌    | 1150/2076 [00:04<00:03, 235.73it/s]Loading weights:  57%|█████▋    | 1186/2076 [00:04<00:03, 244.73it/s]Loading weights:  59%|█████▉    | 1220/2076 [00:04<00:03, 251.23it/s]Loading weights:  60%|██████    | 1252/2076 [00:04<00:03, 241.95it/s]Loading weights:  62%|██████▏   | 1281/2076 [00:04<00:03, 249.17it/s]Loading weights:  63%|██████▎   | 1310/2076 [00:04<00:02, 256.00it/s]Loading weights:  64%|██████▍   | 1339/2076 [00:04<00:02, 255.85it/s]Loading weights:  66%|██████▌   | 1367/2076 [00:05<00:02, 257.20it/s]Loading weights:  67%|██████▋   | 1395/2076 [00:05<00:02, 256.80it/s]Loading weights:  69%|██████▉   | 1441/2076 [00:05<00:02, 308.51it/s]Loading weights:  77%|███████▋  | 1605/2076 [00:05<00:00, 666.92it/s]Loading weights:  84%|████████▍ | 1751/2076 [00:05<00:00, 884.38it/s]Loading weights:  92%|█████████▏| 1906/2076 [00:05<00:00, 1069.14it/s]Loading weights:  99%|█████████▉| 2056/2076 [00:05<00:00, 1186.63it/s]Loading weights: 100%|██████████| 2076/2076 [00:05<00:00, 364.33it/s] 
+
+[54-1] Evaluating 32 Gate Samples Picard (3,000 steps) for alpha=0.25...
+  [alpha=0.25] #00: trans=  18, sets=15 | Stab@97        | k100=250
+  [alpha=0.25] #01: trans=   9, sets= 9 | Stab@26        | k100=605
+  [alpha=0.25] #02: trans=  24, sets= 8 | Stab@2861      | r=6.0e-02
+  [alpha=0.25] #03: trans=  13, sets=13 | Stab@87        | k100=395
+  [alpha=0.25] #04: trans=  18, sets=16 | Stab@104       | k100=267
+  [alpha=0.25] #05: trans=  40, sets=19 | Stab@325       | r=1.8e-03
+  [alpha=0.25] #06: trans=   6, sets= 7 | Stab@99        | k100=227
+  [alpha=0.25] #07: trans=  13, sets=14 | Stab@132       | k100=316
+  [alpha=0.25] #08: trans=  27, sets=21 | Stab@196       | k100=375
+  [alpha=0.25] #09: trans=   9, sets= 8 | Stab@83        | k100=293
+  [alpha=0.25] #10: trans=  13, sets=14 | Stab@50        | k100=226
+  [alpha=0.25] #11: trans=   9, sets=10 | Stab@81        | k100=222
+  [alpha=0.25] #12: trans=   9, sets= 9 | Stab@50        | k100=248
+  [alpha=0.25] #15: trans=  18, sets=16 | Stab@141       | k100=560
+  [alpha=0.25] #16: trans=  13, sets=13 | Stab@77        | k100=542
+  [alpha=0.25] #18: trans=  34, sets=19 | Stab@323       | k100=868
+  [alpha=0.25] #19: trans=   9, sets=10 | Stab@42        | k100=231
+  [alpha=0.25] #20: trans=  12, sets=12 | Stab@51        | r=6.8e-04
+  [alpha=0.25] #21: trans=  17, sets=13 | Stab@117       | k100=523
+  [alpha=0.25] #22: trans=  49, sets=17 | Stab@888       | k100=2329
+  [alpha=0.25] #24: trans=  28, sets=24 | Stab@170       | r=1.2e-03
+  [alpha=0.25] #26: trans=   7, sets= 7 | Stab@135       | k100=353
+  [alpha=0.25] #27: trans=  11, sets=10 | Stab@69        | k100=326
+  [alpha=0.25] #28: trans=   9, sets= 9 | Stab@55        | k100=199
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1/scratch/run_task54_single_alpha.py", line 284, in <module>
+    main()
+  File "/home/shoon/cts_e1/scratch/run_task54_single_alpha.py", line 243, in main
+    res = evaluate_math500_sample(bb, tok, prompt_str, gold, max_tokens=512, device=device)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/scratch/run_task54_single_alpha.py", line 116, in evaluate_math500_sample
+    out = bb.cg.generate(
+          ^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1968, in __getattr__
+    raise AttributeError(
+AttributeError: 'GemmaCTSBackbone' object has no attribute 'model'

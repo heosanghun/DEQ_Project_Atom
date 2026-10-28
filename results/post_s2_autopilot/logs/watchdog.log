@@ -1,0 +1,713 @@
+[watchdog 20:28:26] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 20:28:27] OK: wave2_recent log_stale=116s prob=468/500
+[watchdog 20:38:28] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 20:38:33] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 56980
+[launcher] tail: Get-Content resul
+[watchdog 20:48:34] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 20:48:37] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 43972
+[launcher] tail: Get-Content resul
+[watchdog 20:58:38] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 20:58:41] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 67516
+[launcher] tail: Get-Content resul
+[watchdog 21:08:42] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:08:46] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 67020
+[launcher] tail: Get-Content resul
+[watchdog 21:18:47] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:18:50] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 65084
+[launcher] tail: Get-Content resul
+[watchdog 21:28:51] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:28:54] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 57972
+[launcher] tail: Get-Content resul
+[watchdog 21:38:54] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:38:58] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 66888
+[launcher] tail: Get-Content resul
+[watchdog 21:48:59] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:49:02] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 53004
+[launcher] tail: Get-Content resul
+[watchdog 21:59:03] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 21:59:05] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 4880
+[launcher] tail: Get-Content result
+[watchdog 22:09:06] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 22:09:09] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 29980
+[launcher] tail: Get-Content resul
+[watchdog 22:19:10] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 22:19:14] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 2780
+[launcher] tail: Get-Content result
+[watchdog 22:29:15] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 22:29:18] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 65720
+[launcher] tail: Get-Content resul
+[watchdog 22:39:19] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 22:39:22] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 39988
+[launcher] tail: Get-Content resul
+[watchdog 22:49:23] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 22:49:26] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 35812
+[launcher] tail: Get-Content resul
+[watchdog 22:59:52] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:00:06] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 63808
+[launcher] tail: Get-Content resul
+[watchdog 23:10:07] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:10:11] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 42128
+[launcher] tail: Get-Content resul
+[watchdog 23:20:11] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:20:15] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 49604
+[launcher] tail: Get-Content resul
+[watchdog 23:30:16] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:30:19] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 64072
+[launcher] tail: Get-Content resul
+[watchdog 23:40:20] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:40:24] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 68208
+[launcher] tail: Get-Content resul
+[watchdog 23:50:25] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 23:50:29] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 55404
+[launcher] tail: Get-Content resul
+[watchdog 00:00:29] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:00:33] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 68552
+[launcher] tail: Get-Content resul
+[watchdog 00:10:34] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:10:38] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 28624
+[launcher] tail: Get-Content resul
+[watchdog 00:20:39] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:20:42] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 41320
+[launcher] tail: Get-Content resul
+[watchdog 00:30:43] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:30:46] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 55716
+[launcher] tail: Get-Content resul
+[watchdog 00:40:47] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:40:51] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 52176
+[launcher] tail: Get-Content resul
+[watchdog 00:50:52] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 00:50:55] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 66912
+[launcher] tail: Get-Content resul
+[watchdog 01:00:56] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:01:00] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 55016
+[launcher] tail: Get-Content resul
+[watchdog 01:11:01] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:11:04] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 67828
+[launcher] tail: Get-Content resul
+[watchdog 01:21:05] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:21:09] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 16624
+[launcher] tail: Get-Content resul
+[watchdog 01:31:09] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:31:13] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 68880
+[launcher] tail: Get-Content resul
+[watchdog 01:41:14] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:41:17] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 32816
+[launcher] tail: Get-Content resul
+[watchdog 01:51:18] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 01:51:22] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 69016
+[launcher] tail: Get-Content resul
+[watchdog 02:01:22] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:01:25] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 54364
+[launcher] tail: Get-Content resul
+[watchdog 02:11:26] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:11:30] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 50560
+[launcher] tail: Get-Content resul
+[watchdog 02:21:31] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:21:34] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 67776
+[launcher] tail: Get-Content resul
+[watchdog 02:31:35] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:31:38] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 25300
+[launcher] tail: Get-Content resul
+[watchdog 02:41:39] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:41:42] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 45696
+[launcher] tail: Get-Content resul
+[watchdog 02:51:43] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 02:51:47] launcher rc=0 [launcher] starting detached post_s2_autopilot.py ...
+[launcher] status -> D:\AI\cts\results\post_s2_autopilot\autopilot_status.json
+[launcher] autopilot PID = 31368
+[launcher] tail: Get-Content resul
+[watchdog 03:01:50] RESTART autopilot: autopilot_dead_post_wave2
+[watchdog 15:55:04] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 15:55:05] OK: wave2_recent log_stale=156s prob=635/1319
+[watchdog 16:05:06] OK: wave2_recent log_stale=35s prob=638/1319
+[watchdog 16:15:07] OK: wave2_recent log_stale=175s prob=640/1319
+[watchdog 16:25:08] OK: wave2_recent log_stale=84s prob=643/1319
+[watchdog 16:35:09] OK: wave2_recent log_stale=34s prob=646/1319
+[watchdog 16:45:10] OK: wave2_recent log_stale=151s prob=648/1319
+[watchdog 16:55:12] OK: wave2_recent log_stale=32s prob=651/1319
+[watchdog 17:05:17] OK: wave2_recent log_stale=196s prob=653/1319
+[watchdog 17:15:18] OK: wave2_recent log_stale=92s prob=656/1319
+[watchdog 17:25:19] OK: wave2_recent log_stale=214s prob=658/1319
+[watchdog 17:35:20] OK: wave2_recent log_stale=81s prob=661/1319
+[watchdog 17:45:21] OK: wave2_recent log_stale=231s prob=663/1319
+[watchdog 17:55:22] OK: wave2_recent log_stale=109s prob=666/1319
+[watchdog 18:05:23] OK: wave2_recent log_stale=22s prob=669/1319
+[watchdog 18:15:24] OK: wave2_recent log_stale=137s prob=671/1319
+[watchdog 18:25:25] OK: wave2_recent log_stale=43s prob=674/1319
+[watchdog 18:35:26] OK: wave2_recent log_stale=157s prob=676/1319
+[watchdog 18:45:27] OK: wave2_recent log_stale=50s prob=679/1319
+[watchdog 18:55:28] OK: wave2_recent log_stale=215s prob=681/1319
+[watchdog 19:05:29] OK: wave2_recent log_stale=103s prob=684/1319
+[watchdog 19:15:31] OK: wave2_recent log_stale=2s prob=687/1319
+[watchdog 19:25:32] OK: wave2_recent log_stale=115s prob=689/1319
+[watchdog 19:35:33] OK: wave2_recent log_stale=243s prob=691/1319
+[watchdog 19:45:34] OK: wave2_recent log_stale=149s prob=694/1319
+[watchdog 19:55:35] OK: wave2_recent log_stale=88s prob=697/1319
+[watchdog 20:05:36] OK: wave2_recent log_stale=4s prob=700/1319
+[watchdog 20:15:37] OK: wave2_recent log_stale=145s prob=702/1319
+[watchdog 20:25:38] OK: wave2_recent log_stale=50s prob=705/1319
+[watchdog 20:35:39] OK: wave2_recent log_stale=222s prob=707/1319
+[watchdog 20:45:40] OK: wave2_recent log_stale=122s prob=710/1319
+[watchdog 20:55:41] OK: wave2_recent log_stale=10s prob=713/1319
+[watchdog 21:05:42] OK: wave2_recent log_stale=141s prob=715/1319
+[watchdog 21:15:43] OK: wave2_recent log_stale=59s prob=718/1319
+[watchdog 21:25:45] OK: wave2_recent log_stale=213s prob=720/1319
+[watchdog 21:35:46] OK: wave2_recent log_stale=128s prob=723/1319
+[watchdog 21:45:47] OK: wave2_recent log_stale=16s prob=726/1319
+[watchdog 21:55:48] OK: wave2_recent log_stale=137s prob=728/1319
+[watchdog 22:05:49] OK: wave2_recent log_stale=31s prob=731/1319
+[watchdog 22:15:50] OK: wave2_recent log_stale=153s prob=733/1319
+[watchdog 22:25:51] OK: wave2_recent log_stale=31s prob=736/1319
+[watchdog 22:35:52] OK: wave2_recent log_stale=164s prob=738/1319
+[watchdog 22:45:54] OK: wave2_recent log_stale=136s prob=741/1319
+[watchdog 22:55:55] OK: wave2_recent log_stale=72s prob=744/1319
+[watchdog 23:05:56] OK: wave2_recent log_stale=201s prob=746/1319
+[watchdog 23:15:57] OK: wave2_recent log_stale=115s prob=749/1319
+[watchdog 23:25:58] OK: wave2_recent log_stale=231s prob=751/1319
+[watchdog 23:35:59] OK: wave2_recent log_stale=153s prob=754/1319
+[watchdog 23:45:59] OK: wave2_recent log_stale=83s prob=757/1319
+[watchdog 23:56:00] OK: wave2_recent log_stale=36s prob=760/1319
+[watchdog 00:06:01] OK: wave2_recent log_stale=156s prob=762/1319
+[watchdog 00:16:02] OK: wave2_recent log_stale=30s prob=765/1319
+[watchdog 00:26:03] OK: wave2_recent log_stale=203s prob=767/1319
+[watchdog 00:36:04] OK: wave2_recent log_stale=92s prob=770/1319
+[watchdog 00:46:05] OK: wave2_recent log_stale=214s prob=772/1319
+[watchdog 00:56:06] OK: wave2_recent log_stale=107s prob=775/1319
+[watchdog 01:06:07] OK: wave2_recent log_stale=4s prob=778/1319
+[watchdog 01:16:08] OK: wave2_recent log_stale=134s prob=780/1319
+[watchdog 01:26:09] OK: wave2_recent log_stale=63s prob=783/1319
+[watchdog 01:36:10] OK: wave2_recent log_stale=222s prob=785/1319
+[watchdog 01:46:11] OK: wave2_recent log_stale=146s prob=788/1319
+[watchdog 01:56:12] OK: wave2_recent log_stale=45s prob=791/1319
+[watchdog 02:06:14] OK: wave2_recent log_stale=197s prob=793/1319
+[watchdog 02:16:15] OK: wave2_recent log_stale=87s prob=796/1319
+[watchdog 02:26:16] OK: wave2_recent log_stale=10s prob=799/1319
+[watchdog 02:36:17] OK: wave2_recent log_stale=158s prob=801/1319
+[watchdog 02:46:17] OK: wave2_recent log_stale=34s prob=804/1319
+[watchdog 02:56:18] OK: wave2_recent log_stale=158s prob=806/1319
+[watchdog 03:06:19] OK: wave2_recent log_stale=37s prob=809/1319
+[watchdog 03:16:22] OK: wave2_recent log_stale=196s prob=811/1319
+[watchdog 03:26:23] OK: wave2_recent log_stale=101s prob=814/1319
+[watchdog 03:36:24] OK: wave2_recent log_stale=235s prob=816/1319
+[watchdog 03:46:26] OK: wave2_recent log_stale=123s prob=819/1319
+[watchdog 03:56:30] OK: wave2_recent log_stale=245s prob=821/1319
+[watchdog 04:06:31] OK: wave2_recent log_stale=167s prob=824/1319
+[watchdog 04:16:32] OK: wave2_recent log_stale=75s prob=827/1319
+[watchdog 04:26:33] OK: wave2_recent log_stale=194s prob=829/1319
+[watchdog 04:36:34] OK: wave2_recent log_stale=76s prob=832/1319
+[watchdog 04:46:36] OK: wave2_recent log_stale=193s prob=834/1319
+[watchdog 04:56:37] OK: wave2_recent log_stale=91s prob=837/1319
+[watchdog 05:06:38] OK: wave2_recent log_stale=2s prob=840/1319
+[watchdog 05:16:39] OK: wave2_recent log_stale=120s prob=842/1319
+[watchdog 05:26:40] OK: wave2_recent log_stale=26s prob=845/1319
+[watchdog 05:36:40] OK: wave2_recent log_stale=163s prob=847/1319
+[watchdog 05:46:41] OK: wave2_recent log_stale=48s prob=850/1319
+[watchdog 05:56:42] OK: wave2_recent log_stale=166s prob=852/1319
+[watchdog 06:06:43] OK: wave2_recent log_stale=39s prob=855/1319
+[watchdog 06:16:44] OK: wave2_recent log_stale=199s prob=857/1319
+[watchdog 06:26:45] OK: wave2_recent log_stale=139s prob=860/1319
+[watchdog 06:36:46] OK: wave2_recent log_stale=46s prob=863/1319
+[watchdog 06:46:54] OK: wave2_recent log_stale=191s prob=865/1319
+[watchdog 06:56:55] OK: wave2_recent log_stale=141s prob=868/1319
+[watchdog 07:06:56] OK: wave2_recent log_stale=21s prob=871/1319
+[watchdog 07:16:57] OK: wave2_recent log_stale=153s prob=873/1319
+[watchdog 07:26:58] OK: wave2_recent log_stale=37s prob=876/1319
+[watchdog 07:37:00] OK: wave2_recent log_stale=154s prob=878/1319
+[watchdog 07:47:00] OK: wave2_recent log_stale=52s prob=881/1319
+[watchdog 07:57:01] OK: wave2_recent log_stale=202s prob=883/1319
+[watchdog 08:07:03] OK: wave2_recent log_stale=94s prob=886/1319
+[watchdog 08:17:04] OK: wave2_recent log_stale=236s prob=888/1319
+[watchdog 08:27:05] OK: wave2_recent log_stale=107s prob=891/1319
+[watchdog 08:37:06] OK: wave2_recent log_stale=10s prob=894/1319
+[watchdog 08:47:07] OK: wave2_recent log_stale=179s prob=896/1319
+[watchdog 08:57:08] OK: wave2_recent log_stale=62s prob=899/1319
+[watchdog 09:07:09] OK: wave2_recent log_stale=235s prob=901/1319
+[watchdog 09:17:10] OK: wave2_recent log_stale=111s prob=904/1319
+[watchdog 09:27:11] OK: wave2_recent log_stale=27s prob=907/1319
+[watchdog 09:37:12] OK: wave2_recent log_stale=179s prob=909/1319
+[watchdog 09:47:13] OK: wave2_recent log_stale=89s prob=912/1319
+[watchdog 10:08:51] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 10:08:53] OK: autopilot_alive pid=28804
+[watchdog 10:18:55] OK: autopilot_alive pid=28804
+[watchdog 10:28:57] OK: autopilot_alive pid=28804
+[watchdog 10:38:58] OK: autopilot_alive pid=28804
+[watchdog 10:49:00] OK: autopilot_alive pid=28804
+[watchdog 10:59:02] OK: autopilot_alive pid=28804
+[watchdog 11:09:04] OK: autopilot_alive pid=28804
+[watchdog 11:19:05] OK: autopilot_alive pid=28804
+[watchdog 11:29:07] OK: autopilot_alive pid=28804
+[watchdog 11:39:09] OK: autopilot_alive pid=28804
+[watchdog 11:50:09] OK: wave2_recent log_stale=20s prob=27/1319
+[watchdog 12:01:09] OK: wave2_recent log_stale=65s prob=30/1319
+[watchdog 12:12:10] OK: wave2_recent log_stale=89s prob=33/1319
+[watchdog 12:23:10] OK: wave2_recent log_stale=108s prob=36/1319
+[watchdog 11:00:52] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 11:00:54] RESTART autopilot: wave2_stalled stale=1356min ap=True ev=False prob=37/1319
+[watchdog 11:00:56] kill post_s2_autopilot pid=18984 (wave2_stalled stale=1356min ap=True ev=False prob=37/1319)
+[watchdog 14:24:37] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 14:24:38] OK: eval_alive pid=28676 prob=0/0 log_stale=0s
+[watchdog 14:34:41] OK: eval_alive pid=28676 prob=1/50 log_stale=98s
+[watchdog 14:44:43] OK: eval_alive pid=28676 prob=3/50 log_stale=157s
+[watchdog 14:54:46] OK: eval_alive pid=28676 prob=5/50 log_stale=206s
+[watchdog 15:05:30] OK: eval_alive pid=28676 prob=8/50 log_stale=16s
+[watchdog 15:24:29] OK: wave2_recent log_stale=55s prob=11/50
+[watchdog 15:34:32] OK: eval_alive pid=28676 prob=13/50 log_stale=103s
+[watchdog 15:44:34] OK: eval_alive pid=28676 prob=15/50 log_stale=167s
+[watchdog 15:55:35] OK: wave2_recent log_stale=82s prob=18/50
+[watchdog 16:06:35] OK: wave2_recent log_stale=255s prob=20/50
+[watchdog 16:17:36] OK: wave2_recent log_stale=121s prob=23/50
+[watchdog 16:28:36] OK: wave2_recent log_stale=42s prob=26/50
+[watchdog 16:39:36] OK: wave2_recent log_stale=207s prob=28/50
+[watchdog 16:50:37] OK: wave2_recent log_stale=147s prob=31/50
+[watchdog 17:01:08] OK: wave2_recent log_stale=237s prob=33/50
+[watchdog 17:12:09] OK: wave2_recent log_stale=82s prob=36/50
+[watchdog 17:23:09] OK: wave2_recent log_stale=10s prob=39/50
+[watchdog 17:34:10] OK: wave2_recent log_stale=201s prob=41/50
+[watchdog 17:45:10] OK: wave2_recent log_stale=123s prob=44/50
+[watchdog 17:55:13] OK: wave2_recent log_stale=187s prob=46/50
+[watchdog 18:06:13] OK: wave2_recent log_stale=31s prob=49/50
+[watchdog 18:17:13] OK: wave2_recent log_stale=42s prob=1/50
+[watchdog 18:28:14] OK: wave2_recent log_stale=42s prob=4/50
+[watchdog 18:39:14] OK: wave2_recent log_stale=3s prob=7/50
+[watchdog 18:50:15] OK: wave2_recent log_stale=219s prob=9/50
+[watchdog 19:01:15] OK: wave2_recent log_stale=176s prob=12/50
+[watchdog 19:12:15] OK: wave2_recent log_stale=169s prob=15/50
+[watchdog 19:23:16] OK: wave2_recent log_stale=167s prob=18/50
+[watchdog 19:34:16] OK: wave2_recent log_stale=128s prob=21/50
+[watchdog 19:45:16] OK: wave2_recent log_stale=100s prob=24/50
+[watchdog 19:56:16] OK: wave2_recent log_stale=96s prob=27/50
+[watchdog 20:07:16] OK: wave2_recent log_stale=110s prob=30/50
+[watchdog 20:18:17] OK: wave2_recent log_stale=108s prob=33/50
+[watchdog 20:29:17] OK: wave2_recent log_stale=112s prob=36/50
+[watchdog 20:40:17] OK: wave2_recent log_stale=92s prob=39/50
+[watchdog 20:51:17] OK: wave2_recent log_stale=100s prob=42/50
+[watchdog 21:02:18] OK: wave2_recent log_stale=64s prob=45/50
+[watchdog 21:13:18] OK: wave2_recent log_stale=18s prob=48/50
+[watchdog 21:24:18] OK: wave2_recent log_stale=114s prob=0/0
+[watchdog 21:34:20] OK: eval_alive pid=28676 prob=2/30 log_stale=20s
+[watchdog 21:44:23] OK: eval_alive pid=28676 prob=3/30 log_stale=275s
+[watchdog 21:54:25] OK: eval_alive pid=28676 prob=5/30 log_stale=324s
+[watchdog 22:04:27] OK: eval_alive pid=28676 prob=7/30 log_stale=231s
+[watchdog 22:14:29] OK: eval_alive pid=28676 prob=9/30 log_stale=142s
+[watchdog 22:24:31] OK: eval_alive pid=28676 prob=11/30 log_stale=69s
+[watchdog 22:34:33] OK: eval_alive pid=28676 prob=12/30 log_stale=324s
+[watchdog 22:44:35] OK: eval_alive pid=28676 prob=14/30 log_stale=247s
+[watchdog 22:54:37] OK: eval_alive pid=28676 prob=16/30 log_stale=172s
+[watchdog 23:04:39] OK: eval_alive pid=28676 prob=18/30 log_stale=104s
+[watchdog 23:14:41] OK: eval_alive pid=28676 prob=20/30 log_stale=124s
+[watchdog 23:24:43] OK: eval_alive pid=28676 prob=22/30 log_stale=39s
+[watchdog 23:34:44] OK: eval_alive pid=28676 prob=23/30 log_stale=298s
+[watchdog 23:44:46] OK: eval_alive pid=28676 prob=25/30 log_stale=213s
+[watchdog 23:54:48] OK: eval_alive pid=28676 prob=27/30 log_stale=126s
+[watchdog 00:04:50] OK: eval_alive pid=28676 prob=29/30 log_stale=37s
+[watchdog 00:14:53] OK: eval_alive pid=28676 prob=0/0 log_stale=161s
+[watchdog 00:24:55] OK: eval_alive pid=28676 prob=3/50 log_stale=30s
+[watchdog 00:34:57] OK: eval_alive pid=28676 prob=5/50 log_stale=151s
+[watchdog 00:44:59] OK: eval_alive pid=28676 prob=7/50 log_stale=227s
+[watchdog 00:55:01] OK: eval_alive pid=28676 prob=10/50 log_stale=13s
+[watchdog 01:05:03] OK: eval_alive pid=28676 prob=12/50 log_stale=86s
+[watchdog 01:15:05] OK: eval_alive pid=28676 prob=14/50 log_stale=157s
+[watchdog 01:25:07] OK: eval_alive pid=28676 prob=17/50 log_stale=101s
+[watchdog 01:35:09] OK: eval_alive pid=28676 prob=19/50 log_stale=155s
+[watchdog 01:45:10] OK: eval_alive pid=28676 prob=21/50 log_stale=233s
+[watchdog 01:55:12] OK: eval_alive pid=28676 prob=24/50 log_stale=91s
+[watchdog 02:05:14] OK: eval_alive pid=28676 prob=26/50 log_stale=141s
+[watchdog 02:15:17] OK: eval_alive pid=28676 prob=29/50 log_stale=5s
+[watchdog 02:25:19] OK: eval_alive pid=28676 prob=31/50 log_stale=140s
+[watchdog 02:35:21] OK: eval_alive pid=28676 prob=33/50 log_stale=207s
+[watchdog 02:45:22] OK: eval_alive pid=28676 prob=36/50 log_stale=15s
+[watchdog 02:55:24] OK: eval_alive pid=28676 prob=38/50 log_stale=89s
+[watchdog 03:05:27] OK: eval_alive pid=28676 prob=40/50 log_stale=228s
+[watchdog 03:15:29] OK: eval_alive pid=28676 prob=43/50 log_stale=95s
+[watchdog 03:25:31] OK: eval_alive pid=28676 prob=45/50 log_stale=160s
+[watchdog 03:35:33] OK: eval_alive pid=28676 prob=47/50 log_stale=238s
+[watchdog 03:45:36] OK: eval_alive pid=28676 prob=0/0 log_stale=107s
+[watchdog 03:55:39] OK: eval_alive pid=28676 prob=2/50 log_stale=120s
+[watchdog 04:05:42] OK: eval_alive pid=28676 prob=5/50 log_stale=48s
+[watchdog 04:15:44] OK: eval_alive pid=28676 prob=7/50 log_stale=187s
+[watchdog 04:25:46] OK: eval_alive pid=28676 prob=10/50 log_stale=106s
+[watchdog 04:35:48] OK: eval_alive pid=28676 prob=13/50 log_stale=26s
+[watchdog 11:24:08] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 11:24:09] OK: eval_alive pid=29712 prob=0/0 log_stale=1s
+[watchdog 11:34:12] OK: eval_alive pid=29712 prob=1/50 log_stale=98s
+[watchdog 11:44:14] OK: eval_alive pid=29712 prob=3/50 log_stale=224s
+[watchdog 11:54:17] OK: eval_alive pid=29712 prob=6/50 log_stale=134s
+[watchdog 12:04:19] OK: eval_alive pid=29712 prob=9/50 log_stale=69s
+[watchdog 12:14:21] OK: eval_alive pid=29712 prob=12/50 log_stale=47s
+[watchdog 12:24:23] OK: eval_alive pid=29712 prob=14/50 log_stale=203s
+[watchdog 12:34:25] OK: eval_alive pid=29712 prob=17/50 log_stale=167s
+[watchdog 12:44:27] OK: eval_alive pid=29712 prob=20/50 log_stale=114s
+[watchdog 12:54:29] OK: eval_alive pid=29712 prob=23/50 log_stale=42s
+[watchdog 13:04:31] OK: eval_alive pid=29712 prob=25/50 log_stale=217s
+[watchdog 13:14:33] OK: eval_alive pid=29712 prob=28/50 log_stale=130s
+[watchdog 13:24:35] OK: eval_alive pid=29712 prob=31/50 log_stale=85s
+[watchdog 13:34:37] OK: eval_alive pid=29712 prob=34/50 log_stale=29s
+[watchdog 13:44:39] OK: eval_alive pid=29712 prob=36/50 log_stale=188s
+[watchdog 13:54:41] OK: eval_alive pid=29712 prob=39/50 log_stale=123s
+[watchdog 14:04:43] OK: eval_alive pid=29712 prob=42/50 log_stale=80s
+[watchdog 14:14:45] OK: eval_alive pid=29712 prob=45/50 log_stale=27s
+[watchdog 14:24:47] OK: eval_alive pid=29712 prob=47/50 log_stale=178s
+[watchdog 14:35:15] OK: eval_alive pid=29712 prob=0/0 log_stale=130s
+[watchdog 14:45:18] OK: eval_alive pid=29712 prob=2/50 log_stale=164s
+[watchdog 14:55:22] OK: eval_alive pid=29712 prob=5/50 log_stale=147s
+[watchdog 15:05:24] OK: eval_alive pid=29712 prob=8/50 log_stale=136s
+[watchdog 15:15:26] OK: eval_alive pid=29712 prob=11/50 log_stale=98s
+[watchdog 15:25:28] OK: eval_alive pid=29712 prob=14/50 log_stale=75s
+[watchdog 15:35:30] OK: eval_alive pid=29712 prob=17/50 log_stale=63s
+[watchdog 15:45:33] OK: eval_alive pid=29712 prob=20/50 log_stale=53s
+[watchdog 15:55:35] OK: eval_alive pid=29712 prob=23/50 log_stale=31s
+[watchdog 16:06:35] OK: wave2_recent log_stale=68s prob=26/50
+[watchdog 16:17:36] OK: wave2_recent log_stale=109s prob=29/50
+[watchdog 16:28:36] OK: wave2_recent log_stale=157s prob=32/50
+[watchdog 16:39:36] OK: wave2_recent log_stale=208s prob=35/50
+[watchdog 16:50:37] OK: wave2_recent log_stale=37s prob=39/50
+[watchdog 17:01:37] OK: wave2_recent log_stale=72s prob=42/50
+[watchdog 17:12:37] OK: wave2_recent log_stale=89s prob=45/50
+[watchdog 17:23:37] OK: wave2_recent log_stale=104s prob=48/50
+[watchdog 17:34:38] OK: wave2_recent log_stale=222s prob=0/0
+[watchdog 17:45:39] OK: wave2_recent log_stale=110s prob=3/30
+[watchdog 17:56:40] OK: wave2_recent log_stale=57s prob=6/30
+[watchdog 18:07:40] OK: wave2_recent log_stale=201s prob=8/30
+[watchdog 18:18:41] OK: wave2_recent log_stale=80s prob=11/30
+[watchdog 18:29:13] OK: wave2_recent log_stale=196s prob=13/30
+[watchdog 18:40:13] OK: wave2_recent log_stale=79s prob=16/30
+[watchdog 18:51:14] OK: wave2_recent log_stale=227s prob=18/30
+[watchdog 19:02:14] OK: wave2_recent log_stale=149s prob=21/30
+[watchdog 19:13:15] OK: wave2_recent log_stale=32s prob=24/30
+[watchdog 19:24:15] OK: wave2_recent log_stale=177s prob=26/30
+[watchdog 19:35:16] OK: wave2_recent log_stale=35s prob=29/30
+[watchdog 19:46:16] OK: wave2_recent log_stale=105s prob=1/50
+[watchdog 19:57:17] OK: wave2_recent log_stale=127s prob=4/50
+[watchdog 20:08:17] OK: wave2_recent log_stale=122s prob=7/50
+[watchdog 20:19:17] OK: wave2_recent log_stale=122s prob=10/50
+[watchdog 20:30:18] OK: wave2_recent log_stale=111s prob=13/50
+[watchdog 20:41:18] OK: wave2_recent log_stale=116s prob=16/50
+[watchdog 20:52:18] OK: wave2_recent log_stale=139s prob=19/50
+[watchdog 21:03:19] OK: wave2_recent log_stale=150s prob=22/50
+[watchdog 21:14:19] OK: wave2_recent log_stale=158s prob=25/50
+[watchdog 21:25:19] OK: wave2_recent log_stale=148s prob=28/50
+[watchdog 21:36:20] OK: wave2_recent log_stale=205s prob=31/50
+[watchdog 21:46:22] OK: eval_alive pid=29712 prob=34/50 log_stale=146s
+[watchdog 21:56:24] OK: eval_alive pid=29712 prob=37/50 log_stale=92s
+[watchdog 22:06:26] OK: eval_alive pid=29712 prob=40/50 log_stale=63s
+[watchdog 22:16:28] OK: eval_alive pid=29712 prob=43/50 log_stale=15s
+[watchdog 22:26:31] OK: eval_alive pid=29712 prob=45/50 log_stale=159s
+[watchdog 22:36:33] OK: eval_alive pid=29712 prob=48/50 log_stale=85s
+[watchdog 22:46:35] OK: eval_alive pid=29712 prob=0/0 log_stale=130s
+[watchdog 22:56:38] OK: eval_alive pid=29712 prob=3/50 log_stale=99s
+[watchdog 23:06:40] OK: eval_alive pid=29712 prob=6/50 log_stale=91s
+[watchdog 23:16:42] OK: eval_alive pid=29712 prob=9/50 log_stale=61s
+[watchdog 23:27:43] OK: wave2_recent log_stale=95s prob=12/50
+[watchdog 23:38:43] OK: wave2_recent log_stale=132s prob=15/50
+[watchdog 23:49:44] OK: wave2_recent log_stale=185s prob=18/50
+[watchdog 00:00:44] OK: wave2_recent log_stale=2s prob=22/50
+[watchdog 00:11:44] OK: wave2_recent log_stale=61s prob=25/50
+[watchdog 00:22:45] OK: wave2_recent log_stale=82s prob=28/50
+[watchdog 00:33:45] OK: wave2_recent log_stale=131s prob=31/50
+[watchdog 00:44:46] OK: wave2_recent log_stale=170s prob=34/50
+[watchdog 00:55:46] OK: wave2_recent log_stale=5s prob=38/50
+[watchdog 01:06:46] OK: wave2_recent log_stale=39s prob=41/50
+[watchdog 01:17:47] OK: wave2_recent log_stale=63s prob=44/50
+[watchdog 01:28:47] OK: wave2_recent log_stale=80s prob=47/50
+[watchdog 01:39:49] OK: wave2_recent log_stale=118s prob=0/0
+[watchdog 01:50:51] OK: wave2_recent log_stale=128s prob=2/30
+[watchdog 02:01:51] OK: wave2_recent log_stale=72s prob=5/30
+[watchdog 02:12:51] OK: wave2_recent log_stale=214s prob=7/30
+[watchdog 02:23:52] OK: wave2_recent log_stale=110s prob=10/30
+[watchdog 02:34:52] OK: wave2_recent log_stale=8s prob=13/30
+[watchdog 02:45:53] OK: wave2_recent log_stale=148s prob=15/30
+[watchdog 02:56:54] OK: wave2_recent log_stale=41s prob=18/30
+[watchdog 03:07:54] OK: wave2_recent log_stale=245s prob=20/30
+[watchdog 03:18:55] OK: wave2_recent log_stale=131s prob=23/30
+[watchdog 03:29:55] OK: wave2_recent log_stale=14s prob=26/30
+[watchdog 03:40:55] OK: wave2_recent log_stale=161s prob=28/30
+[watchdog 03:51:56] OK: wave2_recent log_stale=174s prob=0/0
+[watchdog 04:02:56] OK: wave2_recent log_stale=187s prob=3/50
+[watchdog 04:13:56] OK: wave2_recent log_stale=212s prob=6/50
+[watchdog 04:24:57] OK: wave2_recent log_stale=204s prob=9/50
+[watchdog 04:35:57] OK: wave2_recent log_stale=186s prob=12/50
+[watchdog 04:46:58] OK: wave2_recent log_stale=196s prob=15/50
+[watchdog 04:57:58] OK: wave2_recent log_stale=7s prob=19/50
+[watchdog 05:08:58] OK: wave2_recent log_stale=216s prob=21/50
+[watchdog 05:19:59] OK: wave2_recent log_stale=8s prob=25/50
+[watchdog 05:30:59] OK: wave2_recent log_stale=208s prob=27/50
+[watchdog 05:42:00] OK: wave2_recent log_stale=34s prob=31/50
+[watchdog 05:53:00] OK: wave2_recent log_stale=17s prob=34/50
+[watchdog 06:04:01] OK: wave2_recent log_stale=24s prob=37/50
+[watchdog 06:15:01] OK: wave2_recent log_stale=41s prob=40/50
+[watchdog 06:26:02] OK: wave2_recent log_stale=47s prob=43/50
+[watchdog 06:37:02] OK: wave2_recent log_stale=38s prob=46/50
+[watchdog 06:48:02] OK: wave2_recent log_stale=48s prob=49/50
+[watchdog 06:59:03] OK: wave2_recent log_stale=162s prob=1/50
+[watchdog 07:10:03] OK: wave2_recent log_stale=208s prob=4/50
+[watchdog 07:21:03] OK: wave2_recent log_stale=60s prob=8/50
+[watchdog 07:32:04] OK: wave2_recent log_stale=80s prob=11/50
+[watchdog 07:43:04] OK: wave2_recent log_stale=124s prob=14/50
+[watchdog 07:54:05] OK: wave2_recent log_stale=162s prob=17/50
+[watchdog 08:05:05] OK: wave2_recent log_stale=205s prob=20/50
+[watchdog 08:16:05] OK: wave2_recent log_stale=34s prob=24/50
+[watchdog 08:27:06] OK: wave2_recent log_stale=66s prob=27/50
+[watchdog 08:38:06] OK: wave2_recent log_stale=111s prob=30/50
+[watchdog 08:49:06] OK: wave2_recent log_stale=141s prob=33/50
+[watchdog 09:00:06] OK: wave2_recent log_stale=181s prob=36/50
+[watchdog 09:11:06] OK: wave2_recent log_stale=1s prob=40/50
+[watchdog 09:22:07] OK: wave2_recent log_stale=47s prob=43/50
+[watchdog 09:33:07] OK: wave2_recent log_stale=70s prob=46/50
+[watchdog 09:44:07] OK: wave2_recent log_stale=123s prob=49/50
+[watchdog 09:55:20] OK: wave2_recent log_stale=205s prob=1/30
+[watchdog 10:04:46] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 10:04:48] OK: eval_alive pid=37996 prob=0/0 log_stale=2s
+[watchdog 10:14:51] OK: eval_alive pid=37996 prob=0/0 log_stale=92s
+[watchdog 10:24:54] OK: eval_alive pid=37996 prob=2/30 log_stale=201s
+[watchdog 10:34:55] OK: eval_alive pid=37996 prob=4/30 log_stale=116s
+[watchdog 10:45:56] OK: wave2_recent log_stale=99s prob=6/30
+[watchdog 10:56:56] OK: wave2_recent log_stale=75s prob=8/30
+[watchdog 11:07:56] OK: wave2_recent log_stale=39s prob=10/30
+[watchdog 11:18:57] OK: wave2_recent log_stale=3s prob=12/30
+[watchdog 11:29:57] OK: wave2_recent log_stale=307s prob=13/30
+[watchdog 11:40:57] OK: wave2_recent log_stale=288s prob=15/30
+[watchdog 11:51:58] OK: wave2_recent log_stale=260s prob=17/30
+[watchdog 12:02:58] OK: wave2_recent log_stale=211s prob=19/30
+[watchdog 12:13:59] OK: wave2_recent log_stale=39s prob=22/30
+[watchdog 12:24:59] OK: wave2_recent log_stale=356s prob=23/30
+[watchdog 12:36:00] OK: wave2_recent log_stale=327s prob=25/30
+[watchdog 12:47:00] OK: wave2_recent log_stale=302s prob=27/30
+[watchdog 12:58:00] OK: wave2_recent log_stale=63s prob=0/0
+[watchdog 13:09:00] OK: wave2_recent log_stale=45s prob=0/0
+[watchdog 13:20:00] OK: wave2_recent log_stale=31s prob=0/0
+[watchdog 13:31:00] OK: wave2_recent log_stale=40s prob=0/0
+[watchdog 13:42:00] OK: wave2_recent log_stale=623s prob=0/0
+[watchdog 13:53:01] RESTART autopilot: wave2_stalled stale=21min ap=False ev=False prob=0/0
+[watchdog 13:55:03] launcher timeout
+[watchdog 14:06:03] RESTART autopilot: wave2_stalled stale=34min ap=False ev=False prob=0/0
+[watchdog 14:08:05] launcher timeout
+[watchdog 14:19:05] RESTART autopilot: wave2_stalled stale=47min ap=False ev=False prob=0/0
+[watchdog 14:21:07] launcher timeout
+[watchdog 14:32:07] RESTART autopilot: wave2_stalled stale=60min ap=False ev=False prob=0/0
+[watchdog 14:34:09] launcher timeout
+[watchdog 14:45:09] RESTART autopilot: wave2_stalled stale=74min ap=False ev=False prob=0/0
+[watchdog 14:47:11] launcher timeout
+[watchdog 14:58:11] RESTART autopilot: wave2_stalled stale=87min ap=False ev=False prob=0/0
+[watchdog 15:00:14] launcher timeout
+[watchdog 15:10:15] RESTART autopilot: wave2_stalled stale=99min ap=False ev=False prob=0/0
+[watchdog 15:05:32] launcher timeout
+[watchdog 15:15:35] OK: wave2_recent log_stale=624s prob=0/0
+[watchdog 15:25:36] RESTART autopilot: wave2_stalled stale=20min ap=False ev=False prob=0/0
+[watchdog 15:59:43] launcher timeout
+[watchdog 16:09:45] OK: wave2_recent log_stale=661s prob=0/0
+[watchdog 16:19:46] RESTART autopilot: wave2_stalled stale=21min ap=False ev=False prob=0/0
+[watchdog 17:17:13] launcher timeout
+[watchdog 17:27:14] OK: wave2_recent log_stale=602s prob=0/0
+[watchdog 17:37:15] RESTART autopilot: wave2_stalled stale=20min ap=False ev=False prob=0/0
+[watchdog 20:41:01] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 20:41:03] OK: eval_alive pid=4264 prob=0/0 log_stale=4s
+[watchdog 20:51:05] OK: eval_alive pid=4264 prob=0/0 log_stale=449s
+[watchdog 21:01:07] OK: eval_alive pid=4264 prob=0/0 log_stale=258s
+[watchdog 21:11:09] OK: eval_alive pid=4264 prob=0/0 log_stale=860s
+[watchdog 21:21:10] OK: eval_alive pid=4264 prob=0/0 log_stale=534s
+[watchdog 21:31:12] OK: eval_alive pid=4264 prob=0/0 log_stale=32s
+[watchdog 21:41:14] OK: eval_alive pid=4264 prob=0/0 log_stale=634s
+[watchdog 21:51:16] OK: eval_alive pid=4264 prob=0/0 log_stale=368s
+[watchdog 22:01:18] OK: eval_alive pid=4264 prob=0/0 log_stale=969s
+[watchdog 22:11:19] OK: eval_alive pid=4264 prob=0/0 log_stale=516s
+[watchdog 22:21:21] OK: eval_alive pid=4264 prob=0/0 log_stale=34s
+[watchdog 22:31:23] OK: eval_alive pid=4264 prob=0/0 log_stale=636s
+[watchdog 22:41:24] OK: eval_alive pid=4264 prob=0/0 log_stale=218s
+[watchdog 22:51:26] OK: eval_alive pid=4264 prob=0/0 log_stale=819s
+[watchdog 23:01:28] OK: eval_alive pid=4264 prob=0/0 log_stale=412s
+[watchdog 23:11:30] OK: eval_alive pid=4264 prob=0/0 log_stale=1014s
+[watchdog 23:21:31] OK: eval_alive pid=4264 prob=0/0 log_stale=524s
+[watchdog 23:31:33] OK: eval_alive pid=4264 prob=0/0 log_stale=41s
+[watchdog 23:41:35] OK: eval_alive pid=4264 prob=0/0 log_stale=643s
+[watchdog 23:51:37] OK: eval_alive pid=4264 prob=0/0 log_stale=348s
+[watchdog 00:01:39] OK: eval_alive pid=4264 prob=0/0 log_stale=189s
+[watchdog 00:11:40] OK: eval_alive pid=4264 prob=0/0 log_stale=791s
+[watchdog 00:21:42] OK: eval_alive pid=4264 prob=0/0 log_stale=594s
+[watchdog 00:31:44] OK: eval_alive pid=4264 prob=0/0 log_stale=398s
+[watchdog 00:41:46] OK: eval_alive pid=4264 prob=0/0 log_stale=235s
+[watchdog 00:51:47] OK: eval_alive pid=4264 prob=0/0 log_stale=37s
+[watchdog 01:01:49] OK: eval_alive pid=4264 prob=0/0 log_stale=639s
+[watchdog 01:11:51] OK: eval_alive pid=4264 prob=0/0 log_stale=366s
+[watchdog 01:15:35] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 01:15:37] OK: eval_alive pid=48240 prob=0/0 log_stale=0s
+[watchdog 01:25:39] OK: eval_alive pid=48240 prob=0/0 log_stale=448s
+[watchdog 01:35:40] OK: eval_alive pid=48240 prob=0/0 log_stale=1049s
+[watchdog 01:45:42] OK: eval_alive pid=48240 prob=0/0 log_stale=582s
+[watchdog 01:55:44] OK: eval_alive pid=48240 prob=0/0 log_stale=1183s
+[watchdog 02:05:46] OK: eval_alive pid=48240 prob=0/0 log_stale=312s
+[watchdog 02:15:48] OK: eval_alive pid=48240 prob=0/0 log_stale=3s
+[watchdog 02:25:49] OK: eval_alive pid=48240 prob=0/0 log_stale=605s
+[watchdog 02:35:51] OK: eval_alive pid=48240 prob=0/0 log_stale=423s
+[watchdog 02:45:53] OK: eval_alive pid=48240 prob=0/0 log_stale=255s
+[watchdog 02:55:55] OK: eval_alive pid=48240 prob=0/0 log_stale=78s
+[watchdog 03:05:56] OK: eval_alive pid=48240 prob=0/0 log_stale=679s
+[watchdog 03:15:58] OK: eval_alive pid=48240 prob=0/0 log_stale=490s
+[watchdog 03:26:00] OK: eval_alive pid=48240 prob=0/0 log_stale=362s
+[watchdog 03:36:02] OK: eval_alive pid=48240 prob=0/0 log_stale=184s
+[watchdog 03:46:03] OK: eval_alive pid=48240 prob=0/0 log_stale=7s
+[watchdog 03:56:05] OK: eval_alive pid=48240 prob=0/0 log_stale=609s
+[watchdog 04:06:07] OK: eval_alive pid=48240 prob=0/0 log_stale=432s
+[watchdog 04:16:08] OK: eval_alive pid=48240 prob=0/0 log_stale=293s
+[watchdog 04:26:10] OK: eval_alive pid=48240 prob=0/0 log_stale=159s
+[watchdog 04:36:12] OK: eval_alive pid=48240 prob=0/0 log_stale=28s
+[watchdog 04:46:13] OK: eval_alive pid=48240 prob=0/0 log_stale=630s
+[watchdog 04:56:15] OK: eval_alive pid=48240 prob=0/0 log_stale=496s
+[watchdog 05:06:16] OK: eval_alive pid=48240 prob=0/0 log_stale=366s
+[watchdog 05:16:18] OK: eval_alive pid=48240 prob=0/0 log_stale=229s
+[watchdog 05:26:19] OK: eval_alive pid=48240 prob=0/0 log_stale=151s
+[watchdog 05:36:21] OK: eval_alive pid=48240 prob=0/0 log_stale=62s
+[watchdog 05:46:23] OK: eval_alive pid=48240 prob=0/0 log_stale=664s
+[watchdog 05:56:24] OK: eval_alive pid=48240 prob=0/0 log_stale=527s
+[watchdog 06:06:26] OK: eval_alive pid=48240 prob=0/0 log_stale=389s
+[watchdog 06:16:28] OK: eval_alive pid=48240 prob=0/0 log_stale=244s
+[watchdog 06:26:29] OK: eval_alive pid=48240 prob=0/0 log_stale=107s
+[watchdog 06:36:31] OK: eval_alive pid=48240 prob=0/0 log_stale=708s
+[watchdog 06:46:33] OK: eval_alive pid=48240 prob=0/0 log_stale=570s
+[watchdog 06:56:34] OK: eval_alive pid=48240 prob=0/0 log_stale=436s
+[watchdog 07:06:36] OK: eval_alive pid=48240 prob=0/0 log_stale=300s
+[watchdog 07:16:38] OK: eval_alive pid=48240 prob=0/0 log_stale=164s
+[watchdog 07:26:39] OK: eval_alive pid=48240 prob=0/0 log_stale=28s
+[watchdog 07:36:41] OK: eval_alive pid=48240 prob=0/0 log_stale=629s
+[watchdog 07:46:42] OK: eval_alive pid=48240 prob=0/0 log_stale=491s
+[watchdog 07:56:44] OK: eval_alive pid=48240 prob=0/0 log_stale=356s
+[watchdog 08:06:46] OK: eval_alive pid=48240 prob=0/0 log_stale=217s
+[watchdog 08:16:47] OK: eval_alive pid=48240 prob=0/0 log_stale=66s
+[watchdog 08:26:49] OK: eval_alive pid=48240 prob=0/0 log_stale=667s
+[watchdog 08:36:51] OK: eval_alive pid=48240 prob=0/0 log_stale=563s
+[watchdog 08:46:52] OK: eval_alive pid=48240 prob=0/0 log_stale=413s
+[watchdog 08:56:54] OK: eval_alive pid=48240 prob=0/0 log_stale=262s
+[watchdog 09:06:56] OK: eval_alive pid=48240 prob=0/0 log_stale=113s
+[watchdog 09:16:57] OK: eval_alive pid=48240 prob=0/0 log_stale=714s
+[watchdog 09:26:59] OK: eval_alive pid=48240 prob=0/0 log_stale=568s
+[watchdog 09:37:01] OK: eval_alive pid=48240 prob=0/0 log_stale=421s
+[watchdog 09:47:02] OK: eval_alive pid=48240 prob=0/0 log_stale=277s
+[watchdog 09:57:04] OK: eval_alive pid=48240 prob=0/0 log_stale=131s
+[watchdog 10:07:05] OK: eval_alive pid=48240 prob=0/0 log_stale=732s
+[watchdog 10:17:07] OK: eval_alive pid=48240 prob=0/0 log_stale=588s
+[watchdog 10:27:09] OK: eval_alive pid=48240 prob=0/0 log_stale=443s
+[watchdog 10:37:10] OK: eval_alive pid=48240 prob=0/0 log_stale=287s
+[watchdog 10:47:12] OK: eval_alive pid=48240 prob=0/0 log_stale=136s
+[watchdog 10:57:14] OK: eval_alive pid=48240 prob=0/0 log_stale=737s
+[watchdog 11:07:15] OK: eval_alive pid=48240 prob=0/0 log_stale=589s
+[watchdog 11:17:17] OK: eval_alive pid=48240 prob=0/0 log_stale=441s
+[watchdog 11:27:18] OK: eval_alive pid=48240 prob=0/0 log_stale=294s
+[watchdog 11:37:20] OK: eval_alive pid=48240 prob=0/0 log_stale=147s
+[watchdog 11:47:22] OK: eval_alive pid=48240 prob=0/0 log_stale=748s
+[watchdog 11:57:23] OK: eval_alive pid=48240 prob=0/0 log_stale=599s
+[watchdog 12:07:25] OK: eval_alive pid=48240 prob=0/0 log_stale=68s
+[watchdog 12:17:27] OK: eval_alive pid=48240 prob=0/0 log_stale=286s
+[watchdog 12:27:28] OK: eval_alive pid=48240 prob=0/0 log_stale=138s
+[watchdog 12:37:30] OK: eval_alive pid=48240 prob=0/0 log_stale=358s
+[watchdog 12:47:32] OK: eval_alive pid=48240 prob=0/0 log_stale=193s
+[watchdog 12:57:33] OK: eval_alive pid=48240 prob=0/0 log_stale=29s
+[watchdog 13:07:35] OK: eval_alive pid=48240 prob=0/0 log_stale=248s
+[watchdog 13:17:36] OK: eval_alive pid=48240 prob=0/0 log_stale=83s
+[watchdog 13:27:38] OK: eval_alive pid=48240 prob=0/0 log_stale=301s
+[watchdog 13:37:39] OK: eval_alive pid=48240 prob=0/0 log_stale=137s
+[watchdog 13:47:41] OK: eval_alive pid=48240 prob=0/0 log_stale=357s
+[watchdog 13:57:43] OK: eval_alive pid=48240 prob=0/0 log_stale=192s
+[watchdog 14:07:44] OK: eval_alive pid=48240 prob=0/0 log_stale=42s
+[watchdog 14:17:46] OK: eval_alive pid=48240 prob=0/0 log_stale=260s
+[watchdog 14:27:47] OK: eval_alive pid=48240 prob=0/0 log_stale=163s
+[watchdog 14:37:49] OK: eval_alive pid=48240 prob=0/0 log_stale=381s
+[watchdog 14:47:51] OK: eval_alive pid=48240 prob=0/0 log_stale=216s
+[watchdog 14:57:52] OK: eval_alive pid=48240 prob=0/0 log_stale=50s
+[watchdog 15:07:54] OK: eval_alive pid=48240 prob=0/0 log_stale=266s
+[watchdog 15:17:57] OK: eval_alive pid=48240 prob=0/0 log_stale=99s
+[watchdog 15:27:58] OK: eval_alive pid=48240 prob=0/0 log_stale=316s
+[watchdog 15:38:00] OK: eval_alive pid=48240 prob=0/0 log_stale=165s
+[watchdog 15:48:02] OK: eval_alive pid=48240 prob=0/0 log_stale=382s
+[watchdog 15:58:03] OK: eval_alive pid=48240 prob=0/0 log_stale=215s
+[watchdog 16:08:05] OK: eval_alive pid=48240 prob=0/0 log_stale=48s
+[watchdog 16:18:07] OK: eval_alive pid=48240 prob=0/0 log_stale=267s
+[watchdog 16:28:08] OK: eval_alive pid=48240 prob=0/0 log_stale=129s
+[watchdog 16:38:10] OK: eval_alive pid=48240 prob=0/0 log_stale=373s
+[watchdog 16:48:11] OK: eval_alive pid=48240 prob=0/0 log_stale=209s
+[watchdog 16:58:13] OK: eval_alive pid=48240 prob=0/0 log_stale=46s
+[watchdog 17:08:15] OK: eval_alive pid=48240 prob=0/0 log_stale=263s
+[watchdog 17:18:17] OK: eval_alive pid=48240 prob=0/0 log_stale=95s
+[watchdog 17:28:18] OK: eval_alive pid=48240 prob=0/0 log_stale=696s
+[watchdog 17:38:20] RESTART autopilot: wave2_stalled stale=22min ap=True ev=True prob=0/0
+[watchdog 17:38:21] kill run_cts_eval_full pid=48240 (wave2_stalled stale=22min ap=True ev=True prob=0/0)
+[watchdog 09:39:07] watchdog started poll=10.0min policy=autopilot_autonomous.json
+[watchdog 09:39:08] OK: wave2_recent log_stale=582s prob=0/0
+[watchdog 09:49:09] OK: wave2_recent log_stale=1183s prob=0/0
+[watchdog 09:59:10] OK: wave2_recent log_stale=1784s prob=0/0
+[watchdog 10:09:11] OK: wave2_recent log_stale=2385s prob=0/0
+[watchdog 10:19:12] OK: wave2_recent log_stale=2986s prob=0/0
+[watchdog 10:29:13] OK: wave2_recent log_stale=3587s prob=0/0
+[watchdog 10:39:14] RESTART autopilot: wave2_stalled stale=70min ap=False ev=False prob=0/0

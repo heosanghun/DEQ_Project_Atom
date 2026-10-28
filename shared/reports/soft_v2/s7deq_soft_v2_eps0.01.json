@@ -1,0 +1,77 @@
+{
+  "eps": 0.01,
+  "metric_1": {
+    "evaluated_count": 54,
+    "denominator": 54,
+    "count_lt_1e3": 24,
+    "count_lt_5e3": 45,
+    "ratio_lt_5e3": 0.8333333333333334,
+    "criterion_threshold_count": 52,
+    "criterion_met": false
+  },
+  "metric_2": {
+    "evaluated_count": 20,
+    "denominator": 20,
+    "min_cos": 0.9700384136040539,
+    "count_ge_09990": 14,
+    "count_lt_09950": 3,
+    "criterion_met": false,
+    "shift_flag": true
+  },
+  "metric_3": {
+    "evaluated_count": 74,
+    "denominator": 74,
+    "median": 0.0003569893476979169,
+    "max": 0.04761987325501783,
+    "count_lt_1e3": 41
+  },
+  "metric_4": {
+    "group_54": {
+      "mean": 0.6168518518518519,
+      "median": 0.6955,
+      "max": 0.957,
+      "last100_mean": 0.6798148148148149,
+      "last100_median": 1.0,
+      "last100_max": 1.0
+    },
+    "group_20": {
+      "mean": 0.25834999999999997,
+      "median": 0.1315,
+      "max": 0.944,
+      "last100_mean": 0.1955,
+      "last100_median": 0.0,
+      "last100_max": 1.0
+    }
+  },
+  "metric_5": {
+    "evaluated_count": 54,
+    "denominator": 54,
+    "count_lt_1e3": 0,
+    "count_lt_5e3": 13,
+    "in_boundary_count": 43
+  },
+  "candidate_assessment": {
+    "cond1_ratio_ge_95pct": false,
+    "cond2_min_cos_ge_09990": false,
+    "is_candidate": false,
+    "shift_flag": true
+  },
+  "p3_baseline_reference": {
+    "metric_1_lt_1e3": "53/54 (0.981)",
+    "metric_1_lt_5e3": "52/54 (0.963)",
+    "metric_2_min_cos": 0.9326308762296536,
+    "metric_2_ge_09990": 10,
+    "metric_2_lt_09950": 8,
+    "note": "P3 metric 1 used mask-freeze mapping; v2 metric 1 uses smooth-switch mapping."
+  },
+  "metadata": {
+    "script_path": "/home/shoon/cts_e1_s5/scripts/s7deq_soft_v2_analyze.py",
+    "script_sha256": "07d63b1e9fdce284d93216cc00586bb2f4e6223a7aee13007b650dc94ec73aec",
+    "input_pt_path": "results_s7/s7deq_soft_v2_eps0.01.pt",
+    "input_pt_sha256": "1799763c981cbb54376d732cb2151019c79302720759a3bc73b9f6f280306908",
+    "items_json_path": "configs/s6_items_74.json",
+    "items_json_sha256": "42df1f498648a57e228eca9fadb5cf10c1a0a72a78ad490acdc6821b2e5048b3",
+    "ref_pt_path": "results_s6/zstar_s6_a0.25.pt",
+    "ref_pt_sha256": "8c1d9a38eddda6b6fd7013c5bc5c0c3c85e9c2f6c44f8d12267e5169caf72026"
+  }
+}

@@ -1,0 +1,30 @@
+{
+ "C_fmt": [
+  "handoff/codex/data/gen_C.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X80P47": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/gen_X80P47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X80P47": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/genB1_X80P47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X80P49": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/gen_X80P49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X80P49": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/genB1_X80P49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X80P50": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/gen_X80P50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X80P50": [
+  "handoff/codex/INBOX/20261022-0015-x8_0-results/genB1_X80P50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ]
+}

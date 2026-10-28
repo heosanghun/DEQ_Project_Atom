@@ -1,0 +1,231 @@
+<title>CTS S7 최종 판정 보고</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single reading column (~72ch) with full-width data tables; verdict strip up top, then evidence in the order a reviewer checks it. */
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --fg:#1d2321; --muted:#5b6662; --line:#d9dfdb;
+  --accent:#1f5f74; --accent-soft:#e3eef1;
+  --ok:#1e6b45; --ok-bg:#e2f1e8; --no:#9a2f22; --no-bg:#f6e3df; --pend:#7a5a12; --pend-bg:#f5ecd6;
+  --display:"IBM Plex Sans KR","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1b2220; --fg:#e4e9e6; --muted:#9aa6a1; --line:#2e3834;
+  --accent:#7fb8c9; --accent-soft:#1f3239;
+  --ok:#8fd1ac; --ok-bg:#1d3327; --no:#f0a596; --no-bg:#3a2320; --pend:#e6c77c; --pend-bg:#36301c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1b2220; --fg:#e4e9e6; --muted:#9aa6a1; --line:#2e3834;
+  --accent:#7fb8c9; --accent-soft:#1f3239;
+  --ok:#8fd1ac; --ok-bg:#1d3327; --no:#f0a596; --no-bg:#3a2320; --pend:#e6c77c; --pend-bg:#36301c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.7}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:32px 64px}
+.col{max-width:72ch}
+h1{font-family:var(--display);font-size:1.9rem;line-height:1.25;margin:0 0 .4rem;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--display);font-size:1.25rem;margin:2.6rem 0 .8rem;padding-top:1.2rem;border-top:1px solid var(--line);text-wrap:balance}
+h3{font-family:var(--display);font-size:1.02rem;margin:1.6rem 0 .5rem}
+p{margin:.5rem 0}
+.kind{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 .4rem}
+.meta{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--muted);font-size:.86rem;margin:.6rem 0 1.4rem}
+.meta b{color:var(--fg);font-weight:600;margin-right:6px}
+code,.mono{font-family:var(--mono);font-size:.86em}
+.small{font-size:.85rem;color:var(--muted)}
+.tbl{overflow-x:auto;margin:.8rem 0 1rem}
+table{border-collapse:collapse;width:100%;background:var(--surface);font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{text-align:right;font-family:var(--mono);font-size:.85rem;white-space:nowrap}
+.pill{display:inline-block;padding:1px 9px;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.ok{background:var(--ok-bg);color:var(--ok)} .no{background:var(--no-bg);color:var(--no)} .pend{background:var(--pend-bg);color:var(--pend)}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:1.2rem 0}
+.verdict > div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
+.verdict .lab{margin:0;font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+.verdict .big{margin:.25rem 0;font-family:var(--display);font-size:1.05rem;font-weight:700;margin:.25rem 0}
+ul,ol{padding-left:1.3rem;margin:.4rem 0} li{margin:.25rem 0}
+ul.timeline{list-style:none;padding-left:0}
+ul.timeline li{display:grid;grid-template-columns:9.5rem 1fr;gap:12px;padding:5px 0;border-bottom:1px dashed var(--line)}
+ul.timeline .d{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
+dl{margin:.6rem 0} dt{font-weight:600;margin-top:.7rem} dd{margin:.15rem 0 0 0;color:var(--muted)}
+.note{border-left:3px solid var(--accent);background:var(--surface);padding:10px 14px;margin:1rem 0}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+@media (max-width:520px){ul.timeline li{grid-template-columns:1fr;gap:2px}}
+</style>
+
+<div class="wrap">
+<p class="kind">CTS · Stage 7 · 최종 판정</p>
+<h1>CTS S7 최종 판정 보고 — DEQ 고정점의 수렴·변별(G1)과 디코더 기여(G2)</h1>
+<div class="meta"><span>작성</span><b>회사 PC Claude Code(CC, 지휘·감사)</b><span>기준일</span><b>2026-10-07</b><span>실행</span><b>AG(Antigravity) · 감사 B</b><span>상태</span><b>주 판정 확정 · 보조 지표 일부 진행 중</b></div>
+
+<div class="verdict">
+  <div><p class="lab">G1 · DEQ 수렴·변별</p><p class="big"><span class="pill ok">사전등록 기준 충족</span></p><p class="small">최저점 규칙(사전등록) 기준. 신규 520 중 517 도달, 최근접 519/520, 평균 cos 0.569.</p></div>
+  <div><p class="lab">G2 · 디코더 기여</p><p class="big"><span class="pill pend">재평가 중 — 평가 도구 결함</span></p><p class="small">P6 생성의 정지 토큰 설정 결함 확인(10/7 14시). 아래 P6 수치는 결함 도구로 잰 값이며 판정에 쓰지 않는다. 정지 토큰을 고친 P6R로 다시 판정한다.</p></div>
+  <div><p class="lab">개발 실험 · 부드러운 스위치</p><p class="big"><span class="pill no">채택 후보 없음</span></p><p class="small">ε 3개 모두 ①·② 조건 미달. 고정점이 원래 기계와 다름.</p></div>
+</div>
+
+<div class="note"><p><b>정정 (2026-10-07 14:0x)</b> — 후속 실험 사전등록 감사에서 P6 생성기의 정지 토큰 결함이 발견되어 확인됐다. `<end_of_turn>` 문자열이 일반 조각(`_`, `<`, `>`, `of`, `end`, `turn`)으로 쪼개져 정지 토큰이 되었고, 풀이가 수식 기호에서 끊겼다(조각 정지 의심: C 91행, A 69행, E1 101행). 5절의 G2 수치와 "기준 미충족" 표기는 결함 도구로 잰 값이므로 철회하고, Principal 결정에 따라 정지 토큰만 {1, 106}으로 고친 재평가(P6R, 사전등록 v3.8)로 G2를 다시 판정한다. G1 판정은 영향이 없다.</p></div>
+<div class="col">
+<h2>1. 요약</h2>
+<p>AI가 문제를 읽고 만든 잠재 상태를 같은 규칙으로 1,000번 반복해 고친 고정점(z*)이 (G1) 안정되고 문제마다 다른지, (G2) 그 고정점을 디코더에 넣으면 수학 문제를 더 잘 푸는지를 결과 열람 전에 잠근 기준으로 확인했다.</p>
+<p>G1은 모든 기준을 넘었다. G2는 기준에 못 미쳤고, 반복 전 초기 잠재(z_src)를 넣은 디코더가 z*를 넣은 디코더보다 정답률이 높았다(6.00% 대 1.50%). G2 평가의 정답률 바닥이 답 표기 형식에 크게 좌우되어 검출력이 낮았다는 점도 함께 확인했다.</p>
+</div>
+
+<h2>2. 판정 기준 (결과 보기 전에 잠금)</h2>
+<div class="tbl"><table>
+<tr><th>목표</th><th>기준</th><th>문서</th></tr>
+<tr><td>G1 승격</td><td>신규 held-out 520에서 최저점 r&lt;1e-2 ∧ k*≥50 문항 ≥494(95%)이면 최저점을 판정값으로 승격</td><td><code>PREREG_S7_DEQ_v1.3</code> §10(c) · SHA 254beb6f…</td></tr>
+<tr><td>G1 수렴</td><td>①-b 확증: 신규 520 ≥90% · ①-a 보조: train 1,000 ≥95% · ①-b 보조: 600 ≥90%</td><td>v1.3 §10(c), v1.4 §10(h) · SHA 04112522…</td></tr>
+<tr><td>G1 변별</td><td>문항 간 평균 cos ≤0.75 · 최근접 일치율 ≥99%(515/520) · 앵커 재현 max|Δ|=0 또는 cos≥0.9999</td><td>v1.3 §10(g), GOAL G1</td></tr>
+<tr><td>G2</td><td>게이트 2(A−C ≥ −2%p) ∧ 게이트 3(A−C: 정확 McNemar 단측 p&lt;0.025 ∧ 부트스트랩 95% 하한&gt;0) ∧ 게이트 4(A−E1: 같은 기준)</td><td><code>PREREG_S7_D_v3_7</code> · SHA 45dbe5cd…</td></tr>
+<tr><td>부드러운 스위치</td><td>미수렴 54 중 r*&lt;5e-3 ≥52 ∧ 대조 20 min cos ≥0.9990 (개발 단계, G1 판정 미사용)</td><td><code>PREREG_S7_DEQ_v2.1</code> · SHA 670850c1…</td></tr>
+</table></div>
+
+<h2>3. 진행 경과</h2>
+<ul class="timeline">
+<li><span class="d">10/04–10/05</span><span>디코더 A 학습(z* 입력, 3,000걸음). 993문항 학습 규칙(v3.7).</span></li>
+<li><span class="d">10/05 04:50·16:33</span><span>서버 불시 재부팅 2회. 저장 지점부터 재개. 원인 불명(ESC-0006).</span></li>
+<li><span class="d">10/05 13:25</span><span>P5b: 신규 520, 시드 2031(최근접 일치율용), GPU 2.</span></li>
+<li><span class="d">10/05 22:58</span><span>디코더 D(대조) 학습 종료.</span></li>
+<li><span class="d">10/06 08:59</span><span>디코더 E(z_src 입력) 학습 종료.</span></li>
+<li><span class="d">10/06 17:52</span><span>P5: 신규 520, 시드 2030(1~150 GPU 1, 151~520 GPU 0).</span></li>
+<li><span class="d">10/06 18:17</span><span>GPU 0 앵커 20 대조(장치 동등성) → G1 분석 개봉(18:40).</span></li>
+<li><span class="d">10/06 21:23 – 10/07 04:18</span><span>부드러운 스위치 실험(GPU 1, ε 3개). Principal 결정 CTS-428로 GPU 1 사용.</span></li>
+<li><span class="d">10/07 04:42</span><span>P6 주 게이트 채점(600문항 × A·B1·C·E1).</span></li>
+<li><span class="d">10/07 10:55</span><span>①-a 판별 불가 325문항 재계산 종료(v1.4) → G1 확정.</span></li>
+<li><span class="d">10/07 진행 중</span><span>P6 보조 조건 4개(B shift 2·3, D2 shift 2·3)와 보조 NLL. 예상 종료 10/7 22:00 ~ 10/8 02:30.</span></li>
+</ul>
+
+<h2>4. G1 결과 — DEQ 수렴·변별</h2>
+<div class="tbl"><table>
+<tr><th>항목</th><th>값</th><th>기준</th><th>여유</th><th>판정</th></tr>
+<tr><td>승격(신규 520)</td><td class="n">517/520</td><td class="n">≥494</td><td class="n">+23</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>①-b 확증 · 신규 520</td><td class="n">517/520 (99.4%)</td><td class="n">≥90%</td><td class="n">+49문항</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>①-b 보조 · 600</td><td class="n">596/600</td><td class="n">≥90%</td><td class="n">+56</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>①-a 보조 · train 1,000</td><td class="n">991/1000</td><td class="n">≥950</td><td class="n">+41</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>문항 간 평균 cos</td><td class="n">0.569</td><td class="n">≤0.75</td><td class="n">−0.181</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>최근접 일치율(시드 2030↔2031)</td><td class="n">519/520</td><td class="n">≥515</td><td class="n">+4</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>앵커 재현(GPU 0 대 GPU 1·2)</td><td class="n">20/20 cos≥0.99999997</td><td class="n">cos≥0.9999</td><td class="n">—</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>보고 · 최종점 r_1000&lt;1e-2(신규 520)</td><td class="n">456/520 (87.7%)</td><td class="n">—</td><td class="n">—</td><td>보고만</td></tr>
+<tr><td>보고 · 다중 평형(cos&lt;0.99)</td><td class="n">8/520</td><td class="n">—</td><td class="n">—</td><td>보고만</td></tr>
+</table></div>
+<div class="col">
+<h3>①-a 재계산 (v1.4 §10(h))</h3>
+<p>학습 로그가 10걸음 간격이라 최저점이 50걸음 전에 나왔는지 판별할 수 없던 325문항을 같은 실행기로 다시 계산했다. 사전 점검 5문항은 k*가 모두 같고 잔차 차이 0, 본 계산 325문항은 모두 원래 궤적과 같게 재현됐다. k*&lt;50인 문항은 0개였다. 잔차는 기존 값을 쓰고 k*만 재계산 값으로 셌다(보수 675 / 낙관 991 / v1.4 991).</p>
+<h3>읽을 때 주의할 점</h3>
+<ul>
+<li>G1은 최저점 규칙으로 충족했다. 1,000번째 최종점 기준으로는 456/520(87.7%)이다. 최저점 규칙은 사전등록했지만 일부 다른 문항을 열람한 뒤 만든 규칙이며, 그 사실을 문서에 밝혔다.</li>
+<li>G1 충족은 "고정점이 안정되고 문항마다 다르다"까지만 뜻한다. 고정점의 유용성은 G2가 따로 판정한다.</li>
+</ul>
+<h3>수렴이 흔들린 원인 (파악됨)</h3>
+<p>매 걸음 라우팅 점수 상위 3개 모듈만 쓰는데, 3등과 4등 점수가 거의 같으면 걸음마다 3등이 바뀌어 상태가 왕복한다. 근거는 두 가지다. 마스크를 고정하자 미수렴 54문항 중 53개가 수렴했다(P3). 경계를 매끄럽게 섞자 수렴은 하지만 원래 기계와 다른 점으로 갔다(6절).</p>
+</div>
+
+<h2>5. G2 결과 — 디코더 기여 (P6, 결함 도구 — 판정에 쓰지 않음)</h2>
+<div class="tbl"><table>
+<tr><th>조건</th><th>입력</th><th>strict</th><th>lenient</th></tr>
+<tr><td>C</td><td>문제 글만(순정 Gemma-4-e4b)</td><td class="n">0.33% (2/600)</td><td class="n">6.67%</td></tr>
+<tr><td>A</td><td>문제 글 + 자기 z* (디코더 A)</td><td class="n">1.50% (9/600)</td><td class="n">5.83%</td></tr>
+<tr><td>B1</td><td>문제 글 + 다른 문항의 z*</td><td class="n">0.83%</td><td class="n">4.50%</td></tr>
+<tr><td>E1</td><td>문제 글 + 자기 z_src (별도 학습 디코더 E)</td><td class="n">6.00% (36/600)</td><td class="n">9.33%</td></tr>
+</table></div>
+<div class="tbl"><table>
+<tr><th>게이트</th><th>비교</th><th>Δ</th><th>95% CI</th><th>불일치 b/c</th><th>McNemar 단측 p</th><th>판정</th></tr>
+<tr><td>2 바닥선</td><td>A − C</td><td class="n">+1.17%p</td><td class="n">[+0.17, +2.33]</td><td class="n">9/2</td><td class="n">0.0327</td><td><span class="pill ok">충족</span></td></tr>
+<tr><td>3 기여</td><td>A − C</td><td class="n">+1.17%p</td><td class="n">[+0.17, +2.33]</td><td class="n">9/2</td><td class="n">0.0327</td><td><span class="pill no">미충족</span></td></tr>
+<tr><td>4 DEQ 귀속</td><td>A − E1</td><td class="n">−4.50%p</td><td class="n">[−6.67, −2.50]</td><td class="n">6/33</td><td class="n">≈1.0</td><td><span class="pill no">미충족</span></td></tr>
+<tr><td>1 보조</td><td>A − B1</td><td class="n">+0.67%p</td><td class="n">[−0.33, +1.67]</td><td class="n">7/3</td><td class="n">0.172</td><td>보고만</td></tr>
+</table></div>
+<p class="small">채점기 <code>s5_eval_grader_v2.py</code> SHA 90cc93e4…, 채점 스크립트 SHA 547e1d91…, 부트스트랩 10,000회·시드 2026. 게이트 3의 p는 b=9, c=2에서 (55+11+1)/2048 = 0.0327로 CC가 따로 계산해 일치를 확인했다.</p>
+
+<h3>형식 진단 (보고만, 판정 불변)</h3>
+<div class="tbl"><table>
+<tr><th>조건</th><th>\boxed{} 포함</th><th>512토큰 상한 도달</th><th>strict</th><th>lenient</th><th>길이 중앙값(자)</th></tr>
+<tr><td>C 글만</td><td class="n">1.5%</td><td class="n">62.5%</td><td class="n">2</td><td class="n">40</td><td class="n">1,133.5</td></tr>
+<tr><td>A z*</td><td class="n">8.2%</td><td class="n">40.5%</td><td class="n">9</td><td class="n">35</td><td class="n">439.5</td></tr>
+<tr><td>B1</td><td class="n">5.8%</td><td class="n">48.7%</td><td class="n">5</td><td class="n">27</td><td class="n">579.5</td></tr>
+<tr><td>E1 z_src</td><td class="n">34.2%</td><td class="n">22.5%</td><td class="n">36</td><td class="n">56</td><td class="n">348.0</td></tr>
+<tr><td>F 평균 z*</td><td class="n">15.8%</td><td class="n">31.8%</td><td class="n">16</td><td class="n">45</td><td class="n">412.5</td></tr>
+</table></div>
+
+<div class="col">
+<h3>G2 미충족의 원인</h3>
+<dl>
+<dt>원인 후보 ① 평가 바닥이 답 표기 형식에 지배됨 — 증거 확인</dt>
+<dd>strict 채점은 <code>\boxed{}</code>가 있어야 점수를 준다. 글만 조건은 답을 맞게 계산하고도 박스를 쓰지 않거나(예: "99×99 = 9801."로 끝냄) 512토큰에서 잘렸다(62.5%). lenient로는 글만(6.67%)이 A(5.83%)보다 높다. 게이트 3의 strict 우위는 형식 효과일 가능성이 있다. 사전등록도 "게이트 3·4는 +4~5%p 이상이어야 검출 가능"이라고 미리 밝혔다.</dd>
+<dt>원인 후보 ② 1,000번 반복한 z*가 z_src보다 디코더에 덜 유용함 — 현상 확인, 이유는 추정</dt>
+<dd>같은 레시피로 학습한 두 디코더에서 z_src 쪽(E1)이 strict·lenient 모두 높고, 불일치 39문항 중 33개에서 E1이 맞혔다. z*를 넣은 디코더는 더 길게 쓰고 박스를 덜 썼다. 반복 과정에서 문제 내용 정보가 흐려졌을 가능성, 3·4등 라우팅 교체가 상태를 흔들었을 가능성을 추정하지만 아직 증명하지 않았다.</dd>
+</dl>
+</div>
+
+<h2>6. 개발 실험 — 부드러운 top-3 스위치</h2>
+<div class="col"><p>3·4등 점수 차 d가 ε 이하일 때만 두 사상을 w = 0.5 + d/(2ε)로 섞고, 경계 밖은 정본과 같게 둔 변형이다. 착수 전 점검에서 경계 밖 경로가 정본과 비트 단위로 같음을 확인했다(앵커 3/3 max|Δ|=0, 20개 앵커 경계 진입 직전까지 비트 일치).</p></div>
+<div class="tbl"><table>
+<tr><th>지표</th><th>P3 기준선(마스크 동결)</th><th>ε=0.005</th><th>ε=0.01</th><th>ε=0.02</th></tr>
+<tr><td>① 미수렴 54, r*&lt;5e-3</td><td class="n">53/54</td><td class="n">48/54</td><td class="n">45/54</td><td class="n">46/54</td></tr>
+<tr><td>① 미수렴 54, r*&lt;1e-3</td><td class="n">52/54</td><td class="n">25/54</td><td class="n">24/54</td><td class="n">24/54</td></tr>
+<tr><td>② 대조 20, min cos</td><td class="n">0.9326</td><td class="n">0.9703</td><td class="n">0.9700</td><td class="n">0.9697</td></tr>
+<tr><td>⑤ 원래 기계 잔차 &lt;5e-3</td><td class="n">—</td><td class="n">18/54</td><td class="n">13/54</td><td class="n">13/54</td></tr>
+<tr><td>⑤ 고정점이 혼합 구간 안</td><td class="n">—</td><td class="n">39/54</td><td class="n">43/54</td><td class="n">49/54</td></tr>
+<tr><td>채택 후보</td><td>—</td><td><span class="pill no">아니오</span></td><td><span class="pill no">아니오</span></td><td><span class="pill no">아니오</span></td></tr>
+</table></div>
+<div class="col"><p>경계를 매끄럽게 섞으면 수렴은 하지만 원래 기계와 다른 고정점이 생긴다. 사전등록 규칙에 따라 이 결과로 G1을 판정하지 않았다.</p></div>
+
+<h2>7. 검증 체계와 품질 관리</h2>
+<div class="col">
+<ul>
+<li>모든 판정 기준은 결과 열람 전에 사전등록하고 SHA로 잠갔다. 개정은 복사본과 diff로만 했다.</li>
+<li>확증 문항(held-out 520)의 결과는 분석기 감사와 GPU 앵커 대조가 끝날 때까지 열지 않았다.</li>
+<li>사전등록 문서와 핵심 실행기는 독립 감사(B)를 거쳤다. v1.4는 FIX 2회 뒤, v2.1은 FIX 2회 뒤 잠갔다.</li>
+<li>판정에 쓴 숫자는 모두 CC가 원본 파일을 직접 열어 확인했다.</li>
+</ul>
+</div>
+<div class="tbl"><table>
+<tr><th>감사에서 잡은 문제</th><th>그대로 뒀다면</th></tr>
+<tr><td>실행 에이전트가 원시 출력에 없는 값을 보고서에 적음(2건)</td><td>틀린 근거가 기록에 남음</td></tr>
+<tr><td>74문항 config에서 첫 목록(54문항)만 읽는 실행기</td><td>대조 20문항이 조용히 빠짐</td></tr>
+<tr><td>시험 훅이 잠근 기준 파일에 바이트를 덧붙일 수 있던 실행기</td><td>사전등록 기준 파일 훼손</td></tr>
+<tr><td>본 실험이 다른 파이썬 해석기로 돌 수 있던 실행기</td><td>점검과 본 실험의 환경 불일치</td></tr>
+<tr><td>GPU를 바꾸면 계산 없이 앞 결과를 재사용하는 재계산 절차</td><td>장치 사전 점검 무력화</td></tr>
+<tr><td>분석기의 P3 기준선 두 값이 뒤바뀜</td><td>비교표 오류</td></tr>
+<tr><td>대기 장치가 tmux 서버를 학습 프로세스로 오인</td><td>P5 자동 재개 1시간 지연(수동 재개로 해소)</td></tr>
+</table></div>
+
+<h2>8. 한계</h2>
+<div class="col"><ol>
+<li>G1은 최저점 규칙으로 충족했다(최종점 기준 87.7%).</li>
+<li>v1.4(①-a 재계산 절차)와 v2.1(점검용 ε)은 일부 결과를 본 뒤 작성했다. 판정 기준은 바꾸지 않았고 각 문서에 공개했다.</li>
+<li>G2 평가 바닥이 답 표기와 생성 길이 상한에 좌우되어 검출력이 낮다.</li>
+<li>P5 계산 장치가 섞였다(1~150 GPU 1, 151~520 GPU 0). 장치 간 앵커 cos ≥ 0.99999997.</li>
+<li>서버 불시 재부팅 2회(10/5), 원인 불명. 이후 약 43시간 무재부팅.</li>
+<li>등록 학습 스크립트 원본(05bb5fa6)이 소실됐다. 실행형 pyc가 보존돼 있고 차이는 재개 블록뿐임을 바이트코드 비교로 확인했다.</li>
+<li>결과는 단일 백본(Gemma-4-e4b), 시드 1~2개, 수학 문제(MATH 계열)에서 얻었다.</li>
+</ol></div>
+
+<h2>9. 결정 요청과 다음 단계</h2>
+<div class="tbl"><table>
+<tr><th>항목</th><th>내용</th><th>결정 주체</th></tr>
+<tr><td>후속 실험 ① 형식 통제 재평가</td><td>생성 상한 확대와 답 표기 안내로 형식 효과를 없앤 뒤 A·C·E1 재비교(새 사전등록)</td><td>Principal</td></tr>
+<tr><td>후속 실험 ② 정보량 측정</td><td>z_src와 z*에 남은 문제 정보량을 탐침으로 측정</td><td>Principal</td></tr>
+<tr><td>후속 실험 ③ 반복 횟수별 비교</td><td>0·100·300·1,000번 반복 상태를 디코더 입력으로 비교해 정보가 줄어드는 지점 확인</td><td>Principal</td></tr>
+<tr><td>서버 점검</td><td>불시 재부팅 원인 점검(BMC/IPMI·전원) 관리자 요청 여부 — ESC-0006 질문 1</td><td>Principal</td></tr>
+<tr><td>외부 감사</td><td><code>shared/EXTERNAL_AUDIT_REQUEST.md</code> 작성 완료. 해석 질문 3개 포함</td><td>외부 감사인</td></tr>
+</table></div>
+<div class="note"><p><b>진행 중인 보조 작업</b> — P6 보조 조건 4개(B shift 2·3, D2 shift 2·3)와 보조 NLL 4조건은 G2 판정에 쓰이지 않는다. 예상 종료 10/7 22:00 ~ 10/8 02:30. 끝나면 이 보고서와 외부 감사 요청서에 덧붙인다.</p></div>
+
+<h2>부록. 원자료</h2>
+<div class="tbl"><table>
+<tr><th>자료</th><th>경로</th><th>SHA-256(앞 8자)</th></tr>
+<tr><td>G1 최종 집계</td><td><code>shared/reports/RESULT-G1-final.md</code></td><td>—</td></tr>
+<tr><td>승격·①-b·변별</td><td><code>results_s7/p5_promote_v6.json</code></td><td class="n">e929f890</td></tr>
+<tr><td>최근접 일치율</td><td><code>results_s7/p5_seedpair_v5.json</code></td><td class="n">0f16376f</td></tr>
+<tr><td>①-a 재계산 분석</td><td><code>shared/reports/kstar_replay/p5_promote_1a_replay_v2.json</code></td><td class="n">c0a71362</td></tr>
+<tr><td>P5 출력(seed 2030)</td><td><code>results_s7/zstar_s7_a0.25_heldout520_lowest.pt</code></td><td class="n">365ac9a4</td></tr>
+<tr><td>P5b 출력(seed 2031)</td><td><code>results_s7/zstar_s7_a0.25_heldout520_seed2031.pt</code></td><td class="n">e3f9b30a</td></tr>
+<tr><td>P6 주 게이트표</td><td><code>shared/reports/p6_main/p6_gate_table_main.json</code></td><td class="n">6bcfe7ea</td></tr>
+<tr><td>G2 판독·형식 진단</td><td><code>shared/reports/RESULT-P6-G2-main.md</code></td><td>—</td></tr>
+<tr><td>부드러운 스위치 결과</td><td><code>shared/reports/RESULT-S7DEQ-SOFT-v2.1.md</code></td><td>—</td></tr>
+<tr><td>디코더 최종본 A·D·E</td><td><code>results_s7/decoder_{A,D,E}_v36.pt</code></td><td class="n">2953ff07 · 1a09144b · f8115ac3</td></tr>
+</table></div>
+
+<footer>CTS 회사 PC 루프 · 감사 기록 AUDIT-0005 ~ AUDIT-0063, AUDIT-P003 ~ P009 · 상태 원장 <code>shared/STATE.md</code></footer>
+</div>

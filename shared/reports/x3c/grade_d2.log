@@ -1,0 +1,4 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] D2m: n 200 strict 50 lenient 51 boxed 165
+[S0] D2s: n 200 strict 30 lenient 32 boxed 166
+[S0-DONE] /tmp/cts_x3c/d2_items.json

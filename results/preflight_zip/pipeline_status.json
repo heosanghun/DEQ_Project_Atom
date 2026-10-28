@@ -1,0 +1,38 @@
+{
+  "started_at_utc": "2026-04-26T04:58:33+00:00",
+  "smoke": false,
+  "args": {
+    "seeds": 5,
+    "device": "cuda:0",
+    "output_root": "D:\\AI\\cts\\results\\preflight_zip"
+  },
+  "phases": {
+    "verify_stage2": {
+      "status": "SKIP",
+      "duration_s": 0.0
+    },
+    "table2": {
+      "status": "SKIP",
+      "duration_s": 0.0
+    },
+    "table17": {
+      "status": "SKIP",
+      "duration_s": 0.0
+    },
+    "table19": {
+      "status": "SKIP",
+      "duration_s": 0.0
+    },
+    "zip_rebuild": {
+      "status": "PASS",
+      "duration_s": 0.49,
+      "details": {
+        "build_log": "D:\\AI\\cts\\results\\preflight_zip\\logs\\zip_build.log",
+        "audit_log": "D:\\AI\\cts\\results\\preflight_zip\\logs\\zip_audit.log",
+        "verdict_pass": true
+      }
+    }
+  },
+  "final_verdict": "SKIPPED_ALL",
+  "ended_at_utc": "2026-04-26T04:58:34+00:00"
+}

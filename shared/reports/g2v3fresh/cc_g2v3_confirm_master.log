@@ -1,0 +1,47 @@
+=== g2v3 confirm start 2026-10-11 01:37:58 ===
+[SHA-OK] shared_prereg_PREREG_S7_G2v3_1.md
+[SHA-OK] configs/g2v2_fresh1000.json
+[SHA-OK] configs/g2v2_fresh1000_shard0.json
+[SHA-OK] configs/g2v2_fresh1000_shard1.json
+[SHA-OK] configs/g2v2_fresh1000_shard2.json
+[SHA-OK] scripts/g2v2_zstar_run.py
+[SHA-OK] cts/deq/zstar_inject_v2.py
+[SHA-OK] configs/zstar_canonical.yaml
+[SHA-OK] scripts/g2v3_fresh_prep.py
+[SHA-OK] scripts/g2v3_m3_eval_latents_v2.py
+[SHA-OK] scripts/s7_eval_gate_p6_v36e.py
+[SHA-OK] scripts/s7_eval_score_p6_v36.py
+[SHA-OK] scripts/s5_eval_grader_v2.py
+[SHA-OK] results_s7/g2v2/decoder_Am3_v36.pt
+[SHA-OK] results_s7/g2v2/decoder_Em3_v36.pt
+[SHA-OK] results_s7/g2v3/deq_backbone_A.pt
+[SHA-OK] results_s7/g2v3/deq_backbone_E.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[Z-DONE] shard 0 03:40:10
+[Z-DONE] shard 1 03:40:10
+[Z-DONE] shard 2 03:43:31
+[PREP] keys 1000 | converted z_src max|d| 0.000e+00 | r_1000<1e-2 1000/1000
+8282da00d92d445f0b43f8f3a4d7986b0ee1f00ed4417c33c5edafac123bac52  results_s7/g2v3/fresh_zsrcinj_1000.pt
+00be581e09719811eb156e6080ae41a8ad95c041f23274e844a9ce3cd03f51ba  results_s7/g2v3/fresh_zsrc_1000.pt
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+d7f5b2ec702a82a24173bbdf14a1f33e15a3bb761dde480318d3133f3a14554e  results_s7/g2v3/fresh_A_latent.pt
+39a7aea7055bb08813c95746d33ed7aeb464f4de9e26598fe45b6affce0f1b44  results_s7/g2v3/fresh_E_latent.pt
+[GEN-SHARD-DONE] 2 08:09:46
+[GEN-SHARD-DONE] 0 08:19:01
+[GEN-SHARD-DONE] 1 08:22:40
+[MERGE] A: 1000 rows, 1000 ids == fresh1000, json_err 0
+[MERGE] C: 1000 rows, 1000 ids == fresh1000, json_err 0
+[MERGE] E1: 1000 rows, 1000 ids == fresh1000, json_err 0
+[MERGE] B1: 1000 rows, 1000 ids == fresh1000, json_err 0
+4c4929507c0790cdd6699d5b2eb98e1232d3bd59b03e3acda2a122d7dd92ae5d  results_s7/p6r/g2v3fresh_merged/p6_gen_A.jsonl
+b3d1dd196eb42c205fd2a411664766177b991cfbe5763654ff21f31cf956e8f1  results_s7/p6r/g2v3fresh_merged/p6_gen_B1.jsonl
+f30afa03b89f45893ca7c90eb0324df9b4a2bbf16cb9d571837411d136bdde8b  results_s7/p6r/g2v3fresh_merged/p6_gen_C.jsonl
+8431f7b061b52b0258c307e4ad4598684b1c26418ca866f6e7b345958e4111eb  results_s7/p6r/g2v3fresh_merged/p6_gen_E1.jsonl
+[SCORE] rc=0
+71f6bc260318b16b2a65799d75650c5080c41e19ba9f3842ee37f6f6c4763b73  results_s7/p6r/g2v3fresh_merged/gate_table.json
+e960fb01575d40a4855752c04d8a2b9666a1ebb213c94be07d5aa10e43eb2894  results_s7/p6r/g2v3fresh_merged/gate_table.md
+e74bb8f9b0b73664fb64e2c53c7bb0d4c4ad3921d62e5df7904292b0c479728b  raw_s7/g2v3_fresh_score.log
+=== g2v3 confirm end 2026-10-11 08:23:16 ===

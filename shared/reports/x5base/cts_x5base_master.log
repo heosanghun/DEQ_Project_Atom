@@ -1,0 +1,14 @@
+=== X5base start 2026-10-20 06:13:37 ===
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+53fb3d719fe09e5cb08a3e2db1cd70c22587b9234de62141c51c4b16d1a1a826  configs/x5_train993_shard0.json
+9632732b586f13386ac2ff8dd1af5e372095c891f6fdbca5133701ad066c1f92  configs/x5_train993_shard1.json
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[GEN-s0] rc=0 rows=500 08:36:35
+[GEN-s1] rc=0 rows=493 08:50:08
+[S0] Ctrain: n 993 strict 134 lenient 159 boxed 395
+[S0] Ctrain200: n 200 strict 54 lenient 66 boxed 111
+[S0-DONE] /tmp/cts_x5base/ctrain_items.json
+0c026ea2d7e863d3035a7918cec23dd83206794db7ea2c092ed3aa97c62fad69  results_s7/p6r/g2v9x5base/gen_Ctrain.jsonl
+a71229fc6eeb225bbb52d199794a83445d8ce2379bc3ac5edc10a373d8170aba  /tmp/cts_x5base/ctrain_items.json
+=== X5base end 2026-10-20 08:50:17 ===

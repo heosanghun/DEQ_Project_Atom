@@ -1,0 +1,116 @@
+C:\Users\Sims\AppData\Roaming\Python\Python313\site-packages\transformers\modeling_utils.py:4832: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   0%|          | 8/2076 [00:00<00:26, 76.90it/s]Loading weights:   1%|          | 20/2076 [00:00<00:28, 72.67it/s]Loading weights:   2%|▏         | 43/2076 [00:00<00:17, 118.87it/s]Loading weights:   3%|▎         | 65/2076 [00:00<00:15, 127.56it/s]Loading weights:   4%|▍         | 78/2076 [00:00<00:17, 117.11it/s]Loading weights:   4%|▍         | 92/2076 [00:00<00:17, 114.30it/s]Loading weights:   5%|▌         | 113/2076 [00:00<00:15, 130.06it/s]Loading weights:   6%|▌         | 127/2076 [00:01<00:17, 113.60it/s]Loading weights:   7%|▋         | 139/2076 [00:01<00:18, 106.18it/s]Loading weights:   7%|▋         | 152/2076 [00:01<00:18, 104.82it/s]Loading weights:   9%|▉         | 184/2076 [00:01<00:12, 156.22it/s]Loading weights:  10%|▉         | 201/2076 [00:01<00:16, 116.50it/s]Loading weights:  11%|█         | 218/2076 [00:01<00:15, 120.46it/s]Loading weights:  12%|█▏        | 241/2076 [00:01<00:12, 141.91it/s]Loading weights:  12%|█▏        | 257/2076 [00:02<00:15, 113.74it/s]Loading weights:  13%|█▎        | 271/2076 [00:02<00:16, 109.10it/s]Loading weights:  14%|█▍        | 297/2076 [00:02<00:13, 133.48it/s]Loading weights:  15%|█▌        | 312/2076 [00:02<00:12, 136.76it/s]Loading weights:  16%|█▌        | 327/2076 [00:02<00:16, 104.13it/s]Loading weights:  17%|█▋        | 344/2076 [00:02<00:16, 108.19it/s]Loading weights:  18%|█▊        | 375/2076 [00:03<00:13, 130.56it/s]Loading weights:  19%|█▊        | 389/2076 [00:03<00:14, 113.07it/s]Loading weights:  19%|█▉        | 403/2076 [00:03<00:14, 117.01it/s]Loading weights:  21%|██        | 426/2076 [00:03<00:11, 139.39it/s]Loading weights:  21%|██        | 441/2076 [00:03<00:12, 131.70it/s]Loading weights:  22%|██▏       | 455/2076 [00:03<00:15, 101.81it/s]Loading weights:  23%|██▎       | 480/2076 [00:03<00:12, 126.94it/s]Loading weights:  24%|██▍       | 495/2076 [00:04<00:13, 120.54it/s]Loading weights:  25%|██▍       | 509/2076 [00:04<00:14, 109.62it/s]Loading weights:  25%|██▌       | 521/2076 [00:04<00:15, 102.06it/s]Loading weights:  26%|██▌       | 544/2076 [00:04<00:12, 125.85it/s]Loading weights:  27%|██▋       | 561/2076 [00:04<00:12, 119.16it/s]Loading weights:  28%|██▊       | 574/2076 [00:04<00:14, 105.22it/s]Loading weights:  28%|██▊       | 586/2076 [00:04<00:13, 107.29it/s]Loading weights:  29%|██▉       | 601/2076 [00:05<00:12, 113.57it/s]Loading weights:  30%|██▉       | 614/2076 [00:05<00:13, 112.24it/s]Loading weights:  30%|███       | 626/2076 [00:05<00:13, 107.97it/s]Loading weights:  31%|███       | 637/2076 [00:05<00:14, 96.90it/s] Loading weights:  32%|███▏      | 654/2076 [00:05<00:13, 106.47it/s]Loading weights:  32%|███▏      | 665/2076 [00:05<00:14, 94.83it/s] Loading weights:  33%|███▎      | 680/2076 [00:05<00:13, 102.21it/s]Loading weights:  33%|███▎      | 691/2076 [00:06<00:14, 98.35it/s] Loading weights:  34%|███▍      | 702/2076 [00:06<00:14, 94.22it/s]Loading weights:  35%|███▍      | 719/2076 [00:06<00:12, 111.18it/s]Loading weights:  36%|███▌      | 739/2076 [00:06<00:10, 125.14it/s]Loading weights:  36%|███▌      | 752/2076 [00:06<00:13, 99.80it/s] Loading weights:  36%|███▌      | 752/2076 [00:20<00:13, 99.80it/s]Loading weights:  36%|███▋      | 754/2076 [00:54<28:50,  1.31s/it]Loading weights:  37%|███▋      | 758/2076 [00:54<25:06,  1.14s/it]Loading weights:  37%|███▋      | 766/2076 [00:55<18:36,  1.17it/s]Loading weights:  37%|███▋      | 772/2076 [00:55<14:47,  1.47it/s]Loading weights:  37%|███▋      | 777/2076 [00:56<12:16,  1.76it/s]Loading weights:  38%|███▊      | 786/2076 [00:56<07:56,  2.71it/s]Loading weights:  38%|███▊      | 791/2076 [00:56<06:18,  3.39it/s]Loading weights:  38%|███▊      | 796/2076 [00:58<06:12,  3.43it/s]Loading weights:  39%|███▊      | 803/2076 [00:58<04:23,  4.83it/s]Loading weights:  39%|███▉      | 809/2076 [00:59<03:35,  5.87it/s]Loading weights:  39%|███▉      | 812/2076 [00:59<03:52,  5.44it/s]Loading weights:  39%|███▉      | 819/2076 [00:59<02:40,  7.84it/s]Loading weights:  40%|███▉      | 823/2076 [01:00<02:15,  9.24it/s]Loading weights:  40%|███▉      | 826/2076 [01:00<02:17,  9.06it/s]Loading weights:  40%|███▉      | 828/2076 [01:01<03:11,  6.51it/s]Loading weights:  40%|████      | 836/2076 [01:01<01:54, 10.79it/s]Loading weights:  40%|████      | 840/2076 [01:01<01:39, 12.41it/s]Loading weights:  41%|████      | 843/2076 [01:02<01:55, 10.65it/s]Loading weights:  41%|████      | 845/2076 [01:02<03:03,  6.71it/s]Loading weights:  41%|████      | 850/2076 [01:02<02:03,  9.94it/s]Loading weights:  41%|████      | 853/2076 [01:03<01:49, 11.19it/s]Loading weights:  41%|████      | 856/2076 [01:03<01:36, 12.61it/s]Loading weights:  41%|████▏     | 859/2076 [01:03<02:01,  9.98it/s]Loading weights:  41%|████▏     | 861/2076 [01:04<03:11,  6.35it/s]Loading weights:  42%|████▏     | 869/2076 [01:04<01:43, 11.71it/s]Loading weights:  42%|████▏     | 874/2076 [01:05<01:46, 11.29it/s]Loading weights:  42%|████▏     | 878/2076 [01:05<01:58, 10.14it/s]Loading weights:  42%|████▏     | 880/2076 [01:06<02:13,  8.96it/s]Loading weights:  43%|████▎     | 888/2076 [01:06<01:26, 13.66it/s]Loading weights:  43%|████▎     | 891/2076 [01:06<01:28, 13.43it/s]Loading weights:  43%|████▎     | 894/2076 [01:06<01:24, 14.00it/s]Loading weights:  43%|████▎     | 896/2076 [01:07<02:33,  7.68it/s]Loading weights:  43%|████▎     | 902/2076 [01:07<01:37, 12.06it/s]Loading weights:  44%|████▎     | 905/2076 [01:07<01:31, 12.85it/s]Loading weights:  44%|████▍     | 910/2076 [01:08<01:29, 13.09it/s]Loading weights:  44%|████▍     | 912/2076 [01:09<02:35,  7.47it/s]Loading weights:  44%|████▍     | 915/2076 [01:09<02:04,  9.35it/s]Loading weights:  44%|████▍     | 921/2076 [01:09<01:23, 13.87it/s]Loading weights:  45%|████▍     | 925/2076 [01:09<01:13, 15.74it/s]Loading weights:  45%|████▍     | 928/2076 [01:09<01:29, 12.78it/s]Loading weights:  45%|████▍     | 930/2076 [01:10<02:27,  7.75it/s]Loading weights:  45%|████▌     | 939/2076 [01:10<01:17, 14.62it/s]Loading weights:  45%|████▌     | 942/2076 [01:11<01:33, 12.06it/s]Loading weights:  46%|████▌     | 945/2076 [01:11<01:22, 13.78it/s]Loading weights:  46%|████▌     | 948/2076 [01:11<02:09,  8.73it/s]Loading weights:  46%|████▌     | 955/2076 [01:12<01:28, 12.68it/s]Loading weights:  46%|████▌     | 958/2076 [01:12<01:28, 12.61it/s]Loading weights:  46%|████▌     | 960/2076 [01:12<01:25, 13.11it/s]Loading weights:  46%|████▋     | 962/2076 [01:13<02:25,  7.67it/s]Loading weights:  46%|████▋     | 964/2076 [01:13<03:01,  6.12it/s]Loading weights:  47%|████▋     | 970/2076 [01:13<01:45, 10.50it/s]Loading weights:  47%|████▋     | 974/2076 [01:14<01:27, 12.53it/s]Loading weights:  47%|████▋     | 979/2076 [01:14<01:34, 11.58it/s]Loading weights:  47%|████▋     | 981/2076 [01:15<02:17,  7.94it/s]Loading weights:  48%|████▊     | 988/2076 [01:15<01:30, 12.09it/s]Loading weights:  48%|████▊     | 993/2076 [01:15<01:29, 12.08it/s]Loading weights:  48%|████▊     | 997/2076 [01:16<01:59,  9.04it/s]Loading weights:  49%|████▊     | 1007/2076 [01:16<01:11, 14.92it/s]Loading weights:  49%|████▊     | 1011/2076 [01:17<01:03, 16.77it/s]Loading weights:  49%|████▉     | 1014/2076 [01:18<02:00,  8.82it/s]Loading weights:  49%|████▉     | 1023/2076 [01:18<01:13, 14.37it/s]Loading weights:  49%|████▉     | 1027/2076 [01:18<01:16, 13.67it/s]Loading weights:  50%|████▉     | 1030/2076 [01:18<01:26, 12.15it/s]Loading weights:  50%|████▉     | 1033/2076 [01:19<01:52,  9.30it/s]Loading weights:  50%|█████     | 1040/2076 [01:19<01:20, 12.81it/s]Loading weights:  50%|█████     | 1046/2076 [01:20<01:35, 10.76it/s]Loading weights:  51%|█████     | 1049/2076 [01:20<01:42, 10.05it/s]Loading weights:  51%|█████     | 1057/2076 [01:21<01:13, 13.83it/s]Loading weights:  51%|█████     | 1060/2076 [01:21<01:08, 14.73it/s]Loading weights:  51%|█████     | 1062/2076 [01:21<01:16, 13.19it/s]Loading weights:  51%|█████▏    | 1064/2076 [01:21<01:27, 11.51it/s]Loading weights:  51%|█████▏    | 1066/2076 [01:22<02:25,  6.94it/s]Loading weights:  52%|█████▏    | 1075/2076 [01:22<01:18, 12.79it/s]Loading weights:  52%|█████▏    | 1079/2076 [01:23<01:10, 14.13it/s]Loading weights:  52%|█████▏    | 1081/2076 [01:23<01:15, 13.16it/s]Loading weights:  52%|█████▏    | 1083/2076 [01:24<02:19,  7.13it/s]Loading weights:  53%|█████▎    | 1092/2076 [01:24<01:12, 13.49it/s]Loading weights:  53%|█████▎    | 1095/2076 [01:24<01:07, 14.60it/s]Loading weights:  53%|█████▎    | 1098/2076 [01:24<01:20, 12.09it/s]Loading weights:  53%|█████▎    | 1100/2076 [01:25<02:12,  7.39it/s]Loading weights:  53%|█████▎    | 1108/2076 [01:25<01:13, 13.19it/s]Loading weights:  54%|█████▎    | 1112/2076 [01:25<01:03, 15.23it/s]Loading weights:  54%|█████▎    | 1115/2076 [01:26<01:17, 12.36it/s]Loading weights:  54%|█████▍    | 1118/2076 [01:26<01:53,  8.43it/s]Loading weights:  54%|█████▍    | 1126/2076 [01:27<01:11, 13.35it/s]Loading weights:  55%|█████▍    | 1132/2076 [01:27<01:08, 13.78it/s]Loading weights:  55%|█████▍    | 1135/2076 [01:28<01:41,  9.26it/s]Loading weights:  55%|█████▌    | 1143/2076 [01:28<01:05, 14.17it/s]Loading weights:  55%|█████▌    | 1146/2076 [01:28<01:02, 14.95it/s]Loading weights:  55%|█████▌    | 1149/2076 [01:29<01:39,  9.27it/s]Loading weights:  55%|█████▌    | 1151/2076 [01:29<01:57,  7.86it/s]Loading weights:  56%|█████▌    | 1158/2076 [01:30<01:11, 12.80it/s]Loading weights:  56%|█████▌    | 1161/2076 [01:30<01:07, 13.54it/s]Loading weights:  56%|█████▌    | 1164/2076 [01:30<01:07, 13.51it/s]Loading weights:  56%|█████▌    | 1166/2076 [01:30<01:25, 10.61it/s]Loading weights:  56%|█████▋    | 1168/2076 [01:31<02:19,  6.53it/s]Loading weights:  57%|█████▋    | 1175/2076 [01:31<01:17, 11.69it/s]Loading weights:  57%|█████▋    | 1178/2076 [01:31<01:06, 13.43it/s]Loading weights:  57%|█████▋    | 1181/2076 [01:32<02:02,  7.33it/s]Loading weights:  57%|█████▋    | 1183/2076 [01:32<01:50,  8.10it/s]Loading weights:  57%|█████▋    | 1189/2076 [01:33<01:07, 13.06it/s]Loading weights:  57%|█████▋    | 1192/2076 [01:33<01:00, 14.64it/s]Loading weights:  58%|█████▊    | 1195/2076 [01:33<01:43,  8.52it/s]Loading weights:  58%|█████▊    | 1197/2076 [01:34<01:59,  7.33it/s]Loading weights:  58%|█████▊    | 1205/2076 [01:34<01:06, 13.06it/s]Loading weights:  58%|█████▊    | 1208/2076 [01:35<01:30,  9.55it/s]Loading weights:  58%|█████▊    | 1210/2076 [01:35<01:56,  7.44it/s]Loading weights:  59%|█████▊    | 1217/2076 [01:35<01:09, 12.42it/s]Loading weights:  59%|█████▉    | 1220/2076 [01:35<01:03, 13.51it/s]Loading weights:  59%|█████▉    | 1223/2076 [01:36<01:40,  8.46it/s]Loading weights:  59%|█████▉    | 1225/2076 [01:37<01:51,  7.60it/s]Loading weights:  59%|█████▉    | 1231/2076 [01:37<01:09, 12.15it/s]Loading weights:  59%|█████▉    | 1234/2076 [01:37<01:01, 13.65it/s]Loading weights:  60%|█████▉    | 1237/2076 [01:38<02:08,  6.51it/s]Loading weights:  60%|█████▉    | 1245/2076 [01:38<01:15, 11.02it/s]Loading weights:  60%|██████    | 1248/2076 [01:38<01:10, 11.78it/s]Loading weights:  60%|██████    | 1251/2076 [01:40<02:00,  6.83it/s]Loading weights:  60%|██████    | 1254/2076 [01:40<01:38,  8.38it/s]Loading weights:  61%|██████    | 1260/2076 [01:40<01:05, 12.39it/s]Loading weights:  61%|██████    | 1264/2076 [01:40<01:15, 10.70it/s]Loading weights:  61%|██████    | 1266/2076 [01:41<01:54,  7.10it/s]Loading weights:  61%|██████▏   | 1273/2076 [01:41<01:16, 10.56it/s]Loading weights:  62%|██████▏   | 1278/2076 [01:42<01:24,  9.43it/s]Loading weights:  62%|██████▏   | 1280/2076 [01:43<01:45,  7.57it/s]Loading weights:  62%|██████▏   | 1286/2076 [01:43<01:19,  9.98it/s]Loading weights:  62%|██████▏   | 1292/2076 [01:43<01:13, 10.73it/s]Loading weights:  62%|██████▏   | 1294/2076 [01:44<01:46,  7.32it/s]Loading weights:  62%|██████▏   | 1296/2076 [01:44<01:36,  8.08it/s]Loading weights:  63%|██████▎   | 1301/2076 [01:44<01:06, 11.62it/s]Loading weights:  63%|██████▎   | 1304/2076 [01:44<00:56, 13.61it/s]Loading weights:  63%|██████▎   | 1307/2076 [01:46<02:03,  6.24it/s]Loading weights:  63%|██████▎   | 1315/2076 [01:46<01:10, 10.84it/s]Loading weights:  63%|██████▎   | 1318/2076 [01:46<01:00, 12.44it/s]Loading weights:  64%|██████▎   | 1321/2076 [01:47<01:51,  6.80it/s]Loading weights:  64%|██████▍   | 1328/2076 [01:47<01:11, 10.39it/s]Loading weights:  64%|██████▍   | 1331/2076 [01:47<01:06, 11.24it/s]Loading weights:  64%|██████▍   | 1334/2076 [01:48<01:20,  9.20it/s]Loading weights:  64%|██████▍   | 1336/2076 [01:49<01:50,  6.69it/s]Loading weights:  65%|██████▍   | 1343/2076 [01:49<01:11, 10.20it/s]Loading weights:  65%|██████▍   | 1348/2076 [01:49<01:11, 10.23it/s]Loading weights:  65%|██████▌   | 1350/2076 [01:50<01:43,  7.04it/s]Loading weights:  65%|██████▌   | 1357/2076 [01:50<01:06, 10.88it/s]Loading weights:  66%|██████▌   | 1362/2076 [01:51<01:01, 11.69it/s]Loading weights:  66%|██████▌   | 1364/2076 [01:52<01:34,  7.56it/s]Loading weights:  66%|██████▌   | 1366/2076 [01:52<01:24,  8.38it/s]Loading weights:  66%|██████▌   | 1371/2076 [01:52<01:24,  8.39it/s]Loading weights:  66%|██████▋   | 1376/2076 [01:53<01:13,  9.52it/s]Loading weights:  66%|██████▋   | 1378/2076 [01:53<01:48,  6.46it/s]Loading weights:  67%|██████▋   | 1384/2076 [01:54<01:15,  9.12it/s]Loading weights:  67%|██████▋   | 1390/2076 [01:55<01:28,  7.75it/s]Loading weights:  67%|██████▋   | 1392/2076 [01:55<01:34,  7.21it/s]Loading weights:  67%|██████▋   | 1399/2076 [01:55<01:04, 10.42it/s]Loading weights:  68%|██████▊   | 1403/2076 [01:56<01:07, 10.03it/s]Loading weights:  68%|██████▊   | 1405/2076 [01:56<01:15,  8.88it/s]Loading weights:  68%|██████▊   | 1407/2076 [01:57<01:25,  7.79it/s]Loading weights:  68%|██████▊   | 1413/2076 [01:57<01:07,  9.76it/s]Loading weights:  68%|██████▊   | 1417/2076 [01:57<01:08,  9.58it/s]Loading weights:  69%|██████▉   | 1431/2076 [01:58<00:31, 20.77it/s]Loading weights:  70%|███████   | 1463/2076 [01:58<00:11, 52.50it/s]Loading weights:  71%|███████▏  | 1483/2076 [01:58<00:08, 71.29it/s]Loading weights:  72%|███████▏  | 1504/2076 [01:58<00:06, 88.66it/s]Loading weights:  73%|███████▎  | 1524/2076 [01:58<00:05, 106.49it/s]Loading weights:  74%|███████▍  | 1544/2076 [01:58<00:04, 107.37it/s]Loading weights:  75%|███████▌  | 1558/2076 [01:58<00:04, 110.93it/s]Loading weights:  76%|███████▋  | 1586/2076 [01:58<00:03, 136.95it/s]Loading weights:  77%|███████▋  | 1605/2076 [01:59<00:03, 148.58it/s]Loading weights:  78%|███████▊  | 1626/2076 [01:59<00:03, 148.07it/s]Loading weights:  79%|███████▉  | 1648/2076 [01:59<00:02, 163.74it/s]Loading weights:  81%|████████  | 1672/2076 [01:59<00:02, 159.68it/s]Loading weights:  82%|████████▏ | 1704/2076 [01:59<00:01, 196.87it/s]Loading weights:  83%|████████▎ | 1726/2076 [01:59<00:02, 163.99it/s]Loading weights:  84%|████████▍ | 1745/2076 [01:59<00:01, 169.59it/s]Loading weights:  85%|████████▍ | 1764/2076 [02:00<00:02, 151.90it/s]Loading weights:  86%|████████▌ | 1786/2076 [02:00<00:01, 167.54it/s]Loading weights:  87%|████████▋ | 1805/2076 [02:00<00:01, 143.87it/s]Loading weights:  88%|████████▊ | 1832/2076 [02:00<00:01, 157.50it/s]Loading weights:  89%|████████▉ | 1856/2076 [02:00<00:01, 175.74it/s]Loading weights:  90%|█████████ | 1878/2076 [02:00<00:01, 173.36it/s]Loading weights:  92%|█████████▏| 1903/2076 [02:00<00:00, 187.57it/s]Loading weights:  93%|█████████▎| 1923/2076 [02:00<00:00, 162.71it/s]Loading weights:  94%|█████████▍| 1960/2076 [02:01<00:00, 191.38it/s]Loading weights:  96%|█████████▌| 1991/2076 [02:01<00:00, 213.03it/s]Loading weights:  97%|█████████▋| 2014/2076 [02:01<00:00, 193.86it/s]Loading weights:  98%|█████████▊| 2037/2076 [02:01<00:00, 185.06it/s]Loading weights:  99%|█████████▉| 2061/2076 [02:01<00:00, 190.11it/s]Loading weights: 100%|██████████| 2076/2076 [02:01<00:00, 17.03it/s] 
+[lora] manual LoRA r=8 alpha=16 applied to 108 nn.Linear modules in Gemma4TextModel
+stage2 step=2/200 loss=0.0056 reward_mean=-0.0500
+stage2 step=4/200 loss=0.0717 reward_mean=-0.0500
+stage2 step=6/200 loss=0.0773 reward_mean=-0.0500
+stage2 step=8/200 loss=0.0390 reward_mean=-0.0500
+stage2 step=10/200 loss=0.0276 reward_mean=-0.0500
+stage2 step=12/200 loss=0.0123 reward_mean=-0.0500
+stage2 step=14/200 loss=0.0184 reward_mean=-0.0500
+stage2 step=16/200 loss=0.0344 reward_mean=-0.0500
+stage2 step=18/200 loss=0.0306 reward_mean=-0.0500
+stage2 step=20/200 loss=0.0391 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 20 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=22/200 loss=0.0630 reward_mean=-0.0500
+stage2 step=24/200 loss=0.0632 reward_mean=-0.0500
+stage2 step=26/200 loss=0.0342 reward_mean=-0.0500
+stage2 step=28/200 loss=0.0448 reward_mean=-0.0500
+stage2 step=30/200 loss=0.0353 reward_mean=-0.0500
+stage2 step=32/200 loss=0.0301 reward_mean=-0.0500
+stage2 step=34/200 loss=0.0664 reward_mean=-0.0500
+stage2 step=36/200 loss=0.0498 reward_mean=-0.0500
+stage2 step=38/200 loss=0.0461 reward_mean=-0.0500
+stage2 step=40/200 loss=0.0388 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 40 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=42/200 loss=0.0610 reward_mean=-0.0500
+stage2 step=44/200 loss=0.0365 reward_mean=-0.0500
+stage2 step=46/200 loss=0.0305 reward_mean=-0.0500
+stage2 step=48/200 loss=0.0396 reward_mean=-0.0500
+stage2 step=50/200 loss=0.0260 reward_mean=-0.0500
+stage2 step=52/200 loss=0.0487 reward_mean=-0.0500
+stage2 step=54/200 loss=0.0242 reward_mean=-0.0500
+stage2 step=56/200 loss=0.0306 reward_mean=-0.0500
+stage2 step=58/200 loss=0.0358 reward_mean=-0.0500
+stage2 step=60/200 loss=0.0544 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 60 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=62/200 loss=0.0596 reward_mean=-0.0500
+stage2 step=64/200 loss=0.0535 reward_mean=-0.0500
+stage2 step=66/200 loss=0.0394 reward_mean=-0.0500
+stage2 step=68/200 loss=0.0174 reward_mean=-0.0500
+stage2 step=70/200 loss=0.0467 reward_mean=-0.0500
+stage2 step=72/200 loss=0.0567 reward_mean=-0.0500
+stage2 step=74/200 loss=0.0443 reward_mean=-0.0500
+stage2 step=76/200 loss=0.0395 reward_mean=-0.0500
+stage2 step=78/200 loss=0.0291 reward_mean=-0.0500
+stage2 step=80/200 loss=0.0353 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 80 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=82/200 loss=0.0770 reward_mean=-0.0500
+stage2 step=84/200 loss=0.0245 reward_mean=-0.0500
+stage2 step=86/200 loss=0.0334 reward_mean=-0.0500
+stage2 step=88/200 loss=0.0336 reward_mean=-0.0500
+stage2 step=90/200 loss=0.0341 reward_mean=-0.0500
+stage2 step=92/200 loss=0.0543 reward_mean=-0.0500
+stage2 step=94/200 loss=0.0164 reward_mean=-0.0500
+stage2 step=96/200 loss=0.0206 reward_mean=-0.0500
+stage2 step=98/200 loss=0.0188 reward_mean=-0.0500
+stage2 step=100/200 loss=0.0158 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 100 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=102/200 loss=0.0395 reward_mean=-0.0500
+stage2 step=104/200 loss=0.0095 reward_mean=-0.0500
+stage2 step=106/200 loss=0.0200 reward_mean=-0.0500
+stage2 step=108/200 loss=0.0350 reward_mean=-0.0500
+stage2 step=110/200 loss=0.0166 reward_mean=-0.0500
+stage2 step=112/200 loss=0.0235 reward_mean=-0.0500
+stage2 step=114/200 loss=0.0217 reward_mean=-0.0500
+stage2 step=116/200 loss=0.0206 reward_mean=-0.0500
+stage2 step=118/200 loss=0.0209 reward_mean=-0.0500
+stage2 step=120/200 loss=0.0283 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 120 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=122/200 loss=0.0147 reward_mean=-0.0500
+stage2 step=124/200 loss=0.0177 reward_mean=-0.0500
+stage2 step=126/200 loss=0.0184 reward_mean=-0.0500
+stage2 step=128/200 loss=0.0218 reward_mean=-0.0500
+stage2 step=130/200 loss=0.0158 reward_mean=-0.0500
+stage2 step=132/200 loss=0.0267 reward_mean=-0.0500
+stage2 step=134/200 loss=0.0367 reward_mean=-0.0500
+stage2 step=136/200 loss=0.0214 reward_mean=-0.0500
+stage2 step=138/200 loss=0.0265 reward_mean=-0.0500
+stage2 step=140/200 loss=0.0227 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 140 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=142/200 loss=0.0098 reward_mean=-0.0500
+stage2 step=144/200 loss=0.0112 reward_mean=-0.0500
+stage2 step=146/200 loss=0.0534 reward_mean=-0.0500
+stage2 step=148/200 loss=0.0285 reward_mean=-0.0500
+stage2 step=150/200 loss=0.0279 reward_mean=-0.0500
+stage2 step=152/200 loss=0.0357 reward_mean=-0.0500
+stage2 step=154/200 loss=0.0340 reward_mean=-0.0500
+stage2 step=156/200 loss=0.0381 reward_mean=-0.0500
+stage2 step=158/200 loss=0.0321 reward_mean=-0.0500
+stage2 step=160/200 loss=0.0390 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 160 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=162/200 loss=0.0308 reward_mean=-0.0500
+stage2 step=164/200 loss=0.0181 reward_mean=-0.0500
+stage2 step=166/200 loss=0.0264 reward_mean=-0.0500
+stage2 step=168/200 loss=0.0385 reward_mean=-0.0500
+stage2 step=170/200 loss=0.0283 reward_mean=-0.0500
+stage2 step=172/200 loss=0.0204 reward_mean=-0.0500
+stage2 step=174/200 loss=0.0157 reward_mean=-0.0500
+stage2 step=176/200 loss=0.0195 reward_mean=-0.0500
+stage2 step=178/200 loss=0.0182 reward_mean=-0.0500
+stage2 step=180/200 loss=0.0145 reward_mean=-0.0500
+[stage2] intermediate ckpt @ step 180 -> artifacts\stage2_meta_value.intermediate.pt
+stage2 step=182/200 loss=0.0181 reward_mean=-0.0500
+stage2 step=184/200 loss=0.0334 reward_mean=-0.0500
+stage2 step=186/200 loss=0.0112 reward_mean=-0.0500
+stage2 step=188/200 loss=0.0147 reward_mean=-0.0500
+stage2 step=190/200 loss=0.0248 reward_mean=-0.0500
+stage2 step=192/200 loss=0.0210 reward_mean=-0.0500
+stage2 step=194/200 loss=0.0132 reward_mean=-0.0500
+stage2 step=196/200 loss=0.0206 reward_mean=-0.0500
+stage2 step=198/200 loss=0.0382 reward_mean=-0.0500
+stage2 step=200/200 loss=0.0154 reward_mean=-0.0500
+Wrote artifacts\stage2_meta_value.pt
+
+[orch] === 2026-05-04T20:21:47 S2_2024 ===

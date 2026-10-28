@@ -1,0 +1,74 @@
+# Phase 3b: D12 sanity (must stay 44/44 PASS)
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\_d12_final_check.py
+# start: 2026-05-01T15:49:46Z
+
+========================================================================
+D12 final-submission sanity check (torch-free, ~1 second)
+========================================================================
+
+Section 1: D-7 patch sites (AST + regex)
+  [PASS] decode_from_z_star kw-only problem_text                   kwonly=['max_new_tokens', 'problem_text']
+  [PASS] cts_episode forwards problem_text=prompt                  regex match
+  [PASS] --table2-limit + --table17-limit knobs                    both present
+  [PASS] partial-save (path+helper+call)                           path=True helper=True call=True
+  [PASS] garbage-math fallback (Fix A via helper)                  helper import + call
+  [PASS] watcher forwards --table*-limit / --skip-verify           T2=True T17=True skip=True
+
+Section 2: Documentation markers
+  [PASS] REVIEWER_FAQ Q14 (AIME garbage)                           
+  [PASS] REVIEWER_FAQ Q15 (single-host blocker)                    
+  [PASS] CHANGELOG D-7 morning entry                               
+  [PASS] CHANGELOG D-7 afternoon entry                             
+  [PASS] REPRODUCIBILITY 5-bis Audit-fix lineage                   
+  [PASS] REPRODUCIBILITY 5-ter Pipeline guarantees                 
+  [PASS] REPRODUCIBILITY 5-quat single-host blocker                
+  [PASS] PAPER_VS_LOCAL.md status banner                           
+  [PASS] PAPER_VS_LOCAL.md Why the Gap appendix                    
+  [PASS] LIMITATIONS.md consolidated reviewer-facing doc           
+  [PASS] tests/test_aime_garbage_fix.py exists                     
+  [PASS] tests/test_pipeline_partial_save.py exists                
+  [PASS] tests/test_watcher_invariants.py exists                   
+  [PASS] tests/test_d7_static_validation.py exists                 
+  [PASS] tests/test_dispatcher_fallback_mock.py exists             
+  [PASS] scripts/_reviewer_local_audit.py present                  
+  [PASS] scripts/replicate_neurips_2026.sh present                 
+  [PASS] cts/eval/garbage_filter.py present                        
+  [PASS] REPRODUCIBILITY 5-pent paper-claim mapping                
+  [PASS] tests/test_paper_code_mapping_table.py exists             
+  [PASS] tests/test_stage2_training_meta_static.py exists          
+  [PASS] run_cts_eval_full --dry-run mode plumbed                  
+  [PASS] README.md has Reviewer Quick Start section                
+  [PASS] tests/test_anon_zip_byte_invariants.py exists             
+  [PASS] tests/test_paper_section_alignment.py exists              
+  [PASS] scripts/reviewer_walkthrough.py exists                    
+  [PASS] _d12_final_check --export-verdict + --quiet plumbed       
+  [PASS] replicate_neurips_2026.sh --ci-mode plumbed               
+  [PASS] REVIEWER_FAQ Q16 (CI runnability guide) present           
+
+Section 3: Anonymous ZIP build + audit
+  [PASS] anonymous ZIP rebuild                                            see README.md > Local Reproduction Snapshot > Re-experiment #1
+  [PASS] anonymous ZIP audit                                       [AUDIT] VERDICT: PASS  (NeurIPS double-blind safe)
+
+Section 4: Reviewer-side static audit
+  [PASS] reviewer-side static audit (34 checks expected)               your end (REVIEWER_FAQ Q15 has the canonical command).
+
+Section 5: ZIP byte-invariants (structural + content)
+  [PASS] byte-invariant: zip_compression_invariant                 
+  [PASS] byte-invariant: zip_contains_all_reviewer_entry_points    
+  [PASS] byte-invariant: zip_contains_no_author_draft_content      
+  [PASS] byte-invariant: zip_exists_and_is_readable                
+  [PASS] byte-invariant: zip_has_no_unexpected_dotfiles            
+  [PASS] byte-invariant: zip_no_large_files                        
+
+========================================================================
+Summary:
+  6/6  Section 1: D-7 patch sites (AST + regex)
+  29/29  Section 2: Documentation markers
+  2/2  Section 3: Anonymous ZIP build + audit
+  1/1  Section 4: Reviewer-side static audit
+  6/6  Section 5: ZIP byte-invariants (structural + content)
+  TOTAL: 44/44
+========================================================================
+
+>>> ALL PASS: submission is sanity-clean. Safe to upload to
+>>> anonymous.4open.science / OpenReview supplementary-material slot.

@@ -1,0 +1,40 @@
+=== 1. Server Time ===
+2026-09-28T12:28:53+09:00
+=== 2. Memory (free -g) ===
+               total        used        free      shared  buff/cache   available
+Mem:             251          29         135           0          86         219
+Swap:              1           1           0
+=== 3. GPU Compute Apps ===
+pid, process_name, used_gpu_memory [MiB], gpu_uuid
+3781314, /home/shoon/system1_5/.venv/bin/python, 31422 MiB, GPU-71be98b0-6b81-9257-c622-97dc97d46480
+=== 4. GPU Devices ===
+index, memory.used [MiB], memory.total [MiB], utilization.gpu [%]
+0, 31452 MiB, 49140 MiB, 98 %
+1, 16 MiB, 49140 MiB, 0 %
+2, 16 MiB, 49140 MiB, 0 %
+3, 16 MiB, 49140 MiB, 0 %
+4, 16 MiB, 49140 MiB, 0 %
+5, 16 MiB, 49140 MiB, 0 %
+6, 16 MiB, 49140 MiB, 0 %
+7, 16 MiB, 49140 MiB, 0 %
+=== 5. Tmux Sessions ===
+cts_speed_profile_gpu1_20260716: 1 windows (created Thu Jul 16 19:02:30 2026)
+cts_stage1_repeat1_fixedz0_300_20260716: 1 windows (created Thu Jul 16 18:28:42 2026)
+cts_stage1_rootwarm_dynamic100_20260716: 1 windows (created Thu Jul 16 19:07:10 2026)
+cts_stage1_rootwarm_dynamic100_v2_20260716: 1 windows (created Thu Jul 16 19:29:53 2026)
+cts_stage1_rootwarm_fixedsupport100_20260716: 1 windows (created Thu Jul 16 19:34:46 2026)
+equiphase_gpu4_bench: 1 windows (created Thu Jul 16 12:29:23 2026)
+equiphase_gpu4_eval: 1 windows (created Thu Jul 16 09:52:25 2026)
+equiphase_gpu4_training: 1 windows (created Wed Jul 15 12:19:41 2026)
+full6: 1 windows (created Mon Sep 21 16:08:27 2026)
+repro: 1 windows (created Tue Sep 15 05:28:28 2026)
+s7_watcher: 1 windows (created Sun Sep 27 23:38:02 2026)
+s7_zstar_gpu0: 1 windows (created Sun Sep 27 22:09:27 2026)
+=== 6. Pipeline Log Stat ===
+2026-09-28 12:28:46.313635192 +0900 /home/shoon/cts_e1_s5/raw_s7/s7_zstar_pipeline.log
+=== 7. Pipeline Log Last 5 Lines ===
+[178/680] Q#1352 (alpha=0.25) | rho@1000=8.9987e-04 | rho@2000=8.9987e-04 | min=8.0051e-04 | shape=oscillation | norm=4647.42 | 58.1s
+[179/680] Q#1355 (alpha=0.25) | rho@1000=6.0670e-04 | rho@2000=6.0670e-04 | min=6.0670e-04 | shape=monotonic_decrease | norm=3878.48 | 52.1s
+[180/680] Q#1364 (alpha=0.25) | rho@1000=2.8664e-05 | rho@2000=2.8664e-05 | min=2.8664e-05 | shape=monotonic_decrease | norm=4997.08 | 95.0s
+[181/680] Q#1365 (alpha=0.25) | rho@1000=2.7639e-03 | rho@2000=2.7639e-03 | min=1.2788e-03 | shape=oscillation | norm=4856.92 | 59.5s
+[182/680] Q#1367 (alpha=0.25) | rho@1000=3.2070e-04 | rho@2000=3.2070e-04 | min=2.7595e-04 | shape=monotonic_decrease | norm=4934.91 | 55.5s

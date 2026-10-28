@@ -1,0 +1,26 @@
+Paper-scale Stage 2 PPO (MODEL_CARD §5 / paper_parity)
+Started: 2026-05-08 (local machine)
+PID: 44924 (verify with: Get-Process -Id 44924)
+
+Environment:
+  CTS_GEMMA_MODEL_DIR=D:\AI\cts\gemma-4-E4B-it
+  CTS_GLOBAL_SEED=42
+  PYTHONUNBUFFERED=1
+
+Command:
+  python -u scripts/run_stage2_math_ppo.py --config paper_parity ^
+    --stage1-ckpt artifacts/stage1_last.pt --K 64 --collect-batch 64 ^
+    --ppo-epochs 4 --steps 10000 --log-every 10 --save-every 500 ^
+    --device cuda:0 --broyden-max-iter 30
+
+Logs (tqdm -> stderr file):
+  D:\AI\cts\logs\stage2_paper_full_20260508_144023.log       (stdout; may stay small)
+  D:\AI\cts\logs\stage2_paper_full_20260508_144023.log.err   (progress + errors)
+
+Expected wall-clock: ~12-15 GPU-h on RTX 4090 (per MODEL_CARD).
+Checkpoint: artifacts/stage2_meta_value.pt (overwritten at end; intermediates every 500 steps if implemented).
+
+After completion, run evaluation (example):
+  python -u scripts/run_post_stage2_pipeline.py --table2-limit 30 --table17-limit 30 --device cuda:0
+
+Kill if needed: Stop-Process -Id 44924 -Force

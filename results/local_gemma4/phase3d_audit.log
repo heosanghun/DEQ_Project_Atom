@@ -1,0 +1,22 @@
+# Phase 3d: anonymous-ZIP identity audit
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\_audit_anon_zip.py
+# start: 2026-05-01T15:49:51Z
+
+[AUDIT] zip            : anonymous_submission_neurips2026.zip
+[AUDIT] total files    : 296
+[AUDIT] text scanned   : 292
+[AUDIT] expected found : 9/9
+
+[AUDIT] path-level hard-fail patterns:
+  - none.
+
+[AUDIT] content-level identity-leak patterns:
+  [OK ] \bheosanghun\b                                               hits=0
+  [OK ] 49586773                                                     hits=0
+  [OK ] github\.com/[A-Za-z0-9_-]*heosanghun                         hits=0
+  [OK ] [A-Za-z0-9._%+-]+@(?:gmail|outlook|hotmail|naver|kakao|daum|nate)\.com hits=0
+  [OK ] [Cc]:[\\/]+Users[\\/]+Sims                                   hits=0
+  [OK ] [\\/]Users[\\/]+Sims[\\/]                                    hits=0
+  [OK ] \bSims\b(?=\s*[\\/])                                         hits=0
+
+[AUDIT] VERDICT: PASS  (NeurIPS double-blind safe)

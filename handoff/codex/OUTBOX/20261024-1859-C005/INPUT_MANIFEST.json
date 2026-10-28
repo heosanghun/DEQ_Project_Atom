@@ -1,0 +1,128 @@
+{
+  "task": "TASK-C005",
+  "inbox_dir": "handoff/codex/INBOX/20261020-2020-x6-results",
+  "files": {
+    "RESULT-X6-replication-20261020.md": {
+      "expected_sha256": "1a205a6df79e986c3ae3ee2c0c7d9927db51c297fb0328d586b1b8facfd74694",
+      "actual_sha256": "1a205a6df79e986c3ae3ee2c0c7d9927db51c297fb0328d586b1b8facfd74694",
+      "exists_locally": true,
+      "match": true
+    },
+    "cc_x6_analysis.txt": {
+      "expected_sha256": "bcdebfe650cce045bcbf06a52d06a408cd13f737c2eadd9275c3db79c7b1aaf2",
+      "actual_sha256": "bcdebfe650cce045bcbf06a52d06a408cd13f737c2eadd9275c3db79c7b1aaf2",
+      "exists_locally": true,
+      "match": true
+    },
+    "cts_x6_master.log": {
+      "expected_sha256": "f75783e3631d5eb82bda520318872bb6aa7f1793f0de9de77bd256cfe5191a78",
+      "actual_sha256": "f75783e3631d5eb82bda520318872bb6aa7f1793f0de9de77bd256cfe5191a78",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X6R49.jsonl": {
+      "expected_sha256": "46c5927750747e164656a791ce1954d577426a2c635005b6651a2065e2c4e242",
+      "actual_sha256": "46c5927750747e164656a791ce1954d577426a2c635005b6651a2065e2c4e242",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X6R50.jsonl": {
+      "expected_sha256": "12932151c29274338d976e5c6a061bbef390e5634913b2a1c78c4bb3d7c03b4b",
+      "actual_sha256": "12932151c29274338d976e5c6a061bbef390e5634913b2a1c78c4bb3d7c03b4b",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X6S47.jsonl": {
+      "expected_sha256": "dd7e3bdbad52c0ef0230669b5623b865fd5f25434475914113ab30a4ec707c82",
+      "actual_sha256": "dd7e3bdbad52c0ef0230669b5623b865fd5f25434475914113ab30a4ec707c82",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X6R49.jsonl": {
+      "expected_sha256": "5c50987c5481ba0e7e5bf0dc6ef2ca3561b41053b6c06cba2bc7c6fd984c092c",
+      "actual_sha256": "5c50987c5481ba0e7e5bf0dc6ef2ca3561b41053b6c06cba2bc7c6fd984c092c",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X6R50.jsonl": {
+      "expected_sha256": "1ed19a87f523a2b0e45f7c4495198b63b8fe844b5c7d16d545b676319b2d5166",
+      "actual_sha256": "1ed19a87f523a2b0e45f7c4495198b63b8fe844b5c7d16d545b676319b2d5166",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X6S47.jsonl": {
+      "expected_sha256": "60c6ac94d2d8384c89875d069cd272e8ac66d58af417b2882b5a5f237f0fb6f5",
+      "actual_sha256": "60c6ac94d2d8384c89875d069cd272e8ac66d58af417b2882b5a5f237f0fb6f5",
+      "exists_locally": true,
+      "match": true
+    },
+    "grade.log": {
+      "expected_sha256": "b5746671163cdaf6441cad9e5a28f966d6f8b8e1044c0aaf19da797182c16604",
+      "actual_sha256": "b5746671163cdaf6441cad9e5a28f966d6f8b8e1044c0aaf19da797182c16604",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X6R49.json": {
+      "expected_sha256": "ae82a3d151b654b17312640bab856269d2ad82f162abc2dec8d95891787286a5",
+      "actual_sha256": "ae82a3d151b654b17312640bab856269d2ad82f162abc2dec8d95891787286a5",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X6R50.json": {
+      "expected_sha256": "15971c99f6dd2c3b5049a032437cbe6e8cadae2daf38b6f7c934ff009e70d5a4",
+      "actual_sha256": "15971c99f6dd2c3b5049a032437cbe6e8cadae2daf38b6f7c934ff009e70d5a4",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X6S47.json": {
+      "expected_sha256": "44fd59a2ffcfc9c9731dd13cc0607f0ac77c6e9d50b004b3bc204ac0c444abc5",
+      "actual_sha256": "44fd59a2ffcfc9c9731dd13cc0607f0ac77c6e9d50b004b3bc204ac0c444abc5",
+      "exists_locally": true,
+      "match": true
+    },
+    "s0spec.json": {
+      "expected_sha256": "f91c943aee92cc14dc9a9d1a3eac83884b7e1e6fa2fda47886b9325fa56ea34f",
+      "actual_sha256": "f91c943aee92cc14dc9a9d1a3eac83884b7e1e6fa2fda47886b9325fa56ea34f",
+      "exists_locally": true,
+      "match": true
+    },
+    "s0spec_local.json": {
+      "expected_sha256": "a5bccfd514d93ace130697e4dd2bf44fe5e79744be68f657298c163bb3303b1c",
+      "actual_sha256": "a5bccfd514d93ace130697e4dd2bf44fe5e79744be68f657298c163bb3303b1c",
+      "exists_locally": true,
+      "match": true
+    },
+    "train_X6S47.log": {
+      "expected_sha256": "398b4dbec9862a95282814172dc982ae28f10cca36c16fded88ac6ca048dd37e",
+      "actual_sha256": "398b4dbec9862a95282814172dc982ae28f10cca36c16fded88ac6ca048dd37e",
+      "exists_locally": true,
+      "match": true
+    },
+    "x5_items.json": {
+      "expected_sha256": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8",
+      "actual_sha256": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8",
+      "exists_locally": true,
+      "match": true
+    },
+    "x6_analyze.py": {
+      "expected_sha256": "1cac16733058481c8bd3818ee0718b70e5dc6cf56f83f93362bca80627abc5b9",
+      "actual_sha256": "1cac16733058481c8bd3818ee0718b70e5dc6cf56f83f93362bca80627abc5b9",
+      "exists_locally": true,
+      "match": true
+    },
+    "x6_items.json": {
+      "expected_sha256": "dd8a0609d0f7e13cf02b2b87105d735cc67b1415cc8040e05da716ea546d6957",
+      "actual_sha256": "dd8a0609d0f7e13cf02b2b87105d735cc67b1415cc8040e05da716ea546d6957",
+      "exists_locally": true,
+      "match": true
+    }
+  },
+  "extra_inputs": {
+    "scripts/s5_eval_grader_v2.py": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+    "handoff/codex/scripts/s5_eval_grader_v2.py": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+    "handoff/codex/scripts/codex_grade_local.py": "bd0c7e78e3f5046376d3fb8f4ebe211add08e1e2c99921da54340876f1128d7c",
+    "handoff/codex/data/p6_item_order.json": "6c76ddb7cc4a1ee901291eee76ed99763ec5ebfec202cb30ba17f9bcee487e7c",
+    "handoff/codex/data/dev600_records.jsonl": "6ed3b4478db7e62759767d60464dc9bd41c0295b46fc93c5f700215d2277b543",
+    "configs/s7_train_993.json": "3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c"
+  }
+}

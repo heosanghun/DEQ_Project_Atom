@@ -1,0 +1,407 @@
+--- a/scripts/s7deq_soft_v2_run.py
++++ b/scripts/s7deq_soft_v2_run_v2.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python3
+ """
+-scripts/s7deq_soft_v2_run.py - Runner for Smooth Top-3 Switch Fixed-Point Computation
+-Directive: CTS-428 Task 3 / PREREG_S7_DEQ_v2 §2·§5·§6
++scripts/s7deq_soft_v2_run_v2.py - Runner for Smooth Top-3 Switch Fixed-Point Computation (v2)
++Directive: CTS-428 Task 3 / PREREG_S7_DEQ_v2 §2·§5·§6 / AUDIT-0046 F1 Resolution
+ 
+ Saves dict to .pt with keys q{idx:04d}_a{alpha:.2f}:
+ - z_star (= z_1000)
+@@ -36,6 +36,13 @@
+ from pathlib import Path
+ from typing import Any, Dict, List, Optional
+ 
++# Memory arena and thread controls to respect ulimit -v 62914560 (Rule #381)
++os.environ.setdefault("MALLOC_ARENA_MAX", "1")
++os.environ.setdefault("MALLOC_TRIM_THRESHOLD_", "131072")
++os.environ.setdefault("OMP_NUM_THREADS", "4")
++os.environ.setdefault("MKL_NUM_THREADS", "4")
++os.environ.setdefault("TORCH_NUM_THREADS", "4")
++
+ import torch
+ 
+ BASE_S5_DIR = "/home/shoon/cts_e1_s5"
+@@ -63,27 +70,58 @@
+ 
+ 
+ def load_items_from_source(items_source: str) -> List[int]:
+-    """Parse item indices from JSON path or comma-separated list."""
++    """Parse item indices from JSON path or comma-separated list.
++    
++    Resolves AUDIT-0046 F1:
++    Explicitly checks 'all_74', verifies 74 items, zero duplicates,
++    and union consistency: nonconv_54 | control_20 == all_74.
++    """
+     if os.path.exists(items_source):
+         with open(items_source, "r", encoding="utf-8") as f:
+             data = json.load(f)
+-        if isinstance(data, list):
+-            return [int(x) for x in data]
+-        elif isinstance(data, dict):
+-            if "indices" in data:
++        if isinstance(data, dict):
++            if "all_74" in data:
++                items = [int(x) for x in data["all_74"]]
++                if len(items) != 74:
++                    raise ValueError(f"F1 check failed: 'all_74' has {len(items)} items, expected 74")
++                if len(set(items)) != 74:
++                    raise ValueError(f"F1 check failed: 'all_74' has duplicate items (unique: {len(set(items))})")
++                if "nonconv_54" in data and "control_20" in data:
++                    nonconv = set(int(x) for x in data["nonconv_54"])
++                    control = set(int(x) for x in data["control_20"])
++                    if len(nonconv) != 54:
++                        raise ValueError(f"F1 check failed: 'nonconv_54' has {len(nonconv)} items, expected 54")
++                    if len(control) != 20:
++                        raise ValueError(f"F1 check failed: 'control_20' has {len(control)} items, expected 20")
++                    if nonconv & control:
++                        raise ValueError(f"F1 check failed: nonconv_54 and control_20 overlap by {len(nonconv & control)} items")
++                    if (nonconv | control) != set(items):
++                        raise ValueError("F1 check failed: nonconv_54 | control_20 != all_74")
++                print(f"[F1-CHECK] all_74 verified: total={len(items)}, nonconv=54, control=20, duplicates=0", flush=True)
++                return items
++            elif "indices" in data:
+                 return [int(x) for x in data["indices"]]
+             elif "items" in data:
+                 return [int(x) for x in data["items"]]
+-            first_key = next(iter(data.keys()))
+-            if isinstance(data[first_key], list):
+-                return [int(x) for x in data[first_key]]
++            else:
++                raise ValueError(
++                    f"F1 check failed: config {items_source} must contain 'all_74' (or 'items'/'indices'), "
++                    f"found keys: {list(data.keys())}"
++                )
++        elif isinstance(data, list):
++            return [int(x) for x in data]
++        else:
++            raise ValueError(f"Unexpected data type in {items_source}: {type(data)}")
+     else:
+-        return [int(x.strip()) for x in items_source.split(",") if x.strip()]
++        # Comma-separated list for anchor checks or custom item lists
++        items = [int(x.strip()) for x in items_source.split(",") if x.strip()]
++        if items:
++            return items
+     raise ValueError(f"Unable to parse item list from {items_source}")
+ 
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="Run S7 DEQ Smooth Top-3 Switch Computation")
++    parser = argparse.ArgumentParser(description="Run S7 DEQ Smooth Top-3 Switch Computation (v2)")
+     parser.add_argument("--items", type=str, required=True, help="Path to items JSON or comma-separated list")
+     parser.add_argument("--out", type=str, required=True, help="Path to output .pt file")
+     parser.add_argument("--eps", type=float, default=0.01, help="Soft boundary half-width eps (default: 0.01)")
+@@ -95,13 +133,18 @@
+     parser.add_argument("--tol", type=float, default=0.0, help="Convergence tolerance (default: 0.0)")
+     parser.add_argument("--device", type=str, default="cuda:0", help="Torch device (default: cuda:0)")
+     parser.add_argument("--config", type=str, default=DEFAULT_CONFIG_PATH, help="Path to canonical YAML")
++    parser.add_argument("--max_items", type=int, default=None, help="Limit number of items to process (for smoke testing)")
+     args = parser.parse_args()
+ 
+     items = load_items_from_source(args.items)
++    if args.max_items is not None and args.max_items > 0:
++        print(f"[SMOKE-MODE] Slicing execution from {len(items)} items to first {args.max_items} items.", flush=True)
++        items = items[:args.max_items]
++
+     os.makedirs(os.path.dirname(args.out), exist_ok=True)
+ 
+     print("=" * 80)
+-    print(f"S7 DEQ Smooth Top-3 Switch Run: eps={args.eps}, alpha={args.alpha}, max_nfe={args.max_nfe}, items={len(items)}")
++    print(f"S7 DEQ Smooth Top-3 Switch Run (v2): eps={args.eps}, alpha={args.alpha}, max_nfe={args.max_nfe}, items={len(items)}")
+     print(f"Device: {args.device} | Seed: {args.seed} | Sigma: {args.sigma} | Tol: {args.tol}")
+     print(f"Output: {args.out}")
+     print("=" * 80, flush=True)
+
+--- a/scripts/s7deq_soft_v2_launch.sh
++++ b/scripts/s7deq_soft_v2_launch_v2.sh
+@@ -1,20 +1,31 @@
+ #!/usr/bin/env bash
+ # ==============================================================================
+-# scripts/s7deq_soft_v2_launch.sh - S7 DEQ Smooth Top-3 Switch Launcher
+-# Directive: CTS-428 Task 3 / PREREG_S7_DEQ_v2 §2·§5·§6
++# scripts/s7deq_soft_v2_launch_v2.sh - S7 DEQ Smooth Top-3 Switch Launcher (v2)
++# Directive: CTS-428 Task 3 / PREREG_S7_DEQ_v2 §2·§5·§6 / AUDIT-0046 F2~F5
+ # Pinned strictly to physical GPU 1 UUID: GPU-9410691f-6857-1642-ec7c-7596970e2f48
+ # ==============================================================================
+ 
+ set -euo pipefail
+ 
++# ------------------------------------------------------------------------------
++# Memory arena and thread controls to respect ulimit -v 62914560 (Rule #381)
++# Prevents glibc multi-arena virtual memory explosion during model loading
++# ------------------------------------------------------------------------------
++export MALLOC_ARENA_MAX=1
++export MALLOC_TRIM_THRESHOLD_=131072
++export OMP_NUM_THREADS=4
++export MKL_NUM_THREADS=4
++export TORCH_NUM_THREADS=4
++export RAYON_NUM_THREADS=4
++
+ BASE_DIR="/home/shoon/cts_e1_s5"
+ cd "${BASE_DIR}"
+ 
+ LOG_FILE="raw_s7/s7deq_soft_v2.log"
+-mkdir -p raw_s7 results_s7
+-
+-echo "================================================================================" | tee -a "${LOG_FILE}"
+-echo "=== S7 DEQ SMOOTH TOP-3 SWITCH LAUNCH ===" | tee -a "${LOG_FILE}"
++mkdir -p raw_s7 results_s7 scratch
++
++echo "================================================================================" | tee -a "${LOG_FILE}"
++echo "=== S7 DEQ SMOOTH TOP-3 SWITCH LAUNCH (v2) ===" | tee -a "${LOG_FILE}"
+ echo "Timestamp: $(date '+%Y-%m-%d %H:%M:%S KST')" | tee -a "${LOG_FILE}"
+ echo "================================================================================" | tee -a "${LOG_FILE}"
+ 
+@@ -42,63 +53,179 @@
+   export CUDA_VISIBLE_DEVICES=""
+   DEVICE_ARG="cpu"
+   MAX_NFE=5
+-  TEST_ITEMS="20,24"
+-else
+-  export CUDA_VISIBLE_DEVICES="${GPU1_UUID}"
+-  DEVICE_ARG="cuda:0"
+-  MAX_NFE=1000
+-  TEST_ITEMS="${CONFIG_74}"
+-
+-  echo "=== GPU STATUS PRE-LAUNCH ===" | tee -a "${LOG_FILE}"
+-  nvidia-smi --query-compute-apps=gpu_uuid,pid,used_memory --format=csv | tee -a "${LOG_FILE}"
+-  nvidia-smi -i 1 --query-gpu=uuid,utilization.gpu,memory.used,temperature.gpu --format=csv | tee -a "${LOG_FILE}"
+-
+-  # 3. Section 5 Pre-Launch Anchor Check (Code Equivalence on GPU 1)
+-  echo "=== §5 PRE-LAUNCH ANCHOR CHECK (GPU 1) ===" | tee -a "${LOG_FILE}"
+-  ANCHOR_ITEMS="20,24,32"
+-  ANCHOR_REF_PT="results_s7/anchor_ref_gpu1_check.pt"
+-  ANCHOR_SOFT_PT="results_s7/anchor_soft_eps0.02_check.pt"
+-
+-  echo "Computing canonical anchor reference on GPU 1 (Q#20, 24, 32)..." | tee -a "${LOG_FILE}"
+-  /home/shoon/system1_5/.venv/bin/python scripts/s7_zstar_lowest_run.py \
+-    --items "${ANCHOR_ITEMS}" \
+-    --out "${ANCHOR_REF_PT}" \
++  SMOKE_OUT_PT="scratch/s7deq_soft_v2_smoke_eps0.01.pt"
++  SMOKE_OUT_JSON="scratch/s7deq_soft_v2_smoke_eps0.01.json"
++  SMOKE_OUT_MD="scratch/s7deq_soft_v2_smoke_eps0.01.md"
++
++  echo "Running CPU SMOKE with 2 items from ${CONFIG_74} (max_nfe=5)..." | tee -a "${LOG_FILE}"
++  /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_run_v2.py \
++    --items "${CONFIG_74}" \
++    --max_items 2 \
++    --out "${SMOKE_OUT_PT}" \
++    --eps 0.01 \
++    --alpha 0.25 \
++    --g0 0.25 \
++    --seed 2030 \
++    --sigma 0.020 \
++    --tol 0.0 \
++    --max_nfe "${MAX_NFE}" \
+     --device "${DEVICE_ARG}" \
+-    --max_nfe 1000 >> "${LOG_FILE}" 2>&1
+-
+-  echo "Computing smooth switch runner with eps=0.02 on GPU 1 (Q#20, 24, 32)..." | tee -a "${LOG_FILE}"
+-  /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_run.py \
+-    --items "${ANCHOR_ITEMS}" \
+-    --out "${ANCHOR_SOFT_PT}" \
+-    --eps 0.02 \
+-    --device "${DEVICE_ARG}" \
+-    --max_nfe 1000 >> "${LOG_FILE}" 2>&1
+-
+-  # Perform verification via python check
+-  /home/shoon/system1_5/.venv/bin/python - << 'EOF' | tee -a "${LOG_FILE}"
++    --config configs/zstar_canonical.yaml 2>&1 | tee -a "${LOG_FILE}"
++
++  echo "Running analyzer on SMOKE output..." | tee -a "${LOG_FILE}"
++  /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_analyze.py \
++    --input_pt "${SMOKE_OUT_PT}" \
++    --items_json "${CONFIG_74}" \
++    --eps 0.01 \
++    --alpha 0.25 \
++    --out_json "${SMOKE_OUT_JSON}" \
++    --out_md "${SMOKE_OUT_MD}" 2>&1 | tee -a "${LOG_FILE}"
++
++  echo "[SMOKE-COMPLETE] SMOKE execution finished successfully." | tee -a "${LOG_FILE}"
++  exit 0
++fi
++
++# 정규 GPU 1 실행 경로 (TASK-0048 전용)
++export CUDA_VISIBLE_DEVICES="${GPU1_UUID}"
++DEVICE_ARG="cuda:0"
++MAX_NFE=1000
++
++echo "=== GPU STATUS PRE-LAUNCH ===" | tee -a "${LOG_FILE}"
++nvidia-smi --query-compute-apps=gpu_uuid,pid,used_memory --format=csv | tee -a "${LOG_FILE}"
++nvidia-smi -i 1 --query-gpu=uuid,utilization.gpu,memory.used,temperature.gpu --format=csv | tee -a "${LOG_FILE}"
++
++# 3. Section 5 Pre-Launch Anchor Check (Code Equivalence on GPU 1, F2~F5)
++echo "=== §5 PRE-LAUNCH ANCHOR CHECK (GPU 1, F2~F5) ===" | tee -a "${LOG_FILE}"
++ANCHOR_REF_PT="results_s7/anchor_ref_gpu1_check.pt"
++ANCHOR_SOFT_PT="results_s7/anchor_soft_eps0.02_check.pt"
++ANCHOR_BASE_JSON="data/anchor20.json"
++
++/home/shoon/system1_5/.venv/bin/python - << 'EOF' | tee -a "${LOG_FILE}"
++import json
++import os
++import subprocess
+ import sys
+ import torch
+ 
+-ref = torch.load("results_s7/anchor_ref_gpu1_check.pt", map_location="cpu")
+-soft = torch.load("results_s7/anchor_soft_eps0.02_check.pt", map_location="cpu")
+-
+-zero_boundary_count = 0
+-for k in ref.keys():
+-    b_steps = soft[k].get("boundary_step_count", 0)
+-    print(f"Item {k}: boundary steps = {b_steps}")
++anchor_config = "data/anchor20.json"
++with open(anchor_config, "r", encoding="utf-8") as f:
++    anchor_data = json.load(f)
++
++if isinstance(anchor_data, list):
++    anchors = [int(x) for x in anchor_data]
++elif isinstance(anchor_data, dict) and "indices" in anchor_data:
++    anchors = [int(x) for x in anchor_data["indices"]]
++else:
++    anchors = [int(x) for x in list(anchor_data.values())[0]]
++
++print(f"Loaded {len(anchors)} anchor candidates from {anchor_config}")
++
++initial_anchors = [20, 24, 32]
++test_queue = list(initial_anchors)
++for a in anchors:
++    if a not in test_queue:
++        test_queue.append(a)
++
++zero_boundary_items = []
++evaluated_items = []
++
++ref_out = "results_s7/anchor_ref_gpu1_check.pt"
++soft_out = "results_s7/anchor_soft_eps0.02_check.pt"
++
++common_args = [
++    "--alpha", "0.25",
++    "--g0", "0.25",
++    "--seed", "2030",
++    "--sigma", "0.020",
++    "--tol", "0.0",
++    "--max_nfe", "1000",
++    "--device", "cuda:0",
++    "--config", "configs/zstar_canonical.yaml",
++]
++
++for q in test_queue:
++    if len(zero_boundary_items) >= 3:
++        break
++
++    print(f"\n--- Testing Anchor Q#{q} on GPU 1 ---")
++    evaluated_items.append(q)
++
++    # 1. Canonical run
++    cmd_canon = [
++        "/home/shoon/system1_5/.venv/bin/python",
++        "scripts/s7_zstar_lowest_run.py",
++        "--items", str(q),
++        "--out", ref_out,
++    ] + common_args
++    rc_canon = subprocess.run(cmd_canon).returncode
++    if rc_canon != 0:
++        print(f"[ERROR] Canonical anchor execution failed on Q#{q}")
++        sys.exit(1)
++
++    # 2. Soft runner run (eps=0.02)
++    cmd_soft = [
++        "/home/shoon/system1_5/.venv/bin/python",
++        "scripts/s7deq_soft_v2_run_v2.py",
++        "--items", str(q),
++        "--out", soft_out,
++        "--eps", "0.02",
++    ] + common_args
++    rc_soft = subprocess.run(cmd_soft).returncode
++    if rc_soft != 0:
++        print(f"[ERROR] Soft switch anchor execution failed on Q#{q}")
++        sys.exit(1)
++
++    # Load and check boundary step count
++    ref_dict = torch.load(ref_out, map_location="cpu")
++    soft_dict = torch.load(soft_out, map_location="cpu")
++    key = f"q{q:04d}_a0.25"
++    b_steps = soft_dict[key].get("boundary_step_count", 0)
++    print(f"Anchor Q#{q}: boundary_step_count = {b_steps}")
++
+     if b_steps == 0:
+-        zero_boundary_count += 1
+-        d_star = torch.max(torch.abs(ref[k]["z_star"] - soft[k]["z_star"])).item()
+-        d_low = torch.max(torch.abs(ref[k]["z_lowest"] - soft[k]["z_lowest"])).item()
+-        print(f"Item {k} (b_steps=0): max|Delta_star|={d_star}, max|Delta_lowest|={d_low}")
+-        if d_star != 0.0 or d_low != 0.0:
+-            print("[FAIL] Non-zero difference detected on zero boundary item!")
++        zero_boundary_items.append(q)
++        # F3 check: z_star, z_lowest, and rho_traj
++        d_star = torch.max(torch.abs(ref_dict[key]["z_star"] - soft_dict[key]["z_star"])).item()
++        d_lowest = torch.max(torch.abs(ref_dict[key]["z_lowest"] - soft_dict[key]["z_lowest"])).item()
++        
++        rho_ref = torch.tensor(ref_dict[key]["rho_traj"])
++        rho_soft = torch.tensor(soft_dict[key]["rho_traj"])
++        d_rho = torch.max(torch.abs(rho_ref - rho_soft)).item()
++
++        print(f"Anchor Q#{q} (boundary=0):")
++        print(f"  max |Delta_star|     = {d_star}")
++        print(f"  max |Delta_lowest|   = {d_lowest}")
++        print(f"  max |Delta_rho_traj| = {d_rho}")
++
++        if d_star != 0.0 or d_lowest != 0.0 or d_rho != 0.0:
++            print(f"[ERROR] Non-zero difference detected on zero boundary item Q#{q}! Aborting.")
+             sys.exit(1)
+ 
+-print(f"Zero boundary count: {zero_boundary_count}")
++print(f"\nTotal anchors evaluated: {len(evaluated_items)}")
++print(f"Zero boundary anchors found ({len(zero_boundary_items)}/3): {zero_boundary_items}")
++
++# F2 check: If fewer than 3 items have boundary_step_count == 0, exit 2
++if len(zero_boundary_items) < 3:
++    print(f"[ERROR] Fewer than 3 anchors with boundary_step_count == 0 found. Exiting with code 2.")
++    sys.exit(2)
++
++# F5 check: Comparison against results_s7/anchor20_gpu1.pt (reporting only)
++hist_ref_pt = "results_s7/anchor20_gpu1.pt"
++if os.path.exists(hist_ref_pt):
++    print("\n--- F5 Reporting: Comparison with historical anchor20_gpu1.pt ---")
++    hist_dict = torch.load(hist_ref_pt, map_location="cpu")
++    ref_dict = torch.load(ref_out, map_location="cpu")
++    for q in evaluated_items:
++        key = f"q{q:04d}_a0.25"
++        if key in hist_dict and key in ref_dict:
++            z_hist = hist_dict[key]["z_star"].reshape(-1).to(torch.float64)
++            z_curr = ref_dict[key]["z_star"].reshape(-1).to(torch.float64)
++            d_hist = torch.max(torch.abs(z_hist - z_curr)).item()
++            cos_hist = float(torch.nn.functional.cosine_similarity(z_hist.unsqueeze(0), z_curr.unsqueeze(0)).item())
++            print(f"Anchor Q#{q} vs anchor20_gpu1.pt: max |Delta| = {d_hist:.6e}, cos = {cos_hist:.8f}")
++
++print("\n§5 Anchor Check passed successfully.")
+ EOF
+-
+-fi
+ 
+ # 4. Main Sequence: Run eps in order {0.005, 0.01, 0.02}
+ EPS_VALUES=(0.005 0.01 0.02)
+@@ -112,16 +239,18 @@
+   echo "=== RUNNING EPS=${EPS} AT $(date '+%Y-%m-%d %H:%M:%S KST') ===" | tee -a "${LOG_FILE}"
+   echo "================================================================================" | tee -a "${LOG_FILE}"
+ 
+-  /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_run.py \
+-    --items "${TEST_ITEMS}" \
++  /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_run_v2.py \
++    --items "${CONFIG_74}" \
+     --out "${OUT_PT}" \
+     --eps "${EPS}" \
+     --alpha 0.25 \
+     --g0 0.25 \
+     --seed 2030 \
+     --sigma 0.020 \
++    --tol 0.0 \
+     --max_nfe "${MAX_NFE}" \
+-    --device "${DEVICE_ARG}" >> "${LOG_FILE}" 2>&1
++    --device "${DEVICE_ARG}" \
++    --config configs/zstar_canonical.yaml >> "${LOG_FILE}" 2>&1
+ 
+   echo "Analyzing results for eps=${EPS}..." | tee -a "${LOG_FILE}"
+   /home/shoon/system1_5/.venv/bin/python scripts/s7deq_soft_v2_analyze.py \

@@ -1,0 +1,110 @@
+diff --git a/shared/cts_ssh.py b/shared/cts_ssh_v2_candidate.py
+index 866bdb6..4438b07 100644
+--- a/shared/cts_ssh.py
++++ b/shared/cts_ssh_v2_candidate.py
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
++# 변경 사유: ESC-0003 및 AUDIT-0009 ⑤ — 연속 접속 실패 판정을 ssh/scp/sftp 접속 오류(255), 시간 초과(124), 실행 예외(255)로 한정하고 원격 명령 오류(exit!=0)는 잠금 계산에서 제외
+ """
+-shared/cts_ssh.py — CTS 서버 접속 기계적 제어 래퍼 (원장 #416)
++shared/cts_ssh_v2_candidate.py — CTS 서버 접속 기계적 제어 래퍼 v2 후보 (원장 #416, 개정안 ESC-0003 / AUDIT-0009 ⑤)
+ 
+ 기능 및 기계적 차단 요건:
+ (1) 60초 간격 강제: 접속 직전 ssh_log.csv 마지막 행 시각 확인 → 60초 미만이면 실행 0,
+@@ -9,12 +10,13 @@ shared/cts_ssh.py — CTS 서버 접속 기계적 제어 래퍼 (원장 #416)
+ (2) 1시간 20회 상한: 최근 1시간(3600초) 이내 행 수 >= 20이면 실행 0 후 즉시 종료.
+ (3) SSH_LOCK 확인: shared/SSH_LOCK 파일이 존재하면 실행 0 (Principal 수동 해제 전까지 차단).
+ (4) 단일 행 추가(append) 의무: 성공·실패·타임아웃 무관하게 ssh_log.csv에 반드시 append로 1행 기록.
+-(5) 2회 연속 실패 차단: 직전 2행이 모두 exit!=0 이면 SSH_LOCK 생성 후 차단.
++(5) 2회 연속 접속 실패 차단: 직전 2행이 모두 접속 오류(255) 또는 타임아웃(124)이면 SSH_LOCK 생성 후 차단.
++    원격 명령의 다른 0이 아닌 종료코드(1, 2 등)는 로그에 기록하되 연속 접속 실패 계산에는 산입하지 않음.
+ 
+ 사용법:
+-  python shared/cts_ssh.py ssh "<bundled cmd>" [--purpose <desc>]
+-  python shared/cts_ssh.py sftp <batchfile> [--purpose <desc>]
+-  python shared/cts_ssh.py scp <args...> [--purpose <desc>]
++  python shared/cts_ssh_v2_candidate.py ssh "<bundled cmd>" [--purpose <desc>]
++  python shared/cts_ssh_v2_candidate.py sftp <batchfile> [--purpose <desc>]
++  python shared/cts_ssh_v2_candidate.py scp <args...> [--purpose <desc>]
+ """
+ 
+ import os
+@@ -61,16 +63,24 @@ def check_ssh_lock(lock_path):
+         print("연속 실패 등으로 잠금 상태입니다. Principal 수동 해제 전까지 서버 접속 실행 0.")
+         sys.exit(2)
+ 
++def is_connection_failure(exit_code):
++    """
++    접속 실패 판정: ssh·scp·sftp 자체의 접속 오류(종료코드 255), 시간 초과(124).
++    원격 명령의 일반 오류(1, 2 등)는 접속 성공으로 간주하여 연속 실패 계산에서 제외.
++    """
++    s = str(exit_code).strip()
++    return s in ("255", "124")
++
+ def check_consecutive_failures_pre(records, lock_path):
+     if len(records) >= 2:
+         r1 = records[-2]["exit_code"]
+         r2 = records[-1]["exit_code"]
+-        if r1 != "0" and r2 != "0":
++        if is_connection_failure(r1) and is_connection_failure(r2):
+             if not os.path.exists(lock_path):
+                 with open(lock_path, "w", encoding="utf-8") as f:
+                     f.write(f"LOCK created at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+-                    f.write(f"Reason: Pre-check detected 2 consecutive failures: [{r1}], [{r2}]\n")
+-            print(f"[BLOCKED] 직전 2행 모두 exit!=0 (exit1={r1}, exit2={r2}).")
++                    f.write(f"Reason: Pre-check detected 2 consecutive connection failures: [{r1}], [{r2}]\n")
++            print(f"[BLOCKED] 직전 2행 모두 접속 실패(exit 255 또는 124) (exit1={r1}, exit2={r2}).")
+             print(f"shared/SSH_LOCK 생성 및 서버 접속 차단. Principal 직접 조치 필요.")
+             sys.exit(2)
+ 
+@@ -103,13 +113,13 @@ def append_log(log_path, dt_str, purpose, exit_code):
+         f.write(f"{dt_str},{clean_purpose},{exit_code}\n")
+ 
+ def check_consecutive_failures_post(records_before, current_exit, lock_path, now_str):
+-    if current_exit != 0 and records_before:
++    if is_connection_failure(current_exit) and records_before:
+         last_exit = records_before[-1]["exit_code"]
+-        if last_exit != "0":
++        if is_connection_failure(last_exit):
+             if not os.path.exists(lock_path):
+                 with open(lock_path, "w", encoding="utf-8") as f:
+                     f.write(f"LOCK created at {now_str}\n")
+-                    f.write(f"Reason: 2 consecutive failures: last={last_exit}, current={current_exit}\n")
++                    f.write(f"Reason: 2 consecutive connection failures: last={last_exit}, current={current_exit}\n")
+             print(f"[LOCK] 2회 연속 접속 실패 감지 (직전 exit={last_exit}, 현재 exit={current_exit}).")
+             print(f"shared/SSH_LOCK 파일을 생성했습니다. Principal 직접 조치 및 해제 전까지 차단됩니다.")
+ 
+@@ -162,7 +172,7 @@ def build_command(subcmd, remaining_args, config_path):
+ 
+ def main():
+     if len(sys.argv) < 2:
+-        print("Usage: python shared/cts_ssh.py <ssh|sftp|scp> [args...] [--purpose <desc>]")
++        print("Usage: python shared/cts_ssh_v2_candidate.py <ssh|sftp|scp> [args...] [--purpose <desc>]")
+         sys.exit(1)
+ 
+     subcmd = sys.argv[1]
+@@ -181,7 +191,7 @@ def main():
+     records = read_ssh_log(log_path)
+     now = datetime.now()
+ 
+-    # (5-pre) 직전 2행이 모두 exit!=0이면 SSH_LOCK 생성 후 종료
++    # (5-pre) 직전 2행이 모두 접속 실패(255 또는 124)이면 SSH_LOCK 생성 후 종료
+     check_consecutive_failures_pre(records, lock_path)
+ 
+     # (1) 60초 미만이면 실행 0, "R7-1 대기 필요 N초" 출력 후 종료
+@@ -207,12 +217,12 @@ def main():
+             exit_code = 124
+         except Exception as e:
+             print(f"[EXCEPTION] Subprocess failed: {e}")
+-            exit_code = 1
++            exit_code = 255
+ 
+     # (4) 성공·실패·타임아웃 모두 ssh_log.csv에 추가(append) 1행: 시각, 목적, exit
+     append_log(log_path, run_timestamp_str, purpose, exit_code)
+ 
+-    # (5-post) 직전 2행이 모두 exit!=0이면 SSH_LOCK 생성 후 종료
++    # (5-post) 직전 2행이 모두 접속 실패(255 또는 124)이면 SSH_LOCK 생성 후 종료
+     check_consecutive_failures_post(records, exit_code, lock_path, run_timestamp_str)
+ 
+     sys.exit(exit_code)

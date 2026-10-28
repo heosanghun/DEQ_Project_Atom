@@ -1,0 +1,26 @@
+{
+  "author": "Codex",
+  "created_kst": "2026-10-20T08:02:48.330312+09:00",
+  "input_commit": "a616640f7edafaf69e21063b50a20364470004a3",
+  "batch": "OUTBOX/20261020-0802-C003b",
+  "scope": "static reading only; no reviewed code or tokenizer/model execution",
+  "C004": "waiting for results; no regrading or independent statistics started",
+  "input_sha256": {
+    "ANSWER-C003-20261020-0900.md": "585474c6bd491621fe171e6ca3a89f53c86bac3ce1d97623c7e5cfb59d3c674b",
+    "scripts/g2v10_train.py": "9a1fff7971360df93d90047f7e8bd0c6ccc3363fbe31030c6abe2958dfb58fc9",
+    "scripts/cc_x5.sh": "69a264af32949ab6a8dd1c25767736cf2a227d6703b23b14bf21981fbebd5c2f",
+    "scripts/g2v9_train.py": "524df1796848d6d435adbc742071244d7a3b9b0508102b9c77a6b6bea874acbc",
+    "scripts/make_s0spec_x.py": "5172ad4a24e9e9f1de75c471ef0a35836f5296f60940c7c83b4245a5bf07dcae",
+    "docs/X_INTERFACE_PLAN_20261019.md": "1d8aff0c5de65f1ae3707fd940bf5e93350ead507f47a68b1b78ab001da4cd5a"
+  },
+  "artifacts": {
+    "REPORT-C003b.md": {
+      "sha256": "27536e3df7781c5daa0a90d9cd18b954c9abc2cc21992da5ffe631fc8486414d",
+      "bytes": 10327
+    },
+    "QUESTION-C003b-C004-20261020.md": {
+      "sha256": "ed80a591070e8fede086fd1bde8749ad85abcae662095cbcfaa1a28e1b33047d",
+      "bytes": 1610
+    }
+  }
+}

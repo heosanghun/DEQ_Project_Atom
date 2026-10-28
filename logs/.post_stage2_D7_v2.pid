@@ -1,0 +1,7 @@
+{
+    "out_root":  "results/post_stage2_D7_v2",
+    "err":  "logs/post_stage2_D7_v2_20260429_133457.err",
+    "pid":  35824,
+    "log":  "logs/post_stage2_D7_v2_20260429_133457.log",
+    "ts":  "20260429_133457"
+}

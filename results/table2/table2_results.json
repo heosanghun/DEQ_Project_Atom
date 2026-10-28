@@ -1,0 +1,110 @@
+{
+  "greedy": {
+    "math500": {
+      "mean": 1.0,
+      "std": 0.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "n_samples": 5
+    }
+  },
+  "native_think": {
+    "math500": {
+      "mean": 0.6666666666666666,
+      "std": 0.0,
+      "ci_lower": 0.6666666666666666,
+      "ci_upper": 0.6666666666666666,
+      "n_samples": 5
+    }
+  },
+  "deq_only": {
+    "math500": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 5
+    }
+  },
+  "cts_2nu": {
+    "math500": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 5
+    }
+  },
+  "cts_4nu": {
+    "math500": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 5
+    }
+  },
+  "think_off_greedy": {
+    "math500": {
+      "mean": 0.3333333333333333,
+      "std": 0.0,
+      "ci_lower": 0.3333333333333333,
+      "ci_upper": 0.3333333333333333,
+      "n_samples": 5
+    }
+  },
+  "ft_nt": {
+    "math500": {
+      "mean": 0.6666666666666666,
+      "std": 0.0,
+      "ci_lower": 0.6666666666666666,
+      "ci_upper": 0.6666666666666666,
+      "n_samples": 5
+    }
+  },
+  "sc_14": {
+    "math500": {
+      "mean": 0.9333333333333332,
+      "std": 0.149071198499986,
+      "ci_lower": 0.7999999999999999,
+      "ci_upper": 1.0,
+      "n_samples": 5
+    }
+  },
+  "bon_13": {
+    "math500": {
+      "mean": 0.2,
+      "std": 0.29814239699997197,
+      "ci_lower": 0.0,
+      "ci_upper": 0.4666666666666666,
+      "n_samples": 5
+    }
+  },
+  "bandit_ucb1": {
+    "math500": {
+      "mean": 0.9333333333333332,
+      "std": 0.149071198499986,
+      "ci_lower": 0.7999999999999999,
+      "ci_upper": 1.0,
+      "n_samples": 5
+    }
+  },
+  "mcts_early_stop": {
+    "math500": {
+      "mean": 0.3333333333333333,
+      "std": 0.0,
+      "ci_lower": 0.3333333333333333,
+      "ci_upper": 0.3333333333333333,
+      "n_samples": 5
+    }
+  },
+  "expl_mcts_ppo": {
+    "math500": {
+      "mean": 0.3333333333333333,
+      "std": 0.0,
+      "ci_lower": 0.3333333333333333,
+      "ci_upper": 0.3333333333333333,
+      "n_samples": 5
+    }
+  }
+}

@@ -1,0 +1,63 @@
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+Timeout during comparison
+================================================================================
+TASK-0002 Part (b): Grader Unit Tests & Phase 2 Re-scoring
+Timestamp: 2026-09-28 11:45:54
+================================================================================
+
+--- STEP 1: Running 20 Unit Tests (Defect 9 Coverage) ---
+================================================================================
+TASK-0002 Part (b): Grader Unit Tests (20 Test Cases)
+================================================================================
+ # | Test Name                           | Strict       | Lenient      | Result
+--------------------------------------------------------------------------------
+ 1 | defect9_sqrt_prefix                 | False (exp False) | False (exp False) | PASS  
+ 2 | defect9_mid_reasoning_let_me_compute | False (exp False) | False (exp False) | PASS  
+ 3 | defect9_trailing_period             | True (exp True) | True (exp True) | PASS  
+ 4 | defect9_comma_separator             | True (exp True) | True (exp True) | PASS  
+ 5 | defect9_also_word_boundary_answer   | True (exp True) | True (exp True) | PASS  
+ 6 | defect9_also_word_boundary_no_answer | False (exp False) | False (exp False) | PASS  
+ 7 | prose_so_the_answer_is              | False (exp False) | True (exp True) | PASS  
+ 8 | choice_letter_normalization         | True (exp True) | True (exp True) | PASS  
+ 9 | symbolic_fraction_to_decimal        | True (exp True) | True (exp True) | PASS  
+10 | symbolic_radical_simplification     | True (exp True) | True (exp True) | PASS  
+11 | symbolic_unreduced_fraction         | True (exp True) | True (exp True) | PASS  
+12 | strict_direct_mismatch              | False (exp False) | False (exp False) | PASS  
+13 | lenient_euros_unit_equation         | False (exp False) | True (exp True) | PASS  
+14 | lenient_fraction_in_text            | False (exp False) | True (exp True) | PASS  
+15 | lenient_inline_math_equation        | False (exp False) | True (exp True) | PASS  
+16 | nested_braces_and_symbolic          | True (exp True) | True (exp True) | PASS  
+17 | unclosed_boxed_recovery             | True (exp True) | True (exp True) | PASS  
+18 | float_zero_padding                  | True (exp True) | True (exp True) | PASS  
+19 | reasoning_only_no_answer            | False (exp False) | False (exp False) | PASS  
+20 | padded_integer_aime                 | True (exp True) | True (exp True) | PASS  
+--------------------------------------------------------------------------------
+Total: 20/20 test cases passed (100.0%)
+================================================================================
+
+--- STEP 2: Re-scoring Phase 2 Saved Outputs ---
+Loaded 640 records from /home/shoon/cts_e1_s5/results_s5/phase2_outputs.jsonl
+
+--- STEP 3: Condition-Wise Variation Table ---
+Condition          | Total | Old Strict | New Strict | Strict Δ | Old Lenient | New Lenient | Lenient Δ
+----------------------------------------------------------------------------------------------------
+control_matched    |    80 |     0 ( 0.0%) |     0 ( 0.0%) |       +0 |      3 ( 3.8%) |      3 ( 3.8%) |        +0
+matched            |    80 |     1 ( 1.2%) |     0 ( 0.0%) |       -1 |      6 ( 7.5%) |      1 ( 1.2%) |        -5
+no_prefix          |    80 |     0 ( 0.0%) |     0 ( 0.0%) |       +0 |      0 ( 0.0%) |      0 ( 0.0%) |        +0
+random_z           |    80 |     1 ( 1.2%) |     0 ( 0.0%) |       -1 |      3 ( 3.8%) |      0 ( 0.0%) |        -3
+shuffled_1         |    80 |     2 ( 2.5%) |     0 ( 0.0%) |       -2 |      4 ( 5.0%) |      1 ( 1.2%) |        -3
+shuffled_2         |    80 |     0 ( 0.0%) |     0 ( 0.0%) |       +0 |      5 ( 6.2%) |      0 ( 0.0%) |        -5
+shuffled_3         |    80 |     1 ( 1.2%) |     1 ( 1.2%) |       +0 |      3 ( 3.8%) |      1 ( 1.2%) |        -2
+zero               |    80 |     0 ( 0.0%) |     0 ( 0.0%) |       +0 |      0 ( 0.0%) |      0 ( 0.0%) |        +0
+----------------------------------------------------------------------------------------------------
+TOTAL              |   640 |     5 ( 0.8%) |     1 ( 0.2%) |       -4 |     24 ( 3.8%) |      6 ( 0.9%) |       -18
+====================================================================================================
+
+Saved re-scoring delta table to: /home/shoon/cts_e1_s5/results_s5/phase2_rescore_v2.json
+File size: 9135 bytes

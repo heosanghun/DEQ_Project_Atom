@@ -1,0 +1,148 @@
+# Phase 1: greedy baseline (Gemma 4 E4B, no scaffold)
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\run_cts_eval_full.py --benchmarks aime humaneval --methods greedy --seeds 1 --output-dir D:\AI\cts\results\local_gemma4\phase1_greedy --device cuda:0 --limit 30
+# start: 2026-04-30T08:14:44Z
+
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [greedy] aime seed=0
+
+Loading weights:   0%|          | 0/2130 [00:00<?, ?it/s]
+Loading weights:  16%|█▌        | 344/2130 [00:00<00:00, 3436.55it/s]
+Loading weights:  32%|███▏      | 690/2130 [00:00<00:00, 3444.74it/s]
+Loading weights:  49%|████▊     | 1035/2130 [00:02<00:04, 268.53it/s]
+Loading weights:  58%|█████▊    | 1229/2130 [00:03<00:03, 278.28it/s]
+Loading weights:  64%|██████▍   | 1359/2130 [00:03<00:02, 285.32it/s]
+Loading weights:  68%|██████▊   | 1453/2130 [00:04<00:02, 291.49it/s]
+Loading weights:  75%|███████▍  | 1589/2130 [00:04<00:01, 368.06it/s]
+Loading weights:  82%|████████▏ | 1741/2130 [00:04<00:00, 474.99it/s]
+Loading weights: 100%|██████████| 2130/2130 [00:04<00:00, 472.15it/s]
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    [greedy/aime] gold='277' pred='47' match=False
+    [greedy/aime] gold='062' pred='13' match=False
+    [greedy/aime] gold='079' pred='Let $O$ be the center of the disk and $A' match=False
+    [greedy/aime] gold='070' pred='1' match=False
+    [greedy/aime] gold='065' pred='2' match=False
+    [greedy/aime] gold='441' pred='120' match=False
+    [greedy/aime] gold='396' pred='1' match=False
+    [greedy/aime] gold='244' pred='17' match=False
+    [greedy/aime] gold='029' pred='' match=False
+    [greedy/aime] gold='156' pred='' match=False
+    [greedy/aime] gold='896' pred='$80$' match=False
+    [greedy/aime] gold='161' pred='3' match=False
+    [greedy/aime] gold='039' pred='2' match=False
+    [greedy/aime] gold='681' pred='' match=False
+    [greedy/aime] gold='083' pred='90' match=False
+    [greedy/aime] gold='178' pred='$-16$' match=False
+    [greedy/aime] gold='243' pred='10' match=False
+    [greedy/aime] gold='503' pred='20' match=False
+    [greedy/aime] gold='279' pred='1' match=False
+    [greedy/aime] gold='190' pred='' match=False
+    [greedy/aime] gold='050' pred='\sqrt{145}' match=False
+    [greedy/aime] gold='754' pred='46657' match=False
+    [greedy/aime] gold='245' pred='\frac{23}{3}' match=False
+    [greedy/aime] gold='669' pred='90' match=False
+    [greedy/aime] gold='340' pred='' match=False
+    [greedy/aime] gold='132' pred='6' match=False
+    [greedy/aime] gold='223' pred='2' match=False
+    [greedy/aime] gold='107' pred='4040' match=False
+    [greedy/aime] gold='157' pred='1' match=False
+    [greedy/aime] gold='393' pred='' match=False
+  [greedy] humaneval seed=0
+    [greedy/humaneval] gold='    for idx, elem in enumerate(numbers):' pred='def has_close_elements(numbers: List[flo' match=True
+    [greedy/humaneval] gold='    result = []
+    current_string = []
+' pred='def separate_paren_groups(paren_string: ' match=False
+    [greedy/humaneval] gold='    return number % 1.0
+' pred='def truncate_number(number: float) -> fl' match=True
+    [greedy/humaneval] gold='    balance = 0
+
+    for op in operation' pred='def below_zero(operations: List[int]) ->' match=True
+    [greedy/humaneval] gold='    mean = sum(numbers) / len(numbers)
+ ' pred='def mean_absolute_deviation(numbers: Lis' match=True
+    [greedy/humaneval] gold='    if not numbers:
+        return []
+
+ ' pred='def intersperse(numbers: List[int], deli' match=True
+    [greedy/humaneval] gold='    def parse_paren_group(s):
+        de' pred='def parse_nested_parens(paren_string: st' match=False
+    [greedy/humaneval] gold='    return [x for x in strings if substr' pred='def filter_by_substring(strings: List[st' match=True
+    [greedy/humaneval] gold='    sum_value = 0
+    prod_value = 1
+
+  ' pred='def sum_product(numbers: List[int]) -> T' match=True
+    [greedy/humaneval] gold='    running_max = None
+    result = []
+
+' pred='def rolling_max(numbers: List[int]) -> L' match=True
+    [greedy/humaneval] gold='    if not string:
+        return ''
+
+  ' pred='def make_palindrome(string: str) -> str:' match=False
+    [greedy/humaneval] gold='    def xor(i, j):
+        if i == j:
+  ' pred='def string_xor(a: str, b: str) -> str:
+ ' match=True
+    [greedy/humaneval] gold='    if not strings:
+        return None
+' pred='def longest(strings: List[str]) -> Optio' match=True
+    [greedy/humaneval] gold='    while b:
+        a, b = b, a % b
+   ' pred='def greatest_common_divisor(a: int, b: i' match=True
+    [greedy/humaneval] gold='    result = []
+
+    for i in range(len(' pred='def all_prefixes(string: str) -> List[st' match=False
+    [greedy/humaneval] gold='    return ' '.join([str(x) for x in ran' pred='def string_sequence(n: int) -> str:
+    ' match=True
+    [greedy/humaneval] gold='    return len(set(string.lower()))
+' pred='def count_distinct_characters(string: st' match=True
+    [greedy/humaneval] gold='    note_map = {'o': 4, 'o|': 2, '.|': 1' pred='def parse_music(music_string: str) -> Li' match=False
+    [greedy/humaneval] gold='    times = 0
+
+    for i in range(len(st' pred='def how_many_times(string: str, substrin' match=True
+    [greedy/humaneval] gold='    value_map = {
+        'zero': 0,
+   ' pred='def sort_numbers(numbers: str) -> str:
+ ' match=False
+    [greedy/humaneval] gold='    closest_pair = None
+    distance = N' pred='def find_closest_elements(numbers: List[' match=False
+    [greedy/humaneval] gold='    min_number = min(numbers)
+    max_nu' pred='def rescale_to_unit(numbers: List[float]' match=True
+    [greedy/humaneval] gold='    return [x for x in values if isinsta' pred='def filter_integers(values: List[Any]) -' match=True
+    [greedy/humaneval] gold='    return len(string)
+' pred='def strlen(string: str) -> int:
+    """ ' match=True
+    [greedy/humaneval] gold='    for i in reversed(range(n)):
+       ' pred='def largest_divisor(n: int) -> int:
+    ' match=True
+    [greedy/humaneval] gold='    import math
+    fact = []
+    i = 2
+' pred='def factorize(n: int) -> List[int]:
+    ' match=True
+    [greedy/humaneval] gold='    import collections
+    c = collectio' pred='def remove_duplicates(numbers: List[int]' match=False
+    [greedy/humaneval] gold='    return string.swapcase()
+' pred='def flip_case(string: str) -> str:
+    "' match=True
+    [greedy/humaneval] gold='    return ''.join(strings)
+' pred='def concatenate(strings: List[str]) -> s' match=True
+    [greedy/humaneval] gold='    return [x for x in strings if x.star' pred='def filter_by_prefix(strings: List[str],' match=True
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                           aime   humaneval
+-------------------------------------------------
+greedy                        0.0+-0.0    73.3+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\local_gemma4\phase1_greedy\table2_results.json

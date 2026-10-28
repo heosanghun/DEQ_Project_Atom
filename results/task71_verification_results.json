@@ -1,0 +1,40 @@
+{
+  "sample_idx": 8,
+  "unit_a_d3": {
+    "completed": true,
+    "max_depth": 1,
+    "total_nodes": 4,
+    "depth_distribution": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "logical_mac_accumulated": 208508494801.42596,
+    "total_executed_mac": 208508494801.42596,
+    "wall_s": 27.833893060684204,
+    "answer": "\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\end{1}\n\\"
+  },
+  "unit_b_d5": {
+    "completed": true,
+    "max_depth": 1,
+    "total_nodes": 4,
+    "depth_distribution": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "logical_mac_accumulated": 208508494801.42596,
+    "total_executed_mac": 208508494801.42596,
+    "wall_s": 19.27569055557251,
+    "answer": "\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\boxed{1}\n\\end{1}\n\\"
+  },
+  "regression_depth0": {
+    "transitions": 14,
+    "k_100": 2687,
+    "r_3000": 0.00012124349097683856,
+    "r_100": 0.014925156056765556,
+    "matches_baseline": true
+  }
+}

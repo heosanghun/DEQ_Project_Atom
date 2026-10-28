@@ -1,0 +1,41 @@
+=== X3c start 2026-10-20 01:21:16 ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+efc24925fd6d45973f388502af7dea3d8fd9747b2cc987b1fa6d9bbaa79aa997  /tmp/cts_x_stage/g2v9_train.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+568f84e615c9f97b164dcb016767e96927dc6b55452499cf1749d52baffc1429  /tmp/cts_s2/oracle_latents.pt
+07aa0c8175bd471a0722210f2e721db7b15f9b99e760ea7064249a502e7a473a  /tmp/cts_x3b/bridge_X3O47.pt
+3206c7bdeccd9d300ec963256bd5e7432f68e9ce8cc76bd32860f96f67eaafc2  configs/x3_train200.json
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T   21G 100% /home
+/dev/sda3       436G  402G   12G  98% /
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-X3Od47] rc=1 01:21:47 
+scripts/cc_x3c.sh: line 34: results_s7/p6r/g2v9x3c/gen_X3Od47.jsonl: No such file or directory
+[GEN-X3Od47] rc=1 rows= 01:21:49
+scripts/cc_x3c.sh: line 36: results_s7/p6r/g2v9x3c/genB1_X3Od47.jsonl: No such file or directory
+[GENS-X3Od47] rc=1 rows= 01:21:50
+[TR-X3Oc47] rc=0 01:37:50 [Step 1499] loss 0.5544 gates [-0.002, 0.016, -0.034, -0.067] (960s)
+[GEN-X3Oc47] rc=0 rows=600 03:23:59
+[GENS-X3Oc47] rc=0 rows=600 05:10:18
+[GEN-D2m] rc=0 rows=200 05:33:58
+[GENS-D2m] rc=0 rows=200 05:58:20
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X3Oc47: n 600 strict 55 lenient 56 boxed 438
+[S0] shuf_X3Oc47: n 600 strict 51 lenient 53 boxed 435
+[S0] X3Od47: n 0 strict 0 lenient 0 boxed 0
+[S0] shuf_X3Od47: n 0 strict 0 lenient 0 boxed 0
+[S0-DONE] /tmp/cts_x3c/x3c_items.json
+[S0] D2m: n 200 strict 50 lenient 51 boxed 165
+[S0] D2s: n 200 strict 30 lenient 32 boxed 166
+[S0-DONE] /tmp/cts_x3c/d2_items.json
+3d2a79be6a7a0b41d6fc38f51996b6403762789d3081452cef9591eb91370bb4  results_s7/p6r/g2v9x3c/genB1_D2m.jsonl
+6ff2d2f85bbf3dfbee5c48a3831b52e8e3ec1bf82141ec39ef42f66454d8d96f  results_s7/p6r/g2v9x3c/genB1_X3Oc47.jsonl
+3917f07f0427fe3041389f62e14a2ed1fc559f8f49b4de66e14841202197206d  results_s7/p6r/g2v9x3c/gen_D2m.jsonl
+c3bddfeb0f962322a17c4c6fda563f620254ccf9d34632827de997e3f10269de  results_s7/p6r/g2v9x3c/gen_X3Oc47.jsonl
+68d2bac97e2766028336f1f1e5f826c78dfdfc1610be64e5c227659dca13065b  /tmp/cts_x3c/d2_items.json
+00123ee9f5b5b7971d887cad4644241ef931b7bb84a9a63a20f6022ad450114e  /tmp/cts_x3c/x3c_items.json
+1471ff08c88f00fd17bc9d9f637cecafaa3f3f48808aa3e5495debffb9ea1b98  /tmp/cts_x3c/manifest_X3Oc47.json
+dd18bb3976de285e93283786cb87e4cc2b2ceba1ea62795f3a003816e47fd620  /tmp/cts_x3c/bridge_X3Oc47.pt
+=== X3c end 2026-10-20 05:58:34 ===

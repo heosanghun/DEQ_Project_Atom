@@ -1,0 +1,51 @@
+=== X6 start 2026-10-20 13:16:08 ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f  /tmp/cts_x_stage/g2v10_train.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+568f84e615c9f97b164dcb016767e96927dc6b55452499cf1749d52baffc1429  /tmp/cts_s2/oracle_latents.pt
+0c026ea2d7e863d3035a7918cec23dd83206794db7ea2c092ed3aa97c62fad69  results_s7/p6r/g2v9x5base/gen_Ctrain.jsonl
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-X6R50] rc=0 13:37:36 [Step 1499] loss 0.1160 ans_ce 0.8486 (n 4) gates [0.0, 0.008, -0.031, 0.025] (1246s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[TR-X6R49] rc=0 13:37:46 [Step 1499] loss 0.0958 ans_ce 0.5769 (n 4) gates [0.001, -0.008, 0.034, -0.028] (1255s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[TR-X6S47] rc=0 13:58:27 [Step 2999] loss 0.0190 ans_ce 0.0005 (n 4) gates [0.001, -0.009, -0.037, 0.027] (2496s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[GEN-X6R49] rc=0 rows=600 16:31:48
+[GEN-X6R50] rc=0 rows=600 16:40:09
+[GEN-X6S47] rc=0 rows=600 17:04:47
+[GENS-X6R49] rc=0 rows=600 19:24:53
+[GENS-X6R50] rc=0 rows=600 19:38:05
+[GENS-X6S47] rc=0 rows=600 20:09:29
+[CHECK-gen-X6R49] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X6R49] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X6R50] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X6R50] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X6S47] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X6S47] rc=0 rows=600 unique_ids=600
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X6R49: n 600 strict 95 lenient 99 boxed 337
+[S0] shuf_X6R49: n 600 strict 64 lenient 72 boxed 318
+[S0] X6R50: n 600 strict 81 lenient 90 boxed 298
+[S0] shuf_X6R50: n 600 strict 63 lenient 74 boxed 297
+[S0] X6S47: n 600 strict 70 lenient 76 boxed 277
+[S0] shuf_X6S47: n 600 strict 57 lenient 65 boxed 313
+[S0-DONE] /tmp/cts_x6/x6_items.json
+46c5927750747e164656a791ce1954d577426a2c635005b6651a2065e2c4e242  results_s7/p6r/g2v9x6/genB1_X6R49.jsonl
+12932151c29274338d976e5c6a061bbef390e5634913b2a1c78c4bb3d7c03b4b  results_s7/p6r/g2v9x6/genB1_X6R50.jsonl
+dd7e3bdbad52c0ef0230669b5623b865fd5f25434475914113ab30a4ec707c82  results_s7/p6r/g2v9x6/genB1_X6S47.jsonl
+5c50987c5481ba0e7e5bf0dc6ef2ca3561b41053b6c06cba2bc7c6fd984c092c  results_s7/p6r/g2v9x6/gen_X6R49.jsonl
+1ed19a87f523a2b0e45f7c4495198b63b8fe844b5c7d16d545b676319b2d5166  results_s7/p6r/g2v9x6/gen_X6R50.jsonl
+60c6ac94d2d8384c89875d069cd272e8ac66d58af417b2882b5a5f237f0fb6f5  results_s7/p6r/g2v9x6/gen_X6S47.jsonl
+dd8a0609d0f7e13cf02b2b87105d735cc67b1415cc8040e05da716ea546d6957  /tmp/cts_x6/x6_items.json
+ae82a3d151b654b17312640bab856269d2ad82f162abc2dec8d95891787286a5  /tmp/cts_x6/manifest_X6R49.json
+15971c99f6dd2c3b5049a032437cbe6e8cadae2daf38b6f7c934ff009e70d5a4  /tmp/cts_x6/manifest_X6R50.json
+44fd59a2ffcfc9c9731dd13cc0607f0ac77c6e9d50b004b3bc204ac0c444abc5  /tmp/cts_x6/manifest_X6S47.json
+632e0933dc3ec4c90f09044db42727fb84b080ed52d7a6326d27ee598c092748  /tmp/cts_x6/bridge_X6R49.pt
+75bbd7798267bbc866f29c82fc169e19127e3441909af5c9cbda8d299f8a7092  /tmp/cts_x6/bridge_X6R50.pt
+e6637b403765524f385a7fac8c74fca03d54b948bd22f8a30abdae74cdfe4a14  /tmp/cts_x6/bridge_X6S47.pt
+=== X6 end 2026-10-20 20:09:52 ===

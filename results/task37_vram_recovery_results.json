@@ -1,0 +1,113 @@
+{
+  "task_37_1_cause": "torch.cuda.max_memory_allocated() defaulted to cuda:0 instead of explicit device cuda:7/6 where model resides",
+  "model_loaded_baseline": {
+    "allocated_gib": 29.65802812576294,
+    "allocated_mib": 30369.82080078125,
+    "reserved_gib": 29.701171875,
+    "nvidia_smi_mib": 30750.0
+  },
+  "task_37_2_sample_costs": {
+    "8": {
+      "broyden": {
+        "total_time_s": 32.168976068496704,
+        "ms_per_step": 32.168976068496704,
+        "baseline_allocated_mib": 30390.8798828125,
+        "peak_allocated_mib": 32490.427734375,
+        "peak_allocated_gib": 31.728933334350586,
+        "peak_reserved_mib": 32616.0,
+        "nvidia_smi_used_mib": 32992.0
+      },
+      "picard": {
+        "total_time_s": 43.46975636482239,
+        "ms_per_step": 43.46975636482239,
+        "baseline_allocated_mib": 30411.5048828125,
+        "peak_allocated_mib": 30496.38720703125,
+        "peak_allocated_gib": 29.781628131866455,
+        "peak_reserved_mib": 30530.0,
+        "nvidia_smi_used_mib": 30906.0
+      }
+    },
+    "14": {
+      "broyden": {
+        "total_time_s": 32.68665552139282,
+        "ms_per_step": 32.68665552139282,
+        "baseline_allocated_mib": 30395.05029296875,
+        "peak_allocated_mib": 31679.220703125,
+        "peak_allocated_gib": 30.936738967895508,
+        "peak_reserved_mib": 31710.0,
+        "nvidia_smi_used_mib": 32086.0
+      },
+      "picard": {
+        "total_time_s": 30.220872163772583,
+        "ms_per_step": 30.220872163772583,
+        "baseline_allocated_mib": 30375.05029296875,
+        "peak_allocated_mib": 30401.53173828125,
+        "peak_allocated_gib": 29.688995838165283,
+        "peak_reserved_mib": 30414.0,
+        "nvidia_smi_used_mib": 30790.0
+      }
+    },
+    "27": {
+      "broyden": {
+        "total_time_s": 32.846020460128784,
+        "ms_per_step": 32.846020460128784,
+        "baseline_allocated_mib": 30373.83935546875,
+        "peak_allocated_mib": 31652.814453125,
+        "peak_allocated_gib": 30.910951614379883,
+        "peak_reserved_mib": 31666.0,
+        "nvidia_smi_used_mib": 32042.0
+      },
+      "picard": {
+        "total_time_s": 29.18018651008606,
+        "ms_per_step": 29.18018651008606,
+        "baseline_allocated_mib": 30373.83935546875,
+        "peak_allocated_mib": 30394.91845703125,
+        "peak_allocated_gib": 29.68253755569458,
+        "peak_reserved_mib": 30404.0,
+        "nvidia_smi_used_mib": 30780.0
+      }
+    }
+  },
+  "task_37_3_depth_scaling": {
+    "1": {
+      "depth": 1,
+      "baseline_allocated_mib": 30392.32177734375,
+      "peak_allocated_mib": 30475.74658203125,
+      "peak_allocated_gib": 29.761471271514893,
+      "active_delta_allocated_mib": 83.4248046875,
+      "peak_reserved_mib": 30516.0,
+      "nvidia_smi_used_mib": 30892.0,
+      "no_grad_verified": true
+    },
+    "10": {
+      "depth": 10,
+      "baseline_allocated_mib": 30392.32177734375,
+      "peak_allocated_mib": 30476.11767578125,
+      "peak_allocated_gib": 29.761833667755127,
+      "active_delta_allocated_mib": 83.7958984375,
+      "peak_reserved_mib": 30516.0,
+      "nvidia_smi_used_mib": 30892.0,
+      "no_grad_verified": true
+    },
+    "100": {
+      "depth": 100,
+      "baseline_allocated_mib": 30392.32177734375,
+      "peak_allocated_mib": 30476.11767578125,
+      "peak_allocated_gib": 29.761833667755127,
+      "active_delta_allocated_mib": 83.7958984375,
+      "peak_reserved_mib": 30516.0,
+      "nvidia_smi_used_mib": 30892.0,
+      "no_grad_verified": true
+    },
+    "1000": {
+      "depth": 1000,
+      "baseline_allocated_mib": 30392.32177734375,
+      "peak_allocated_mib": 30476.11767578125,
+      "peak_allocated_gib": 29.761833667755127,
+      "active_delta_allocated_mib": 83.7958984375,
+      "peak_reserved_mib": 30516.0,
+      "nvidia_smi_used_mib": 30892.0,
+      "no_grad_verified": true
+    }
+  }
+}

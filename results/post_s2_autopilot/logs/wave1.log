@@ -1,0 +1,25 @@
+CTS Evaluation Pipeline
+  Benchmarks: ['math500']
+  Seeds: []
+  Mode: 4nu
+  Config: paper_parity
+
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                        math500
+-------------------------------------
+cts_4nu                           N/A
+greedy                            N/A
+native_think                      N/A
+sc_14                             N/A
+mcts_early_stop                   N/A
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise ес=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\headline_w1_math500_s0\table2_results.json

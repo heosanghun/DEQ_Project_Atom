@@ -1,0 +1,722 @@
+[watcher] initial ckpt mtime = 2026-04-19 ¿ÀÈÄ 5:00:35
+[watcher] elapsed=     0min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=     2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=     4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=     6min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=     8min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    10min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    12min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    14min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    16min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    18min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    20min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    22min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    24min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    26min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    28min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    30min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    32min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    34min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    36min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    38min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    40min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    42min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    44min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    46min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    48min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    50min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    52min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    54min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    56min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    58min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    60min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    62min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    64min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    66min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    68min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    70min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    72min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    74min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    76min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    78min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    80min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    82min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    84min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    86min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    88min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    90min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    92min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    94min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    96min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=    98min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   100min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   102min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   104min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   106min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   108min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   110min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   112min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   114min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   116min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   118min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   120min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   122min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   124min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   126min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   128min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   130min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   132min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   134min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   136min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   138min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   140min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   142min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   144min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   146min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   148min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   150min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   152min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   154min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   156min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   158min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   160min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   162min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   164min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   166min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   168min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   170min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   172min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   174min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   176min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   178min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   180min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   182min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   184min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   186min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   188min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=   190min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 192.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 194.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 196.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 198.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 200.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 202.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 204.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 206.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 208.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 210.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 212.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 214.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 216.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 218.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 220.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 222.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 224.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 226.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 228.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 230.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 232.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 234.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 236.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 238.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 240.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 242.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 244.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 246.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 248.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 250.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 252.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 254.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 256.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 258.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 260.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 262.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 264.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 266.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 268.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 270.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 272.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 274.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 276.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 278.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 280.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 282.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 284.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 286.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 288.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 290.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 292.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 294.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 296.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 298.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 300.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 302.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 304.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 306.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 308.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 310.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 312.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 314.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 316.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 318.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 320.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 322.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 324.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 326.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 328.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 330.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 332.1min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 334.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 336.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 338.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 340.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 342.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 344.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 346.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 348.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 350.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 352.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 354.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 356.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 358.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 360.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 362.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 364.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 366.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 368.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 370.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 372.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 374.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 376.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 378.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 380.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 382.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 384.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 386.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 388.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 390.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 392.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 394.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 396.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 398.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 400.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 402.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 404.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 406.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 408.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 410.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 412.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 414.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 416.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 418.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 420.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 422.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 424.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 426.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 428.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 430.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 432.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 434.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 436.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 438.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 440.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 442.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 444.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 446.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 448.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 450.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 452.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 454.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 456.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 458.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 460.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 462.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 464.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 466.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 468.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 470.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 472.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 474.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 476.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 478.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 480.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 482.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 484.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 486.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 488.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 490.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 492.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 494.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 496.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 498.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 500.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 502.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 504.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 506.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 508.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 510.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 512.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 514.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 516.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 518.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 520.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 522.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 524.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 526.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 528.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 530.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 532.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 534.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 536.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 538.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 540.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 542.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 544.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 546.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 548.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 550.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 552.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 554.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 556.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 558.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 560.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 562.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 564.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 566.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 568.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 570.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 572.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 574.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 576.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 578.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 580.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 582.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 584.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 586.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 588.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 590.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 592.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 594.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 596.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 598.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 600.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 602.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 604.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 606.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 608.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 610.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 612.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 614.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 616.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 618.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 620.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 622.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 624.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 626.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 628.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 630.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 632.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 634.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 636.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 638.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 640.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 642.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 644.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 646.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 648.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 650.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 652.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 654.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 656.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 658.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 660.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 662.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 664.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 666.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 668.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 670.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 672.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 674.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 676.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 678.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 680.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 682.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 684.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 686.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 688.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 690.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 692.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 694.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 696.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 698.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 700.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 702.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 704.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 706.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 708.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 710.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 712.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 714.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 716.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 718.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 720.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 722.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 724.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 726.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 728.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 730.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 732.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 734.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 736.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 738.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 740.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 742.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 744.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 746.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 748.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 750.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 752.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 754.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 756.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 758.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 760.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 762.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 764.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 766.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 768.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 770.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 772.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 774.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 776.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 778.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 780.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 782.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 784.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 786.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 788.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 790.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 792.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 794.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 796.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 798.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 800.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 802.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 804.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 806.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 808.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 810.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 812.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 814.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 816.2min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 818.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 820.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 822.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 824.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 826.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 828.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 830.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 832.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 834.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 836.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 838.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 840.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 842.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 844.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 846.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 848.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 850.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 852.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 854.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 856.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 858.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 860.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 862.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 864.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 866.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 868.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 870.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 872.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 874.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 876.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 878.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 880.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 882.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 884.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 886.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 888.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 890.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 892.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 894.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 896.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 898.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 900.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 902.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 904.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 906.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 908.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 910.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 912.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 914.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 916.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 918.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 920.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 922.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 924.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 926.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 928.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 930.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 932.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 934.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 936.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 938.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 940.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 942.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 944.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 946.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 948.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 950.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 952.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 954.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 956.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 958.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 960.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 962.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 964.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 966.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 968.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 970.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 972.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 974.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 976.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 978.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 980.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 982.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 984.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 986.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 988.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 990.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 992.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 994.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 996.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed= 998.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1000.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1002.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1004.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1006.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1008.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1010.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1012.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1014.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1016.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1018.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1020.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1022.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1024.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1026.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1028.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1030.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1032.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1034.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1036.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1038.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1040.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1042.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1044.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1046.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1048.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1050.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1052.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1054.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1056.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1058.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1060.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1062.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1064.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1066.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1068.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1070.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1072.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1074.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1076.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1078.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1080.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1082.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1084.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1086.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1088.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1090.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1092.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1094.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1096.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1098.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1100.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1102.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1104.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1106.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1108.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1110.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1112.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1114.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1116.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1118.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1120.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1122.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1124.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1126.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1128.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1130.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1132.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1134.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1136.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1138.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1140.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1142.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1144.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1146.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1148.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1150.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1152.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1154.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1156.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1158.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1160.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1162.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1164.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1166.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1168.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1170.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1172.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1174.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1176.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1178.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1180.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1182.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1184.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1186.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1188.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1190.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1192.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1194.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1196.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1198.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1200.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1202.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1204.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1206.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1208.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1210.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1212.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1214.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1216.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1218.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1220.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1222.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1224.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1226.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1228.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1230.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1232.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1234.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1236.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1238.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1240.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1242.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1244.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1246.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1248.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1250.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1252.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1254.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1256.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1258.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1260.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1262.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1264.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1266.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1268.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1270.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1272.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1274.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1276.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1278.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1280.3min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1282.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1284.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1286.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1288.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1290.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1292.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1294.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1296.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1298.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1300.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1302.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1304.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1306.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1308.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1310.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1312.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1314.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1316.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1318.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1320.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1322.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1324.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1326.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1328.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1330.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1332.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1334.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1336.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1338.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1340.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1342.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1344.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1346.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1348.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1350.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1352.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1354.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1356.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1358.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1360.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1362.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1364.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1366.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1368.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1370.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1372.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1374.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1376.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1378.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1380.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1382.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1384.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1386.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1388.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1390.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1392.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1394.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1396.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1398.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1400.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1402.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1404.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1406.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1408.4min  pid=12976 alive  ckpt=stale
+[watcher] elapsed=1410.4min  pid=12976 alive  ckpt=stale
+[watcher] Stage 2 process gone AND ckpt updated -> launching post-Stage-2 pipeline.
+[watcher] kicking off scripts/run_post_stage2_pipeline.py ...
+[pipeline] phase 'verify_stage2' starting...
+[pipeline] phase 'verify_stage2' -> PASS (5.0s)
+[pipeline] phase 'table2' starting...
+[pipeline] phase 'table2' -> FAIL (86401.8s)
+[pipeline] phase 'table17' starting...
+[pipeline] phase 'table17' -> FAIL (28804.1s)
+[pipeline] phase 'table19' starting...
+[pipeline] phase 'table19' -> PASS (5.3s)
+[pipeline] phase 'zip_rebuild' starting...
+[pipeline] phase 'zip_rebuild' -> PASS (8.4s)
+
+[pipeline] final verdict: PARTIAL_FAIL
+[pipeline] status JSON: D:\AI\cts\results\post_stage2_D11\pipeline_status.json

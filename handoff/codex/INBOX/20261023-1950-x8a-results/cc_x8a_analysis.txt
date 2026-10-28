@@ -1,0 +1,32 @@
+== per condition (n=600): boxed / lenient / strict
+  C_fmt       boxed  35.5%  lenient 15.67%  strict 12.83%
+  X8A47       boxed  50.2%  lenient 14.83%  strict 11.17%
+  X8A49       boxed  51.0%  lenient 15.83%  strict 13.83%
+  X8A50       boxed  52.3%  lenient 13.83%  strict 11.67%
+  shuf_X8A47  boxed  51.3%  lenient 11.33%  strict  9.17%
+  shuf_X8A49  boxed  58.5%  lenient 15.17%  strict 13.67%
+  shuf_X8A50  boxed  48.3%  lenient 14.17%  strict 11.83%
+  X7E47       boxed  44.5%  lenient 14.50%  strict 12.67%
+  X7E49       boxed  42.7%  lenient 11.83%  strict  9.67%
+  X7E50       boxed  50.8%  lenient 16.33%  strict 13.17%
+  shuf_X7E47  boxed  45.5%  lenient 16.17%  strict 13.00%
+  shuf_X7E49  boxed  41.8%  lenient 14.00%  strict 10.33%
+  shuf_X7E50  boxed  53.0%  lenient 16.00%  strict 13.33%
+== Rule (1): A - E (same sign all seeds AND pooled CI lower > 0) 
+  lenient  mean +0.61%p  95% CI [-1.11, +2.33]  per-seed [0.33, 4.0, -2.5]
+  strict   mean +0.39%p  95% CI [-1.28, +2.06]  per-seed [-1.5, 4.17, -1.5]
+== Rule (2): A matched - shuffled (CI lower > 0) 
+  lenient  mean +1.28%p  95% CI [-0.44, +3.00]  per-seed [3.5, 0.67, -0.33]
+  strict   mean +0.67%p  95% CI [-0.94, +2.33]  per-seed [2.0, 0.17, -0.17]
+== (ref) A - C_fmt (mechanism cost offset?) 
+  lenient  mean -0.83%p  95% CI [-3.28, +1.56]  per-seed [-0.83, 0.17, -1.83]
+  strict   mean -0.61%p  95% CI [-2.94, +1.61]  per-seed [-1.67, 1.0, -1.17]
+== (ref) A shuffled - C_fmt (harm) 
+  lenient  mean -2.11%p  95% CI [-4.61, +0.33]  per-seed [-4.33, -0.5, -1.5]
+  strict   mean -1.28%p  95% CI [-3.83, +1.11]  per-seed [-3.67, 0.83, -1.0]
+== (ref) E matched - shuffled 
+  lenient  mean -1.17%p  95% CI [-2.89, +0.56]  per-seed [-1.67, -2.17, 0.33]
+  strict   mean -0.39%p  95% CI [-2.00, +1.22]  per-seed [-0.33, -0.67, -0.17]
+== Rule (1) both-boxed subset: A - E (subset n=69)
+  lenient  mean -6.76%p  95% CI [-14.49, +0.48]  per-seed [-7.25, -5.8, -7.25]
+  strict   mean -6.76%p  95% CI [-14.49, +0.48]  per-seed [-7.25, -5.8, -7.25]

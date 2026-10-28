@@ -1,0 +1,30 @@
+=== deqlr start 2026-10-11 12:48:17 ===
+f492da0f1c35a3088397d2fec1748e9b56ed82bc3b371fe33cc0846706092ab0  scripts/g2v4_m4_pilot_train.py
+85b4e94f8523d15d4d522084cd0473d3446a702df4b31e52853346bdb7366126  scripts/g2v4_diag_iterate.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-E3] rc=0 13:12:23
+[TR-E5] rc=0 13:12:45
+[TR-A3] rc=0 13:12:58
+[DG-E3] rc=0 13:16:57
+[DG-E5] rc=0 13:17:16
+[DG-A3] rc=0 13:18:33
+A3 [SUM] A zstar_k1_nll 0.9593
+A3 [SUM] A zsrc_k1_nll 0.9895
+A3 [SUM] A shift1_nll 0.9663
+A3 [SUM] A mean_nll 0.9525
+A3 [SUM] A notext_own_nll 1.1957
+A3 [SUM] A notext_shift1_nll 1.2023
+E3 [SUM] E zsrc_k1_nll 0.9585
+E3 [SUM] E shift1_nll 0.9594
+E3 [SUM] E mean_nll 0.9566
+E3 [SUM] E notext_own_nll 1.2174
+E3 [SUM] E notext_shift1_nll 1.2171
+E5 [SUM] E zsrc_k1_nll 0.9652
+E5 [SUM] E shift1_nll 0.9711
+E5 [SUM] E mean_nll 1.7974
+E5 [SUM] E notext_own_nll 1.1932
+E5 [SUM] E notext_shift1_nll 1.2004
+=== deqlr end 2026-10-11 13:18:33 ===

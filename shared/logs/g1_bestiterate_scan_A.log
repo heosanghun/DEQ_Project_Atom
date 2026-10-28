@@ -1,0 +1,12 @@
+2026-09-28 12:30:29 +0900
+source: raw_s7/s7_zstar_pipeline.log (rho = step displacement, r = rho/alpha, alpha=0.25)
+set=400 n=400 | LAST r<1e-2:349 r<5e-3:308 | BEST(min) r<1e-2:396 r<5e-3:354
+set=680 n=183 | LAST r<1e-2:160 r<5e-3:144 | BEST(min) r<1e-2:181 r<5e-3:164
+shape 400 increase 6
+shape 400 monotonic_decrease 345
+shape 400 oscillation 38
+shape 400 plateau 11
+shape 680 increase 3
+shape 680 monotonic_decrease 158
+shape 680 oscillation 18
+shape 680 plateau 4

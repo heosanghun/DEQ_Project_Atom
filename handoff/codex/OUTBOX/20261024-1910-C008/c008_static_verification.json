@@ -1,0 +1,257 @@
+{
+  "task": "TASK-C008",
+  "grader_sha256": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+  "script_shas": {
+    "handoff/codex/INBOX/TASK-C008.md": "55f5ecd410a4a083b217fffba27ed3a1ca222bb8ba164b38d1d8494dcca32f8c",
+    "handoff/codex/scripts/g2v11_x8a_train.py": "208eb131f97988c82746b7d480ea1b214fb242f895690fdde4c5a1bd8333c568",
+    "handoff/codex/scripts/g2v11_x8a_latents.py": "9a82c78179c686eaae2b739c812c36f2d146b94fdd24334edceb544028166b0c",
+    "handoff/codex/scripts/cc_x8a.sh": "4a5e457850891107359e55ff375168be9f7c22886068ad0bb2d90aac64e7adca",
+    "handoff/codex/scripts/g2v10_train.py": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f",
+    "handoff/codex/scripts/g2v9_xattn.py": "ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d",
+    "handoff/codex/scripts/g2v9_gen.py": "14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3",
+    "scripts/g2v3_m3_full_train.py": "36e0f18addc8d46f6d8bf376cd95e89cf9eb75a1f15c4e8b714141efe5a49c99",
+    "cts/deq/transition_inject.py": "127068435ec561c36a5e8a5e2e208763b80e53a70853ab50528ede7f84f2997c",
+    "cts/backbone/gemma_adapter.py": "0a9a70c68b80de7fac75b6c129cb57985861a29d9eb962f3758200572e1ae903",
+    "cts/deq/gemma_latent_forward.py": "f30de30846e5982f0a19356d9a0a09ce27c51bafad769ab93440dabc16ca2e90",
+    "scripts/s5_eval_grader_v2.py": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/cts_x8a_master.log": "91cd0f619225c2b2c9c59f65b054634c946243e247a5192ec00490677becbc78",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/manifest_X8A47.json": "43cd2cf842a133043c8e8ee0b0fc3eda705809545663f020b627a4634e364a97",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/manifest_X8A49.json": "98aa44028862e63e4f609555de26b0323ba732dccdac600a4f19c3af091e5215",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/manifest_X8A50.json": "b66b637952cc6955be85264ca4b45ef18ed33e13d871a5fbb8515d5cefb63a7e",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/train_X8A47.log": "afbb5ba1158be3273494906defaf743586bb1823131cceb324d7be6c365ad10c",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/train_X8A49.log": "130a1214d32a9509cadee72d3afb927ac95ddc405fe06b1972ce07cbda00634b",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/train_X8A50.log": "6e10c35bf7f65b03f5f61fd7f54b1013866791c5e48004c93301138cd11e11ce",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/latdev_X8A47.pt.res.json": "79503289d47109f93549db200881610611a8b017bc79fe5ff560604e84ad6f30",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/latdev_X8A49.pt.res.json": "be19d67f29163ee341bc866dec07eb5d8416e38e860d6e1a01cea84ebc1926ce",
+    "handoff/codex/INBOX/20261023-1950-x8a-results/latdev_X8A50.pt.res.json": "0022fc1911237c50189a92da63e5e601ce71cb0d9f71c4b700a8675fa2b45857"
+  },
+  "task_c008_note_on_g2v11_sha": {
+    "task_md_prefix": "5721ffc5",
+    "actual_repo_and_server_sha": "208eb131f97988c82746b7d480ea1b214fb242f895690fdde4c5a1bd8333c568",
+    "matches_cts_x8a_master_log_line4": true
+  },
+  "runtime_evidence": {
+    "X8A47": {
+      "data_log_line": "[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480 k_unroll 2 lambda_fp 0.1",
+      "deq_log_line": "[DEQ] trainable tensors 218 (3,980,801 weights), map_mode parallel",
+      "bridge_log_line": "[BRIDGE] layers [10, 20, 30, 40], params 20,971,524, center norm/slot 312.5",
+      "step0_log_line": "[Step    0] loss 0.8529 ans_ce 6.9337 l_fp 0.00000 res 0.0004 gates [0.0, -0.0, -0.0, -0.0] (2s)",
+      "step_last_log_line": "[Step 1499] loss 0.0652 ans_ce 0.2333 l_fp 0.00125 res 0.0379 gates [0.002, -0.016, -0.043, -0.037] (1860s)",
+      "save_log_line": "[SAVE] /tmp/cts_x8a/bridge_X8A47.pt /tmp/cts_x8a/deq_X8A47.pt updates 1500 skipped 0",
+      "warnings": [
+        "/tmp/cts_x_stage/g2v11_x8a_train.py:175: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.",
+        "Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)"
+      ],
+      "manifest_summary": {
+        "seed": 2047,
+        "steps": 1500,
+        "batch_size": 4,
+        "lr": 0.0003,
+        "lr_deq": 3e-05,
+        "k_unroll": 2,
+        "alpha": 0.25,
+        "g0": 0.25,
+        "lambda_fp": 0.1,
+        "answer_weight": 5.0,
+        "gen_budget": 480,
+        "layers": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "deq_trainable_weights": 3980801,
+        "bridge_params": 20971524,
+        "n_items_trained": 992,
+        "target_counts": {
+          "replaced": 341,
+          "appended": 651,
+          "skip_no_gold": 1,
+          "skip_no_target": 0,
+          "budget_truncated": 575,
+          "skip_answer_truncated": 0,
+          "finished_own": 437
+        },
+        "n_updates": 1500,
+        "n_sample_visits": 6000,
+        "n_samples_skipped": 0,
+        "n_unique_ids_contributing_grad": 992,
+        "final_loss_last200": 0.058347339281317544,
+        "final_ans_ce_last200": 0.2918971070359748,
+        "final_lfp_last200": 0.0015529470064211638,
+        "final_res_last200": 0.0420566969155334,
+        "step0_tel": {
+          "step": 0,
+          "loss": 0.852929100394249,
+          "ans_ce": 6.933694958686829,
+          "l_fp": 1.69861401388971e-07,
+          "res_mean": 0.00043861018275492825
+        },
+        "step1499_tel": {
+          "step": 1499,
+          "loss": 0.06524773174896836,
+          "ans_ce": 0.2332920916378498,
+          "l_fp": 0.0012526333157438785,
+          "res_mean": 0.03794278996065259
+        }
+      },
+      "latdev_summary": {
+        "n_items": 600,
+        "n_missing": 0,
+        "res_step1_mean": 0.04073586802308758,
+        "res_step1_max": 0.04672206565737724,
+        "res_step2_last_mean": 0.03548403506477674,
+        "res_step2_last_max": 0.040402527898550034,
+        "n_items_step2_lt_step1": 600
+      }
+    },
+    "X8A49": {
+      "data_log_line": "[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480 k_unroll 2 lambda_fp 0.1",
+      "deq_log_line": "[DEQ] trainable tensors 218 (3,980,801 weights), map_mode parallel",
+      "bridge_log_line": "[BRIDGE] layers [10, 20, 30, 40], params 20,971,524, center norm/slot 312.5",
+      "step0_log_line": "[Step    0] loss 0.8529 ans_ce 6.9337 l_fp 0.00000 res 0.0004 gates [-0.0, -0.0, 0.0, 0.0] (1s)",
+      "step_last_log_line": "[Step 1499] loss 0.0574 ans_ce 0.2198 l_fp 0.00106 res 0.0349 gates [-0.002, -0.016, 0.043, 0.035] (1886s)",
+      "save_log_line": "[SAVE] /tmp/cts_x8a/bridge_X8A49.pt /tmp/cts_x8a/deq_X8A49.pt updates 1500 skipped 0",
+      "warnings": [
+        "/tmp/cts_x_stage/g2v11_x8a_train.py:175: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.",
+        "Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)"
+      ],
+      "manifest_summary": {
+        "seed": 2049,
+        "steps": 1500,
+        "batch_size": 4,
+        "lr": 0.0003,
+        "lr_deq": 3e-05,
+        "k_unroll": 2,
+        "alpha": 0.25,
+        "g0": 0.25,
+        "lambda_fp": 0.1,
+        "answer_weight": 5.0,
+        "gen_budget": 480,
+        "layers": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "deq_trainable_weights": 3980801,
+        "bridge_params": 20971524,
+        "n_items_trained": 992,
+        "target_counts": {
+          "replaced": 341,
+          "appended": 651,
+          "skip_no_gold": 1,
+          "skip_no_target": 0,
+          "budget_truncated": 575,
+          "skip_answer_truncated": 0,
+          "finished_own": 437
+        },
+        "n_updates": 1500,
+        "n_sample_visits": 6000,
+        "n_samples_skipped": 0,
+        "n_unique_ids_contributing_grad": 992,
+        "final_loss_last200": 0.06165289735188708,
+        "final_ans_ce_last200": 0.31252046372961556,
+        "final_lfp_last200": 0.0012669652258045971,
+        "final_res_last200": 0.03801978087052703,
+        "step0_tel": {
+          "step": 0,
+          "loss": 0.852929100394249,
+          "ans_ce": 6.933694958686829,
+          "l_fp": 1.69861401388971e-07,
+          "res_mean": 0.00043861018275492825
+        },
+        "step1499_tel": {
+          "step": 1499,
+          "loss": 0.05737434490583837,
+          "ans_ce": 0.21976660145446658,
+          "l_fp": 0.0010633379861246794,
+          "res_mean": 0.034897489473223686
+        }
+      },
+      "latdev_summary": {
+        "n_items": 600,
+        "n_missing": 0,
+        "res_step1_mean": 0.03702471671315531,
+        "res_step1_max": 0.040748514235019684,
+        "res_step2_last_mean": 0.032317595276981595,
+        "res_step2_last_max": 0.03613853454589844,
+        "n_items_step2_lt_step1": 600
+      }
+    },
+    "X8A50": {
+      "data_log_line": "[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480 k_unroll 2 lambda_fp 0.1",
+      "deq_log_line": "[DEQ] trainable tensors 218 (3,980,801 weights), map_mode parallel",
+      "bridge_log_line": "[BRIDGE] layers [10, 20, 30, 40], params 20,971,524, center norm/slot 312.5",
+      "step0_log_line": "[Step    0] loss 0.8529 ans_ce 6.9337 l_fp 0.00000 res 0.0004 gates [-0.0, -0.0, 0.0, 0.0] (2s)",
+      "step_last_log_line": "[Step 1499] loss 0.0731 ans_ce 0.2027 l_fp 0.00131 res 0.0386 gates [-0.002, -0.014, -0.055, 0.031] (1863s)",
+      "save_log_line": "[SAVE] /tmp/cts_x8a/bridge_X8A50.pt /tmp/cts_x8a/deq_X8A50.pt updates 1500 skipped 0",
+      "warnings": [
+        "/tmp/cts_x_stage/g2v11_x8a_train.py:175: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.",
+        "Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)"
+      ],
+      "manifest_summary": {
+        "seed": 2050,
+        "steps": 1500,
+        "batch_size": 4,
+        "lr": 0.0003,
+        "lr_deq": 3e-05,
+        "k_unroll": 2,
+        "alpha": 0.25,
+        "g0": 0.25,
+        "lambda_fp": 0.1,
+        "answer_weight": 5.0,
+        "gen_budget": 480,
+        "layers": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "deq_trainable_weights": 3980801,
+        "bridge_params": 20971524,
+        "n_items_trained": 992,
+        "target_counts": {
+          "replaced": 341,
+          "appended": 651,
+          "skip_no_gold": 1,
+          "skip_no_target": 0,
+          "budget_truncated": 575,
+          "skip_answer_truncated": 0,
+          "finished_own": 437
+        },
+        "n_updates": 1500,
+        "n_sample_visits": 6000,
+        "n_samples_skipped": 0,
+        "n_unique_ids_contributing_grad": 992,
+        "final_loss_last200": 0.06009912295492541,
+        "final_ans_ce_last200": 0.3116323490796913,
+        "final_lfp_last200": 0.001299614799572737,
+        "final_res_last200": 0.038473834393080324,
+        "step0_tel": {
+          "step": 0,
+          "loss": 0.852929100394249,
+          "ans_ce": 6.933694958686829,
+          "l_fp": 1.69861401388971e-07,
+          "res_mean": 0.00043861018275492825
+        },
+        "step1499_tel": {
+          "step": 1499,
+          "loss": 0.0731311971321702,
+          "ans_ce": 0.20269792154431343,
+          "l_fp": 0.0013061333447694778,
+          "res_mean": 0.03860198147594929
+        }
+      },
+      "latdev_summary": {
+        "n_items": 600,
+        "n_missing": 0,
+        "res_step1_mean": 0.04072543875003854,
+        "res_step1_max": 0.04442524164915085,
+        "res_step2_last_mean": 0.03569259106181562,
+        "res_step2_last_max": 0.039468634873628616,
+        "n_items_step2_lt_step1": 600
+      }
+    }
+  }
+}

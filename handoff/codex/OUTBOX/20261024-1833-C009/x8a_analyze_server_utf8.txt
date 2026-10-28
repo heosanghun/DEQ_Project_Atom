@@ -1,0 +1,46 @@
+== 0) per condition (n=600): boxed / lenient / strict / len / eos
+  C_fmt        boxed  35.5%  lenient 15.67%  strict 12.83%  len   0.0  eos  0.0%
+  X8A47        boxed  50.2%  lenient 14.83%  strict 11.17%  len   0.0  eos  0.0%
+  X8A49        boxed  51.0%  lenient 15.83%  strict 13.83%  len   0.0  eos  0.0%
+  X8A50        boxed  52.3%  lenient 13.83%  strict 11.67%  len   0.0  eos  0.0%
+  shuf_X8A47   boxed  51.3%  lenient 11.33%  strict  9.17%  len   0.0  eos  0.0%
+  shuf_X8A49   boxed  58.5%  lenient 15.17%  strict 13.67%  len   0.0  eos  0.0%
+  shuf_X8A50   boxed  48.3%  lenient 14.17%  strict 11.83%  len   0.0  eos  0.0%
+  X7E47        boxed  44.5%  lenient 14.50%  strict 12.67%  len   0.0  eos  0.0%
+  X7E49        boxed  42.7%  lenient 11.83%  strict  9.67%  len   0.0  eos  0.0%
+  X7E50        boxed  50.8%  lenient 16.33%  strict 13.17%  len   0.0  eos  0.0%
+  shuf_X7E47   boxed  45.5%  lenient 16.17%  strict 13.00%  len   0.0  eos  0.0%
+  shuf_X7E49   boxed  41.8%  lenient 14.00%  strict 10.33%  len   0.0  eos  0.0%
+  shuf_X7E50   boxed  53.0%  lenient 16.00%  strict 13.33%  len   0.0  eos  0.0%
+== CTO (1): X8-A - E (rule: 3 seeds same sign AND pooled lenient CI lower > 0)
+  lenient (primary) mean +0.61%p  95% CI [-1.11, +2.33]  per-seed [0.33, 4.0, -2.5] (+seeds 2/3)
+  boxed (aux)       mean +5.17%p  95% CI [+2.44, +7.83]  per-seed [5.67, 8.33, 1.5] (+seeds 3/3)
+  strict (aux)      mean +0.39%p  95% CI [-1.28, +2.06]  per-seed [-1.5, 4.17, -1.5] (+seeds 1/3)
+== CTO (2): X8-A matched - shuffled (rule: lenient CI lower > 0)
+  lenient (primary) mean +1.28%p  95% CI [-0.44, +3.00]  per-seed [3.5, 0.67, -0.33] (+seeds 2/3)
+  boxed (aux)       mean -1.56%p  95% CI [-4.28, +1.17]  per-seed [-1.17, -7.5, 4.0] (+seeds 1/3)
+  strict (aux)      mean +0.67%p  95% CI [-0.94, +2.33]  per-seed [2.0, 0.17, -0.17] (+seeds 2/3)
+== Aux: X8-A matched - C_fmt (bridge cost check)
+  lenient (primary) mean -0.83%p  95% CI [-3.28, +1.56]  per-seed [-0.83, 0.17, -1.83] (+seeds 1/3)
+  boxed (aux)       mean +15.67%p  95% CI [+11.78, +19.50]  per-seed [14.67, 15.5, 16.83] (+seeds 3/3)
+  strict (aux)      mean -0.61%p  95% CI [-2.94, +1.61]  per-seed [-1.67, 1.0, -1.17] (+seeds 1/3)
+== Aux: X8-A shuffled - C_fmt (harm)
+  lenient (primary) mean -2.11%p  95% CI [-4.61, +0.33]  per-seed [-4.33, -0.5, -1.5] (+seeds 0/3)
+  boxed (aux)       mean +17.22%p  95% CI [+13.28, +21.06]  per-seed [15.83, 23.0, 12.83] (+seeds 3/3)
+  strict (aux)      mean -1.28%p  95% CI [-3.83, +1.11]  per-seed [-3.67, 0.83, -1.0] (+seeds 1/3)
+== Ref: E matched - C_fmt
+  lenient (primary) mean -1.44%p  95% CI [-3.94, +0.94]  per-seed [-1.17, -3.83, 0.67] (+seeds 1/3)
+  boxed (aux)       mean +10.50%p  95% CI [+6.67, +14.28]  per-seed [9.0, 7.17, 15.33] (+seeds 3/3)
+  strict (aux)      mean -1.00%p  95% CI [-3.44, +1.39]  per-seed [-0.17, -3.17, 0.33] (+seeds 1/3)
+== Ref both-boxed seed 47: X8A47 - X7E47 (subset n=179)
+  lenient (primary) mean -3.35%p  95% CI [-10.61, +3.91]  per-seed [-3.35] (+seeds 0/1)
+  boxed (aux)       mean +0.00%p  95% CI [+0.00, +0.00]  per-seed [0.0] (+seeds 0/1)
+  strict (aux)      mean -3.35%p  95% CI [-10.61, +3.91]  per-seed [-3.35] (+seeds 0/1)
+== Ref both-boxed seed 49: X8A49 - X7E49 (subset n=183)
+  lenient (primary) mean +1.64%p  95% CI [-4.92, +8.74]  per-seed [1.64] (+seeds 1/1)
+  boxed (aux)       mean +0.00%p  95% CI [+0.00, +0.00]  per-seed [0.0] (+seeds 0/1)
+  strict (aux)      mean +1.64%p  95% CI [-4.92, +8.74]  per-seed [1.64] (+seeds 1/1)
+== Ref both-boxed seed 50: X8A50 - X7E50 (subset n=207)
+  lenient (primary) mean -5.31%p  95% CI [-11.11, +0.48]  per-seed [-5.31] (+seeds 0/1)
+  boxed (aux)       mean +0.00%p  95% CI [+0.00, +0.00]  per-seed [0.0] (+seeds 0/1)
+  strict (aux)      mean -5.31%p  95% CI [-11.11, +0.48]  per-seed [-5.31] (+seeds 0/1)

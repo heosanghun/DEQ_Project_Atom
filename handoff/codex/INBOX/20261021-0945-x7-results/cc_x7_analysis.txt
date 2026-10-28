@@ -1,0 +1,38 @@
+== 0) per condition (n=600): boxed / lenient / strict / strict|boxed
+  C_fmt       boxed  35.5%  lenient 15.67%  strict 12.83%  strict|boxed  36.2% (nb 213)
+  X7A47       boxed  51.5%  lenient 13.67%  strict 11.17%  strict|boxed  21.7% (nb 309)
+  X7E47       boxed  44.5%  lenient 14.50%  strict 12.67%  strict|boxed  28.5% (nb 267)
+  X7A49       boxed  44.8%  lenient 14.00%  strict 11.33%  strict|boxed  25.3% (nb 269)
+  X7E49       boxed  42.7%  lenient 11.83%  strict  9.67%  strict|boxed  22.7% (nb 256)
+  X7A50       boxed  51.7%  lenient 11.83%  strict 10.00%  strict|boxed  19.4% (nb 310)
+  X7E50       boxed  50.8%  lenient 16.33%  strict 13.17%  strict|boxed  25.9% (nb 305)
+  shuf_X7A47  boxed  52.0%  lenient 15.33%  strict 12.17%  strict|boxed  23.4% (nb 312)
+  shuf_X7E47  boxed  45.5%  lenient 16.17%  strict 13.00%  strict|boxed  28.6% (nb 273)
+  shuf_X7A49  boxed  50.2%  lenient 14.50%  strict 13.00%  strict|boxed  25.9% (nb 301)
+  shuf_X7E49  boxed  41.8%  lenient 14.00%  strict 10.33%  strict|boxed  24.7% (nb 251)
+  shuf_X7A50  boxed  50.3%  lenient 13.67%  strict 12.00%  strict|boxed  23.8% (nb 302)
+  shuf_X7E50  boxed  53.0%  lenient 16.00%  strict 13.33%  strict|boxed  25.2% (nb 318)
+== Stage AE (1): A - E (rule: same sign all seeds AND pooled CI lower > 0) 
+  lenient (primary)    seed-mean -1.06%p  95% CI [-2.72, +0.56]  per-seed [-0.83, 2.17, -4.5]
+  strict (secondary)   seed-mean -1.00%p  95% CI [-2.61, +0.61]  per-seed [-1.5, 1.67, -3.17]
+== Stage AE (2): A matched - shuffled (rule: CI lower > 0) 
+  lenient (primary)    seed-mean -1.33%p  95% CI [-3.06, +0.33]  per-seed [-1.67, -0.5, -1.83]
+  strict (secondary)   seed-mean -1.56%p  95% CI [-3.33, +0.17]  per-seed [-1.0, -1.67, -2.0]
+== Stage AE (ref): E matched - shuffled 
+  lenient (primary)    seed-mean -1.17%p  95% CI [-2.89, +0.56]  per-seed [-1.67, -2.17, 0.33]
+  strict (secondary)   seed-mean -0.39%p  95% CI [-2.00, +1.22]  per-seed [-0.33, -0.67, -0.17]
+== Stage AE (ref): A - C_fmt 
+  lenient (primary)    seed-mean -2.50%p  95% CI [-4.94, -0.22]  per-seed [-2.0, -1.67, -3.83]
+  strict (secondary)   seed-mean -2.00%p  95% CI [-4.44, +0.39]  per-seed [-1.67, -1.5, -2.83]
+== Stage AE (ref): E - C_fmt 
+  lenient (primary)    seed-mean -1.44%p  95% CI [-3.94, +0.94]  per-seed [-1.17, -3.83, 0.67]
+  strict (secondary)   seed-mean -1.00%p  95% CI [-3.44, +1.39]  per-seed [-0.17, -3.17, 0.33]
+== Stage AE (ref): A shuffled - C_fmt (harm) 
+  lenient (primary)    seed-mean -1.17%p  95% CI [-3.72, +1.28]  per-seed [-0.33, -1.17, -2.0]
+  strict (secondary)   seed-mean -0.44%p  95% CI [-3.00, +2.06]  per-seed [-0.67, 0.17, -0.83]
+== Stage AE (ref): E shuffled - C_fmt (harm) 
+  lenient (primary)    seed-mean -0.28%p  95% CI [-2.83, +2.11]  per-seed [0.5, -1.67, 0.33]
+  strict (secondary)   seed-mean -0.61%p  95% CI [-3.00, +1.67]  per-seed [0.17, -2.5, 0.5]
+== Stage AE (1) both-boxed subset: A - E (subset n=71)
+  lenient (primary)    seed-mean -7.04%p  95% CI [-13.62, -0.47]  per-seed [-14.08, 7.04, -14.08]
+  strict (secondary)   seed-mean -7.04%p  95% CI [-13.62, -0.47]  per-seed [-14.08, 7.04, -14.08]

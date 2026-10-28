@@ -1,0 +1,181 @@
+{
+  "train_n": 993,
+  "dev_n": 600,
+  "intersection": 0,
+  "schemas": {
+    "C_fmt": {
+      "rows": 600,
+      "keys": [
+        "gen_ids",
+        "generation",
+        "id",
+        "prompt_sha",
+        "stop_id",
+        "time",
+        "tokens"
+      ],
+      "id_order_equal": true
+    },
+    "X5O47": {
+      "rows": 600,
+      "keys": [
+        "generation",
+        "id",
+        "latent_id",
+        "stop_id",
+        "tokens"
+      ],
+      "id_order_equal": true
+    },
+    "shuf_X5O47": {
+      "rows": 600,
+      "keys": [
+        "generation",
+        "id",
+        "latent_id",
+        "stop_id",
+        "tokens"
+      ],
+      "id_order_equal": true
+    }
+  },
+  "package_hash_file": [
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/RESULT-X5-stylematched-20261020.md",
+      "declared": "98789121b72ccc9d1be90",
+      "declared_chars": 21,
+      "actual_sha256": "98789121b72ccc9d3a84eb763fa77f3b64f3e6a9b4f5ac563b284c54cb01be90",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/cc_x5_analysis.txt",
+      "declared": "561847a298f7488eb4fd3",
+      "declared_chars": 21,
+      "actual_sha256": "561847a298f7488e9d1209e2a13bcf9b26e88f4fce34c0ca3aaaa79eda2b4fd3",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/cts_x5_master.log",
+      "declared": "4c6fe07832e52709104eb",
+      "declared_chars": 21,
+      "actual_sha256": "4c6fe07832e5270940b121e29fd18e14fa6e7b6b4efc04fddbdc1906148104eb",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/genB1_X5O47.jsonl",
+      "declared": "a3441a57d97e6e350178e",
+      "declared_chars": 21,
+      "actual_sha256": "a3441a57d97e6e3542c9a500210406fbcc0d99bb5f4b69d7b3a0eeae6880178e",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/gen_X5O47.jsonl",
+      "declared": "9573ad1d507743efc8a15",
+      "declared_chars": 21,
+      "actual_sha256": "9573ad1d507743ef1361dbadf44e8558e2654f53cdf5b9d7650a78b4133c8a15",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/grade.log",
+      "declared": "ea77b4a5c016c252d15ac",
+      "declared_chars": 21,
+      "actual_sha256": "ea77b4a5c016c252fbf15871e8de0b39d19a27c0d35ac120227fcbae716d15ac",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/manifest_X5O47.json",
+      "declared": "60e192508c4c2e9774fe2",
+      "declared_chars": 21,
+      "actual_sha256": "60e192508c4c2e97926b41444601d84b678fb2599ecf190e5e0e08e74cf74fe2",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/s0spec.json",
+      "declared": "029a2a92c61e26caf0714",
+      "declared_chars": 21,
+      "actual_sha256": "029a2a92c61e26cace3c58214b7d7531457c8a1a6c3104be5814eb794c0f0714",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/train_X5O47.log",
+      "declared": "2ebca7c52eabff1993099",
+      "declared_chars": 21,
+      "actual_sha256": "2ebca7c52eabff198b2a8379eccab54540af7bf1a67334b0fae196bc3a893099",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/x5_analyze.py",
+      "declared": "2d11272e25953fc48ad8b",
+      "declared_chars": 21,
+      "actual_sha256": "2d11272e25953fc47895f87032e6b823a21038e521128b74cf44311dd5b8ad8b",
+      "full_match": false
+    },
+    {
+      "path": "handoff/codex/INBOX/20261020-1320-x5-results/x5_items.json",
+      "declared": "014516b421234e5df96b8",
+      "declared_chars": 21,
+      "actual_sha256": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8",
+      "full_match": false
+    }
+  ],
+  "server_log_hash_comparisons": [
+    {
+      "logged_path": "/tmp/cts_x_stage/g2v9_xattn.py",
+      "local_path": "D:\\AI\\cts\\scripts\\g2v9_xattn.py",
+      "expected": "ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d",
+      "actual": "ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d",
+      "match": true
+    },
+    {
+      "logged_path": "/tmp/cts_x_stage/g2v10_train.py",
+      "local_path": "D:\\AI\\cts\\scripts\\g2v10_train.py",
+      "expected": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f",
+      "actual": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f",
+      "match": true
+    },
+    {
+      "logged_path": "/tmp/cts_x_stage/g2v9_gen.py",
+      "local_path": "D:\\AI\\cts\\scripts\\g2v9_gen.py",
+      "expected": "14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3",
+      "actual": "14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3",
+      "match": true
+    },
+    {
+      "logged_path": "results_s7/p6r/g2v9x5/genB1_X5O47.jsonl",
+      "local_path": "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\genB1_X5O47.jsonl",
+      "expected": "a3441a57d97e6e3542c9a500210406fbcc0d99bb5f4b69d7b3a0eeae6880178e",
+      "actual": "a3441a57d97e6e3542c9a500210406fbcc0d99bb5f4b69d7b3a0eeae6880178e",
+      "match": true
+    },
+    {
+      "logged_path": "results_s7/p6r/g2v9x5/gen_X5O47.jsonl",
+      "local_path": "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\gen_X5O47.jsonl",
+      "expected": "9573ad1d507743ef1361dbadf44e8558e2654f53cdf5b9d7650a78b4133c8a15",
+      "actual": "9573ad1d507743ef1361dbadf44e8558e2654f53cdf5b9d7650a78b4133c8a15",
+      "match": true
+    },
+    {
+      "logged_path": "/tmp/cts_x5/x5_items.json",
+      "local_path": "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\x5_items.json",
+      "expected": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8",
+      "actual": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8",
+      "match": true
+    },
+    {
+      "logged_path": "/tmp/cts_x5/manifest_X5O47.json",
+      "local_path": "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\manifest_X5O47.json",
+      "expected": "60e192508c4c2e97926b41444601d84b678fb2599ecf190e5e0e08e74cf74fe2",
+      "actual": "60e192508c4c2e97926b41444601d84b678fb2599ecf190e5e0e08e74cf74fe2",
+      "match": true
+    }
+  ],
+  "canonical_order_path_exists": false,
+  "actual_order": "D:\\AI\\cts\\handoff\\codex\\data\\p6_item_order.json",
+  "versions": {
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "math-verify": "0.9.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "unit": "MAC",
+  "placeholder": false,
+  "model_type": "gemma4_text",
+  "model_family": "gemma-4-E4B",
+  "supported_config_sha256": [
+    "33b10c02df3c2e8536cf323d29d53262aaa2f4d11dbe19bc729373fbe90295d4",
+    "f27a045f32c39fb9cd930204920de6b0962810cf09929a8810901ffaec780f20"
+  ],
+  "geometry": {
+    "hidden_size": 2560,
+    "intermediate_size": 10240,
+    "num_hidden_layers": 42,
+    "num_attention_heads": 8,
+    "num_key_value_heads": 2,
+    "head_dim": 256,
+    "global_head_dim": 512,
+    "num_kv_shared_layers": 18,
+    "sliding_window": 512,
+    "modules": 19,
+    "lora_rank": 8
+  },
+  "layer_coefficients": {
+    "nonshared_sliding": {
+      "linear_mac_per_query_token": 93159424,
+      "attention_mac_per_query_key": 4096
+    },
+    "nonshared_full": {
+      "linear_mac_per_query_token": 106303488,
+      "attention_mac_per_query_key": 8192
+    },
+    "shared_sliding": {
+      "linear_mac_per_query_token": 90513408,
+      "attention_mac_per_query_key": 4096
+    },
+    "shared_full": {
+      "linear_mac_per_query_token": 101031936,
+      "attention_mac_per_query_key": 8192
+    }
+  },
+  "shared_anchor_kv_mac_per_token": {
+    "sliding_attention": 2646016,
+    "full_attention": 5271552
+  },
+  "routing_mac": {
+    "hidden_size_times_modules": true
+  },
+  "counting_convention": "matrix-multiply MAC only; LoRA r=8 included; norm, activation and softmax elementwise work excluded; all selected Top-k modules are summed; shared anchor K/V is counted once when any shared layer is selected"
+}

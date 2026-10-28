@@ -1,0 +1,51 @@
+=== X1 start 2026-10-19 10:42:15 ===
+01724a004b8900ddc1fd6b8b283d7bec3444521ec4059bfa9eace46029a0e663  /tmp/cts_x_stage/g2v7_train.py
+7204341731735fada31eddc7255df1bc187473d3aa692f75c4d5c18758b4c36e  /tmp/cts_x_stage/g2v7_diag.py
+5172ad4a24e9e9f1de75c471ef0a35836f5296f60940c7c83b4245a5bf07dcae  /tmp/cts_x_stage/make_s0spec_x.py
+5d5aff241e7c7e7c789bbd7cf069ec6becc1e9741d436e595914a7817da9ff9e  scripts/s7_eval_gate_p6_v36h.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T   21G 100% /home
+/dev/sda3       436G  401G   13G  97% /
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-X1O50] rc=0 11:42:29
+[LM-LORA] wrapped 108 linears, 7,864,320 trainable weights
+[TR-X1O49] rc=0 11:43:33
+[LM-LORA] wrapped 108 linears, 7,864,320 trainable weights
+[TR-X1O47] rc=0 11:45:09
+[LM-LORA] wrapped 108 linears, 7,864,320 trainable weights
+[DG-X1O50] rc=0 11:52:58
+[DG-X1O49] rc=0 11:54:50
+[DG-X1O47] rc=0 11:55:47
+[GEN-X1O50] rc=0 rows=600 14:22:59
+[GEN-X1O47] rc=0 rows=600 14:36:56
+[GEN-X1O49] rc=0 rows=600 14:47:52
+[GENS-X1O50] rc=0 rows=600 16:53:23
+[GENS-X1O47] rc=0 rows=600 17:19:17
+[GENS-X1O49] rc=0 rows=600 17:23:14
+[LM-LORA] loaded rank 16, 432 tensors (v3.6h)
+[PROJ-V2] PrefixProjectorV2 (centre + RMS-normalised in/out)
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X1O47: n 600 strict 43 lenient 45 boxed 491
+[S0] shuf_X1O47: n 600 strict 36 lenient 37 boxed 474
+[S0] X1O49: n 600 strict 54 lenient 56 boxed 484
+[S0] shuf_X1O49: n 600 strict 54 lenient 54 boxed 504
+[S0] X1O50: n 600 strict 44 lenient 44 boxed 517
+[S0] shuf_X1O50: n 600 strict 32 lenient 34 boxed 532
+2724c61224e10f0d889c62f0d9bc379ac52be39988d96f754ad8b855722e1fb3  results_s7/p6r/g2v8x1/genB1_X1O47.jsonl
+434b04895ff8dab4c3de8b10e43c7dcda18511f469c0fb393ad025380c11c780  results_s7/p6r/g2v8x1/genB1_X1O49.jsonl
+5ab805c501ed80dd42c93490af7f4852e4560565251b3b55bb3a76a21b1364bb  results_s7/p6r/g2v8x1/genB1_X1O50.jsonl
+df814d4dd0cd97b1299afa0022b980cdcb26152eb58f554e19f104f333eb7de2  results_s7/p6r/g2v8x1/gen_X1O47.jsonl
+256b3eeba5b1bfecd42e6b88cdd4880d37285a1d0832407a857ca71e6a985936  results_s7/p6r/g2v8x1/gen_X1O49.jsonl
+c94086e861493b465cafa2a9aa183736d0ae95a5b6226533ecc6780da7bb247b  results_s7/p6r/g2v8x1/gen_X1O50.jsonl
+afe5764799c8f663c37fdf0aab56b384953bdbcef902b59902e55059dc7de0dc  /tmp/cts_x1/x1_items.json
+bce6d01aa8329fcdf3758ae72bca786d04dd86c3e428f7e6955313410db9a43e  /tmp/cts_x1/diag_X1O47.json
+204767d45fcd154882b51dfddb9eaa8a1a5cdafafdd42dd33606715c7ae930f7  /tmp/cts_x1/diag_X1O49.json
+d63f7aaee02771c93ead39744448684e2ccc414d326f4b7424dd7144f6934bc2  /tmp/cts_x1/diag_X1O50.json
+cf541274fcc9a7deb129dbbe005c001b3bf8deeb2bd0d6d08b24676a48c30f72  /tmp/cts_x1/manifest_X1O47.json
+2a47f63750f2d530036a328b9b91dce6e2b26864e5a569d83603b6ca951d6f6d  /tmp/cts_x1/manifest_X1O49.json
+9604891f3e88d0415d43eae30df5ab1eec7ecb3b8d200f4b1dffb443a3b0e913  /tmp/cts_x1/manifest_X1O50.json
+=== X1 end 2026-10-19 17:23:40 ===

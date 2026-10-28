@@ -1,0 +1,48 @@
+=== g2v4 confirm start 2026-10-11 17:18:14 ===
+[OUT-OK] no prior confirm outputs
+[SHA-OK] shared_prereg_PREREG_S7_G2v4.md
+[SHA-OK] configs/g2v4b_fresh.json
+[SHA-OK] configs/g2v4b_fresh_shard0.json
+[SHA-OK] configs/g2v4b_fresh_shard1.json
+[SHA-OK] configs/g2v4b_fresh_shard2.json
+[SHA-OK] scripts/g2v2_zstar_run.py
+[SHA-OK] cts/deq/zstar_inject_v2.py
+[SHA-OK] configs/zstar_canonical.yaml
+[SHA-OK] scripts/g2v4_fresh_prep.py
+[SHA-OK] scripts/g2v3_m3_eval_latents_v2.py
+[SHA-OK] scripts/s7_eval_gate_p6_v36f.py
+[SHA-OK] scripts/g2v4_proj_v2.py
+[SHA-OK] scripts/s7_eval_score_p6_v36.py
+[SHA-OK] scripts/s5_eval_grader_v2.py
+[SHA-OK] results_s7/g2v2/decoder_M7A_v36.pt
+[SHA-OK] results_s7/g2v2/decoder_M7E_v36.pt
+[SHA-OK] results_s7/g2v4m7rep/deq_Ah.pt
+[SHA-OK] results_s7/g2v4m7rep/deq_Eh.pt
+[SHA-OK] scripts/s7_train_decoder_v36.py
+[SHA-OK] scripts/g2v3_m3_full_train.py
+[SHA-OK] scripts/check_p6_decoder_version.sh
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[Z-DONE] shard 0 21:00:13
+[Z-DONE] shard 1 21:00:13
+[Z-DONE] shard 2 21:04:08
+Traceback (most recent call last):
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1004, in save
+    _save(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1313, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: basic_ios::clear: iostream error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v4_fresh_prep.py", line 18, in <module>
+    torch.save(z, "results_s7/g2v4/fresh_zsrcinj_1758.pt")
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1003, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/serialization.py", line 835, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:672] . unexpected pos 2721001216 vs 2721001104
+[FATAL] prep

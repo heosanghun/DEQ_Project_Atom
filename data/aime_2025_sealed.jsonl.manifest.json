@@ -1,0 +1,221 @@
+{
+  "builder": "e1_build_dataset_claude_v1.py",
+  "builder_sha256": "89EF2CD820B8B76F335227184FA2EF75CE869A8C057406FD5766B497F83452DA",
+  "answer_key_file": "D:\\AI\\System1.5\\data\\aime2026_gt.json",
+  "answer_key_sha256": "D923F01A4B476B0DABC98DC2DD7AC16F67D0E7F268BA49CB2A14A8F00E43D2F9",
+  "dataset_file": "D:\\AI\\cts\\data\\aime_2025_sealed.jsonl",
+  "dataset_sha256": "D9D8EF6397104E8028A529F65CAB472A265DC1FDFA5030DE6B30AB90A3918B27",
+  "n_items": 30,
+  "items": [
+    {
+      "id": "aime_2025_item_01",
+      "problem_sha256": "26A263AD81138DBFB41647A1E55AF77C0B8AB02D4B051FC23722A7F0C403535D",
+      "problem_head": "Find the sum of all integer bases $b>9$ for which $17_b$ is a divisor of $97_b.$",
+      "answer": "70",
+      "source_artifact_sha256": "A8191426783F9239DE79D15C4CE2725B36D82AC69B5993DA956C7BB49D94AE90"
+    },
+    {
+      "id": "aime_2025_item_02",
+      "problem_sha256": "335CFAAF1B6EC1B2249FE3BE679DE509E69013A642B6D3530D5BB84D1ECE25D3",
+      "problem_head": "On $\\triangle ABC$ points $A, D, E$, and $B$ lie in that order on side $\\overlin",
+      "answer": "588",
+      "source_artifact_sha256": "9101035B0EF54B57EB5375406AE2214F96A006C8A4F022985E81F104CA20359A"
+    },
+    {
+      "id": "aime_2025_item_03",
+      "problem_sha256": "58FE37DACFBEE8E6F8E9E090778365B2F4ACDF05C8D74C6373B727EA90CF766E",
+      "problem_head": "The 9 members of a baseball team went to an ice-cream parlor after their game. E",
+      "answer": "16",
+      "source_artifact_sha256": "3D2B2E75F48B90A14FFAB589AC60A054FD93E9581CCEC5E5F87AD511F7651F0F"
+    },
+    {
+      "id": "aime_2025_item_04",
+      "problem_sha256": "348FA6BEAF77FEE3986117DBE82BD4D0A45560898F056DA72BF166DCBF6364C5",
+      "problem_head": "Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers be",
+      "answer": "117",
+      "source_artifact_sha256": "DFD04D2E3C79312F17A4AF0FF19E2A1F4C38D596E1D08C6134DC3F6F3E582F94"
+    },
+    {
+      "id": "aime_2025_item_05",
+      "problem_sha256": "20A4B9569C0C5A6F21720F0EE4C84DD26E2D146C11200EB3EA0274B1CC70264D",
+      "problem_head": "There are $8!= 40320$ eight-digit positive integers that use each of the digits ",
+      "answer": "279",
+      "source_artifact_sha256": "8CD574DABC9EB691B4CD48BC5305711966E2D1EFAF10F2E55499513AA3715C61"
+    },
+    {
+      "id": "aime_2025_item_06",
+      "problem_sha256": "F862F0368B2AD1A8459A02663DAD9474CB8D907BE3263542CA5B39B0154EBA39",
+      "problem_head": "An isosceles trapezoid has an inscribed circle tangent to each of its four sides",
+      "answer": "504",
+      "source_artifact_sha256": "75979FBD1F0F932939353D9F7B6488F4408FF798C21D76828B5F8651193737A0"
+    },
+    {
+      "id": "aime_2025_item_07",
+      "problem_sha256": "E5391454EE1AE2DBA04EBE27493B09E17D0681305DEA39EAB9EF7DA22434C818",
+      "problem_head": "The twelve letters $A$,$B$,$C$,$D$,$E$,$F$,$G$,$H$,$I$,$J$,$K$, and $L$ are rand",
+      "answer": "821",
+      "source_artifact_sha256": "AB79341434EEACC9B4AE9AB9909DD6F7CB9FE70E3CF62254E5EC7060EF2C244B"
+    },
+    {
+      "id": "aime_2025_item_08",
+      "problem_sha256": "0412B80AD1A49C53292D0612113F1D9310762A39159D3E1A87C8722B0E4EF0BF",
+      "problem_head": "Let $k$ be a real number such that the system\n\\begin{align*} |25+20i-z|&=5\\\\ |z-",
+      "answer": "77",
+      "source_artifact_sha256": "0498605AE8479D7509EAF0621D2BAA0C178E29650F022DBC1F83EEA98CF8F1D7"
+    },
+    {
+      "id": "aime_2025_item_09",
+      "problem_sha256": "066AABF25BD4FB22CB62DCB9C8193E15D89D2319125CF50DD08FDF7B7057190D",
+      "problem_head": "The parabola with equation $y = x^2 - 4$ is rotated $60^\\circ$ counterclockwise ",
+      "answer": "62",
+      "source_artifact_sha256": "0C426A0A920728C879328381AF99F2160C77D0790D775DC22569F8E8B2D95525"
+    },
+    {
+      "id": "aime_2025_item_10",
+      "problem_sha256": "7E76250549AD86D0DB64A501D47DDD85DF4274833E2241AB875BFAD847D292AD",
+      "problem_head": "The $27$ cells of a $3 \\times 9$ grid are filled in using the numbers $1$ throug",
+      "answer": "81",
+      "source_artifact_sha256": "3BE9305E4A977E3B49572BF2EAE958A49A0CC5843149205999EAD009DC0E4FBB"
+    },
+    {
+      "id": "aime_2025_item_11",
+      "problem_sha256": "5218A0E717B22DDDEEF8CCE9D3D1D1051A5030902D52AB4CA9F2CC79037EC444",
+      "problem_head": "A piecewise linear function is defined by\n\\[f(x) = \\begin{cases} x & \\text{if } ",
+      "answer": "259",
+      "source_artifact_sha256": "733299F60BB0540D1443F7ECD291506660F4A1FCA5BEC7FD8C3FA0C513BF552A"
+    },
+    {
+      "id": "aime_2025_item_12",
+      "problem_sha256": "9DF369A8AD5157C8960A7AEAE493810098269864C996D06A3C5854CB1D0BDABF",
+      "problem_head": "The set of points in $3$-dimensional coordinate space that lie in the plane $x+y",
+      "answer": "510",
+      "source_artifact_sha256": "77B22E90ECB02725250B3F6F61B6D999D46828DB05F70780621ECC7C4C154567"
+    },
+    {
+      "id": "aime_2025_item_13",
+      "problem_sha256": "C4257795097D17AED1521C5EB5353F09981A5F92549338C6358F33D8C49FAE22",
+      "problem_head": "Alex divides a disk into four quadrants with two perpendicular diameters interse",
+      "answer": "204",
+      "source_artifact_sha256": "382CEFBAB0E7CCADC5CDF9773FF8FCB520E5C0D51CB4324B8D72703350DB1D66"
+    },
+    {
+      "id": "aime_2025_item_14",
+      "problem_sha256": "A3BCB4F0A11D25CF3F9D7D052647274A553A9052A49C83AB013E5C8617BB96E5",
+      "problem_head": "Let $ABCDE$ be a convex pentagon with $AB=14$, $BC=7$, $CD=24$, $DE=13$, $EA=26$",
+      "answer": "60",
+      "source_artifact_sha256": "5AE0DBDD56CE1BC99FFF202760F0A21E03091F76285CD55E3D0FF05B99995D6D"
+    },
+    {
+      "id": "aime_2025_item_15",
+      "problem_sha256": "E41EA154B2EAAA8B272E4BF4207608466807527A9D707886121AD98A9CE3A90F",
+      "problem_head": "Let $N$ denote the numbers of ordered triples of positive integers $(a, b, c)$ s",
+      "answer": "735",
+      "source_artifact_sha256": "9BC44281E089A6EEAE61B29A1D2A296B7EFF155F48AE316BB251306E23172BF4"
+    },
+    {
+      "id": "aime_2025_item_16",
+      "problem_sha256": "C9F868CDDBEFD2798885D302901CB8344676642840C391ED9635224C73376E57",
+      "problem_head": "Six points $A, B, C, D, E$ and $F$ lie in a straight line in that order. Suppose",
+      "answer": "468",
+      "source_artifact_sha256": "81BBF3739B182BD3C0C1A8F746B95151E949131AF354166048BC311F7EB01FC6"
+    },
+    {
+      "id": "aime_2025_item_17",
+      "problem_sha256": "5456F4190495FEBFB1F94A7D2D888184560C0D311D09F9BA8DF0213172A769B7",
+      "problem_head": "Find the sum of all positive integers $n$ such that $n+2$ divides the product $3",
+      "answer": "49",
+      "source_artifact_sha256": "890AC0AEC623EBD928DABADA30B44B28BC35DEE2BCA89F927E5E6CB87B9886F1"
+    },
+    {
+      "id": "aime_2025_item_18",
+      "problem_sha256": "4E99FA9B8C42A5B73D3B86E10E8CCA6AB929FC054CEFA02A1C78F18417172064",
+      "problem_head": "Four unit squares form a $2\\times 2$ grid. Each of the $12$ unit line segments f",
+      "answer": "82",
+      "source_artifact_sha256": "1FFDF5459FB0EE50C12851E733ED0FD0136429D7DBD74324CD6EA7DDBD2021D3"
+    },
+    {
+      "id": "aime_2025_item_19",
+      "problem_sha256": "9DC773C6FF4F68277EB1864C30D88758AD472718747033BED75A284A1A8F76A9",
+      "problem_head": "The product\n$$\\prod_{k=4}^{63} \\frac{\\log_k \\left(5^{k^2 - 1}\\right)}{\\log_{k+1}",
+      "answer": "106",
+      "source_artifact_sha256": "72125C3633A7B3D51A22530D5F26E32289C0762F842C065D27170C39C642043C"
+    },
+    {
+      "id": "aime_2025_item_20",
+      "problem_sha256": "4CB41EE237E290C412459B08F9EA3515E9779743A856C0D77CA7B0C9BD2773B9",
+      "problem_head": "Suppose $\\triangle ABC$ has angles $\\angle BAC = 84^\\circ$, $\\angle ABC = 60^\\ci",
+      "answer": "336",
+      "source_artifact_sha256": "5750B1E3D1263F5C4B764B5DBFEEEE79B648901BB43598EE30A5D29EF071AD50"
+    },
+    {
+      "id": "aime_2025_item_21",
+      "problem_sha256": "968C36665D072E238B091A67BD67B91FD5E581219FEFFD1DA56EE7FFF4FF43B5",
+      "problem_head": "Circle $\\omega_1$ with radius $6$ centered at point $A$ is internally tangent at",
+      "answer": "293",
+      "source_artifact_sha256": "A6AD7D480B4EEFF6E0A8DA583DD97D0DE8D1BC9D0EBFA5939F1FA3625943A8A4"
+    },
+    {
+      "id": "aime_2025_item_22",
+      "problem_sha256": "CF1D5F761CE5942A44355CE05B1E490F24B35819A1402366DAE26F95C1C8474F",
+      "problem_head": "Let $A$ be the set of positive integer divisors of $2025$. Let $B$ be a randomly",
+      "answer": "237",
+      "source_artifact_sha256": "BFCAD7DCAC66E709B6B78E5D0509108491446072B85895E60500600E8AC7CD39"
+    },
+    {
+      "id": "aime_2025_item_23",
+      "problem_sha256": "459C0B9EB4CCDCBF64BAA1A70CBA19869D652A1999966F43284C9C97C0D04B6B",
+      "problem_head": "From an unlimited supply of $1$-cent coins, $10$-cent coins, and $25$-cent coins",
+      "answer": "610",
+      "source_artifact_sha256": "2911B2CA7A63321057422FCE6B3AE6E90C9C3EE9E6A2BC8D002FC5E3DB769F19"
+    },
+    {
+      "id": "aime_2025_item_24",
+      "problem_sha256": "3E8F6B46D3C48CF5D4B407D971E725608A18F835CB96E96156299F5096ABAF8A",
+      "problem_head": "There are $n$ values of $x$ in the interval $0 < x < 2\\pi$ where $f(x) = \\sin\\le",
+      "answer": "149",
+      "source_artifact_sha256": "2A925B5F3337631DEB6E285CD644EB88D4CEEF3AA03D236698B056876BE158CF"
+    },
+    {
+      "id": "aime_2025_item_25",
+      "problem_sha256": "A2999ECFA8F9A767855B7B43E2968173DF904B4759E6510F5093EC701E028674",
+      "problem_head": "Sixteen chairs are arranged in a row. Eight people each select a chair in which ",
+      "answer": "907",
+      "source_artifact_sha256": "42806ACABACCD0E4EF725D37E74F6C3898A211E39D20B1DDD3A7AD9A4150A96C"
+    },
+    {
+      "id": "aime_2025_item_26",
+      "problem_sha256": "1D6318C3BFFDD04AFF2F9503B43F64EB63367F40B8C2117575AC7890F3ED4C8E",
+      "problem_head": "Let $S$ be the set of vertices of a regular $24$-gon. Find the number of ways to",
+      "answer": "113",
+      "source_artifact_sha256": "E03E4AA59ACD5F116020C84A67DB991D2BA9D50883AEE1B0062715A6BD098EDF"
+    },
+    {
+      "id": "aime_2025_item_27",
+      "problem_sha256": "D3E05E3BF85696649FE4030478871FFA8E8B8805B6D47421F2BFFECD7A085E4E",
+      "problem_head": "Let $A_1 A_2 A_3 \\ldots A_{11}$ be an $11$-sided non-convex simple polygon with ",
+      "answer": "19",
+      "source_artifact_sha256": "5E1618B8434451578DC59D253B8C4AE2F64403FCEDB8F12BD6AA18CCB5A038A2"
+    },
+    {
+      "id": "aime_2025_item_28",
+      "problem_sha256": "DE56C94A8E485ECAFD89D9DC1B40A677A3FC4999D9A36101A661E03A71214572",
+      "problem_head": "Let $x_1, x_2, x_3, \\ldots$ be a sequence of rational numbers defined by $x_1 = ",
+      "answer": "248",
+      "source_artifact_sha256": "82857D0131C5E927298F04B85648F9F742A364F84B0F4C7F838AC4DA5803CEC9"
+    },
+    {
+      "id": "aime_2025_item_29",
+      "problem_sha256": "3B18835D3533AD5DEDFE647D97BC40F92AD93AB28148C37BD8FC787C33D35DF6",
+      "problem_head": "Let $\\triangle ABC$ be a right triangle with $\\angle A = 90^\\circ$ and $BC = 38$",
+      "answer": "104",
+      "source_artifact_sha256": "F2AEE8325093E6871AC3005995E8BB318C065543C3AE7906508A999680D99B7D"
+    },
+    {
+      "id": "aime_2025_item_30",
+      "problem_sha256": "F0EB22E114CDF88937BB21794102E0E980CBCF54FB332DF22C402B06307F26C2",
+      "problem_head": "There are exactly three positive real numbers $k$ such that the function\n$$f(x) ",
+      "answer": "240",
+      "source_artifact_sha256": "C81605FB5933D67229BA4C8957DC3E960DBB2583102F2674963C83EF69E7046C"
+    }
+  ]
+}

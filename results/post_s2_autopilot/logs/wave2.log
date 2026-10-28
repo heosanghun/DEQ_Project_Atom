@@ -1,0 +1,709 @@
+CTS Evaluation Pipeline
+  Benchmarks: ['math500', 'gsm8k', 'aime']
+  Seeds: [0, 1, 2, 3, 4]
+  Mode: 4nu
+  Config: paper_parity
+
+  [resume-partial] loaded 48 completed (method,bench,seed) cells
+  [skip partial] [cts_4nu] math500 seed=0
+  [skip partial] [cts_4nu] gsm8k seed=0
+  [skip partial] [cts_4nu] aime seed=0
+  [skip partial] [cts_4nu] math500 seed=1
+  [skip partial] [cts_4nu] gsm8k seed=1
+  [skip partial] [cts_4nu] aime seed=1
+  [skip partial] [cts_4nu] math500 seed=2
+  [skip partial] [cts_4nu] gsm8k seed=2
+  [skip partial] [cts_4nu] aime seed=2
+  [skip partial] [cts_4nu] math500 seed=3
+  [skip partial] [cts_4nu] gsm8k seed=3
+  [skip partial] [cts_4nu] aime seed=3
+  [skip partial] [cts_4nu] math500 seed=4
+  [skip partial] [cts_4nu] gsm8k seed=4
+  [skip partial] [cts_4nu] aime seed=4
+  [skip partial] [greedy] math500 seed=0
+  [skip partial] [greedy] gsm8k seed=0
+  [skip partial] [greedy] aime seed=0
+  [skip partial] [greedy] math500 seed=1
+  [skip partial] [greedy] gsm8k seed=1
+  [skip partial] [greedy] aime seed=1
+  [skip partial] [greedy] math500 seed=2
+  [skip partial] [greedy] gsm8k seed=2
+  [skip partial] [greedy] aime seed=2
+  [skip partial] [greedy] math500 seed=3
+  [skip partial] [greedy] gsm8k seed=3
+  [skip partial] [greedy] aime seed=3
+  [skip partial] [greedy] math500 seed=4
+  [skip partial] [greedy] gsm8k seed=4
+  [skip partial] [greedy] aime seed=4
+  [skip partial] [native_think] math500 seed=0
+  [skip partial] [native_think] gsm8k seed=0
+  [skip partial] [native_think] aime seed=0
+  [skip partial] [native_think] math500 seed=1
+  [skip partial] [native_think] gsm8k seed=1
+  [skip partial] [native_think] aime seed=1
+  [skip partial] [native_think] math500 seed=2
+  [skip partial] [native_think] gsm8k seed=2
+  [skip partial] [native_think] aime seed=2
+  [skip partial] [native_think] math500 seed=3
+  [skip partial] [native_think] gsm8k seed=3
+  [skip partial] [native_think] aime seed=3
+  [skip partial] [native_think] math500 seed=4
+  [skip partial] [native_think] gsm8k seed=4
+  [skip partial] [native_think] aime seed=4
+  [skip partial] [sc_14] math500 seed=0
+  [skip partial] [sc_14] gsm8k seed=0
+  [skip partial] [sc_14] aime seed=0
+  [sc_14] math500 seed=1
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  24%|██▎       | 488/2076 [00:00<00:00, 4863.80it/s]Loading weights:  47%|████▋     | 975/2076 [00:01<00:02, 449.29it/s] Loading weights:  57%|█████▋    | 1192/2076 [00:02<00:01, 454.70it/s]Loading weights:  64%|██████▍   | 1332/2076 [00:02<00:01, 447.16it/s]Loading weights:  69%|██████▉   | 1433/2076 [00:02<00:01, 451.17it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 1036.97it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 694.81it/s] 
+    [sc_14/math500] votes_top='(3,\frac{\pi}{2})' gold='\left( 3, \frac{\pi}{2} \right)' match=True
+    [sc_14/math500] votes_top='We can begin by expanding the summation.' gold='p - q' match=False
+    [sc_14/math500] votes_top='\frac{14}{3}' gold='\frac{14}{3}' match=True
+    [sc_14/math500] votes_top='8' gold='9' match=False
+    [sc_14/math500] votes_top='Carla' gold='\text{Evelyn}' match=False
+    [sc_14/math500] votes_top='126' gold='42' match=False
+    [sc_14/math500] votes_top='27' gold='27' match=True
+    [sc_14/math500] votes_top='102' gold='90^\circ' match=False
+    [sc_14/math500] votes_top='\sqrt{85}' gold='3\sqrt{13}' match=False
+    [sc_14/math500] votes_top='10' gold='4' match=False
+    [sc_14/math500] votes_top='120' gold='2220' match=False
+    [sc_14/math500] votes_top='\frac{8}{63}' gold='\frac{3}{56}' match=False
+    [sc_14/math500] votes_top='The proper divisors of 12 are 1, 2, 3, 4' gold='284' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='\sqrt{51}' match=False
+    [sc_14/math500] votes_top='Let $z = 2 + \sqrt{2} - (3 + 3 \sqrt{2})' gold='6 - 5i' match=False
+    [sc_14/math500] votes_top='-50' gold='-50' match=True
+    [sc_14/math500] votes_top='0' gold='\pi' match=False
+    [sc_14/math500] votes_top='124' gold='28' match=False
+    [sc_14/math500] votes_top='0' gold='3' match=False
+    [sc_14/math500] votes_top='6 + 9i' gold='6+9i' match=True
+    [sc_14/math500] votes_top='11' gold='13535' match=False
+    [sc_14/math500] votes_top='0' gold='5' match=False
+    [sc_14/math500] votes_top='2' gold='x=5' match=False
+    [sc_14/math500] votes_top='6\%' gold='10' match=False
+    [sc_14/math500] votes_top='2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ' gold='1,-2' match=False
+    [sc_14/math500] votes_top='708' gold='144' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='78' match=False
+    [sc_14/math500] votes_top='3 - 2i' gold='-2 + 7i' match=False
+    [sc_14/math500] votes_top='225' gold='225' match=True
+    [sc_14/math500] votes_top='The product of $6_8 \cdot 7_8$ can be ca' gold='52_8' match=False
+    [sc_14/math500] votes_top='2\sqrt{6}' gold='11\sqrt2' match=False
+    [sc_14/math500] votes_top='720' gold='720' match=True
+    [sc_14/math500] votes_top='The given geometric sequence is $\frac{1' gold='\frac{243}{625}' match=False
+    [sc_14/math500] votes_top='10^5' gold='-125' match=False
+    [sc_14/math500] votes_top='1' gold='3' match=False
+    [sc_14/math500] votes_top='5, 11, 23' gold='3, 5, 7' match=False
+    [sc_14/math500] votes_top='72' gold='72' match=True
+    [sc_14/math500] votes_top='2000' gold='2000' match=True
+    [sc_14/math500] votes_top='23' gold='23' match=True
+    [sc_14/math500] votes_top='12' gold='12' match=True
+    [sc_14/math500] votes_top='13' gold='17' match=False
+    [sc_14/math500] votes_top='4' gold='4' match=True
+    [sc_14/math500] votes_top='500' gold='70 \sqrt{2}' match=False
+    [sc_14/math500] votes_top='To solve this problem, we need to find t' gold='1.25' match=False
+    [sc_14/math500] votes_top='2' gold='2' match=True
+    [sc_14/math500] votes_top='4' gold='6' match=False
+    [sc_14/math500] votes_top='The graph of $f(x)=\frac{2x}{x^2-5x-14}$' gold='5' match=False
+    [sc_14/math500] votes_top='3/2' gold='\frac{3}{2}' match=True
+    [sc_14/math500] votes_top='83' gold='83' match=True
+  [sc_14] gsm8k seed=1
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='3' gold='3' match=True
+    [sc_14/gsm8k] votes_top='50000' gold='70000' match=False
+    [sc_14/gsm8k] votes_top='540' gold='540' match=True
+    [sc_14/gsm8k] votes_top='20' gold='20' match=True
+    [sc_14/gsm8k] votes_top='64' gold='64' match=True
+    [sc_14/gsm8k] votes_top='260' gold='260' match=True
+    [sc_14/gsm8k] votes_top='20' gold='160' match=False
+    [sc_14/gsm8k] votes_top='4' gold='45' match=False
+    [sc_14/gsm8k] votes_top='460' gold='460' match=True
+    [sc_14/gsm8k] votes_top='366' gold='366' match=True
+    [sc_14/gsm8k] votes_top='694' gold='694' match=True
+    [sc_14/gsm8k] votes_top='12' gold='13' match=False
+    [sc_14/gsm8k] votes_top='5' gold='18' match=False
+    [sc_14/gsm8k] votes_top='60\%' gold='60' match=True
+    [sc_14/gsm8k] votes_top='96' gold='125' match=False
+    [sc_14/gsm8k] votes_top='230' gold='230' match=True
+    [sc_14/gsm8k] votes_top='57500' gold='57500' match=True
+    [sc_14/gsm8k] votes_top='4' gold='7' match=False
+    [sc_14/gsm8k] votes_top='4' gold='6' match=False
+    [sc_14/gsm8k] votes_top='24' gold='15' match=False
+    [sc_14/gsm8k] votes_top='8' gold='14' match=False
+    [sc_14/gsm8k] votes_top='7' gold='7' match=True
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='2' gold='2' match=True
+    [sc_14/gsm8k] votes_top='243' gold='243' match=True
+    [sc_14/gsm8k] votes_top='60' gold='16' match=False
+    [sc_14/gsm8k] votes_top='25' gold='25' match=True
+    [sc_14/gsm8k] votes_top='23.' gold='104' match=False
+    [sc_14/gsm8k] votes_top='109' gold='109' match=True
+    [sc_14/gsm8k] votes_top='25' gold='80' match=False
+    [sc_14/gsm8k] votes_top='35' gold='35' match=True
+    [sc_14/gsm8k] votes_top='70' gold='70' match=True
+    [sc_14/gsm8k] votes_top='23' gold='23' match=True
+    [sc_14/gsm8k] votes_top='9' gold='9' match=True
+    [sc_14/gsm8k] votes_top='75' gold='75' match=True
+    [sc_14/gsm8k] votes_top='5' gold='2' match=False
+    [sc_14/gsm8k] votes_top='10' gold='10' match=True
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='200' gold='200' match=True
+    [sc_14/gsm8k] votes_top='14' gold='26' match=False
+    [sc_14/gsm8k] votes_top='0' gold='48' match=False
+    [sc_14/gsm8k] votes_top='20' gold='20' match=True
+    [sc_14/gsm8k] votes_top='5' gold='104' match=False
+    [sc_14/gsm8k] votes_top='163' gold='163' match=True
+    [sc_14/gsm8k] votes_top='320' gold='800' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='30' gold='30' match=True
+  [sc_14] aime seed=1
+    [sc_14/aime] votes_top='2' gold='277' match=False
+    [sc_14/aime] votes_top='277277' gold='062' match=False
+    [sc_14/aime] votes_top='106' gold='079' match=False
+    [sc_14/aime] votes_top='2' gold='070' match=False
+    [sc_14/aime] votes_top='7' gold='065' match=False
+    [sc_14/aime] votes_top='1' gold='441' match=False
+    [sc_14/aime] votes_top='720' gold='396' match=False
+    [sc_14/aime] votes_top='17' gold='244' match=False
+    [sc_14/aime] votes_top='5' gold='029' match=False
+    [sc_14/aime] votes_top='107' gold='156' match=False
+    [sc_14/aime] votes_top='1000' gold='896' match=False
+    [sc_14/aime] votes_top='3' gold='161' match=False
+    [sc_14/aime] votes_top='251' gold='039' match=False
+    [sc_14/aime] votes_top='313' gold='681' match=False
+
+--- autopilot resume 2026-06-16T10:30:54+00:00 ---
+CTS Evaluation Pipeline
+  Benchmarks: ['math500', 'gsm8k', 'aime']
+  Seeds: [0, 1, 2, 3, 4]
+  Mode: 4nu
+  Config: paper_parity
+
+  [resume-partial] loaded 50 completed (method,bench,seed) cells
+  [skip partial] [cts_4nu] math500 seed=0
+  [skip partial] [cts_4nu] gsm8k seed=0
+  [skip partial] [cts_4nu] aime seed=0
+  [skip partial] [cts_4nu] math500 seed=1
+  [skip partial] [cts_4nu] gsm8k seed=1
+  [skip partial] [cts_4nu] aime seed=1
+  [skip partial] [cts_4nu] math500 seed=2
+  [skip partial] [cts_4nu] gsm8k seed=2
+  [skip partial] [cts_4nu] aime seed=2
+  [skip partial] [cts_4nu] math500 seed=3
+  [skip partial] [cts_4nu] gsm8k seed=3
+  [skip partial] [cts_4nu] aime seed=3
+  [skip partial] [cts_4nu] math500 seed=4
+  [skip partial] [cts_4nu] gsm8k seed=4
+  [skip partial] [cts_4nu] aime seed=4
+  [skip partial] [greedy] math500 seed=0
+  [skip partial] [greedy] gsm8k seed=0
+  [skip partial] [greedy] aime seed=0
+  [skip partial] [greedy] math500 seed=1
+  [skip partial] [greedy] gsm8k seed=1
+  [skip partial] [greedy] aime seed=1
+  [skip partial] [greedy] math500 seed=2
+  [skip partial] [greedy] gsm8k seed=2
+  [skip partial] [greedy] aime seed=2
+  [skip partial] [greedy] math500 seed=3
+  [skip partial] [greedy] gsm8k seed=3
+  [skip partial] [greedy] aime seed=3
+  [skip partial] [greedy] math500 seed=4
+  [skip partial] [greedy] gsm8k seed=4
+  [skip partial] [greedy] aime seed=4
+  [skip partial] [native_think] math500 seed=0
+  [skip partial] [native_think] gsm8k seed=0
+  [skip partial] [native_think] aime seed=0
+  [skip partial] [native_think] math500 seed=1
+  [skip partial] [native_think] gsm8k seed=1
+  [skip partial] [native_think] aime seed=1
+  [skip partial] [native_think] math500 seed=2
+  [skip partial] [native_think] gsm8k seed=2
+  [skip partial] [native_think] aime seed=2
+  [skip partial] [native_think] math500 seed=3
+  [skip partial] [native_think] gsm8k seed=3
+  [skip partial] [native_think] aime seed=3
+  [skip partial] [native_think] math500 seed=4
+  [skip partial] [native_think] gsm8k seed=4
+  [skip partial] [native_think] aime seed=4
+  [skip partial] [sc_14] math500 seed=0
+  [skip partial] [sc_14] gsm8k seed=0
+  [skip partial] [sc_14] aime seed=0
+  [skip partial] [sc_14] math500 seed=1
+  [skip partial] [sc_14] gsm8k seed=1
+  [sc_14] aime seed=1
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  24%|██▍       | 503/2076 [00:00<00:00, 4991.90it/s]Loading weights:  48%|████▊     | 1003/2076 [00:01<00:02, 465.94it/s]Loading weights:  59%|█████▉    | 1226/2076 [00:02<00:01, 465.33it/s]Loading weights:  66%|██████▌   | 1368/2076 [00:02<00:01, 459.02it/s]Loading weights:  71%|███████   | 1472/2076 [00:02<00:01, 498.96it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 719.86it/s]
+    [sc_14/aime] votes_top='2' gold='277' match=False
+    [sc_14/aime] votes_top='277277' gold='062' match=False
+    [sc_14/aime] votes_top='106' gold='079' match=False
+    [sc_14/aime] votes_top='2' gold='070' match=False
+    [sc_14/aime] votes_top='7' gold='065' match=False
+    [sc_14/aime] votes_top='1' gold='441' match=False
+    [sc_14/aime] votes_top='720' gold='396' match=False
+    [sc_14/aime] votes_top='17' gold='244' match=False
+    [sc_14/aime] votes_top='5' gold='029' match=False
+    [sc_14/aime] votes_top='107' gold='156' match=False
+    [sc_14/aime] votes_top='1000' gold='896' match=False
+    [sc_14/aime] votes_top='3' gold='161' match=False
+    [sc_14/aime] votes_top='251' gold='039' match=False
+    [sc_14/aime] votes_top='313' gold='681' match=False
+    [sc_14/aime] votes_top='5' gold='083' match=False
+    [sc_14/aime] votes_top='0' gold='178' match=False
+    [sc_14/aime] votes_top='10' gold='243' match=False
+    [sc_14/aime] votes_top='16' gold='503' match=False
+    [sc_14/aime] votes_top='4' gold='279' match=False
+    [sc_14/aime] votes_top='5' gold='190' match=False
+    [sc_14/aime] votes_top='2' gold='050' match=False
+    [sc_14/aime] votes_top='1' gold='754' match=False
+    [sc_14/aime] votes_top='2' gold='245' match=False
+    [sc_14/aime] votes_top='1' gold='669' match=False
+    [sc_14/aime] votes_top='225' gold='340' match=False
+    [sc_14/aime] votes_top='3' gold='132' match=False
+    [sc_14/aime] votes_top='18' gold='223' match=False
+    [sc_14/aime] votes_top='4040' gold='107' match=False
+    [sc_14/aime] votes_top='3' gold='157' match=False
+    [sc_14/aime] votes_top='16' gold='393' match=False
+  [sc_14] math500 seed=2
+    [sc_14/math500] votes_top='(3, \frac{\pi}{2})' gold='\left( 3, \frac{\pi}{2} \right)' match=True
+    [sc_14/math500] votes_top='The given expression is a sum of sums. T' gold='p - q' match=False
+    [sc_14/math500] votes_top='\frac{14}{3}' gold='\frac{14}{3}' match=True
+    [sc_14/math500] votes_top='9' gold='9' match=True
+    [sc_14/math500] votes_top='Evelyn' gold='\text{Evelyn}' match=True
+    [sc_14/math500] votes_top='126' gold='42' match=False
+    [sc_14/math500] votes_top='27' gold='27' match=True
+    [sc_14/math500] votes_top='120' gold='90^\circ' match=False
+    [sc_14/math500] votes_top='3\sqrt{13}' gold='3\sqrt{13}' match=True
+    [sc_14/math500] votes_top='14' gold='4' match=False
+    [sc_14/math500] votes_top='100' gold='2220' match=False
+    [sc_14/math500] votes_top='3' gold='\frac{3}{56}' match=True
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='284' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='Let $d$ be the length of $DE$. Then $\an' gold='\sqrt{51}' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='6 - 5i' match=False
+    [sc_14/math500] votes_top='0' gold='-50' match=False
+    [sc_14/math500] votes_top='0' gold='\pi' match=False
+    [sc_14/math500] votes_top='124' gold='28' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='3' match=False
+    [sc_14/math500] votes_top='6+9i' gold='6+9i' match=True
+    [sc_14/math500] votes_top='In this problem, we are asked to find th' gold='13535' match=False
+    [sc_14/math500] votes_top='\text{no solution}' gold='5' match=False
+    [sc_14/math500] votes_top='1 \pm 2\sqrt{7}' gold='x=5' match=False
+    [sc_14/math500] votes_top='10' gold='10' match=True
+    [sc_14/math500] votes_top='0' gold='1,-2' match=False
+    [sc_14/math500] votes_top='24' gold='144' match=False
+    [sc_14/math500] votes_top='A math club is having a bake sale as a f' gold='78' match=False
+    [sc_14/math500] votes_top='7 - 2' gold='-2 + 7i' match=False
+    [sc_14/math500] votes_top='225' gold='225' match=True
+    [sc_14/math500] votes_top='38_8' gold='52_8' match=False
+    [sc_14/math500] votes_top='2\sqrt{6}' gold='11\sqrt2' match=False
+    [sc_14/math500] votes_top='720' gold='720' match=True
+    [sc_14/math500] votes_top='1' gold='\frac{243}{625}' match=False
+    [sc_14/math500] votes_top='To find the constant term in the expansi' gold='-125' match=False
+    [sc_14/math500] votes_top='Let's solve this step by step. First, le' gold='3' match=False
+    [sc_14/math500] votes_top='3' gold='3, 5, 7' match=False
+    [sc_14/math500] votes_top='72' gold='72' match=True
+    [sc_14/math500] votes_top='2000' gold='2000' match=True
+    [sc_14/math500] votes_top='23' gold='23' match=True
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='12' match=False
+    [sc_14/math500] votes_top='16' gold='17' match=False
+    [sc_14/math500] votes_top='4' gold='4' match=True
+    [sc_14/math500] votes_top='60' gold='70 \sqrt{2}' match=False
+    [sc_14/math500] votes_top='1.12' gold='1.25' match=False
+    [sc_14/math500] votes_top='1' gold='2' match=False
+    [sc_14/math500] votes_top='4' gold='6' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='3' gold='\frac{3}{2}' match=True
+    [sc_14/math500] votes_top='83' gold='83' match=True
+  [sc_14] gsm8k seed=2
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='3' gold='3' match=True
+    [sc_14/gsm8k] votes_top='000' gold='70000' match=False
+    [sc_14/gsm8k] votes_top='180' gold='540' match=False
+    [sc_14/gsm8k] votes_top='3' gold='20' match=False
+    [sc_14/gsm8k] votes_top='16' gold='64' match=False
+    [sc_14/gsm8k] votes_top='260' gold='260' match=True
+    [sc_14/gsm8k] votes_top='20' gold='160' match=False
+    [sc_14/gsm8k] votes_top='4' gold='45' match=False
+    [sc_14/gsm8k] votes_top='460' gold='460' match=True
+    [sc_14/gsm8k] votes_top='366' gold='366' match=True
+    [sc_14/gsm8k] votes_top='694' gold='694' match=True
+    [sc_14/gsm8k] votes_top='5' gold='13' match=False
+    [sc_14/gsm8k] votes_top='5' gold='18' match=False
+    [sc_14/gsm8k] votes_top='60' gold='60' match=True
+    [sc_14/gsm8k] votes_top='1.2' gold='125' match=False
+    [sc_14/gsm8k] votes_top='230' gold='230' match=True
+    [sc_14/gsm8k] votes_top='57500' gold='57500' match=True
+    [sc_14/gsm8k] votes_top='7' gold='7' match=True
+    [sc_14/gsm8k] votes_top='4' gold='6' match=False
+    [sc_14/gsm8k] votes_top='14.4' gold='15' match=False
+    [sc_14/gsm8k] votes_top='2' gold='14' match=False
+    [sc_14/gsm8k] votes_top='8' gold='7' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='2' gold='2' match=True
+    [sc_14/gsm8k] votes_top='243' gold='243' match=True
+    [sc_14/gsm8k] votes_top='16' gold='16' match=True
+    [sc_14/gsm8k] votes_top='25' gold='25' match=True
+    [sc_14/gsm8k] votes_top='104' gold='104' match=True
+    [sc_14/gsm8k] votes_top='109' gold='109' match=True
+    [sc_14/gsm8k] votes_top='93.33' gold='80' match=False
+    [sc_14/gsm8k] votes_top='35' gold='35' match=True
+    [sc_14/gsm8k] votes_top='70' gold='70' match=True
+    [sc_14/gsm8k] votes_top='23' gold='23' match=True
+    [sc_14/gsm8k] votes_top='25' gold='9' match=False
+    [sc_14/gsm8k] votes_top='30' gold='75' match=False
+    [sc_14/gsm8k] votes_top='2' gold='2' match=True
+    [sc_14/gsm8k] votes_top='12' gold='10' match=False
+    [sc_14/gsm8k] votes_top='3' gold='18' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='200' gold='200' match=True
+    [sc_14/gsm8k] votes_top='14' gold='26' match=False
+    [sc_14/gsm8k] votes_top='240' gold='48' match=False
+    [sc_14/gsm8k] votes_top='-160' gold='20' match=False
+    [sc_14/gsm8k] votes_top='44' gold='104' match=False
+    [sc_14/gsm8k] votes_top='163' gold='163' match=True
+    [sc_14/gsm8k] votes_top='600' gold='800' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='30' gold='30' match=True
+  [sc_14] aime seed=2
+    [sc_14/aime] votes_top='3' gold='277' match=False
+    [sc_14/aime] votes_top='6' gold='062' match=False
+    [sc_14/aime] votes_top='20000' gold='079' match=False
+    [sc_14/aime] votes_top='100' gold='070' match=False
+    [sc_14/aime] votes_top='m=1, n=2' gold='065' match=False
+    [sc_14/aime] votes_top='1' gold='441' match=False
+    [sc_14/aime] votes_top='1' gold='396' match=False
+    [sc_14/aime] votes_top='126856' gold='244' match=False
+    [sc_14/aime] votes_top='17' gold='029' match=False
+    [sc_14/aime] votes_top='232' gold='156' match=False
+    [sc_14/aime] votes_top='400' gold='896' match=False
+    [sc_14/aime] votes_top='3' gold='161' match=False
+    [sc_14/aime] votes_top='503' gold='039' match=False
+    [sc_14/aime] votes_top='105' gold='681' match=False
+    [sc_14/aime] votes_top='5' gold='083' match=False
+    [sc_14/aime] votes_top='58' gold='178' match=False
+    [sc_14/aime] votes_top='10' gold='243' match=False
+    [sc_14/aime] votes_top='16' gold='503' match=False
+    [sc_14/aime] votes_top='1000' gold='279' match=False
+    [sc_14/aime] votes_top='5' gold='190' match=False
+    [sc_14/aime] votes_top='2' gold='050' match=False
+    [sc_14/aime] votes_top='100' gold='754' match=False
+    [sc_14/aime] votes_top='3' gold='245' match=False
+    [sc_14/aime] votes_top='999' gold='669' match=False
+    [sc_14/aime] votes_top='225' gold='340' match=False
+    [sc_14/aime] votes_top='6' gold='132' match=False
+    [sc_14/aime] votes_top='18' gold='223' match=False
+    [sc_14/aime] votes_top='4040' gold='107' match=False
+    [sc_14/aime] votes_top='0' gold='157' match=False
+    [sc_14/aime] votes_top='7' gold='393' match=False
+  [sc_14] math500 seed=3
+    [sc_14/math500] votes_top='(3,1.2490)' gold='\left( 3, \frac{\pi}{2} \right)' match=False
+    [sc_14/math500] votes_top='p + q' gold='p - q' match=False
+    [sc_14/math500] votes_top='\frac{14}{3}' gold='\frac{14}{3}' match=True
+    [sc_14/math500] votes_top='9' gold='9' match=True
+    [sc_14/math500] votes_top='Evelyn' gold='\text{Evelyn}' match=True
+    [sc_14/math500] votes_top='126' gold='42' match=False
+    [sc_14/math500] votes_top='27' gold='27' match=True
+    [sc_14/math500] votes_top='90' gold='90^\circ' match=True
+    [sc_14/math500] votes_top='3\sqrt{13}' gold='3\sqrt{13}' match=True
+    [sc_14/math500] votes_top='6' gold='4' match=False
+    [sc_14/math500] votes_top='120' gold='2220' match=False
+    [sc_14/math500] votes_top='\frac{8}{63}' gold='\frac{3}{56}' match=False
+    [sc_14/math500] votes_top='37' gold='284' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='\sqrt{51}' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='6 - 5i' match=False
+    [sc_14/math500] votes_top='0' gold='-50' match=False
+    [sc_14/math500] votes_top='\frac{\pi}{2}' gold='\pi' match=False
+    [sc_14/math500] votes_top='124' gold='28' match=False
+    [sc_14/math500] votes_top='1' gold='3' match=False
+    [sc_14/math500] votes_top='6 + 9i' gold='6+9i' match=True
+    [sc_14/math500] votes_top='20' gold='13535' match=False
+    [sc_14/math500] votes_top='0' gold='5' match=False
+    [sc_14/math500] votes_top='3' gold='x=5' match=False
+    [sc_14/math500] votes_top='The problem involves a worker depositing' gold='10' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='1,-2' match=False
+    [sc_14/math500] votes_top='42' gold='144' match=False
+    [sc_14/math500] votes_top='39' gold='78' match=False
+    [sc_14/math500] votes_top='7i - 2' gold='-2 + 7i' match=False
+    [sc_14/math500] votes_top='225' gold='225' match=True
+    [sc_14/math500] votes_top='68 \cdot 78 = 544' gold='52_8' match=False
+    [sc_14/math500] votes_top='2\sqrt{6}' gold='11\sqrt2' match=False
+    [sc_14/math500] votes_top='78' gold='720' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='\frac{243}{625}' match=False
+    [sc_14/math500] votes_top='10000' gold='-125' match=False
+    [sc_14/math500] votes_top='2' gold='3' match=False
+    [sc_14/math500] votes_top='3, 5, 7' gold='3, 5, 7' match=True
+    [sc_14/math500] votes_top='72' gold='72' match=True
+    [sc_14/math500] votes_top='2000' gold='2000' match=True
+    [sc_14/math500] votes_top='23' gold='23' match=True
+    [sc_14/math500] votes_top='12' gold='12' match=True
+    [sc_14/math500] votes_top='17' gold='17' match=True
+    [sc_14/math500] votes_top='4' gold='4' match=True
+    [sc_14/math500] votes_top='70' gold='70 \sqrt{2}' match=True
+    [sc_14/math500] votes_top='Bill walks $\frac{1}{2}$ mile south, the' gold='1.25' match=False
+    [sc_14/math500] votes_top='2' gold='2' match=True
+    [sc_14/math500] votes_top='1' gold='6' match=False
+    [sc_14/math500] votes_top='The graph of $f(x)=\frac{2x}{x^2-5x-14}$' gold='5' match=False
+    [sc_14/math500] votes_top='2/3' gold='\frac{3}{2}' match=False
+    [sc_14/math500] votes_top='83' gold='83' match=True
+  [sc_14] gsm8k seed=3
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='3' gold='3' match=True
+    [sc_14/gsm8k] votes_top='000.' gold='70000' match=False
+    [sc_14/gsm8k] votes_top='180' gold='540' match=False
+    [sc_14/gsm8k] votes_top='20' gold='20' match=True
+    [sc_14/gsm8k] votes_top='16' gold='64' match=False
+    [sc_14/gsm8k] votes_top='260' gold='260' match=True
+    [sc_14/gsm8k] votes_top='80' gold='160' match=False
+    [sc_14/gsm8k] votes_top='315' gold='45' match=False
+    [sc_14/gsm8k] votes_top='460' gold='460' match=True
+    [sc_14/gsm8k] votes_top='366' gold='366' match=True
+    [sc_14/gsm8k] votes_top='694' gold='694' match=True
+    [sc_14/gsm8k] votes_top='3' gold='13' match=False
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='60' gold='60' match=True
+    [sc_14/gsm8k] votes_top='1.2' gold='125' match=False
+    [sc_14/gsm8k] votes_top='230' gold='230' match=True
+    [sc_14/gsm8k] votes_top='57,500' gold='57500' match=True
+    [sc_14/gsm8k] votes_top='4' gold='7' match=False
+    [sc_14/gsm8k] votes_top='4' gold='6' match=False
+    [sc_14/gsm8k] votes_top='24' gold='15' match=False
+    [sc_14/gsm8k] votes_top='31' gold='14' match=False
+    [sc_14/gsm8k] votes_top='7' gold='7' match=True
+    [sc_14/gsm8k] votes_top='00' gold='8' match=False
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='2' gold='2' match=True
+    [sc_14/gsm8k] votes_top='243' gold='243' match=True
+    [sc_14/gsm8k] votes_top='60' gold='16' match=False
+    [sc_14/gsm8k] votes_top='25' gold='25' match=True
+    [sc_14/gsm8k] votes_top='104' gold='104' match=True
+    [sc_14/gsm8k] votes_top='109' gold='109' match=True
+    [sc_14/gsm8k] votes_top='93.33' gold='80' match=False
+    [sc_14/gsm8k] votes_top='35' gold='35' match=True
+    [sc_14/gsm8k] votes_top='70' gold='70' match=True
+    [sc_14/gsm8k] votes_top='23' gold='23' match=True
+    [sc_14/gsm8k] votes_top='9' gold='9' match=True
+    [sc_14/gsm8k] votes_top='75' gold='75' match=True
+    [sc_14/gsm8k] votes_top='5' gold='2' match=False
+    [sc_14/gsm8k] votes_top='12' gold='10' match=False
+    [sc_14/gsm8k] votes_top='3' gold='18' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='1200' gold='200' match=False
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='1800' gold='48' match=False
+    [sc_14/gsm8k] votes_top='20.00' gold='20' match=True
+    [sc_14/gsm8k] votes_top='44' gold='104' match=False
+    [sc_14/gsm8k] votes_top='23' gold='163' match=False
+    [sc_14/gsm8k] votes_top='800' gold='800' match=True
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='30' gold='30' match=True
+  [sc_14] aime seed=3
+    [sc_14/aime] votes_top='5' gold='277' match=False
+    [sc_14/aime] votes_top='1' gold='062' match=False
+    [sc_14/aime] votes_top='19559' gold='079' match=False
+    [sc_14/aime] votes_top='39' gold='070' match=False
+    [sc_14/aime] votes_top='3' gold='065' match=False
+    [sc_14/aime] votes_top='1' gold='441' match=False
+    [sc_14/aime] votes_top='360' gold='396' match=False
+    [sc_14/aime] votes_top='1000' gold='244' match=False
+    [sc_14/aime] votes_top='135' gold='029' match=False
+    [sc_14/aime] votes_top='15' gold='156' match=False
+    [sc_14/aime] votes_top='1000' gold='896' match=False
+    [sc_14/aime] votes_top='2' gold='161' match=False
+    [sc_14/aime] votes_top='47.' gold='039' match=False
+    [sc_14/aime] votes_top='41' gold='681' match=False
+    [sc_14/aime] votes_top='5' gold='083' match=False
+    [sc_14/aime] votes_top='940' gold='178' match=False
+    [sc_14/aime] votes_top='10' gold='243' match=False
+    [sc_14/aime] votes_top='2' gold='503' match=False
+    [sc_14/aime] votes_top='11' gold='279' match=False
+    [sc_14/aime] votes_top='0' gold='190' match=False
+    [sc_14/aime] votes_top='2' gold='050' match=False
+    [sc_14/aime] votes_top='100' gold='754' match=False
+    [sc_14/aime] votes_top='3' gold='245' match=False
+    [sc_14/aime] votes_top='1000' gold='669' match=False
+    [sc_14/aime] votes_top='225' gold='340' match=False
+    [sc_14/aime] votes_top='2' gold='132' match=False
+    [sc_14/aime] votes_top='$10\sqrt{10}+10$' gold='223' match=False
+    [sc_14/aime] votes_top='4040' gold='107' match=False
+    [sc_14/aime] votes_top='3' gold='157' match=False
+    [sc_14/aime] votes_top='1' gold='393' match=False
+  [sc_14] math500 seed=4
+    [sc_14/math500] votes_top='3.141592654, \frac{5\pi}{4}' gold='\left( 3, \frac{\pi}{2} \right)' match=False
+    [sc_14/math500] votes_top='In order to solve this problem, we need ' gold='p - q' match=False
+    [sc_14/math500] votes_top='\frac{14}{3}' gold='\frac{14}{3}' match=True
+    [sc_14/math500] votes_top='8' gold='9' match=False
+    [sc_14/math500] votes_top='Evelyn' gold='\text{Evelyn}' match=True
+    [sc_14/math500] votes_top='126' gold='42' match=False
+    [sc_14/math500] votes_top='The smallest positive perfect cube that ' gold='27' match=True
+    [sc_14/math500] votes_top='127' gold='90^\circ' match=False
+    [sc_14/math500] votes_top='3\sqrt{13}' gold='3\sqrt{13}' match=True
+    [sc_14/math500] votes_top='15' gold='4' match=False
+    [sc_14/math500] votes_top='360' gold='2220' match=False
+    [sc_14/math500] votes_top='\frac{8}{63}' gold='\frac{3}{56}' match=False
+    [sc_14/math500] votes_top='1, 2, 3, 4, 6, 7, 8, 12, 14, 21, 28, 42,' gold='284' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='4.9' gold='\sqrt{51}' match=False
+    [sc_14/math500] votes_top='-i\sqrt{2}' gold='6 - 5i' match=False
+    [sc_14/math500] votes_top='0' gold='-50' match=False
+    [sc_14/math500] votes_top='-\frac{\pi}{2}' gold='\pi' match=False
+    [sc_14/math500] votes_top='124' gold='28' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='3' match=False
+    [sc_14/math500] votes_top='6+9i' gold='6+9i' match=True
+    [sc_14/math500] votes_top='2985984' gold='13535' match=False
+    [sc_14/math500] votes_top='0' gold='5' match=False
+    [sc_14/math500] votes_top='\frac{1}{2}' gold='x=5' match=False
+    [sc_14/math500] votes_top='Solve the following math problem step by' gold='10' match=False
+    [sc_14/math500] votes_top='To solve this problem, we will use the f' gold='1,-2' match=False
+    [sc_14/math500] votes_top='96' gold='144' match=False
+    [sc_14/math500] votes_top='78' gold='78' match=True
+    [sc_14/math500] votes_top='7i - 2' gold='-2 + 7i' match=False
+    [sc_14/math500] votes_top='225' gold='225' match=True
+    [sc_14/math500] votes_top='34_8' gold='52_8' match=False
+    [sc_14/math500] votes_top='2\sqrt{6}' gold='11\sqrt2' match=False
+    [sc_14/math500] votes_top='144' gold='720' match=False
+    [sc_14/math500] votes_top='To solve this problem, we need to unders' gold='\frac{243}{625}' match=False
+    [sc_14/math500] votes_top='10^5' gold='-125' match=False
+    [sc_14/math500] votes_top='4' gold='3' match=False
+    [sc_14/math500] votes_top='x = 3' gold='3, 5, 7' match=False
+    [sc_14/math500] votes_top='360' gold='72' match=False
+    [sc_14/math500] votes_top='2000' gold='2000' match=True
+    [sc_14/math500] votes_top='23' gold='23' match=True
+    [sc_14/math500] votes_top='12' gold='12' match=True
+    [sc_14/math500] votes_top='The coordinates of a parallelogram are (' gold='17' match=False
+    [sc_14/math500] votes_top='4' gold='4' match=True
+    [sc_14/math500] votes_top='\[\sqrt{x^2 + 400} + \sqrt{y^2 + 900} + ' gold='70 \sqrt{2}' match=False
+    [sc_14/math500] votes_top='1.25' gold='1.25' match=True
+    [sc_14/math500] votes_top='2' gold='2' match=True
+    [sc_14/math500] votes_top='4' gold='6' match=False
+    [sc_14/math500] votes_top='5' gold='5' match=True
+    [sc_14/math500] votes_top='1/32' gold='\frac{3}{2}' match=False
+    [sc_14/math500] votes_top='83' gold='83' match=True
+  [sc_14] gsm8k seed=4
+    [sc_14/gsm8k] votes_top='18' gold='18' match=True
+    [sc_14/gsm8k] votes_top='2' gold='3' match=False
+    [sc_14/gsm8k] votes_top='15,000' gold='70000' match=False
+    [sc_14/gsm8k] votes_top='180' gold='540' match=False
+    [sc_14/gsm8k] votes_top='20' gold='20' match=True
+    [sc_14/gsm8k] votes_top='16' gold='64' match=False
+    [sc_14/gsm8k] votes_top='260' gold='260' match=True
+    [sc_14/gsm8k] votes_top='80' gold='160' match=False
+    [sc_14/gsm8k] votes_top='4' gold='45' match=False
+    [sc_14/gsm8k] votes_top='460' gold='460' match=True
+    [sc_14/gsm8k] votes_top='366' gold='366' match=True
+    [sc_14/gsm8k] votes_top='55' gold='694' match=False
+    [sc_14/gsm8k] votes_top='12' gold='13' match=False
+    [sc_14/gsm8k] votes_top='5' gold='18' match=False
+    [sc_14/gsm8k] votes_top='60' gold='60' match=True
+    [sc_14/gsm8k] votes_top='125' gold='125' match=True
+    [sc_14/gsm8k] votes_top='230' gold='230' match=True
+    [sc_14/gsm8k] votes_top='57500' gold='57500' match=True
+    [sc_14/gsm8k] votes_top='7' gold='7' match=True
+    [sc_14/gsm8k] votes_top='4' gold='6' match=False
+    [sc_14/gsm8k] votes_top='15.67' gold='15' match=False
+    [sc_14/gsm8k] votes_top='23' gold='14' match=False
+    [sc_14/gsm8k] votes_top='7' gold='7' match=True
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='2' gold='2' match=True
+    [sc_14/gsm8k] votes_top='243' gold='243' match=True
+    [sc_14/gsm8k] votes_top='60' gold='16' match=False
+    [sc_14/gsm8k] votes_top='25' gold='25' match=True
+    [sc_14/gsm8k] votes_top='33' gold='104' match=False
+    [sc_14/gsm8k] votes_top='109' gold='109' match=True
+    [sc_14/gsm8k] votes_top='80' gold='80' match=True
+    [sc_14/gsm8k] votes_top='35' gold='35' match=True
+    [sc_14/gsm8k] votes_top='70' gold='70' match=True
+    [sc_14/gsm8k] votes_top='23' gold='23' match=True
+    [sc_14/gsm8k] votes_top='9' gold='9' match=True
+    [sc_14/gsm8k] votes_top='75.00' gold='75' match=True
+    [sc_14/gsm8k] votes_top='5' gold='2' match=False
+    [sc_14/gsm8k] votes_top='1.5' gold='10' match=False
+    [sc_14/gsm8k] votes_top='24' gold='18' match=False
+    [sc_14/gsm8k] votes_top='8' gold='8' match=True
+    [sc_14/gsm8k] votes_top='1200' gold='200' match=False
+    [sc_14/gsm8k] votes_top='26' gold='26' match=True
+    [sc_14/gsm8k] votes_top='3' gold='48' match=False
+    [sc_14/gsm8k] votes_top='390.00' gold='20' match=False
+    [sc_14/gsm8k] votes_top='44' gold='104' match=False
+    [sc_14/gsm8k] votes_top='163' gold='163' match=True
+    [sc_14/gsm8k] votes_top='0' gold='800' match=False
+    [sc_14/gsm8k] votes_top='6' gold='8' match=False
+    [sc_14/gsm8k] votes_top='30' gold='30' match=True
+  [sc_14] aime seed=4
+    [sc_14/aime] votes_top='5' gold='277' match=False
+    [sc_14/aime] votes_top='13.' gold='062' match=False
+    [sc_14/aime] votes_top='168' gold='079' match=False
+    [sc_14/aime] votes_top='22' gold='070' match=False
+    [sc_14/aime] votes_top='5' gold='065' match=False
+    [sc_14/aime] votes_top='100' gold='441' match=False
+    [sc_14/aime] votes_top='4' gold='396' match=False
+    [sc_14/aime] votes_top='2' gold='244' match=False
+    [sc_14/aime] votes_top='5' gold='029' match=False
+    [sc_14/aime] votes_top='15' gold='156' match=False
+    [sc_14/aime] votes_top='64' gold='896' match=False
+    [sc_14/aime] votes_top='4' gold='161' match=False
+    [sc_14/aime] votes_top='4' gold='039' match=False
+    [sc_14/aime] votes_top='1565' gold='681' match=False
+    [sc_14/aime] votes_top='120' gold='083' match=False
+    [sc_14/aime] votes_top='474' gold='178' match=False
+    [sc_14/aime] votes_top='22.6274' gold='243' match=False
+    [sc_14/aime] votes_top='2' gold='503' match=False
+    [sc_14/aime] votes_top='1000' gold='279' match=False
+    [sc_14/aime] votes_top='5' gold='190' match=False
+    [sc_14/aime] votes_top='0' gold='050' match=False
+    [sc_14/aime] votes_top='100' gold='754' match=False
+    [sc_14/aime] votes_top='6' gold='245' match=False
+    [sc_14/aime] votes_top='10' gold='669' match=False
+    [sc_14/aime] votes_top='225' gold='340' match=False
+    [sc_14/aime] votes_top='2' gold='132' match=False
+    [sc_14/aime] votes_top='18' gold='223' match=False
+    [sc_14/aime] votes_top='4040' gold='107' match=False
+    [sc_14/aime] votes_top='1' gold='157' match=False
+    [sc_14/aime] votes_top='24' gold='393' match=False
+  [mcts_early_stop] math500 seed=0
+  [mcts_early_stop] gsm8k seed=0
+  [mcts_early_stop] aime seed=0
+  [mcts_early_stop] math500 seed=1
+  [mcts_early_stop] gsm8k seed=1
+  [mcts_early_stop] aime seed=1
+  [mcts_early_stop] math500 seed=2
+  [mcts_early_stop] gsm8k seed=2
+  [mcts_early_stop] aime seed=2
+  [mcts_early_stop] math500 seed=3
+  [mcts_early_stop] gsm8k seed=3
+  [mcts_early_stop] aime seed=3
+  [mcts_early_stop] math500 seed=4
+  [mcts_early_stop] gsm8k seed=4
+  [mcts_early_stop] aime seed=4
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                        math500       gsm8k        aime
+-------------------------------------------------------------
+cts_4nu                      10.0+-0.0    18.0+-0.0     0.0+-0.0
+greedy                       20.0+-0.0    30.0+-0.0     0.0+-0.0
+native_think                 11.2+-4.2    38.0+-0.0     0.0+-0.0
+sc_14                        34.4+-2.4    55.6+-4.2     0.0+-0.0
+mcts_early_stop               0.0+-0.0     0.0+-0.0     0.0+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] (Bonferroni-corrected; sig if corr_p < α=0.05)
+    CTS-4nu vs greedy (math500): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs greedy (gsm8k): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs greedy (aime): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs native_think (math500): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs native_think (gsm8k): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs native_think (aime): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs sc_14 (math500): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs sc_14 (gsm8k): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs sc_14 (aime): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs mcts_early_stop (math500): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs mcts_early_stop (gsm8k): raw_p=1.0000  corr_p=1.0000  n.s.
+    CTS-4nu vs mcts_early_stop (aime): raw_p=1.0000  corr_p=1.0000  n.s.
+
+Results saved to /workspace/results/headline_w2_primary_full/table2_results.json

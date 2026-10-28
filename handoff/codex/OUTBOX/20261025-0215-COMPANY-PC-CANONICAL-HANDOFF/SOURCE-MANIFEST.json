@@ -1,0 +1,216 @@
+{
+  "package": "INBOX/20261025-0215-COMPANY-PC-CANONICAL-HANDOFF",
+  "created_at": "2026-10-25T02:15:00+09:00",
+  "authoritative_source_repo": "D:\\AI\\cts",
+  "authoritative_source_branch": "scale-v1",
+  "authoritative_source_commit": "992afa62faa87fbe4e5a58021b7fb2e435291cc9",
+  "total_files": 26,
+  "files": [
+    {
+      "package_relpath": "reports/REPORT-C001.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/github-archive/20261020-0735/REPORT-C001.md",
+      "bytes": 14645,
+      "sha256": "a5b8164d557bf7a64ae2e7107bfa7a10a5b452c54a6894596cb0609b68dfd52d"
+    },
+    {
+      "package_relpath": "reports/REPORT-C002.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/github-archive/20261020-0735/REPORT-C002.md",
+      "bytes": 13303,
+      "sha256": "32d903454ea7b425d90082315889a9a3cb0ec484d1f9f95c403570ef51c3e3a2"
+    },
+    {
+      "package_relpath": "reports/REPORT-C003.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/github-archive/20261020-0746-C003/REPORT-C003.md",
+      "bytes": 20553,
+      "sha256": "7cf2e3cc47dac2c1c013c377d2dd842239d0cf6349f33cee0bf77e1d4b5dccee"
+    },
+    {
+      "package_relpath": "reports/REPORT-C003b.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/github-archive/20261020-0802-C003b/REPORT-C003b.md",
+      "bytes": 10327,
+      "sha256": "27536e3df7781c5daa0a90d9cd18b954c9abc2cc21992da5ffe631fc8486414d"
+    },
+    {
+      "package_relpath": "reports/REPORT-C004.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261020-1535-C004/REPORT-C004.md",
+      "bytes": 13079,
+      "sha256": "1897f1076717893e17fb45c4595820a9a634ff8424a56f1bae87023fb6e2fb0c"
+    },
+    {
+      "package_relpath": "reports/REPORT-C005.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261024-1859-C005/REPORT-C005.md",
+      "bytes": 24757,
+      "sha256": "18c918f1ebe8f9a494eb720fbedfc9db5369faa2d3f83b4722c4b4491f9c7484"
+    },
+    {
+      "package_relpath": "reports/REPORT-C006.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261024-1901-C006/REPORT-C006.md",
+      "bytes": 26689,
+      "sha256": "c1c25a8ede4fa4d7b9770bba0ce4ed57bd401997ff4e47b79e949f7281ec75d4"
+    },
+    {
+      "package_relpath": "reports/REPORT-C007.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261024-1906-C007/REPORT-C007.md",
+      "bytes": 23877,
+      "sha256": "1f78a3fda07408d5c504f4f35bdf84930c6f0297082e35e9976df47c3f97232a"
+    },
+    {
+      "package_relpath": "reports/REPORT-C008.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261024-1910-C008/REPORT-C008.md",
+      "bytes": 32753,
+      "sha256": "116d6e3c2b16196cd091c764e58a62104fbadd8a07ea6ba79f755f68547a5484"
+    },
+    {
+      "package_relpath": "reports/REPORT-C009.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261024-1833-C009/REPORT-C009.md",
+      "bytes": 22383,
+      "sha256": "03dd5b05a16261edb231b54982b1a39ebdfc391e665996028614d87d294cfe12"
+    },
+    {
+      "package_relpath": "docs/X8_READABLE_LATENT_DEQ_20261021.md",
+      "company_pc_relpath": "shared/proposals/X8_READABLE_LATENT_DEQ_20261021.md",
+      "bytes": 8031,
+      "sha256": "1d971de8619b37fbff6f3d38eff53c043478c80727d72251139aa93b934efeba"
+    },
+    {
+      "package_relpath": "docs/RESULT-X8A-readable-deq-20261023.md",
+      "company_pc_relpath": "shared/reports/RESULT-X8A-readable-deq-20261023.md",
+      "bytes": 4642,
+      "sha256": "d200141a85487fee9a4ed7cae0e7b736019e050a9f0f9cbe56d3a4a3ff58de7d"
+    },
+    {
+      "package_relpath": "docs/GOAL.md",
+      "company_pc_relpath": "shared/GOAL.md",
+      "bytes": 3187,
+      "sha256": "4b7b18a6d363e371f9ab417dfd8a51f258af4f0bee0e99efb0fd6e566e81002d"
+    },
+    {
+      "package_relpath": "docs/CODEBASE_MAP.md",
+      "company_pc_relpath": "shared/CODEBASE_MAP.md",
+      "bytes": 7382,
+      "sha256": "77193a5697ae3ea2ab770f84d48d1d0f9df0b3488ad4deb630cb89abce738a84"
+    },
+    {
+      "package_relpath": "docs/PREREG_S7_DEQ_v2.1.md",
+      "company_pc_relpath": "shared/prereg/PREREG_S7_DEQ_v2.1.md",
+      "bytes": 16718,
+      "sha256": "670850c10f092379e9ead4e3e3fa9844056cfdf959972bd56ff3a2a1a520164e"
+    },
+    {
+      "package_relpath": "m1_routing_logs/s7deq_intervene_P3.json",
+      "company_pc_relpath": "shared/from_laptop/s7deq_intervene_P3.json",
+      "bytes": 83276,
+      "sha256": "626591dcc8050a39d98f53900d40e2a238155979aa1321690537a34ac86b983c"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-CTS-P2.md",
+      "company_pc_relpath": "shared/from_laptop/reports/REPORT-CTS-P2.md",
+      "bytes": 7773,
+      "sha256": "aae46be8c9789096b235242920d2a2db067c3709c63e42cc0ea49e80b41f745a"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-CTS-P3.md",
+      "company_pc_relpath": "shared/from_laptop/reports/REPORT-CTS-P3.md",
+      "bytes": 13638,
+      "sha256": "315f7859eb83cf5afda54b6f20d1b4073d6ecbac72329084a53885fd99189a8a"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-CTS-P3.v3.md",
+      "company_pc_relpath": "shared/from_laptop/reports/REPORT-CTS-P3.v3.md",
+      "bytes": 39779,
+      "sha256": "7b124251e3be327f4b29ad458d16c87bc27578152d2ca033d13c790bdb416fdc"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-003.md",
+      "company_pc_relpath": "shared/from_laptop/reports/REPORT-003.md",
+      "bytes": 8915,
+      "sha256": "a318c29196368a24e5d9b564b7f96d15ad74678527733e039081bd568808a372"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-0007.md",
+      "company_pc_relpath": "shared/reports/REPORT-0007.md",
+      "bytes": 12748,
+      "sha256": "c648a82f233c1aa37a03e48f78f4969ae4579cfdc60c5eb189e6609b567b0194"
+    },
+    {
+      "package_relpath": "m1_routing_logs/REPORT-0070.md",
+      "company_pc_relpath": "shared/reports/REPORT-0070.md",
+      "bytes": 16869,
+      "sha256": "c545f56f58e27720ff6d78874cf2eda81effec80c14aaf368fcb9e45c5ff9f18"
+    },
+    {
+      "package_relpath": "m1_routing_logs/d2_geometry.json",
+      "company_pc_relpath": "results_s7/diag/d2_geometry.json",
+      "bytes": 2960,
+      "sha256": "0d5db2f729f941d69c8bbc4fcf1dee599e457d296ca1f18d091c9603bc2f7245"
+    },
+    {
+      "package_relpath": "ORIGIN-SOURCE-MANIFEST-0143.json",
+      "company_pc_relpath": "INBOX/20261025-0143-ANTIGRAVITY/SOURCE-MANIFEST.json",
+      "bytes": 132409,
+      "sha256": "a29a05a50acd794a9cb277f3e17e29f16639b2de18151736f039f48cd635a2e1"
+    },
+    {
+      "package_relpath": "ORIGIN-UPLOAD-COMPLETE-0143.md",
+      "company_pc_relpath": "INBOX/20261025-0143-ANTIGRAVITY/UPLOAD-COMPLETE.md",
+      "bytes": 4635,
+      "sha256": "0d2291451f5a5c973e884cf64e172a2d51f7b5c930abd9eb99bc9dabae6090c5"
+    },
+    {
+      "package_relpath": "UPLOAD-COMPLETE.md",
+      "company_pc_relpath": "handoff/codex/OUTBOX/20261025-0215-COMPANY-PC-CANONICAL-HANDOFF/UPLOAD-COMPLETE.md",
+      "bytes": 21075,
+      "sha256": "2fe4a9e50290b8a7370e8019e2737423389006af3f4b6c7803ee1c31b147f008"
+    }
+  ],
+  "routing_summary_from_s7deq_intervene_P3_json": {
+    "source_file": "shared/from_laptop/s7deq_intervene_P3.json",
+    "sha256": "626591dcc8050a39d98f53900d40e2a238155979aa1321690537a34ac86b983c",
+    "n_items": 74,
+    "s5_top3_unique_triples": 20,
+    "m_frozen_unique_triples": 21,
+    "top3_star_unique_triples": 23,
+    "s5_top3_module_counts": {
+      "2": 16,
+      "5": 8,
+      "7": 5,
+      "9": 23,
+      "12": 11,
+      "13": 25,
+      "14": 33,
+      "15": 39,
+      "16": 14,
+      "17": 14,
+      "18": 34
+    },
+    "m_frozen_module_counts": {
+      "2": 15,
+      "4": 2,
+      "5": 16,
+      "7": 5,
+      "9": 23,
+      "12": 8,
+      "13": 35,
+      "14": 29,
+      "15": 33,
+      "16": 14,
+      "17": 11,
+      "18": 31
+    },
+    "top3_star_module_counts": {
+      "0": 1,
+      "2": 14,
+      "4": 2,
+      "5": 12,
+      "7": 5,
+      "9": 26,
+      "12": 9,
+      "13": 30,
+      "14": 32,
+      "15": 39,
+      "16": 12,
+      "17": 7,
+      "18": 33
+    }
+  }
+}

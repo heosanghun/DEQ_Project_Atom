@@ -1,0 +1,14 @@
+{
+  "C_fmt": [
+    "D:\\AI\\cts\\handoff\\codex\\data\\gen_C.jsonl",
+    "D:\\AI\\cts\\handoff\\codex\\data\\p6_item_order.json"
+  ],
+  "X5O47": [
+    "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\gen_X5O47.jsonl",
+    "D:\\AI\\cts\\handoff\\codex\\data\\p6_item_order.json"
+  ],
+  "shuf_X5O47": [
+    "D:\\AI\\cts\\handoff\\codex\\INBOX\\20261020-1320-x5-results\\genB1_X5O47.jsonl",
+    "D:\\AI\\cts\\handoff\\codex\\data\\p6_item_order.json"
+  ]
+}

@@ -1,0 +1,49 @@
+=== S2 start 2026-10-14 15:16:55 ===
+01724a004b8900ddc1fd6b8b283d7bec3444521ec4059bfa9eace46029a0e663  /tmp/cts_s2_stage/g2v7_train.py
+7204341731735fada31eddc7255df1bc187473d3aa692f75c4d5c18758b4c36e  /tmp/cts_s2_stage/g2v7_diag.py
+84dc997841fb9c2bb1961a1b39144e5c61ea8da1a4c9c06aba423054847f0f80  /tmp/cts_s2_stage/g2v7_oracle_latents.py
+55e8280acda7405bdd9c314c18e8effa5fac99dc97f3788a6d827672a623189d  scripts/s7_eval_gate_p6_v36g.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T  1.3G 100% /home
+/dev/sda3       436G  398G   16G  97% /
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[ORC] rc=0 [SAVE] items 1593 (short<64: 149) keys 3186 -> /tmp/cts_s2/oracle_latents.pt
+568f84e615c9f97b164dcb016767e96927dc6b55452499cf1749d52baffc1429  /tmp/cts_s2/oracle_latents.pt
+[TR-S2O50] rc=0 16:01:22
+[TR-S2O49] rc=0 16:01:28
+[TR-S2O47] rc=0 16:01:37
+[DG-S2O50] rc=0 16:08:23
+[DG-S2O49] rc=0 16:08:24
+[DG-S2O47] rc=0 16:08:34
+[GEN-S2O47] rc=0 rows=600 18:36:40
+[GEN-S2O50] rc=0 rows=600 19:21:55
+[GEN-S2O49] rc=0 rows=600 19:41:28
+[GENS-S2O47] rc=0 rows=600 21:05:07
+[GENS-S2O50] rc=0 rows=600 22:46:37
+[GENS-S2O49] rc=0 rows=600 23:22:12
+      3 [PROJ-V2] PrefixProjectorV2 (centre + RMS-normalised in/out)
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] S2O47: n 600 strict 55 lenient 69 boxed 236
+[S0] shuf_S2O47: n 600 strict 45 lenient 58 boxed 236
+[S0] S2O49: n 600 strict 22 lenient 33 boxed 116
+[S0] shuf_S2O49: n 600 strict 20 lenient 32 boxed 127
+[S0] S2O50: n 600 strict 0 lenient 2 boxed 7
+[S0] shuf_S2O50: n 600 strict 1 lenient 3 boxed 13
+78caebb3df49b5c126cbc4e7551462b68a852379e1f564660b367bdebb44bdfa  results_s7/p6r/g2v7s2/genB1_S2O47.jsonl
+815afe47bc610334e37bdbb1fc4bed5b4887d87052384a55789b1d7f8fdf9cb8  results_s7/p6r/g2v7s2/genB1_S2O49.jsonl
+38188a083653e6b9c07c587d77ed2d30c0dad45eba7872ddb3da587649364e9b  results_s7/p6r/g2v7s2/genB1_S2O50.jsonl
+e210b1fe8a574e424d38957cec9689c07e604e666a202dec4fddde90de1bd602  results_s7/p6r/g2v7s2/gen_S2O47.jsonl
+6150ca6e75c960927944d3f35451b20b8d841755b589b2c40c8078c3dd6c9ec4  results_s7/p6r/g2v7s2/gen_S2O49.jsonl
+099270ffb5f0280ae61087267001ef43e122360c77d797ae80963eee443273f8  results_s7/p6r/g2v7s2/gen_S2O50.jsonl
+4a15ae4789d9a1240ab0b7732e9eb6704dcf819488f296ffae48ee5fe77a5001  /tmp/cts_s2/s2_items.json
+57a660d80d12c419519bcd32c14b145717d9a980f239eba089b3379b05062f31  /tmp/cts_s2/diag_S2O47.json
+4cda588abbff6c398b0429b9a1a8919664475d1b8ea9d8d061c22a55a52d0326  /tmp/cts_s2/diag_S2O49.json
+d94dd5e21cb884b2aa8dcefe58a5ef97dd3b3bbc89dfe0adc12fe4dd9c4c9ea9  /tmp/cts_s2/diag_S2O50.json
+76641cdf7b69c32994c5766795cafec5e07eea8f33efec5235354b289c9a1789  /tmp/cts_s2/manifest_S2O47.json
+b01e3ab655501a2aec88bb4e31ab08608914a0689496008beb41a274aaba7b08  /tmp/cts_s2/manifest_S2O49.json
+f41e2f7ea6148c4b915a7d9293f053dabb242a59f6bc6183154a11809a2762c1  /tmp/cts_s2/manifest_S2O50.json
+=== S2 end 2026-10-14 23:22:29 ===

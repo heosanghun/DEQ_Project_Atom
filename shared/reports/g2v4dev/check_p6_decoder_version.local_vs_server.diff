@@ -1,0 +1,7 @@
+--- scripts/check_p6_decoder_version.sh	2026-10-04 19:13:45.050414600 +0900
++++ shared/reports/g2v4dev/check_p6_decoder_version.server.sh	2026-10-11 17:12:52.250631600 +0900
+@@ -41,3 +41,4 @@
+     fi
+     verify_decoder_checkpoint "$1" "${2:-DECODER}"
+ fi
++

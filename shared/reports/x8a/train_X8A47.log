@@ -1,0 +1,75 @@
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480 k_unroll 2 lambda_fp 0.1
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 553/2076 [00:00<00:00, 5516.68it/s]Loading weights:  53%|█████▎    | 1105/2076 [00:01<00:02, 477.10it/s]Loading weights:  65%|██████▌   | 1350/2076 [00:02<00:01, 464.57it/s]Loading weights:  72%|███████▏  | 1503/2076 [00:02<00:01, 515.96it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 738.99it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 565/2076 [00:00<00:00, 5627.42it/s]Loading weights:  54%|█████▍    | 1128/2076 [00:01<00:01, 491.34it/s]Loading weights:  66%|██████▋   | 1378/2076 [00:02<00:01, 475.79it/s]Loading weights:  75%|███████▍  | 1549/2076 [00:02<00:00, 560.35it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 760.85it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[DEQ] trainable tensors 218 (3,980,801 weights), map_mode parallel
+[CACHE] contexts 992
+[BRIDGE] layers [10, 20, 30, 40], params 20,971,524, center norm/slot 312.5
+/tmp/cts_x_stage/g2v11_x8a_train.py:175: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  gates = [round(float(torch.tanh(ad.gate)), 3) for ad in br.adapters.values()]
+[Step    0] loss 0.8529 ans_ce 6.9337 l_fp 0.00000 res 0.0004 gates [0.0, -0.0, -0.0, -0.0] (2s)
+[Step   25] loss 0.7011 ans_ce 5.0496 l_fp 0.00003 res 0.0056 gates [0.007, -0.005, -0.007, -0.007] (31s)
+[Step   50] loss 0.4030 ans_ce 1.3674 l_fp 0.00098 res 0.0332 gates [0.006, -0.009, -0.015, -0.015] (58s)
+[Step   75] loss 0.2175 ans_ce 0.8610 l_fp 0.00136 res 0.0390 gates [0.003, -0.007, -0.02, -0.018] (88s)
+[Step  100] loss 0.2303 ans_ce 1.7831 l_fp 0.00186 res 0.0451 gates [0.003, -0.008, -0.024, -0.018] (117s)
+[Step  125] loss 0.1812 ans_ce 1.0128 l_fp 0.00255 res 0.0527 gates [0.002, -0.01, -0.027, -0.018] (148s)
+[Step  150] loss 0.1774 ans_ce 1.1965 l_fp 0.00328 res 0.0594 gates [0.001, -0.01, -0.029, -0.019] (183s)
+[Step  175] loss 0.2025 ans_ce 1.6133 l_fp 0.00368 res 0.0632 gates [0.001, -0.01, -0.029, -0.02] (217s)
+[Step  200] loss 0.2346 ans_ce 1.2567 l_fp 0.00382 res 0.0642 gates [0.001, -0.01, -0.029, -0.019] (249s)
+[Step  225] loss 0.1752 ans_ce 1.0322 l_fp 0.00400 res 0.0655 gates [0.001, -0.01, -0.03, -0.018] (282s)
+[Step  250] loss 0.1301 ans_ce 0.6534 l_fp 0.00424 res 0.0676 gates [0.001, -0.009, -0.031, -0.017] (311s)
+[Step  275] loss 0.1351 ans_ce 0.7437 l_fp 0.00398 res 0.0656 gates [0.001, -0.007, -0.03, -0.016] (339s)
+[Step  300] loss 0.1618 ans_ce 0.6918 l_fp 0.00437 res 0.0686 gates [0.001, -0.008, -0.031, -0.016] (368s)
+[Step  325] loss 0.0905 ans_ce 0.4439 l_fp 0.00406 res 0.0663 gates [0.003, -0.008, -0.03, -0.016] (398s)
+[Step  350] loss 0.2041 ans_ce 1.3871 l_fp 0.00444 res 0.0691 gates [0.003, -0.009, -0.03, -0.016] (428s)
+[Step  375] loss 0.0936 ans_ce 0.6303 l_fp 0.00389 res 0.0649 gates [0.002, -0.009, -0.03, -0.015] (459s)
+[Step  400] loss 0.1048 ans_ce 0.4311 l_fp 0.00400 res 0.0657 gates [0.001, -0.01, -0.029, -0.015] (495s)
+[Step  425] loss 0.1070 ans_ce 0.5841 l_fp 0.00376 res 0.0637 gates [0.001, -0.012, -0.031, -0.015] (528s)
+[Step  450] loss 0.1204 ans_ce 0.6484 l_fp 0.00330 res 0.0598 gates [0.002, -0.012, -0.03, -0.015] (560s)
+[Step  475] loss 0.1128 ans_ce 0.8485 l_fp 0.00349 res 0.0616 gates [0.001, -0.013, -0.031, -0.016] (593s)
+[Step  500] loss 0.1432 ans_ce 0.5729 l_fp 0.00307 res 0.0579 gates [0.002, -0.013, -0.032, -0.015] (622s)
+[Step  525] loss 0.1231 ans_ce 0.3796 l_fp 0.00334 res 0.0603 gates [0.001, -0.012, -0.032, -0.016] (650s)
+[Step  550] loss 0.0523 ans_ce 0.2114 l_fp 0.00307 res 0.0579 gates [0.002, -0.012, -0.034, -0.017] (679s)
+[Step  575] loss 0.0629 ans_ce 0.0981 l_fp 0.00267 res 0.0542 gates [0.003, -0.011, -0.033, -0.017] (709s)
+[Step  600] loss 0.1079 ans_ce 0.6177 l_fp 0.00312 res 0.0583 gates [0.002, -0.013, -0.033, -0.018] (739s)
+[Step  625] loss 0.0663 ans_ce 0.4719 l_fp 0.00279 res 0.0554 gates [0.002, -0.013, -0.033, -0.018] (770s)
+[Step  650] loss 0.0545 ans_ce 0.2959 l_fp 0.00260 res 0.0534 gates [0.001, -0.014, -0.032, -0.018] (806s)
+[Step  675] loss 0.1035 ans_ce 0.9334 l_fp 0.00272 res 0.0548 gates [0.002, -0.016, -0.034, -0.02] (839s)
+[Step  700] loss 0.1693 ans_ce 1.0726 l_fp 0.00277 res 0.0551 gates [0.002, -0.016, -0.034, -0.019] (871s)
+[Step  725] loss 0.0742 ans_ce 0.4844 l_fp 0.00275 res 0.0550 gates [0.002, -0.015, -0.034, -0.02] (903s)
+[Step  750] loss 0.0708 ans_ce 0.4434 l_fp 0.00282 res 0.0556 gates [0.001, -0.015, -0.035, -0.02] (931s)
+[Step  775] loss 0.0250 ans_ce 0.0657 l_fp 0.00233 res 0.0508 gates [0.001, -0.014, -0.034, -0.02] (960s)
+[Step  800] loss 0.0706 ans_ce 0.4496 l_fp 0.00273 res 0.0549 gates [0.001, -0.014, -0.036, -0.021] (988s)
+[Step  825] loss 0.1509 ans_ce 0.7155 l_fp 0.00266 res 0.0542 gates [0.001, -0.013, -0.035, -0.021] (1018s)
+[Step  850] loss 0.0460 ans_ce 0.2116 l_fp 0.00249 res 0.0524 gates [0.001, -0.014, -0.036, -0.022] (1048s)
+[Step  875] loss 0.0654 ans_ce 0.3278 l_fp 0.00237 res 0.0513 gates [0.001, -0.014, -0.035, -0.021] (1080s)
+[Step  900] loss 0.0840 ans_ce 0.2915 l_fp 0.00225 res 0.0501 gates [0.002, -0.016, -0.037, -0.022] (1115s)
+[Step  925] loss 0.1498 ans_ce 0.8489 l_fp 0.00247 res 0.0524 gates [0.001, -0.017, -0.036, -0.023] (1149s)
+[Step  950] loss 0.0467 ans_ce 0.2902 l_fp 0.00238 res 0.0516 gates [0.002, -0.016, -0.037, -0.023] (1181s)
+[Step  975] loss 0.0656 ans_ce 0.4066 l_fp 0.00216 res 0.0491 gates [0.001, -0.016, -0.037, -0.023] (1213s)
+[Step 1000] loss 0.0705 ans_ce 0.4453 l_fp 0.00223 res 0.0500 gates [0.001, -0.015, -0.038, -0.024] (1241s)
+[Step 1025] loss 0.0484 ans_ce 0.1180 l_fp 0.00214 res 0.0488 gates [0.001, -0.015, -0.039, -0.024] (1269s)
+[Step 1050] loss 0.0353 ans_ce 0.2453 l_fp 0.00213 res 0.0489 gates [0.002, -0.014, -0.04, -0.025] (1298s)
+[Step 1075] loss 0.0557 ans_ce 0.2524 l_fp 0.00199 res 0.0472 gates [0.001, -0.014, -0.039, -0.025] (1328s)
+[Step 1100] loss 0.0559 ans_ce 0.2776 l_fp 0.00210 res 0.0485 gates [0.002, -0.015, -0.04, -0.027] (1359s)
+[Step 1125] loss 0.0630 ans_ce 0.2914 l_fp 0.00234 res 0.0511 gates [0.002, -0.016, -0.04, -0.026] (1392s)
+[Step 1150] loss 0.0547 ans_ce 0.2034 l_fp 0.00179 res 0.0450 gates [0.001, -0.016, -0.04, -0.027] (1426s)
+[Step 1175] loss 0.0592 ans_ce 0.4551 l_fp 0.00178 res 0.0450 gates [0.001, -0.018, -0.039, -0.028] (1460s)
+[Step 1200] loss 0.0336 ans_ce 0.2478 l_fp 0.00176 res 0.0446 gates [0.002, -0.017, -0.04, -0.028] (1492s)
+[Step 1225] loss 0.0633 ans_ce 0.4853 l_fp 0.00165 res 0.0432 gates [0.001, -0.018, -0.041, -0.03] (1523s)
+[Step 1250] loss 0.0669 ans_ce 0.2256 l_fp 0.00161 res 0.0428 gates [0.001, -0.017, -0.041, -0.031] (1551s)
+[Step 1275] loss 0.0376 ans_ce 0.1904 l_fp 0.00156 res 0.0421 gates [0.002, -0.015, -0.041, -0.032] (1580s)
+[Step 1300] loss 0.0512 ans_ce 0.1768 l_fp 0.00157 res 0.0422 gates [0.002, -0.015, -0.043, -0.033] (1608s)
+[Step 1325] loss 0.1656 ans_ce 0.8293 l_fp 0.00168 res 0.0437 gates [0.001, -0.014, -0.043, -0.034] (1638s)
+[Step 1350] loss 0.0475 ans_ce 0.2970 l_fp 0.00176 res 0.0447 gates [0.002, -0.015, -0.043, -0.034] (1669s)
+[Step 1375] loss 0.0863 ans_ce 0.7819 l_fp 0.00153 res 0.0418 gates [0.001, -0.016, -0.042, -0.034] (1702s)
+[Step 1400] loss 0.0174 ans_ce 0.0537 l_fp 0.00146 res 0.0408 gates [0.001, -0.015, -0.042, -0.035] (1736s)
+[Step 1425] loss 0.0470 ans_ce 0.3466 l_fp 0.00152 res 0.0415 gates [0.001, -0.017, -0.042, -0.035] (1770s)
+[Step 1450] loss 0.0582 ans_ce 0.3559 l_fp 0.00158 res 0.0426 gates [0.001, -0.015, -0.042, -0.036] (1802s)
+[Step 1475] loss 0.0233 ans_ce 0.0595 l_fp 0.00150 res 0.0415 gates [0.001, -0.016, -0.044, -0.037] (1833s)
+[Step 1499] loss 0.0652 ans_ce 0.2333 l_fp 0.00125 res 0.0379 gates [0.002, -0.016, -0.043, -0.037] (1860s)
+[SAVE] /tmp/cts_x8a/bridge_X8A47.pt /tmp/cts_x8a/deq_X8A47.pt updates 1500 skipped 0

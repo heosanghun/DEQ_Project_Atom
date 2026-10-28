@@ -1,0 +1,123 @@
+--- scripts/p5_analyze_v4.py
++++ scripts/p5_analyze_v5.py
+@@ -1,13 +1,14 @@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ """
+-scripts/p5_analyze_v4.py - CTS S7 P5 Result Analyzer v4 (PREREG_S7_DEQ_v1.3 §10(g))
+-Directive: TASK-0020 / AUDIT-P005 (FIX 1~5) / PREREG_S7_DEQ_v1.3 §10(g)
+-
+-Operational Definition & Fixes (AUDIT-P005):
++scripts/p5_analyze_v5.py - CTS S7 P5 Result Analyzer v5 (PREREG_S7_DEQ_v1.3 §10(g))
++Directive: TASK-0021 / AUDIT-P005 재감사 1 (R1) / PREREG_S7_DEQ_v1.3 §10(g)
++
++Operational Definition & Fixes (AUDIT-P005 & 재감사 1):
+   - Reference config: configs/s7_new_heldout_520.json (520 unique items).
+     Strict config SHA-256 validation against canonical hash:
+     48abce650791c781da254a490b0f25e60dfc2a777bc77053eaf20e23b1176988.
++    CLI bypass flag removed (R1): CLI strictly enforces expected config hash.
+   - Denominator is strictly 520 (n_denominator = 520). Never reduced to intersection.
+   - Key Matching (FIX 3): Strictly matches ^q(\\d{4})_a0\\.25$.
+     Other alpha keys (e.g. _a0.50) are ignored and logged. Duplicate qids raise error.
+@@ -55,8 +56,8 @@
+ 
+ DEFAULT_TARGET_FILE = os.path.join(BASE_S5_DIR, "results_s7", "zstar_s7_a0.25_heldout520_lowest.pt")
+ DEFAULT_QUERY_FILE = os.path.join(BASE_S5_DIR, "results_s7", "zstar_s7_a0.25_heldout520_seed2031.pt")
+-DEFAULT_OUT_JSON = os.path.join(BASE_S5_DIR, "results_s7", "p5_summary_v4.json")
+-DEFAULT_OUT_MD = os.path.join(BASE_S5_DIR, "results_s7", "p5_summary_v4.md")
++DEFAULT_OUT_JSON = os.path.join(BASE_S5_DIR, "results_s7", "p5_summary_v5.json")
++DEFAULT_OUT_MD = os.path.join(BASE_S5_DIR, "results_s7", "p5_summary_v5.md")
+ 
+ 
+ def compute_file_sha256(path: str) -> str:
+@@ -434,7 +435,7 @@
+     }
+ 
+ 
+-def analyze_p5_v4(
++def analyze_p5_v5(
+     target_file: str,
+     query_file: str,
+     config_520_path: str = DEFAULT_CONFIG_520,
+@@ -443,7 +444,7 @@
+     nn_mode: str = "seedpair",
+     skip_config_hash_check: bool = False,
+ ) -> Dict[str, Any]:
+-    """Run full P5 analysis pipeline v4 conforming to PREREG_S7_DEQ_v1.3 §10(g) & AUDIT-P005."""
++    """Run full P5 analysis pipeline v5 conforming to PREREG_S7_DEQ_v1.3 §10(g) & AUDIT-P005 (R1)."""
+     if nn_mode != "seedpair":
+         raise ValueError(f"Unsupported nn_mode: {nn_mode}. PREREG_S7_DEQ_v1.3 §10(g) specifies 'seedpair'.")
+ 
+@@ -497,7 +498,7 @@
+ 
+     summary: Dict[str, Any] = {
+         "metadata": {
+-            "analyzer_version": "v4",
++            "analyzer_version": "v5",
+             "analyzer_script_sha256": script_sha,
+             "definition_source": "PREREG_S7_DEQ_v1.3 §10(g)",
+             "nn_mode": nn_mode,
+@@ -505,6 +506,7 @@
+             "identical_file_warning": is_same_file,
+             "config_520_path": config_520_path,
+             "config_520_sha256": config_sha,
++            "config_hash_check_skipped": skip_config_hash_check,
+             "target_file_path": target_file,
+             "target_file_sha256": target_sha,
+             "target_ignored_other_alpha_count": target_ignored_alpha,
+@@ -523,21 +525,24 @@
+ 
+     if out_md:
+         os.makedirs(os.path.dirname(os.path.abspath(out_md)), exist_ok=True)
+-        md_text = format_markdown_report_v4(summary)
++        md_text = format_markdown_report_v5(summary)
+         with open(out_md, "w", encoding="utf-8") as f:
+             f.write(md_text)
+ 
+     return summary
+ 
+ 
+-def format_markdown_report_v4(summary: Dict[str, Any]) -> str:
++analyze_p5 = analyze_p5_v5
++
++
++def format_markdown_report_v5(summary: Dict[str, Any]) -> str:
+     """Format neutral markdown report without qualitative judgment words."""
+     meta = summary["metadata"]
+     flat = summary["primary_flattened_163840d"]
+     pool = summary["mean_pooled_2560d_reporting_only"]
+ 
+     lines = [
+-        "# P5 1-NN Retrieval Analysis Summary (v4)",
++        "# P5 1-NN Retrieval Analysis Summary (v5)",
+         "",
+         "- **Definition Source**: PREREG_S7_DEQ_v1.3 §10(g)",
+         f"- **Analyzer Version**: {meta['analyzer_version']} (SHA-256: `{meta['analyzer_script_sha256']}`)",
+@@ -576,24 +581,23 @@
+ 
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="P5 Result Analyzer v4 (PREREG_S7_DEQ_v1.3 §10(g))")
++    parser = argparse.ArgumentParser(description="P5 Result Analyzer v5 (PREREG_S7_DEQ_v1.3 §10(g))")
+     parser.add_argument("--target_file", "--heldout520", "--seed1_file", "--seed2030_file", dest="target_file", type=str, default=DEFAULT_TARGET_FILE, help="Path to target .pt (seed 2030)")
+     parser.add_argument("--query_file", "--seed2_file", "--seed2031_file", dest="query_file", type=str, default=DEFAULT_QUERY_FILE, help="Path to query .pt (seed 2031)")
+     parser.add_argument("--config_520", type=str, default=DEFAULT_CONFIG_520, help="Path to s7_new_heldout_520.json")
+     parser.add_argument("--nn_mode", type=str, choices=["seedpair"], default="seedpair", help="Nearest-neighbor analysis mode (PREREG_S7_DEQ_v1.3 §10(g))")
+     parser.add_argument("--out_json", type=str, default=DEFAULT_OUT_JSON, help="Output JSON path")
+     parser.add_argument("--out_md", type=str, default=DEFAULT_OUT_MD, help="Output Markdown path")
+-    parser.add_argument("--skip_config_hash_check", action="store_true", help="Skip strict SHA-256 validation of config_520")
+     args = parser.parse_args()
+ 
+-    analyze_p5_v4(
++    analyze_p5_v5(
+         target_file=args.target_file,
+         query_file=args.query_file,
+         config_520_path=args.config_520,
+         out_json=args.out_json,
+         out_md=args.out_md,
+         nn_mode=args.nn_mode,
+-        skip_config_hash_check=args.skip_config_hash_check,
++        skip_config_hash_check=False,
+     )
+ 
+ 

@@ -1,0 +1,23 @@
+================================================================================
+TASK-0070 D4: Picard Step-wise Trajectory Generator
+Timestamp: 2026-10-08 14:00:39
+Device: cuda:0 | Base dir: /home/shoon/cts_e1_s5
+================================================================================
+Initializing backbone model on cuda:0...
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  15%|█▌        | 318/2076 [00:00<00:00, 2995.08it/s]Loading weights:  31%|███       | 640/2076 [00:00<00:00, 3118.28it/s]Loading weights:  46%|████▌     | 953/2076 [00:02<00:04, 247.54it/s] Loading weights:  54%|█████▍    | 1128/2076 [00:03<00:03, 260.27it/s]Loading weights:  60%|██████    | 1246/2076 [00:03<00:03, 263.93it/s]Loading weights:  64%|██████▍   | 1332/2076 [00:04<00:02, 263.54it/s]Loading weights:  67%|██████▋   | 1398/2076 [00:04<00:02, 261.46it/s]Loading weights:  72%|███████▏  | 1487/2076 [00:04<00:01, 313.68it/s]Loading weights:  88%|████████▊ | 1827/2076 [00:04<00:00, 640.91it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 436.16it/s]
+
+============================================================
+D4 INSTRUMENT CHECK: Q#20, Q#24, Q#32 on GPU 1
+============================================================
+[FATAL] Anchor check non-zero: max|Δ| = 8.63299561e+02 != 0
+Anchor ref path: /home/shoon/cts_e1_s5/results_s7/anchor_ref_gpu1_check.pt
+Anchor ref SHA:  5103642de5877932392db122fa81359004af27102c3cca6958613df0d565f2a6
+Running Anchor Q#20 on cuda:0...
+  Anchor Q#20: max|Δ| = 4.13074493e-02
+Running Anchor Q#24 on cuda:0...
+  Anchor Q#24: max|Δ| = 1.11230469e+00
+Running Anchor Q#32 on cuda:0...
+  Anchor Q#32: max|Δ| = 8.63299561e+02
+
+Anchor Check Result: Overall max|Δ| = 8.63299561e+02

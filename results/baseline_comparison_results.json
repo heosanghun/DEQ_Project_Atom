@@ -1,0 +1,90 @@
+{
+  "b1_repeats": [
+    {
+      "8": {
+        "converged": true,
+        "iterations": 1293,
+        "residual": 0.004725968465209007
+      },
+      "14": {
+        "converged": true,
+        "iterations": 476,
+        "residual": 0.004946783650666475
+      },
+      "27": {
+        "converged": false,
+        "iterations": 6639,
+        "residual": 0.006346512585878372
+      }
+    },
+    {
+      "8": {
+        "converged": true,
+        "iterations": 1293,
+        "residual": 0.004725968465209007
+      },
+      "14": {
+        "converged": true,
+        "iterations": 476,
+        "residual": 0.004946783650666475
+      },
+      "27": {
+        "converged": false,
+        "iterations": 6639,
+        "residual": 0.006346512585878372
+      }
+    },
+    {
+      "8": {
+        "converged": true,
+        "iterations": 1293,
+        "residual": 0.004725968465209007
+      },
+      "14": {
+        "converged": true,
+        "iterations": 476,
+        "residual": 0.004946783650666475
+      },
+      "27": {
+        "converged": false,
+        "iterations": 6639,
+        "residual": 0.006346512585878372
+      }
+    }
+  ],
+  "b1_reproducible": true,
+  "b2_results": {
+    "8": {
+      "converged": true,
+      "iterations": 1293,
+      "residual": 0.004725968465209007
+    },
+    "14": {
+      "converged": true,
+      "iterations": 476,
+      "residual": 0.004946783650666475
+    },
+    "27": {
+      "converged": false,
+      "iterations": 6639,
+      "residual": 0.006346512585878372
+    }
+  },
+  "lora_results": {
+    "8": {
+      "converged": true,
+      "iterations": 594,
+      "residual": 0.004670210648328066
+    },
+    "14": {
+      "converged": true,
+      "iterations": 999,
+      "residual": 0.004818635527044535
+    },
+    "27": {
+      "converged": true,
+      "iterations": 1822,
+      "residual": 0.004873629193753004
+    }
+  }
+}

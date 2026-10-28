@@ -1,0 +1,210 @@
+{
+  "buckets": {
+    "Algebra_L1": {
+      "available": 17,
+      "selected": [
+        "test/algebra/24.json"
+      ]
+    },
+    "Algebra_L2": {
+      "available": 21,
+      "selected": [
+        "test/algebra/1349.json"
+      ]
+    },
+    "Algebra_L3": {
+      "available": 26,
+      "selected": [
+        "test/algebra/2584.json"
+      ]
+    },
+    "Algebra_L4": {
+      "available": 30,
+      "selected": [
+        "test/algebra/1072.json"
+      ]
+    },
+    "Algebra_L5": {
+      "available": 30,
+      "selected": [
+        "test/algebra/1837.json"
+      ]
+    },
+    "Counting & Probability_L1": {
+      "available": 2,
+      "selected": [
+        "test/counting_and_probability/14.json"
+      ]
+    },
+    "Counting & Probability_L2": {
+      "available": 7,
+      "selected": [
+        "test/counting_and_probability/666.json"
+      ]
+    },
+    "Counting & Probability_L3": {
+      "available": 4,
+      "selected": [
+        "test/counting_and_probability/23957.json"
+      ]
+    },
+    "Counting & Probability_L4": {
+      "available": 13,
+      "selected": [
+        "test/counting_and_probability/134.json"
+      ]
+    },
+    "Counting & Probability_L5": {
+      "available": 12,
+      "selected": [
+        "test/counting_and_probability/525.json"
+      ]
+    },
+    "Geometry_L1": {
+      "available": 2,
+      "selected": [
+        "test/geometry/434.json"
+      ]
+    },
+    "Geometry_L2": {
+      "available": 8,
+      "selected": [
+        "test/geometry/248.json"
+      ]
+    },
+    "Geometry_L3": {
+      "available": 8,
+      "selected": [
+        "test/geometry/967.json"
+      ]
+    },
+    "Geometry_L4": {
+      "available": 10,
+      "selected": [
+        "test/geometry/627.json"
+      ]
+    },
+    "Geometry_L5": {
+      "available": 13,
+      "selected": [
+        "test/geometry/183.json"
+      ]
+    },
+    "Intermediate Algebra_L1": {
+      "available": 7,
+      "selected": [
+        "test/intermediate_algebra/134.json"
+      ]
+    },
+    "Intermediate Algebra_L2": {
+      "available": 12,
+      "selected": [
+        "test/intermediate_algebra/428.json"
+      ]
+    },
+    "Intermediate Algebra_L3": {
+      "available": 19,
+      "selected": [
+        "test/intermediate_algebra/1000.json"
+      ]
+    },
+    "Intermediate Algebra_L4": {
+      "available": 23,
+      "selected": [
+        "test/intermediate_algebra/207.json"
+      ]
+    },
+    "Intermediate Algebra_L5": {
+      "available": 36,
+      "selected": [
+        "test/intermediate_algebra/1994.json"
+      ]
+    },
+    "Number Theory_L1": {
+      "available": 5,
+      "selected": []
+    },
+    "Number Theory_L2": {
+      "available": 10,
+      "selected": []
+    },
+    "Number Theory_L3": {
+      "available": 16,
+      "selected": []
+    },
+    "Number Theory_L4": {
+      "available": 19,
+      "selected": []
+    },
+    "Number Theory_L5": {
+      "available": 12,
+      "selected": []
+    },
+    "Prealgebra_L1": {
+      "available": 7,
+      "selected": []
+    },
+    "Prealgebra_L2": {
+      "available": 19,
+      "selected": []
+    },
+    "Prealgebra_L3": {
+      "available": 17,
+      "selected": []
+    },
+    "Prealgebra_L4": {
+      "available": 20,
+      "selected": []
+    },
+    "Prealgebra_L5": {
+      "available": 19,
+      "selected": []
+    },
+    "Precalculus_L1": {
+      "available": 3,
+      "selected": []
+    },
+    "Precalculus_L2": {
+      "available": 13,
+      "selected": []
+    },
+    "Precalculus_L3": {
+      "available": 15,
+      "selected": []
+    },
+    "Precalculus_L4": {
+      "available": 13,
+      "selected": []
+    },
+    "Precalculus_L5": {
+      "available": 12,
+      "selected": []
+    }
+  },
+  "dataset_path": "data/math500/test.jsonl",
+  "dataset_sha256": "08343082c142fcc572e27b5f05e53633f819f4e802d7e15c76a507da826a5ecf",
+  "generator_version": "2",
+  "ids": [
+    "test/algebra/24.json",
+    "test/algebra/1349.json",
+    "test/algebra/2584.json",
+    "test/algebra/1072.json",
+    "test/algebra/1837.json",
+    "test/counting_and_probability/14.json",
+    "test/counting_and_probability/666.json",
+    "test/counting_and_probability/23957.json",
+    "test/counting_and_probability/134.json",
+    "test/counting_and_probability/525.json",
+    "test/geometry/434.json",
+    "test/geometry/248.json",
+    "test/geometry/967.json",
+    "test/geometry/627.json",
+    "test/geometry/183.json",
+    "test/intermediate_algebra/134.json",
+    "test/intermediate_algebra/428.json",
+    "test/intermediate_algebra/1000.json",
+    "test/intermediate_algebra/207.json",
+    "test/intermediate_algebra/1994.json"
+  ],
+  "n": 20
+}

@@ -1,0 +1,67 @@
+=== X8-A full start 2026-10-23 11:54:33 launcher_sha 4a5e457850891107359e55ff375168be9f7c22886068ad0bb2d90aac64e7adca ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f  /tmp/cts_x_stage/g2v10_train.py
+208eb131f97988c82746b7d480ea1b214fb242f895690fdde4c5a1bd8333c568  /tmp/cts_x_stage/g2v11_x8a_train.py
+9a82c78179c686eaae2b739c812c36f2d146b94fdd24334edceb544028166b0c  /tmp/cts_x_stage/g2v11_x8a_latents.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+5172ad4a24e9e9f1de75c471ef0a35836f5296f60940c7c83b4245a5bf07dcae  /tmp/cts_x_stage/make_s0spec_x.py
+0c026ea2d7e863d3035a7918cec23dd83206794db7ea2c092ed3aa97c62fad69  results_s7/p6r/g2v9x5base/gen_Ctrain.jsonl
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+d43613d6b640b965c9c8a3d6ad422d7a8492fe0b0c2eed9a379064495c200433  results_s7/g2v2/zstar_zsrcinj_dev600.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+0da3748af2a3776c7fa91da50268a7829233939f56218d73f4b4511a6a8e5cff  results_s7/zsrc_heldout600.pt
+f2119bbe5c0ad914ee00c34e9109674d15de07c5e028e288ab05b88dd448d1f9  /home/shoon/checkpoints/m1_final_frozen.pt
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-X8A47] rc=0 12:28:14 [Step 1499] loss 0.0652 ans_ce 0.2333 l_fp 0.00125 res 0.0379 gates [0.002, -0.016, -0.043, -0.037] (1860s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_bu
+[TR-X8A50] rc=0 12:28:20 [Step 1499] loss 0.0731 ans_ce 0.2027 l_fp 0.00131 res 0.0386 gates [-0.002, -0.014, -0.055, 0.031] (1863s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_bu
+[TR-X8A49] rc=0 12:28:45 [Step 1499] loss 0.0574 ans_ce 0.2198 l_fp 0.00106 res 0.0349 gates [-0.002, -0.016, 0.043, 0.035] (1886s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_bu
+[LAT-X8A47] rc=0 12:29:02 [SAVE] items 600 missing 0 -> /tmp/cts_x8a/latdev_X8A47.pt; res_last mean 0.03548
+[LAT-X8A50] rc=0 12:29:08 [SAVE] items 600 missing 0 -> /tmp/cts_x8a/latdev_X8A50.pt; res_last mean 0.03569
+[LAT-X8A49] rc=0 12:29:33 [SAVE] items 600 missing 0 -> /tmp/cts_x8a/latdev_X8A49.pt; res_last mean 0.03232
+[GEN-X8A47] rc=0 rows=600 15:26:44
+[GEN-X8A50] rc=0 rows=600 15:27:33
+[GEN-X8A49] rc=0 rows=600 15:32:07
+[GENS-X8A47] rc=0 rows=600 18:18:54
+[GENS-X8A49] rc=0 rows=600 18:25:02
+[GENS-X8A50] rc=0 rows=600 18:32:54
+[CHECK-gen-X8A47] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X8A47] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X8A49] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X8A49] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X8A50] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X8A50] rc=0 rows=600 unique_ids=600
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X8A47: n 600 strict 67 lenient 89 boxed 301
+[S0] shuf_X8A47: n 600 strict 55 lenient 68 boxed 308
+[S0] X8A49: n 600 strict 83 lenient 95 boxed 306
+[S0] shuf_X8A49: n 600 strict 82 lenient 91 boxed 351
+[S0] X8A50: n 600 strict 70 lenient 83 boxed 314
+[S0] shuf_X8A50: n 600 strict 71 lenient 85 boxed 290
+[S0-DONE] /tmp/cts_x8a/x8a_items.json
+fe012bb563f18a1de9925f1fef70086e26d92b887d228ac1cba44f16c4cc8683  results_s7/p6r/g2v9x8a/genB1_X8A47.jsonl
+793ae3184d4fb337fed056c71572ec21d21d256860f05b0042d51913eb2afbd1  results_s7/p6r/g2v9x8a/genB1_X8A49.jsonl
+e107b242a7627f61c01837a135d3af908441bac840c293788bf4df21cbb3fb35  results_s7/p6r/g2v9x8a/genB1_X8A50.jsonl
+782b7e605668d1f8ab1c73ad92c6a46e67f7422caeb758f6da41504f3d89edcb  results_s7/p6r/g2v9x8a/gen_X8A47.jsonl
+260ffa380ca0a96d5292acff2a5f39478f349af9940a7a8fc90c1d10e00aded2  results_s7/p6r/g2v9x8a/gen_X8A49.jsonl
+263aa62b0d65b813e9b1cd069b88d16f66fe7a86cfa84485368ce41727fdb3f6  results_s7/p6r/g2v9x8a/gen_X8A50.jsonl
+d01a1f340e9cac0aa2317b9444d5cbf5a5b949333d86d911d681beb3f7c5b834  /tmp/cts_x8a/x8a_items.json
+43cd2cf842a133043c8e8ee0b0fc3eda705809545663f020b627a4634e364a97  /tmp/cts_x8a/manifest_X8A47.json
+98aa44028862e63e4f609555de26b0323ba732dccdac600a4f19c3af091e5215  /tmp/cts_x8a/manifest_X8A49.json
+b66b637952cc6955be85264ca4b45ef18ed33e13d871a5fbb8515d5cefb63a7e  /tmp/cts_x8a/manifest_X8A50.json
+f9f8443e0442cbaeeb9dca32dd14e31d068997d83e7b832cdafc0d8cd2321967  /tmp/cts_x8a/bridge_X8A47.pt
+422626e74eb870db22ea96db62f9e926378e88e69e05608bf8bda6d667cc582c  /tmp/cts_x8a/bridge_X8A49.pt
+9218fa9f5a25bb820acc410a9903ea5e4d882d3e9f6c989de9b89b854e223367  /tmp/cts_x8a/bridge_X8A50.pt
+3b7b2b6dcd88c4a18d2cb3260ae4e3bef1749616fa08c37d0475e508b4dc8248  /tmp/cts_x8a/deq_X8A47.pt
+981bd860a561d6d7c4402a827ee28eded0f82734ff8171acc2dae59755258d11  /tmp/cts_x8a/deq_X8A49.pt
+2551b1df0725efe313ddc4102fe91d98f18d2812e01ab2072c47249349e1687d  /tmp/cts_x8a/deq_X8A50.pt
+e6ddc402472c6a5e9f3b890154034ee3f1cbb5f2bd3a2cb762ac1409f25663fe  /tmp/cts_x8a/latdev_X8A47.pt
+1c282d6d0a2f16ba2d8c75164ce97c8c713af2d15d80a693de12c4e1a6532efb  /tmp/cts_x8a/latdev_X8A49.pt
+e2a57cd025a1ddb8c61f00e17f0acb182fe7c337afd93eb2877e6e2de1df7c40  /tmp/cts_x8a/latdev_X8A50.pt
+=== X8-A end 2026-10-23 18:33:30 ===

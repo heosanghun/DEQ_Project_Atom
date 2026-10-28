@@ -1,0 +1,36 @@
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:57:23
+Device: cuda:0 | Max Steps: 50 | Batch Size: 4
+================================================================================
+[LOAD] Loading Pure Gemma-4-e4b Base from /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377...
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 604/2076 [00:00<00:00, 6038.68it/s]Loading weights:  58%|█████▊    | 1208/2076 [00:02<00:01, 509.27it/s]Loading weights:  71%|███████   | 1475/2076 [00:02<00:01, 520.86it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 795.46it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[LOAD] Loading CTS DEQ Backbone with LoRA in bfloat16...
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 560/2076 [00:00<00:00, 5555.59it/s]Loading weights:  54%|█████▍    | 1116/2076 [00:02<00:01, 480.08it/s]Loading weights:  66%|██████▌   | 1362/2076 [00:02<00:01, 473.34it/s]Loading weights:  73%|███████▎  | 1517/2076 [00:02<00:01, 530.07it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 748.11it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[CACHE] Pre-encoding prompt contexts for 32 items...
+[CACHE] Contexts pre-encoded.
+[TRAIN] Starting pilot training loop for 50 steps...
+[Step   0] Loss: 2.0039 | Task: 2.0039 | IFT: 0.000000 | VRAM: 31450.5MB (1.13s)
+[Step   5] Loss: 5.7812 | Task: 5.7812 | IFT: 0.000003 | VRAM: 35111.5MB (0.79s)
+[Step  10] Loss: 4.8047 | Task: 4.8047 | IFT: 0.000015 | VRAM: 35111.5MB (0.80s)
+[Step  15] Loss: 4.3672 | Task: 4.3672 | IFT: 0.000017 | VRAM: 35111.5MB (0.77s)
+[Step  20] Loss: 4.1563 | Task: 4.1562 | IFT: 0.000023 | VRAM: 35111.5MB (0.78s)
+[Step  25] Loss: 4.2969 | Task: 4.2969 | IFT: 0.000026 | VRAM: 35111.5MB (0.89s)
+[Step  30] Loss: 3.6992 | Task: 3.6992 | IFT: 0.000030 | VRAM: 35111.5MB (0.79s)
+[Step  35] Loss: 3.1406 | Task: 3.1406 | IFT: 0.000029 | VRAM: 35111.5MB (0.77s)
+[Step  40] Loss: 3.8516 | Task: 3.8516 | IFT: 0.000029 | VRAM: 35111.5MB (0.76s)
+[Step  45] Loss: 3.6953 | Task: 3.6953 | IFT: 0.000035 | VRAM: 35111.5MB (0.78s)
+[Step  49] Loss: 4.0352 | Task: 4.0352 | IFT: 0.000045 | VRAM: 35111.5MB (0.89s)
+[SAVE] Checkpoint saved to results_s7/g2v3/pilot_model_A.pt (87,354,959 bytes)
+[MANIFEST] Manifest saved to results_s7/g2v3/pilot_manifest_A.json
+================================================================================
+CTS G2v3 M3 Pilot Training Completed at 2026-10-10 20:58:36
+================================================================================

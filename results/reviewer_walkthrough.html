@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang='en'><head><meta charset='utf-8'>
+<title>CTS NeurIPS 2026 - Reviewer Walkthrough</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+     max-width:980px;margin:24px auto;padding:0 16px;color:#222;
+     line-height:1.55;}
+h1{border-bottom:2px solid #06c;padding-bottom:4px;}
+h2{margin-top:36px;color:#06c;}
+.row{border:1px solid #ddd;border-radius:6px;padding:10px 14px;
+     margin:8px 0;background:#fafafa;}
+.row .ok{color:#080;font-weight:bold;}
+.row .miss{color:#c00;font-weight:bold;}
+.row .section{display:inline-block;background:#06c;color:#fff;
+              padding:2px 8px;border-radius:3px;font-size:13px;
+              font-family:monospace;margin-right:8px;}
+.row .claim{margin:6px 0;}
+.row .files{font-family:monospace;font-size:13px;color:#444;
+            margin-left:12px;}
+.row .files a{color:#06c;text-decoration:none;}
+.row .files a:hover{text-decoration:underline;}
+.summary{padding:12px 16px;border-radius:6px;margin:24px 0;
+         font-size:18px;font-weight:bold;}
+.summary.green{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
+.summary.red{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb;}
+pre{background:#1e1e1e;color:#dcdcdc;padding:12px;border-radius:6px;
+    overflow-x:auto;font-size:13px;line-height:1.4;}
+.timestamp{color:#888;font-size:13px;}
+</style></head><body>
+<h1>CTS NeurIPS 2026 - Reviewer Walkthrough</h1>
+<p>Every primary paper claim mapped to a source file + regression test. Generated from the live <code>REPRODUCIBILITY.md &sect;5-pent</code> table; if any row drifts, CI blocks the merge (<code>tests/test_reviewer_walkthrough_invariants.py</code>).</p>
+<p class='timestamp'>Generated: 2026-04-29T08:18:43+00:00</p>
+<div class='summary green'>Verdict: 26 OK, 0 MISS</div>
+<h2>Paper-claim mapping</h2>
+<div class='row'>
+<span class='section'>§3.1</span><span class='ok'>OK</span>
+<div class='claim'>DEQ fixed-point transition with L-Broyden inner solver</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/deq/transition.py'>cts/deq/transition.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/deq/broyden_forward.py'>cts/deq/broyden_forward.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_broyden_convergence.py'>tests/test_broyden_convergence.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_transition_smoke.py'>tests/test_transition_smoke.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§3.2</span><span class='ok'>OK</span>
+<div class='claim'>Anderson acceleration alternative (large-n fallback)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/deq/solvers/anderson.py'>cts/deq/solvers/anderson.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_broyden.py'>tests/test_broyden.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_batch_transition.py'>tests/test_batch_transition.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§3.3</span><span class='ok'>OK</span>
+<div class='claim'>Jacobian inheritance (Remark 2)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/deq/broyden_forward.py'>cts/deq/broyden_forward.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/mcts/cts_episode.py'>cts/mcts/cts_episode.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_cts_full_episode.py'>tests/test_cts_full_episode.py::test_cts_full_episode_threads_jacobian_inheritance</a></div>
+</div>
+<div class='row'>
+<span class='section'>§4.1</span><span class='ok'>OK</span>
+<div class='claim'>PUCT selection rule</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/mcts/puct.py'>cts/mcts/puct.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_puct.py'>tests/test_puct.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_puct_expand_once.py'>tests/test_puct_expand_once.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§4.1</span><span class='ok'>OK</span>
+<div class='claim'>`cts_full_episode` orchestration (Algorithm 1)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/mcts/cts_episode.py'>cts/mcts/cts_episode.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_cts_full_episode.py'>tests/test_cts_full_episode.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_mcts_episode.py'>tests/test_mcts_episode.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§4.3</span><span class='ok'>OK</span>
+<div class='claim'>Latent-prefix soft-prompt decoding (W&lt;sub&gt;proj&lt;/sub&gt;)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/backbone/gemma_adapter.py'>cts/backbone/gemma_adapter.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_aime_garbage_fix.py'>tests/test_aime_garbage_fix.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_transition_decode.py'>tests/test_transition_decode.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§4.4</span><span class='ok'>OK</span>
+<div class='claim'>FAISS IVF-PQ latent-context window</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/latent/faiss_context.py'>cts/latent/faiss_context.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_faiss_context.py'>tests/test_faiss_context.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§4.5</span><span class='ok'>OK</span>
+<div class='claim'>&amp;nu;-vector adaptive control (`nu_expl, nu_tol, nu_temp, nu_act`)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/policy/meta_policy.py'>cts/policy/meta_policy.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_meta_policy_critic_invariants.py'>tests/test_meta_policy_critic_invariants.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_meta_policy_logits_nu.py'>tests/test_meta_policy_logits_nu.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§5</span><span class='ok'>OK</span>
+<div class='claim'>Meta-policy + neuro-critic</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/policy/meta_policy.py'>cts/policy/meta_policy.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/critic/neuro_critic.py'>cts/critic/neuro_critic.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_meta_policy_critic_invariants.py'>tests/test_meta_policy_critic_invariants.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_critic_reward.py'>tests/test_critic_reward.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_critic_batch.py'>tests/test_critic_batch.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§6</span><span class='ok'>OK</span>
+<div class='claim'>ACT halting penalty (&amp;lambda;&lt;sub&gt;halt&lt;/sub&gt;=0.05)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/train/stage2_ppo_train.py'>cts/train/stage2_ppo_train.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_stage2_ppo_paper_parity.py'>tests/test_stage2_ppo_paper_parity.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§6</span><span class='ok'>OK</span>
+<div class='claim'>Stage 1 DEQ warm-up on OpenMathInstruct-2</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/train/stage1_openmath_train.py'>cts/train/stage1_openmath_train.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/train/stage1_warmup.py'>cts/train/stage1_warmup.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_stage1_warmup.py'>tests/test_stage1_warmup.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_stage1_train_paper_parity.py'>tests/test_stage1_train_paper_parity.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§6</span><span class='ok'>OK</span>
+<div class='claim'>Stage 2 PPO with GAE</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/train/stage2_ppo.py'>cts/train/stage2_ppo.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/train/ppo_core.py'>cts/train/ppo_core.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_ppo_numerical.py'>tests/test_ppo_numerical.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_gae.py'>tests/test_gae.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_stage2_ppo_paper_parity.py'>tests/test_stage2_ppo_paper_parity.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_stage2_mini.py'>tests/test_stage2_mini.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.1</span><span class='ok'>OK</span>
+<div class='claim'>Bootstrap CI (1000 resamples) + Wilcoxon + Bonferroni</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/statistics.py'>cts/eval/statistics.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_statistics.py'>tests/test_statistics.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.4 (Table 1)</span><span class='ok'>OK</span>
+<div class='claim'>Per-node O(1) active VRAM measurement</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/mcts/hybrid_kv.py'>cts/mcts/hybrid_kv.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/profile_vram_latency.py'>cts/eval/profile_vram_latency.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_hybrid_kv_measurement.py'>tests/test_hybrid_kv_measurement.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_isoflop.py'>tests/test_isoflop.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.5 (Table 2)</span><span class='ok'>OK</span>
+<div class='claim'>Headline accuracy on math + ARC + HumanEval</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='scripts/run_cts_eval_full.py'>scripts/run_cts_eval_full.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_baseline_dispatchers.py'>tests/test_baseline_dispatchers.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_compare_to_paper_table2.py'>tests/test_compare_to_paper_table2.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.5 (Table 5)</span><span class='ok'>OK</span>
+<div class='claim'>&amp;nu;-component ablation (4&amp;nu;, 3&amp;nu;, 2&amp;nu;, 1&amp;nu;)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/types.py'>cts/types.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_ablation_configs.py'>tests/test_ablation_configs.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_nu_vector_compat.py'>tests/test_nu_vector_compat.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.6 (Table 17)</span><span class='ok'>OK</span>
+<div class='claim'>Full Stage 2 cross-bench post-retrain</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='scripts/run_cts_eval_full.py'>scripts/run_cts_eval_full.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_post_stage2_pipeline.py'>tests/test_post_stage2_pipeline.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.6 (Table 18)</span><span class='ok'>OK</span>
+<div class='claim'>Hybrid-KV TOST equivalence</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/hybrid_kv_measurement.py'>cts/eval/hybrid_kv_measurement.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/statistics.py'>cts/eval/statistics.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_hybrid_kv_measurement.py'>tests/test_hybrid_kv_measurement.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_kv_baseline.py'>tests/test_kv_baseline.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>§7.6 (Table 19)</span><span class='ok'>OK</span>
+<div class='claim'>&amp;nu;-trace cross-domain statistics</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/nu_stats.py'>cts/eval/nu_stats.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_nu_stats_table19.py'>tests/test_nu_stats_table19.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. C</span><span class='ok'>OK</span>
+<div class='claim'>Reward shaping (paper Eq. 5)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/rewards/shaping.py'>cts/rewards/shaping.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_reward_eq5.py'>tests/test_reward_eq5.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. F</span><span class='ok'>OK</span>
+<div class='claim'>RoPE contract for backbone swap-in</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/backbone/rope_contract.py'>cts/backbone/rope_contract.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_rope_contract.py'>tests/test_rope_contract.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. G</span><span class='ok'>OK</span>
+<div class='claim'>Sparse routing (Triton path)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/routing/sparse_moe_triton.py'>cts/routing/sparse_moe_triton.py</a></div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/routing/sparse_moe_ref.py'>cts/routing/sparse_moe_ref.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_routing_triton_ref.py'>tests/test_routing_triton_ref.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_routing_entropy.py'>tests/test_routing_entropy.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_routing_proj_step.py'>tests/test_routing_proj_step.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. H</span><span class='ok'>OK</span>
+<div class='claim'>Module-partition LoRA targets (`q_proj, v_proj, o_proj`)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/model/module_partition.py'>cts/model/module_partition.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_module_partition.py'>tests/test_module_partition.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. I</span><span class='ok'>OK</span>
+<div class='claim'>Contamination screening (FAISS / MinHash / BM25)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='scripts/run_contamination_screen.py'>scripts/run_contamination_screen.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_contamination_screen.py'>tests/test_contamination_screen.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>App. J</span><span class='ok'>OK</span>
+<div class='claim'>FLOPs accounting (paper Table 16)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/flops_contract.py'>cts/eval/flops_contract.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_flops_contract.py'>tests/test_flops_contract.py</a></div>
+</div>
+<div class='row'>
+<span class='section'>Q14 fix</span><span class='ok'>OK</span>
+<div class='claim'>Garbage-math fallback predicate (D-7 morning)</div>
+<div class='files'>impl &nbsp;[OK]&nbsp;<a href='cts/eval/garbage_filter.py'>cts/eval/garbage_filter.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_dispatcher_fallback_mock.py'>tests/test_dispatcher_fallback_mock.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_aime_garbage_fix.py'>tests/test_aime_garbage_fix.py</a></div>
+<div class='files'>test &nbsp;[OK]&nbsp;<a href='tests/test_extract_pred_sanitization.py'>tests/test_extract_pred_sanitization.py</a></div>
+</div>
+<h2>Drill: Q14 garbage-math fallback</h2>
+<pre>
+     1 | &quot;&quot;&quot;Garbage-prediction detection for math benchmarks (Q14 Fix B).
+     2 | 
+     3 | This module factors out the predicate that the dispatcher in
+     4 | ``scripts/run_cts_eval_full.py`` uses to decide whether a CTS / DEQ
+     5 | prediction on a math benchmark looks like the AIME garbage symptom
+     6 | (``Cultura``, ``LinearLayout``, ``?????``) and should be replaced
+     7 | by the greedy fallback path.
+     8 | 
+     9 | It lives here (vs. inline in ``run_cts_eval_full.py``) for two
+    10 | reasons:
+    11 | 
+    12 | 1. The predicate is now unit-testable in &lt;10 ms with no torch
+    13 |    dependency (see ``tests/test_dispatcher_fallback_mock.py``).
+    14 | 2. The dispatcher can import the helper instead of duplicating
+    15 |    the regex / benchmark-membership logic in two separate places
+    16 |    (CTS path + DEQ-only path).
+    17 | 
+    18 | This is a *pure function*: no side effects, no torch.
+    19 | &quot;&quot;&quot;
+    20 | 
+       ... (75 more lines)
+</pre>
+<h2>Drill: nu-vector adaptive control (paper &sect;4.5)</h2>
+<pre>
+     1 | &quot;&quot;&quot;Meta-policy: nu vector + branch priors (paper §4.1).
+     2 | 
+     3 | Paper §4.1: &quot;Meta-policy pi_phi: a separate 2-layer MLP outputting
+     4 | nu = [nu_expl, nu_tol, nu_temp, nu_act] in R^4&quot;
+     5 | 
+     6 | V(z*) is output by Neuro-Critic V_psi, NOT part of nu.
+     7 | Input: mean-pooled z*_s from the selected MCTS node.
+     8 | &quot;&quot;&quot;
+     9 | 
+    10 | from __future__ import annotations
+    11 | 
+    12 | from typing import List, Optional, Tuple
+    13 | 
+    14 | import torch
+    15 | import torch.nn as nn
+    16 | 
+    17 | from cts.types import NuVector
+    18 | 
+       ... (43 more lines)
+</pre>
+<p>Next step: <code>bash scripts/replicate_neurips_2026.sh --static-only</code> for the full reviewer audit (~2 seconds).</p>
+</body></html>

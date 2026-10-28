@@ -1,0 +1,866 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 73 lenient 83 boxed 213
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] X5O47: n 600 strict 72 lenient 91 boxed 258
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json
+[S0] shuf_X5O47: n 600 strict 56 lenient 64 boxed 286
+[S0-DONE] handoff/codex/OUTBOX/20261020-1535-C004/x5_items_retry.json

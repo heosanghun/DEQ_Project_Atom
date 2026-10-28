@@ -1,0 +1,31 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] R1A0s47: n 600 strict 58 lenient 73 boxed 320
+[S0] R1A0s49: n 600 strict 11 lenient 35 boxed 60
+[S0] R1A0s50: n 600 strict 34 lenient 60 boxed 264
+[S0] R1A1s49: n 600 strict 26 lenient 48 boxed 125
+[S0] R1A1s50: n 600 strict 1 lenient 14 boxed 5
+[S0] R1E0s49: n 600 strict 47 lenient 73 boxed 255
+[S0] R1E0s50: n 600 strict 37 lenient 67 boxed 308
+[S0] R1E1s47: n 600 strict 58 lenient 72 boxed 379
+[S0] R1E1s49: n 600 strict 45 lenient 72 boxed 242
+[S0] R1E1s50: n 600 strict 39 lenient 61 boxed 269
+[S0] Ah: n 600 strict 47 lenient 76 boxed 267
+[S0] Eh: n 600 strict 29 lenient 61 boxed 196
+[S0] C_dev: n 600 strict 2 lenient 43 boxed 10
+[S0] shuf_Ah: n 600 strict 33 lenient 66 boxed 269
+[S0] shuf_R1A0s47: n 600 strict 37 lenient 57 boxed 296
+[S0] shuf_R1A0s49: n 600 strict 10 lenient 31 boxed 71
+[S0] shuf_R1A0s50: n 600 strict 29 lenient 57 boxed 245
+[S0] shuf_R1A1s49: n 600 strict 16 lenient 45 boxed 100
+[S0] shuf_R1A1s50: n 600 strict 0 lenient 20 boxed 3
+Timeout during comparison
+[S0] fresh_A: n 1758 strict 142 lenient 227 boxed 757
+Timeout during comparison
+Timeout during comparison
+[S0] fresh_B1: n 1758 strict 134 lenient 226 boxed 740
+Timeout during comparison
+[S0] fresh_C: n 1758 strict 0 lenient 141 boxed 4
+Timeout during comparison
+Timeout during comparison
+[S0] fresh_E1: n 1758 strict 101 lenient 204 boxed 552
+[S0-DONE] /tmp/cts_s0_items.json

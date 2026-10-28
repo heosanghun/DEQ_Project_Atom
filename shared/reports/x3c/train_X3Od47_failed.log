@@ -1,0 +1,22 @@
+[DATA] items 993 latents 993
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 600/2076 [00:00<00:00, 5988.34it/s]Loading weights:  58%|█████▊    | 1199/2076 [00:02<00:01, 494.89it/s]Loading weights:  71%|███████   | 1464/2076 [00:02<00:01, 506.78it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 780.34it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[BRIDGE] layers [10, 20, 30, 40] of 42, params 20,971,524, center norm/slot 101.1
+/tmp/cts_x_stage/g2v9_train.py:75: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  loss.backward(); bl += float(loss)
+Traceback (most recent call last):
+  File "/tmp/cts_x_stage/g2v9_train.py", line 91, in <module>
+    main()
+  File "/tmp/cts_x_stage/g2v9_train.py", line 75, in main
+    loss.backward(); bl += float(loss)
+    ^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn

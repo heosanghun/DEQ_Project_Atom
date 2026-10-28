@@ -1,0 +1,151 @@
+{
+  "check_scale": {
+    "return_code": 0,
+    "elapsed_seconds": 334.68,
+    "stdout": "================================================================================\nSCALE VERIFICATION BUTTON (EXE-260930-SCALE / Ledger #401)\nTimestamp: 2026-10-04 17:20:35\nHost: Quadro-Ampere-05 | Device: CUDA_VISIBLE_DEVICES=0\n================================================================================\n============================= test session starts ==============================\nplatform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- /home/shoon/system1_5/.venv/bin/python\ncachedir: .pytest_cache\nrootdir: /home/shoon/cts_e1_s5\nconfigfile: pyproject.toml\nplugins: cov-7.1.0, anyio-4.14.2\ncollecting ... collected 7 items\n\ntests/instrument/test_01_manifest.py::test_01_manifest_sha PASSED        [ 14%]\ntests/instrument/test_02_grader.py::test_02_grader_20_cases PASSED       [ 28%]\ntests/instrument/test_03_anderson.py::test_03_anderson_linear PASSED     [ 42%]\ntests/instrument/test_04_anchor.py::test_04_anchor_3items PASSED         [ 57%]\ntests/instrument/test_05_routing.py::test_05_routing_parity PASSED       [ 71%]\ntests/instrument/test_06_mask_freeze.py::test_06_mask_freeze_350 PASSED  [ 85%]\ntests/instrument/test_07_phase2_eval.py::test_07_phase2_generation_2items PASSED [100%]\n\n=============================== warnings summary ===============================\n../system1_5/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1464\n  /home/shoon/system1_5/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=================== 7 passed, 1 warning in 331.76s (0:05:31) ===================\n\n================================================================================\nSCALE VERIFICATION SUMMARY (7 Closed Checks)\n================================================================================\n[1] MANIFEST SHA: PASS\n[2] GRADER 20 CASES: PASS\n[3] ANDERSON LINEAR TEST: PASS\n[4] ANCHOR 3-ITEM RECOMPUTE: PASS\n[5] ROUTING PARITY: PASS\n[6] MASK FREEZE 350 STEPS: PASS\n[7] PHASE 2 GENERATION 2-ITEM: PASS\n--------------------------------------------------------------------------------\nTotal Execution Time: 335s (Criterion: <= 600s)\nLog file: /home/shoon/cts_e1_s5/raw_instrument/check_20261004_1720.log\n================================================================================\n",
+    "summary": "7/7 PASSED in 334.68s"
+  },
+  "nll_comparison": {
+    "sample_qid": 281,
+    "sample_decode_pathway1": "<bos><|turn>user\nFor how many positive integers $x$ is $100 \\leq x^2 \\leq 200$?<turn|>\n<|turn>model\n",
+    "sample_decode_pathway2": "<bos><|turn>user\nFor how many positive integers $x$ is $100 \\leq x^2 \\leq 200$?<turn|>\n<|turn>model\n",
+    "pathway1_mean": 5.851649544759652,
+    "pathway1_std": 1.133789752503674,
+    "pathway2_mean": 1.006235046684742,
+    "pathway2_std": 0.408625883478421,
+    "diff_mean": 4.84541449807491,
+    "diff_std": 0.8594972168923274,
+    "items": [
+      {
+        "qid": 281,
+        "nll_pathway1": 5.777023841594827,
+        "nll_pathway2": 0.9367858171463013,
+        "diff_p1_minus_p2": 4.840238024448526
+      },
+      {
+        "qid": 3931,
+        "nll_pathway1": 3.796679084683642,
+        "nll_pathway2": 0.27736926078796387,
+        "diff_p1_minus_p2": 3.519309823895678
+      },
+      {
+        "qid": 3446,
+        "nll_pathway1": 5.9922545882295974,
+        "nll_pathway2": 1.2188853025436401,
+        "diff_p1_minus_p2": 4.773369285685957
+      },
+      {
+        "qid": 2434,
+        "nll_pathway1": 7.336307699557134,
+        "nll_pathway2": 1.73529851436615,
+        "diff_p1_minus_p2": 5.601009185190984
+      },
+      {
+        "qid": 2174,
+        "nll_pathway1": 6.070768267194802,
+        "nll_pathway2": 1.188940167427063,
+        "diff_p1_minus_p2": 4.881828099767739
+      },
+      {
+        "qid": 2874,
+        "nll_pathway1": 4.125755128885636,
+        "nll_pathway2": 0.48845720291137695,
+        "diff_p1_minus_p2": 3.6372979259742593
+      },
+      {
+        "qid": 3731,
+        "nll_pathway1": 4.261499113111354,
+        "nll_pathway2": 0.4407255947589874,
+        "diff_p1_minus_p2": 3.8207735183523663
+      },
+      {
+        "qid": 1305,
+        "nll_pathway1": 5.5635888671875,
+        "nll_pathway2": 1.2993344068527222,
+        "diff_p1_minus_p2": 4.264254460334778
+      },
+      {
+        "qid": 1576,
+        "nll_pathway1": 5.331273572198276,
+        "nll_pathway2": 1.2070320844650269,
+        "diff_p1_minus_p2": 4.124241487733249
+      },
+      {
+        "qid": 2159,
+        "nll_pathway1": 4.666163878007368,
+        "nll_pathway2": 0.8985058069229126,
+        "diff_p1_minus_p2": 3.7676580710844556
+      },
+      {
+        "qid": 444,
+        "nll_pathway1": 7.145169142899381,
+        "nll_pathway2": 0.9233149886131287,
+        "diff_p1_minus_p2": 6.221854154286253
+      },
+      {
+        "qid": 818,
+        "nll_pathway1": 5.848267950405732,
+        "nll_pathway2": 1.0093828439712524,
+        "diff_p1_minus_p2": 4.838885106434479
+      },
+      {
+        "qid": 2087,
+        "nll_pathway1": 7.580391125801282,
+        "nll_pathway2": 1.7203552722930908,
+        "diff_p1_minus_p2": 5.860035853508191
+      },
+      {
+        "qid": 3672,
+        "nll_pathway1": 5.7944159980292795,
+        "nll_pathway2": 0.7673177719116211,
+        "diff_p1_minus_p2": 5.027098226117658
+      },
+      {
+        "qid": 1590,
+        "nll_pathway1": 6.582884939093339,
+        "nll_pathway2": 0.9041799306869507,
+        "diff_p1_minus_p2": 5.678705008406388
+      },
+      {
+        "qid": 2809,
+        "nll_pathway1": 7.1291928870655665,
+        "nll_pathway2": 0.8300650119781494,
+        "diff_p1_minus_p2": 6.299127875087417
+      },
+      {
+        "qid": 90,
+        "nll_pathway1": 4.406824151400862,
+        "nll_pathway2": 0.4780295491218567,
+        "diff_p1_minus_p2": 3.9287946022790052
+      },
+      {
+        "qid": 683,
+        "nll_pathway1": 6.990185153099798,
+        "nll_pathway2": 1.6332820653915405,
+        "diff_p1_minus_p2": 5.3569030877082575
+      },
+      {
+        "qid": 1992,
+        "nll_pathway1": 6.253352072386615,
+        "nll_pathway2": 1.061203122138977,
+        "diff_p1_minus_p2": 5.192148950247638
+      },
+      {
+        "qid": 182,
+        "nll_pathway1": 6.3809934343610495,
+        "nll_pathway2": 1.106236219406128,
+        "diff_p1_minus_p2": 5.274757214954922
+      }
+    ]
+  },
+  "p4_prime_verification": {
+    "sample_qid": 4298,
+    "has_64_slots": false,
+    "has_newline": true,
+    "prob_text_present": true,
+    "total_prompt_tokens": 122,
+    "masked_prefix_display": "<bos><|turn>user\n[SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT][SLOT]\n\nIf $x^5 - x^4 + x^3 - px^2 + qx + 4$ is divisible by $(x + 2)(x - 1),$ find the ordered pair $(p,q).$<turn|>\n<|turn> ... [truncated]",
+    "scan_valid_count": 993,
+    "scan_valid_sha256": null
+  }
+}

@@ -1,0 +1,54 @@
+{
+ "C_fmt": [
+  "handoff/codex/data/gen_C.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7A47": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7A47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7A47": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7A47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7E47": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7E47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7E47": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7E47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7A49": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7A49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7A49": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7A49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7E49": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7E49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7E49": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7E49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7A50": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7A50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7A50": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7A50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X7E50": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/gen_X7E50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X7E50": [
+  "handoff/codex/INBOX/20261021-0945-x7-results/genB1_X7E50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ]
+}

@@ -1,0 +1,4 @@
+put scripts/g2v8_gca_bridge.py /home/shoon/cts_e1_s5/scripts/g2v8_gca_bridge.py
+put scripts/g2v8_s2_train_eval.py /home/shoon/cts_e1_s5/scripts/g2v8_s2_train_eval.py
+put scripts/g2v8_deq_train_eval.py /home/shoon/cts_e1_s5/scripts/g2v8_deq_train_eval.py
+put scripts/run_g2v8_s2_pilot.sh /home/shoon/cts_e1_s5/scripts/run_g2v8_s2_pilot.sh

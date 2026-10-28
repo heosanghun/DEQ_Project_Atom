@@ -1,0 +1,10 @@
+[LOCAL-SHIM] windows: math-verify per-call multiprocessing timeout replaced by no-op (equivalence logic unchanged)
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 93 boxed 213
+[S0] X7A47: n 600 strict 67 lenient 82 boxed 309
+[S0] shuf_X7A47: n 600 strict 73 lenient 91 boxed 312
+[S0] X7E47: n 600 strict 76 lenient 87 boxed 267
+[S0] shuf_X7E47: n 600 strict 78 lenient 97 boxed 273
+[S0] X7A49: n 600 strict 68 lenient 84 boxed 269
+[S0] shuf_X7A49: n 600 strict 78 lenient 87 boxed 301
+[S0-DONE] shared/reports/x7/round1/x7r1_items_local.json

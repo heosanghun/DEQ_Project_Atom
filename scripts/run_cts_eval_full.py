@@ -1,0 +1,2000 @@
+#!/usr/bin/env python3
+"""CTS Full Evaluation Pipeline — Table 2 Reproduction (paper §7).
+
+Paper §7.1: "5 seeds (3 full re-trainings + 2 inference-only);
+95% CI via bootstrap (1000 resamples);
+Wilcoxon signed-rank; Bonferroni-corrected for 12 primary comparisons."
+
+Usage:
+    python scripts/run_cts_eval_full.py --benchmarks math500 aime gsm8k
+    python scripts/run_cts_eval_full.py --mode 4nu --seeds 5
+    python scripts/run_cts_eval_full.py --table2  # full Table 2 reproduction
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import re
+import sys
+import time
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+if sys.stdout.encoding and sys.stdout.encoding.lower().startswith("cp"):
+    sys.stdout.reconfigure(errors="replace")
+    sys.stderr.reconfigure(errors="replace")
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from cts.eval.garbage_filter import is_garbage_math
+from cts.eval.statistics import (
+    StatisticalResult,
+    bonferroni_correct,
+    bootstrap_ci,
+    format_result,
+    wilcoxon_signed_rank,
+)
+from cts.types import NuConfigMode
+from cts.utils.config import load_config
+
+
+BENCHMARKS = ["math500", "gsm8k", "aime", "aime_90", "arc_agi_text", "humaneval"]
+
+
+# Per-benchmark generation budget for the underlying greedy predictor. The
+# previous implementation hardcoded max_new_tokens=512 which caused
+# CTS-4nu/arc_agi_text fallbacks to spend 30-90 s per problem decoding 512
+# tokens of unused continuation, exceeding the wall-clock budget of the MCTS
+# loop. ARC-AGI-Text only needs a single MCQ letter; AIME needs a 1-3 digit
+# integer; MATH-500/GSM8K need a short numeric/expression answer; only
+# HumanEval requires the full code completion budget.
+PREDICTOR_MAX_NEW_TOKENS = {
+    "arc_agi_text": 8,    # single A/B/C/D letter
+    # Math reasoning — increased to give CoT enough headroom before the boxed
+    # answer is emitted; previous tight caps (32/64/128) truncated multi-step
+    # solutions and made greedy/native_think under-perform vs the paper.
+    "aime": 1024,         # multi-step CoT before 3-digit integer
+    "gsm8k": 256,         # short numeric final answer + CoT
+    "math500": 512,       # boxed expression with CoT
+    "humaneval": 1024,    # full code completion (chat-template path enabled)
+}
+
+
+def _max_tokens_for(benchmark: str) -> int:
+    return PREDICTOR_MAX_NEW_TOKENS.get(benchmark, 256)
+
+# --- Single-GPU snapshot method registry ---
+# Every paper Table 2 method now has a dispatcher in `_run_cts_on_problems`.
+# Some baselines historically routed through proxies; FT-NT / BoN@13 /
+# UCB1 bandit now use dedicated modules (``cts/eval/ft_nt.py``,
+# ``cts/baselines/bon_critic.py``, ``cts/baselines/ucb1_nu.py``).
+# `TABLE2_METHODS_PAPER_ONLY` is therefore now empty in this snapshot.
+TABLE2_METHODS_INTEGRATED = [
+    "greedy",
+    "native_think",
+    "deq_only",
+    "cts_2nu",
+    "cts_4nu",
+    "think_off_greedy",
+    "ft_nt",
+    "sc_14",
+    "bon_13",
+    "bandit_ucb1",
+    "mcts_early_stop",
+    "expl_mcts_ppo",
+]
+# Kept as an explicit empty list for documentation — anything not yet
+# integrated would land here and would be cross-referenced in REVIEWER_FAQ.
+TABLE2_METHODS_PAPER_ONLY: List[str] = []
+TABLE2_METHODS_ALL = TABLE2_METHODS_INTEGRATED  # safe default for --table2
+TABLE2_METHODS = TABLE2_METHODS_ALL
+
+
+def run_single_evaluation(
+    method: str,
+    benchmark: str,
+    seed: int,
+    *,
+    config_name: str = "default",
+    device: str = "cuda:0",
+    model_dir: Optional[str] = None,
+    limit: Optional[int] = None,
+    nu_trace_dir: Optional[Path] = None,
+    model_name: str = "gemma",
+) -> Dict[str, Any]:
+    """Run a single evaluation and return scores.
+
+    ``nu_trace_dir``: if provided, every CTS-derivative dispatcher (cts_4nu,
+    cts_2nu, bandit_ucb1, mcts_early_stop, expl_mcts_ppo) writes a per-problem
+    JSONL trace ``<dir>/<method>_<benchmark>_seed<seed>.jsonl`` containing
+    ``{method, benchmark, seed, problem_id, nu_trace: {nu_expl: [...], ...}}``.
+    Used downstream by ``cts/eval/nu_stats.py`` for paper Table 19 reproduction.
+    """
+    cfg = load_config(config_name)
+    deq_mode = str(cfg.get("cts_deq_map_mode", "parallel"))
+    if deq_mode not in {"parallel", "paper", "full", "blend"}:
+        raise ValueError(f"unsupported evaluation DEQ map mode: {deq_mode}")
+    os.environ["CTS_DEQ_MAP_MODE"] = deq_mode
+    os.environ["CTS_EQ3_EXPLICIT_MASKS"] = (
+        "1" if bool(cfg.get("eq3_explicit_masks", False)) else "0"
+    )
+    os.environ["CTS_EQ3_SUFFIX_CACHE"] = (
+        "1" if bool(cfg.get("eq3_suffix_cache", False)) else "0"
+    )
+    os.environ["CTS_EQ3_SUFFIX_CACHE_TRAIN"] = "0"
+    if model_name == "gemma" and model_dir is None:
+        model_dir = str(cfg.get("gemma_model_id", "google/gemma-4-E4B"))
+    # Every reported method/seed cell starts from an immutable model instance.
+    # Previously CTS loaded Stage-1 weights in-place into a global model, and
+    # the later greedy/native cells silently reused that mutated backbone.
+    _clear_model_cache()
+    from cts.utils.seed import set_seed
+    set_seed(seed)
+
+    result: Dict[str, Any] = {
+        "method": method,
+        "benchmark": benchmark,
+        "seed": seed,
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    cell_diagnostics: Dict[str, Any] = {}
+
+    data_root = Path(__file__).resolve().parent.parent / "data"
+    try:
+        if benchmark == "math500":
+            from cts.eval.math500 import load_math_samples
+            problems = load_math_samples(data_root / "math500" / "test.jsonl", limit=limit)
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1)
+            result["scores"] = scores
+
+        elif benchmark == "gsm8k":
+            from cts.eval.gsm8k import load_gsm8k_jsonl
+            problems = load_gsm8k_jsonl(data_root / "gsm8k" / "test.jsonl")
+            if limit:
+                problems = problems[:limit]
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1)
+            result["scores"] = scores
+
+        elif benchmark == "aime":
+            from cts.eval.math500 import load_math_samples
+            problems = load_math_samples(data_root / "aime" / "test.jsonl", limit=limit)
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1) if scores else 0.0
+            result["scores"] = scores
+
+        elif benchmark == "aime_90":
+            # Paper §7.4 'Extended AIME validation' Table 17: AIME 2024 + 2025 + 2026
+            # = 90 problems for 3-fold statistical power on the AIME claim.
+            # The unified jsonl is built by scripts/download_all_benchmarks.py:
+            #   data/aime/test_aime_90.jsonl  (30 + 30 + 30, BM25 6 / MinHash 0)
+            from cts.eval.math500 import load_math_samples
+            problems = load_math_samples(data_root / "aime" / "test_aime_90.jsonl", limit=limit)
+            # Internal benchmark slot is still 'aime' for the predictor cache key
+            # (same answer-extraction logic, same max_new_tokens budget).
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark="aime", seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1) if scores else 0.0
+            result["scores"] = scores
+
+        elif benchmark == "arc_agi_text":
+            from cts.eval.arc_agi_text import load_arc_text_samples
+            problems = load_arc_text_samples(data_root / "arc_agi" / "test.jsonl", limit=limit)
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1)
+            result["scores"] = scores
+
+        elif benchmark == "humaneval":
+            from cts.eval.humaneval import load_humaneval_jsonl
+            problems = load_humaneval_jsonl(data_root / "humaneval" / "test.jsonl")
+            if limit:
+                problems = problems[:limit]
+            scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir, model_name=model_name, diagnostics=cell_diagnostics)
+            result["accuracy"] = sum(scores) / max(len(scores), 1)
+            result["scores"] = scores
+
+        if not problems:
+            raise RuntimeError("evaluation dataset is empty")
+        score_vector = result.get("scores", [])
+        if len(score_vector) != len(problems):
+            raise RuntimeError(
+                "evaluation produced an incomplete score vector: "
+                f"{len(score_vector)}/{len(problems)}"
+            )
+        if any(float(score) not in (0.0, 1.0) for score in score_vector):
+            raise RuntimeError("evaluation scores must be finite binary outcomes")
+        result["valid"] = True
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        result["error"] = str(e)
+        result["valid"] = False
+        result["accuracy"] = None
+        result["scores"] = []
+
+    if cell_diagnostics:
+        result.update(cell_diagnostics)
+    return result
+
+
+_loaded_predictor = None
+_loaded_backbone = None
+_loaded_tok = None
+_loaded_model_name = None
+_loaded_ft_nt_predictor = None
+
+
+def _model_family_id(value: object) -> str:
+    text = str(value or "").rstrip("/\\")
+    return text.replace("\\", "/").split("/")[-1].lower()
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _clear_model_cache() -> None:
+    global _loaded_predictor, _loaded_backbone, _loaded_tok
+    global _loaded_model_name, _loaded_ft_nt_predictor
+    _loaded_predictor = None
+    _loaded_backbone = None
+    _loaded_tok = None
+    _loaded_model_name = None
+    _loaded_ft_nt_predictor = None
+    import gc
+
+    gc.collect()
+    try:
+        import torch
+
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+    except Exception:
+        pass
+
+
+def _get_predictor(device: str, model_dir: Optional[str], model_name: str = "gemma"):
+    global _loaded_predictor, _loaded_backbone, _loaded_tok, _loaded_model_name
+    if _loaded_predictor is None or _loaded_model_name != model_name:
+        import torch
+        from cts.eval.gemma_predict import GemmaTextPredictor
+        if model_name == "qwen2.5-7b":
+            from cts.model.qwen_loader import load_qwen2_5_7b
+            mid = model_dir or os.environ.get("CTS_QWEN_MODEL_DIR", "Qwen/Qwen2.5-7B")
+            model, tok = load_qwen2_5_7b(model_id=mid, device_map=device, torch_dtype=torch.bfloat16)
+        else:
+            from cts.model.gemma_loader import load_gemma4_e4b
+            mid = model_dir or os.environ.get("CTS_GEMMA_MODEL_DIR", "/home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377")
+            assert "58c4d7b5" in str(mid), f"[BACKBONE LOCK VIOLATION] expected base snapshot (58c4d7b5), got {mid}"
+            print(f"[BACKBONE-EVIDENCE] loading from: {mid}", flush=True)
+            model, tok = load_gemma4_e4b(model_id=mid, device_map=device, torch_dtype=torch.bfloat16)
+        _loaded_backbone = model
+        _loaded_tok = tok
+        _loaded_predictor = GemmaTextPredictor(
+            model,
+            tok,
+            max_new_tokens=512,
+            device=device,
+            use_chat_template=True,
+        )
+        _loaded_model_name = model_name
+    return _loaded_predictor, _loaded_backbone, _loaded_tok
+
+
+def _get_backbone(
+    model_name: str,
+    model: Any,
+    tok: Any,
+    cfg: Optional[Dict[str, Any]] = None,
+) -> Any:
+    if model_name == "qwen2.5-7b":
+        from cts.backbone.qwen_adapter import QwenCTSBackbone
+        bb = QwenCTSBackbone(model, tok)
+    else:
+        from cts.backbone.gemma_adapter import GemmaCTSBackbone
+        bb = GemmaCTSBackbone(model, tok)
+    # Config overlays such as paper_parity.yaml must affect evaluation, not
+    # training only.  Previously this value was silently ignored and the
+    # backbone fell back to the cheap ``blend`` map even when the requested
+    # protocol specified the paper's sparse-parallel map.
+    deq_mode = (cfg or {}).get("cts_deq_map_mode")
+    if deq_mode:
+        bb.deq_map_mode = str(deq_mode)
+    return bb
+
+
+def _get_ft_nt_predictor(device: str, model_dir: Optional[str], cfg: dict):
+    global _loaded_ft_nt_predictor
+    if _loaded_ft_nt_predictor is None:
+        from pathlib import Path as _Path
+
+        from cts.eval.ft_nt import build_ft_nt_predictor
+
+        _loaded_ft_nt_predictor = build_ft_nt_predictor(
+            stage1_ckpt=_Path("artifacts/stage1_last.pt"),
+            device=device,
+            model_dir=model_dir,
+            lora_rank=int(cfg.get("lora_rank", 8)),
+            lora_targets=tuple(cfg.get("lora_target", ["q_proj", "v_proj", "o_proj"])),
+        )[0]
+        print(
+            "  [ft_nt] Stage-1 LoRA loaded into native-think predictor.",
+            flush=True,
+        )
+    return _loaded_ft_nt_predictor
+
+
+def _get_question(prob: dict, benchmark: str) -> str:
+    """Unified question/prompt extraction across benchmarks."""
+    if benchmark == "humaneval":
+        return prob.get("prompt", "")
+    if benchmark == "arc_agi_text":
+        return prob.get("input", "") or prob.get("question", "")
+    return (
+        prob.get("problem")
+        or prob.get("question")
+        or prob.get("input")
+        or prob.get("prompt")
+        or ""
+    )
+
+
+def _get_gold(prob: dict, benchmark: str) -> str:
+    """Unified gold answer extraction across benchmarks."""
+    if benchmark == "humaneval":
+        return prob.get("canonical_solution", "")
+    if benchmark == "arc_agi_text":
+        return prob.get("output", "") or prob.get("answer", "")
+    if benchmark == "gsm8k":
+        ans = prob.get("answer", "") or ""
+        m = re.search(r"####\s*([\-\d\.,]+)", ans)
+        if m:
+            return m.group(1).replace(",", "").strip()
+        return ans
+    return prob.get("answer", prob.get("solution", ""))
+
+
+def _build_prompt(q: str, benchmark: str, *, native_think: bool = False) -> str:
+    """Benchmark-aware prompt construction.
+
+    Returns user content only. ``GemmaTextPredictor`` applies the tokenizer's
+    canonical template exactly once and toggles thinking via the template
+    kwarg.  Hand-written ``<start_of_turn>`` markers are not tokens in this
+    Gemma revision and previously pushed native-think off distribution.
+    """
+    if benchmark == "humaneval":
+        instr_chat = (
+            "Implement the function described below. Output ONLY a "
+            "single ```python ... ``` code block that contains the "
+            "complete function (signature + body), with no extra "
+            "explanation or commentary.\n\n"
+        )
+        return f"{instr_chat}{q}"
+    if benchmark == "arc_agi_text":
+        instr = (
+            "Answer the following multiple-choice science question. "
+            "Output ONLY the letter (A, B, C, or D).\n\n"
+        )
+        return f"{instr}{q}\n\nAnswer:"
+    from cts.prompt_contract import build_math_decode_prompt
+
+    # GPU-1 controlled A/B (same -it weights, same six MATH-500 items,
+    # greedy decode) improved 1/6 at 28.65 s/item to 6/6 at 7.65 s/item.
+    # The instruction prevents verbose re-derivation from exhausting the
+    # generation budget before the machine-readable final answer.
+    return build_math_decode_prompt(q)
+
+
+def _match_answer(pred: str, gold: str, benchmark: str) -> bool:
+    """Benchmark-aware answer matching. NOTE: pred is assumed already extracted via _extract_pred."""
+    if benchmark == "humaneval":
+        return False
+    if benchmark == "arc_agi_text":
+        p = (pred or "").strip().upper()
+        g = (gold or "").strip().upper()
+        m = re.search(r"\b([A-D])\b", p)
+        p_letter = m.group(1) if m else (p[:1] if p else "")
+        return p_letter == g[:1]
+    if benchmark in ("gsm8k", "aime"):
+        try:
+            g_str = (gold or "").strip().replace(",", "")
+            p_str = (pred or "").strip().replace(",", "")
+            g_val = float(g_str)
+            try:
+                p_val = float(p_str)
+                return abs(p_val - g_val) < 1e-6
+            except ValueError:
+                nums = re.findall(r"-?\d+\.?\d*", p_str)
+                if not nums:
+                    return False
+                p_val = float(nums[-1])
+                return abs(p_val - g_val) < 1e-6
+        except Exception:
+            return (pred or "").strip() == (gold or "").strip()
+    from cts.eval.math500 import answers_match, extract_gold
+    g_ex = extract_gold(gold or "")
+    return answers_match(pred or "", g_ex)
+
+
+_HUMANEVAL_DEBUG_DIR = os.environ.get("CTS_HUMANEVAL_DEBUG_DIR")
+_HUMANEVAL_DEBUG_COUNTER = {"i": 0, "max": int(os.environ.get("CTS_HUMANEVAL_DEBUG_MAX", "3"))}
+
+
+def _humaneval_pass(prompt: str, completion: str, test: str, entry_point: str, timeout: float = 5.0) -> bool:
+    """Execute HumanEval test in a subprocess (timeout=5s) for pass@1."""
+    import subprocess, tempfile, textwrap
+    if not completion or not entry_point:
+        return False
+    body = completion
+    if "def " + entry_point in completion:
+        # Bug fix (D-12 local-eval pass): when the model emits its own ``def``
+        # block (which the chat-template prompt explicitly instructs it to
+        # do), the prior code dropped the prompt entirely and executed the
+        # completion alone. HumanEval problems almost always rely on imports
+        # declared in the prompt (``from typing import List``, ``Optional``,
+        # ``Tuple``, ``math``, ``re`` ...) for type annotations and helper
+        # calls, so dropping the prompt produced a 100% NameError pass@1
+        # collapse on greedy + scaffold runs alike. We now harvest just the
+        # ``import`` / ``from ... import`` lines from the prompt and prepend
+        # them; the docstring + signature in the prompt are intentionally
+        # left out so duplicate function definitions do not shadow the
+        # model's completion.
+        prompt_imports = "\n".join(
+            line for line in (prompt or "").splitlines()
+            if re.match(r"^\s*(?:from\s+\S+\s+import|import\s+)", line)
+        )
+        program = (
+            (prompt_imports + "\n\n" if prompt_imports else "")
+            + completion + "\n\n" + test + f"\ncheck({entry_point})\n"
+        )
+    else:
+        program = prompt + body + "\n\n" + test + f"\ncheck({entry_point})\n"
+    tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False, encoding="utf-8")
+    rc, stderr_text, timed_out_flag = -1, "", False
+    try:
+        tmp.write(program)
+        tmp.close()
+        try:
+            proc = subprocess.run(
+                [sys.executable, tmp.name],
+                capture_output=True, timeout=timeout, text=True,
+            )
+            rc = proc.returncode
+            stderr_text = proc.stderr or ""
+        except subprocess.TimeoutExpired:
+            timed_out_flag = True
+            rc = -9
+        result = (rc == 0)
+    except Exception as e:
+        stderr_text = f"_humaneval_pass exception: {e}"
+        result = False
+    finally:
+        try:
+            os.unlink(tmp.name)
+        except Exception:
+            pass
+
+    if _HUMANEVAL_DEBUG_DIR and (not result) and _HUMANEVAL_DEBUG_COUNTER["i"] < _HUMANEVAL_DEBUG_COUNTER["max"]:
+        try:
+            os.makedirs(_HUMANEVAL_DEBUG_DIR, exist_ok=True)
+            i = _HUMANEVAL_DEBUG_COUNTER["i"]
+            _HUMANEVAL_DEBUG_COUNTER["i"] = i + 1
+            with open(os.path.join(_HUMANEVAL_DEBUG_DIR, f"failure_{i:02d}_{entry_point}.txt"),
+                      "w", encoding="utf-8") as fh:
+                fh.write(f"=== entry_point: {entry_point}\n")
+                fh.write(f"=== rc: {rc}  timed_out: {timed_out_flag}\n")
+                fh.write("=== STDERR ===\n")
+                fh.write(stderr_text)
+                fh.write("\n=== COMPLETION (raw) ===\n")
+                fh.write(completion)
+                fh.write("\n=== PROMPT ===\n")
+                fh.write(prompt or "")
+                fh.write("\n=== PROGRAM EXECUTED ===\n")
+                fh.write(program)
+        except Exception:
+            pass
+    return result
+
+
+def _extract_humaneval_completion(raw: str, prompt: str, entry_point: str) -> str:
+    """Extract the function body / full code from a HumanEval LLM output.
+
+    Robustness fix (D-12 local-eval pass): in greedy mode the Gemma 4 E4B
+    chat-template completion sometimes does not stop at ``<end_of_turn>``
+    and goes on to hallucinate another user turn + a duplicated answer,
+    eventually getting cut off mid-docstring at the ``max_new_tokens``
+    limit. The unterminated string then crashes the Python interpreter
+    with ``SyntaxError: unterminated triple-quoted string literal``,
+    producing 100% pass@1 collapse even on problems the model solved
+    correctly. We now (1) truncate at the first known chat-template stop
+    sequence, and (2) keep only the first ``def {entry_point}`` block
+    (up to the next column-zero ``def`` / ``class`` or another
+    ``<start_of_turn>``-style marker).
+    """
+    text = raw or ""
+    for stop in ("<turn|>", "<|turn>", "<end_of_turn>", "<start_of_turn>",
+                 "<|endoftext|>", "<|end|>", "<eos>", "</s>"):
+        if stop in text:
+            text = text.split(stop, 1)[0]
+    m = re.search(r"```(?:python)?\s*\n(.*?)```", text, re.DOTALL)
+    if m:
+        text = m.group(1)
+    if "def " + entry_point in text:
+        first = text.find("def " + entry_point)
+        body = text[first:]
+        head_len = len("def " + entry_point)
+        tail = body[head_len:]
+        nxt = re.search(r"\n(?:def |class )", tail)
+        if nxt:
+            body = body[: head_len + nxt.start()]
+        return body.rstrip()
+    lines = text.splitlines()
+    body_lines = []
+    for ln in lines:
+        if ln.strip() and not ln.startswith((" ", "\t")):
+            if body_lines:
+                break
+            continue
+        body_lines.append(ln)
+    body = "\n".join(body_lines).rstrip()
+    if not body.strip():
+        body = "    pass"
+    return body
+
+
+def _extract_pred(raw: str, benchmark: str) -> str:
+    """Benchmark-aware prediction extraction.
+
+    For math benchmarks, prefer explicit answer markers (\\boxed{}, ####, "answer is").
+    If no explicit marker found, return raw text (let answers_match handle it via
+    normalization + numeric fallback) to avoid corrupting tuple/expression answers
+    like (3, \\pi/2) being reduced to a single number.
+    """
+    if benchmark == "humaneval":
+        return raw or ""
+    # Strip Gemma chat-template control tokens that leak through when the
+    # tokenizer doesn't have them registered as `special_tokens` (observed on
+    # the bare-Hub Gemma-4-E4B revision). This was causing native_think
+    # predictions like '<end_of_turn>\n<start_of_turn>user\nSolve ' to be
+    # extracted verbatim and matched against the gold answer.
+    raw_clean = re.sub(
+        r"<\|channel>thought\s*.*?<channel\|>",
+        " ",
+        raw or "",
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    # The canonical Gemma-4-E4B turn terminator is ``<turn|>`` (id 106).
+    # Keep only the model's first turn and remove any remaining control tags.
+    raw_clean = raw_clean.split("<turn|>", 1)[0]
+    raw_clean = re.sub(
+        r"<\s*(?:end_of_turn|start_of_turn|bos|eos|pad)\s*>",
+        " ",
+        raw_clean,
+        flags=re.IGNORECASE,
+    )
+    raw_clean = re.sub(r"<\|(?:turn|think|channel)>|<channel\|>", " ", raw_clean)
+    # Also drop anything after the model emits a fresh "user" turn (the model
+    # sometimes hallucinates the next user prompt mid-completion).
+    raw_clean = re.split(r"\n?\s*(?:user|model)\s*\n", raw_clean, maxsplit=1)[0]
+    if benchmark == "arc_agi_text":
+        m = re.search(r"\b([A-D])\b", raw_clean.upper())
+        return m.group(1) if m else raw_clean.strip()[:5]
+    from cts.eval.math500 import _extract_boxed
+    text = raw_clean.strip()
+    if not text:
+        return ""
+    boxed = _extract_boxed(text)
+    if boxed:
+        return boxed.strip()
+    gsm = re.search(r"####\s*(.+?)$", text, re.MULTILINE)
+    if gsm:
+        return gsm.group(1).strip()
+    m = re.search(
+        r"(?:the\s+)?(?:final\s+)?answer\s+is\s*[:\s]*(.+?)(?:\.|$|\n)",
+        text, re.IGNORECASE,
+    )
+    if m:
+        return m.group(1).strip()
+    if benchmark in ("gsm8k", "aime"):
+        nums = re.findall(r"-?\d+\.?\d*", text)
+        if nums:
+            return nums[-1]
+    return text
+
+
+def _resolve_nu_trace_dir(nu_trace_dir: Optional[Path]) -> Optional[Path]:
+    """Honour both explicit ``nu_trace_dir`` and ``CTS_NU_TRACE_DIR`` env var.
+
+    The env-var path makes it trivial to retrofit ν tracing on existing
+    pipelines (``run_table2_full_bench``, ``run_paper_artifacts_pipeline``)
+    without touching their CLI surface.
+    """
+    if nu_trace_dir is not None:
+        return Path(nu_trace_dir)
+    env = os.environ.get("CTS_NU_TRACE_DIR")
+    if env:
+        return Path(env)
+    return None
+
+
+def _nu_trace_path(nu_trace_dir: Optional[Path], method: str, benchmark: str, seed: int) -> Optional[Path]:
+    if nu_trace_dir is None:
+        return None
+    nu_trace_dir.mkdir(parents=True, exist_ok=True)
+    return nu_trace_dir / f"{method}_{benchmark}_seed{seed}.jsonl"
+
+
+def _problem_id(prob: dict, benchmark: str, idx: int) -> str:
+    """Best-effort stable problem id for cross-run aggregation."""
+    for key in ("id", "task_id", "problem_id", "uid", "idx"):
+        v = prob.get(key)
+        if v is not None:
+            return str(v)
+    if benchmark == "humaneval" and prob.get("entry_point"):
+        return f"humaneval/{prob['entry_point']}"
+    return f"{benchmark}/{idx}"
+
+
+def _append_nu_trace_record(
+    out_path: Optional[Path],
+    *,
+    method: str,
+    benchmark: str,
+    seed: int,
+    problem_id: str,
+    nu_buf: List[Any],
+) -> None:
+    """Persist one problem's ν trace as a JSONL line. Idempotent: caller
+    is expected to ensure ``out_path`` is fresh (one file per (m, b, s))."""
+    if out_path is None or not nu_buf:
+        return
+    record = {
+        "method": method,
+        "benchmark": benchmark,
+        "seed": int(seed),
+        "problem_id": str(problem_id),
+        "nu_trace": {
+            "nu_expl": [float(nv.nu_expl) for nv in nu_buf],
+            "nu_tol":  [float(nv.nu_tol)  for nv in nu_buf],
+            "nu_temp": [float(nv.nu_temp) for nv in nu_buf],
+            "nu_act":  [float(nv.nu_act)  for nv in nu_buf],
+        },
+    }
+    with open(out_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record) + "\n")
+
+
+def _run_cts_on_problems(
+    method: str,
+    problems: list,
+    cfg: dict,
+    device: str,
+    model_dir: Optional[str],
+    benchmark: str = "math500",
+    seed: int = 0,
+    nu_trace_dir: Optional[Path] = None,
+    model_name: str = "gemma",
+    diagnostics: Optional[Dict[str, Any]] = None,
+) -> List[float]:
+    """Run CTS or baseline evaluation on a list of problems.
+
+    `seed` is used to derive deterministic but per-(seed, problem) z0_seed and
+    selection_seed values for cts_full_episode, so multi-seed runs actually
+    explore distinct trees instead of collapsing to identical greedy answers.
+
+    ``nu_trace_dir`` (or env var ``CTS_NU_TRACE_DIR``): when set, every CTS
+    dispatcher (cts_4nu, cts_2nu, bandit_ucb1, mcts_early_stop, expl_mcts_ppo)
+    writes one JSONL line per problem to
+    ``<dir>/<method>_<benchmark>_seed<seed>.jsonl``. Non-CTS methods (greedy,
+    native_think, sc_14, ...) do NOT call the meta-policy, so they emit no
+    rows — ``cts/eval/nu_stats.py`` simply skips those files.
+    """
+    import torch
+    nu_trace_dir = _resolve_nu_trace_dir(nu_trace_dir)
+    nu_jsonl = _nu_trace_path(nu_trace_dir, method, benchmark, seed)
+    # Reset per-(method, benchmark, seed) JSONL so re-runs are idempotent.
+    if nu_jsonl is not None and nu_jsonl.exists():
+        try:
+            nu_jsonl.unlink()
+        except OSError:
+            pass
+    if not problems:
+        return []
+
+    predictor, model, tok = _get_predictor(device, model_dir, model_name=model_name)
+    pred_max_tok = _max_tokens_for(benchmark)
+
+    scores: List[float] = []
+    cts_fallback_flags: List[bool] = []
+    cts_fallback_reasons: List[Optional[str]] = []
+    cts_hybrid_scores: List[float] = []
+    compute_hybrid_diagnostic = os.environ.get(
+        "CTS_COMPUTE_GREEDY_FALLBACK_DIAGNOSTIC", "0"
+    ) == "1"
+
+    if method == "greedy":
+        for prob in problems:
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            prompt = _build_prompt(q, benchmark, native_think=False)
+            raw_pred = predictor(
+                prompt, max_new_tokens=pred_max_tok, enable_thinking=False
+            )
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(str(raw_pred), q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+                pred = completion[:40]
+            else:
+                pred = _extract_pred(str(raw_pred), benchmark)
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            print(
+                f"    [{method}/{benchmark}] gold='{str(gold)[:40]}' "
+                f"pred='{str(pred)[:40]}' match={match}", flush=True,
+            )
+
+    elif method in ("cts_4nu", "cts_2nu", "deq_only"):
+        from cts.types import NuVector, RuntimeBudgetState
+
+        bb = _get_backbone(model_name, model, tok, cfg)
+        bb.eval()
+        stage1_ckpt = Path("artifacts/stage1_last.pt")
+        if stage1_ckpt.exists():
+            # CRITICAL: load Stage 1 ckpt onto CPU first. The freshly-saved
+            # ``backbone_state_dict`` from run_stage1_openmath.py contains
+            # the FULL Gemma 4 backbone (~16 GB BF16) including the frozen
+            # base weights, not just the LoRA delta. Loading this directly
+            # onto GPU with ``map_location=device`` would peak at ~13 GB
+            # (already-loaded model) + ~16 GB (ckpt copy) = 29 GB on a
+            # 24 GB RTX 4090 -> immediate OOM before the first CTS-4ν
+            # episode (May 2 EVAL_42 phase 2 observation: "37.92 GiB
+            # allocated"). Loading on CPU and letting load_state_dict
+            # copy parameters one at a time keeps peak GPU usage at
+            # ~13.x GB. This is bit-for-bit equivalent because the
+            # state-dict tensors are dtype-preserving on the CPU side and
+            # the existing parameters' device + dtype determine the
+            # final placement.
+            ckpt = torch.load(stage1_ckpt, map_location="cpu", weights_only=True)
+            sd = ckpt.get("backbone_state_dict", {})
+            # Paper §6.1: Stage 1 trains a LoRA adapter on q/v/o_proj.
+            # If the bundled / locally-trained checkpoint contains LoRA
+            # state-dict keys, we MUST install the manual LoRA wrappers
+            # on `bb` before `load_state_dict`; otherwise every
+            # ``base.weight`` / ``lora_A.weight`` / ``lora_B.weight``
+            # entry is silently dropped as an unexpected key
+            # (``strict=False``) and the eval backbone reverts to base
+            # Gemma 4, killing reproducibility of the paper's headline
+            # 50.2% AIME 2026 number.
+            if isinstance(sd, dict) and any(
+                isinstance(k, str) and (k.endswith("lora_A.weight") or k.endswith("lora_B.weight"))
+                for k in sd
+            ):
+                from cts.train.lora_compat import apply_paper_lora
+
+                apply_paper_lora(
+                    bb,
+                    rank=int(cfg.get("lora_rank", 8)),
+                    target_modules=tuple(cfg.get("lora_target", ["q_proj", "v_proj", "o_proj"])),
+                    dropout=0.05,
+                    require_match=True,
+                    verbose=True,
+                )
+            is_qwen = "qwen" in str(model_name).lower()
+            is_gemma_ckpt = any("language_model" in k for k in sd) if isinstance(sd, dict) else False
+            if is_qwen and is_gemma_ckpt:
+                print(f"  [INFO] Skipping Gemma stage1 checkpoint {stage1_ckpt} for Qwen backbone.", flush=True)
+            else:
+                contract = ckpt.get("training_contract") or {}
+                from cts.train.stage2_ppo_train import (
+                    validate_stage1_accuracy_contract,
+                )
+
+                source_model = contract.get("model_id")
+                requested_model = cfg.get("gemma_model_id", model_dir)
+                if not source_model:
+                    raise RuntimeError(
+                        "Stage-1 checkpoint has no model provenance; retrain "
+                        "before headline CTS evaluation"
+                    )
+                if _model_family_id(source_model) != _model_family_id(requested_model):
+                    raise RuntimeError(
+                        "Stage-1/eval backbone mismatch: "
+                        f"stage1={source_model!r}, eval={requested_model!r}"
+                    )
+                validate_stage1_accuracy_contract(
+                    ckpt,
+                    expected_model_id=str(requested_model),
+                )
+                bb.load_state_dict(sd, strict=True)
+        elif model_name == "gemma":
+            raise FileNotFoundError(
+                "CTS headline evaluation requires artifacts/stage1_last.pt"
+            )
+
+        K = int(cfg.get("soft_thought_K", 64))
+        H = bb.hidden_size
+        W = int(cfg.get("mcts_branching_W", 3))
+        tau_budget = float(cfg.get("tau_flops_budget", 1e14))
+
+        if method == "deq_only":
+            from cts.deq.transition import transition
+            nu = NuVector(nu_tol=5e-3, nu_temp=1.0, nu_expl=1.0)
+            for prob in problems:
+                q = _get_question(prob, benchmark)
+                gold = _get_gold(prob, benchmark)
+                if not q:
+                    continue
+                budget = RuntimeBudgetState()
+                try:
+                    r = transition(
+                        str(q), 0, nu, budget, bb,
+                        K=K, d=H,
+                        broyden_max_iter=30,
+                        broyden_tol_min=1e-4,
+                        broyden_tol_max=1e-2,
+                        tau_flops_budget=1e20,
+                    )
+                    pred_raw = r.child_text or ""
+                    _deq_pred = _extract_pred(pred_raw, benchmark) if pred_raw else ""
+                    # This row measures DEQ, not a DEQ/greedy hybrid.  Empty or
+                    # degenerate decodes remain incorrect and must never be
+                    # replaced by a stronger baseline under the same label.
+                    pred = _deq_pred
+                except Exception as exc:
+                    raise RuntimeError(
+                        f"DEQ-only infrastructure failure: {exc}"
+                    ) from exc
+                match = _match_answer(str(pred), str(gold), benchmark)
+                scores.append(1.0 if match else 0.0)
+        else:
+            from cts.critic.neuro_critic import NeuroCritic
+            from cts.latent.faiss_context import LatentContextWindow
+            from cts.mcts.cts_episode import cts_full_episode
+            from cts.policy.meta_policy import MetaPolicy
+
+            meta_policy = MetaPolicy(text_dim=H, hidden=256, W=W).to(device)
+            critic = NeuroCritic(z_dim=H).to(device)
+
+            # Use the same complete Stage-2 contract as every auxiliary CTS
+            # baseline.  The legacy block below is retained temporarily for
+            # report compatibility, but it can no longer admit a checkpoint
+            # that fails K/W/Broyden/decode/model/Stage-1 provenance.
+            from cts.eval.cts_eval_stack import load_stage2_heads
+
+            load_stage2_heads(
+                meta_policy=meta_policy,
+                critic=critic,
+                device=device,
+                stage1_ckpt=stage1_ckpt,
+                expected_model_id=str(cfg.get("gemma_model_id", model_dir)),
+            )
+
+            stage2_ckpt = Path("artifacts/stage2_meta_value.pt")
+            stage1_ckpt_present = stage1_ckpt.exists()
+            stage2_ckpt_present = stage2_ckpt.exists()
+            if stage2_ckpt_present:
+                s2 = torch.load(stage2_ckpt, map_location=device, weights_only=True)
+                if int(s2.get("schema_version", 0)) < 3:
+                    raise RuntimeError(
+                        "legacy Stage-2 checkpoint did not train the exact "
+                        "Eq.3 history/Broyden/answer trajectory contract"
+                    )
+                training_meta = s2.get("training_meta") or {}
+                if not bool(training_meta.get("accuracy_contract_valid")):
+                    raise RuntimeError(
+                        "Stage-2 checkpoint failed the accuracy training "
+                        "contract; refusing random/legacy headline evaluation"
+                    )
+                if (
+                    int(training_meta.get("stage1_contract_version", 0)) != 5
+                    or not bool(
+                        training_meta.get("stage1_accuracy_contract_valid")
+                    )
+                ):
+                    raise RuntimeError(
+                        "Stage-2 was not trained from a validated Stage-1 v5 "
+                        "accuracy contract"
+                    )
+                if _model_family_id(training_meta.get("model_id")) != _model_family_id(
+                    cfg.get("gemma_model_id", model_dir)
+                ):
+                    raise RuntimeError("Stage-2/eval model provenance mismatch")
+                recorded_s1 = training_meta.get("stage1_sha256")
+                if not recorded_s1:
+                    raise RuntimeError(
+                        "Stage-2 checkpoint lacks the exact Stage-1 SHA-256"
+                    )
+                if recorded_s1 != _sha256_file(stage1_ckpt):
+                    raise RuntimeError(
+                        "Stage-2 was trained from a different Stage-1 checkpoint"
+                    )
+                # Stage-2 PPO trainer historically saved under the legacy keys
+                # `meta` / `critic_z`. The current trainer also saves under the
+                # canonical keys `meta_policy_state_dict` / `critic_state_dict`.
+                # Accept either so that older checkpoints keep loading.
+                meta_state = s2.get("meta_policy_state_dict") or s2.get("meta")
+                critic_state = s2.get("critic_state_dict") or s2.get("critic_z")
+                loaded_mp = meta_state is not None
+                loaded_cr = critic_state is not None
+                if loaded_mp:
+                    meta_policy.load_state_dict(meta_state, strict=True)
+                if loaded_cr:
+                    critic.load_state_dict(critic_state, strict=True)
+                if not (loaded_mp and loaded_cr):
+                    raise RuntimeError(
+                        "Stage-2 checkpoint is missing trained policy/critic"
+                    )
+                print(
+                    f"  [ckpt] stage1={stage1_ckpt_present} stage2={stage2_ckpt_present} "
+                    f"(meta_policy={loaded_mp}, critic={loaded_cr})", flush=True,
+                )
+            else:
+                raise FileNotFoundError(
+                    "CTS headline evaluation requires "
+                    "artifacts/stage2_meta_value.pt"
+                )
+                print(
+                    f"  [WARN] stage2 ckpt missing at {stage2_ckpt} — using random-init "
+                    f"meta_policy/critic. Results will be NOT representative of paper. "
+                    f"Run scripts/run_stage2_math_ppo.py first to reproduce headline numbers.",
+                    flush=True,
+                )
+            if not stage1_ckpt_present:
+                print(
+                    f"  [WARN] stage1 ckpt missing at {stage1_ckpt} — backbone is base Gemma "
+                    f"(no DEQ warm-up). Run scripts/run_stage1_openmath.py first.",
+                    flush=True,
+                )
+            meta_policy.eval()
+            critic.eval()
+
+            # Headline runs default to the paper's full 1e14 MAC budget and no
+            # wall-clock truncation.  Reduced caps are opt-in diagnostics;
+            # silently applying a 1/10 budget was an accuracy experiment, not
+            # a reproduction of the reported CTS-4nu result.
+            cap_raw = os.environ.get("CTS_EVAL_TAU_CAP")
+            eval_tau = (
+                min(tau_budget, float(cap_raw))
+                if cap_raw is not None
+                else tau_budget
+            )
+            episode_timeout_s = float(
+                os.environ.get("CTS_EVAL_EPISODE_TIMEOUT", "0")
+            )
+
+            for pi, prob in enumerate(problems):
+                q = _get_question(prob, benchmark)
+                gold = _get_gold(prob, benchmark)
+                if not q:
+                    continue
+                faiss_ctx = LatentContextWindow(dim=H, retrieval_k=3, min_steps=10)
+                pred_raw = ""
+                _elapsed = 0.0
+                tree_size = 0
+                max_depth = 0
+                total_mac = 0.0
+                episode_ok = False
+                _nu_buf: List[Any] = [] if nu_jsonl is not None else None  # type: ignore[assignment]
+                try:
+                    import time as _time
+                    if torch.cuda.is_available():
+                        torch.cuda.synchronize(torch.device(device))
+                    _t0 = _time.perf_counter()
+                    # Per-(seed, problem) RNG seeds so distinct seeds explore
+                    # distinct trees rather than collapsing to identical
+                    # greedy outputs (root cause of std=0.0 in earlier runs).
+                    _z0s = (seed * 100_000 + pi) & 0x7FFFFFFF
+                    _sels = (seed * 100_000 + pi + 1) & 0x7FFFFFFF
+                    # Paper Table 5 nu-component Pareto: cts_4nu keeps every
+                    # meta-policy output live; cts_2nu freezes {tol, act} at
+                    # the Stage 1 converged means and runs only {expl, temp}.
+                    # Mode switching requires NO retraining (paper §7.5).
+                    _nu_mode = "2nu_fast" if method == "cts_2nu" else "4nu"
+                    # ``eval()`` does not disable autograd.  Without this
+                    # guard every Broyden phi evaluation can retain a Gemma
+                    # graph, inflating latency and fragmenting VRAM across the
+                    # tree.  Evaluation is strictly inference-only.
+                    with torch.inference_mode():
+                        _raw_question = str(q)
+                        _decode_prompt = (
+                            _build_prompt(
+                                _raw_question,
+                                benchmark,
+                                native_think=False,
+                            )
+                            if benchmark in {"math500", "gsm8k", "aime", "aime_90"}
+                            else _raw_question
+                        )
+                        result = cts_full_episode(
+                            _raw_question,
+                            backbone=bb,
+                            meta_policy=meta_policy,
+                            critic=critic,
+                            W=W,
+                            K=K,
+                            tau_budget=eval_tau,
+                            broyden_max_iter=int(cfg.get("broyden_max_iter", 30)),
+                            broyden_tol_min=float(cfg.get("broyden_tol_min", 1e-4)),
+                            broyden_tol_max=float(cfg.get("broyden_tol_max", 1e-2)),
+                            top_k=int(cfg.get("top_k_modules", 3)),
+                            puct_variant=str(cfg.get("puct_variant", "paper")),
+                            faiss_context=faiss_ctx,
+                            max_decode_tokens=int(cfg.get("max_new_tokens", 64)),
+                            device=torch.device(device),
+                            wall_clock_budget_s=episode_timeout_s,
+                            z0_seed=_z0s,
+                            selection_seed=_sels,
+                            nu_config_mode=_nu_mode,
+                            nu_trace=_nu_buf,
+                            require_root_convergence=bool(
+                                cfg.get("require_root_convergence", True)
+                            ),
+                            decode_prompt=_decode_prompt,
+                            batch_siblings=bool(cfg.get("batch_siblings", True)),
+                            strict_decode=True,
+                        )
+                    if torch.cuda.is_available():
+                        torch.cuda.synchronize(torch.device(device))
+                    pred_raw = result.answer or ""
+                    if model_name == "gemma" and not bool(
+                        result.stats.get("mac_headline_eligible", False)
+                    ):
+                        raise RuntimeError(
+                            "CTS episode did not use the Gemma-4 E4B MAC-v2 "
+                            "headline contract"
+                        )
+                    if model_name == "gemma" and int(
+                        result.stats.get("mac_lut_schema_version", 0)
+                    ) != 2:
+                        raise RuntimeError("CTS episode MAC LUT schema is not v2")
+                    tree_size = result.stats.get("tree_size", 0)
+                    max_depth = result.stats.get("max_depth", 0)
+                    total_mac = result.total_mac
+                    episode_ok = True
+                    _elapsed = _time.perf_counter() - _t0
+                    # First, attempt extraction from CTS soft-prompt decode
+                    _cts_pred = _extract_pred(pred_raw, benchmark) if pred_raw else ""
+                    # Track invalid/garbage math decodes explicitly.  Headline
+                    # CTS still scores this raw answer as incorrect; an
+                    # optional greedy replacement is reported only as a
+                    # separately named hybrid diagnostic below.
+                    _is_garbage = is_garbage_math(benchmark, _cts_pred)
+                    _needs_fallback = bool(
+                        not pred_raw
+                        or len(pred_raw.strip()) < 3
+                        or pred_raw.strip() == "obar"
+                        or _is_garbage
+                    )
+                    # Headline CTS accuracy is always the raw CTS answer.  A
+                    # greedy replacement is a different hybrid method and
+                    # must never be scored under the CTS label.  It can be
+                    # computed explicitly as a diagnostic-only metric via an
+                    # opt-in environment flag.
+                    pred = _cts_pred
+                    _used_fallback = _needs_fallback
+                    _fallback_reason = "garbage_or_empty" if _needs_fallback else None
+                    _hybrid_pred = pred
+                    if _needs_fallback and compute_hybrid_diagnostic:
+                        fallback_prompt = _build_prompt(q, benchmark, native_think=False)
+                        fallback_raw = predictor(
+                            fallback_prompt,
+                            max_new_tokens=pred_max_tok,
+                            enable_thinking=False,
+                        ) if predictor else ""
+                        _hybrid_pred = (
+                            _extract_pred(str(fallback_raw), benchmark)
+                            if fallback_raw else ""
+                        )
+                    if episode_ok:
+                        _tag = "cts-invalid" if _used_fallback else "cts"
+                        print(f"    prob {pi+1}/{len(problems)} tree={tree_size} depth={max_depth} "
+                              f"mac={total_mac:.2e} time={_elapsed:.1f}s pred[{_tag}]='{str(pred)[:40]}' "
+                              f"gold='{str(gold)[:40]}'", flush=True)
+                    else:
+                        print(f"    prob {pi+1}/{len(problems)} fallback time={_elapsed:.1f}s "
+                              f"pred='{str(pred)[:40]}' gold='{str(gold)[:40]}'", flush=True)
+                except Exception as exc:
+                    # Fail closed.  OOM/shape/cache failures are CTS failures,
+                    # not permission to substitute a baseline answer.
+                    print(f"  [CTS episode error] {exc}", flush=True)
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+                    raise RuntimeError(
+                        f"CTS episode infrastructure failure on problem {pi}: {exc}"
+                    ) from exc
+                if benchmark == "humaneval":
+                    completion = _extract_humaneval_completion(str(pred), q, prob.get("entry_point", ""))
+                    match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+                else:
+                    match = _match_answer(str(pred), str(gold), benchmark)
+                scores.append(1.0 if match else 0.0)
+                cts_fallback_flags.append(bool(_used_fallback))
+                cts_fallback_reasons.append(_fallback_reason)
+                if compute_hybrid_diagnostic:
+                    if benchmark == "humaneval":
+                        hybrid_completion = _extract_humaneval_completion(
+                            str(_hybrid_pred), q, prob.get("entry_point", "")
+                        )
+                        hybrid_match = _humaneval_pass(
+                            q,
+                            hybrid_completion,
+                            prob.get("test", ""),
+                            prob.get("entry_point", ""),
+                        )
+                    else:
+                        hybrid_match = _match_answer(
+                            str(_hybrid_pred), str(gold), benchmark
+                        )
+                    cts_hybrid_scores.append(1.0 if hybrid_match else 0.0)
+                if _nu_buf is not None:
+                    _append_nu_trace_record(
+                        nu_jsonl, method=method, benchmark=benchmark, seed=seed,
+                        problem_id=_problem_id(prob, benchmark, pi), nu_buf=_nu_buf,
+                    )
+                # Per-problem CUDA cache flush. The CTS-4ν tree expansion
+                # The optimized path keeps the allocator warm; only the
+                # explicit error/OOM branch clears it.
+
+    elif method == "native_think":
+        # native_think benefits from a larger budget so the chat template can
+        # emit a full chain-of-thought before the boxed answer. HumanEval keeps
+        # its already-large pred_max_tok (1024); other benchmarks get up to 2x
+        # pred_max_tok capped at 2048 (was 256 — that previous cap made
+        # native_think *stricter* than greedy on AIME/MATH, which silently
+        # mis-represented the baseline comparison).
+        nt_max_tok = pred_max_tok if benchmark == "humaneval" else min(2 * pred_max_tok, 2048)
+        for prob in problems:
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            prompt = _build_prompt(q, benchmark, native_think=True)
+            raw_pred = predictor(
+                prompt, max_new_tokens=nt_max_tok, enable_thinking=True
+            )
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(str(raw_pred), q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+                pred = completion[:40]
+            else:
+                pred = _extract_pred(str(raw_pred), benchmark)
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            print(
+                f"    [{method}/{benchmark}] gold='{str(gold)[:40]}' "
+                f"pred='{str(pred)[:40]}' match={match}", flush=True,
+            )
+
+    elif method == "think_off_greedy":
+        # Paper Table 2 row "Greedy (Think-OFF)" — Gemma 4 chat template
+        # WITH the system-side ``enable_thinking=False`` directive but no
+        # CTS / no native-think CoT. ``_build_prompt`` already produces a
+        # plain (non-chat) "Solve the following ... Solution:" string for
+        # the math benchmarks when ``native_think=False``; that prompt is
+        # ALREADY think-off. We therefore route through the chat template
+        # explicitly, prefacing the user turn with the
+        # "Do not show your reasoning" directive, so the resulting numbers
+        # are distinguishable from the bare-prompt ``greedy`` baseline.
+        for prob in problems:
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            if benchmark == "humaneval":
+                prompt = _build_prompt(q, benchmark, native_think=False)
+            elif benchmark == "arc_agi_text":
+                prompt = (
+                    "Answer the following multiple-choice science question. "
+                    "Output ONLY the letter (A, B, C, or D). Do not show your "
+                    f"reasoning.\n\n{q}"
+                )
+            else:
+                prompt = (
+                    "Solve the following math problem. Output ONLY the final "
+                    f"answer in \\boxed{{}}. Do not show reasoning steps.\n\n{q}"
+                )
+            raw_pred = predictor(
+                prompt, max_new_tokens=pred_max_tok, enable_thinking=False
+            )
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(str(raw_pred), q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+                pred = completion[:40]
+            else:
+                pred = _extract_pred(str(raw_pred), benchmark)
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            print(
+                f"    [{method}/{benchmark}] gold='{str(gold)[:40]}' "
+                f"pred='{str(pred)[:40]}' match={match}", flush=True,
+            )
+
+    elif method == "ft_nt":
+        # Paper Table 2: Stage-1 LoRA + native-think AR (no DEQ / no MCTS).
+        from pathlib import Path as _Path
+
+        stage1_ckpt = _Path("artifacts/stage1_last.pt")
+        is_qwen = "qwen" in (model_name or "").lower() or "qwen" in type(model).__name__.lower()
+        if is_qwen or not stage1_ckpt.exists():
+            if is_qwen:
+                print("  [INFO] ft_nt: Qwen model detected; falling back to bare native_think.", flush=True)
+            else:
+                print(
+                    f"  [WARN] ft_nt: stage1 checkpoint missing at {stage1_ckpt}; "
+                    f"falling back to bare native_think baseline.",
+                    flush=True,
+                )
+            ft_predictor = predictor
+        else:
+            try:
+                ft_predictor = _get_ft_nt_predictor(device, model_dir, cfg)
+            except Exception as exc:
+                print(f"  [WARN] ft_nt LoRA load failed: {exc}; using native_think.", flush=True)
+                ft_predictor = predictor
+        nt_max_tok = pred_max_tok if benchmark == "humaneval" else min(2 * pred_max_tok, 2048)
+        for prob in problems:
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            prompt = _build_prompt(q, benchmark, native_think=True)
+            raw_pred = ft_predictor(
+                prompt, max_new_tokens=nt_max_tok, enable_thinking=True
+            )
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(str(raw_pred), q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+                pred = completion[:40]
+            else:
+                pred = _extract_pred(str(raw_pred), benchmark)
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+
+    elif method == "sc_14":
+        # Paper Table 2 row "Self-Consistency @ K=14" (Wang et al. 2023):
+        # sample 14 native-think completions with temperature=0.7 and pick
+        # the majority-voted final answer. We honor the same per-(seed,
+        # problem) RNG strategy as cts_4nu so multi-seed runs do not
+        # collapse to identical samples.
+        import torch as _torch
+        from collections import Counter as _Counter
+
+        K_SC = 14
+        sc_temp = 0.7
+        nt_max_tok = pred_max_tok if benchmark == "humaneval" else min(2 * pred_max_tok, 2048)
+        for pi, prob in enumerate(problems):
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            prompt = _build_prompt(q, benchmark, native_think=True)
+            preds_k: List[str] = []
+            for k in range(K_SC):
+                _torch.manual_seed((seed * 100_000 + pi * K_SC + k) & 0x7FFFFFFF)
+                try:
+                    raw_pred = predictor(
+                        prompt, max_new_tokens=nt_max_tok,
+                        temperature=sc_temp, do_sample=True,
+                        enable_thinking=True,
+                    )
+                except TypeError:
+                    raw_pred = predictor(
+                        prompt, max_new_tokens=nt_max_tok, enable_thinking=True
+                    )
+                preds_k.append(_extract_pred(str(raw_pred), benchmark))
+            voted = _Counter([p for p in preds_k if p]).most_common(1)
+            pred = voted[0][0] if voted else ""
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(pred, q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+            else:
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            print(
+                f"    [sc_14/{benchmark}] votes_top='{str(pred)[:40]}' "
+                f"gold='{str(gold)[:40]}' match={match}", flush=True,
+            )
+
+    elif method == "bon_13":
+        # Paper Table 2: sample N=13 native-think chains; Neuro-Critic V_psi
+        # selects the best candidate (Stage-2 critic checkpoint).
+        import torch as _torch
+
+        from cts.baselines.bon_critic import bon_select_pred_with_critic
+        from cts.critic.neuro_critic import NeuroCritic
+        from cts.eval.cts_eval_stack import load_cts_backbone_with_stage1, load_stage2_heads
+        from cts.policy.meta_policy import MetaPolicy
+
+        N_BON = 13
+        bon_temp = 0.7
+        nt_max_tok = pred_max_tok if benchmark == "humaneval" else min(2 * pred_max_tok, 2048)
+        bb_bon = load_cts_backbone_with_stage1(model, tok, cfg=cfg)
+        H = bb_bon.hidden_size
+        critic_bon = NeuroCritic(z_dim=H)
+        meta_bon = MetaPolicy(text_dim=H, hidden=256, W=int(cfg.get("mcts_branching_W", 3)))
+        load_stage2_heads(
+            meta_policy=meta_bon,
+            critic=critic_bon,
+            device=device,
+            expected_model_id=str(cfg.get("gemma_model_id", model_dir)),
+        )
+        try:
+            ft_pred = _get_ft_nt_predictor(device, model_dir, cfg)
+        except Exception:
+            ft_pred = predictor
+        for pi, prob in enumerate(problems):
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            prompt = _build_prompt(q, benchmark, native_think=True)
+            raw_k: List[str] = []
+            for k in range(N_BON):
+                _torch.manual_seed((seed * 100_000 + pi * N_BON + k) & 0x7FFFFFFF)
+                raw_k.append(
+                    ft_pred(
+                        prompt,
+                        max_new_tokens=nt_max_tok,
+                        temperature=bon_temp,
+                        do_sample=True,
+                        enable_thinking=True,
+                    )
+                )
+            pred = bon_select_pred_with_critic(
+                critic=critic_bon,
+                backbone=bb_bon,
+                raw_candidates=raw_k,
+                extract_pred_fn=_extract_pred,
+                benchmark=benchmark,
+                device=_torch.device(device),
+            )
+            if benchmark == "humaneval":
+                completion = _extract_humaneval_completion(pred, q, prob.get("entry_point", ""))
+                match = _humaneval_pass(q, completion, prob.get("test", ""), prob.get("entry_point", ""))
+            else:
+                match = _match_answer(pred, str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            print(
+                f"    [bon_13/{benchmark}] best='{str(pred)[:40]}' "
+                f"gold='{str(gold)[:40]}' match={match}", flush=True,
+            )
+
+    elif method == "bandit_ucb1":
+        # Paper Table 2: 20-arm UCB1 bandit (c=sqrt(2)) over nu_expl.
+        from cts.baselines.ucb1_nu import UCB1NuExplBandit
+        from cts.critic.neuro_critic import NeuroCritic
+        from cts.eval.cts_eval_stack import eval_tau_and_timeout, load_cts_backbone_with_stage1, load_stage2_heads
+        from cts.latent.faiss_context import LatentContextWindow
+        from cts.mcts.cts_episode import cts_full_episode
+        from cts.policy.meta_policy import MetaPolicy
+
+        bb = load_cts_backbone_with_stage1(model, tok, cfg=cfg)
+        H = bb.hidden_size
+        W = int(cfg.get("mcts_branching_W", 3))
+        K = int(cfg.get("soft_thought_K", 64))
+        meta_policy = MetaPolicy(text_dim=H, hidden=256, W=W).to(device)
+        critic = NeuroCritic(z_dim=H).to(device)
+        load_stage2_heads(
+            meta_policy=meta_policy,
+            critic=critic,
+            device=device,
+            expected_model_id=str(cfg.get("gemma_model_id", model_dir)),
+        )
+        eval_tau, episode_timeout_s = eval_tau_and_timeout(cfg)
+        bandit = UCB1NuExplBandit(n_arms=20)
+        print(
+            f"  [bandit_ucb1] UCB1 over {bandit.n_arms} nu_expl bins "
+            f"(c={bandit.c:.3f}).",
+            flush=True,
+        )
+        for pi, prob in enumerate(problems):
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            arm, nu_expl = bandit.select()
+            faiss_ctx = LatentContextWindow(dim=H, retrieval_k=3, min_steps=10)
+            _nu_buf: List[Any] = [] if nu_jsonl is not None else None  # type: ignore[assignment]
+            try:
+                _z0s = (seed * 100_000 + pi) & 0x7FFFFFFF
+                _sels = (seed * 100_000 + pi + 1) & 0x7FFFFFFF
+                result = cts_full_episode(
+                    str(q), backbone=bb, meta_policy=meta_policy, critic=critic,
+                    W=W, K=K, tau_budget=eval_tau, broyden_max_iter=20,
+                    broyden_tol_min=1e-4, broyden_tol_max=1e-2, top_k=3,
+                    puct_variant="paper", faiss_context=faiss_ctx,
+                    max_decode_tokens=64, device=torch.device(device),
+                    wall_clock_budget_s=episode_timeout_s,
+                    z0_seed=_z0s, selection_seed=_sels,
+                    nu_config_mode="3nu_no_act",
+                    nu_expl_override=nu_expl,
+                    nu_trace=_nu_buf,
+                )
+                pred_raw = result.answer or ""
+                _cts_pred = _extract_pred(pred_raw, benchmark) if pred_raw else ""
+                # The selected arm is updated from the raw CTS reward.  Greedy
+                # substitution would alter both the reported baseline and the
+                # bandit's future arm choices, so it is never performed here.
+                pred = _cts_pred
+            except Exception as exc:
+                print(f"  [bandit_ucb1 error] {exc}", flush=True)
+                raise RuntimeError(
+                    f"bandit_ucb1 infrastructure failure: {exc}"
+                ) from exc
+            match = _match_answer(str(pred), str(gold), benchmark)
+            bandit.update(arm, 1.0 if match else 0.0)
+            scores.append(1.0 if match else 0.0)
+            if _nu_buf is not None:
+                _append_nu_trace_record(
+                    nu_jsonl, method=method, benchmark=benchmark, seed=seed,
+                    problem_id=_problem_id(prob, benchmark, pi), nu_buf=_nu_buf,
+                )
+
+    elif method == "mcts_early_stop":
+        # Paper Table 2 row "MCTS Early-Stop": run MCTS but halt as soon as
+        # the wall-clock budget is hit; this is the classical "no learned
+        # halting" baseline. We expose this as cts_full_episode with a
+        # tighter eval_tau (30% of the standard cap) AND
+        # nu_config_mode="2nu_fast" to disable the learned ACT halting
+        # signal (since early-stop replaces it).
+        from cts.critic.neuro_critic import NeuroCritic
+        from cts.eval.cts_eval_stack import (
+            load_cts_backbone_with_stage1,
+            load_stage2_heads,
+        )
+        from cts.latent.faiss_context import LatentContextWindow
+        from cts.mcts.cts_episode import cts_full_episode
+        from cts.policy.meta_policy import MetaPolicy
+        bb = load_cts_backbone_with_stage1(model, tok, cfg=cfg)
+        H = bb.hidden_size; W = int(cfg.get("mcts_branching_W", 3))
+        K = int(cfg.get("soft_thought_K", 64))
+        meta_policy = MetaPolicy(text_dim=H, hidden=256, W=W).to(device)
+        critic = NeuroCritic(z_dim=H).to(device)
+        load_stage2_heads(
+            meta_policy=meta_policy,
+            critic=critic,
+            device=device,
+            expected_model_id=str(cfg.get("gemma_model_id", model_dir)),
+        )
+        _tau = float(cfg.get("tau_flops_budget", 1e14))
+        _cap = os.environ.get("CTS_EVAL_TAU_CAP")
+        eval_tau = min(_tau, float(_cap)) * 0.3 if _cap is not None else _tau * 0.3
+        episode_timeout_s = float(os.environ.get("CTS_EVAL_EPISODE_TIMEOUT", "60"))
+        for pi, prob in enumerate(problems):
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            faiss_ctx = LatentContextWindow(dim=H, retrieval_k=3, min_steps=10)
+            _nu_buf: List[Any] = [] if nu_jsonl is not None else None  # type: ignore[assignment]
+            try:
+                _z0s = (seed * 100_000 + pi) & 0x7FFFFFFF
+                _sels = (seed * 100_000 + pi + 1) & 0x7FFFFFFF
+                result = cts_full_episode(
+                    str(q), backbone=bb, meta_policy=meta_policy, critic=critic,
+                    W=W, K=K, tau_budget=eval_tau, broyden_max_iter=12,
+                    broyden_tol_min=1e-3, broyden_tol_max=1e-2, top_k=3,
+                    puct_variant="paper", faiss_context=faiss_ctx,
+                    max_decode_tokens=64, device=torch.device(device),
+                    wall_clock_budget_s=episode_timeout_s,
+                    z0_seed=_z0s, selection_seed=_sels,
+                    nu_config_mode="2nu_fast",
+                    nu_trace=_nu_buf,
+                )
+                pred = _extract_pred(result.answer or "", benchmark)
+            except Exception as exc:
+                raise RuntimeError(
+                    f"mcts_early_stop infrastructure failure: {exc}"
+                ) from exc
+            match = _match_answer(str(pred), str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            if _nu_buf is not None:
+                _append_nu_trace_record(
+                    nu_jsonl, method=method, benchmark=benchmark, seed=seed,
+                    problem_id=_problem_id(prob, benchmark, pi), nu_buf=_nu_buf,
+                )
+
+    elif method == "expl_mcts_ppo":
+        # Paper Table 2 row "Expl. MCTS + PPO" (D-2 ablation): explicit
+        # MCTS with PPO-trained policy/value but NO FAISS retrieval. We
+        # route through cts_4nu WITHOUT the latent context window and with
+        # a depth cap of 15 (paper's stated D <= 15 OOM-cap protocol).
+        from cts.critic.neuro_critic import NeuroCritic
+        from cts.eval.cts_eval_stack import (
+            load_cts_backbone_with_stage1,
+            load_stage2_heads,
+        )
+        from cts.mcts.cts_episode import cts_full_episode
+        from cts.policy.meta_policy import MetaPolicy
+        bb = load_cts_backbone_with_stage1(model, tok, cfg=cfg)
+        H = bb.hidden_size; W = int(cfg.get("mcts_branching_W", 3))
+        K = int(cfg.get("soft_thought_K", 64))
+        meta_policy = MetaPolicy(text_dim=H, hidden=256, W=W).to(device)
+        critic = NeuroCritic(z_dim=H).to(device)
+        load_stage2_heads(
+            meta_policy=meta_policy,
+            critic=critic,
+            device=device,
+            expected_model_id=str(cfg.get("gemma_model_id", model_dir)),
+        )
+        _tau = float(cfg.get("tau_flops_budget", 1e14))
+        _cap = os.environ.get("CTS_EVAL_TAU_CAP")
+        eval_tau = min(_tau, float(_cap)) if _cap is not None else _tau
+        episode_timeout_s = float(os.environ.get("CTS_EVAL_EPISODE_TIMEOUT", "0"))
+        for pi, prob in enumerate(problems):
+            q = _get_question(prob, benchmark)
+            gold = _get_gold(prob, benchmark)
+            if not q:
+                continue
+            _nu_buf: List[Any] = [] if nu_jsonl is not None else None  # type: ignore[assignment]
+            try:
+                _z0s = (seed * 100_000 + pi) & 0x7FFFFFFF
+                _sels = (seed * 100_000 + pi + 1) & 0x7FFFFFFF
+                result = cts_full_episode(
+                    str(q), backbone=bb, meta_policy=meta_policy, critic=critic,
+                    W=W, K=K, tau_budget=eval_tau, broyden_max_iter=15,
+                    broyden_tol_min=1e-4, broyden_tol_max=1e-2, top_k=3,
+                    puct_variant="paper",
+                    faiss_context=None,  # NO latent context window
+                    max_decode_tokens=64, device=torch.device(device),
+                    wall_clock_budget_s=episode_timeout_s,
+                    z0_seed=_z0s, selection_seed=_sels,
+                    nu_config_mode="4nu",
+                    nu_trace=_nu_buf,
+                )
+                pred = _extract_pred(result.answer or "", benchmark)
+            except Exception as exc:
+                raise RuntimeError(
+                    f"expl_mcts_ppo infrastructure failure: {exc}"
+                ) from exc
+            match = _match_answer(str(pred), str(gold), benchmark)
+            scores.append(1.0 if match else 0.0)
+            if _nu_buf is not None:
+                _append_nu_trace_record(
+                    nu_jsonl, method=method, benchmark=benchmark, seed=seed,
+                    problem_id=_problem_id(prob, benchmark, pi), nu_buf=_nu_buf,
+                )
+
+    else:
+        # Truly-unknown method name; we no longer fall through to greedy
+        # because that silently mis-labels baseline numbers. Adding a new
+        # baseline must be a code change, not a config typo.
+        raise NotImplementedError(
+            f"Unknown evaluation method `{method}`. Integrated set: "
+            f"greedy, native_think, deq_only, cts_2nu, cts_4nu, "
+            f"think_off_greedy, ft_nt, sc_14, bon_13, bandit_ucb1, "
+            f"mcts_early_stop, expl_mcts_ppo."
+        )
+
+    if diagnostics is not None and method in ("cts_4nu", "cts_2nu"):
+        diagnostics["cts_raw_accuracy"] = (
+            sum(scores) / max(1, len(scores))
+        )
+        diagnostics["fallback_rate"] = (
+            sum(1 for flag in cts_fallback_flags if flag)
+            / max(1, len(cts_fallback_flags))
+        )
+        diagnostics["fallback_reasons"] = cts_fallback_reasons
+        diagnostics["hybrid_fallback_metric_enabled"] = bool(
+            compute_hybrid_diagnostic
+        )
+        if compute_hybrid_diagnostic:
+            diagnostics["hybrid_greedy_fallback_accuracy"] = (
+                sum(cts_hybrid_scores) / max(1, len(cts_hybrid_scores))
+            )
+    return scores
+
+
+def run_table2_reproduction(
+    *,
+    seeds: List[int],
+    benchmarks: List[str],
+    config_name: str = "default",
+    device: str = "cuda:0",
+    output_dir: str = "results/table2",
+    model_dir: Optional[str] = None,
+    limit: Optional[int] = None,
+    nu_trace_dir: Optional[Path] = None,
+    resume_partial: bool = False,
+    model_name: str = "gemma",
+) -> Dict[str, Dict[str, StatisticalResult]]:
+    """Reproduce Table 2 with full statistical protocol.
+
+    ``nu_trace_dir`` (or env var ``CTS_NU_TRACE_DIR``): when set, every CTS
+    dispatcher writes per-problem ν JSONL traces; ``aggregate_nu_table19.py``
+    then folds those into Table 19.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    all_results: Dict[str, Dict[str, List[float]]] = {}
+
+    # Partial-save snapshot path. Written after every (method, seed, bench)
+    # cell so a timeout / crash mid-sweep never produces an empty
+    # ``table2_results.json``. The post-Stage-2 pipeline run on Apr 28
+    # surfaced exactly this failure mode (24 h Table 2 timeout produced
+    # zero salvageable JSON); see CHANGELOG D-7 entry. The partial snapshot
+    # uses ``n_samples=len(scores)`` per cell so reviewers can tell which
+    # cells are complete vs in-progress.
+    partial_path = Path(output_dir) / "table2_results.partial.json"
+
+    def _load_partial() -> Dict[str, Dict[str, List[float]]]:
+        loaded: Dict[str, Dict[str, List[float]]] = {
+            m: {b: [] for b in benchmarks} for m in TABLE2_METHODS
+        }
+        if not resume_partial or not partial_path.is_file():
+            return loaded
+        try:
+            data = json.loads(partial_path.read_text(encoding="utf-8"))
+            raw = data.get("raw_scores") or {}
+            for m in TABLE2_METHODS:
+                for b in benchmarks:
+                    loaded[m][b] = list((raw.get(m) or {}).get(b) or [])
+            n_done = sum(len(loaded[m][b]) for m in TABLE2_METHODS for b in benchmarks)
+            print(f"  [resume-partial] loaded {n_done} completed (method,bench,seed) cells", flush=True)
+        except (json.JSONDecodeError, OSError, TypeError) as exc:
+            print(f"  [warn] resume-partial load failed: {exc}", flush=True)
+        return loaded
+
+    def _cell_done(results: Dict[str, Dict[str, List[float]]], method: str, bench: str, seed: int) -> bool:
+        seed_i = seeds.index(seed)
+        return len(results.get(method, {}).get(bench, [])) > seed_i
+
+    def _flush_partial() -> None:
+        try:
+            snap_table2: Dict[str, Dict[str, StatisticalResult]] = {}
+            for m_, bd in all_results.items():
+                snap_table2[m_] = {}
+                for b_, scores_ in bd.items():
+                    if scores_:
+                        snap_table2[m_][b_] = bootstrap_ci(scores_, ci_level=0.95)
+            partial_payload: Dict[str, Any] = {}
+            for m_, bench_data in snap_table2.items():
+                partial_payload[m_] = {}
+                for b_, stat in bench_data.items():
+                    partial_payload[m_][b_] = {
+                        "mean": stat.mean,
+                        "std": stat.std,
+                        "ci_lower": stat.ci_lower,
+                        "ci_upper": stat.ci_upper,
+                        "n_samples": stat.n_samples,
+                    }
+            with open(partial_path, "w") as pf:
+                json.dump(
+                    {
+                        "partial": True,
+                        "wrote_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                        "table2": partial_payload,
+                        "raw_scores": {
+                            m_: {b_: scores_ for b_, scores_ in bd.items()}
+                            for m_, bd in all_results.items()
+                        },
+                    },
+                    pf, indent=2,
+                )
+        except Exception as _exc:
+            print(f"  [warn] partial-save failed: {_exc}", flush=True)
+
+    all_results = _load_partial()
+
+    for method in TABLE2_METHODS:
+        if method not in all_results:
+            all_results[method] = {b: [] for b in benchmarks}
+        for seed in seeds:
+            for bench in benchmarks:
+                if _cell_done(all_results, method, bench, seed):
+                    print(f"  [skip partial] [{method}] {bench} seed={seed}", flush=True)
+                    continue
+                print(f"  [{method}] {bench} seed={seed}", flush=True)
+                result = run_single_evaluation(
+                    method, bench, seed,
+                    config_name=config_name,
+                    device=device,
+                    model_dir=model_dir,
+                    limit=limit,
+                    nu_trace_dir=nu_trace_dir,
+                    model_name=model_name,
+                )
+                if not bool(result.get("valid", False)):
+                    raise RuntimeError(
+                        f"invalid evaluation cell {method}/{bench}/seed={seed}: "
+                        f"{result.get('error', 'unknown error')}"
+                    )
+                acc = float(result["accuracy"])
+                all_results[method][bench].append(acc)
+                _flush_partial()
+
+    table2: Dict[str, Dict[str, StatisticalResult]] = {}
+    for method in TABLE2_METHODS:
+        table2[method] = {}
+        for bench in benchmarks:
+            scores = all_results[method][bench]
+            table2[method][bench] = bootstrap_ci(scores, ci_level=0.95)
+
+    _print_table2(table2, benchmarks)
+    _run_wilcoxon_tests(all_results, benchmarks, output_dir)
+    _save_results(all_results, table2, output_dir)
+
+    return table2
+
+
+def _print_table2(
+    table2: Dict[str, Dict[str, StatisticalResult]],
+    benchmarks: List[str],
+) -> None:
+    """Print Table 2 in paper format."""
+    print("\n" + "=" * 80)
+    print("Table 2: Budget-capped performance (10^14 MACs max)")
+    print("=" * 80)
+
+    header = f"{'Method':<25}" + "".join(f"{b:>12}" for b in benchmarks)
+    print(header)
+    print("-" * len(header))
+
+    for method, bench_stats in table2.items():
+        row = f"{method:<25}"
+        for bench in benchmarks:
+            s = bench_stats.get(bench)
+            if s and s.n_samples > 0:
+                ci_half = (s.ci_upper - s.ci_lower) / 2.0 * 100
+                row += f"{s.mean * 100:>8.1f}+-{ci_half:.1f}"
+            else:
+                row += f"{'N/A':>12}"
+        print(row)
+    print("=" * 80)
+
+
+# --- Statistical primary comparisons (Bonferroni family) ---
+#
+# Paper §7.1 defines the headline statistical claim as
+# "Bonferroni-corrected over 12 primary comparisons (CTS-4nu vs four strongest
+# baselines x three math benchmarks; alpha = 0.05/12)".
+#
+# IMPORTANT — single-GPU snapshot disclosure (NeurIPS reviewer-facing):
+# Paper §7.1 headline Bonferroni family: n = 12 primary comparisons of
+# CTS-4nu against the four paper baselines on three reasoning benchmarks.
+# After the D1 P1 baseline-dispatcher sweep all four baselines are now
+# integrated end-to-end (`greedy`, `native_think`, `sc_14`, `mcts_early_stop`),
+# so the headline n=12 family is now operationally reproducible on the
+# single-GPU snapshot. The remaining Table 2 rows (`bon_13`, `bandit_ucb1`,
+# `ft_nt`, `think_off_greedy`, `expl_mcts_ppo`, `deq_only`) are NOT part
+# of this primary family per paper §7.1 — they appear only in Table 2
+# itself and not in the Wilcoxon/Bonferroni protocol — so they are
+# intentionally absent here.
+PRIMARY_COMPARISONS = [
+    ("greedy", "math500"),         ("greedy", "gsm8k"),         ("greedy", "aime"),
+    ("native_think", "math500"),   ("native_think", "gsm8k"),   ("native_think", "aime"),
+    ("sc_14", "math500"),          ("sc_14", "gsm8k"),          ("sc_14", "aime"),
+    ("mcts_early_stop", "math500"),("mcts_early_stop", "gsm8k"),("mcts_early_stop", "aime"),
+]
+PRIMARY_BONFERRONI_N = len(PRIMARY_COMPARISONS)  # = 12 (paper §7.1)
+PRIMARY_ALPHA = 0.05
+
+
+def _run_wilcoxon_tests(
+    all_results: Dict[str, Dict[str, List[float]]],
+    benchmarks: List[str],
+    output_dir: str,
+) -> None:
+    """Wilcoxon signed-rank + Bonferroni (paper §7.1: 12 primary comparisons, α = 0.05/12).
+
+    Standard Bonferroni: report corrected p = min(1, raw_p * N), compare to α (here 0.05).
+    Equivalent to comparing raw_p to α/N (here 0.05/12 ≈ 0.0042).
+    """
+    print(
+        f"\nWilcoxon signed-rank tests "
+        f"(Bonferroni n={PRIMARY_BONFERRONI_N}, family-wise α={PRIMARY_ALPHA}):"
+    )
+    print("-" * 72)
+
+    cts_4nu = all_results.get("cts_4nu", {})
+
+    # --- Primary 12 comparisons (significance reported) ---
+    primary = []
+    for baseline, bench in PRIMARY_COMPARISONS:
+        if bench not in benchmarks:
+            continue
+        x = cts_4nu.get(bench, [])
+        y = all_results.get(baseline, {}).get(bench, [])
+        if x and y and len(x) == len(y):
+            _w, p = wilcoxon_signed_rank(x, y)
+            primary.append((f"CTS-4nu vs {baseline} ({bench})", p))
+
+    if primary:
+        p_values = [p for _, p in primary]
+        corrected = bonferroni_correct(p_values, n_comparisons=PRIMARY_BONFERRONI_N)
+        print("\n  [primary] (Bonferroni-corrected; sig if corr_p < α=0.05)")
+        for (name, raw_p), corr_p in zip(primary, corrected):
+            sig = "***" if corr_p < PRIMARY_ALPHA else "n.s."
+            print(f"    {name}: raw_p={raw_p:.4f}  corr_p={corr_p:.4f}  {sig}")
+    else:
+        print("\n  [primary] no comparable pairs available (need both methods + same n).")
+
+    # --- Non-primary descriptive comparisons (no Bonferroni claim) ---
+    non_primary = []
+    primary_keys = set(PRIMARY_COMPARISONS)
+    for baseline in TABLE2_METHODS:
+        if baseline == "cts_4nu":
+            continue
+        baseline_data = all_results.get(baseline, {})
+        for bench in benchmarks:
+            if (baseline, bench) in primary_keys:
+                continue
+            x = cts_4nu.get(bench, [])
+            y = baseline_data.get(bench, [])
+            if x and y and len(x) == len(y):
+                _w, p = wilcoxon_signed_rank(x, y)
+                non_primary.append((f"CTS-4nu vs {baseline} ({bench})", p))
+
+    if non_primary:
+        print("\n  [non-primary, descriptive only — no familywise correction]")
+        for name, raw_p in non_primary:
+            print(f"    {name}: raw_p={raw_p:.4f}")
+
+
+def _save_results(
+    all_results: Dict[str, Dict[str, List[float]]],
+    table2: Dict[str, Dict[str, StatisticalResult]],
+    output_dir: str,
+) -> None:
+    """Save results to JSON."""
+    out_path = Path(output_dir) / "table2_results.json"
+    serializable = {}
+    for method, bench_data in table2.items():
+        serializable[method] = {}
+        for bench, stat in bench_data.items():
+            serializable[method][bench] = {
+                "mean": stat.mean,
+                "std": stat.std,
+                "ci_lower": stat.ci_lower,
+                "ci_upper": stat.ci_upper,
+                "n_samples": stat.n_samples,
+            }
+
+    with open(out_path, "w") as f:
+        json.dump(serializable, f, indent=2)
+    print(f"\nResults saved to {out_path}")
+
+
+def _dry_run(args: "argparse.Namespace") -> None:
+    """Print the planned evaluation matrix WITHOUT loading torch.
+
+    Reviewer-facing surface: invoked by ``--dry-run``. Prints
+    every (benchmark, method, seed) cell that the full run would
+    evaluate, plus a summary of the dispatcher whitelist and the
+    Q14 garbage-fallback predicate that gates math-benchmark
+    predictions. Exits 0 unconditionally.
+
+    This function MUST NOT import torch / transformers; it is the
+    reviewer's pre-flight check for a degraded GPU environment.
+    """
+    from cts.eval.garbage_filter import MATH_BENCHMARKS
+
+    if args.table2:
+        benchmarks = BENCHMARKS
+    else:
+        benchmarks = args.benchmarks
+    seed_list = list(range(args.seeds))
+    methods = list(TABLE2_METHODS)
+
+    n_cells = len(benchmarks) * len(methods) * len(seed_list)
+    print("=" * 72)
+    print("CTS Eval Pipeline - DRY RUN (no torch, no GPU)")
+    print("=" * 72)
+    print(f"  config        : {args.config}")
+    print(f"  device        : {args.device} (NOT loaded in dry-run)")
+    print(f"  output-dir    : {args.output_dir} (NOT created in dry-run)")
+    print(f"  mode          : {args.mode}")
+    print(f"  benchmarks    : {benchmarks}")
+    print(f"  seeds         : {seed_list}")
+    print(f"  methods       : {methods}")
+    print(f"  per-problem limit: {args.limit if args.limit else 'all'}")
+    print(f"  nu-trace-dir  : {args.nu_trace_dir or '(not set)'}")
+    print(f"  TOTAL CELLS   : {n_cells}  (benchmarks x methods x seeds)")
+    print()
+    print("Planned per-benchmark predictor budget (max_new_tokens):")
+    for b in benchmarks:
+        print(f"  {b:16s} -> {_max_tokens_for(b)} tokens")
+    print()
+    print("Q14 garbage-math fallback applies on:")
+    for b in sorted(MATH_BENCHMARKS):
+        in_run = "x" if b in benchmarks else " "
+        print(f"  [{in_run}] {b}")
+    print()
+    print("Planned cells (benchmark, method, seed):")
+    for b in benchmarks:
+        for m in methods:
+            for s in seed_list:
+                print(f"  ({b}, {m}, seed={s})")
+    print()
+    print("=" * 72)
+    print("DRY RUN OK. No torch was imported, no model was loaded,")
+    print("no output file was written. Re-run without --dry-run on a")
+    print("clean GPU box to execute the matrix above.")
+    print("=" * 72)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="CTS Full Evaluation Pipeline")
+    parser.add_argument("--table2", action="store_true", help="Full Table 2 reproduction")
+    parser.add_argument("--benchmarks", nargs="+", default=["math500", "aime"],
+                        choices=BENCHMARKS)
+    parser.add_argument("--seeds", type=int, default=5)
+    parser.add_argument("--config", default="default")
+    parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--output-dir", default="results/table2")
+    parser.add_argument("--model-dir", default=None)
+    parser.add_argument("--model-name", default="gemma", choices=["gemma", "qwen2.5-7b"])
+    parser.add_argument("--mode", default="4nu", choices=["4nu", "2nu_fast", "1nu"])
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Limit number of problems per benchmark (for fast testing)")
+    parser.add_argument("--methods", nargs="+", default=None,
+                        help="Subset of methods to evaluate (default: all Table 2 methods)")
+    parser.add_argument(
+        "--nu-trace-dir", default=None,
+        help="If set, CTS dispatchers write per-problem ν JSONL traces here, "
+             "consumed downstream by `scripts/aggregate_nu_table19.py` (paper "
+             "Table 19). Honours the ``CTS_NU_TRACE_DIR`` env var as fallback.",
+    )
+    parser.add_argument(
+        "--resume-partial",
+        action="store_true",
+        help="Skip (method, bench, seed) cells already present in "
+             "table2_results.partial.json under output-dir.",
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true",
+        help="Print the (benchmark, method, seed) cells that WOULD be "
+             "evaluated, validate the dispatcher whitelist + config, and "
+             "exit 0 WITHOUT loading torch / transformers / a model. Useful "
+             "for reviewers who want to verify the planned eval matrix on "
+             "a CPU-only host before launching the full GPU run "
+             "(REVIEWER_FAQ Q15: torch-free verification).",
+    )
+    args = parser.parse_args()
+
+    if args.methods:
+        global TABLE2_METHODS
+        TABLE2_METHODS = args.methods
+
+    if args.dry_run:
+        return _dry_run(args)
+
+    seed_list = list(range(args.seeds))
+
+    if args.table2:
+        benchmarks = BENCHMARKS
+    else:
+        benchmarks = args.benchmarks
+
+    print(f"CTS Evaluation Pipeline")
+    print(f"  Benchmarks: {benchmarks}")
+    print(f"  Seeds: {seed_list}")
+    print(f"  Mode: {args.mode}")
+    print(f"  Config: {args.config}")
+    print()
+
+    run_table2_reproduction(
+        seeds=seed_list,
+        benchmarks=benchmarks,
+        config_name=args.config,
+        device=args.device,
+        output_dir=args.output_dir,
+        model_dir=args.model_dir,
+        limit=args.limit,
+        nu_trace_dir=Path(args.nu_trace_dir) if args.nu_trace_dir else None,
+        resume_partial=args.resume_partial,
+        model_name=args.model_name,
+    )
+
+
+if __name__ == "__main__":
+    main()

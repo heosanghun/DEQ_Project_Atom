@@ -1,0 +1,1252 @@
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [greedy] aime seed=0
+C:\Users\Sims\AppData\Roaming\Python\Python313\site-packages\transformers\modeling_utils.py:4832: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   1%|          | 14/2076 [00:00<00:17, 118.59it/s]Loading weights:   1%|▏         | 26/2076 [00:00<00:17, 117.95it/s]Loading weights:   2%|▏         | 47/2076 [00:00<00:14, 142.85it/s]Loading weights:   3%|▎         | 64/2076 [00:00<00:13, 152.54it/s]Loading weights:   4%|▍         | 80/2076 [00:00<00:18, 105.36it/s]Loading weights:   5%|▍         | 96/2076 [00:00<00:17, 110.68it/s]Loading weights:   6%|▌         | 117/2076 [00:00<00:14, 133.36it/s]Loading weights:   6%|▋         | 132/2076 [00:01<00:17, 109.03it/s]Loading weights:   7%|▋         | 145/2076 [00:01<00:17, 109.28it/s]Loading weights:   8%|▊         | 167/2076 [00:01<00:15, 126.32it/s]Loading weights:   9%|▉         | 188/2076 [00:01<00:14, 131.78it/s]Loading weights:  10%|▉         | 202/2076 [00:01<00:15, 118.78it/s]Loading weights:  10%|█         | 215/2076 [00:01<00:16, 113.65it/s]Loading weights:  11%|█▏        | 234/2076 [00:01<00:14, 130.06it/s]Loading weights:  12%|█▏        | 251/2076 [00:02<00:13, 130.82it/s]Loading weights:  13%|█▎        | 265/2076 [00:02<00:15, 119.28it/s]Loading weights:  13%|█▎        | 278/2076 [00:02<00:15, 117.11it/s]Loading weights:  15%|█▍        | 302/2076 [00:02<00:12, 145.40it/s]Loading weights:  15%|█▌        | 318/2076 [00:02<00:15, 111.81it/s]Loading weights:  16%|█▌        | 331/2076 [00:02<00:16, 105.43it/s]Loading weights:  17%|█▋        | 353/2076 [00:02<00:13, 127.27it/s]Loading weights:  18%|█▊        | 374/2076 [00:03<00:13, 130.84it/s]Loading weights:  19%|█▊        | 388/2076 [00:03<00:15, 112.09it/s]Loading weights:  19%|█▉        | 401/2076 [00:03<00:14, 111.75it/s]Loading weights:  21%|██        | 429/2076 [00:03<00:11, 146.88it/s]Loading weights:  21%|██▏       | 445/2076 [00:03<00:12, 127.31it/s]Loading weights:  22%|██▏       | 459/2076 [00:03<00:13, 115.81it/s]Loading weights:  23%|██▎       | 477/2076 [00:03<00:12, 127.50it/s]Loading weights:  24%|██▍       | 498/2076 [00:04<00:12, 127.96it/s]Loading weights:  25%|██▍       | 512/2076 [00:04<00:13, 111.86it/s]Loading weights:  25%|██▌       | 524/2076 [00:04<00:14, 109.42it/s]Loading weights:  26%|██▋       | 547/2076 [00:04<00:11, 137.02it/s]Loading weights:  27%|██▋       | 562/2076 [00:04<00:14, 106.46it/s]Loading weights:  28%|██▊       | 575/2076 [00:04<00:15, 97.33it/s] Loading weights:  28%|██▊       | 587/2076 [00:04<00:15, 98.79it/s]Loading weights:  29%|██▉       | 604/2076 [00:05<00:12, 113.39it/s]Loading weights:  30%|██▉       | 619/2076 [00:05<00:12, 118.90it/s]Loading weights:  30%|███       | 632/2076 [00:05<00:12, 114.56it/s]Loading weights:  31%|███       | 645/2076 [00:05<00:13, 109.94it/s]Loading weights:  32%|███▏      | 664/2076 [00:05<00:11, 128.02it/s]Loading weights:  33%|███▎      | 683/2076 [00:05<00:10, 130.22it/s]Loading weights:  34%|███▎      | 697/2076 [00:05<00:11, 120.49it/s]Loading weights:  34%|███▍      | 710/2076 [00:05<00:11, 122.09it/s]Loading weights:  35%|███▌      | 736/2076 [00:06<00:08, 153.67it/s]Loading weights:  36%|███▌      | 752/2076 [00:06<00:11, 117.47it/s]Loading weights:  36%|███▌      | 752/2076 [00:20<00:11, 117.47it/s]Loading weights:  36%|███▋      | 755/2076 [00:54<24:05,  1.09s/it] Loading weights:  37%|███▋      | 758/2076 [00:54<22:05,  1.01s/it]Loading weights:  37%|███▋      | 768/2076 [00:55<15:56,  1.37it/s]Loading weights:  37%|███▋      | 776/2076 [00:56<12:45,  1.70it/s]Loading weights:  38%|███▊      | 784/2076 [00:56<09:24,  2.29it/s]Loading weights:  38%|███▊      | 790/2076 [00:56<07:25,  2.88it/s]Loading weights:  38%|███▊      | 795/2076 [00:58<06:59,  3.06it/s]Loading weights:  39%|███▊      | 802/2076 [00:58<05:03,  4.20it/s]Loading weights:  39%|███▉      | 806/2076 [00:58<04:15,  4.97it/s]Loading weights:  39%|███▉      | 810/2076 [00:59<04:36,  4.58it/s]Loading weights:  39%|███▉      | 818/2076 [00:59<03:03,  6.84it/s]Loading weights:  40%|███▉      | 824/2076 [00:59<02:16,  9.16it/s]Loading weights:  40%|███▉      | 828/2076 [01:01<03:03,  6.82it/s]Loading weights:  40%|████      | 837/2076 [01:01<01:57, 10.53it/s]Loading weights:  41%|████      | 841/2076 [01:01<01:46, 11.58it/s]Loading weights:  41%|████      | 844/2076 [01:02<02:27,  8.33it/s]Loading weights:  41%|████      | 847/2076 [01:02<02:38,  7.77it/s]Loading weights:  41%|████      | 851/2076 [01:03<02:29,  8.21it/s]Loading weights:  41%|████▏     | 858/2076 [01:03<01:44, 11.61it/s]Loading weights:  41%|████▏     | 860/2076 [01:03<01:51, 10.86it/s]Loading weights:  42%|████▏     | 862/2076 [01:04<02:50,  7.11it/s]Loading weights:  42%|████▏     | 870/2076 [01:04<01:34, 12.78it/s]Loading weights:  42%|████▏     | 874/2076 [01:05<01:51, 10.74it/s]Loading weights:  42%|████▏     | 878/2076 [01:05<01:54, 10.43it/s]Loading weights:  42%|████▏     | 880/2076 [01:05<02:13,  8.96it/s]Loading weights:  43%|████▎     | 888/2076 [01:06<01:18, 15.10it/s]Loading weights:  43%|████▎     | 891/2076 [01:06<01:11, 16.66it/s]Loading weights:  43%|████▎     | 894/2076 [01:06<01:29, 13.20it/s]Loading weights:  43%|████▎     | 897/2076 [01:07<02:33,  7.67it/s]Loading weights:  43%|████▎     | 903/2076 [01:07<01:41, 11.55it/s]Loading weights:  44%|████▎     | 907/2076 [01:07<01:21, 14.43it/s]Loading weights:  44%|████▍     | 910/2076 [01:08<01:54, 10.17it/s]Loading weights:  44%|████▍     | 913/2076 [01:08<02:28,  7.83it/s]Loading weights:  44%|████▍     | 921/2076 [01:09<01:25, 13.53it/s]Loading weights:  45%|████▍     | 925/2076 [01:09<01:16, 14.99it/s]Loading weights:  45%|████▍     | 928/2076 [01:09<01:31, 12.60it/s]Loading weights:  45%|████▍     | 931/2076 [01:10<02:16,  8.39it/s]Loading weights:  45%|████▌     | 939/2076 [01:10<01:26, 13.22it/s]Loading weights:  45%|████▌     | 942/2076 [01:10<01:25, 13.28it/s]Loading weights:  46%|████▌     | 945/2076 [01:11<01:25, 13.23it/s]Loading weights:  46%|████▌     | 947/2076 [01:11<02:23,  7.87it/s]Loading weights:  46%|████▌     | 955/2076 [01:12<01:42, 10.99it/s]Loading weights:  46%|████▌     | 959/2076 [01:12<01:33, 11.99it/s]Loading weights:  46%|████▋     | 962/2076 [01:12<01:38, 11.28it/s]Loading weights:  46%|████▋     | 964/2076 [01:13<02:34,  7.18it/s]Loading weights:  47%|████▋     | 971/2076 [01:13<01:36, 11.49it/s]Loading weights:  47%|████▋     | 975/2076 [01:13<01:17, 14.26it/s]Loading weights:  47%|████▋     | 978/2076 [01:14<01:29, 12.28it/s]Loading weights:  47%|████▋     | 980/2076 [01:14<01:52,  9.77it/s]Loading weights:  47%|████▋     | 982/2076 [01:15<02:17,  7.98it/s]Loading weights:  48%|████▊     | 989/2076 [01:15<01:19, 13.75it/s]Loading weights:  48%|████▊     | 993/2076 [01:15<01:06, 16.38it/s]Loading weights:  48%|████▊     | 996/2076 [01:15<01:23, 12.94it/s]Loading weights:  48%|████▊     | 998/2076 [01:16<02:23,  7.49it/s]Loading weights:  49%|████▊     | 1007/2076 [01:16<01:18, 13.57it/s]Loading weights:  49%|████▉     | 1013/2076 [01:17<01:17, 13.70it/s]Loading weights:  49%|████▉     | 1016/2076 [01:17<01:55,  9.21it/s]Loading weights:  49%|████▉     | 1024/2076 [01:18<01:14, 14.19it/s]Loading weights:  49%|████▉     | 1027/2076 [01:18<01:29, 11.71it/s]Loading weights:  50%|████▉     | 1031/2076 [01:19<02:00,  8.65it/s]Loading weights:  50%|█████     | 1038/2076 [01:19<01:25, 12.16it/s]Loading weights:  50%|█████     | 1043/2076 [01:19<01:09, 14.86it/s]Loading weights:  50%|█████     | 1047/2076 [01:20<01:22, 12.48it/s]Loading weights:  51%|█████     | 1049/2076 [01:20<02:00,  8.52it/s]Loading weights:  51%|█████     | 1057/2076 [01:21<01:20, 12.62it/s]Loading weights:  51%|█████     | 1059/2076 [01:21<01:19, 12.87it/s]Loading weights:  51%|█████     | 1061/2076 [01:21<01:22, 12.26it/s]Loading weights:  51%|█████     | 1063/2076 [01:21<01:50,  9.17it/s]Loading weights:  51%|█████▏    | 1065/2076 [01:22<02:19,  7.24it/s]Loading weights:  51%|█████▏    | 1066/2076 [01:22<02:31,  6.67it/s]Loading weights:  51%|█████▏    | 1068/2076 [01:22<02:09,  7.78it/s]Loading weights:  52%|█████▏    | 1074/2076 [01:22<01:13, 13.63it/s]Loading weights:  52%|█████▏    | 1078/2076 [01:23<00:58, 16.95it/s]Loading weights:  52%|█████▏    | 1081/2076 [01:23<01:20, 12.43it/s]Loading weights:  52%|█████▏    | 1083/2076 [01:24<02:16,  7.26it/s]Loading weights:  53%|█████▎    | 1092/2076 [01:24<01:08, 14.27it/s]Loading weights:  53%|█████▎    | 1095/2076 [01:24<01:06, 14.84it/s]Loading weights:  53%|█████▎    | 1098/2076 [01:24<01:21, 11.99it/s]Loading weights:  53%|█████▎    | 1100/2076 [01:25<02:09,  7.52it/s]Loading weights:  53%|█████▎    | 1109/2076 [01:25<01:08, 14.10it/s]Loading weights:  54%|█████▎    | 1112/2076 [01:26<01:27, 11.05it/s]Loading weights:  54%|█████▍    | 1116/2076 [01:26<01:47,  8.96it/s]Loading weights:  54%|█████▍    | 1123/2076 [01:27<01:09, 13.70it/s]Loading weights:  54%|█████▍    | 1126/2076 [01:27<01:05, 14.61it/s]Loading weights:  55%|█████▍    | 1132/2076 [01:27<01:03, 14.76it/s]Loading weights:  55%|█████▍    | 1135/2076 [01:28<01:44,  8.97it/s]Loading weights:  55%|█████▍    | 1139/2076 [01:28<01:21, 11.48it/s]Loading weights:  55%|█████▌    | 1143/2076 [01:28<01:05, 14.35it/s]Loading weights:  55%|█████▌    | 1146/2076 [01:28<00:58, 15.93it/s]Loading weights:  55%|█████▌    | 1149/2076 [01:29<01:16, 12.06it/s]Loading weights:  55%|█████▌    | 1152/2076 [01:29<01:58,  7.82it/s]Loading weights:  56%|█████▌    | 1159/2076 [01:30<01:27, 10.51it/s]Loading weights:  56%|█████▌    | 1163/2076 [01:30<01:13, 12.38it/s]Loading weights:  56%|█████▌    | 1166/2076 [01:30<01:19, 11.50it/s]Loading weights:  56%|█████▋    | 1168/2076 [01:31<02:09,  7.04it/s]Loading weights:  57%|█████▋    | 1174/2076 [01:31<01:28, 10.17it/s]Loading weights:  57%|█████▋    | 1180/2076 [01:32<01:45,  8.52it/s]Loading weights:  57%|█████▋    | 1182/2076 [01:33<01:45,  8.45it/s]Loading weights:  57%|█████▋    | 1189/2076 [01:33<01:06, 13.44it/s]Loading weights:  57%|█████▋    | 1192/2076 [01:33<00:59, 14.75it/s]Loading weights:  58%|█████▊    | 1195/2076 [01:34<01:58,  7.41it/s]Loading weights:  58%|█████▊    | 1197/2076 [01:34<01:46,  8.23it/s]Loading weights:  58%|█████▊    | 1203/2076 [01:34<01:13, 11.82it/s]Loading weights:  58%|█████▊    | 1208/2076 [01:35<01:09, 12.42it/s]Loading weights:  58%|█████▊    | 1210/2076 [01:35<01:55,  7.47it/s]Loading weights:  59%|█████▊    | 1217/2076 [01:36<01:11, 12.05it/s]Loading weights:  59%|█████▉    | 1220/2076 [01:36<01:03, 13.55it/s]Loading weights:  59%|█████▉    | 1223/2076 [01:36<01:40,  8.53it/s]Loading weights:  59%|█████▉    | 1225/2076 [01:37<01:51,  7.66it/s]Loading weights:  59%|█████▉    | 1230/2076 [01:37<01:13, 11.51it/s]Loading weights:  59%|█████▉    | 1233/2076 [01:37<01:05, 12.82it/s]Loading weights:  60%|█████▉    | 1236/2076 [01:37<01:20, 10.45it/s]Loading weights:  60%|█████▉    | 1238/2076 [01:38<02:05,  6.66it/s]Loading weights:  60%|█████▉    | 1245/2076 [01:38<01:15, 11.00it/s]Loading weights:  60%|██████    | 1247/2076 [01:39<01:15, 10.94it/s]Loading weights:  60%|██████    | 1250/2076 [01:39<01:28,  9.31it/s]Loading weights:  60%|██████    | 1252/2076 [01:40<02:11,  6.28it/s]Loading weights:  61%|██████    | 1259/2076 [01:40<01:12, 11.23it/s]Loading weights:  61%|██████    | 1263/2076 [01:41<01:39,  8.18it/s]Loading weights:  61%|██████    | 1265/2076 [01:41<01:37,  8.32it/s]Loading weights:  61%|██████    | 1267/2076 [01:41<01:35,  8.47it/s]Loading weights:  61%|██████▏   | 1272/2076 [01:41<01:03, 12.67it/s]Loading weights:  61%|██████▏   | 1275/2076 [01:41<00:55, 14.48it/s]Loading weights:  62%|██████▏   | 1278/2076 [01:42<01:24,  9.45it/s]Loading weights:  62%|██████▏   | 1280/2076 [01:43<02:03,  6.43it/s]Loading weights:  62%|██████▏   | 1287/2076 [01:43<01:15, 10.43it/s]Loading weights:  62%|██████▏   | 1292/2076 [01:43<01:11, 10.98it/s]Loading weights:  62%|██████▏   | 1294/2076 [01:44<01:47,  7.27it/s]Loading weights:  63%|██████▎   | 1300/2076 [01:44<01:12, 10.75it/s]Loading weights:  63%|██████▎   | 1303/2076 [01:44<01:01, 12.53it/s]Loading weights:  63%|██████▎   | 1306/2076 [01:45<01:14, 10.37it/s]Loading weights:  63%|██████▎   | 1308/2076 [01:46<01:51,  6.87it/s]Loading weights:  63%|██████▎   | 1315/2076 [01:46<01:03, 11.91it/s]Loading weights:  63%|██████▎   | 1318/2076 [01:46<00:55, 13.76it/s]Loading weights:  64%|██████▎   | 1321/2076 [01:47<01:43,  7.30it/s]Loading weights:  64%|██████▎   | 1323/2076 [01:47<01:33,  8.09it/s]Loading weights:  64%|██████▍   | 1328/2076 [01:47<01:22,  9.05it/s]Loading weights:  64%|██████▍   | 1332/2076 [01:48<01:22,  8.99it/s]Loading weights:  64%|██████▍   | 1335/2076 [01:48<01:22,  8.94it/s]Loading weights:  64%|██████▍   | 1337/2076 [01:49<01:36,  7.65it/s]Loading weights:  65%|██████▍   | 1343/2076 [01:49<01:01, 11.93it/s]Loading weights:  65%|██████▍   | 1345/2076 [01:49<00:58, 12.47it/s]Loading weights:  65%|██████▍   | 1348/2076 [01:49<01:14,  9.77it/s]Loading weights:  65%|██████▌   | 1350/2076 [01:50<01:50,  6.59it/s]Loading weights:  65%|██████▌   | 1357/2076 [01:50<01:02, 11.53it/s]Loading weights:  65%|██████▌   | 1359/2076 [01:50<00:58, 12.21it/s]Loading weights:  66%|██████▌   | 1362/2076 [01:51<01:07, 10.59it/s]Loading weights:  66%|██████▌   | 1364/2076 [01:51<01:46,  6.71it/s]Loading weights:  66%|██████▌   | 1370/2076 [01:52<01:03, 11.08it/s]Loading weights:  66%|██████▌   | 1374/2076 [01:52<00:50, 13.86it/s]Loading weights:  66%|██████▋   | 1377/2076 [01:53<01:33,  7.49it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:53<01:38,  7.06it/s]Loading weights:  67%|██████▋   | 1385/2076 [01:53<01:00, 11.41it/s]Loading weights:  67%|██████▋   | 1389/2076 [01:54<01:10,  9.73it/s]Loading weights:  67%|██████▋   | 1391/2076 [01:54<01:27,  7.86it/s]Loading weights:  67%|██████▋   | 1393/2076 [01:55<01:29,  7.60it/s]Loading weights:  67%|██████▋   | 1399/2076 [01:55<00:54, 12.36it/s]Loading weights:  68%|██████▊   | 1402/2076 [01:55<00:47, 14.20it/s]Loading weights:  68%|██████▊   | 1405/2076 [01:56<01:45,  6.38it/s]Loading weights:  68%|██████▊   | 1413/2076 [01:56<01:09,  9.48it/s]Loading weights:  68%|██████▊   | 1417/2076 [01:57<01:09,  9.51it/s]Loading weights:  69%|██████▊   | 1427/2076 [01:57<00:38, 16.75it/s]Loading weights:  70%|██████▉   | 1446/2076 [01:57<00:18, 34.58it/s]Loading weights:  71%|███████   | 1468/2076 [01:57<00:11, 54.61it/s]Loading weights:  72%|███████▏  | 1497/2076 [01:57<00:06, 87.49it/s]Loading weights:  73%|███████▎  | 1512/2076 [01:57<00:05, 96.72it/s]Loading weights:  74%|███████▍  | 1540/2076 [01:58<00:04, 128.94it/s]Loading weights:  75%|███████▌  | 1558/2076 [01:58<00:04, 129.22it/s]Loading weights:  76%|███████▋  | 1585/2076 [01:58<00:03, 147.51it/s]Loading weights:  77%|███████▋  | 1603/2076 [01:58<00:03, 150.79it/s]Loading weights:  78%|███████▊  | 1628/2076 [01:58<00:02, 172.82it/s]Loading weights:  80%|███████▉  | 1651/2076 [01:58<00:02, 185.69it/s]Loading weights:  80%|████████  | 1671/2076 [01:58<00:02, 188.72it/s]Loading weights:  81%|████████▏ | 1691/2076 [01:58<00:02, 147.33it/s]Loading weights:  83%|████████▎ | 1713/2076 [01:59<00:02, 160.07it/s]Loading weights:  84%|████████▍ | 1740/2076 [01:59<00:01, 178.74it/s]Loading weights:  85%|████████▍ | 1760/2076 [01:59<00:02, 150.10it/s]Loading weights:  86%|████████▋ | 1791/2076 [01:59<00:01, 185.55it/s]Loading weights:  87%|████████▋ | 1812/2076 [01:59<00:01, 184.40it/s]Loading weights:  88%|████████▊ | 1837/2076 [01:59<00:01, 184.36it/s]Loading weights:  90%|████████▉ | 1868/2076 [01:59<00:00, 214.25it/s]Loading weights:  91%|█████████ | 1891/2076 [01:59<00:00, 188.00it/s]Loading weights:  92%|█████████▏| 1913/2076 [02:00<00:00, 184.04it/s]Loading weights:  93%|█████████▎| 1933/2076 [02:00<00:00, 178.96it/s]Loading weights:  94%|█████████▍| 1959/2076 [02:00<00:00, 181.74it/s]Loading weights:  96%|█████████▌| 1993/2076 [02:00<00:00, 214.09it/s]Loading weights:  97%|█████████▋| 2016/2076 [02:00<00:00, 189.00it/s]Loading weights:  98%|█████████▊| 2042/2076 [02:00<00:00, 190.09it/s]Loading weights: 100%|█████████▉| 2072/2076 [02:00<00:00, 207.63it/s]Loading weights: 100%|██████████| 2076/2076 [02:01<00:00, 17.13it/s] 
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    [greedy/aime] gold='277' pred='47' match=False
+    [greedy/aime] gold='062' pred='13' match=False
+    [greedy/aime] gold='079' pred='Let $O$ be the center of the disk and $A' match=False
+    [greedy/aime] gold='070' pred='1' match=False
+    [greedy/aime] gold='065' pred='2' match=False
+    [greedy/aime] gold='441' pred='120' match=False
+    [greedy/aime] gold='396' pred='1' match=False
+    [greedy/aime] gold='244' pred='17' match=False
+    [greedy/aime] gold='029' pred='' match=False
+    [greedy/aime] gold='156' pred='' match=False
+    [greedy/aime] gold='896' pred='$80$' match=False
+    [greedy/aime] gold='161' pred='3' match=False
+    [greedy/aime] gold='039' pred='2' match=False
+    [greedy/aime] gold='681' pred='' match=False
+    [greedy/aime] gold='083' pred='90' match=False
+    [greedy/aime] gold='178' pred='$-16$' match=False
+    [greedy/aime] gold='243' pred='10' match=False
+    [greedy/aime] gold='503' pred='20' match=False
+    [greedy/aime] gold='279' pred='1' match=False
+    [greedy/aime] gold='190' pred='' match=False
+    [greedy/aime] gold='050' pred='\sqrt{145}' match=False
+    [greedy/aime] gold='754' pred='46657' match=False
+    [greedy/aime] gold='245' pred='\frac{23}{3}' match=False
+    [greedy/aime] gold='669' pred='90' match=False
+    [greedy/aime] gold='340' pred='' match=False
+    [greedy/aime] gold='132' pred='6' match=False
+    [greedy/aime] gold='223' pred='2' match=False
+    [greedy/aime] gold='107' pred='4040' match=False
+    [greedy/aime] gold='157' pred='1' match=False
+    [greedy/aime] gold='393' pred='' match=False
+  [greedy] humaneval seed=0
+    [greedy/humaneval] gold='    for idx, elem in enumerate(numbers):' pred='def has_close_elements(numbers: List[flo' match=True
+    [greedy/humaneval] gold='    result = []
+    current_string = []
+' pred='def separate_paren_groups(paren_string: ' match=False
+    [greedy/humaneval] gold='    return number % 1.0
+' pred='def truncate_number(number: float) -> fl' match=True
+    [greedy/humaneval] gold='    balance = 0
+
+    for op in operation' pred='def below_zero(operations: List[int]) ->' match=True
+    [greedy/humaneval] gold='    mean = sum(numbers) / len(numbers)
+ ' pred='def mean_absolute_deviation(numbers: Lis' match=True
+    [greedy/humaneval] gold='    if not numbers:
+        return []
+
+ ' pred='def intersperse(numbers: List[int], deli' match=True
+    [greedy/humaneval] gold='    def parse_paren_group(s):
+        de' pred='def parse_nested_parens(paren_string: st' match=False
+    [greedy/humaneval] gold='    return [x for x in strings if substr' pred='def filter_by_substring(strings: List[st' match=True
+    [greedy/humaneval] gold='    sum_value = 0
+    prod_value = 1
+
+  ' pred='def sum_product(numbers: List[int]) -> T' match=True
+    [greedy/humaneval] gold='    running_max = None
+    result = []
+
+' pred='def rolling_max(numbers: List[int]) -> L' match=True
+    [greedy/humaneval] gold='    if not string:
+        return ''
+
+  ' pred='def make_palindrome(string: str) -> str:' match=False
+    [greedy/humaneval] gold='    def xor(i, j):
+        if i == j:
+  ' pred='def string_xor(a: str, b: str) -> str:
+ ' match=True
+    [greedy/humaneval] gold='    if not strings:
+        return None
+' pred='def longest(strings: List[str]) -> Optio' match=True
+    [greedy/humaneval] gold='    while b:
+        a, b = b, a % b
+   ' pred='def greatest_common_divisor(a: int, b: i' match=True
+    [greedy/humaneval] gold='    result = []
+
+    for i in range(len(' pred='def all_prefixes(string: str) -> List[st' match=False
+    [greedy/humaneval] gold='    return ' '.join([str(x) for x in ran' pred='def string_sequence(n: int) -> str:
+    ' match=True
+    [greedy/humaneval] gold='    return len(set(string.lower()))
+' pred='def count_distinct_characters(string: st' match=True
+    [greedy/humaneval] gold='    note_map = {'o': 4, 'o|': 2, '.|': 1' pred='def parse_music(music_string: str) -> Li' match=False
+    [greedy/humaneval] gold='    times = 0
+
+    for i in range(len(st' pred='def how_many_times(string: str, substrin' match=True
+    [greedy/humaneval] gold='    value_map = {
+        'zero': 0,
+   ' pred='def sort_numbers(numbers: str) -> str:
+ ' match=False
+    [greedy/humaneval] gold='    closest_pair = None
+    distance = N' pred='def find_closest_elements(numbers: List[' match=False
+    [greedy/humaneval] gold='    min_number = min(numbers)
+    max_nu' pred='def rescale_to_unit(numbers: List[float]' match=True
+    [greedy/humaneval] gold='    return [x for x in values if isinsta' pred='def filter_integers(values: List[Any]) -' match=True
+    [greedy/humaneval] gold='    return len(string)
+' pred='def strlen(string: str) -> int:
+    """ ' match=True
+    [greedy/humaneval] gold='    for i in reversed(range(n)):
+       ' pred='def largest_divisor(n: int) -> int:
+    ' match=True
+    [greedy/humaneval] gold='    import math
+    fact = []
+    i = 2
+' pred='def factorize(n: int) -> List[int]:
+    ' match=True
+    [greedy/humaneval] gold='    import collections
+    c = collectio' pred='def remove_duplicates(numbers: List[int]' match=False
+    [greedy/humaneval] gold='    return string.swapcase()
+' pred='def flip_case(string: str) -> str:
+    "' match=True
+    [greedy/humaneval] gold='    return ''.join(strings)
+' pred='def concatenate(strings: List[str]) -> s' match=True
+    [greedy/humaneval] gold='    return [x for x in strings if x.star' pred='def filter_by_prefix(strings: List[str],' match=True
+    [greedy/humaneval] gold='    return [e for e in l if e > 0]
+' pred='def get_positive(l: list):
+    """Return' match=True
+    [greedy/humaneval] gold='    if n < 2:
+        return False
+    f' pred='def is_prime(n):
+    """Return true if a' match=True
+    [greedy/humaneval] gold='    begin, end = -1., 1.
+    while poly(' pred='def find_zero(xs: list):
+    """ xs are ' match=False
+    [greedy/humaneval] gold='    l = list(l)
+    l[::3] = sorted(l[::' pred='def sort_third(l: list):
+    """This fun' match=False
+    [greedy/humaneval] gold='    return sorted(list(set(l)))
+' pred='def unique(l: list):
+    """Return sorte' match=True
+    [greedy/humaneval] gold='    m = l[0]
+    for e in l:
+        if ' pred='def max_element(l: list):
+    """Return ' match=True
+    [greedy/humaneval] gold='    ns = []
+    for i in range(n):
+     ' pred='def fizz_buzz(n: int) -> int:
+    count ' match=False
+    [greedy/humaneval] gold='    evens = l[::2]
+    odds = l[1::2]
+  ' pred='def sort_even(l: list):
+    """This func' match=False
+    [greedy/humaneval] gold='    return encode_cyclic(encode_cyclic(s' pred='def decode_cyclic(s: str):
+    """
+    t' match=False
+    [greedy/humaneval] gold='    import math
+
+    def is_prime(p):
+  ' pred='def prime_fib(n: int):
+    """
+    prime' match=False
+    [greedy/humaneval] gold='    for i in range(len(l)):
+        for ' pred='def triples_sum_to_zero(l: list):
+    ""' match=False
+    [greedy/humaneval] gold='    return n**2
+' pred='def car_race_collision(n: int) -> int:
+ ' match=False
+    [greedy/humaneval] gold='    return [(e + 1) for e in l]
+' pred='def incr_list(l: list):
+    """Return li' match=True
+    [greedy/humaneval] gold='    for i, l1 in enumerate(l):
+        f' pred='def pairs_sum_to_zero(l):
+    """
+    pa' match=True
+    [greedy/humaneval] gold='    ret = ""
+    while x > 0:
+        re' pred='def change_base(x: int, base: int) -> st' match=True
+    [greedy/humaneval] gold='    return a * h / 2.0
+' pred='def triangle_area(a, h):
+    """Given le' match=True
+    [greedy/humaneval] gold='    results = [0, 0, 2, 0]
+    if n < 4:' pred='def fib4(n: int) -> int:
+    """The Fib4' match=False
+    [greedy/humaneval] gold='    l = sorted(l)
+    if len(l) % 2 == 1' pred='def median(l: list):
+    """Return media' match=True
+    [greedy/humaneval] gold='    for i in range(len(text)):
+        i' pred='def is_palindrome(text: str) -> bool:
+  ' match=True
+    [greedy/humaneval] gold='    ret = 1
+    for i in range(n):
+     ' pred='def modp(n: int, p: int):
+    """Return ' match=False
+    [greedy/humaneval] gold='    return "".join([chr(((ord(ch) - 5 - ' pred='def decode_shift(s: str):
+    """
+    ta' match=False
+    [greedy/humaneval] gold='    return "".join([s for s in text if s' pred='def remove_vowels(text):
+    """
+    rem' match=True
+    [greedy/humaneval] gold='    for e in l:
+        if e >= t:
+     ' pred='def below_threshold(l: list, t: int) -> ' match=True
+    [greedy/humaneval] gold='    return x + y
+' pred='def add(x: int, y: int):
+    """Add two ' match=True
+    [greedy/humaneval] gold='    return set(s0) == set(s1)
+' pred='def same_chars(s0: str, s1: str) -> bool' match=True
+    [greedy/humaneval] gold='    if n == 0:
+        return 0
+    if n' pred='def fib(n: int) -> int:
+    """Return n-' match=True
+    [greedy/humaneval] gold='    depth = 0
+    for b in brackets:
+   ' pred='def correct_bracketing(brackets: str):
+ ' match=True
+    [greedy/humaneval] gold='    if l == sorted(l) or l == sorted(l, ' pred='def monotonic(l: list) -> bool:
+    """R' match=True
+    [greedy/humaneval] gold='    ret = set()
+    for e1 in l1:
+      ' pred='def common(l1: list, l2: list):
+    """R' match=True
+    [greedy/humaneval] gold='    def is_prime(k):
+        if k < 2:
+ ' pred='def largest_prime_factor(n: int) -> int:' match=False
+    [greedy/humaneval] gold='    return sum(range(n + 1))
+' pred='def sum_to_n(n: int) -> int:
+    """sum_' match=True
+    [greedy/humaneval] gold='    depth = 0
+    for b in brackets:
+   ' pred='def correct_bracketing(brackets: str):
+ ' match=True
+    [greedy/humaneval] gold='    return [(i * x) for i, x in enumerat' pred='def derivative(xs: list):
+    """ xs rep' match=False
+    [greedy/humaneval] gold='    if n == 0:
+        return 0
+    if n' pred='def fibfib(n: int):
+    """The FibFib nu' match=True
+    [greedy/humaneval] gold='    vowels = "aeiouAEIOU"
+    n_vowels =' pred='def vowels_count(s):
+    """Write a func' match=False
+    [greedy/humaneval] gold='    s = str(x)
+    if shift > len(s):
+  ' pred='def circular_shift(x, shift):
+    """Cir' match=False
+    [greedy/humaneval] gold='    if s == "": return 0
+    return sum(' pred='def digitSum(s):
+    """Task
+    Write a' match=True
+    [greedy/humaneval] gold='    lis = list()
+    for i in s.split(' ' pred='def fruit_distribution(s,n):
+    """
+   ' match=True
+    [greedy/humaneval] gold='    if(len(arr) == 0): return []
+    eve' pred='def pluck(arr):
+    """
+    "Given an ar' match=True
+    [greedy/humaneval] gold='    frq = [0] * (max(lst) + 1)
+    for i' pred='def search(lst):
+    '''
+    You are giv' match=True
+    [greedy/humaneval] gold='    res, switch = [], True
+    while lst' pred='def strange_sort_list(lst):
+    if not l' match=False
+    [greedy/humaneval] gold='    if a + b <= c or a + c <= b or b + c' pred='def triangle_area(a, b, c):
+    if a + b' match=True
+    [greedy/humaneval] gold='    if sum(q) > w:
+        return False
+' pred='def will_it_fly(q, w):
+    if len(q) == ' match=True
+    [greedy/humaneval] gold='    ans = 0
+    for i in range(len(arr) ' pred='def smallest_change(arr):
+    """
+    Gi' match=False
+    [greedy/humaneval] gold='    l1 = 0
+    for st in lst1:
+        l' pred='def total_match(lst1, lst2):
+    '''
+   ' match=True
+    [greedy/humaneval] gold='    def is_prime(n):
+        for j in ra' pred='def is_multiply_prime(a):
+    """Write a' match=False
+    [greedy/humaneval] gold='    if (n == 1): 
+        return (x == 1' pred='def is_simple_power(x, n):
+    """Your t' match=True
+    [greedy/humaneval] gold='    a = abs(a)
+    return int(round(a **' pred='def iscube(a):
+    '''
+    Write a funct' match=True
+    [greedy/humaneval] gold='    primes = ('2', '3', '5', '7', 'B', '' pred='def hex_key(num):
+    """You have been t' match=True
+    [greedy/humaneval] gold='    return "db" + bin(decimal)[2:] + "db' pred='def decimal_to_binary(decimal):
+    """Y' match=False
+    [greedy/humaneval] gold='    if len(s) < 3:
+      return False
+
+ ' pred='def is_happy(s):
+    """You are given a ' match=False
+    [greedy/humaneval] gold='
+   
+    letter_grade = []
+    for gpa i' pred='def numerical_letter_grade(grades):
+    ' match=True
+    [greedy/humaneval] gold='    l = len(string)
+    if l == 0 or l =' pred='def prime_length(string):
+    """Write a' match=True
+    [greedy/humaneval] gold='    if n == 1: return 1
+    return 18 * ' pred='def starts_one_ends(n):
+    """
+    Give' match=False
+    [greedy/humaneval] gold='    return bin(sum(int(i) for i in str(N' pred='def solve(N):
+    """Given a positive in' match=False
+    [greedy/humaneval] gold='    return sum([lst[i] for i in range(1,' pred='def add(lst):
+    """Given a non-empty l' match=True
+    [greedy/humaneval] gold='    return ' '.join([''.join(sorted(list' pred='def anti_shuffle(s):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    coords = [(i, j) for i in range(len(' pred='def get_row(lst, x):
+    """
+    You are' match=False
+    [greedy/humaneval] gold='    return [] if len(array) == 0 else so' pred='def sort_array(array):
+    """
+    Given' match=False
+    [greedy/humaneval] gold='    d = 'abcdefghijklmnopqrstuvwxyz'
+   ' pred='def encrypt(s):
+    """Create a function' match=False
+    [greedy/humaneval] gold='    lst = sorted(set(lst))
+    return No' pred='def next_smallest(lst):
+    """
+    You ' match=False
+    [greedy/humaneval] gold='    import re
+    sentences = re.split(r' pred='def is_bored(S):
+    """
+    You'll be g' match=False
+    [greedy/humaneval] gold='    
+    if isinstance(x,int) and isinst' pred='def any_int(x, y, z):
+    if x.is_intege' match=False
+    [greedy/humaneval] gold='    vowels = "aeiouAEIOU"
+    vowels_rep' pred='def encode(message):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    def isPrime(n):
+        for i in ran' pred='def skjkasdkd(lst):
+    """You are given' match=False
+    [greedy/humaneval] gold='    if len(dict.keys()) == 0:
+        re' pred='def check_dict_case(dict):
+    """
+    G' match=False
+    [greedy/humaneval] gold='    primes = []
+    for i in range(2, n)' pred='def count_up_to(n):
+    """Implement a f' match=True
+    [greedy/humaneval] gold='    return abs(a % 10) * abs(b % 10)
+' pred='def multiply(a, b):
+    """Complete the ' match=True
+    [greedy/humaneval] gold='    count = 0
+    for i in range(0,len(s' pred='def count_upper(s):
+    """
+    Given a ' match=True
+    [greedy/humaneval] gold='    from math import floor, ceil
+
+    if' pred='def closest_integer(value):
+    '''
+    ' match=True
+    [greedy/humaneval] gold='    return [n + 2*i for i in range(n)]
+' pred='def make_a_pile(n):
+    """
+    Given a ' match=False
+    [greedy/humaneval] gold='    if not s:
+        return []
+
+    s_l' pred='def words_string(s):
+    """
+    You wil' match=False
+    [greedy/humaneval] gold='    if x > y:
+        return -1
+    if y' pred='def choose_num(x, y):
+    """This functi' match=False
+    [greedy/humaneval] gold='    if m < n:
+        return -1
+    summ' pred='def rounded_avg(n, m):
+    if n > m:
+   ' match=False
+    [greedy/humaneval] gold='    odd_digit_elements = []
+    for i in' pred='def unique_digits(x):
+    """Given a lis' match=False
+    [greedy/humaneval] gold='    dic = {
+        1: "One",
+        2:' pred='def by_length(arr):
+    """
+    Given an' match=False
+    [greedy/humaneval] gold='    ret = []
+    for i in range(1,n+1):
+' pred='def f(n):
+    result = [0] * n
+    for i' match=False
+    [greedy/humaneval] gold='    def is_palindrome(n):
+        return' pred='def even_odd_palindrome(n):
+    """
+    ' match=True
+    [greedy/humaneval] gold='    def digits_sum(n):
+        neg = 1
+ ' pred='def count_nums(arr):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    if len(arr)==0:
+      return True
+  ' pred='def move_one_ball(arr):
+    """We have a' match=False
+    [greedy/humaneval] gold='    odd = 0
+    even = 0
+    for i in ls' pred='def exchange(lst1, lst2):
+    """In this' match=False
+    [greedy/humaneval] gold='    dict1={}
+    list1=test.split(" ")
+ ' pred='def histogram(test):
+    """Given a stri' match=False
+    [greedy/humaneval] gold='    s = ''.join([char for char in s if c' pred='def reverse_delete(s, c):
+    """Task
+  ' match=True
+    [greedy/humaneval] gold='    res = []
+    for arr in lst:
+       ' pred='def odd_count(lst):
+    """Given a list ' match=False
+    [greedy/humaneval] gold='    max_sum = 0
+    s = 0
+    for num in' pred='def minSubArraySum(nums):
+    """
+    Gi' match=False
+    [greedy/humaneval] gold='    return sum([math.ceil(sum(arr)/capac' pred='def max_fill(grid, capacity):
+    import' match=False
+    [greedy/humaneval] gold='    return sorted(sorted(arr), key=lambd' pred='def sort_array(arr):
+    """
+    In this' match=True
+    [greedy/humaneval] gold='    result = []
+    for word in s.split(' pred='def select_words(s, n):
+    """Given a s' match=True
+    [greedy/humaneval] gold='    if len(word) < 3:
+        return ""
+' pred='def get_closest_vowel(word):
+    """You ' match=False
+    [greedy/humaneval] gold='    def check(s):
+        val = 0
+      ' pred='def match_parens(lst):
+    '''
+    You a' match=False
+    [greedy/humaneval] gold='    if k == 0:
+        return []
+    arr' pred='def maximum(arr, k):
+    """
+    Given a' match=False
+    [greedy/humaneval] gold='    return sum([x for idx, x in enumerat' pred='def solution(lst):
+    """Given a non-em' match=True
+    [greedy/humaneval] gold='    return sum(elem for elem in arr[:k] ' pred='def add_elements(arr, k):
+    """
+    Gi' match=True
+    [greedy/humaneval] gold='    if n%2==0:
+        odd_collatz = [] ' pred='def get_odd_collatz(n):
+    """
+    Give' match=True
+    [greedy/humaneval] gold='    try:
+        date = date.strip()
+   ' pred='def valid_date(date):
+    """You have to' match=False
+    [greedy/humaneval] gold='    if " " in txt:
+        return txt.sp' pred='def split_words(txt):
+    if " " in txt:' match=False
+    [greedy/humaneval] gold='    count_digit = dict([(i, 0) for i in ' pred='def is_sorted(lst):
+    '''
+    Given a ' match=False
+    [greedy/humaneval] gold='    def is_prime(num):
+        if num ==' pred='def intersection(interval1, interval2):
+' match=False
+    [greedy/humaneval] gold='    if not arr: return None
+    prod = 0' pred='def prod_signs(arr):
+    if not arr:
+   ' match=True
+    [greedy/humaneval] gold='    n = len(grid)
+    val = n * n + 1
+  ' pred='def minPath(grid, k):
+    """
+    Given ' match=False
+    [greedy/humaneval] gold='    if n == 0:
+        return [1]
+    my' pred='def tri(n):
+    """Everyone knows Fibona' match=False
+    [greedy/humaneval] gold='    product = 1
+    odd_count = 0
+    fo' pred='def digits(n):
+    """Given a positive i' match=False
+    [greedy/humaneval] gold='    opening_bracket_index = []
+    closi' pred='def is_nested(string):
+    stack = []
+  ' match=False
+    [greedy/humaneval] gold='    import math
+    squared = 0
+    for ' pred='def sum_squares(lst):
+    """You are giv' match=False
+    [greedy/humaneval] gold=' 
+    check = txt.split(' ')[-1]
+    ret' pred='def check_if_last_char_is_a_letter(txt):' match=False
+    [greedy/humaneval] gold='    ind=-1
+    i=1
+    while i<len(arr):' pred='def can_arrange(arr):
+    """Create a fu' match=False
+    [greedy/humaneval] gold='    smallest = list(filter(lambda x: x <' pred='def largest_smallest_integers(lst):
+    ' match=True
+    [greedy/humaneval] gold='    temp_a, temp_b = a, b
+    if isinsta' pred='def compare_one(a, b):
+    """
+    Creat' match=False
+    [greedy/humaneval] gold='    return n%2 == 0 and n >= 8
+' pred='def is_equal_to_sum_even(n):
+    """Eval' match=False
+    [greedy/humaneval] gold='    fact_i = 1
+    special_fact = 1
+    ' pred='def special_factorial(n):
+    """The Bra' match=False
+    [greedy/humaneval] gold='    new_text = ""
+    i = 0
+    start, e' pred='def fix_spaces(text):
+    """
+    Given ' match=False
+    [greedy/humaneval] gold='    suf = ['txt', 'exe', 'dll']
+    lst ' pred='def file_name_check(file_name):
+    """C' match=True
+    [greedy/humaneval] gold='    result =[]
+    for i in range(len(ls' pred='def sum_squares(lst):
+    """
+    This f' match=True
+    [greedy/humaneval] gold='    new_lst = []
+    for word in sentenc' pred='def words_in_sentence(sentence):
+    """' match=False
+    [greedy/humaneval] gold='    a, b = x.split("/")
+    c, d = n.spl' pred='def simplify(x, n):
+    """Your task is ' match=False
+    [greedy/humaneval] gold='    def digits_sum(n):
+        neg = 1
+ ' pred='def order_by_points(nums):
+    """
+    W' match=False
+    [greedy/humaneval] gold='    
+    count = 0
+    for num in nums:
+' pred='def specialFilter(nums):
+    count = 0
+ ' match=False
+    [greedy/humaneval] gold='    A = [i*i - i + 1 for i in range(1,n+' pred='def get_max_triples(n):
+    """
+    You ' match=True
+    [greedy/humaneval] gold='    planet_names = ("Mercury", "Venus", ' pred='def bf(planet1, planet2):
+    planets = ' match=False
+    [greedy/humaneval] gold='    lst.sort()
+    new_lst = []
+    for ' pred='def sorted_list_sum(lst):
+    """Write a' match=False
+    [greedy/humaneval] gold='    if n == 1:
+        return y
+    for ' pred='def x_or_y(n, x, y):
+    """A simple pro' match=False
+    [greedy/humaneval] gold='    return sum([i**2 for i in lst if i >' pred='def double_the_difference(lst):
+    '''
+' match=True
+    [greedy/humaneval] gold='    return [abs(x-y) for x,y in zip(game' pred='def compare(game, guess):
+    """I think' match=True
+    [greedy/humaneval] gold='    strong = extensions[0]
+    my_val = ' pred='def Strongest_Extension(class_name, exte' match=False
+    [greedy/humaneval] gold='    l = len(b)
+    pat = b + b
+    for i' pred='def cycpattern_check(a, b):
+    """You a' match=False
+    [greedy/humaneval] gold='    even_count = 0
+    odd_count = 0
+   ' pred='def even_odd_count(num):
+    """Given an' match=False
+    [greedy/humaneval] gold='    num = [1, 4, 5, 9, 10, 40, 50, 90,  ' pred='def int_to_mini_roman(number):
+    """
+ ' match=False
+    [greedy/humaneval] gold='    return a*a == b*b + c*c or b*b == a*' pred='def right_angle_triangle(a, b, c):
+    '' match=False
+    [greedy/humaneval] gold='    return sorted(words, key = lambda x:' pred='def find_max(words):
+    """Write a func' match=True
+    [greedy/humaneval] gold='    if(need <= remaining):
+        retur' pred='def eat(number, need, remaining):
+    to' match=False
+    [greedy/humaneval] gold='    expression = str(operand[0])
+    for' pred='def do_algebra(operator, operand):
+    "' match=True
+    [greedy/humaneval] gold='    flg = 0
+    idx = 0
+    new_str = li' pred='def solve(s):
+    """You are given a str' match=False
+    [greedy/humaneval] gold='    import hashlib
+    return hashlib.md' pred='def string_to_md5(text):
+    """
+    Giv' match=True
+    [greedy/humaneval] gold='    lower = max(2, min(a, b))
+    upper ' pred='def generate_integers(a, b):
+    """
+   ' match=False
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                           aime   humaneval
+-------------------------------------------------
+greedy                        0.0+-0.0    47.0+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\local_gemma4_plan_i\seed2024\eval\phase1_greedy\table2_results.json
+
+[orch] === 2026-05-04T23:28:20 EVAL_2024 phase1_greedy ===
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [cts_4nu] aime seed=0
+C:\Users\Sims\AppData\Roaming\Python\Python313\site-packages\transformers\modeling_utils.py:4832: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 380/2076 [00:00<00:00, 3752.84it/s]Loading weights:  36%|███▋      | 756/2076 [00:01<00:03, 344.76it/s] Loading weights:  44%|████▍     | 923/2076 [00:02<00:03, 345.56it/s]Loading weights:  50%|████▉     | 1030/2076 [00:02<00:03, 348.61it/s]Loading weights:  53%|█████▎    | 1109/2076 [00:02<00:02, 351.93it/s]Loading weights:  57%|█████▋    | 1173/2076 [00:03<00:02, 350.50it/s]Loading weights:  59%|█████▉    | 1227/2076 [00:03<00:02, 342.10it/s]Loading weights:  61%|██████▏   | 1274/2076 [00:03<00:02, 338.71it/s]Loading weights:  63%|██████▎   | 1316/2076 [00:03<00:02, 312.72it/s]Loading weights:  65%|██████▌   | 1352/2076 [00:03<00:02, 288.25it/s]Loading weights:  67%|██████▋   | 1384/2076 [00:03<00:02, 292.98it/s]Loading weights:  68%|██████▊   | 1416/2076 [00:03<00:02, 297.15it/s]Loading weights:  89%|████████▉ | 1849/2076 [00:04<00:00, 1178.01it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 506.14it/s] 
+[lora] manual LoRA r=8 alpha=16 applied to 108 nn.Linear modules in Gemma4TextModel
+  [ckpt] stage1=True stage2=True (meta_policy=True, critic=True)
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    prob 1/30 tree=7 depth=2 mac=nan time=111.5s pred[fallback]='1' gold='277'
+    prob 2/30 tree=4 depth=1 mac=nan time=41.6s pred[fallback]='\[\begin{array}{r}
+\begin{array}{r}
+\beg' gold='062'
+    prob 3/30 tree=7 depth=2 mac=nan time=79.8s pred[fallback]='120' gold='079'
+    prob 4/30 tree=4 depth=1 mac=nan time=38.7s pred[fallback]='1' gold='070'
+    prob 5/30 tree=7 depth=2 mac=nan time=71.7s pred[fallback]='3' gold='065'
+    prob 6/30 tree=13 depth=2 mac=nan time=132.4s pred[fallback]='2026' gold='441'
+    prob 7/30 tree=4 depth=1 mac=nan time=45.9s pred[fallback]='6' gold='396'
+    prob 8/30 tree=4 depth=1 mac=nan time=46.3s pred[fallback]='12' gold='244'
+    prob 9/30 tree=19 depth=3 mac=nan time=172.4s pred[fallback]='6' gold='029'
+    prob 10/30 tree=21 depth=3 mac=2.71e+12 time=204.6s pred[fallback]='15' gold='156'
+    prob 11/30 tree=4 depth=1 mac=nan time=42.4s pred[fallback]='2' gold='896'
+    prob 12/30 tree=4 depth=1 mac=nan time=31.3s pred[fallback]='86.' gold='161'
+    prob 13/30 tree=4 depth=1 mac=nan time=37.2s pred[fallback]='999' gold='039'
+    prob 14/30 tree=4 depth=1 mac=nan time=37.9s pred[fallback]='1' gold='681'
+    prob 15/30 tree=7 depth=2 mac=nan time=63.2s pred[fallback]='???' gold='083'
+    prob 16/30 tree=4 depth=1 mac=nan time=45.4s pred[fallback]='120' gold='178'
+    prob 17/30 tree=4 depth=1 mac=nan time=39.6s pred[fallback]='10' gold='243'
+    prob 18/30 tree=4 depth=1 mac=nan time=41.6s pred[fallback]='90' gold='503'
+    prob 19/30 tree=4 depth=1 mac=nan time=42.2s pred[fallback]='\[f(n) = n \implies f(n) = n \implies f(' gold='279'
+    prob 20/30 tree=4 depth=1 mac=nan time=41.3s pred[fallback]='4' gold='190'
+    prob 21/30 tree=7 depth=2 mac=nan time=65.9s pred[fallback]='2' gold='050'
+    prob 22/30 tree=16 depth=3 mac=nan time=130.7s pred[fallback]='4500000000000000' gold='754'
+    prob 23/30 tree=4 depth=1 mac=nan time=23.6s pred[fallback]='12' gold='245'
+    prob 24/30 tree=4 depth=1 mac=nan time=48.0s pred[fallback]='9' gold='669'
+    prob 25/30 tree=19 depth=4 mac=nan time=140.4s pred[fallback]='10' gold='340'
+    prob 26/30 tree=4 depth=1 mac=nan time=36.8s pred[fallback]='6' gold='132'
+    prob 27/30 tree=4 depth=1 mac=nan time=38.5s pred[fallback]='18' gold='223'
+    prob 28/30 tree=4 depth=1 mac=nan time=40.7s pred[fallback]='202' gold='107'
+    prob 29/30 tree=10 depth=2 mac=nan time=80.3s pred[fallback]='20' gold='157'
+    prob 30/30 tree=16 depth=4 mac=nan time=126.9s pred[fallback]='6' gold='393'
+  [cts_4nu] humaneval seed=0
+[lora] LoRA already installed: 108 LoraLinear modules detected in Gemma4TextModel; skipping re-wrap (idempotent re-entry).
+  [ckpt] stage1=True stage2=True (meta_policy=True, critic=True)
+    prob 1/164 tree=10 depth=2 mac=nan time=118.1s pred[cts]='পূর্বে' gold='    for idx, elem in enumerate(numbers):'
+    prob 2/164 tree=7 depth=2 mac=nan time=71.6s pred[cts]='été' gold='    result = []
+    current_string = []
+'
+    prob 3/164 tree=7 depth=2 mac=nan time=62.4s pred[fallback]='```python
+def truncate_number(number: fl' gold='    return number % 1.0
+'
+    prob 4/164 tree=4 depth=1 mac=nan time=47.0s pred[fallback]='```python
+def below_zero(operations: Lis' gold='    balance = 0
+
+    for op in operation'
+    prob 5/164 tree=4 depth=1 mac=nan time=37.4s pred[cts]='onte' gold='    mean = sum(numbers) / len(numbers)
+ '
+    prob 6/164 tree=4 depth=1 mac=nan time=44.0s pred[cts]='ிருக்கு' gold='    if not numbers:
+        return []
+
+ '
+    prob 7/164 tree=4 depth=1 mac=nan time=46.4s pred[cts]='ামি' gold='    def parse_paren_group(s):
+        de'
+    prob 8/164 tree=4 depth=1 mac=nan time=46.9s pred[cts]='kennung' gold='    return [x for x in strings if substr'
+    prob 9/164 tree=4 depth=1 mac=nan time=46.3s pred[cts]=' Seiten' gold='    sum_value = 0
+    prod_value = 1
+
+  '
+    prob 10/164 tree=4 depth=1 mac=nan time=45.5s pred[cts]=' hui' gold='    running_max = None
+    result = []
+
+'
+    prob 11/164 tree=24 depth=3 mac=3.08e+12 time=210.9s pred[cts]=' compartil' gold='    if not string:
+        return ''
+
+  '
+    prob 12/164 tree=4 depth=1 mac=nan time=42.9s pred[fallback]='```python
+def string_xor(a: str, b: str)' gold='    def xor(i, j):
+        if i == j:
+  '
+    prob 13/164 tree=4 depth=1 mac=nan time=52.2s pred[cts]='łam' gold='    if not strings:
+        return None
+'
+    prob 14/164 tree=4 depth=1 mac=nan time=42.6s pred[cts]='uan' gold='    while b:
+        a, b = b, a % b
+   '
+    prob 15/164 tree=4 depth=1 mac=nan time=43.7s pred[fallback]='```python
+def all_prefixes(string: str) ' gold='    result = []
+
+    for i in range(len('
+    prob 16/164 tree=4 depth=1 mac=nan time=40.7s pred[cts]=' retrouve' gold='    return ' '.join([str(x) for x in ran'
+    prob 17/164 tree=4 depth=1 mac=nan time=40.0s pred[cts]=' Cultura' gold='    return len(set(string.lower()))
+'
+    prob 18/164 tree=10 depth=2 mac=nan time=65.5s pred[cts]='chent' gold='    note_map = {'o': 4, 'o|': 2, '.|': 1'
+    prob 19/164 tree=4 depth=1 mac=nan time=46.7s pred[cts]='LinearLayout' gold='    times = 0
+
+    for i in range(len(st'
+    prob 20/164 tree=4 depth=1 mac=nan time=50.3s pred[fallback]='```python
+def sort_numbers(numbers: str)' gold='    value_map = {
+        'zero': 0,
+   '
+    prob 21/164 tree=4 depth=1 mac=nan time=79.4s pred[cts]='vich' gold='    closest_pair = None
+    distance = N'
+    prob 22/164 tree=4 depth=1 mac=nan time=30.2s pred[cts]='ukan' gold='    min_number = min(numbers)
+    max_nu'
+    prob 23/164 tree=4 depth=1 mac=nan time=45.1s pred[cts]='move' gold='    return [x for x in values if isinsta'
+    prob 24/164 tree=4 depth=1 mac=nan time=27.5s pred[cts]='види' gold='    return len(string)
+'
+    prob 25/164 tree=4 depth=1 mac=nan time=42.8s pred[cts]='ணர்வு' gold='    for i in reversed(range(n)):
+       '
+    prob 26/164 tree=4 depth=1 mac=nan time=44.8s pred[cts]=' zweite' gold='    import math
+    fact = []
+    i = 2
+'
+    prob 27/164 tree=4 depth=1 mac=nan time=25.0s pred[cts]=' Entwicklung' gold='    import collections
+    c = collectio'
+    prob 28/164 tree=4 depth=1 mac=nan time=42.5s pred[cts]='hedral' gold='    return string.swapcase()
+'
+    prob 29/164 tree=4 depth=1 mac=nan time=46.4s pred[fallback]='```python
+def concatenate(strings: List[' gold='    return ''.join(strings)
+'
+    prob 30/164 tree=4 depth=1 mac=nan time=42.6s pred[fallback]='```python
+def filter_by_prefix(strings: ' gold='    return [x for x in strings if x.star'
+    prob 31/164 tree=4 depth=1 mac=nan time=44.4s pred[cts]='yss' gold='    return [e for e in l if e > 0]
+'
+    prob 32/164 tree=4 depth=1 mac=nan time=25.3s pred[cts]='ารณา' gold='    if n < 2:
+        return False
+    f'
+    prob 33/164 tree=4 depth=1 mac=nan time=45.5s pred[fallback]='```python
+def find_zero(xs: list):
+    "' gold='    begin, end = -1., 1.
+    while poly('
+    prob 34/164 tree=4 depth=1 mac=nan time=43.0s pred[cts]='ratie' gold='    l = list(l)
+    l[::3] = sorted(l[::'
+    prob 35/164 tree=4 depth=1 mac=nan time=42.7s pred[cts]=' Rocky' gold='    return sorted(list(set(l)))
+'
+    prob 36/164 tree=4 depth=1 mac=nan time=40.6s pred[cts]='akh' gold='    m = l[0]
+    for e in l:
+        if '
+    prob 37/164 tree=4 depth=1 mac=nan time=42.5s pred[fallback]='```python
+def fizz_buzz(n: int):
+    cou' gold='    ns = []
+    for i in range(n):
+     '
+    prob 38/164 tree=4 depth=1 mac=nan time=30.5s pred[cts]=' Bulldogs' gold='    evens = l[::2]
+    odds = l[1::2]
+  '
+    prob 39/164 tree=4 depth=1 mac=nan time=26.6s pred[cts]=' dressings' gold='    return encode_cyclic(encode_cyclic(s'
+    prob 40/164 tree=4 depth=1 mac=nan time=25.0s pred[cts]=' Metast' gold='    import math
+
+    def is_prime(p):
+  '
+    prob 41/164 tree=4 depth=1 mac=nan time=44.3s pred[fallback]='```python
+def triples_sum_to_zero(l: lis' gold='    for i in range(len(l)):
+        for '
+    prob 42/164 tree=4 depth=1 mac=nan time=36.2s pred[cts]='ravings' gold='    return n**2
+'
+    prob 43/164 tree=4 depth=1 mac=nan time=34.6s pred[fallback]='```python
+def incr_list(l: list):
+    re' gold='    return [(e + 1) for e in l]
+'
+    prob 44/164 tree=4 depth=1 mac=nan time=43.3s pred[cts]='MetaObject' gold='    for i, l1 in enumerate(l):
+        f'
+    prob 45/164 tree=4 depth=1 mac=nan time=42.0s pred[cts]=' perc' gold='    ret = ""
+    while x > 0:
+        re'
+    prob 46/164 tree=4 depth=1 mac=nan time=42.5s pred[cts]=' sólido' gold='    return a * h / 2.0
+'
+    prob 47/164 tree=4 depth=1 mac=nan time=43.3s pred[cts]='ummy' gold='    results = [0, 0, 2, 0]
+    if n < 4:'
+    prob 48/164 tree=10 depth=2 mac=nan time=86.7s pred[fallback]='```python
+def median(l: list):
+    l.sor' gold='    l = sorted(l)
+    if len(l) % 2 == 1'
+    prob 49/164 tree=4 depth=1 mac=nan time=26.8s pred[fallback]='```python
+def is_palindrome(text: str):
+' gold='    for i in range(len(text)):
+        i'
+    prob 50/164 tree=4 depth=1 mac=nan time=32.7s pred[fallback]='```python
+def modp(n: int, p: int):
+    ' gold='    ret = 1
+    for i in range(n):
+     '
+    prob 51/164 tree=4 depth=1 mac=nan time=42.7s pred[cts]='ombe' gold='    return "".join([chr(((ord(ch) - 5 - '
+    prob 52/164 tree=7 depth=2 mac=nan time=65.0s pred[cts]='xpress' gold='    return "".join([s for s in text if s'
+    prob 53/164 tree=4 depth=1 mac=nan time=33.9s pred[cts]=' đích' gold='    for e in l:
+        if e >= t:
+     '
+    prob 54/164 tree=4 depth=1 mac=nan time=33.1s pred[cts]=' AMERICA' gold='    return x + y
+'
+    prob 55/164 tree=4 depth=1 mac=nan time=45.3s pred[fallback]='```python
+def same_chars(s0: str, s1: st' gold='    return set(s0) == set(s1)
+'
+    prob 56/164 tree=4 depth=1 mac=nan time=41.1s pred[cts]=' reimbursement' gold='    if n == 0:
+        return 0
+    if n'
+    prob 57/164 tree=4 depth=1 mac=nan time=39.0s pred[cts]=' personnels' gold='    depth = 0
+    for b in brackets:
+   '
+    prob 58/164 tree=4 depth=1 mac=nan time=42.6s pred[cts]=' termite' gold='    if l == sorted(l) or l == sorted(l, '
+    prob 59/164 tree=4 depth=1 mac=nan time=41.5s pred[cts]=' Condensed' gold='    ret = set()
+    for e1 in l1:
+      '
+    prob 60/164 tree=4 depth=1 mac=nan time=31.1s pred[cts]='inz' gold='    def is_prime(k):
+        if k < 2:
+ '
+    prob 61/164 tree=4 depth=1 mac=nan time=26.0s pred[cts]=' Luther' gold='    return sum(range(n + 1))
+'
+    prob 62/164 tree=4 depth=1 mac=nan time=46.7s pred[cts]='cum' gold='    depth = 0
+    for b in brackets:
+   '
+    prob 63/164 tree=4 depth=1 mac=nan time=41.8s pred[cts]='iemann' gold='    return [(i * x) for i, x in enumerat'
+    prob 64/164 tree=4 depth=1 mac=nan time=45.4s pred[cts]='brä' gold='    if n == 0:
+        return 0
+    if n'
+    prob 65/164 tree=4 depth=1 mac=nan time=41.7s pred[cts]='ატი' gold='    vowels = "aeiouAEIOU"
+    n_vowels ='
+    prob 66/164 tree=4 depth=1 mac=nan time=43.3s pred[fallback]='```python
+def circular_shift(x, shift):
+' gold='    s = str(x)
+    if shift > len(s):
+  '
+    prob 67/164 tree=4 depth=1 mac=nan time=44.8s pred[cts]=' Bark' gold='    if s == "": return 0
+    return sum('
+    prob 68/164 tree=7 depth=2 mac=nan time=59.7s pred[cts]='DBOutput' gold='    lis = list()
+    for i in s.split(' '
+    prob 69/164 tree=4 depth=1 mac=nan time=46.8s pred[cts]='ankar' gold='    if(len(arr) == 0): return []
+    eve'
+    prob 70/164 tree=4 depth=1 mac=nan time=46.3s pred[fallback]='```python
+def search(lst):
+    '''
+    Y' gold='    frq = [0] * (max(lst) + 1)
+    for i'
+    prob 71/164 tree=4 depth=1 mac=nan time=24.6s pred[cts]='angk' gold='    res, switch = [], True
+    while lst'
+    prob 72/164 tree=4 depth=1 mac=nan time=24.3s pred[cts]='Fem' gold='    if a + b <= c or a + c <= b or b + c'
+    prob 73/164 tree=4 depth=1 mac=nan time=44.5s pred[cts]='ścio' gold='    if sum(q) > w:
+        return False
+'
+    prob 74/164 tree=4 depth=1 mac=nan time=43.2s pred[cts]='కుడు' gold='    ans = 0
+    for i in range(len(arr) '
+    prob 75/164 tree=4 depth=1 mac=nan time=25.3s pred[cts]='fica' gold='    l1 = 0
+    for st in lst1:
+        l'
+    prob 76/164 tree=4 depth=1 mac=nan time=42.9s pred[cts]='SupportPackage' gold='    def is_prime(n):
+        for j in ra'
+    prob 77/164 tree=4 depth=1 mac=nan time=43.3s pred[cts]='getName' gold='    if (n == 1): 
+        return (x == 1'
+    prob 78/164 tree=4 depth=1 mac=nan time=43.2s pred[fallback]='```python
+def iscube(a):
+    '''
+    Wri' gold='    a = abs(a)
+    return int(round(a **'
+    prob 79/164 tree=4 depth=1 mac=nan time=45.7s pred[cts]=' traité' gold='    primes = ('2', '3', '5', '7', 'B', ''
+    prob 80/164 tree=4 depth=1 mac=nan time=42.9s pred[cts]=' edema' gold='    return "db" + bin(decimal)[2:] + "db'
+    prob 81/164 tree=4 depth=1 mac=nan time=42.6s pred[fallback]='```python
+def is_happy(s):
+    if len(s)' gold='    if len(s) < 3:
+      return False
+
+ '
+    prob 82/164 tree=7 depth=2 mac=nan time=67.8s pred[cts]=' জাহান' gold='
+   
+    letter_grade = []
+    for gpa i'
+Exception in thread Thread-165 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xa8 in position 85: illegal multibyte sequence
+    prob 83/164 tree=4 depth=1 mac=nan time=42.1s pred[cts]='кина' gold='    l = len(string)
+    if l == 0 or l ='
+    prob 84/164 tree=4 depth=1 mac=nan time=33.0s pred[fallback]='```python
+def starts_one_ends(n):
+    co' gold='    if n == 1: return 1
+    return 18 * '
+    prob 85/164 tree=4 depth=1 mac=nan time=42.6s pred[fallback]='```python
+def solve(N):
+    binary_strin' gold='    return bin(sum(int(i) for i in str(N'
+    prob 86/164 tree=4 depth=1 mac=nan time=42.4s pred[cts]='Inputs' gold='    return sum([lst[i] for i in range(1,'
+    prob 87/164 tree=4 depth=1 mac=nan time=44.0s pred[cts]=' Câmara' gold='    return ' '.join([''.join(sorted(list'
+    prob 88/164 tree=4 depth=1 mac=nan time=45.9s pred[cts]=' Figaro' gold='    coords = [(i, j) for i in range(len('
+    prob 89/164 tree=4 depth=1 mac=nan time=44.5s pred[cts]=' domaine' gold='    return [] if len(array) == 0 else so'
+    prob 90/164 tree=7 depth=2 mac=nan time=64.2s pred[fallback]='```python
+def encrypt(s):
+    """Create ' gold='    d = 'abcdefghijklmnopqrstuvwxyz'
+   '
+    prob 91/164 tree=4 depth=1 mac=nan time=41.8s pred[cts]=' বণ্ট' gold='    lst = sorted(set(lst))
+    return No'
+    prob 92/164 tree=16 depth=3 mac=nan time=120.3s pred[cts]='ಡುವುದ' gold='    import re
+    sentences = re.split(r'
+    prob 93/164 tree=4 depth=1 mac=nan time=25.0s pred[fallback]='```python
+def any_int(x, y, z):
+    if x' gold='    
+    if isinstance(x,int) and isinst'
+    prob 94/164 tree=7 depth=2 mac=nan time=70.6s pred[cts]=' অঞ্চলের' gold='    vowels = "aeiouAEIOU"
+    vowels_rep'
+Exception in thread Thread-189 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xb0 in position 91: illegal multibyte sequence
+    prob 95/164 tree=4 depth=1 mac=nan time=28.7s pred[cts]=' процент' gold='    def isPrime(n):
+        for i in ran'
+Exception in thread Thread-191 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd1 in position 73: illegal multibyte sequence
+    prob 96/164 tree=4 depth=1 mac=nan time=43.8s pred[cts]=' Collie' gold='    if len(dict.keys()) == 0:
+        re'
+    prob 97/164 tree=4 depth=1 mac=nan time=40.9s pred[fallback]='```python
+def count_up_to(n):
+    """Imp' gold='    primes = []
+    for i in range(2, n)'
+    prob 98/164 tree=4 depth=1 mac=nan time=25.1s pred[cts]='inni' gold='    return abs(a % 10) * abs(b % 10)
+'
+    prob 99/164 tree=4 depth=1 mac=nan time=29.0s pred[cts]='Meine' gold='    count = 0
+    for i in range(0,len(s'
+    prob 100/164 tree=4 depth=1 mac=nan time=45.9s pred[cts]=' Telescope' gold='    from math import floor, ceil
+
+    if'
+    prob 101/164 tree=4 depth=1 mac=nan time=25.0s pred[cts]='жала' gold='    return [n + 2*i for i in range(n)]
+'
+    prob 102/164 tree=4 depth=1 mac=nan time=42.2s pred[cts]='WMN' gold='    if not s:
+        return []
+
+    s_l'
+    prob 103/164 tree=4 depth=1 mac=nan time=26.6s pred[cts]='ocene' gold='    if x > y:
+        return -1
+    if y'
+    prob 104/164 tree=4 depth=1 mac=nan time=37.5s pred[cts]='ទឹក' gold='    if m < n:
+        return -1
+    summ'
+    prob 105/164 tree=10 depth=2 mac=nan time=95.1s pred[cts]=' filos' gold='    odd_digit_elements = []
+    for i in'
+    prob 106/164 tree=4 depth=1 mac=nan time=48.2s pred[cts]='ignent' gold='    dic = {
+        1: "One",
+        2:'
+    prob 107/164 tree=4 depth=1 mac=nan time=42.7s pred[cts]=' deprec' gold='    ret = []
+    for i in range(1,n+1):
+'
+    prob 108/164 tree=4 depth=1 mac=nan time=47.0s pred[fallback]='```python
+def even_odd_palindrome(n):
+  ' gold='    def is_palindrome(n):
+        return'
+    prob 109/164 tree=4 depth=1 mac=nan time=42.5s pred[fallback]='```python
+def count_nums(arr):
+    retur' gold='    def digits_sum(n):
+        neg = 1
+ '
+    prob 110/164 tree=13 depth=3 mac=nan time=102.8s pred[cts]=' sytuacji' gold='    if len(arr)==0:
+      return True
+  '
+    prob 111/164 tree=4 depth=1 mac=nan time=43.6s pred[cts]='bub' gold='    odd = 0
+    even = 0
+    for i in ls'
+    prob 112/164 tree=7 depth=2 mac=nan time=64.6s pred[cts]='busters' gold='    dict1={}
+    list1=test.split(" ")
+ '
+    prob 113/164 tree=4 depth=1 mac=nan time=30.0s pred[cts]=' случилось' gold='    s = ''.join([char for char in s if c'
+Exception in thread Thread-227 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd1 in position 71: illegal multibyte sequence
+    prob 114/164 tree=16 depth=3 mac=nan time=135.9s pred[cts]='zeigen' gold='    res = []
+    for arr in lst:
+       '
+    prob 115/164 tree=4 depth=1 mac=nan time=27.7s pred[cts]=' Alleg' gold='    max_sum = 0
+    s = 0
+    for num in'
+    prob 116/164 tree=4 depth=1 mac=nan time=48.1s pred[cts]='oglobulin' gold='    return sum([math.ceil(sum(arr)/capac'
+    prob 117/164 tree=4 depth=1 mac=nan time=43.4s pred[cts]=' لله' gold='    return sorted(sorted(arr), key=lambd'
+Exception in thread Thread-235 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd9 in position 71: illegal multibyte sequence
+    prob 118/164 tree=4 depth=1 mac=nan time=45.3s pred[fallback]='```python
+def select_words(s, n):
+    ""' gold='    result = []
+    for word in s.split('
+    prob 119/164 tree=4 depth=1 mac=nan time=46.4s pred[cts]=' запо' gold='    if len(word) < 3:
+        return ""
+'
+    prob 120/164 tree=4 depth=1 mac=nan time=49.4s pred[fallback]='```python
+def match_parens(lst):
+    '''' gold='    def check(s):
+        val = 0
+      '
+    prob 121/164 tree=4 depth=1 mac=nan time=29.9s pred[cts]=' pet' gold='    if k == 0:
+        return []
+    arr'
+    prob 122/164 tree=4 depth=1 mac=nan time=42.5s pred[cts]=' Confeder' gold='    return sum([x for idx, x in enumerat'
+    prob 123/164 tree=4 depth=1 mac=nan time=33.8s pred[cts]='}}}$' gold='    return sum(elem for elem in arr[:k] '
+    prob 124/164 tree=4 depth=1 mac=nan time=46.0s pred[cts]=' Pid' gold='    if n%2==0:
+        odd_collatz = [] '
+    prob 125/164 tree=4 depth=1 mac=nan time=46.1s pred[cts]=' Geräte' gold='    try:
+        date = date.strip()
+   '
+    prob 126/164 tree=4 depth=1 mac=nan time=45.4s pred[fallback]='```python
+def split_words(txt):
+    if '' gold='    if " " in txt:
+        return txt.sp'
+    prob 127/164 tree=4 depth=1 mac=nan time=42.6s pred[fallback]='```python
+def is_sorted(lst):
+    '''
+  ' gold='    count_digit = dict([(i, 0) for i in '
+    prob 128/164 tree=16 depth=3 mac=nan time=135.7s pred[cts]='koi' gold='    def is_prime(num):
+        if num =='
+    prob 129/164 tree=4 depth=1 mac=nan time=43.6s pred[cts]='Chromosome' gold='    if not arr: return None
+    prod = 0'
+    prob 130/164 tree=4 depth=1 mac=nan time=30.7s pred[cts]='onnen' gold='    n = len(grid)
+    val = n * n + 1
+  '
+    prob 131/164 tree=4 depth=1 mac=nan time=43.6s pred[cts]='ிகள்' gold='    if n == 0:
+        return [1]
+    my'
+    prob 132/164 tree=4 depth=1 mac=nan time=43.9s pred[fallback]='```python
+def digits(n):
+    """Given a ' gold='    product = 1
+    odd_count = 0
+    fo'
+    prob 133/164 tree=4 depth=1 mac=nan time=44.3s pred[cts]=' дорогу' gold='    opening_bracket_index = []
+    closi'
+Exception in thread Thread-267 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd1 in position 75: illegal multibyte sequence
+    prob 134/164 tree=7 depth=2 mac=nan time=51.7s pred[cts]=' ضلع' gold='    import math
+    squared = 0
+    for '
+Exception in thread Thread-269 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd9 in position 73: illegal multibyte sequence
+    prob 135/164 tree=4 depth=1 mac=nan time=44.2s pred[cts]='leece' gold=' 
+    check = txt.split(' ')[-1]
+    ret'
+    prob 136/164 tree=4 depth=1 mac=nan time=32.8s pred[cts]='hten' gold='    ind=-1
+    i=1
+    while i<len(arr):'
+    prob 137/164 tree=4 depth=1 mac=nan time=43.2s pred[cts]=' courthouse' gold='    smallest = list(filter(lambda x: x <'
+    prob 138/164 tree=4 depth=1 mac=nan time=25.8s pred[cts]=' Retail' gold='    temp_a, temp_b = a, b
+    if isinsta'
+    prob 139/164 tree=4 depth=1 mac=nan time=44.5s pred[cts]=' Squad' gold='    return n%2 == 0 and n >= 8
+'
+    prob 140/164 tree=4 depth=1 mac=nan time=24.9s pred[cts]=' нако' gold='    fact_i = 1
+    special_fact = 1
+    '
+    prob 141/164 tree=4 depth=1 mac=nan time=24.7s pred[fallback]='```python
+def fix_spaces(text):
+    """
+' gold='    new_text = ""
+    i = 0
+    start, e'
+    prob 142/164 tree=4 depth=1 mac=nan time=44.6s pred[cts]=' sprinter' gold='    suf = ['txt', 'exe', 'dll']
+    lst '
+    prob 143/164 tree=4 depth=1 mac=nan time=34.0s pred[cts]=' Thrust' gold='    result =[]
+    for i in range(len(ls'
+    prob 144/164 tree=4 depth=1 mac=nan time=43.8s pred[cts]=' राव' gold='    new_lst = []
+    for word in sentenc'
+Exception in thread Thread-289 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xb5 in position 79: illegal multibyte sequence
+    prob 145/164 tree=4 depth=1 mac=nan time=43.7s pred[cts]='гене' gold='    a, b = x.split("/")
+    c, d = n.spl'
+    prob 146/164 tree=4 depth=1 mac=nan time=44.1s pred[cts]='hrte' gold='    def digits_sum(n):
+        neg = 1
+ '
+    prob 147/164 tree=4 depth=1 mac=nan time=41.8s pred[cts]='ierto' gold='    
+    count = 0
+    for num in nums:
+'
+    prob 148/164 tree=4 depth=1 mac=nan time=43.1s pred[cts]=' praz' gold='    A = [i*i - i + 1 for i in range(1,n+'
+    prob 149/164 tree=4 depth=1 mac=nan time=47.0s pred[cts]=' ನ್ಯ' gold='    planet_names = ("Mercury", "Venus", '
+Exception in thread Thread-299 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xaf in position 79: illegal multibyte sequence
+    prob 150/164 tree=4 depth=1 mac=nan time=44.4s pred[cts]='foon' gold='    lst.sort()
+    new_lst = []
+    for '
+    prob 151/164 tree=4 depth=1 mac=nan time=42.8s pred[cts]='package' gold='    if n == 1:
+        return y
+    for '
+    prob 152/164 tree=10 depth=2 mac=nan time=89.7s pred[cts]=' Сте' gold='    return sum([i**2 for i in lst if i >'
+Exception in thread Thread-305 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xd1 in position 73: illegal multibyte sequence
+    prob 153/164 tree=4 depth=1 mac=nan time=45.8s pred[cts]=' ఫలి' gold='    return [abs(x-y) for x,y in zip(game'
+Exception in thread Thread-307 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xbf in position 79: illegal multibyte sequence
+    prob 154/164 tree=10 depth=2 mac=nan time=89.4s pred[cts]=' stabilizer' gold='    strong = extensions[0]
+    my_val = '
+    prob 155/164 tree=4 depth=1 mac=nan time=43.7s pred[fallback]='```python
+def cycpattern_check(a, b):
+  ' gold='    l = len(b)
+    pat = b + b
+    for i'
+    prob 156/164 tree=4 depth=1 mac=nan time=41.4s pred[fallback]='```python
+def even_odd_count(num):
+    n' gold='    even_count = 0
+    odd_count = 0
+   '
+    prob 157/164 tree=4 depth=1 mac=nan time=42.2s pred[cts]='restricted' gold='    num = [1, 4, 5, 9, 10, 40, 50, 90,  '
+    prob 158/164 tree=4 depth=1 mac=nan time=43.0s pred[cts]='არა' gold='    return a*a == b*b + c*c or b*b == a*'
+    prob 159/164 tree=4 depth=1 mac=nan time=43.1s pred[cts]='liang' gold='    return sorted(words, key = lambda x:'
+    prob 160/164 tree=7 depth=2 mac=nan time=69.1s pred[cts]=' প্রাপ্য' gold='    if(need <= remaining):
+        retur'
+Exception in thread Thread-321 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1612, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xaf in position 91: illegal multibyte sequence
+    prob 161/164 tree=4 depth=1 mac=nan time=46.1s pred[cts]='biome' gold='    expression = str(operand[0])
+    for'
+    prob 162/164 tree=19 depth=3 mac=nan time=152.8s pred[cts]=' uzys' gold='    flg = 0
+    idx = 0
+    new_str = li'
+    prob 163/164 tree=4 depth=1 mac=nan time=44.2s pred[cts]=' olvides' gold='    import hashlib
+    return hashlib.md'
+    prob 164/164 tree=4 depth=1 mac=nan time=44.1s pred[cts]='omes' gold='    lower = max(2, min(a, b))
+    upper '
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                           aime   humaneval
+-------------------------------------------------
+cts_4nu                       0.0+-0.0     9.1+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\local_gemma4_plan_i\seed2024\eval\phase2_cts_4nu\table2_results.json
+
+[orch] === 2026-05-05T01:50:34 EVAL_2024 phase2_cts_4nu ===

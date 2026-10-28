@@ -1,0 +1,65 @@
+{
+  "C_fmt": {
+    "n": 600,
+    "mean_tokens": 425.21166666666664,
+    "median_tokens": 512.0,
+    "min_tokens": 65,
+    "max_tokens": 512,
+    "quantiles_linear": [
+      333.25,
+      512.0,
+      512.0,
+      512.0
+    ],
+    "tokens_eq512": 365,
+    "tokens_lt512": 235,
+    "stop_ids": {
+      "None": 365,
+      "1": 235
+    },
+    "eos_count": 235,
+    "missing_stop_id": 0
+  },
+  "X5O47": {
+    "n": 600,
+    "mean_tokens": 398.44666666666666,
+    "median_tokens": 512.0,
+    "min_tokens": 72,
+    "max_tokens": 512,
+    "quantiles_linear": [
+      274.0,
+      512.0,
+      512.0,
+      512.0
+    ],
+    "tokens_eq512": 307,
+    "tokens_lt512": 293,
+    "stop_ids": {
+      "None": 307,
+      "1": 293
+    },
+    "eos_count": 293,
+    "missing_stop_id": 0
+  },
+  "shuf_X5O47": {
+    "n": 600,
+    "mean_tokens": 396.0083333333333,
+    "median_tokens": 484.5,
+    "min_tokens": 60,
+    "max_tokens": 512,
+    "quantiles_linear": [
+      274.75,
+      512.0,
+      512.0,
+      512.0
+    ],
+    "tokens_eq512": 292,
+    "tokens_lt512": 308,
+    "stop_ids": {
+      "None": 292,
+      "1": 308
+    },
+    "eos_count": 308,
+    "missing_stop_id": 0
+  }
+}

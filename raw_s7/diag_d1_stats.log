@@ -1,0 +1,25 @@
+Loaded 600 items for Condition A from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_A.jsonl
+Loaded 600 items for Condition B1 from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_B1.jsonl
+Loaded 600 items for Condition C from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_C.jsonl
+Loaded 600 items for Condition E1 from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_E1.jsonl
+Loaded 600 items for Condition D1 from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_D1.jsonl
+Loaded 600 items for Condition F from /home/shoon/cts_e1_s5/results_s7/p6r/diag_nll_F.jsonl
+
+============================================================
+D1 NLL Statistics Summary:
+============================================================
+Condition A  : Mean = 1.1069 | Median = 1.0087
+Condition B1 : Mean = 1.5647 | Median = 1.1740
+Condition C  : Mean = 1.9102 | Median = 1.8253
+Condition E1 : Mean = 1.0653 | Median = 0.9831
+Condition D1 : Mean = 0.8018 | Median = 0.7691
+Condition F  : Mean = 0.9456 | Median = 0.8919
+
+Pairwise Differences:
+  A_minus_C   : Mean Δ = -0.8033 | 95% CI: [-0.8410, -0.7666]
+  A_minus_E1  : Mean Δ = +0.0416 | 95% CI: [+0.0057, +0.0779]
+  E1_minus_C  : Mean Δ = -0.8449 | 95% CI: [-0.8830, -0.8066]
+
+A < E1 Items: 258 / 600 (43.00%)
+
+Saved results to /home/shoon/cts_e1_s5/results_s7/diag/d1_nll_stats.json

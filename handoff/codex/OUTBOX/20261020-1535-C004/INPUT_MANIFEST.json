@@ -1,0 +1,167 @@
+[
+  {
+    "path": "AGENTS.md",
+    "bytes": 4754,
+    "sha256": "606fab6d2712ed4c8cfd336784b71d962ca9d296d9ed6dc94ac8f569fae75f6f"
+  },
+  {
+    "path": "configs\\s7_train_993.json",
+    "bytes": 5748,
+    "sha256": "3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c"
+  },
+  {
+    "path": "handoff\\codex\\AGENTS.md",
+    "bytes": 5577,
+    "sha256": "2273eb86b9c2ad163f2b9690a1f36cad04889f96701272031f61605a39df53e4"
+  },
+  {
+    "path": "handoff\\codex\\CONTEXT.md",
+    "bytes": 2672,
+    "sha256": "074c99e6703ccce6039b503f7cd1d629ce519e62799744b66902a7046158b04f"
+  },
+  {
+    "path": "handoff\\codex\\data\\dev600_records.jsonl",
+    "bytes": 520345,
+    "sha256": "6ed3b4478db7e62759767d60464dc9bd41c0295b46fc93c5f700215d2277b543"
+  },
+  {
+    "path": "handoff\\codex\\data\\gen_C.jsonl",
+    "bytes": 2510279,
+    "sha256": "fa8c909db87a6a1df3d347e274cb6cdb061a04da938aa1cde67269ac467b5e01"
+  },
+  {
+    "path": "handoff\\codex\\data\\p6_item_order.json",
+    "bytes": 5939,
+    "sha256": "6c76ddb7cc4a1ee901291eee76ed99763ec5ebfec202cb30ba17f9bcee487e7c"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\cc_x5_analysis.txt",
+    "bytes": 1028,
+    "sha256": "561847a298f7488e9d1209e2a13bcf9b26e88f4fce34c0ca3aaaa79eda2b4fd3"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\cts_x5_master.log",
+    "bytes": 2061,
+    "sha256": "4c6fe07832e5270940b121e29fd18e14fa6e7b6b4efc04fddbdc1906148104eb"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\gen_X5O47.jsonl",
+    "bytes": 729667,
+    "sha256": "9573ad1d507743ef1361dbadf44e8558e2654f53cdf5b9d7650a78b4133c8a15"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\genB1_X5O47.jsonl",
+    "bytes": 726025,
+    "sha256": "a3441a57d97e6e3542c9a500210406fbcc0d99bb5f4b69d7b3a0eeae6880178e"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\grade.log",
+    "bytes": 305,
+    "sha256": "ea77b4a5c016c252fbf15871e8de0b39d19a27c0d35ac120227fcbae716d15ac"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\manifest_X5O47.json",
+    "bytes": 157768,
+    "sha256": "60e192508c4c2e97926b41444601d84b678fb2599ecf190e5e0e08e74cf74fe2"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\RESULT-X5-stylematched-20261020.md",
+    "bytes": 4521,
+    "sha256": "98789121b72ccc9d3a84eb763fa77f3b64f3e6a9b4f5ac563b284c54cb01be90"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\s0spec.json",
+    "bytes": 258,
+    "sha256": "029a2a92c61e26cace3c58214b7d7531457c8a1a6c3104be5814eb794c0f0714"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\SHA256SUMS.txt",
+    "bytes": 940,
+    "sha256": "962f321f15d79dc43afcedb2684c0776552922a63a75450504755d8fb0b9dbfc"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\train_X5O47.log",
+    "bytes": 4148,
+    "sha256": "2ebca7c52eabff198b2a8379eccab54540af7bf1a67334b0fae196bc3a893099"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\x5_analyze.py",
+    "bytes": 3335,
+    "sha256": "2d11272e25953fc47895f87032e6b823a21038e521128b74cf44311dd5b8ad8b"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\20261020-1320-x5-results\\x5_items.json",
+    "bytes": 33890,
+    "sha256": "014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\ANSWER-C003-20261020-0900.md",
+    "bytes": 5378,
+    "sha256": "585474c6bd491621fe171e6ca3a89f53c86bac3ce1d97623c7e5cfb59d3c674b"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\ANSWER-C003b-20261020-0930.md",
+    "bytes": 2906,
+    "sha256": "5afe040f2b485c76f9e77453e3e797d7fc6121ab57eb226157a818509c865ce9"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\ANSWER-C004Q-20261020-1255.md",
+    "bytes": 2060,
+    "sha256": "3a6f65e49458730a7f4e69388acc3fc9422b335cc8eb95adfa1e50ad17cc665c"
+  },
+  {
+    "path": "handoff\\codex\\INBOX\\TASK-C002.md",
+    "bytes": 3467,
+    "sha256": "3e786b5267e8cebd22297f7cf0399daa19c586b4cf6384a4fc2e2da95dc3e329"
+  },
+  {
+    "path": "handoff\\codex\\README.md",
+    "bytes": 1435,
+    "sha256": "883f0eabd531bafb0674a3fe3995e90aac4a6397ad2370bc37019811b4a21cc1"
+  },
+  {
+    "path": "handoff\\codex\\scripts\\cc_x5.sh",
+    "bytes": 3787,
+    "sha256": "1dad8f07681b55b859be1814d71e56aee821895db4ffb90791f965642af6abc4"
+  },
+  {
+    "path": "handoff\\codex\\scripts\\codex_grade_local.py",
+    "bytes": 1543,
+    "sha256": "605cff784c626578f33d00143ebd48f5d534c0fdb522a10db3307781019b3cee"
+  },
+  {
+    "path": "handoff\\codex\\scripts\\g2v10_train.py",
+    "bytes": 15375,
+    "sha256": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f"
+  },
+  {
+    "path": "handoff\\codex\\scripts\\s5_eval_grader_v2.py",
+    "bytes": 8392,
+    "sha256": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13"
+  },
+  {
+    "path": "handoff\\codex\\scripts\\s7_eval_score_p6_v36.py",
+    "bytes": 18786,
+    "sha256": "547e1d91aa998908a0c436198f9890be961f18d643efec2c43dd700d415587cd"
+  },
+  {
+    "path": "scripts\\cc_x5.sh",
+    "bytes": 3787,
+    "sha256": "1dad8f07681b55b859be1814d71e56aee821895db4ffb90791f965642af6abc4"
+  },
+  {
+    "path": "scripts\\g2v10_train.py",
+    "bytes": 15375,
+    "sha256": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f"
+  },
+  {
+    "path": "scripts\\s5_eval_grader_v2.py",
+    "bytes": 8392,
+    "sha256": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13"
+  },
+  {
+    "path": "shared\\proposals\\X_INTERFACE_PLAN_20261019.md",
+    "bytes": 12657,
+    "sha256": "da504ff703e25c2eed6a087999e70ccc33bfd2250e41e569a8b25df129827e7e"
+  }
+]

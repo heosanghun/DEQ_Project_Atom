@@ -1,0 +1,1 @@
+[lora] manual LoRA r=8 alpha=16 applied to 108 nn.Linear modules in Gemma4TextModel

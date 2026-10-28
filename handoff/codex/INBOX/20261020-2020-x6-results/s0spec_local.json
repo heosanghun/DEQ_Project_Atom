@@ -1,0 +1,30 @@
+{
+ "C_fmt": [
+  "handoff/codex/data/gen_C.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X6R49": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/gen_X6R49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X6R49": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/genB1_X6R49.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X6R50": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/gen_X6R50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X6R50": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/genB1_X6R50.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "X6S47": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/gen_X6S47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ],
+ "shuf_X6S47": [
+  "handoff/codex/INBOX/20261020-2020-x6-results/genB1_X6S47.jsonl",
+  "handoff/codex/data/p6_item_order.json"
+ ]
+}

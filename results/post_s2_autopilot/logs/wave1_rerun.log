@@ -1,0 +1,1361 @@
+CTS Evaluation Pipeline
+  Benchmarks: ['math500']
+  Seeds: [0]
+  Mode: 4nu
+  Config: paper_parity
+
+  [cts_4nu] math500 seed=0
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  24%|██▍       | 504/2076 [00:00<00:00, 5026.22it/s]Loading weights:  49%|████▊     | 1007/2076 [00:01<00:02, 467.45it/s]Loading weights:  59%|█████▉    | 1231/2076 [00:02<00:01, 469.13it/s]Loading weights:  66%|██████▌   | 1375/2076 [00:02<00:01, 465.02it/s]Loading weights:  71%|███████▏  | 1480/2076 [00:02<00:01, 508.13it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 725.25it/s]
+[lora] manual LoRA r=8 alpha=16 applied to 108 nn.Linear modules in Gemma4TextModel
+  [ckpt] stage1=True stage2=True (meta_policy=True, critic=True)
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    prob 1/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$(r,\theta) = \boxed{}$
+
+(Enter your ans' gold='\left( 3, \frac{\pi}{2} \right)'
+    prob 2/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\sum_{j = 1}^\infty \sum_{k = 1}^\inft' gold='p - q'
+    prob 3/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{aligned}
+f(-2) +f(-1)+f(0) &= \' gold='\frac{14}{3}'
+    prob 4/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='15' gold='9'
+    prob 5/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The average speed of Evelyn is 1.5 miles' gold='\text{Evelyn}'
+    prob 6/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='The perimeter of the regular hexagon is ' gold='42'
+    prob 7/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='The smallest positive perfect cube is $1' gold='27'
+    prob 8/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='\[\begin{aligned}
+2x &= 3y \\
+x &= \frac' gold='90^\circ'
+    prob 9/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='3 \cdot \sqrt{13}' gold='3\sqrt{13}'
+    prob 10/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[
+2\cdot 3 \cdot 4\cdot 5+1 = 121
+\]
+
+\' gold='4'
+    prob 11/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='The least positive integer multiple of 3' gold='2220'
+    prob 12/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[p(8) = \frac{8}{8^2 - 1} = \frac{8}{63' gold='\frac{3}{56}'
+    prob 13/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='760' gold='284'
+    prob 14/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='$\boxed{}$ cm.
+Compute the following exp' gold='5'
+    prob 15/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='$DE = \boxed{}$ units.
+<unused56>2023/12' gold='\sqrt{51}'
+    prob 16/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='$w = \boxed{}$
+<unused56>2023/12/12/2023' gold='6 - 5i'
+    prob 17/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+1-2+3-4+5- \dots +99-1' gold='-50'
+    prob 18/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$c = \boxed{}$
+
+(Express your answer as ' gold='\pi'
+    prob 19/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$\boxed{}$
+\end{asy}
+
+\end{asy}
+
+\end{as' gold='28'
+    prob 20/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='a positive integer' gold='3'
+    prob 21/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+(1+2i)6-3i &= 6+12i-3i\' gold='6+9i'
+    prob 22/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='$(\sqrt{7} + \sqrt{5})^6 = (\sqrt{7} + \' gold='13535'
+    prob 23/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\frac{16+4x}{12-x}=\frac{16}{12}\]
+
+\[' gold='5'
+    prob 24/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+x &= \sqrt{11-2x} + 4 ' gold='x=5'
+    prob 25/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='Let $x$ be the compound interest rate. T' gold='10'
+    prob 26/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='$f(n) = n$ for $n = \boxed{}.$
+
+\begin{a' gold='1,-2'
+    prob 27/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{array}{c}
+\text{Number of ways ' gold='144'
+    prob 28/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='222' gold='78'
+    prob 29/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='8' gold='-2 + 7i'
+    prob 30/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The number of different battalions that ' gold='225'
+    prob 31/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[
+\begin{aligned}
+6_8 \cdot 7_8 &= 6 \c' gold='52_8'
+    prob 32/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$\sqrt{242} = \sqrt{44 \cdot 7} = \sqrt{' gold='11\sqrt2'
+    prob 33/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The number of ways to arrange 8 people a' gold='720'
+    prob 34/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\frac{125}{9}, \frac{25}{3}, 5, 3, \ld' gold='\frac{243}{625}'
+    prob 35/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\left(10x^3-\frac{1}{2x' gold='-125'
+    prob 36/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+(n + 2)(n + 4)(n + 6) ' gold='3'
+    prob 37/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+(x - 3)^3 + (x -7)^3 &=' gold='3, 5, 7'
+    prob 38/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The number of degrees a regular pentagon' gold='72'
+    prob 39/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\boxed{}' gold='2000'
+    prob 40/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='23' gold='23'
+    prob 41/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='16 cm.
+
+The perimeter of a regular octag' gold='12'
+    prob 42/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{array}{c}
+\text{The coordinates' gold='17'
+    prob 43/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+-4 < 2(x - 1) < 8 &\if' gold='4'
+    prob 44/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\sqrt{x^2 + 400} + \sqr' gold='70 \sqrt{2}'
+    prob 45/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{array}{ccl}
+\text{Distance walk' gold='1.25'
+    prob 46/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\sin A &= 2\cos A \\
+\' gold='2'
+    prob 47/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[z^4 + z^2 + 1 = 0\]
+
+\[z^4 + z^2 + 1 =' gold='6'
+    prob 48/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+f(x) &= \frac{2x}{x^2-5' gold='5'
+    prob 49/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+4^x &= 8 \\
+4^x &= 2^3' gold='\frac{3}{2}'
+    prob 50/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\frac{1}{2}(3x-9) &= x+' gold='83'
+    prob 51/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='175' gold='203'
+    prob 52/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+x^6 - 3 &= (x^3 + 1)(x' gold='x^5 - x^4 + x^3 - x^2 + x - 1'
+    prob 53/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$\frac{\sqrt{6.25-0.49}}{2.7-2.5} = \fra' gold='12'
+    prob 54/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='$\arcsin \left( -\frac{1}{2} \right) = \' gold='-\frac{\pi}{6}'
+    prob 55/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$\frac{3}{20} = 0.15$
+
+$\frac{3}{20} = 0' gold='0.15'
+    prob 56/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='The degree of $f$ is \boxed{}.
+
+(In this' gold='3'
+    prob 57/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\text{Sum of the first' gold='11'
+    prob 58/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[|(1-i)^8| = |(1-i)^4|\]\[= |(1-i)^2|^2' gold='16'
+    prob 59/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='$99^2+99+1 = 99^2 + 99 + 1 + 99 - 99 = 9' gold='9901'
+    prob 60/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='7' gold='5'
+    prob 61/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$x^9 + px^6 + qx^3 + r = (x^3 - 3x^2 + 4' gold='(6,31,-1)'
+    prob 62/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[
+\begin{aligned}
+8x^3 + 4ax^2 + 2bx + ' gold='-256'
+    prob 63/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{pmatrix} 2 & 3 \\ 0 & -2 \end{p' gold='4'
+    prob 64/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[x^8 + 3x^4 - 4 = (x^4 + 2)(x^4 - 2).\]' gold='10'
+    prob 65/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\sin x &= \sin x \cdot' gold='\frac{35}{64}'
+    prob 66/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[1^{(2^{235423523})} = 1^{(2^{235423523' gold='1'
+    prob 67/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\boxed{}' gold='x^3+3x-6'
+    prob 68/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='Let the length of the square's side be $' gold='10'
+    prob 69/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\tan 53^\circ \tan 81^' gold='46'
+    prob 70/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='11' gold='-1'
+    prob 71/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{array}{c}
+58_9 - 18_9 \\
+\hline' gold='40_9'
+    prob 72/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+10101001110_{2} &= 1 \c' gold='2516_8'
+    prob 73/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{aligned}
+\text{Volume} &= \frac' gold='3'
+    prob 74/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\frac{3 \sqrt{3}}{4}' gold='\frac{3\sqrt{3}}{4}'
+    prob 75/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='5' gold='\cot x'
+    prob 76/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The probability of rolling a 5 on a sing' gold='\frac{11}{36}'
+    prob 77/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\log x^2 &= \log x^2 \' gold='0'
+    prob 78/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='4' gold='4'
+    prob 79/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$f(x) = x^3 + 3x^2 + 1.$  There exist re' gold='(-2,1)'
+    prob 80/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='2' gold='2'
+    prob 81/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\log(kx) &= 2\log(x+2)' gold='501'
+    prob 82/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='1/3' gold='3'
+    prob 83/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{array}{c}
+\text{Slope of line $' gold='\frac{3}{2}'
+    prob 84/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='$x = \boxed{}$.
+
+(In your answer, use th' gold='2'
+    prob 85/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+(3t^2+5t+a)(4t^2+bt-2)' gold='-1'
+    prob 86/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\text{Volume of the tan' gold='\sqrt{5}'
+    prob 87/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='?' gold='240'
+    prob 88/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+|5x-1|&=x+3\\
+5x-1&=x+' gold='1'
+    prob 89/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[
+\begin{cases}
+ax^2 & \text{if } x \ge' gold='2'
+    prob 90/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='0' gold='21'
+    prob 91/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[10 \times \frac{2}{3} = \frac{10 \time' gold='\frac{3}{2}'
+    prob 92/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[
+\begin{align*}
+f(x) &= \frac{\sqrt{x-' gold='1'
+    prob 93/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+\text{Probability of n' gold='\frac{448}{15625}'
+    prob 94/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[x^2 - 10x + y^2 + 6y + c = 0\]
+
+\[(x^2' gold='33'
+    prob 95/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$x = 100^{\circ}$ and $y = 110^{\circ}$.' gold='80'
+    prob 96/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{pmatrix} 2 \\ y \\ -5 \end{pmat' gold='-4'
+    prob 97/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\frac{( x+ 1)(x - 3)}{5(x + 2)(x - 4)}' gold='1 \pm \sqrt{19}'
+    prob 98/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{array}{ccl}
+\text{North} & \rig' gold='\text{east}'
+    prob 99/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[
+\begin{aligned}
+(-k + 4) + (-2 + 3k) ' gold='2k+2'
+    prob 100/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatr' gold='\begin{pmatrix} -1/3 \\ 2/3 \\ 5/3 \end{'
+    prob 101/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='$\alpha = \boxed{}$ degrees.
+<unused56>2' gold='145^\circ'
+    prob 102/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='5/16806' gold='850'
+    prob 103/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{align*}
+ab+5b+2a+10 &= (ab+2a)+' gold='(a+5)(b+2)'
+    prob 104/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[f(x) = \lambda x(1 - x) = \lambda x - ' gold='(3,4]'
+    prob 105/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+x^2 + y^2 + 6x - 24y +' gold='40'
+    prob 106/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_' gold='29'
+    prob 107/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+y&=\frac{4x^3+2x-4}{3x' gold='\frac43'
+    prob 108/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='The set of all the prime numbers less th' gold='9'
+    prob 109/500 tree=757 depth=9 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\frac{x^2}{k} + \frac{y' gold='2'
+    prob 110/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\tan \theta &= \frac{\' gold='120^\circ'
+    prob 111/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[a_1 = \boxed{}.\]
+
+(In your answer, us' gold='504'
+    prob 112/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='11 \cdot 10 \cdot 9 \cdot 8 \cdot 7' gold='210'
+    prob 113/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+\frac{1+\sqrt{2}}{2+\s' gold='13'
+    prob 114/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+(26^2 - 24^2 - 10)^2 - ' gold='8000'
+    prob 115/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\frac{C}{x-3}+\frac{D}{x+8}=\frac{4x-2' gold='-5'
+    prob 116/500 tree=757 depth=8 mac=1.00e+14 time=69.5s pred[fallback]='The number of ways to arrange the letter' gold='1260'
+    prob 117/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='$x = \boxed{}$.
+
+(Express your answer as' gold='2'
+    prob 118/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+\sqrt{3x-5} &= 2 \\
+\s' gold='3'
+    prob 119/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='\[|a + bi| = \sqrt{a^2 + b^2} \le 5\]
+
+\' gold='81'
+    prob 120/500 tree=757 depth=7 mac=1.00e+14 time=68.9s pred[fallback]='The expression $1+2+3-4+5+6$ is equivale' gold='-9'
+    prob 121/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='$f(f(g(f(g(f(x))))))$ is \boxed{} becaus' gold='\text{even}'
+    prob 122/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='$x = \boxed{}$
+
+(Express your answer as ' gold='6'
+    prob 123/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='Let $x$ be the number of customers who b' gold='9'
+    prob 124/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='$DBEF$ is a parallelogram.  What is the ' gold='8'
+    prob 125/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+|x+5|-|3x-6|&=0\\
+|x+5' gold='\frac{11}{2}'
+    prob 126/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='$\lceil (3.6)^2 \rceil - ( \lceil 3.6 \r' gold='-3'
+    prob 127/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{align*}
+z_1&=F(z_0)=\frac{z_0+i' gold='1+274i'
+    prob 128/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{align*}
+555_{10} &= 555 \cdot 1' gold='4210_{5}'
+    prob 129/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{array}{c|c}
+\text{Day} & \text{' gold='36'
+    prob 130/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='140' gold='\frac{3840}{289}'
+    prob 131/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='$n=11213141+18k$ for some integer $k$. W' gold='13'
+    prob 132/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+f(x) &= ax^4-bx^2+x+5 ' gold='8'
+    prob 133/500 tree=757 depth=7 mac=1.00e+14 time=69.1s pred[fallback]='?' gold='4'
+    prob 134/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='120' gold='120'
+    prob 135/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='62' gold='16'
+    prob 136/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='\[42! = 42 \cdot 41 \cdot 40 \cdot \cdot' gold='9'
+    prob 137/500 tree=757 depth=7 mac=1.00e+14 time=69.2s pred[fallback]='\[\begin{aligned}
+\sum_{i = 1}^n a_i^3 &' gold='64'
+    prob 138/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='\[\begin{array}{c}
+413_5 \div 2_5 \\
+\hl' gold='204_5'
+    prob 139/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='Let $A$ be the event that the two bags c' gold='\frac{1}{3}'
+    prob 140/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[f(x,y) = x \sqrt{1 - y^2} + y \sqrt{1 ' gold='1'
+    prob 141/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='1' gold='13'
+    prob 142/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{array}{c|c|c}
+\text{Number of p' gold='2'
+    prob 143/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='The number of ways to arrange the Democr' gold='28800'
+    prob 144/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='\[\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatr' gold='3 \sqrt{5}'
+    prob 145/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[(x,y) = (2^3 + 7, -3 \cdot 2^2 - 6 \cd' gold='(15,-29)'
+    prob 146/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='\[z + \frac{1}{z} = \frac{1 + \sqrt{5}}{' gold='-2'
+    prob 147/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{align*}
+\frac{3}{\sqrt{27}} &= ' gold='\frac{\sqrt{3}}{3}'
+    prob 148/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='\[x^4 + 4y^2 + 4z^4 = (x^2 + 2y)(x^2 + 2' gold='16'
+    prob 149/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='$x = \boxed{}$.
+
+What is the value of $x' gold='11'
+    prob 150/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='42' gold='49'
+    prob 151/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{align*}f(2015,2) &= f(2014,f(20' gold='1'
+    prob 152/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\begin{align*}
+\begin{vmatrix} x_1 & y_1' gold='144'
+    prob 153/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='12' gold='8'
+    prob 154/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='0' gold='\frac{2}{21}'
+    prob 155/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='The shortest path is a diagonal path fro' gold='2\sqrt{113}'
+    prob 156/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='\[\begin{align*}
+\text{Probability} &= \' gold='\frac{1}{4}'
+    prob 157/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='$\boxed{}$ degrees.
+
+(Note:  The angle $' gold='30^\circ'
+    prob 158/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='\[\begin{aligned}
+\frac{1}{x} + 5x^2 &= ' gold='\frac65'
+    prob 159/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+\text{Sum of multiples' gold='2107'
+    prob 160/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+x^2+(2.6)x+3.6 &= (x+b' gold='3.21'
+    prob 161/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='14' gold='18'
+    prob 162/500 tree=757 depth=7 mac=1.00e+14 time=69.2s pred[fallback]='\[\log_264 = \log_2(2^6) = 6\]
+
+\[\log_2' gold='6'
+    prob 163/500 tree=757 depth=7 mac=1.00e+14 time=69.0s pred[fallback]='1/2' gold='\dfrac{17}{50}'
+    prob 164/500 tree=757 depth=8 mac=1.00e+14 time=69.0s pred[fallback]='\[\begin{aligned}
+\left(a+\frac{1}{b}\ri' gold='-\frac{35}{9}'
+    prob 165/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='\[\begin{align*}
+\tan 100^\circ + 4 \sin' gold='-\sqrt{3}'
+    prob 166/500 tree=757 depth=8 mac=1.00e+14 time=68.9s pred[fallback]='The top shelf has 8 mystery books. The m' gold='\frac{4}{9}'
+    prob 167/500 tree=757 depth=8 mac=1.00e+14 time=69.1s pred[fallback]='' gold='\frac{270}7\text{ degrees}'
+    prob 168/500 tree=757 depth=7 mac=1.00e+14 time=69.1s pred[fallback]='?' gold='65'
+    prob 169/500 tree=757 depth=8 mac=1.00e+14 time=69.3s pred[fallback]='The number of squares of size $1\times 1' gold='19'
+    prob 170/500 tree=757 depth=8 mac=1.00e+14 time=69.2s pred[fallback]='30' gold='12'
+    prob 171/500 tree=757 depth=8 mac=1.00e+14 time=69.2s pred[fallback]='\[\begin{aligned}
+y &= x^2-8 \\
+y^2 &= -' gold='1736'
+    prob 172/500 tree=757 depth=8 mac=1.00e+14 time=69.2s pred[fallback]='Louis eats $\frac{1}{5}$ of the pie.  Ja' gold='\frac{13}{15}'
+    prob 173/500 tree=757 depth=9 mac=1.00e+14 time=67.7s pred[fallback]='400' gold='350'
+    prob 174/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='4' gold='4'
+    prob 175/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{align*}
+x &= y^2 - 4y - 1 \\
+0 ' gold='2'
+    prob 176/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+3m + 4n &= 100 \\
+3m &' gold='3'
+    prob 177/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\frac{21}{2^2 \cdot 5^7} = \frac{21}{4' gold='.0000672'
+    prob 178/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='0' gold='30^\circ'
+    prob 179/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{align*}
+\sqrt{10 \times 15 \tim' gold='60'
+    prob 180/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='The equation of the plane is $x + 2y + 3' gold='5x - 7y + 11z + 4 = 0'
+    prob 181/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='The factors of 100 are 1, 2, 4, 5, 8, 10' gold='3'
+    prob 182/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{align*}
+\sqrt{\sqrt[3]{\sqrt{\f' gold='\frac{\sqrt{3}}{3}'
+    prob 183/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='1251' gold='1251'
+    prob 184/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+\sqrt{2}+\frac{1}{\sqr' gold='23'
+    prob 185/500 tree=757 depth=7 mac=1.00e+14 time=68.6s pred[fallback]='The sum is a constant.  What is the cons' gold='(2,\infty)'
+    prob 186/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='?' gold='1'
+    prob 187/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[2^{24} = 2^{24-24+24-24+24-24+24-24+24' gold='7'
+    prob 188/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='7' gold='7'
+    prob 189/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{aligned}
+f(x) &= e^{3x^2-|\lflo' gold='6'
+    prob 190/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='The length of rope saved is $HC - HP - H' gold='160'
+    prob 191/500 tree=757 depth=7 mac=1.00e+14 time=67.6s pred[fallback]='Let $A$ be the event that Paul chooses a' gold='\frac{13}{18}'
+    prob 192/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+3(4) + 2b &= 12 \\
+12 ' gold='0'
+    prob 193/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{aligned}
+\overline{QM} &= \frac' gold='30'
+    prob 194/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+2x^4 + a_3 x^3 + a_2 x' gold='4'
+    prob 195/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\frac{x - y}{x^4 + y^4 + 6} = \frac{x ' gold='\frac{1}{4}'
+    prob 196/500 tree=757 depth=7 mac=1.00e+14 time=67.7s pred[fallback]='48' gold='24'
+    prob 197/500 tree=757 depth=7 mac=1.00e+14 time=67.6s pred[fallback]='$x=\boxed{}$.
+
+(Note: $x$ is a two-digit' gold='1600'
+    prob 198/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[10! = 10 \cdot 9 \cdot 8 \cdot 7 \cdot' gold='6'
+    prob 199/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='The number of ways to arrange 6 girls an' gold='10,\!080'
+    prob 200/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='17' gold='17'
+    prob 201/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{aligned}
+4 \text{ daps} &= 7 \t' gold='40'
+    prob 202/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+N & \equiv 5 \pmod{8} ' gold='66'
+    prob 203/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='1' gold='\frac{2}{3}'
+    prob 204/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+(5x + 9)^{611} + (x + ' gold='12'
+    prob 205/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{align*}
+|(a + b)(a + c)(a + d)(' gold='0'
+    prob 206/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{pmatrix} 2 \\ 4 \\ -3 \end{pmat' gold='\begin{pmatrix} -2 \\ -14 \\ -7 \end{pma'
+    prob 207/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='$m = \boxed{}$ and $b = \boxed{}.$
+
+(Ent' gold='\left( \frac{3}{2}, -13 \right)'
+    prob 208/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{array}{c}
+\text{Number of pizza' gold='28'
+    prob 209/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='5' gold='1'
+    prob 210/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\text{AB}^3 &= 912,\!6' gold='16'
+    prob 211/500 tree=757 depth=7 mac=1.00e+14 time=68.1s pred[fallback]='10' gold='10'
+    prob 212/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+5^5\div5^4-5^3+5^2\cdo' gold='5'
+    prob 213/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='$80-x$' gold='56'
+    prob 214/500 tree=757 depth=7 mac=1.00e+14 time=68.9s pred[fallback]='\[\begin{aligned}
+\sum_{n = 1}^\infty \f' gold='2'
+    prob 215/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{array}{ccl}
+\text{Number of stu' gold='110'
+    prob 216/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+x^2 - x - 1 &= 0 \\
+x^' gold='2'
+    prob 217/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+56 \text{ Drinkets} &=' gold='6'
+    prob 218/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{array}{ccl}
+450 & = 90 \cdot 5 ' gold='11,\! 111,\! 111,\! 100'
+    prob 219/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The midpoint of the line segment between' gold='(-1,6)'
+    prob 220/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='The probability of the checker being pla' gold='\frac{1}{2}'
+    prob 221/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\text{Amount of milk l' gold='\frac{16}{27}'
+    prob 222/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='The product of integers 240 and $k$ is a' gold='900'
+    prob 223/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='$\boxed{}$ square centimeters.
+
+(The ima' gold='54'
+    prob 224/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\frac{4321}{5^7\cdot2^8}=\frac{4321}{1' gold='14'
+    prob 225/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{align*}
+\sin 20^\circ \sin 40^\' gold='\frac{9}{256}'
+    prob 226/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='40' gold='11'
+    prob 227/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='10' gold='3'
+    prob 228/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='(C)' gold='\text{(C)}'
+    prob 229/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+d_1^2 + d_2^2 + d_3^2 ' gold='288 \pi'
+    prob 230/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='There are 10 items on the menu.  Yann an' gold='90'
+    prob 231/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[
+\begin{align*}
+a + b + c + d + e &= 8' gold='\frac{16}{5}'
+    prob 232/500 tree=757 depth=9 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+\text{Amy's age} &= 6 ' gold='10'
+    prob 233/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+\frac{1}{1 + \omega} +' gold='\frac{1997}{2}'
+    prob 234/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+\mathbf{a} \times \mat' gold='30^\circ'
+    prob 235/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+g(x) &= f(x + 5) \\
+&=' gold='34'
+    prob 236/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='3/10' gold='\frac 59'
+    prob 237/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\frac{1}{\cos^2 10^\circ} + \frac{1}{\' gold='12'
+    prob 238/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+xy &= 24 \\
+xz &= 48 \' gold='22'
+    prob 239/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[f(x)=\frac{1}{|x^2+3x-4|+|x^2+9x+20|}=' gold='-4'
+    prob 240/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+\text{Area of parallel' gold='16'
+    prob 241/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$\angle PQR = \boxed{}$ degrees.
+\end{as' gold='116'
+    prob 242/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+y&=\frac{1}{2}x^2-9\\
+' gold='17'
+    prob 243/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+24,\!000 \cdot 1.01^12' gold='\$32,\!348'
+    prob 244/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+1^2 + 3^2 &= x^2 \\
+1 ' gold='3'
+    prob 245/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='?' gold='8'
+    prob 246/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+f(x) &= x^{10}+5x^9-8x' gold='-13x+3'
+    prob 247/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='18' gold='8'
+    prob 248/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+p(x) &= (x-4+\sqrt{11}' gold='\frac{10}{11}'
+    prob 249/500 tree=757 depth=7 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{aligned}
+\mathbf{A}^{27} + \mat' gold='\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pm'
+    prob 250/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[
+\begin{aligned}
+t+2 &\equiv 1 \pmod{2' gold='17'
+    prob 251/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+\frac{x}4 + \frac{y}{1' gold='13'
+    prob 252/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='The first car can go to any of the three' gold='540'
+    prob 253/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+4(x + 7)(2 - x) &= 4(2 ' gold='81'
+    prob 254/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\frac{3}{24} = \frac{1}{8} = \frac{1}{' gold='\frac{1}{8}'
+    prob 255/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='There are 3 types of cookies, and 6 cook' gold='28'
+    prob 256/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[r^2 \cos 2 \theta = 4\]
+\[r^2 \cos^2 \' gold='\text{(E)}'
+    prob 257/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+\frac{1}{5}\cdot \frac{' gold='\frac{8}{21}'
+    prob 258/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='The volume of a cube is $1$ cubic foot. ' gold='864 \mbox{ inches}^2'
+    prob 259/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='Let the number of yellow marbles be $x$.' gold='16'
+    prob 260/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='4' gold='22'
+    prob 261/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+\angle ABC &= \cos^{-1' gold='120^\circ'
+    prob 262/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='83^\circ' gold='76^\circ'
+    prob 263/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$10^x - 10 = 9990$
+
+$10^x = 9990 + 10$
+
+' gold='4'
+    prob 264/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='?' gold='15'
+    prob 265/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$BH = \boxed{}$ units.
+<unused56>2023/12' gold='1\frac{4}{5}'
+    prob 266/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The 2003rd term of the sequence of odd n' gold='4005'
+    prob 267/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The number of multiples of 3 from 1 to 1' gold='\dfrac{33}{100}'
+    prob 268/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='\boxed{}.
+<unused56>2023/12/12/2023-12-1' gold='180^\circ'
+    prob 269/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='1' gold='1'
+    prob 270/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The number of distinct arrangements is \' gold='6'
+    prob 271/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='10' gold='10'
+    prob 272/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+997^{-1} &\equiv 997^{' gold='333'
+    prob 273/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+0.\overline{1331} &= 0' gold='1030'
+    prob 274/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+1200 \text{ lire} &= 1' gold='1250'
+    prob 275/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{aligned}
+S &= \left\{ (x,y) \mi' gold='18+2\pi'
+    prob 276/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='7' gold='7'
+    prob 277/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\sqrt{120-\sqrt{x}} &= ' gold='11'
+    prob 278/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$\sqrt{53} = \sqrt{52 + 1} = \sqrt{4 \cd' gold='\sqrt{53}'
+    prob 279/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='7' gold='255'
+    prob 280/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='The area of the region with the greatest' gold='7\pi'
+    prob 281/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+a(2a+b)-2a^{2}+ab &= 2' gold='8'
+    prob 282/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='$A = \boxed{}$ degrees.
+\end{asy}' gold='36^\circ'
+    prob 283/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='The first term is 0.  The second term is' gold='129'
+    prob 284/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{align*}
+\left(4\dfrac{5}{8}\rig' gold='1'
+    prob 285/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\boxed{}.
+
+\begin{align*}
+\sin \left( \t' gold='3 \pm 2 \sqrt{2}'
+    prob 286/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$c = 12$ and $c = 18$. The sum is $\boxe' gold='440'
+    prob 287/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{align*}
+\sum_{(a,b,c) \in T} \f' gold='\frac{17}{21}'
+    prob 288/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{array}{c}
+\text{Gear 1: $33\fra' gold='36'
+    prob 289/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{pmatrix} 3 \\ -10 \\ 1 \end{pma' gold='7'
+    prob 290/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+(a + b + c + d) \left(' gold='16'
+    prob 291/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\frac{6r^2 -19r - 7}{2' gold='4'
+    prob 292/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='20' gold='63'
+    prob 293/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{align*}x_{531}&=x_{530}-x_{529}' gold='898'
+    prob 294/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+0\ge 54p-144 &\iff 54p\' gold='\left(\frac{3}{5},\frac{8}{3}\right]'
+    prob 295/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='72' gold='58'
+    prob 296/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+z^4+4z^3i-6z^2-4zi-i&=' gold='11'
+    prob 297/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='The equation with the largest solution $' gold='\text{(B)}'
+    prob 298/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\text{Number of leaves' gold='103'
+    prob 299/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{pmatrix} 2 \\ -1 \\ 1 \end{pmat' gold='\begin{pmatrix} -18 \\ -49 \\ 96 \end{pm'
+    prob 300/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='19' gold='63'
+    prob 301/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='The four circles are drawn in a plane. T' gold='12'
+    prob 302/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='The average price of Juan's $70\text{'s}' gold='5.4 \text{ cents}'
+    prob 303/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='$3' gold='5'
+    prob 304/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='41.91' gold='28'
+    prob 305/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+\frac{(x + 5)(x + 2)}{' gold='9'
+    prob 306/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\frac{\sqrt{2x}}{\sqrt' gold='\frac9{19}'
+    prob 307/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[x^2 + ax + b = 0\]
+
+\[x^2 + ax + b = 0' gold='6'
+    prob 308/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+y&=\log_2 (\sqrt{\sin ' gold='(-\infty, 0]'
+    prob 309/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='The surface area of a regular tetrahedro' gold='1+2\sqrt{3}'
+    prob 310/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='Let the set of distinct positive integer' gold='14'
+    prob 311/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+\frac{7}{30}@\frac{10}' gold='49'
+    prob 312/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{align*}
+1+12+123+1234+12345+123' gold='3'
+    prob 313/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\frac{1}{x - 5} > 0 \iff x - 5 > 0 \if' gold='(5,\infty)'
+    prob 314/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+\text{Radius of the wh' gold='12\pi'
+    prob 315/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='y' gold='(2,4)'
+    prob 316/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{aligned}
+a &= \frac{b}{2009} \\' gold='41'
+    prob 317/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$10x^2-x-24 = (Ax-8)(Bx+3)$
+
+$10x^2-x-24' gold='12'
+    prob 318/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='The degree of $p(x)$ is 2.  To see this,' gold='0'
+    prob 319/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\frac{4+6a}{5}-\frac{1+3a}{4}=\frac{4+' gold='\frac{11+9a}{20}'
+    prob 320/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+|x-4| -10 &= 2 \\
+|x-4' gold='-128'
+    prob 321/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='$\cos \angle RPS = \frac{1}{25}$.
+
+What ' gold='-\frac{24}{25}'
+    prob 322/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='404' gold='10'
+    prob 323/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='$f(q(1)) = f(b(1) + 1) = b(1) + 1 - 3 = ' gold='-1'
+    prob 324/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{align*}
+\text{Probability of in' gold='\frac{1}{3}'
+    prob 325/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$100^\circ$
+<unused56>2022/12/12/2022-12' gold='120'
+    prob 326/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='8/3' gold='4'
+    prob 327/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\sin (\arcsin 0.4 + \arcsin 0.5) \cdot' gold='\frac{9}{100}'
+    prob 328/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[P(x) = (x - 1)(x - 4)Q(x) + R(x)\]
+
+\[' gold='15'
+    prob 329/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+f(x) &= \left\lfloor\l' gold='3'
+    prob 330/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\text{ inches per second}' gold='4'
+    prob 331/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='The number of ways to choose 5 members f' gold='1940'
+    prob 332/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{align*}
+\sqrt{\dfrac{\dfrac{5}{' gold='\frac{13}{6}'
+    prob 333/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+(x + y)(y + z) &= (x +' gold='2'
+    prob 334/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\sqrt[3]{2} &= a + \cf' gold='3'
+    prob 335/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+a+b&=8\\
+b+c&=-3\\
+a+c' gold='-120'
+    prob 336/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{array}{c}
+1\\
+1\\
+2\\
+3\\
+5\\
+8' gold='3'
+    prob 337/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='26000' gold='26000'
+    prob 338/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='Let the three consecutive integers be $x' gold='6'
+    prob 339/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+999_{10} &= 9 \cdot 10' gold='4343_6'
+    prob 340/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+y&=ax^2+bx+c\\
+y&=dx^2' gold='2k'
+    prob 341/500 tree=757 depth=8 mac=1.00e+14 time=67.7s pred[fallback]='\[\begin{aligned}
+\cos 29^\circ &= \cos(' gold='55^\circ'
+    prob 342/500 tree=757 depth=7 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+\text{Let the number b' gold='-2'
+    prob 343/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\frac{1}{4} < \frac{x}' gold='2'
+    prob 344/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='The number of license plates that can be' gold='58,500'
+    prob 345/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[
+\begin{cases}
+4n+3 &\text{if }n<a, \\' gold='5'
+    prob 346/500 tree=757 depth=8 mac=1.00e+14 time=67.8s pred[fallback]='\[\begin{aligned}
+t(g(16)) &= 3-g(16) \\' gold='1'
+    prob 347/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='18' gold='66'
+    prob 348/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\boxed{}' gold='6r^2-4r-24'
+    prob 349/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='45' gold='4495'
+    prob 350/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{array}{c}
+\text{Number of ways ' gold='10080'
+    prob 351/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[18^6 = (18^2)^3 = (324)^3 = (32 \cdot ' gold='4'
+    prob 352/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='\[\cos \left( \frac{2 \pi}{15} \right) \' gold='\frac{1}{16}'
+    prob 353/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='$\boxed{}$
+
+(In the image, the points ar' gold='11 \sqrt{5} + 11'
+    prob 354/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+\text{Number of ways} ' gold='480'
+    prob 355/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+\text{Sum of 27 consec' gold='81'
+    prob 356/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{split}
+\frac{(a + b + c)[(a + b' gold='100'
+    prob 357/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{align*}
+-4 &< x^{4}+4x^{2} \\
+-' gold='(-\sqrt{3}, \sqrt{3})'
+    prob 358/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+54 &= xy \\
+x &= \frac' gold='4'
+    prob 359/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='The graph of the equation is a parabola.' gold='\text{ellipse}'
+    prob 360/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='24' gold='6'
+    prob 361/500 tree=757 depth=7 mac=1.00e+14 time=68.0s pred[fallback]='$b = \boxed{}$
+<unused56>2022/2022-01-21' gold='\frac{7}{4}'
+    prob 362/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+x^2 &= 8y \\
+x^2 &= 8(' gold='16 \sqrt{3}'
+    prob 363/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\boxed{}' gold='\frac14'
+    prob 364/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+3+\frac{1}{x}&=\frac{7' gold='2'
+    prob 365/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='The equation of the circle is $x^2 + y^2' gold='(1,-16,-4,43)'
+    prob 366/500 tree=757 depth=8 mac=1.00e+14 time=67.9s pred[fallback]='\[\gcd(a,b)\cdot\mathop{\text{lcm}}[a,b]' gold='8'
+    prob 367/500 tree=757 depth=7 mac=1.00e+14 time=67.9s pred[fallback]='\[\begin{aligned}
+1+3+5+7+9+\dots+195+19' gold='4'
+    prob 368/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[
+\begin{aligned}
+f(1) &= 2 \\
+f(2) &= ' gold='1'
+    prob 369/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+\text{Perimeter} &= 2 ' gold='31'
+    prob 370/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='150 cm².
+<unused56>2023/12/12/2023-12-12' gold='21'
+    prob 371/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{pmatrix} -2 \\ 0 \\ 7 \end{pmat' gold='-41'
+    prob 372/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[|ax^2 + bx + c| \le 1\]\[|ax^2 + bx + ' gold='17'
+    prob 373/500 tree=757 depth=7 mac=1.00e+14 time=68.1s pred[fallback]='$\angle BAC = \boxed{}$ degrees.
+<unused' gold='90^\circ'
+    prob 374/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+\frac{-3+4i}{1+2i} &= ' gold='1+2i'
+    prob 375/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='\[\begin{aligned}
+\sqrt{64} &= \sqrt{8^2' gold='4'
+    prob 376/500 tree=757 depth=8 mac=1.00e+14 time=68.0s pred[fallback]='\[\begin{aligned}
+A &= 1 + 2 + 4 + 5 + 1' gold='25'
+    prob 377/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='$P(a,b)$ is equidistant from $A(10,-10)$' gold='(8,-2)'
+    prob 378/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='\[\begin{align*}
+4\$ &= 4!^{4!^{4!}} \\
+' gold='6'
+    prob 379/500 tree=757 depth=7 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{array}{ccl}
+\text{Let $a$ and $' gold='3'
+    prob 380/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='The number of male bus riders in the $9^' gold='12'
+    prob 381/500 tree=757 depth=7 mac=1.00e+14 time=68.6s pred[fallback]='\[\frac{|x^2 - 81|}{x^2 - 36x} < 0.\]
+\[' gold='(0,9) \cup (9,36)'
+    prob 382/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='1' gold='\frac{1}{2}'
+    prob 383/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='The area of the field is 1200 square met' gold='\frac{20000}{\pi}'
+    prob 384/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+x^2 - 5x - 4 \le 10 &\' gold='x \in [-2,7]'
+    prob 385/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\boxed{}' gold='15x - 80'
+    prob 386/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+\text{Number of pounds' gold='22'
+    prob 387/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+|x-2|&\leq5.6\\
+-5.6&\' gold='11'
+    prob 388/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='18' gold='18'
+    prob 389/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{align*}
+g(x) &= \sqrt{(x-3)^2-(' gold='\frac{11}{2}'
+    prob 390/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='$\sin{T}=\frac{2}{5}$.
+\end{asy}
+
+\end{a' gold='\frac{\sqrt{21}}{5}'
+    prob 391/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+y&=\frac{1}{\sqrt{2}}\' gold='12'
+    prob 392/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+f^{-1}(0) &= \left\{
+\' gold='0'
+    prob 393/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='10.' gold='\sqrt{66}'
+    prob 394/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\frac{200}{150} = \frac{4}{3}.\]
+
+Ther' gold='\frac 34'
+    prob 395/500 tree=757 depth=8 mac=1.00e+14 time=68.8s pred[fallback]='The vertex of the parabola $y^2 + 3y + 2' gold='-\frac{3}{8}'
+    prob 396/500 tree=757 depth=8 mac=1.00e+14 time=68.8s pred[fallback]='4' gold='4'
+    prob 397/500 tree=757 depth=8 mac=1.00e+14 time=68.1s pred[fallback]='The area of the square is 16 square inch' gold='2'
+    prob 398/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='23' gold='23'
+    prob 399/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\boxed{}' gold='\text{Navin}'
+    prob 400/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{array}{c}
+313.9\\
++12.6\\
+\hlin' gold='326.5'
+    prob 401/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{array}{ccl}
+\text{Area of the c' gold='\frac{14}{3}'
+    prob 402/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+|1 + z| + |1 - z + z^2' gold='\frac{13}{4}'
+    prob 403/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+3 & \mapsto 3 \cdot \c' gold='1 - 12i'
+    prob 404/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[629_{10} = 911_{7} = 1111_{8}.\]
+
+The ' gold='3'
+    prob 405/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='3' gold='3'
+    prob 406/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+\text{Number of ways} ' gold='60'
+    prob 407/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='0' gold='0'
+    prob 408/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='3/10' gold='9'
+    prob 409/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{pmatrix} 4 \\ 3 \end{pmatrix} =' gold='\begin{pmatrix} 1/5 \\ -18/5 \end{pmatri'
+    prob 410/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The equation of the hyperbola is $y^2 - ' gold='2 \sqrt{5}'
+    prob 411/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='6' gold='6'
+    prob 412/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='105' gold='60'
+    prob 413/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[
+\begin{aligned}
+P(16) &= P(11) + P(11' gold='406'
+    prob 414/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='5r^5' gold='5r^5'
+    prob 415/500 tree=757 depth=8 mac=1.00e+14 time=69.5s pred[fallback]='\[\begin{aligned}
+(3)5^2-4(5-a)^2 \div 3' gold='10'
+    prob 416/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+129^{34}+96^{38} &\equ' gold='9'
+    prob 417/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\sin^3 18^\circ + \sin' gold='\frac{1}{8}'
+    prob 418/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='15' gold='-2'
+    prob 419/500 tree=757 depth=7 mac=1.00e+14 time=68.5s pred[fallback]='17' gold='2\sqrt{5}'
+    prob 420/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='53' gold='\begin{pmatrix} -7 \\ 16 \\ 5 \end{pmatr'
+    prob 421/500 tree=757 depth=7 mac=1.00e+14 time=68.5s pred[fallback]='\[\begin{pmatrix} 2 \\ 6 \\ 3 \end{pmatr' gold='\begin{pmatrix} 16/49 \\ 48/49 \\ 24/49 '
+    prob 422/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+\arccos x + \arccos 2x' gold='27'
+    prob 423/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='The four roots of the equation $x^4+2x^3' gold='\{1\pm\sqrt{5},-2\}'
+    prob 424/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='2000' gold='1440'
+    prob 425/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='1800' gold='600'
+    prob 426/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+AF^2 + BF^2 + CF^2 &= ' gold='3R^2'
+    prob 427/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The perimeter of the square is $4\cdot\s' gold='6\sqrt{2}'
+    prob 428/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{array}{ccl}
+\text{Three pencils' gold='29'
+    prob 429/500 tree=757 depth=8 mac=1.00e+14 time=68.5s pred[fallback]='\[\frac{1}{a} + \frac{1}{b} + \frac{4}{c' gold='64'
+    prob 430/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+a^4 + b^8 &= (a^2 + b^' gold='50'
+    prob 431/500 tree=757 depth=7 mac=1.00e+14 time=68.4s pred[fallback]='\boxed{}' gold='4.5'
+    prob 432/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{align*}
+f(x) &= (\arccos x)^2 +' gold='\left[ \frac{\pi^2}{8}, \frac{5 \pi^2}{4'
+    prob 433/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+f(1) + f(2) + f(3) + \' gold='331'
+    prob 434/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\frac{57}{160} = \frac{57 \cdot 5}{160' gold='.35625'
+    prob 435/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='16\sqrt{2}' gold='32'
+    prob 436/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[\begin{aligned}
+f(x)&=\frac{2x-7}{\sqr' gold='(-\infty, 2) \cup (3, \infty)'
+    prob 437/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='Let $X$ be the number of dice that show ' gold='4'
+    prob 438/500 tree=757 depth=7 mac=1.00e+14 time=68.2s pred[fallback]='\begin{align*}
+\triangle + \square &= \c' gold='3'
+    prob 439/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='4' gold='4'
+    prob 440/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+x^9 + 1 &= (x^3 + 1)(x' gold='x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 '
+    prob 441/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='11u - 22' gold='14'
+    prob 442/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{array}{c}
+\text{SUV miles per g' gold='550'
+    prob 443/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='16' gold='256'
+    prob 444/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[3^2, x, 3^4\]
+
+\[3^2, 3^2 \cdot 2, 3^4' gold='45'
+    prob 445/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='$k=1/2$.
+
+\begin{align*}
+\text{Probabili' gold='\frac{1}{2}'
+    prob 446/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='$16$.
+
+The area of a quadrilateral is th' gold='15'
+    prob 447/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\[\begin{aligned}
+\frac{1}{4}+\frac{1}{8' gold='8'
+    prob 448/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='Let $G$ be the number of girls and $B$ b' gold='9'
+    prob 449/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{align*}
+17^{-1}\pmod{83} &= 17^' gold='44'
+    prob 450/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+5\star1 &= 5\star1 \\
+' gold='47'
+    prob 451/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='6' gold='64'
+    prob 452/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='\[\frac{53.25}{10} \cdot \frac{1}{3} = \' gold='\frac{639}{40}'
+    prob 453/500 tree=757 depth=9 mac=1.00e+14 time=68.7s pred[fallback]='143' gold='143'
+    prob 454/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{array}{ccl}
+\text{Number of rep' gold='10'
+    prob 455/500 tree=757 depth=7 mac=1.00e+14 time=68.8s pred[fallback]='\[\begin{pmatrix} 2 \\ -1 \end{pmatrix} ' gold='y = 2x + 3'
+    prob 456/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='6' gold='6'
+    prob 457/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='The roots are \boxed{}.
+
+The solution is' gold='-2,1'
+    prob 458/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[54 \equiv 0 \pmod{6} \implies 54 \equi' gold='0'
+    prob 459/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='Let $x$ be the number of students who sh' gold='41'
+    prob 460/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{array}{c|c}
+\text{Volume} & \te' gold='\$18.90'
+    prob 461/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='$\angle STR = \boxed{}$ degrees.
+<unused' gold='75^\circ'
+    prob 462/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[f\left(\frac{\pi}{3}\right) + f(\sqrt{' gold='12'
+    prob 463/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='18500' gold='59'
+    prob 464/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+\frac{x-5}{x^2-9} &= 0' gold='2'
+    prob 465/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+\log_6 (x-y) + \log_6 ' gold='9'
+    prob 466/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='The positive integers with exactly three' gold='121'
+    prob 467/500 tree=757 depth=7 mac=1.00e+14 time=68.8s pred[fallback]='\[\begin{aligned}
+z^8 - z^7 + z^6 - z^5 ' gold='8 \pi'
+    prob 468/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='The area of the shaded triangle is \boxe' gold='15\mbox{ cm}^2'
+    prob 469/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+\sqrt{t} &> 2 \\
+\sqrt' gold='8'
+    prob 470/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='$\lceil{\sqrt{20}}\rceil^2 = \lceil{\sqr' gold='25'
+    prob 471/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+ab^2 c^3 d^4 &= \frac{' gold='27648'
+    prob 472/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='The mean is the sum of all the scores di' gold='84'
+    prob 473/500 tree=757 depth=8 mac=1.00e+14 time=68.8s pred[fallback]='\[\begin{array}{ccl}
+\text{Distance} & =' gold='137 \frac{1}{2}'
+    prob 474/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='$n = \boxed{}$
+
+\begin{align*}
+\begin{ar' gold='7'
+    prob 475/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{align*}
+\log_2{3} \cdot \log_3{' gold='3'
+    prob 476/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='7' gold='29'
+    prob 477/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{array}{ccl}
+\text{Distance walk' gold='200'
+    prob 478/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+B6 &= B \cdot 10 + 6 \' gold='2'
+    prob 479/500 tree=757 depth=8 mac=1.00e+14 time=68.8s pred[fallback]='\[\frac{1}{x^2 - 1} + \frac{2}{x^2 - 2} ' gold='\frac{2}{1005}'
+    prob 480/500 tree=757 depth=7 mac=1.00e+14 time=68.7s pred[fallback]='\[\begin{aligned}
+8x\equiv 1\pmod{p} &\i' gold='2'
+    prob 481/500 tree=757 depth=8 mac=1.00e+14 time=68.7s pred[fallback]='$\frac{1}{1 + \omega} + \frac{1}{1 + \om' gold='1'
+    prob 482/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='The numerator is $2^4 + \frac{1}{4} + 4^' gold='8n^2 + 4n + 1'
+    prob 483/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\frac{a}{b} &= \frac{1' gold='202'
+    prob 484/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+\tan A &= \frac{\sin A' gold='\frac{8}{15}'
+    prob 485/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='a positive integer' gold='10'
+    prob 486/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='\boxed{}.
+<unused56>2023/2023-01-21-2023' gold='13'
+    prob 487/500 tree=757 depth=8 mac=1.00e+14 time=68.2s pred[fallback]='The volume of a cube is $s^3$, where $s$' gold='216'
+    prob 488/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{align*}
+1 + 2 + 3 + 4 + 5 + 6 +' gold='2'
+    prob 489/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='36' gold='\$36'
+    prob 490/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{align*}
+f(x) &= |x-p| + |x-15| ' gold='15'
+    prob 491/500 tree=757 depth=8 mac=1.00e+14 time=68.4s pred[fallback]='\[
+\begin{aligned}
+f(x) &= a_nx^n + a_{n' gold='14'
+    prob 492/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='\begin{align*}
+\text{Total number of per' gold='64'
+    prob 493/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='$y = \boxed{}$
+<unused56>2021/2021-10-16' gold='y = -2x'
+    prob 494/500 tree=757 depth=7 mac=1.00e+14 time=68.3s pred[fallback]='\[\begin{aligned}
+(\sqrt{2}+\sqrt{3})^3 ' gold='20'
+    prob 495/500 tree=757 depth=8 mac=1.00e+14 time=68.3s pred[fallback]='The equation $x^4 + ax^3 - bx^2 + ax + 1' gold='\frac{1}{4}'
+    prob 496/500 tree=757 depth=7 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{align*}
+f(x) &= \frac{2-x}{\log' gold='(2,12) \cup (12,102)'
+    prob 497/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[\begin{aligned}
+w &= \dfrac{3z+1}{5z+7' gold='\frac{5}{13}'
+    prob 498/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='4 + \sqrt{2}' gold='\frac{7}{2}'
+    prob 499/500 tree=757 depth=8 mac=1.00e+14 time=68.6s pred[fallback]='\[a_9 = \frac{1}{1 - a_8} = \frac{1}{1 -' gold='-1'
+    prob 500/500 tree=757 depth=7 mac=1.00e+14 time=68.5s pred[fallback]='$\angle AHB = \boxed{}$ degrees.
+
+(Expre' gold='106^\circ'
+  [greedy] math500 seed=0
+    [greedy/math500] gold='\left( 3, \frac{\pi}{2} \right)' pred='$(r,\theta) = \boxed{}$
+
+(Express $\thet' match=False
+    [greedy/math500] gold='p - q' pred='\[\sum_{j = 1}^\infty \sum_{k = 1}^\inft' match=False
+    [greedy/math500] gold='\frac{14}{3}' pred='\[\begin{aligned}
+f(-2) +f(-1)+f(0) &= \' match=False
+    [greedy/math500] gold='9' pred='15' match=False
+    [greedy/math500] gold='\text{Evelyn}' pred='The average speed of Evelyn is 1.5 miles' match=False
+    [greedy/math500] gold='42' pred='The perimeter of the regular hexagon is ' match=False
+    [greedy/math500] gold='27' pred='The smallest positive perfect cube is $1' match=False
+    [greedy/math500] gold='90^\circ' pred='\[\begin{aligned}
+2x &= 3y \\
+x &= \frac' match=False
+    [greedy/math500] gold='3\sqrt{13}' pred='3 \cdot \sqrt{13}' match=True
+    [greedy/math500] gold='4' pred='\[
+2\cdot 3 \cdot 4\cdot 5+1 = 121
+\]
+
+\' match=False
+    [greedy/math500] gold='2220' pred='The least positive integer multiple of 3' match=False
+    [greedy/math500] gold='\frac{3}{56}' pred='\[p(8) = \frac{8}{8^2 - 1} = \frac{8}{63' match=False
+    [greedy/math500] gold='284' pred='The proper divisors of 284 are 1, 2, 4, ' match=True
+    [greedy/math500] gold='5' pred='$\boxed{}$ cm.
+Compute the following exp' match=False
+    [greedy/math500] gold='\sqrt{51}' pred='$DE = \boxed{}$ units.
+<unused56>2023/12' match=False
+    [greedy/math500] gold='6 - 5i' pred='$w = \boxed{}$
+\end{asy}
+
+\end{asy}
+
+\en' match=False
+    [greedy/math500] gold='-50' pred='\[\begin{aligned}
+1-2+3-4+5- \dots +99-1' match=False
+    [greedy/math500] gold='\pi' pred='$c = \boxed{}$
+
+(Express your answer as ' match=False
+    [greedy/math500] gold='28' pred='$\boxed{}$
+\end{asy}
+
+\end{asy}
+
+\end{as' match=False
+    [greedy/math500] gold='3' pred='The roots of the equation are $x_1, x_2,' match=False
+    [greedy/math500] gold='6+9i' pred='\[\begin{align*}
+(1+2i)6-3i &= 6+12i-3i\' match=False
+    [greedy/math500] gold='13535' pred='$(\sqrt{7} + \sqrt{5})^6 = (\sqrt{7} + \' match=False
+    [greedy/math500] gold='5' pred='\[\frac{16+4x}{12-x}=\frac{16}{12}\]
+
+\[' match=False
+    [greedy/math500] gold='x=5' pred='\[\begin{align*}
+x &= \sqrt{11-2x} + 4 \' match=False
+    [greedy/math500] gold='10' pred='11' match=False
+    [greedy/math500] gold='1,-2' pred='$f(n) = n$ for $n = \boxed{}.$
+
+\begin{a' match=False
+    [greedy/math500] gold='144' pred='\[\begin{array}{ccl}
+\text{Number of way' match=False
+    [greedy/math500] gold='78' pred='222' match=False
+    [greedy/math500] gold='-2 + 7i' pred='\[\begin{aligned}
+7 + 2i &= 7 + 2i \\
+&=' match=False
+    [greedy/math500] gold='225' pred='The number of battalions is the number o' match=False
+    [greedy/math500] gold='52_8' pred='110_8' match=False
+    [greedy/math500] gold='11\sqrt2' pred='$\sqrt{242} = \sqrt{44 \cdot 7} = \sqrt{' match=False
+    [greedy/math500] gold='720' pred='The number of ways to arrange 8 people a' match=False
+    [greedy/math500] gold='\frac{243}{625}' pred='\[\frac{125}{9} \cdot \frac{25}{3} \cdot' match=False
+    [greedy/math500] gold='-125' pred='\[\begin{align*}
+\left(10x^3-\frac{1}{2x' match=False
+    [greedy/math500] gold='3' pred='\[\begin{aligned}
+(n + 2)(n + 4)(n + 6) ' match=False
+    [greedy/math500] gold='3, 5, 7' pred='\[\begin{align*}
+(x - 3)^3 + (x -7)^3 &=' match=False
+    [greedy/math500] gold='72' pred='18' match=False
+    [greedy/math500] gold='2000' pred='0' match=False
+    [greedy/math500] gold='23' pred='23' match=True
+    [greedy/math500] gold='12' pred='16 cm.
+
+How many times greater is the ar' match=False
+    [greedy/math500] gold='17' pred='\[\begin{array}{c}
+\text{The coordinates' match=False
+    [greedy/math500] gold='4' pred='\[\begin{aligned}
+-4 < 2(x - 1) < 8 &\if' match=False
+    [greedy/math500] gold='70 \sqrt{2}' pred='\[\begin{aligned}
+\sqrt{x^2 + 400} + \sq' match=False
+    [greedy/math500] gold='1.25' pred='\[\begin{array}{c}
+\text{Distance from s' match=False
+    [greedy/math500] gold='2' pred='\[\begin{aligned}
+\sin A &= 2\cos A \\
+\' match=True
+    [greedy/math500] gold='6' pred='\[z^4 + z^2 + 1 = 0\]
+
+\[z^4 + z^2 + 1 =' match=False
+    [greedy/math500] gold='5' pred='\[\begin{aligned}
+f(x) &= \frac{2x}{x^2-' match=False
+    [greedy/math500] gold='\frac{3}{2}' pred='\[\begin{aligned}
+4^x &= 8 \\
+4^x &= 2^3' match=False
+    [greedy/math500] gold='83' pred='\[\begin{aligned}
+\frac{1}{2}(3x-9) &= x' match=False
+    [greedy/math500] gold='203' pred='22' match=False
+    [greedy/math500] gold='x^5 - x^4 + x^3 - x^2 + x - 1' pred='\[\begin{aligned}
+x^6 - 3 &= (x^3 + 1)(x' match=False
+    [greedy/math500] gold='12' pred='$\frac{\sqrt{6.25-0.49}}{2.7-2.5} = \fra' match=False
+    [greedy/math500] gold='-\frac{\pi}{6}' pred='5\pi/3' match=False
+    [greedy/math500] gold='0.15' pred='$\frac{3}{20} = 0.15$
+
+$\frac{3}{20} = 0' match=False
+    [greedy/math500] gold='3' pred='The degree of $f$ is \boxed{}.
+
+(In this' match=False
+    [greedy/math500] gold='11' pred='\[\begin{aligned}
+\text{Sum of the first' match=False
+    [greedy/math500] gold='16' pred='\[|(1-i)^8| = |(1-i)^4|\]\[= |(1-i)^2|^2' match=False
+    [greedy/math500] gold='9901' pred='$99^2+99+1 = 99^2 + 99 + 1 + 99 + 1 - 2 ' match=False
+    [greedy/math500] gold='5' pred='\[\begin{array}{c}
+\text{MATHCOUNTS} & \' match=False
+    [greedy/math500] gold='(6,31,-1)' pred='$x^9 + px^6 + qx^3 + r = (x^3 - 3x^2 + 4' match=False
+    [greedy/math500] gold='-256' pred='\[
+\begin{aligned}
+8x^3 + 4ax^2 + 2bx + ' match=False
+    [greedy/math500] gold='4' pred='\[\begin{pmatrix} 2 & 3 \\ 0 & -2 \end{p' match=False
+    [greedy/math500] gold='10' pred='\[x^8 + 3x^4 - 4 = (x^4 + 2)(x^4 - 2).\]' match=False
+    [greedy/math500] gold='\frac{35}{64}' pred='\[\begin{align*}
+\sin 7x &= \sin(6x + x)' match=False
+    [greedy/math500] gold='1' pred='\[
+\begin{aligned}
+1^{(2^{235423523})} &' match=True
+    [greedy/math500] gold='x^3+3x-6' pred='\boxed{}' match=False
+    [greedy/math500] gold='10' pred='10' match=True
+    [greedy/math500] gold='46' pred='\[\begin{aligned}
+\tan 53^\circ \tan 81^' match=False
+    [greedy/math500] gold='-1' pred='$z^5 = 1$ implies $z^4 = z.$  Therefore,' match=False
+    [greedy/math500] gold='40_9' pred='\[\begin{array}{c}
+58_9 - 18_9 \\
+\hline' match=False
+    [greedy/math500] gold='2516_8' pred='\[\begin{align*}
+10101001110_{2} &= 1 \c' match=False
+    [greedy/math500] gold='3' pred='\[\begin{aligned}
+\text{Volume of a sphe' match=False
+    [greedy/math500] gold='\frac{3\sqrt{3}}{4}' pred='\frac{3 \sqrt{3}}{4}' match=True
+    [greedy/math500] gold='\cot x' pred='\[\frac{\sec x}{\sin x} - \frac{\sin x}{' match=False
+    [greedy/math500] gold='\frac{11}{36}' pred='5/18' match=False
+    [greedy/math500] gold='0' pred='\[\begin{align*}
+\log x^2 &= \log x^2 \\' match=False
+    [greedy/math500] gold='4' pred='4' match=True
+    [greedy/math500] gold='(-2,1)' pred='$f(x) = x^3 + 3x^2 + 1.$  There exist re' match=False
+    [greedy/math500] gold='2' pred='0.29629629629629629629629629629629629629' match=False
+    [greedy/math500] gold='501' pred='\[\begin{aligned}
+\log(kx) &= 2\log(x+2)' match=False
+    [greedy/math500] gold='3' pred='\[\begin{array}{c}
+\text{treeks} & \text' match=False
+    [greedy/math500] gold='\frac{3}{2}' pred='\[\begin{array}{c}
+\text{Slope of line $' match=False
+    [greedy/math500] gold='2' pred='$x = \boxed{}$.
+
+(Express your answer as' match=False
+    [greedy/math500] gold='-1' pred='\[\begin{aligned}
+(3t^2+5t+a)(4t^2+bt-2)' match=False
+    [greedy/math500] gold='\sqrt{5}' pred='\[\begin{align*}
+\text{Volume of the tan' match=False
+    [greedy/math500] gold='240' pred='?' match=False
+    [greedy/math500] gold='1' pred='\[\begin{aligned}
+|5x-1|&=x+3\\
+5x-1&=x+' match=False
+    [greedy/math500] gold='2' pred='\[
+\begin{aligned}
+f(x) &=
+\begin{cases}' match=True
+    [greedy/math500] gold='21' pred='The greatest common divisor of $3339$, $' match=False
+    [greedy/math500] gold='\frac{3}{2}' pred='15' match=False
+    [greedy/math500] gold='1' pred='\[
+\begin{align*}
+f(x) &= \frac{\sqrt{x-' match=False
+    [greedy/math500] gold='\frac{448}{15625}' pred='\[\begin{aligned}
+\text{Probability of n' match=False
+    [greedy/math500] gold='33' pred='\[x^2 - 10x + y^2 + 6y + c = 0\]
+
+\[(x^2' match=False
+    [greedy/math500] gold='80' pred='$x = 100^{\circ}$ and $y = 110^{\circ}$.' match=False
+    [greedy/math500] gold='-4' pred='\[\begin{pmatrix} 2 \\ y \\ -5 \end{pmat' match=False
+    [greedy/math500] gold='1 \pm \sqrt{19}' pred='\[\frac{( x+ 1)(x - 3)}{5(x + 2)(x - 4)}' match=True
+    [greedy/math500] gold='\text{east}' pred='\[\begin{array}{ccl}
+\text{North} & \rig' match=False
+    [greedy/math500] gold='2k+2' pred='\[
+\begin{aligned}
+(-k + 4) + (-2 + 3k) ' match=False
+    [greedy/math500] gold='\begin{pmatrix} -1/3 \\ 2/3 \\ 5/3 \end{' pred='\[\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatr' match=False
+    [greedy/math500] gold='145^\circ' pred='The measure of $\alpha$ is $\boxed{}$ de' match=False
+    [greedy/math500] gold='850' pred='\[\begin{aligned}
+\frac 1{r_1\overline{r' match=False
+    [greedy/math500] gold='(a+5)(b+2)' pred='\[\begin{aligned}
+ab+5b+2a+10 &= ab+2a+5' match=True
+    [greedy/math500] gold='(3,4]' pred='\[f(x) = \lambda x(1 - x) = \lambda x - ' match=False
+    [greedy/math500] gold='40' pred='The first equation can be written as $(x' match=False
+    [greedy/math500] gold='29' pred='139.5' match=False
+    [greedy/math500] gold='\frac43' pred='\[\begin{aligned}
+y&=\frac{4x^3+2x-4}{3x' match=False
+    [greedy/math500] gold='9' pred='6' match=False
+    [greedy/math500] gold='2' pred='\[\begin{align*}
+\frac{x^2}{k} + \frac{y' match=True
+    [greedy/math500] gold='120^\circ' pred='\[\tan \theta = \frac{\cos 5^\circ \cos ' match=False
+    [greedy/math500] gold='504' pred='\[a_1 = \boxed{}.\]
+
+(In your answer, us' match=False
+    [greedy/math500] gold='210' pred='\[\begin{aligned}
+\text{Number of ways} ' match=False
+    [greedy/math500] gold='13' pred='\[\begin{aligned}
+\frac{1+\sqrt{2}}{2+\s' match=False
+    [greedy/math500] gold='8000' pred='8100' match=False
+    [greedy/math500] gold='-5' pred='\[\frac{C}{x-3}+\frac{D}{x+8}=\frac{4x-2' match=False
+    [greedy/math500] gold='1260' pred='45' match=False
+    [greedy/math500] gold='2' pred='$x = \boxed{}$.
+
+(Express your answer as' match=False
+    [greedy/math500] gold='3' pred='\[\begin{aligned}
+\sqrt{3x-5} &= 2 \\
+\s' match=True
+    [greedy/math500] gold='81' pred='\[\begin{aligned}
+|a + bi| &= \sqrt{a^2 ' match=False
+    [greedy/math500] gold='-9' pred='The expression $1+2+3-4+5+6$ is equivale' match=False
+    [greedy/math500] gold='\text{even}' pred='$f(f(g(f(g(f(x))))))$ is \boxed{} becaus' match=False
+    [greedy/math500] gold='6' pred='30 \div 5' match=False
+    [greedy/math500] gold='9' pred='25' match=False
+    [greedy/math500] gold='8' pred='12' match=False
+    [greedy/math500] gold='\frac{11}{2}' pred='\[\begin{aligned}
+|x+5|-|3x-6|&=0\\
+|x+5' match=False
+    [greedy/math500] gold='-3' pred='14' match=False
+    [greedy/math500] gold='1+274i' pred='\[\begin{align*}
+z_1&=F(z_0)=\frac{z_0+i' match=True
+    [greedy/math500] gold='4210_{5}' pred='\[\begin{align*}
+555_{10} &= 555 \cdot 1' match=False
+    [greedy/math500] gold='36' pred='\[\begin{array}{c|c}
+\text{Day} & \text{' match=False
+    [greedy/math500] gold='\frac{3840}{289}' pred='144' match=False
+    [greedy/math500] gold='13' pred='$n=11213141+18k$ for some integer $k$. W' match=False
+    [greedy/math500] gold='8' pred='\[\begin{aligned}
+f(x) &= ax^4-bx^2+x+5 ' match=False
+    [greedy/math500] gold='4' pred='Let $x$ be the number Rick is thinking o' match=False
+    [greedy/math500] gold='120' pred='Let the smallest angle be $x$. Then the ' match=False
+    [greedy/math500] gold='16' pred='The distance between two points $(x_1, y' match=False
+    [greedy/math500] gold='9' pred='\[42! = 42 \cdot 41 \cdot 40 \cdot \cdot' match=False
+    [greedy/math500] gold='64' pred='Let $x = \sum_{i = 1}^n a_i.$ Then $x^2 ' match=False
+    [greedy/math500] gold='204_5' pred='\[
+\begin{aligned}
+413_5 \div 2_5 &= 413' match=False
+    [greedy/math500] gold='\frac{1}{3}' pred='Let $A$ be the event that the two bags c' match=False
+    [greedy/math500] gold='1' pred='\[f(x,y) = x \sqrt{1 - y^2} + y \sqrt{1 ' match=True
+    [greedy/math500] gold='13' pred='1' match=False
+    [greedy/math500] gold='2' pred='\[\begin{array}{c}
+\text{Number of penci' match=False
+    [greedy/math500] gold='28800' pred='The number of ways to arrange the Democr' match=False
+    [greedy/math500] gold='3 \sqrt{5}' pred='\[\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatr' match=False
+    [greedy/math500] gold='(15,-29)' pred='?' match=False
+    [greedy/math500] gold='-2' pred='\[z + \frac{1}{z} = \frac{1 + \sqrt{5}}{' match=False
+    [greedy/math500] gold='\frac{\sqrt{3}}{3}' pred='\boxed{}' match=False
+    [greedy/math500] gold='16' pred='\[x^4 + 4y^2 + 4z^4 = (x^2 + 2y)(x^2 + 2' match=False
+    [greedy/math500] gold='11' pred='$x = \boxed{}$.
+
+What is the value of $x' match=False
+    [greedy/math500] gold='49' pred='42' match=False
+    [greedy/math500] gold='1' pred='\[\begin{aligned}f(2015,2) &= f(2014,f(2' match=False
+    [greedy/math500] gold='144' pred='\begin{align*}
+\begin{vmatrix} x_1 & y_1' match=False
+    [greedy/math500] gold='8' pred='\[\begin{aligned}
+\text{Area of triangle' match=False
+    [greedy/math500] gold='\frac{2}{21}' pred='0' match=False
+    [greedy/math500] gold='2\sqrt{113}' pred='The shortest path the gecko can take to ' match=False
+    [greedy/math500] gold='\frac{1}{4}' pred='\[\begin{align*}
+\text{Probability} &= \' match=False
+    [greedy/math500] gold='30^\circ' pred='a whole number' match=False
+    [greedy/math500] gold='\frac65' pred='\[\begin{aligned}
+\frac{1}{x} + 5x^2 &= ' match=False
+    [greedy/math500] gold='2107' pred='\[\begin{aligned}
+\text{Sum of multiples' match=False
+    [greedy/math500] gold='3.21' pred='\[\begin{aligned}
+x^2+(2.6)x+3.6 &= (x+b' match=False
+    [greedy/math500] gold='18' pred='14' match=False
+    [greedy/math500] gold='6' pred='6' match=True
+    [greedy/math500] gold='\dfrac{17}{50}' pred='1/2' match=False
+    [greedy/math500] gold='-\frac{35}{9}' pred='\[\begin{aligned}
+\left(a+\frac{1}{b}\ri' match=False
+    [greedy/math500] gold='-\sqrt{3}' pred='\[\begin{align*}
+\tan 100^\circ + 4 \sin' match=False
+    [greedy/math500] gold='\frac{4}{9}' pred='The top shelf has 8 mystery books. The m' match=False
+    [greedy/math500] gold='\frac{270}7\text{ degrees}' pred='' match=False
+    [greedy/math500] gold='65' pred='30.75' match=False
+    [greedy/math500] gold='19' pred='The number of squares of size $1\times 1' match=False
+    [greedy/math500] gold='12' pred='30' match=False
+    [greedy/math500] gold='1736' pred='\[\begin{aligned}
+y &= x^2-8 \\
+y^2 &= -' match=False
+    [greedy/math500] gold='\frac{13}{15}' pred='Louis eats $\frac{1}{5}$ of the pie.  Ja' match=False
+    [greedy/math500] gold='350' pred='400' match=False
+    [greedy/math500] gold='4' pred='The sum of the geometric series is given' match=False
+    [greedy/math500] gold='2' pred='\[\begin{aligned}
+x &= y^2 - 4y - 1 \\
+0' match=True
+    [greedy/math500] gold='3' pred='\[\begin{aligned}
+3m + 4n &= 100 \\
+3m &' match=True
+    [greedy/math500] gold='.0000672' pred='$\frac{21}{2^2 \cdot 5^7} = \frac{21}{4 ' match=False
+    [greedy/math500] gold='30^\circ' pred='0' match=False
+    [greedy/math500] gold='60' pred='\[\begin{align*}
+\sqrt{10 \times 15 \tim' match=False
+    [greedy/math500] gold='5x - 7y + 11z + 4 = 0' pred='The equation of the plane is $x + 2y + 3' match=False
+    [greedy/math500] gold='3' pred='2' match=False
+    [greedy/math500] gold='\frac{\sqrt{3}}{3}' pred='\[\begin{align*}
+\sqrt{\sqrt[3]{\sqrt{\f' match=True
+    [greedy/math500] gold='1251' pred='?' match=False
+    [greedy/math500] gold='23' pred='\[\begin{aligned}
+\sqrt{2}+\frac{1}{\sqr' match=False
+    [greedy/math500] gold='(2,\infty)' pred='The sum is a constant.  What is the cons' match=False
+    [greedy/math500] gold='1' pred='?' match=False
+    [greedy/math500] gold='7' pred='\[2^{24} = 2^{24-24+24-24+24-24+24-24+24' match=False
+    [greedy/math500] gold='7' pred='Let $x$ be the number of nickels. Then t' match=False
+    [greedy/math500] gold='6' pred='\[\begin{aligned}
+f(x) &= e^{3x^2-|\lflo' match=False
+    [greedy/math500] gold='160' pred='The distance between $C$ and $D$ is 140 ' match=False
+    [greedy/math500] gold='\frac{13}{18}' pred='Let $A$ be the event that Paul chooses a' match=False
+    [greedy/math500] gold='0' pred='\[\begin{aligned}
+3(4) + 2b &= 12 \\
+12 ' match=False
+    [greedy/math500] gold='30' pred='\[\begin{aligned}
+\overline{QM} &= \frac' match=False
+    [greedy/math500] gold='4' pred='The polynomial has a rational root if an' match=False
+    [greedy/math500] gold='\frac{1}{4}' pred='\[\frac{x - y}{x^4 + y^4 + 6} = \frac{x ' match=False
+    [greedy/math500] gold='24' pred='48' match=False
+    [greedy/math500] gold='1600' pred='$441+2(21)(19)+361=x$
+
+$441+2(21)(19)+36' match=False
+    [greedy/math500] gold='6' pred='\[10! = 10 \cdot 9 \cdot 8 \cdot 7 \cdot' match=False
+    [greedy/math500] gold='10,\!080' pred='The number of ways to arrange 6 girls an' match=False
+    [greedy/math500] gold='17' pred='17' match=True
+    [greedy/math500] gold='40' pred='\[\begin{aligned}
+4 \text{ daps} &= 7 \t' match=False
+    [greedy/math500] gold='66' pred='\[\begin{aligned}
+N & \equiv 5 \pmod{8} ' match=False
+    [greedy/math500] gold='\frac{2}{3}' pred='1' match=False
+    [greedy/math500] gold='12' pred='\[\begin{aligned}
+(5x + 9)^{611} + (x + ' match=False
+    [greedy/math500] gold='0' pred='\[\begin{align*}
+|(a + b)(a + c)(a + d)(' match=False
+    [greedy/math500] gold='\begin{pmatrix} -2 \\ -14 \\ -7 \end{pma' pred='\[\begin{pmatrix} 2 \\ 4 \\ -3 \end{pmat' match=False
+    [greedy/math500] gold='\left( \frac{3}{2}, -13 \right)' pred='$m = \boxed{}$ and $b = \boxed{}.$
+
+(Ent' match=False
+    [greedy/math500] gold='28' pred='\[\begin{array}{c}
+\text{Number of pizza' match=False
+    [greedy/math500] gold='1' pred='\[\begin{aligned}
+\text{Number of intege' match=False
+    [greedy/math500] gold='16' pred='12' match=False
+    [greedy/math500] gold='10' pred='\boxed{}.
+<unused56>2023/12/12/121212.js' match=False
+    [greedy/math500] gold='5' pred='\[\begin{aligned}
+5^5\div5^4-5^3+5^2\cdo' match=True
+    [greedy/math500] gold='56' pred='$80-x$' match=False
+    [greedy/math500] gold='2' pred='\[\sum_{n = 1}^\infty \frac{F_{n + 1}}{F' match=False
+    [greedy/math500] gold='110' pred='?' match=False
+    [greedy/math500] gold='2' pred='\[\begin{aligned}
+x^2 - x - 1 &= 0 \\
+x^' match=True
+    [greedy/math500] gold='6' pred='\[\begin{aligned}
+56 \text{ Drinkets} &=' match=False
+    [greedy/math500] gold='11,\! 111,\! 111,\! 100' pred='\[\begin{array}{ccl}
+450 & = 90 \cdot 5 ' match=False
+    [greedy/math500] gold='(-1,6)' pred='The midpoint of the line segment between' match=False
+    [greedy/math500] gold='\frac{1}{2}' pred='The probability of the first number bein' match=True
+    [greedy/math500] gold='\frac{16}{27}' pred='\[\begin{aligned}
+\text{Amount of milk l' match=False
+    [greedy/math500] gold='900' pred='\[240 \cdot k = 2^3 \cdot 3^3\]
+
+\[k = \' match=False
+    [greedy/math500] gold='54' pred='$\boxed{}$ square centimeters.
+
+(The ima' match=False
+    [greedy/math500] gold='14' pred='\[\frac{4321}{5^7\cdot2^8}=\frac{4321}{5' match=False
+    [greedy/math500] gold='\frac{9}{256}' pred='\[\begin{aligned}
+\sin 20^\circ \sin 40^' match=False
+    [greedy/math500] gold='11' pred='\[
+\begin{aligned}
+(3x-2)(4x+1)-(3x-2)4x' match=False
+    [greedy/math500] gold='3' pred='?' match=False
+    [greedy/math500] gold='\text{(C)}' pred='(C)' match=True
+    [greedy/math500] gold='288 \pi' pred='\[\begin{aligned}
+d_1^2 + d_2^2 + d_3^2 ' match=False
+    [greedy/math500] gold='90' pred='There are 10 items on the menu.  Yann ca' match=False
+    [greedy/math500] gold='\frac{16}{5}' pred='\[
+\begin{align*}
+a + b + c + d + e &= 8' match=False
+    [greedy/math500] gold='10' pred='\[\begin{aligned}
+\text{Amy's age} &= 6 ' match=False
+    [greedy/math500] gold='\frac{1997}{2}' pred='\[\begin{align*}
+\frac{1}{1 + \omega} + ' match=False
+    [greedy/math500] gold='30^\circ' pred='\[\begin{aligned}
+\mathbf{a} \cdot \math' match=False
+    [greedy/math500] gold='34' pred='126' match=False
+    [greedy/math500] gold='\frac 59' pred='3/10' match=False
+    [greedy/math500] gold='12' pred='\[\frac{1}{\cos^2 10^\circ} + \frac{1}{\' match=False
+    [greedy/math500] gold='22' pred='\[\begin{aligned}
+xy &= 24 \\
+xz &= 48 \' match=False
+    [greedy/math500] gold='-4' pred='$f(x)=\frac{1}{|x^2+3x-4|+|x^2+9x+20|}$
+' match=False
+    [greedy/math500] gold='16' pred='The area of a parallelogram is the produ' match=False
+    [greedy/math500] gold='116' pred='$\angle PQR = \boxed{}$ degrees.
+\end{as' match=False
+    [greedy/math500] gold='17' pred='\[\begin{aligned}
+y&=\frac{1}{2}x^2-9\\
+' match=False
+    [greedy/math500] gold='\$32,\!348' pred='\boxed{}' match=False
+    [greedy/math500] gold='3' pred='\[\begin{aligned}
+1^2 + 3^2 &= x^2 \\
+1 ' match=False
+    [greedy/math500] gold='8' pred='?' match=False
+    [greedy/math500] gold='-13x+3' pred='\[\begin{aligned}
+f(x) &= x^{10}+5x^9-8x' match=False
+    [greedy/math500] gold='8' pred='18' match=False
+    [greedy/math500] gold='\frac{10}{11}' pred='\[
+\begin{aligned}
+p(x) &= (x-4+\sqrt{11' match=False
+    [greedy/math500] gold='\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pm' pred='\[\begin{aligned}
+\mathbf{A}^{27} + \mat' match=False
+    [greedy/math500] gold='17' pred='\[
+\begin{aligned}
+t+2 &\equiv 1 \pmod{2' match=False
+    [greedy/math500] gold='13' pred='\[\begin{aligned}
+\frac{x}4 + \frac{y}{1' match=False
+    [greedy/math500] gold='540' pred='\[\begin{array}{c}
+\text{Number of ways ' match=False
+    [greedy/math500] gold='81' pred='\[\begin{align*}
+4(x + 7)(2 - x) &= 4(2 ' match=False
+    [greedy/math500] gold='\frac{1}{8}' pred='\[\frac{3}{24} = \frac{1}{8} = \frac{1}{' match=False
+    [greedy/math500] gold='28' pred='There are 3 types of cookies, and 6 cook' match=False
+    [greedy/math500] gold='\text{(E)}' pred='\[r^2 \cos 2 \theta = 4\]\[r^2 \cos^2 \t' match=False
+    [greedy/math500] gold='\frac{8}{21}' pred='\[\begin{align*}
+\frac{1}{5}\cdot \frac{' match=False
+    [greedy/math500] gold='864 \mbox{ inches}^2' pred='\[\begin{aligned}
+\text{Volume of a cube' match=False
+    [greedy/math500] gold='16' pred='Let the number of yellow marbles be $x$.' match=False
+    [greedy/math500] gold='22' pred='4' match=False
+    [greedy/math500] gold='120^\circ' pred='\[\begin{aligned}
+\angle ABC &= \cos^{-1' match=False
+    [greedy/math500] gold='76^\circ' pred='83^\circ' match=False
+    [greedy/math500] gold='4' pred='$10^x - 10 = 9990$
+
+$10^x = 9990 + 10$
+
+' match=False
+    [greedy/math500] gold='15' pred='?' match=False
+    [greedy/math500] gold='1\frac{4}{5}' pred='$BH = \boxed{}$ units.
+<unused56>2023/12' match=False
+    [greedy/math500] gold='4005' pred='The 2003rd term of the sequence of odd n' match=False
+    [greedy/math500] gold='\dfrac{33}{100}' pred='The number of multiples of 3 from 1 to 1' match=False
+    [greedy/math500] gold='180^\circ' pred='$m\angle J + m\angle H = \boxed{}$ degre' match=False
+    [greedy/math500] gold='1' pred='1' match=True
+    [greedy/math500] gold='6' pred='The number of distinct arrangements is \' match=False
+    [greedy/math500] gold='10' pred='10' match=True
+    [greedy/math500] gold='333' pred='\[\begin{aligned}
+997^{-1} &\equiv 997^{' match=False
+    [greedy/math500] gold='1030' pred='\[\begin{aligned}
+0.\overline{1331} &= 0' match=False
+    [greedy/math500] gold='1250' pred='\[\begin{aligned}
+1200 \text{ lire} &= 1' match=False
+    [greedy/math500] gold='18+2\pi' pred='\[\begin{aligned}
+S &= \left\{ (x,y) \mi' match=False
+    [greedy/math500] gold='7' pred='7' match=True
+    [greedy/math500] gold='11' pred='\[\begin{aligned}
+\sqrt{120-\sqrt{x}} &=' match=False
+    [greedy/math500] gold='\sqrt{53}' pred='2 \cdot \sqrt{13}' match=False
+    [greedy/math500] gold='255' pred='\[\begin{aligned}
+\text{largest eight-di' match=False
+    [greedy/math500] gold='7\pi' pred='250' match=False
+    [greedy/math500] gold='8' pred='\[\begin{aligned}
+a(2a+b)-2a^{2}+ab &= 2' match=False
+    [greedy/math500] gold='36^\circ' pred='The measure of angle $A$ is \boxed{}.' match=False
+    [greedy/math500] gold='129' pred='The first term is 0.  The second term is' match=False
+    [greedy/math500] gold='1' pred='\[\begin{align*}
+\left(4\dfrac{5}{8}\rig' match=False
+    [greedy/math500] gold='3 \pm 2 \sqrt{2}' pred='\boxed{}.
+
+\begin{align*}
+\sin \left( \t' match=False
+    [greedy/math500] gold='440' pred='The polynomial $P(x) = 2x^3-2ax^2+(a^2-8' match=False
+    [greedy/math500] gold='\frac{17}{21}' pred='\[\begin{align*}
+\sum_{(a,b,c) \in T} \f' match=False
+    [greedy/math500] gold='36' pred='\[\begin{array}{c|c}
+\text{Gear} & \text' match=False
+    [greedy/math500] gold='7' pred='\[\begin{pmatrix} 3 \\ -10 \\ 1 \end{pma' match=False
+    [greedy/math500] gold='16' pred='\[\begin{aligned}
+(a + b + c + d) \left(' match=False

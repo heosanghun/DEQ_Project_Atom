@@ -1,0 +1,393 @@
+{
+ "source": "/home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21b/probe21.json",
+ "rule": "c21_compare.py - PREREG-ENC-STAGE2-1-20261027 analysis (CC 2026-10-27). Input: info_probe_feat JSON with sets BOW, zsrc,\nenc31 (layer-31 encoding, 64x2560 scaled), zstar31 (canonical DEQ fixed point from enc31), zstar_canon (existing z*' from z_src),\nand the merged zstar31 file for convergence stats.\nChecks (fail otherwise): exactly these 5 sets; per task identical eligible dev ids and gold labels across sets.\nPRIMARY (prereg): for answer_type and answer_logmag, paired (zstar31 - enc31) on dev, item bootstrap B=10000 Random(2026), unrounded.\n  \"DEQ adds answer hint\"  : at least one primary task has CI lower > 0\n  \"DEQ loses answer hint\" : no task passes and both primary tasks have CI upper < 0\n  otherwise               : \"DEQ iteration does not add the answer hint (not distinguishable)\"\nPRECONDITION: dev convergence r_1000 < 1e-2 for >= 90% of dev items (G1 threshold); if not met the verdict is reported as \"on hold\".\nSECONDARY (report): enc31 - zsrc (replicates ENC stage 1 in the 64-slot scaled form), zstar31 - zsrc, zstar_canon - zsrc, all tasks.\nusage: python c21_compare.py probe.json zstar31.pt dev_order.json out.json",
+ "convergence": {
+  "dev_frac_r1000_lt_1e-2": 0.9433333333333334,
+  "dev_median_r1000": 0.0005046716700716951,
+  "all_frac_r1000_lt_1e-2": 0.9522912743251726,
+  "n_dev": 600,
+  "n_all": 1593,
+  "dev_any_nonfinite": false
+ },
+ "tasks": {
+  "subject": {
+   "n_dev": 600,
+   "majority": [
+    "algebra",
+    0.32666666666666666
+   ],
+   "acc": {
+    "BOW": 0.74,
+    "zsrc": 0.6116666666666667,
+    "enc31": 0.845,
+    "zstar31": 0.8216666666666667,
+    "zstar_canon": 0.6183333333333333
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     0.41333333333333333,
+     0.365,
+     0.46
+    ],
+    "zsrc": [
+     0.285,
+     0.235,
+     0.33666666666666667
+    ],
+    "enc31": [
+     0.5183333333333333,
+     0.4716666666666667,
+     0.565
+    ],
+    "zstar31": [
+     0.495,
+     0.4483333333333333,
+     0.5416666666666666
+    ],
+    "zstar_canon": [
+     0.2916666666666667,
+     0.24166666666666667,
+     0.3416666666666667
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     -0.023333333333333334,
+     -0.043333333333333335,
+     -0.0033333333333333335
+    ],
+    "enc31-zsrc": [
+     0.23333333333333334,
+     0.19,
+     0.275
+    ],
+    "zstar31-zsrc": [
+     0.21,
+     0.16666666666666666,
+     0.25333333333333335
+    ],
+    "zstar_canon-zsrc": [
+     0.006666666666666667,
+     -0.018333333333333333,
+     0.03166666666666667
+    ]
+   }
+  },
+  "answer_type": {
+   "n_dev": 600,
+   "majority": [
+    "integer",
+    0.6666666666666666
+   ],
+   "acc": {
+    "BOW": 0.755,
+    "zsrc": 0.6733333333333333,
+    "enc31": 0.7816666666666666,
+    "zstar31": 0.7366666666666667,
+    "zstar_canon": 0.6733333333333333
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     0.08833333333333333,
+     0.06333333333333334,
+     0.115
+    ],
+    "zsrc": [
+     0.006666666666666667,
+     -0.02,
+     0.03333333333333333
+    ],
+    "enc31": [
+     0.115,
+     0.08,
+     0.15166666666666667
+    ],
+    "zstar31": [
+     0.07,
+     0.035,
+     0.105
+    ],
+    "zstar_canon": [
+     0.006666666666666667,
+     -0.018333333333333333,
+     0.03166666666666667
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     -0.045,
+     -0.07,
+     -0.02
+    ],
+    "enc31-zsrc": [
+     0.10833333333333334,
+     0.07333333333333333,
+     0.145
+    ],
+    "zstar31-zsrc": [
+     0.06333333333333334,
+     0.02666666666666667,
+     0.1
+    ],
+    "zstar_canon-zsrc": [
+     0.0,
+     -0.018333333333333333,
+     0.018333333333333333
+    ]
+   }
+  },
+  "answer_parity": {
+   "n_dev": 400,
+   "majority": [
+    "even",
+    0.6
+   ],
+   "acc": {
+    "BOW": 0.59,
+    "zsrc": 0.5475,
+    "enc31": 0.5575,
+    "zstar31": 0.5675,
+    "zstar_canon": 0.525
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     -0.01,
+     -0.0575,
+     0.04
+    ],
+    "zsrc": [
+     -0.0525,
+     -0.1075,
+     0.0
+    ],
+    "enc31": [
+     -0.0425,
+     -0.1,
+     0.015
+    ],
+    "zstar31": [
+     -0.0325,
+     -0.09,
+     0.025
+    ],
+    "zstar_canon": [
+     -0.075,
+     -0.125,
+     -0.025
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     0.01,
+     -0.0325,
+     0.055
+    ],
+    "enc31-zsrc": [
+     0.01,
+     -0.05,
+     0.07
+    ],
+    "zstar31-zsrc": [
+     0.02,
+     -0.04,
+     0.08
+    ],
+    "zstar_canon-zsrc": [
+     -0.0225,
+     -0.06,
+     0.015
+    ]
+   }
+  },
+  "answer_logmag": {
+   "n_dev": 400,
+   "majority": [
+    "t1",
+    0.33
+   ],
+   "acc": {
+    "BOW": 0.4175,
+    "zsrc": 0.385,
+    "enc31": 0.47,
+    "zstar31": 0.4475,
+    "zstar_canon": 0.385
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     0.0875,
+     0.0325,
+     0.1425
+    ],
+    "zsrc": [
+     0.055,
+     -0.01,
+     0.12
+    ],
+    "enc31": [
+     0.14,
+     0.075,
+     0.2025
+    ],
+    "zstar31": [
+     0.1175,
+     0.055,
+     0.18
+    ],
+    "zstar_canon": [
+     0.055,
+     -0.0075,
+     0.1175
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     -0.0225,
+     -0.065,
+     0.02
+    ],
+    "enc31-zsrc": [
+     0.085,
+     0.0275,
+     0.14
+    ],
+    "zstar31-zsrc": [
+     0.0625,
+     0.0025,
+     0.1225
+    ],
+    "zstar_canon-zsrc": [
+     0.0,
+     -0.035,
+     0.0325
+    ]
+   }
+  },
+  "prompt_maxnum_log": {
+   "n_dev": 579,
+   "majority": [
+    "t1",
+    0.3540587219343696
+   ],
+   "acc": {
+    "BOW": 0.5181347150259067,
+    "zsrc": 0.46459412780656306,
+    "enc31": 0.6580310880829016,
+    "zstar31": 0.6286701208981001,
+    "zstar_canon": 0.45768566493955093
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     0.16407599309153714,
+     0.11917098445595854,
+     0.20725388601036268
+    ],
+    "zsrc": [
+     0.11053540587219343,
+     0.06044905008635579,
+     0.16062176165803108
+    ],
+    "enc31": [
+     0.30397236614853196,
+     0.2556131260794473,
+     0.35233160621761656
+    ],
+    "zstar31": [
+     0.27461139896373055,
+     0.22279792746113988,
+     0.32469775474956825
+    ],
+    "zstar_canon": [
+     0.10362694300518134,
+     0.05181347150259067,
+     0.153713298791019
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     -0.02936096718480138,
+     -0.06217616580310881,
+     0.0034542314335060447
+    ],
+    "enc31-zsrc": [
+     0.19343696027633853,
+     0.14335060449050085,
+     0.24352331606217617
+    ],
+    "zstar31-zsrc": [
+     0.16407599309153714,
+     0.1157167530224525,
+     0.2141623488773748
+    ],
+    "zstar_canon-zsrc": [
+     -0.0069084628670120895,
+     -0.037996545768566495,
+     0.024179620034542316
+    ]
+   }
+  },
+  "prompt_numcount": {
+   "n_dev": 600,
+   "majority": [
+    "t1",
+    0.37333333333333335
+   ],
+   "acc": {
+    "BOW": 0.645,
+    "zsrc": 0.66,
+    "enc31": 0.7416666666666667,
+    "zstar31": 0.7416666666666667,
+    "zstar_canon": 0.6766666666666666
+   },
+   "acc_minus_majority": {
+    "BOW": [
+     0.27166666666666667,
+     0.22333333333333333,
+     0.32
+    ],
+    "zsrc": [
+     0.2866666666666667,
+     0.235,
+     0.3383333333333333
+    ],
+    "enc31": [
+     0.36833333333333335,
+     0.31833333333333336,
+     0.42
+    ],
+    "zstar31": [
+     0.36833333333333335,
+     0.32,
+     0.41833333333333333
+    ],
+    "zstar_canon": [
+     0.30333333333333334,
+     0.25166666666666665,
+     0.355
+    ]
+   },
+   "pairs": {
+    "zstar31-enc31": [
+     0.0,
+     -0.028333333333333332,
+     0.028333333333333332
+    ],
+    "enc31-zsrc": [
+     0.08166666666666667,
+     0.04,
+     0.12333333333333334
+    ],
+    "zstar31-zsrc": [
+     0.08166666666666667,
+     0.041666666666666664,
+     0.12333333333333334
+    ],
+    "zstar_canon-zsrc": [
+     0.016666666666666666,
+     -0.005,
+     0.03833333333333333
+    ]
+   }
+  }
+ },
+ "verdict": "DEQ iteration does not add the answer hint (not distinguishable)"
+}

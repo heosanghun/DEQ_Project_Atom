@@ -1,0 +1,169 @@
+--- scripts/s7_eval_gate_p6_v36.py
++++ scripts/s7_eval_gate_p6_v36b.py
+@@ -1,8 +1,18 @@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ """
+-scripts/s7_eval_gate_p6_v36.py - CTS S7 P6 Gate Evaluation Generator
+-Directive: TASK-0009 Section 1 / PREREG_S7_D_v3_7 §3·§4·§5·§7·§8(b)
++scripts/s7_eval_gate_p6_v36b.py - CTS S7 P6 Gate Evaluation Generator (v3.6b)
++Directive: TASK-0010 Section 1 / AUDIT-0009 FIX F1, F2, F4 / PREREG_S7_D_v3_7 §2(a)·§3·§4·§5·§7·§8(b)
++
++Revision History:
++  - v3.6: Initial P6 gate generator with 6 conditions, front 80 token audit, fixed item order.
++  - v3.6b:
++    * F1: Pure Gemma locked to snapshot 58c4d7b5; candidate list removed; model.safetensors SHA-256
++          verified against PREREG_S7_D_v3_7 §2(a) (43fb96cec3045b72852c787540300dc5b258634b7a025f7c80355ac0788b9651).
++    * F2: Condition F mean z* explicitly counts and prints excluded held-out 80 items; halts if count != 0.
++    * F4: When --smoke is absent, enforces decoder checkpoint path to be strictly
++          results_s7/decoder_A_v36.pt (A, B, F), results_s7/decoder_D_v36.pt (D1, D2),
++          or results_s7/decoder_E_v36.pt (E1, E2).
+ 
+ Decoder & Projector Architecture:
+   Pure Gemma Base (58c4d7b5) + PrefixProjector + 64 slots embedding replacement.
+@@ -113,7 +123,7 @@
+                 d = json.load(f)
+             indices = [int(x) for x in (d[:2] if isinstance(d, list) else d["indices"][:2])]
+         else:
+-            indices = [4298, 3236]
++            indices = [14, 29]
+         indices = sorted(indices)
+     elif items_path:
+         with open(items_path, "r", encoding="utf-8") as f:
+@@ -167,7 +177,12 @@
+ 
+ 
+ def compute_f_mean_zstar(train_zstar_path: str, heldout80_path: str) -> torch.Tensor:
+-    """Compute mean z* across S_train 1,000 excluding heldout 80 items."""
++    """Compute mean z* across S_train 1,000 excluding heldout 80 items.
++    
++    AUDIT-0009 F2:
++      Explicitly counts and prints excluded items.
++      Halts execution if excluded_count != 0 (since S_train and heldout 80 are disjoint).
++    """
+     print(f"[CONDITION-F] Loading train z* from {train_zstar_path}...")
+     d_train = torch.load(train_zstar_path, map_location="cpu")
+     
+@@ -177,6 +192,7 @@
+             heldout_set = set(int(x) for x in json.load(f)["indices"])
+     
+     tensors: List[torch.Tensor] = []
++    excluded_count = 0
+     for k, v in d_train.items():
+         # Extract qid
+         import re
+@@ -184,35 +200,55 @@
+         if m:
+             qid = int(m.group(1))
+             if qid in heldout_set:
++                excluded_count += 1
+                 continue
+         z = v["z_star"] if isinstance(v, dict) and "z_star" in v else v
+         if isinstance(z, torch.Tensor):
+             tensors.append(z.float())
+     
++    print(f"[CONDITION-F] Excluded items count: {excluded_count} (expected 0, since S_train and heldout 80 are disjoint)")
++    if excluded_count != 0:
++        print(f"[FATAL] Condition F excluded count is {excluded_count} != 0. Terminating.", file=sys.stderr)
++        sys.exit(1)
++        
+     assert len(tensors) > 0, "No train z* tensors found for condition F"
+     mean_z = torch.stack(tensors, dim=0).mean(dim=0)  # [64, 2560]
+     print(f"[CONDITION-F] Mean z* computed across {len(tensors)} items (shape: {mean_z.shape})")
+     return mean_z
+ 
+ 
+-def load_pure_gemma_model(device_str: str) -> Tuple[Any, Any, Any]:
+-    """Load Pure Gemma-4-e4b Base Model (bfloat16, strictly frozen)."""
++def load_pure_gemma_model(device_str: str) -> Tuple[Any, Any, Any, Any]:
++    """Load Pure Gemma-4-e4b Base Model (bfloat16, strictly frozen).
++    
++    AUDIT-0009 F1:
++      Strictly locked to Pure Gemma Base snapshot 58c4d7b5 per PREREG_S7_D_v3_7 §2(a):
++        스냅샷 디렉터리: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
++        가중치 체크포인트 정본 파일: model.safetensors (15,992,595,884 bytes)
++          SHA-256: 43fb96cec3045b72852c787540300dc5b258634b7a025f7c80355ac0788b9651
++    """
+     from transformers import AutoModelForCausalLM
+-    candidates = [
+-        "/home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377",
+-        "/home/shoon/models/gemma4-e4b-it",
+-    ]
+-    chosen = None
+-    for c in candidates:
+-        if os.path.exists(c):
+-            chosen = c
+-            break
+-    if chosen is None:
+-        raise FileNotFoundError(f"Pure Gemma base not found in: {candidates}")
+-
+-    print(f"[PURE-GEMMA] Loading Pure Gemma Base from {chosen} on {device_str}...")
++    snapshot_path = "/home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377"
++    if not os.path.exists(snapshot_path):
++        raise FileNotFoundError(f"Pure Gemma Base 58c4d7b5 snapshot not found at: {snapshot_path}")
++
++    # Verify model.safetensors SHA-256 against PREREG_S7_D_v3_7 §2(a)
++    safetensors_path = os.path.join(snapshot_path, "model.safetensors")
++    expected_sha256 = "43fb96cec3045b72852c787540300dc5b258634b7a025f7c80355ac0788b9651"
++    if not os.path.exists(safetensors_path):
++        raise FileNotFoundError(f"model.safetensors not found at: {safetensors_path}")
++
++    print(f"[PURE-GEMMA] Verifying model.safetensors SHA-256 against PREREG_S7_D_v3_7 §2(a)...")
++    actual_sha256 = compute_sha256(safetensors_path)
++    if actual_sha256 != expected_sha256:
++        print(f"[FATAL] model.safetensors SHA-256 mismatch!", file=sys.stderr)
++        print(f"  Expected (PREREG_S7_D_v3_7 §2(a)): {expected_sha256}", file=sys.stderr)
++        print(f"  Actual:                            {actual_sha256}", file=sys.stderr)
++        sys.exit(1)
++    print(f"[PURE-GEMMA] SHA-256 verified: {actual_sha256}")
++
++    print(f"[PURE-GEMMA] Loading Pure Gemma Base from {snapshot_path} on {device_str}...")
+     pure_gemma = AutoModelForCausalLM.from_pretrained(
+-        chosen,
++        snapshot_path,
+         torch_dtype=torch.bfloat16,
+         device_map=device_str,
+     )
+@@ -267,7 +303,7 @@
+ 
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="P6 Gate Evaluation Generator (v3.6)")
++    parser = argparse.ArgumentParser(description="P6 Gate Evaluation Generator (v3.6b)")
+     parser.add_argument("--cond", type=str, required=True, choices=["A", "B", "C", "D1", "D2", "E1", "E2", "F"], help="Evaluation Condition")
+     parser.add_argument("--shift", type=int, default=1, help="Shift distance for B, D2, E2 (default: 1)")
+     parser.add_argument("--items", type=str, default=None, help="Items config JSON (default: heldout 600)")
+@@ -288,7 +324,7 @@
+     max_tokens = args.max_new_tokens if not is_smoke else min(args.max_new_tokens, 16)
+ 
+     print("=" * 80)
+-    print(f"CTS S7 P6 Gate Generator — Condition {cond} (Shift: {shift})")
++    print(f"CTS S7 P6 Gate Generator (v3.6b) — Condition {cond} (Shift: {shift})")
+     print(f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+     print(f"Mode: {'SMOKE (CPU 2-item)' if is_smoke else 'FULL (Held-out 600)'}")
+     print("=" * 80, flush=True)
+@@ -347,6 +383,16 @@
+     ckpt_path = args.decoder_ckpt or default_ckpt_map.get(cond)
+ 
+     if cond != "C":
++        # AUDIT-0009 F4: When --smoke is absent, strictly enforce decoder path
++        if not is_smoke:
++            expected_ckpt = default_ckpt_map.get(cond)
++            norm_ckpt = os.path.normpath(ckpt_path).replace("\\", "/")
++            norm_expected = os.path.normpath(expected_ckpt).replace("\\", "/")
++            expected_rel = f"results_s7/{os.path.basename(expected_ckpt)}"
++            if not (norm_ckpt == norm_expected or norm_ckpt.endswith(expected_rel)):
++                print(f"[FATAL] In full execution mode (--smoke not specified), decoder checkpoint must be exactly: {expected_ckpt}", file=sys.stderr)
++                print(f"  Provided: {ckpt_path}", file=sys.stderr)
++                sys.exit(1)
+         if not ckpt_path or not os.path.exists(ckpt_path):
+             raise FileNotFoundError(f"Decoder checkpoint not found: {ckpt_path}")
+         print(f"\n[VERSION-GUARD] Verifying decoder checkpoint for Condition {cond}...")
+@@ -549,7 +595,6 @@
+                 shift_targets = target_ids[:, 1:].contiguous()
+                 nll_val = compute_nll_f32_chunked(h_states[:, :-1, :], shift_targets, lm_head, chunk_size=256)
+ 
+-
+         prompt_sha = hashlib.sha256((prob_text).encode("utf-8")).hexdigest()
+         record_entry = {
+             "id": qid,

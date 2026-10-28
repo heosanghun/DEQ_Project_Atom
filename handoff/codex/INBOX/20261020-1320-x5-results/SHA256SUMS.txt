@@ -1,0 +1,11 @@
+98789121b72ccc9d1be90 *handoff/codex/INBOX/20261020-1320-x5-results/RESULT-X5-stylematched-20261020.md
+561847a298f7488eb4fd3 *handoff/codex/INBOX/20261020-1320-x5-results/cc_x5_analysis.txt
+4c6fe07832e52709104eb *handoff/codex/INBOX/20261020-1320-x5-results/cts_x5_master.log
+a3441a57d97e6e350178e *handoff/codex/INBOX/20261020-1320-x5-results/genB1_X5O47.jsonl
+9573ad1d507743efc8a15 *handoff/codex/INBOX/20261020-1320-x5-results/gen_X5O47.jsonl
+ea77b4a5c016c252d15ac *handoff/codex/INBOX/20261020-1320-x5-results/grade.log
+60e192508c4c2e9774fe2 *handoff/codex/INBOX/20261020-1320-x5-results/manifest_X5O47.json
+029a2a92c61e26caf0714 *handoff/codex/INBOX/20261020-1320-x5-results/s0spec.json
+2ebca7c52eabff1993099 *handoff/codex/INBOX/20261020-1320-x5-results/train_X5O47.log
+2d11272e25953fc48ad8b *handoff/codex/INBOX/20261020-1320-x5-results/x5_analyze.py
+014516b421234e5df96b8 *handoff/codex/INBOX/20261020-1320-x5-results/x5_items.json

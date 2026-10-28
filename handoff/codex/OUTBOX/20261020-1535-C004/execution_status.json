@@ -1,0 +1,48 @@
+{
+  "server_statistics": "recomputed from delivered server flags; not an independent verification of server grading",
+  "local_statistics": "ERROR_AFFECTED_DIAGNOSTIC_ONLY; not a normal regrade",
+  "local_source": "x5_items_local.json",
+  "retry_same_flags": true,
+  "guarded_output_exists": false,
+  "logs": {
+    "local_grade.log": {
+      "bytes": 498506,
+      "WinError6_occurrences": 212,
+      "EOFError_occurrences": 359,
+      "grader_verified_markers": 301,
+      "done_markers": 301
+    },
+    "retry_stdout.log": {
+      "bytes": 59630,
+      "WinError6_occurrences": 0,
+      "EOFError_occurrences": 0,
+      "grader_verified_markers": 174,
+      "done_markers": 173
+    },
+    "retry_stderr.log": {
+      "bytes": 210230,
+      "WinError6_occurrences": 106,
+      "EOFError_occurrences": 217,
+      "grader_verified_markers": 0,
+      "done_markers": 0
+    },
+    "guarded_grade.log": {
+      "bytes": 1128256,
+      "WinError6_occurrences": 220,
+      "EOFError_occurrences": 1683,
+      "grader_verified_markers": 1,
+      "done_markers": 0
+    }
+  },
+  "stopped_owned_process_ids": [
+    18452,
+    19492,
+    82392
+  ],
+  "grader_modified": false,
+  "retry_launch_changes": "Hidden process launch, then guarded runpy launcher; no grading logic, math verification setting or timeout policy changed",
+  "auxiliary_command_errors": [
+    "Get-FileHash: canonical results_s7/p6_item_order.json absent; supplied copy hash matched the fixed expected hash.",
+    "One inline log-summary python -c invocation raised SyntaxError: unterminated string literal; no files were changed; this finalizer replaces that summary command."
+  ]
+}

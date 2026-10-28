@@ -1,0 +1,91 @@
+=== X3b start 2026-10-19 17:35:27 ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+fc70566980e1d980e36f5a8cdfb2d501195481bc19634e7c3f719eb4d67cd24b  /tmp/cts_x_stage/g2v9_train.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+d43613d6b640b965c9c8a3d6ad422d7a8492fe0b0c2eed9a379064495c200433  results_s7/g2v2/zstar_zsrcinj_dev600.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+0da3748af2a3776c7fa91da50268a7829233939f56218d73f4b4511a6a8e5cff  results_s7/zsrc_heldout600.pt
+568f84e615c9f97b164dcb016767e96927dc6b55452499cf1749d52baffc1429  /tmp/cts_s2/oracle_latents.pt
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T   21G 100% /home
+/dev/sda3       436G  402G   12G  98% /
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-X3O47] rc=0 17:51:33 [Step 1499] loss 0.5868 gates [-0.003, 0.016, 0.034, -0.061] (912s)
+[TR-X3E47] rc=0 18:06:34 [Step 2999] loss 0.2041 gates [-0.005, -0.028, -0.059, -0.14] (1810s)
+[TR-X3A47] rc=0 18:06:47 [Step 2999] loss 0.6582 gates [-0.006, -0.03, -0.06, -0.146] (1821s)
+[GEN-X3E47] rc=0 rows=600 19:39:57
+[GEN-X3A47] rc=0 rows=600 19:41:02
+[GEN-X3O47] rc=0 rows=600 19:41:39
+[GENS-X3A47] rc=0 rows=600 21:08:36
+[GENS-X3E47] rc=0 rows=600 21:11:08
+[GENS-X3O47] rc=0 rows=600 21:29:45
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X3O47: n 600 strict 56 lenient 63 boxed 408
+[S0] shuf_X3O47: n 600 strict 46 lenient 48 boxed 410
+[S0] X3A47: n 600 strict 43 lenient 44 boxed 485
+[S0] shuf_X3A47: n 600 strict 41 lenient 45 boxed 503
+[S0] X3E47: n 600 strict 49 lenient 51 boxed 512
+[S0] shuf_X3E47: n 600 strict 52 lenient 53 boxed 526
+[TR-X3A49] rc=0 22:01:12 [Step 2999] loss 0.2547 gates [-0.005, 0.03, 0.072, 0.147] (1822s)
+[TR-X3A50] rc=0 22:01:12 [Step 2999] loss 0.1764 gates [0.006, -0.029, -0.074, -0.144] (1821s)
+[TR-X3E49] rc=0 22:01:18 [Step 2999] loss 0.2001 gates [-0.005, 0.028, 0.057, -0.139] (1832s)
+[GEN-X3A50] rc=0 rows=600 23:36:52
+[GEN-X3E49] rc=0 rows=600 23:40:34
+[GEN-X3A49] rc=0 rows=600 23:45:36
+[GENS-X3A50] rc=0 rows=600 01:10:59
+[GENS-X3E49] rc=0 rows=600 01:19:17
+[GENS-X3A49] rc=0 rows=600 01:28:37
+[TR-X3E50] rc=0 01:59:11 [Step 2999] loss 0.3606 gates [-0.005, -0.028, -0.063, -0.145] (1814s)
+[GEN-X3E50] rc=0 rows=600 03:37:18
+[GENS-X3E50] rc=0 rows=600 05:16:29
+[SPEC] 15
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X3O47: n 600 strict 56 lenient 63 boxed 408
+[S0] shuf_X3O47: n 600 strict 46 lenient 48 boxed 410
+[S0] X3A47: n 600 strict 43 lenient 44 boxed 485
+[S0] shuf_X3A47: n 600 strict 41 lenient 45 boxed 503
+[S0] X3E47: n 600 strict 49 lenient 51 boxed 512
+[S0] shuf_X3E47: n 600 strict 52 lenient 53 boxed 526
+[S0] X3A49: n 600 strict 55 lenient 57 boxed 483
+[S0] shuf_X3A49: n 600 strict 42 lenient 46 boxed 486
+[S0] X3E49: n 600 strict 56 lenient 61 boxed 490
+[S0] shuf_X3E49: n 600 strict 44 lenient 47 boxed 474
+[S0] X3A50: n 600 strict 49 lenient 51 boxed 487
+[S0] shuf_X3A50: n 600 strict 43 lenient 46 boxed 500
+[S0] X3E50: n 600 strict 41 lenient 46 boxed 492
+[S0] shuf_X3E50: n 600 strict 49 lenient 51 boxed 501
+a000ee80458af15a1c62bb6153078d7bf343f3b11750e42513570973cdd05d0f  results_s7/p6r/g2v9x3b/genB1_X3A47.jsonl
+9036f08dc2eeb576fd60faf81fad44f3bcf18a77c09a41ee986fb128160995d6  results_s7/p6r/g2v9x3b/genB1_X3A49.jsonl
+c2f8ceb3d6091dd90c2adf2cb5dfa291b6ebdd8264e6a63ee164c5251b292f08  results_s7/p6r/g2v9x3b/genB1_X3A50.jsonl
+010b0e51f196c2473e5fb52b0b8dc44a18ef7af093ed4853152696bb19e9e49b  results_s7/p6r/g2v9x3b/genB1_X3E47.jsonl
+6370000f744bfb8239e5f3f3dc1c143c16aeb334443167b19ce277c8b74f69d3  results_s7/p6r/g2v9x3b/genB1_X3E49.jsonl
+725579415c4545c536b982334751ed42de959615a0b899a53771f628bee196d7  results_s7/p6r/g2v9x3b/genB1_X3E50.jsonl
+b503b956e1fc145a2031dd9fe2725377f799c4e382d58b24c82ed0c444ab112d  results_s7/p6r/g2v9x3b/genB1_X3O47.jsonl
+82d465aaf752caeac617e558c244808ac4be52f44e274127b5a5f0b7589c5363  results_s7/p6r/g2v9x3b/gen_X3A47.jsonl
+ee631ce532d787ed13f538fd4f5c9346cd0f6e7aa33fc375fbf00ae559d19204  results_s7/p6r/g2v9x3b/gen_X3A49.jsonl
+f6f2e00d9608721d57790ea7035806de132f1aa23a4e85cad74fe48fc2356021  results_s7/p6r/g2v9x3b/gen_X3A50.jsonl
+bfc35449398466f60a8cf6bb0186cc994e821ac7124badaef5f5eaccaf7608e8  results_s7/p6r/g2v9x3b/gen_X3E47.jsonl
+e7262842ad199a37e9da6f1be7fb03ca047c49579522f5419f894e22176aa542  results_s7/p6r/g2v9x3b/gen_X3E49.jsonl
+9eb15f498b5445aecee38fa2a796674e4773bcee099937853fec47f27a92dc95  results_s7/p6r/g2v9x3b/gen_X3E50.jsonl
+fc70559587c46a00a21f91ba3daa880993a242148b2e3d41c67c283403e1b4ff  results_s7/p6r/g2v9x3b/gen_X3O47.jsonl
+12efc7c55ccf0ea0d9dbf069614fe9bdf5ad6b330d5ffa26eaeabc6cc9a37de2  /tmp/cts_x3b/x3_items.json
+2074ebaeff1e7e8b90b301543e2577b87eef35aa1a3a76e3e1e61ab3ea768502  /tmp/cts_x3b/manifest_X3A47.json
+c807ee2ad10457c74ee9749899a18be9ea025f9aed42cd4e57ecd9857a27fa58  /tmp/cts_x3b/manifest_X3A49.json
+1318571609a9972dd599b5269b03d2a4d267f6709cdfdea709ea22bea3be8df0  /tmp/cts_x3b/manifest_X3A50.json
+e1f64316e3dcc578d272305e29a02cd0e29ffa80325105bf668bbab68827579f  /tmp/cts_x3b/manifest_X3E47.json
+82c9723a821311f56580f5ccd6d0df14d0fc051276310b17dfa0ce53cbc333f9  /tmp/cts_x3b/manifest_X3E49.json
+2e817dba15a4f6c304dc0d5e37d608ceb3e6a5d48c08803a777a8ab58027a178  /tmp/cts_x3b/manifest_X3E50.json
+bb0f8249eab71ab8ab5de9b02e65ff02629928dd30835b37c7f53a5673e40516  /tmp/cts_x3b/manifest_X3O47.json
+f92ce080783bb1d5b117d96718e41fcbf31430ca37570c381afed16bad4419e3  /tmp/cts_x3b/bridge_X3A47.pt
+a3cf14664cacc49c3fcd41ebdcc14cf2b6796a5d3c9f0b7ca75eaea3e761c37b  /tmp/cts_x3b/bridge_X3A49.pt
+309b07548cdab8a1c805dd54ddcba5c04701e815df835381bb8afff130f6036b  /tmp/cts_x3b/bridge_X3A50.pt
+5efa49552882aa4590850a2c8afbf336e2a8a655101aec03e16ebfdf81c587e9  /tmp/cts_x3b/bridge_X3E47.pt
+5a85be479861dea71981ac3749c3f714dac72668272a0d388cf403cff0b4a2d1  /tmp/cts_x3b/bridge_X3E49.pt
+171febc476bcc38733a6dd39ebd7bfdaca58fc435eb90d6ee9b327d3b270cf31  /tmp/cts_x3b/bridge_X3E50.pt
+07aa0c8175bd471a0722210f2e721db7b15f9b99e760ea7064249a502e7a473a  /tmp/cts_x3b/bridge_X3O47.pt
+=== X3b end 2026-10-20 05:17:29 ===

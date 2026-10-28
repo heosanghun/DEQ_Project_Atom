@@ -1,0 +1,25 @@
+# Frozen evaluation prompt (Phase 0, 2026-07-24)
+#
+# Approved by the pre-registered one-shot verdict: on MATH-500 (50 problems,
+# max_new_tokens=2048) the one-shot instruction raised boxed-answer generation
+# 64% -> 90% and accuracy 70% -> 88% (patched math-verify grader), with mean
+# output tokens 865 -> 792 (no early-termination shortening). See
+# results/phase0_final/task1_oneshot.json.
+#
+# FREEZE RULE: every method (greedy, native_think, ft_nt, sc_14, cts_2nu,
+# cts_4nu, expl_mcts_ppo, ...) must render this identical instruction+example
+# block. No per-method prompt branching. The hash below is recorded into every
+# result file for reproducibility (satisfies reviewer wsqW / AC config-pinning).
+
+frozen_prompt:
+  instruction_sha256: "348b09af76b0f22e3217eaf0b0eea07e8a1990d6e6f745a2e3099f7549099980"
+  one_shot_enabled: true
+  example_provenance: "self-authored trivial arithmetic (2 + 3 x 4); NOT drawn from MATH-500, AIME, GSM8K, HumanEval, OpenMathInstruct, or any evaluation/training split — zero contamination risk"
+  max_new_tokens: 2048
+  instruction_text: |
+    Solve the following math problem step by step. Put your final answer in \boxed{}.
+
+    Example:
+    Problem: What is $2 + 3 \times 4$?
+    Solution: Multiplication comes first, so $3 \times 4 = 12$. Then $2 + 12 = 14$.
+    The final answer is $\boxed{14}$.

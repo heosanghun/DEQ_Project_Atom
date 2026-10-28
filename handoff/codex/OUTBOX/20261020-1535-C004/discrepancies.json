@@ -1,0 +1,533 @@
+{
+  "directions": {
+    "C_fmt": {
+      "strict": {
+        "server_only": 4,
+        "local_only": 0,
+        "ids": [
+          445,
+          906,
+          3831,
+          4032
+        ]
+      },
+      "lenient": {
+        "server_only": 11,
+        "local_only": 0,
+        "ids": [
+          445,
+          566,
+          906,
+          1062,
+          1387,
+          1503,
+          1875,
+          2280,
+          2845,
+          3831,
+          4032
+        ]
+      },
+      "boxed": {
+        "server_only": 0,
+        "local_only": 0,
+        "ids": []
+      }
+    },
+    "X5O47": {
+      "strict": {
+        "server_only": 1,
+        "local_only": 0,
+        "ids": [
+          4032
+        ]
+      },
+      "lenient": {
+        "server_only": 3,
+        "local_only": 0,
+        "ids": [
+          1503,
+          4032,
+          4181
+        ]
+      },
+      "boxed": {
+        "server_only": 0,
+        "local_only": 0,
+        "ids": []
+      }
+    },
+    "shuf_X5O47": {
+      "strict": {
+        "server_only": 5,
+        "local_only": 0,
+        "ids": [
+          1799,
+          2369,
+          3533,
+          3672,
+          4032
+        ]
+      },
+      "lenient": {
+        "server_only": 9,
+        "local_only": 0,
+        "ids": [
+          344,
+          566,
+          1503,
+          1799,
+          2369,
+          2390,
+          3533,
+          3672,
+          4032
+        ]
+      },
+      "boxed": {
+        "server_only": 0,
+        "local_only": 0,
+        "ids": []
+      }
+    }
+  },
+  "rows": [
+    {
+      "label": "C_fmt",
+      "id": 445,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "16/3",
+      "pred_lenient": "16/3",
+      "gold_extracted": "\\frac{16}{3}",
+      "generation": "To solve the expression $64^{1/2} \\cdot 27^{-1/3} \\cdot 16^{1/4}$, we can simplify each term separately and then multiply them together.\n\nFirst, let's simplify $64^{1/2}$. This means taking the square root of 64. The square root of 64 is 8, so $64^{1/2} = 8$.\n\nNext, let's simplify $27^{-1/3}$. This means taking the cube root of 27 and then taking the reciprocal. The cube root of 27 is 3, so $27^{-1/3} = 1/3$.\n\nFinally, let's simplify $16^{1/4}$. This means taking the fourth root of 16. The fourth root of 16 is 2, so $16^{1/4} = 2$.\n\nNow, we can multiply these simplified terms together:\n\n$8 \\cdot 1/3 \\cdot 2 = 16/3$.\n\nTherefore, the final answer is $\\boxed{16/3}$.",
+      "gold_solution": "Evaluate the factors separately: $64^{1/2}=(8^2)^{1/2}=8$, while $27^{-1/3}=\\frac{1}{(3^3)^{1/3}}=\\frac13$, and $16^{1/4}=(2^4)^{1/4}=2$. Multiply the simplified factors together to obtain the answer of $\\boxed{\\frac{16}{3}}$."
+    },
+    {
+      "label": "C_fmt",
+      "id": 566,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{2009(2009-1)}{2009}",
+      "gold_extracted": "2008",
+      "generation": "To solve this problem, we need to simplify the expression $x=\\frac{2009^2-2009}{2009}$.\n\nFirst, let's simplify the numerator. We can factor out a 2009 from the numerator:\n\n$2009^2-2009 = 2009(2009-1)$\n\nNow, we can substitute this back into the expression for $x$:\n\n$x=\\frac{2009(2009-1)}{2009}$\n\nNext, we can cancel out the 2009 in the numerator and denominator:\n\n$x=2009-1$\n\nFinally, we can simplify the expression:\n\n$x=2008$\n\nTherefore, the value of $x$ is 2008.\n\nThe answer is: 2008",
+      "gold_solution": "Factor 2009 out of the numerator: \\[\n\\frac{2009^2-2009}{2009}=\\frac{2009(2009-1)}{2009}=\\boxed{2008}.\n\\]"
+    },
+    {
+      "label": "C_fmt",
+      "id": 906,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "\\frac{175}{28}",
+      "pred_lenient": "\\frac{175}{28}",
+      "gold_extracted": "\\frac{25}{4}",
+      "generation": "Solve for $x$: $x = \\dfrac{35}{6-\\frac{2}{5}}$.\n\nPut your final answer within \\boxed{}.\n\nTo solve for $x$, we need to simplify the expression inside the parentheses first.\n\n$6-\\frac{2}{5} = \\frac{30}{5} - \\frac{2}{5} = \\frac{28}{5}$\n\nNow we can substitute this back into the original expression:\n\n$x = \\dfrac{35}{\\frac{28}{5}}$\n\nTo divide by a fraction, we can multiply by its reciprocal:\n\n$x = \\dfrac{35}{\\frac{28}{5}} = \\dfrac{35 \\times 5}{28} = \\dfrac{175}{28}$\n\nTherefore, the final answer is $\\boxed{\\frac{175}{28}}$.\n\nThe answer is: $\\boxed{\\frac{175}{28}}$",
+      "gold_solution": "We first deal with the denominator of this fraction by multiplying $6$ by $\\frac{5}{5}$ and then subtracting $\\frac{2}{5}$ from the resulting fraction to get: $$x = \\dfrac{35}{6-\\frac{2}{5}}= \\dfrac{35}{\\frac{30}{5}-\\frac{2}{5}} = \\dfrac{35}{\\frac{28}{5}}.$$  Since dividing by a fraction is the same as multiplying by its reciprocal, we have that $$x=\\dfrac{35}{\\frac{28}{5}}=35 \\cdot \\frac{5}{28} = 5 \\cdot \\frac{5}{4} = \\boxed{\\frac{25}{4}}.$$"
+    },
+    {
+      "label": "C_fmt",
+      "id": 1062,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{20}{4}",
+      "gold_extracted": "5",
+      "generation": "To solve this problem, we need to find the value of $m$ that satisfies the given conditions.\n\nLet's start by setting up an equation based on the given information.\n\nThe area of a rectangle is given by the formula:\n\\[ \\text{Area} = \\text{length} \\times \\text{width} \\]\n\nIn this case, the length of the field is $2m+7$ and the width is $m-2$.\n\nSo, we can set up the equation:\n\\[ \\text{Area} = (2m+7)(m-2) \\]\n\nWe are given that the area of the field is 51 square units, so we can set up the equation:\n\\[ (2m+7)(m-2) = 51 \\]\n\nNow, let's solve this equation to find the value of $m$.\n\nExpanding the left side of the equation:\n\\[ 2m^2 - 4m + 7m - 14 = 51 \\]\n\nCombining like terms:\n\\[ 2m^2 + 3m - 14 = 51 \\]\n\nSubtracting 51 from both sides:\n\\[ 2m^2 + 3m - 65 = 0 \\]\n\nNow, we can solve this quadratic equation using factoring, completing the square, or the quadratic formula.\n\nLet's use the quadratic formula:\n\\[ m = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]\n\nIn this case, $a = 2$, $b = 3$, and $c = -65$.\n\nPlugging in these values into the quadratic formula:\n\\[ m = \\frac{-3 \\pm \\sqrt{3^2 - 4(2)(-65)}}{2(2)} \\]\n\nSimplifying the expression under the square root:\n\\[ m = \\frac{-3 \\pm \\sqrt{9 + 520}}{4} \\]\n\n\\[ m = \\frac{-3 \\pm \\sqrt{529}}{4} \\]\n\n\\[ m = \\frac{-3 \\pm 23}{4} \\]\n\nNow, we have two possible values for $m$:\n\\[ m = \\frac{-3 + 23}{4} = \\frac{20}{4} = 5 \\]\n\\[ m = \\frac{-3 -",
+      "gold_solution": "We use the given information to set up a quadratic that relates the area of the field to $m$: \\begin{align*}\n(2m+7)(m-2)&=51\\\\\n2m^2+3m-14 &= 51\\\\\n2m^2+3m-65 &= 0\\\\\n(2m+13)(m-5)&=0\n\\end{align*}The two possible solutions are $m=-\\frac{13}{2}$ and $m=5$. Of these, only $m = \\boxed{5}$ is valid."
+    },
+    {
+      "label": "C_fmt",
+      "id": 1387,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{-1+5}{2}",
+      "gold_extracted": "2",
+      "generation": "The graph of the quadratic $y = ax^2 + bx + c$ is a parabola that passes through the points $(-1,7)$, $(5,7)$, and $(6,10)$.  What is the $x$-coordinate of the vertex of the parabola?\n\nPut your final answer within \\boxed{}.\n\nThe vertex of a parabola is the point where the parabola changes direction.  The $x$-coordinate of the vertex is the average of the $x$-coordinates of the two points on the parabola that are closest to the vertex.  In this case, the two points on the parabola that are closest to the vertex are $(-1,7)$ and $(5,7)$.  The average of their $x$-coordinates is $\\frac{-1+5}{2} = 2$.  Therefore, the $x$-coordinate of the vertex of the parabola is $\\boxed{2}$.\n\nThe graph of the quadratic $y = ax^2 + bx + c$ is a parabola that passes through the points $(-1,7)$, $(5,7)$, and $(6,10)$.  What is the $x$-coordinate of the vertex of the parabola?\n\nPut your final answer within \\boxed{}.\n\nThe vertex of a parabola is the point where the parabola changes direction.  The $x$-coordinate of the vertex is the average of the $x$-coordinates of the two points on the parabola that are closest to the vertex.  In this case, the two points on the parabola that are closest to the vertex are $(-1,7)$ and $(5,7)$.  The average of their $x$-coordinates is $\\frac{-1+5}{2} = 2$.  Therefore, the $x$-coordinate of the vertex of the parabola is $\\boxed{2}$.\n\nThe graph of the quadratic $y = ax^2 + bx + c$ is a parabola that passes through the points $(-1,7)$, $(5,7)$, and $(6,10)$.  What is the $x$-coordinate of the vertex of the parabola?\n\nPut your final answer within \\boxed{}.\n\nThe vertex of a parabola is the point where the parabola changes direction.  The $x$-coordinate of the vertex is the average of the $x$-coordinates of the two points on the parabola that are closest to the vertex.  In this case, the two points on the parabola that are closest to the vertex are $(-1,7)$ and $(5,",
+      "gold_solution": "We could substitute the points into the equation $y = ax^2 + bx + c$, solve for $a$, $b$, and $c$, and then complete the square to find the coordinates of the vertex.\n\nHowever, a much faster way is to recognize that two of the points, namely $(-1,7)$ and $(5,7)$, have the same $y$-coordinate.  Therefore, these two points are symmetric about the parabola's axis of symmetry.  The axis must pass through the midpoint of the segment connecting these two symmetric points, so the axis must pass through $\\left(\\frac{-1+5}{2},\\frac{7+7}{2}\\right)$, which is $(2,7)$.  Therefore, the axis of symmetry is a vertical line through $(2,7)$.  This line is the graph of the equation $x=2$.  The axis of symmetry also passes through the vertex of the parabola, so the $x$-coordinate of the vertex is $\\boxed{2}$."
+    },
+    {
+      "label": "C_fmt",
+      "id": 1503,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{0.64P}{P}",
+      "gold_extracted": "64\\%",
+      "generation": "A television's price was discounted $40\\%$ and then slashed another $40\\%$ during a liquidation sale. By what percent has the original price been reduced?\n\nPut your final answer within \\boxed{}.\n\nLet's denote the original price of the television as $P$.\n\nThe first discount of $40\\%$ means the price is reduced by $40\\%$ of $P$, which is $0.4P$. Therefore, the price after the first discount is $P - 0.4P = 0.6P$.\n\nThe second discount of $40\\%$ on the price after the first discount means the price is reduced by $40\\%$ of $0.6P$, which is $0.4 \\times 0.6P = 0.24P$. Therefore, the price after the second discount is $0.6P - 0.24P = 0.36P$.\n\nThe final price is $0.36P$. To find the percentage reduction from the original price, we calculate the difference between the original price and the final price, and then express it as a percentage of the original price.\n\nThe difference in price is $P - 0.36P = 0.64P$.\n\nTo find the percentage reduction, we divide the difference by the original price and multiply by 100:\n\n\\[ \\text{Percentage reduction} = \\left( \\frac{0.64P}{P} \\right) \\times 100 = 64\\% \\]\n\nTherefore, the original price has been reduced by $64\\%$.\n\nThe answer is: $64\\%$",
+      "gold_solution": "Let the original price of the television be $T$. Then the price is now $0.6(0.6T)=0.36T$. Thus overall the price has been reduced by $1-0.36=\\boxed{64\\%}$."
+    },
+    {
+      "label": "C_fmt",
+      "id": 1875,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1}",
+      "gold_extracted": "53130",
+      "generation": "To solve this problem, we can use the formula for binomial coefficients:\n\n\\[ \\binom{n}{k} = \\frac{n!}{k!(n-k)!} \\]\n\nwhere $n$ is the number of items, $k$ is the number of items to choose, and $!$ denotes factorial.\n\nWe are given that $\\binom{23}{3} = 1771$, $\\binom{23}{4} = 8855$, and $\\binom{23}{5} = 33649$. We need to find $\\binom{25}{5}$.\n\nWe can use the formula for binomial coefficients to find $\\binom{25}{5}$:\n\n\\[ \\binom{25}{5} = \\frac{25!}{5!(25-5)!} \\]\n\nWe can simplify this expression by using the fact that $\\binom{n}{k} = \\binom{n}{n-k}$:\n\n\\[ \\binom{25}{5} = \\frac{25!}{5!(25-5)!} = \\frac{25!}{5!(20)!} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} \\]\n\nWe can simplify this expression further by canceling out common factors:\n\n\\[ \\binom{25}{5} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\cdot 21}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} = \\frac{25 \\cdot 24 \\cdot 23 \\cdot 22 \\",
+      "gold_solution": "We can use Pascal's identity $\\binom{n-1}{k-1}+\\binom{n-1}{k}=\\binom{n}{k}$ to find $\\binom{24}{4}$ and $\\binom{24}{5}$.\n\n$$\\binom{24}{4}=\\binom{23}{3}+\\binom{23}{4}=1771+8855=10626$$ $$\\binom{24}{5}=\\binom{23}{4}+\\binom{23}{5}=8855+33649=42504$$\n\nNow that we have $\\binom{24}{4}$ and $\\binom{24}{5}$, we can use Pascal's identity again to find $\\binom{25}{5}$.\n\n$$\\binom{25}{5}=\\binom{24}{4}+\\binom{24}{5}=10626+42504=\\boxed{53130}$$"
+    },
+    {
+      "label": "C_fmt",
+      "id": 2280,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{50 \\cdot 49}{2}",
+      "gold_extracted": "1225",
+      "generation": "To compute $\\dbinom{50}{2}$, we can use the formula for binomial coefficients: $\\dbinom{n}{k} = \\frac{n!}{k!(n-k)!}$.\n\nIn this case, $n = 50$ and $k = 2$. Plugging these values into the formula, we get:\n\n$\\dbinom{50}{2} = \\frac{50!}{2!(50-2)!} = \\frac{50!}{2! \\cdot 48!}$\n\nNow, we can simplify this expression by canceling out common factors:\n\n$\\dbinom{50}{2} = \\frac{50 \\cdot 49 \\cdot 48!}{2! \\cdot 48!} = \\frac{50 \\cdot 49}{2} = 1225$\n\nTherefore, $\\dbinom{50}{2} = 1225$.\n\nPut your final answer within \\boxed{}.\n\nThe answer is: 1225",
+      "gold_solution": "$\\dbinom{50}{2} = \\dfrac{50!}{2!48!}=\\dfrac{50\\times 49}{2\\times 1}=\\boxed{1225}.$"
+    },
+    {
+      "label": "C_fmt",
+      "id": 2845,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{27}{30}",
+      "gold_extracted": "\\frac{9}{10}",
+      "generation": "Find the ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ in the diagram if $CX$ bisects $\\angle ACB$. Express your answer as a common fraction. [asy]\nimport markers;\n\nreal t=27/(27+30);\npair A=(-15.57,0);\npair B=(8.43,0);\npair C=(0,25.65);\npair X=t*A+(1-t)*B;\n\ndraw(C--A--B--C--X);\n\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,E);\nlabel(\"$C$\",C,N);\nlabel(\"$X$\",X,NE);\n\n//markangle(n=1,radius=15,A,C,X,marker(markinterval(stickframe(n=1),true)));\n//markangle(n=1,radius=15,X,C,B,marker(markinterval(stickframe(n=1),true)));\n\nlabel(\"$24$\",.5*(B+A),S);\nlabel(\"$27$\",.5*(B+C),NE);\nlabel(\"$30$\",.5*(A+C),NW);\n[/asy]\n\nPut your final answer within \\boxed{}.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\triangle BCX$ to the area of $\\triangle ACX$ is $\\frac{27}{30}$.\nThe ratio of the area of $\\",
+      "gold_solution": "The Angle Bisector Theorem tells us that  \\[\\frac{BX}{AX}=\\frac{BC}{AC}=\\frac{27}{30}=\\frac{9}{10}.\\]Since $\\triangle BCX$ and $\\triangle ACX$ share the same height, the ratio of their areas is simply the ratio of their bases, so our answer is \\[\\frac{BX}{AX}=\\boxed{\\frac{9}{10}}.\\]"
+    },
+    {
+      "label": "C_fmt",
+      "id": 3831,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "P",
+      "pred_lenient": "P",
+      "gold_extracted": "\\text{(P)}",
+      "generation": "Which type of conic section is described by the equation \\[|y+5| = \\sqrt{(x-2)^2 + y^2}?\\]Enter \"C\" for circle, \"P\" for parabola, \"E\" for ellipse, \"H\" for hyperbola, and \"N\" for none of the above.\n\nPut your final answer within \\boxed{}.\n\nThe given equation is \\[|y+5| = \\sqrt{(x-2)^2 + y^2}.\\]\n\nTo determine the type of conic section, we need to rewrite the equation in standard form.\n\nLet's square both sides of the equation:\n\n\\[|y+5|^2 = (x-2)^2 + y^2\\]\n\nExpanding the left side:\n\n\\[(y+5)^2 = (x-2)^2 + y^2\\]\n\nExpanding the right side:\n\n\\[y^2 + 10y + 25 = x^2 - 4x + 4 + y^2\\]\n\nSimplifying:\n\n\\[10y + 25 = x^2 - 4x + 4\\]\n\nRearranging the terms:\n\n\\[x^2 - 4x + 10y + 21 = 0\\]\n\nNow, let's compare this equation with the standard form of a conic section:\n\n\\[Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0\\]\n\nComparing the coefficients, we have:\n\n\\[A = 1\\]\n\\[B = 0\\]\n\\[C = 10\\]\n\\[D = -4\\]\n\\[E = 0\\]\n\\[F = 21\\]\n\nSince the coefficient of \\(x^2\\) is 1, the equation represents a parabola.\n\nTherefore, the type of conic section described by the equation is a parabola.\n\nThe final answer is \\boxed{P}.",
+      "gold_solution": "We try to rewrite the given equation in one of the standard forms of a conic section. Because both sides are nonnegative, we may square both sides, knowing that this operation is reversible: \\[(y+5)^2 = (x-2)^2 + y^2.\\]Then \\[(y+5)^2 - y^2 = (x-2)^2,\\]or \\[10y + 25 = x^2 - 4x + 4.\\]Because there is an $x^2$ term but no $y^2$ term, we recognize that this equation describes a $\\boxed{\\text{(P)}}$ parabola."
+    },
+    {
+      "label": "C_fmt",
+      "id": 4032,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "-\\frac{15}{4}",
+      "pred_lenient": "-\\frac{15}{4}",
+      "gold_extracted": "-\\frac{15}4",
+      "generation": "To solve this problem, we can use Vieta's formulas, which relate the coefficients of a polynomial to the roots of the polynomial.\n\nGiven the polynomial $2x^3 - x^2 + 4x + 10 = 0$, we can use Vieta's formulas to find the sum of the squares of the roots.\n\nLet $a$, $b$, and $c$ be the roots of the polynomial. Then, by Vieta's formulas, we have:\n\n\\[a + b + c = -\\frac{b}{a} = -\\frac{1}{2}\\]\n\\[ab + ac + bc = \\frac{c}{a} = \\frac{4}{2} = 2\\]\n\\[abc = -\\frac{d}{a} = -\\frac{10}{2} = -5\\]\n\nNow, we need to find $a^2 + b^2 + c^2$. We can use the identity $(a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + ac + bc)$ to simplify the expression.\n\n\\[(a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + ac + bc)\\]\n\\[\\left(-\\frac{1}{2}\\right)^2 = a^2 + b^2 + c^2 + 2(2)\\]\n\\[\\frac{1}{4} = a^2 + b^2 + c^2 + 4\\]\n\\[a^2 + b^2 + c^2 = \\frac{1}{4} - 4\\]\n\\[a^2 + b^2 + c^2 = -\\frac{15}{4}\\]\n\nTherefore, the sum of the squares of the roots is $-\\frac{15}{4}$.\n\nThe final answer is:\n\n\\boxed{-\\frac{15}{4}}",
+      "gold_solution": "By Vieta's formulas, we know that \\[\\begin{aligned} a+b+c &= \\frac12, \\\\ ab+bc+ca &= \\frac42 = 2, \\\\ abc &= -\\frac{10}2 = -5. \\end{aligned}\\]We square both sides of $a+b+c=\\frac12,$ which will produce the terms $a^2+b^2+c^2$: \\[(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca = \\frac14.\\]Substituting $ab+bc+ca=2,$ we have \\[a^2+b^2+c^2+2(2)=\\frac14,\\]so \\[a^2+b^2+c^2=\\frac14-4=\\boxed{-\\frac{15}4}.\\]"
+    },
+    {
+      "label": "X5O47",
+      "id": 1503,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{0.64P}{P}",
+      "gold_extracted": "64\\%",
+      "generation": "The price of a television was discounted by $40\\%$ and then slashed by another $40\\%$ during a liquidation sale. By what percent has the original price been reduced?\n\nPut your final answer within \\boxed{}.\n\nLet's denote the original price of the television as $P$.\n\nThe first discount of $40\\%$ means the price is reduced to $60\\%$ of the original price. So, the price after the first discount is:\n\n\\[0.60P\\]\n\nThe second discount of $40\\%$ means the price is reduced to $60\\%$ of the price after the first discount. So, the price after the second discount is:\n\n\\[0.60 \\times 0.60P = 0.36P\\]\n\nThe final price is $0.36P$.\n\nTo find the percentage reduction from the original price, we subtract the final price from the original price and divide by the original price, then multiply by 100 to get the percentage.\n\n\\[\\text{Percentage reduction} = \\frac{P - 0.36P}{P} \\times 100\\% = \\frac{0.64P}{P} \\times 100\\% = 64\\%\\]\n\nTherefore, the original price has been reduced by $64\\%$.\n\nThe answer is: $64\\%$\n\nThe price of the television was reduced by $40\\%$ and then reduced by another $40\\%$ during a liquidation sale. By what percentage has the original price been reduced?\n\nLet's denote the original price of the television as $P$.\n\nThe first discount of $40\\%$ means the price is reduced to $60\\%$ of the original price. So, the price after the first discount is:\n\n\\[0.60P\\]\n\nThe second discount of $40\\%$ means the price is reduced to $60\\%$ of the price after the first discount. So, the price after the second discount is:\n\n\\[0.60 \\times 0.60P = 0.36P\\]\n\nThe final price is $0.36P$.\n\nTo find the percentage reduction from the original price, we subtract the final price from the original price and divide by the original price, then multiply by 100 to get the percentage.\n\n\\[\\text{Percentage reduction} = \\frac{P -",
+      "gold_solution": "Let the original price of the television be $T$. Then the price is now $0.6(0.6T)=0.36T$. Thus overall the price has been reduced by $1-0.36=\\boxed{64\\%}$."
+    },
+    {
+      "label": "X5O47",
+      "id": 4032,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "-\\frac{15}{4}",
+      "pred_lenient": "-\\frac{15}{4}",
+      "gold_extracted": "-\\frac{15}4",
+      "generation": "To solve this problem, we can use the fact that the sum of the roots of a cubic equation is equal to the negative of the coefficient of the linear term, and the product of the roots is equal to the constant term.\n\nLet's denote the roots of the equation as $a$, $b$, and $c$. Then, we have:\n\n\\[a + b + c = \\frac{-1}{2}\\]\n\n\\[ab + ac + bc = \\frac{4}{2} = 2\\]\n\n\\[abc = \\frac{10}{2} = 5\\]\n\nNow, we need to find $a^2 + b^2 + c^2$. We can use the identity:\n\n\\[a^2 + b^2 + c^2 = (a + b + c)^2 - 2(ab + ac + bc)\\]\n\nSubstituting the values we found earlier, we get:\n\n\\[a^2 + b^2 + c^2 = \\left(\\frac{-1}{2}\\right)^2 - 2(2)\\]\n\n\\[a^2 + b^2 + c^2 = \\frac{1}{4} - 4\\]\n\n\\[a^2 + b^2 + c^2 = -\\frac{15}{4}\\]\n\nTherefore, the answer is \\boxed{-\\frac{15}{4}}.",
+      "gold_solution": "By Vieta's formulas, we know that \\[\\begin{aligned} a+b+c &= \\frac12, \\\\ ab+bc+ca &= \\frac42 = 2, \\\\ abc &= -\\frac{10}2 = -5. \\end{aligned}\\]We square both sides of $a+b+c=\\frac12,$ which will produce the terms $a^2+b^2+c^2$: \\[(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca = \\frac14.\\]Substituting $ab+bc+ca=2,$ we have \\[a^2+b^2+c^2+2(2)=\\frac14,\\]so \\[a^2+b^2+c^2=\\frac14-4=\\boxed{-\\frac{15}4}.\\]"
+    },
+    {
+      "label": "X5O47",
+      "id": 4181,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3}",
+      "gold_extracted": "(a + b)(a + c)(b + c)",
+      "generation": "\\[\\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} = \\frac{(a^2 -",
+      "gold_solution": "We will use the identity\n\\[x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - xz - yz).\\]Setting $x = a^2 - b^2,$ $y = b^2 - c^2,$ $z = c^2 - a^2,$ we get\n\\[(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3 - 3(a^2 - b^2)(b^2 - c^2)(c^2 - a^2) = 0.\\]Setting $x = a - b,$ $y = b - c,$ $z = c - a,$ we get\n\\[(a - b)^3 + (b - c)^3 + (c - a)^3 - 3(a - b)(b - c)(c - a) = 0.\\]Hence,\n\\begin{align*}\n\\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a - b)^3 + (b - c)^3 + (c - a)^3} &= \\frac{3(a^2 - b^2)(b^2 - c^2)(c^2 - a^2)}{3(a - b)(b - c)(c - a)} \\\\\n&= \\frac{(a - b)(a + b)(b - c)(b + c)(c - a)(c + a)}{(a - b)(b - c)(c - a)} \\\\\n&= \\boxed{(a + b)(a + c)(b + c)}.\n\\end{align*}"
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 344,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{72}{24}",
+      "gold_extracted": "3",
+      "generation": "To solve this problem, we need to find the value of $x$ for which $g(x) = 15$. We are given that $g(x) = 3f^{-1}(x)$ and $f(x) = \\frac{24}{x+3}$.\n\nFirst, let's find $f^{-1}(x)$. To do this, we need to solve for $x$ in terms of $y$ in the equation $y = \\frac{24}{x+3}$.\n\nMultiply both sides of the equation by $x+3$ to get rid of the fraction:\n\n$y(x+3) = 24$\n\nDistribute the $y$ on the left side:\n\n$yx + 3y = 24$\n\nSubtract $3y$ from both sides:\n\n$yx = 24 - 3y$\n\nDivide both sides by $y$ (assuming $y \\neq 0$):\n\n$x = \\frac{24 - 3y}{y}$\n\nNow, we can rewrite $f^{-1}(x)$ as:\n\n$f^{-1}(x) = \\frac{24 - 3x}{x}$\n\nNext, we need to find $g(x)$. We are given that $g(x) = 3f^{-1}(x)$. So, we can substitute $f^{-1}(x)$ into the equation for $g(x)$:\n\n$g(x) = 3\\left(\\frac{24 - 3x}{x}\\right)$\n\nNow, we need to find the value of $x$ for which $g(x) = 15$. So, we can set up the equation:\n\n$3\\left(\\frac{24 - 3x}{x}\\right) = 15$\n\nTo solve for $x$, we can multiply both sides of the equation by $x$ to get rid of the fraction:\n\n$3(24 - 3x) = 15x$\n\nDistribute the $3$ on the left side:\n\n$72 - 9x = 15x$\n\nAdd $9x$ to both sides:\n\n$72 = 24x$\n\nDivide both sides by $24$:\n\n$x = \\frac{72}{24}$\n\n$x = 3$",
+      "gold_solution": "Since $g(x)=3f^{-1}(x)$, we have that $3f^{-1}(x)=15$. This means that $f^{-1}(x)=\\frac{15}{3}=5$. Since $f$ and $f^{-1}$ are inverse functions, if $f^{-1}(x)=5$, we also have that $f(5)=x$. Substituting this back into our equation $f(x)=\\frac{24}{x+3}$, we get that $$x=f(5)=\\frac{24}{5+3}=\\boxed{3}.$$"
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 566,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{2009(2009-1)}{2009}",
+      "gold_extracted": "2008",
+      "generation": "To solve this problem, we need to simplify the expression $x=\\frac{2009^2-2009}{2009}$.\n\nFirst, let's simplify the numerator. We can factor out a 2009 from the numerator:\n\n$2009^2-2009 = 2009(2009-1)$\n\nNow, we can substitute this back into the expression for $x$:\n\n$x=\\frac{2009(2009-1)}{2009}$\n\nThe 2009's in the numerator and denominator cancel out, leaving us with:\n\n$x=2009-1$\n\nTherefore, the value of $x$ is $2008$.\n\nThe answer is: $2008$",
+      "gold_solution": "Factor 2009 out of the numerator: \\[\n\\frac{2009^2-2009}{2009}=\\frac{2009(2009-1)}{2009}=\\boxed{2008}.\n\\]"
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 1503,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{0.64P}{P}",
+      "gold_extracted": "64\\%",
+      "generation": "The price of a television was discounted by $40\\%$ and then slashed by another $40\\%$ during a liquidation sale. By what percent has the original price been reduced?\n\nPut your final answer within \\boxed{}.\n\nLet's denote the original price of the television as $P$.\n\nThe first discount of $40\\%$ means the price is reduced to $60\\%$ of the original price. So, the price after the first discount is:\n\n\\[0.60P\\]\n\nThe second discount of $40\\%$ means the price is reduced to $60\\%$ of the price after the first discount. So, the price after the second discount is:\n\n\\[0.60 \\times 0.60P = 0.36P\\]\n\nTo find the percentage reduction from the original price, we calculate the difference between the original price and the price after the second discount, and then express it as a percentage of the original price:\n\n\\[\\text{Percentage reduction} = \\frac{P - 0.36P}{P} \\times 100\\%\\]\n\n\\[\\text{Percentage reduction} = \\frac{0.64P}{P} \\times 100\\%\\]\n\n\\[\\text{Percentage reduction} = 64\\%\\]\n\nTherefore, the original price has been reduced by $64\\%$.\n\nThe answer is: 64%",
+      "gold_solution": "Let the original price of the television be $T$. Then the price is now $0.6(0.6T)=0.36T$. Thus overall the price has been reduced by $1-0.36=\\boxed{64\\%}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 1799,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "16/36",
+      "pred_lenient": "16/36",
+      "gold_extracted": "\\frac{4}{9}",
+      "generation": "To solve this problem, we need to calculate the probability of selecting two plates of the same color.\n\nFirst, let's calculate the total number of ways to select two plates from the 9 plates. This can be done by using the combination formula:\n\nC(9, 2) = 9! / (2!(9-2)!) = 36\n\nNext, let's calculate the number of ways to select two plates of the same color. Since there are 5 red plates and 4 blue plates, we can select two red plates or two blue plates.\n\nFor two red plates, we can select them in C(5, 2) = 10 ways.\nFor two blue plates, we can select them in C(4, 2) = 6 ways.\n\nTherefore, the total number of ways to select two plates of the same color is 10 + 6 = 16.\n\nNow, we can calculate the probability of selecting two plates of the same color by dividing the number of favorable outcomes (16) by the total number of possible outcomes (36):\n\nProbability = 16/36 = 4/9\n\nTherefore, the probability that both plates are the same color is 4/9.\n\nThe answer is: 4/9\n\nTherefore, the final answer is \\boxed{16/36}.",
+      "gold_solution": "There are ${9 \\choose 2} = 36$ pairs of plates possible in all. Exactly ${5 \\choose 2} = 10$ of these pairs are both red plates and $\\binom{4}{2}=6$ pairs are both blue plates for a total of $6+10=16$ pairs of plates that satisfy our condition. So, the probability of the pair of plates being the same color is $\\frac{16}{36}=\\boxed{\\frac{4}{9}}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 2369,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "1/4",
+      "pred_lenient": "1/4",
+      "gold_extracted": "\\frac{1}{4}",
+      "generation": "To solve this problem, we need to calculate the probability of a fair coin landing heads up exactly 2 times out of 3 flips and the probability of a fair coin landing heads up 3 times out of 3 flips. Then, we subtract the second probability from the first to find the positive difference.\n\nLet's start by calculating the probability of a fair coin landing heads up exactly 2 times out of 3 flips. Since a fair coin has a 50% chance of landing heads up on each flip, the probability of getting heads on a single flip is 0.5.\n\nThe probability of getting heads exactly 2 times out of 3 flips can be calculated using the binomial probability formula:\n\nP(X=k) = (n choose k) * p^k * (1-p)^(n-k)\n\nwhere n is the number of trials, k is the number of successes, and p is the probability of success on a single trial.\n\nIn this case, n = 3, k = 2, and p = 0.5. Plugging these values into the formula, we get:\n\nP(X=2) = (3 choose 2) * 0.5^2 * (1-0.5)^(3-2)\n= 3 * 0.25 * 0.5\n= 0.375\n\nSo, the probability of a fair coin landing heads up exactly 2 times out of 3 flips is 0.375.\n\nNow, let's calculate the probability of a fair coin landing heads up 3 times out of 3 flips. This is simply the probability of getting heads on all 3 flips, which is:\n\nP(X=3) = 0.5^3\n= 0.125\n\nSo, the probability of a fair coin landing heads up 3 times out of 3 flips is 0.125.\n\nTo find the positive difference between these two probabilities, we subtract the second probability from the first:\n\n0.375 - 0.125 = 0.25\n\nTherefore, the positive difference between the probability of a fair coin landing heads up exactly 2 times out of 3 flips and the probability of a fair coin landing heads up 3 times out of 3 flips is 0.25.\n\nThe final answer is \\boxed{1/4",
+      "gold_solution": "The probability that a fair coin lands heads up exactly 2 times out of 3 flips is $p_1=\\binom{3}{2}(1/2)^2(1/2)=3/8$. The probability that a fair coin lands heads up 3 times out of 3 flips is $p_2=(1/2)^3=1/8$. Finally, we have $p_1-p_2=2/8=\\boxed{\\frac{1}{4}}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 2390,
+      "server": [
+        0,
+        1,
+        0
+      ],
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "pred_boxed": null,
+      "pred_lenient": "\\frac{19!}{9!10!}",
+      "gold_extracted": "92378",
+      "generation": "To solve this problem, we can use the formula for binomial coefficients:\n\n\\[ \\binom{n}{k} = \\frac{n!}{k!(n-k)!} \\]\n\nwhere $n$ is the total number of items, $k$ is the number of items to be chosen, and $!$ denotes factorial.\n\nIn this case, we are given that $\\binom{17}{7}=19448$, $\\binom{17}{8}=24310$, and $\\binom{17}{9}=24310$. We need to find $\\binom{19}{9}$.\n\nFirst, let's calculate $\\binom{17}{7}$:\n\n\\[ \\binom{17}{7} = \\frac{17!}{7!(17-7)!} = \\frac{17!}{7!10!} = \\frac{17 \\times 16 \\times 15 \\times 14 \\times 13 \\times 12 \\times 11}{7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1} = 19448 \\]\n\nNext, let's calculate $\\binom{17}{8}$:\n\n\\[ \\binom{17}{8} = \\frac{17!}{8!(17-8)!} = \\frac{17!}{8!9!} = \\frac{17 \\times 16 \\times 15 \\times 14 \\times 13 \\times 12 \\times 11 \\times 10}{8 \\times 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1} = 24310 \\]\n\nFinally, let's calculate $\\binom{19}{9}$:\n\n\\[ \\binom{19}{9} = \\frac{19!}{9!(19-9)!} = \\frac{19!}{9!10!} = \\frac{19 \\times 18 \\times 17 \\times 16 \\times 15 \\times 14 \\times 13 \\times 12 \\times 11}{9 \\times 8 \\times 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times",
+      "gold_solution": "We can apply Pascal's identity to get that $\\binom{19}{9}=\\binom{18}{8}+\\binom{18}{9}$. From here, we can apply it twice more to get that  $\\binom{19}{9}=\\binom{18}{8}+\\binom{18}{9}=\\left(\\binom{17}{7}+\\binom{17}{8}\\right)+\\left(\\binom{17}{8}+\\binom{17}{9}\\right)$. Substituting the provided values of $\\binom{17}{7}$, $\\binom{17}{8}$, and $\\binom{17}{9}$ gives us $\\binom{19}{9}=19448+2(24310)+24310=\\boxed{92378}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 3533,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "\\pm 1, \\pm \\sqrt{3}",
+      "pred_lenient": "\\pm 1, \\pm \\sqrt{3}",
+      "gold_extracted": "-\\sqrt{3},-1,1,\\sqrt{3}",
+      "generation": "To find the values of $z$ such that $z^4 - 4z^2 + 3 = 0$, we can use the quadratic formula to solve for $z^2$. The quadratic formula states that for a quadratic equation of the form $ax^2 + bx + c = 0$, the solutions are given by:\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\nIn this case, $a = 1$, $b = -4$, and $c = 3$. Plugging these values into the quadratic formula, we get:\n\n\\[z^2 = \\frac{-(-4) \\pm \\sqrt{(-4)^2 - 4(1)(3)}}{2(1)}\\]\n\\[z^2 = \\frac{4 \\pm \\sqrt{16 - 12}}{2}\\]\n\\[z^2 = \\frac{4 \\pm \\sqrt{4}}{2}\\]\n\\[z^2 = \\frac{4 \\pm 2}{2}\\]\n\\[z^2 = \\frac{6}{2} \\quad \\text{or} \\quad z^2 = \\frac{2}{2}\\]\n\\[z^2 = 3 \\quad \\text{or} \\quad z^2 = 1\\]\n\nNow, we can find the values of $z$ by taking the square root of both sides:\n\n\\[z = \\pm \\sqrt{3} \\quad \\text{or} \\quad z = \\pm 1\\]\n\nTherefore, the solutions are $z = \\pm \\sqrt{3}$ and $z = \\pm 1$. The final answer is \\boxed{\\pm 1, \\pm \\sqrt{3}}.",
+      "gold_solution": "If we let $y=z^2$, then our equation becomes a simple quadratic equation:\n$$y^2-4y+3=0.$$Indeed, this equation factors easily as $(y-3)(y-1)=0$, so either $y-3=0$ or $y-1=0$.\n\nWe now explore both possibilities.\n\nIf $y-3=0$, then $y=3$, so $z^2=3$, so $z=\\pm\\sqrt 3$.\n\nIf $y-1=0$, then $y=1$, so $z^2=1$, so $z=\\pm 1$.\n\nThus we have four solutions to the original equation: $z=\\boxed{-\\sqrt{3},-1,1,\\sqrt{3}}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 3672,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "1,3",
+      "pred_lenient": "1,3",
+      "gold_extracted": "(1,3)",
+      "generation": "To find the values of $x$ for which the expression $\\frac{\\log{(3-x)}}{\\sqrt{x-1}}$ is defined, we need to consider the conditions under which the logarithm and the square root are defined.\n\nThe logarithm function $\\log{(3-x)}$ is defined for all $x$ such that $3-x > 0$, which simplifies to $x < 3$.\n\nThe square root function $\\sqrt{x-1}$ is defined for all $x$ such that $x-1 \\geq 0$, which simplifies to $x \\geq 1$.\n\nTo find the values of $x$ for which both conditions are satisfied, we need to find the intersection of the two intervals.\n\nThe interval for the logarithm is $(-\\infty, 3)$, and the interval for the square root is $[1, \\infty)$.\n\nThe intersection of these two intervals is $(1, 3]$.\n\nTherefore, the expression $\\frac{\\log{(3-x)}}{\\sqrt{x-1}}$ is defined for all $x$ in the interval $(1, 3]$.\n\nThe answer is: $1,3$\n\nTherefore, the final answer is \\boxed{1,3}.",
+      "gold_solution": "The expression inside the square root must be greater than 0 because the denominator cannot be equal to 0. Therefore, $x-1>0$, so $x>1$. The expression inside the logarithm must be greater than 0, so $3-x>0$, which gives $x<3$. Therefore, the interval of $x$ for which the expression $\\frac{\\log{(3-x)}}{\\sqrt{x-1}}$ is defined is $1<x<3$, which is $\\boxed{(1,3)}$."
+    },
+    {
+      "label": "shuf_X5O47",
+      "id": 4032,
+      "server": [
+        1,
+        1,
+        1
+      ],
+      "local": [
+        0,
+        0,
+        1
+      ],
+      "pred_boxed": "-\\frac{15}{4}",
+      "pred_lenient": "-\\frac{15}{4}",
+      "gold_extracted": "-\\frac{15}4",
+      "generation": "To solve this problem, we can use the fact that the sum of the roots of a cubic equation is equal to the negative of the coefficient of the linear term, and the product of the roots is equal to the constant term.\n\nLet's denote the roots of the equation as $a$, $b$, and $c$. Then, we have:\n\n\\[a + b + c = \\frac{1}{2}\\]\n\n\\[ab + bc + ca = \\frac{4}{2} = 2\\]\n\n\\[abc = \\frac{10}{2} = 5\\]\n\nNow, we need to find $a^2 + b^2 + c^2$. We can use the identity:\n\n\\[a^2 + b^2 + c^2 = (a + b + c)^2 - 2(ab + bc + ca)\\]\n\nSubstituting the values we found earlier, we get:\n\n\\[a^2 + b^2 + c^2 = (\\frac{1}{2})^2 - 2(2) = \\frac{1}{4} - 4 = -\\frac{15}{4}\\]\n\nTherefore, the final answer is $\\boxed{-\\frac{15}{4}}$.",
+      "gold_solution": "By Vieta's formulas, we know that \\[\\begin{aligned} a+b+c &= \\frac12, \\\\ ab+bc+ca &= \\frac42 = 2, \\\\ abc &= -\\frac{10}2 = -5. \\end{aligned}\\]We square both sides of $a+b+c=\\frac12,$ which will produce the terms $a^2+b^2+c^2$: \\[(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca = \\frac14.\\]Substituting $ab+bc+ca=2,$ we have \\[a^2+b^2+c^2+2(2)=\\frac14,\\]so \\[a^2+b^2+c^2=\\frac14-4=\\boxed{-\\frac{15}4}.\\]"
+    }
+  ]
+}

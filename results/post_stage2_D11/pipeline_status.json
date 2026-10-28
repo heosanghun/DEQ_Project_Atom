@@ -1,0 +1,105 @@
+{
+  "started_at_utc": "2026-04-27T04:25:10+00:00",
+  "smoke": false,
+  "args": {
+    "seeds": 5,
+    "device": "cuda:0",
+    "output_root": "D:\\AI\\cts\\results\\post_stage2_D11"
+  },
+  "phases": {
+    "verify_stage2": {
+      "status": "PASS",
+      "duration_s": 4.95,
+      "details": {
+        "ckpt_path": "D:\\AI\\cts\\artifacts\\stage2_meta_value.pt",
+        "size_mb": 27.54,
+        "top_level_keys": [
+          "meta_policy_state_dict",
+          "critic_state_dict",
+          "value_head_state_dict",
+          "meta",
+          "critic_z",
+          "value_head",
+          "config_name",
+          "W",
+          "text_dim"
+        ],
+        "collect_batch": null,
+        "ppo_epochs": null,
+        "paper_faithful": true,
+        "explicit_paper_faithful": false,
+        "has_training_meta": false,
+        "training_meta": null
+      }
+    },
+    "table2": {
+      "status": "FAIL",
+      "returncode": null,
+      "duration_s": 86401.75,
+      "log_path": "D:\\AI\\cts\\results\\post_stage2_D11\\logs\\table2.log",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "D:\\AI\\cts\\scripts\\run_cts_eval_full.py",
+        "--table2",
+        "--seeds",
+        "5",
+        "--device",
+        "cuda:0",
+        "--output-dir",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\table2",
+        "--nu-trace-dir",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\nu_traces"
+      ],
+      "error": "timeout after 86399.99999779998s"
+    },
+    "table17": {
+      "status": "FAIL",
+      "returncode": null,
+      "duration_s": 28804.1,
+      "log_path": "D:\\AI\\cts\\results\\post_stage2_D11\\logs\\table17.log",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "D:\\AI\\cts\\scripts\\run_cts_eval_full.py",
+        "--benchmarks",
+        "aime_90",
+        "--methods",
+        "cts_4nu",
+        "ft_nt",
+        "--seeds",
+        "5",
+        "--device",
+        "cuda:0",
+        "--output-dir",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\table17",
+        "--nu-trace-dir",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\nu_traces"
+      ],
+      "error": "timeout after 28799.99999730001s"
+    },
+    "table19": {
+      "status": "PASS",
+      "returncode": 0,
+      "duration_s": 5.29,
+      "log_path": "D:\\AI\\cts\\results\\post_stage2_D11\\logs\\table19.log",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "D:\\AI\\cts\\scripts\\aggregate_nu_table19.py",
+        "--runs",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\nu_traces",
+        "--out",
+        "D:\\AI\\cts\\results\\post_stage2_D11\\table19\\nu_stats.md"
+      ]
+    },
+    "zip_rebuild": {
+      "status": "PASS",
+      "duration_s": 8.44,
+      "details": {
+        "build_log": "D:\\AI\\cts\\results\\post_stage2_D11\\logs\\zip_build.log",
+        "audit_log": "D:\\AI\\cts\\results\\post_stage2_D11\\logs\\zip_audit.log",
+        "verdict_pass": true
+      }
+    }
+  },
+  "final_verdict": "PARTIAL_FAIL",
+  "ended_at_utc": "2026-04-28T12:25:35+00:00"
+}

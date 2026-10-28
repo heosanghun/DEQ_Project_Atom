@@ -1,0 +1,29 @@
+{
+  "greedy": {
+    "aime": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 1
+    }
+  },
+  "native_think": {
+    "aime": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 1
+    }
+  },
+  "cts_4nu": {
+    "aime": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "n_samples": 1
+    }
+  }
+}

@@ -1,0 +1,505 @@
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:36:35 ===
+[SHA-256 Check]
+380315fff29ebe6d8288324ede3ca3da674342429a37a1851a9df38d36adc527  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:36:48
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0732 | Task: 7.0728 | IFT: 0.003892 (764.2ms)
+[SMOKE Step   4] Loss: 7.0000 | Task: 6.9996 | IFT: 0.003914 (32.7ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1225642) and Pilot E (PID 1225643)...
+[DONE] Mode A finished with exit code 1 at 20:37:32
+[DONE] Mode E finished with exit code 1 at 20:37:33
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:36:52
+Device: cuda:0 | Max Steps: 50 | Batch Size: 4
+================================================================================
+[LOAD] Loading Pure Gemma-4-e4b Base from /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 566/2076 [00:00<00:00, 5590.22it/s]Loading weights:  54%|█████▍    | 1126/2076 [00:02<00:01, 485.47it/s]Loading weights:  66%|██████▌   | 1374/2076 [00:02<00:01, 475.47it/s]Loading weights:  74%|███████▎  | 1530/2076 [00:02<00:01, 541.80it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 754.72it/s]
+[LOAD] Loading CTS DEQ Backbone with LoRA...
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 369/2076 [00:00<00:00, 3687.75it/s]Loading weights:  36%|███▌      | 738/2076 [00:00<00:00, 3681.10it/s]Loading weights:  53%|█████▎    | 1107/2076 [00:03<00:04, 222.42it/s]Loading weights:  63%|██████▎   | 1312/2076 [00:04<00:03, 230.42it/s]Loading weights:  70%|██████▉   | 1447/2076 [00:04<00:02, 243.36it/s]Loading weights:  92%|█████████▏| 1903/2076 [00:05<00:00, 454.95it/s]Loading weights: 100%|██████████| 2076/2076 [00:05<00:00, 407.20it/s]
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 0 / 32 valid items with required latent tensors.
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 536, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 532, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 373, in run_pilot
+    raise RuntimeError("No valid items found with required latent tensors!")
+RuntimeError: No valid items found with required latent tensors!
+--- Mode E log tail ---
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [E]
+Start Time: 2026-10-10 20:36:52
+Device: cuda:0 | Max Steps: 50 | Batch Size: 4
+================================================================================
+[LOAD] Loading Pure Gemma-4-e4b Base from /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 509/2076 [00:00<00:00, 5060.65it/s]Loading weights:  49%|████▉     | 1016/2076 [00:01<00:02, 478.43it/s]Loading weights:  60%|█████▉    | 1242/2076 [00:02<00:01, 478.02it/s]Loading weights:  67%|██████▋   | 1387/2076 [00:02<00:01, 473.31it/s]Loading weights:  76%|███████▋  | 1586/2076 [00:02<00:00, 602.43it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 738.51it/s]
+[LOAD] Loading CTS DEQ Backbone with LoRA...
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  30%|██▉       | 618/2076 [00:00<00:00, 6154.80it/s]Loading weights:  59%|█████▉    | 1234/2076 [00:03<00:03, 273.78it/s]Loading weights:  72%|███████▏  | 1498/2076 [00:04<00:01, 289.86it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 507.44it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 439.05it/s]
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 0 / 32 valid items with required latent tensors.
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 536, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 532, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 373, in run_pilot
+    raise RuntimeError("No valid items found with required latent tensors!")
+RuntimeError: No valid items found with required latent tensors!
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:39:18 ===
+[SHA-256 Check]
+8403afb9a00b85f421b073c42d7011cd82ed08beaca50f4a811968f41ba1c965  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:39:31
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0163 | Task: 7.0159 | IFT: 0.003908 (669.5ms)
+[SMOKE Step   4] Loss: 7.1223 | Task: 7.1219 | IFT: 0.003914 (53.5ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1227109) and Pilot E (PID 1227110)...
+[DONE] Mode A finished with exit code 1 at 20:40:14
+[DONE] Mode E finished with exit code 1 at 20:40:15
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 556, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 552, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 427, in run_pilot
+    input_ids, targets, s_st, s_en = prepare_item_batch(tokenizer, p_text, s_text)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 150, in prepare_item_batch
+    prompt_tokens, s_st, s_en, _ = build_canonical_prefix_prompt(tokenizer, prob_text, k_latent=k_latent)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 134, in build_canonical_prefix_prompt
+    formatted = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3087, in apply_chat_template
+    chat_template = self.get_chat_template(chat_template, tools)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3269, in get_chat_template
+    raise ValueError(
+ValueError: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+--- Mode E log tail ---
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 556, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 552, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 427, in run_pilot
+    input_ids, targets, s_st, s_en = prepare_item_batch(tokenizer, p_text, s_text)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 150, in prepare_item_batch
+    prompt_tokens, s_st, s_en, _ = build_canonical_prefix_prompt(tokenizer, prob_text, k_latent=k_latent)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 134, in build_canonical_prefix_prompt
+    formatted = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3087, in apply_chat_template
+    chat_template = self.get_chat_template(chat_template, tools)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3269, in get_chat_template
+    raise ValueError(
+ValueError: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:42:04 ===
+[SHA-256 Check]
+1b2e998b92c33031f080fad7c78c312fe3f8fa1ebed6b473b181f25518fa5556  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:42:17
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0707 | Task: 7.0703 | IFT: 0.003921 (663.6ms)
+[SMOKE Step   4] Loss: 7.0337 | Task: 7.0333 | IFT: 0.003885 (44.7ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1228850) and Pilot E (PID 1228851)...
+[DONE] Mode A finished with exit code 1 at 20:43:01
+[DONE] Mode E finished with exit code 1 at 20:43:02
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 603, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 599, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 500, in run_pilot
+    phi_z = bb.deq_step(z_cur, None, f_weights, ex).float()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/backbone/gemma_adapter.py", line 331, in deq_step
+    out = parallel_sparse_module_forward_batch(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 910, in parallel_sparse_module_forward_batch
+    else prepare_eq3_inputs(lm, z, context_row, static_inputs=static_inputs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 656, in prepare_eq3_inputs
+    static = static_inputs or prepare_eq3_static_inputs(lm, z, context)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 346, in prepare_eq3_static_inputs
+    context = context.to(device=z_template.device, dtype=model_dtype)
+              ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to'
+--- Mode E log tail ---
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 603, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 599, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 500, in run_pilot
+    phi_z = bb.deq_step(z_cur, None, f_weights, ex).float()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/backbone/gemma_adapter.py", line 331, in deq_step
+    out = parallel_sparse_module_forward_batch(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 910, in parallel_sparse_module_forward_batch
+    else prepare_eq3_inputs(lm, z, context_row, static_inputs=static_inputs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 656, in prepare_eq3_inputs
+    static = static_inputs or prepare_eq3_static_inputs(lm, z, context)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/cts_e1/cts/deq/gemma_latent_forward.py", line 346, in prepare_eq3_static_inputs
+    context = context.to(device=z_template.device, dtype=model_dtype)
+              ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to'
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:45:02 ===
+[SHA-256 Check]
+e3b9b03d31e3b5b588af93f077ecdb5ca08f1faac0b80bc891eb5468f3e4c229  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:45:15
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0946 | Task: 7.0942 | IFT: 0.003900 (688.9ms)
+[SMOKE Step   4] Loss: 7.0706 | Task: 7.0702 | IFT: 0.003896 (41.8ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1230425) and Pilot E (PID 1230426)...
+[DONE] Mode A finished with exit code 1 at 20:45:59
+[DONE] Mode E finished with exit code 1 at 20:46:00
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2509, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2272, in forward
+    per_layer_inputs = self.language_model.get_per_layer_inputs(llm_input_ids, llm_inputs_embeds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 1761, in get_per_layer_inputs
+    inputs_embeds[:, :, None, :]
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 108.12 GiB. GPU 0 has a total capacity of 47.40 GiB of which 1006.25 MiB is free. Including non-PyTorch memory, this process has 46.40 GiB memory in use. Of the allocated memory 46.07 GiB is allocated by PyTorch, and 25.27 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+--- Mode E log tail ---
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2509, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2272, in forward
+    per_layer_inputs = self.language_model.get_per_layer_inputs(llm_input_ids, llm_inputs_embeds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 1761, in get_per_layer_inputs
+    inputs_embeds[:, :, None, :]
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 108.12 GiB. GPU 0 has a total capacity of 47.40 GiB of which 1008.25 MiB is free. Including non-PyTorch memory, this process has 46.40 GiB memory in use. Of the allocated memory 46.07 GiB is allocated by PyTorch, and 24.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:48:00 ===
+[SHA-256 Check]
+2b1a5bea69323c907a87e7bb2b65a9d3b8914e2007f50f441a5ff240205fc147  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:48:13
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0965 | Task: 7.0961 | IFT: 0.003915 (689.0ms)
+[SMOKE Step   4] Loss: 7.0570 | Task: 7.0566 | IFT: 0.003916 (39.3ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1232287) and Pilot E (PID 1232288)...
+[DONE] Mode A finished with exit code 1 at 20:48:52
+[DONE] Mode E finished with exit code 1 at 20:48:52
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2509, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2272, in forward
+    per_layer_inputs = self.language_model.get_per_layer_inputs(llm_input_ids, llm_inputs_embeds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 1761, in get_per_layer_inputs
+    inputs_embeds[:, :, None, :]
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 108.12 GiB. GPU 0 has a total capacity of 47.40 GiB of which 16.81 GiB is free. Including non-PyTorch memory, this process has 30.58 GiB memory in use. Of the allocated memory 30.24 GiB is allocated by PyTorch, and 20.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+--- Mode E log tail ---
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2509, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2272, in forward
+    per_layer_inputs = self.language_model.get_per_layer_inputs(llm_input_ids, llm_inputs_embeds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 1761, in get_per_layer_inputs
+    inputs_embeds[:, :, None, :]
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 108.12 GiB. GPU 0 has a total capacity of 47.40 GiB of which 16.81 GiB is free. Including non-PyTorch memory, this process has 30.57 GiB memory in use. Of the allocated memory 30.24 GiB is allocated by PyTorch, and 19.81 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:50:49 ===
+[SHA-256 Check]
+66dff1676ab0ef3495e5dced8bf7c84ba25d27af3fae1df58cea0b31e4e5a83e  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:51:02
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 6.9599 | Task: 6.9595 | IFT: 0.003905 (663.0ms)
+[SMOKE Step   4] Loss: 7.0623 | Task: 7.0620 | IFT: 0.003911 (49.1ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1233466) and Pilot E (PID 1233467)...
+[DONE] Mode A finished with exit code 1 at 20:51:41
+[DONE] Mode E finished with exit code 1 at 20:51:41
+[FATAL] Pilot execution encountered non-zero return code (A: 1, E: 1)
+--- Mode A log tail ---
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 560/2076 [00:00<00:00, 5558.70it/s]Loading weights:  54%|█████▍    | 1116/2076 [00:01<00:01, 482.27it/s]Loading weights:  66%|██████▌   | 1363/2076 [00:02<00:01, 471.85it/s]Loading weights:  73%|███████▎  | 1518/2076 [00:02<00:01, 535.69it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 752.58it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[CACHE] Pre-encoding prompt contexts for 32 items...
+[CACHE] Contexts pre-encoded.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 640, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 636, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 555, in run_pilot
+    item_loss.backward()
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.
+--- Mode E log tail ---
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  30%|██▉       | 615/2076 [00:00<00:00, 6112.07it/s]Loading weights:  59%|█████▉    | 1227/2076 [00:02<00:01, 518.99it/s]Loading weights:  72%|███████▏  | 1498/2076 [00:02<00:01, 547.52it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 817.77it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[PARAMS] Trainable DEQ parameters: 218 tensors (3,980,801 weights)
+[PARAMS] Trainable Projector parameters: 5 tensors (19,665,920 weights)
+[DATA] Loading items and cached latent tensors...
+[DATA] Filtered 32 / 32 valid items with required latent tensors.
+[CACHE] Pre-encoding prompt contexts for 32 items...
+[CACHE] Contexts pre-encoded.
+[TRAIN] Starting pilot training loop for 50 steps...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 640, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 636, in main
+    run_pilot(args)
+  File "/home/shoon/cts_e1_s5/scripts/g2v3_m3_pilot_train.py", line 555, in run_pilot
+    item_loss.backward()
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/home/shoon/system1_5/.venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.
+=== TASK-0071 G2v3 M3 Pilot Execution Started at 2026-10-10 20:57:07 ===
+[SHA-256 Check]
+e3f2545e53eb7fa153027ebd40b50efae01cd00f9339089c4fc425304704e6f8  scripts/g2v3_m3_pilot_train.py
+005e622d50ec5efdfa309a6dd8e4663880194f9c10e13c276573e636050aee8a  results_s7/g2v2/zstar_zsrcinj_train1000.pt
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a memory=13MiB apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c memory=13MiB apps=0
+[SMOKE] Running in-memory smoke test on server...
+================================================================================
+CTS G2v3 M3 Pilot Training - Mode [A]
+Start Time: 2026-10-10 20:57:20
+Device: cpu | Max Steps: 5 | Batch Size: 2
+================================================================================
+[SMOKE] Running synthetic in-memory smoke verification...
+[SMOKE Step   0] Loss: 7.0609 | Task: 7.0605 | IFT: 0.003899 (665.7ms)
+[SMOKE Step   4] Loss: 7.0289 | Task: 7.0285 | IFT: 0.003903 (24.2ms)
+[SMOKE] Verification completed successfully.
+[SMOKE] Server smoke test PASSED.
+[LAUNCH] Mode A (M3 Phantom Gradient) on GPU 5...
+[LAUNCH] Mode E (E''' Contrast Baseline) on GPU 6...
+[WAIT] Waiting for Pilot A (PID 1235232) and Pilot E (PID 1235233)...
+[DONE] Mode A finished with exit code 0 at 20:58:37
+[DONE] Mode E finished with exit code 0 at 20:58:39
+=== Output Artifact Verification ===
+-rw-rw-r-- 1 shoon shoon 205 10월 10 20:58 results_s7/g2v3/pilot_manifest_A.json
+-rw-rw-r-- 1 shoon shoon 186 10월 10 20:58 results_s7/g2v3/pilot_manifest_E.json
+-rw-rw-r-- 1 shoon shoon 84M 10월 10 20:58 results_s7/g2v3/pilot_model_A.pt
+-rw-rw-r-- 1 shoon shoon 84M 10월 10 20:58 results_s7/g2v3/pilot_model_E.pt
+2e62b9f0749bf74f0a0dadaf17c6ed2a04b064562ee69aa0a493852368699345  results_s7/g2v3/pilot_model_A.pt
+294ead7ba71503b24ec13ba41ee486a781d7e1349601b1ca9a89af5926d0321b  results_s7/g2v3/pilot_model_E.pt
+5d14bf58b77632dd7bff8b5e4ba07351059e8b6c0bd89b87a7652e84e37f3f91  results_s7/g2v3/pilot_manifest_A.json
+e1a7aa0271fdd3e200606305bc9c6db2d62c3cb10e65a1b331559c992ad1020c  results_s7/g2v3/pilot_manifest_E.json
+=== Mode A Manifest Summary ===
+{
+  "mode": "A",
+  "steps": 50,
+  "batch_size": 4,
+  "final_task_loss": 4.03515625,
+  "final_ift_loss": 4.481708674575202e-05,
+  "avg_step_time_s": 0.8030149030685425,
+  "peak_vram_mb": 35111.53759765625
+}
+=== Mode E Manifest Summary ===
+{
+  "mode": "E",
+  "steps": 50,
+  "batch_size": 4,
+  "final_task_loss": 1.7578125,
+  "final_ift_loss": 0.0,
+  "avg_step_time_s": 0.8223989582061768,
+  "peak_vram_mb": 35110.28662109375
+}
+=== TASK-0071 G2v3 M3 Pilot Execution Completed at 2026-10-10 20:58:40 ===

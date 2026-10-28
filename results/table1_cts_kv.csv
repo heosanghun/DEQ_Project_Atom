@@ -1,0 +1,11 @@
+tree_depth_proxy,approach,peak_vram_gb,total_ms_3_branches,latency_ms_per_node,notes
+1,mcts_kv_analytic,0.022,,,linear KV growth vs depth (analytic)
+5,mcts_kv_analytic,0.1101,,,linear KV growth vs depth (analytic)
+10,mcts_kv_analytic,0.2202,,,linear KV growth vs depth (analytic)
+15,mcts_kv_analytic,0.3303,,,linear KV growth vs depth (analytic)
+20,mcts_kv_analytic,0.4404,,,linear KV growth vs depth (analytic)
+1,cts_mock,0.0794,242.411,80.804,MockTinyBackbone DEQ transition ×3 branches
+5,cts_mock,0.0794,82.365,27.455,MockTinyBackbone DEQ transition ×3 branches
+10,cts_mock,0.0794,86.087,28.696,MockTinyBackbone DEQ transition ×3 branches
+15,cts_mock,0.0794,81.342,27.114,MockTinyBackbone DEQ transition ×3 branches
+20,cts_mock,0.0794,77.924,25.975,MockTinyBackbone DEQ transition ×3 branches

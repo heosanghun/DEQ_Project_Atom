@@ -1,0 +1,26 @@
+{
+  "author": "Codex",
+  "created_kst": "2026-10-20T07:28:37.824429+09:00",
+  "files": {
+    "REPORT-C001.md": "a5b8164d557bf7a64ae2e7107bfa7a10a5b452c54a6894596cb0609b68dfd52d",
+    "REPORT-C002.md": "32d903454ea7b425d90082315889a9a3cb0ec484d1f9f95c403570ef51c3e3a2",
+    "QUESTION-C002.md": "cf2fdb53680f44e31be39c179840fc660730a65f175d7bce890a4b0b807818f5",
+    "QUESTION-C003.md": "5ed8099a1acc9e5c7f9ffe34e1d4f4f69a419871daa75656b5c17710412e1790",
+    "REPLY-C002-C003-20261020-0729.md": "894cb768a88b9e1736ca04b02d60a4572bd0b48581b2e953d46177c3bab3b845",
+    "SHA256SUMS-C001.txt": "0501b520e98487b6144172754a6751351a980a8968834ebb2db0675e2399c39b",
+    "SHA256SUMS-C002.txt": "058fd4b2aa7358883ae96ed9dd1997c7117d41ece12b6e50cb557b4333001c44",
+    "PACKAGE-CONTEXT.md": "074c99e6703ccce6039b503f7cd1d629ce519e62799744b66902a7046158b04f",
+    "PACKAGE-README.md": "6681dfdbea7e83d5cb770972ba735cf0b3b54d4d61a2eed5da034f496aa71463",
+    "metadata-C002.json": "4d881898cfa3de627706c5498e57a404525785c3368e898df4c87b99c7b23e7c",
+    "x1_items_codex.json": "a07804a33fd80bb71040b06c56f29f85de78be0234f70c9393bc2fd1147b2e3f",
+    "x1_recheck.py": "73e0f2dcaeda972a7b7e7f31f94a55e5d93526385541cb700a993a84cba39ab1",
+    "x1_recheck_results.json": "eaba7e7d4a9b16d0fbf56a838e681763058c889b24b3ce7cdc1c04795555b9db",
+    "x1_discrepancies.md": "c4228d43c705d9abb3352c5fd493bd013de59bee869976bc49d9bb8966d862a2",
+    "c002-grading.log": "af4ef725d07b348e62f28fd7f94b6e3d4c3939679fed37d7e6a7e89793c1c0f9",
+    "c002-grading-run2.log": "99d658e67dc586497546c6fe64ccf2b50d43ea8230bf8c836e58ffa1a5eca826",
+    "run_c002_grader.py": "60e8904a92143cadf1675f7cb29ab7976ea81440b6a69a1712d2e0cfc76d6534",
+    "SECURITY-20261020-0049.md": "0b511d41038147a867894851a8766ffd5d85165ad4006ed988f6f8593399a05e"
+  },
+  "excluded": "env-c002; no remote connection or company-PC copy performed",
+  "local_grading_status": "incomplete; raw local JSON is diagnostic only"
+}

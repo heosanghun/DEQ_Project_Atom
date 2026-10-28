@@ -1,0 +1,16 @@
+=== TASK 54: RUNNING ALPHA = 0.25 ON cuda:3 ===
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   8%|▊         | 172/2076 [00:00<00:01, 1705.68it/s]Loading weights:  17%|█▋        | 343/2076 [00:00<00:01, 1609.30it/s]Loading weights:  24%|██▍       | 505/2076 [00:00<00:01, 1560.46it/s]Loading weights:  32%|███▏      | 662/2076 [00:00<00:00, 1519.65it/s]Loading weights:  39%|███▉      | 815/2076 [00:03<00:08, 150.73it/s] Loading weights:  44%|████▍     | 915/2076 [00:03<00:06, 171.47it/s]Loading weights:  48%|████▊     | 991/2076 [00:03<00:05, 189.10it/s]Loading weights:  51%|█████     | 1053/2076 [00:03<00:05, 204.14it/s]Loading weights:  53%|█████▎    | 1105/2076 [00:04<00:04, 218.74it/s]Loading weights:  55%|█████▌    | 1151/2076 [00:04<00:04, 227.41it/s]Loading weights:  57%|█████▋    | 1191/2076 [00:04<00:03, 237.04it/s]Loading weights:  59%|█████▉    | 1228/2076 [00:04<00:03, 244.48it/s]Loading weights:  61%|██████    | 1262/2076 [00:04<00:03, 249.77it/s]Loading weights:  62%|██████▏   | 1294/2076 [00:04<00:03, 240.77it/s]Loading weights:  64%|██████▎   | 1323/2076 [00:04<00:03, 244.48it/s]Loading weights:  65%|██████▌   | 1351/2076 [00:05<00:02, 245.21it/s]Loading weights:  66%|██████▋   | 1378/2076 [00:05<00:02, 248.64it/s]Loading weights:  68%|██████▊   | 1406/2076 [00:05<00:02, 253.47it/s]Loading weights:  73%|███████▎  | 1523/2076 [00:05<00:01, 486.92it/s]Loading weights:  81%|████████  | 1674/2076 [00:05<00:00, 757.49it/s]Loading weights:  88%|████████▊ | 1826/2076 [00:05<00:00, 963.96it/s]Loading weights:  95%|█████████▌| 1976/2076 [00:05<00:00, 1109.84it/s]Loading weights: 100%|██████████| 2076/2076 [00:05<00:00, 361.05it/s] 
+
+[54-1] Evaluating 32 Gate Samples Picard (3,000 steps) for alpha=0.25...
+  [alpha=0.25] #00: trans=  18, sets=15 | Stab@97        | k100=250
+  [alpha=0.25] #01: trans=   9, sets= 9 | Stab@26        | k100=605
+  [alpha=0.25] #02: trans=  24, sets= 8 | Stab@2861      | r=6.0e-02
+  [alpha=0.25] #03: trans=  13, sets=13 | Stab@87        | k100=395
+  [alpha=0.25] #04: trans=  18, sets=16 | Stab@104       | k100=267
+  [alpha=0.25] #05: trans=  40, sets=19 | Stab@325       | r=1.8e-03
+  [alpha=0.25] #06: trans=   6, sets= 7 | Stab@99        | k100=227
+  [alpha=0.25] #07: trans=  13, sets=14 | Stab@132       | k100=316
+  [alpha=0.25] #08: trans=  27, sets=21 | Stab@196       | k100=375
+  [alpha=0.25] #09: trans=   9, sets= 8 | Stab@83        | k100=293
+  [alpha=0.25] #10: trans=  13, sets=14 | Stab@50        | k100=226

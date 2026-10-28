@@ -1,0 +1,35 @@
+================================================================================
+TASK-0070 D2: Latent State Geometry Analysis (CPU)
+Timestamp: 2026-10-08 14:00:39
+Base Directory: /home/shoon/cts_e1_s5
+================================================================================
+[MEM-LOG INIT] RSS: 505.34 MB
+Loading metadata types from /home/shoon/cts_e1_s5/data/stage2/math_train_prompts_5000.jsonl...
+Loaded 5000 types.
+
+============================================================
+PART 1: Held-out 600 Analysis
+============================================================
+Loading 80 z* from /home/shoon/cts_e1_s5/results_s7/zstar_s7_a0.25_400.pt...
+Loading 520 z* from /home/shoon/cts_e1_s5/results_s7/zstar_s7_a0.25_heldout520_lowest.pt...
+Loading 600 z_src from /home/shoon/cts_e1_s5/results_s7/zsrc_heldout600.pt...
+Loading canonical item order from /home/shoon/cts_e1_s5/results_s7/p6_item_order.json...
+[MEM-LOG HELD-OUT 600 STACKED] RSS: 2551.76 MB
+
+Computing Held-out 600: 64-slot mean (2,560d)...
+Computing Held-out 600: Flattened (163,840d)...
+[MEM-LOG HELD-OUT 600 FINISHED] RSS: 4816.61 MB
+
+============================================================
+PART 2: Train 1,000 Analysis
+============================================================
+Loading Train 1000 z* from /home/shoon/cts_e1_s5/results_s7/zstar_train1000_P4.pt...
+Loading Train 1000 z_src from /home/shoon/cts_e1_s5/results_s7/zsrc_train1000_P4.pt...
+Loading Train 1000 config from /home/shoon/cts_e1_s5/configs/s7_train_1000.json...
+Traceback (most recent call last):
+  File "/home/shoon/cts_e1_s5/scripts/diag_d2_geometry.py", line 396, in <module>
+    main()
+  File "/home/shoon/cts_e1_s5/scripts/diag_d2_geometry.py", line 328, in main
+    for qid in qids_train:
+               ^^^^^^^^^^
+NameError: name 'qids_train' is not defined. Did you mean: 'types_train'?

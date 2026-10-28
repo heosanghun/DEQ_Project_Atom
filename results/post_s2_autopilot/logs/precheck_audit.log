@@ -1,0 +1,84 @@
+================================================================================
+CTS NeurIPS 2026 - reviewer-side local audit (~1 second, no torch)
+================================================================================
+
+This script reads only what's on disk in your unzipped checkout.
+It does NOT import torch, run the GPU pipeline, or call any audit
+scripts that the author would have used during submission. It is
+safe to run on any environment that can run Python 3.
+
+Section 1: Headline-claim coverage
+  [PASS] Paper Table 1 - O(1) active VRAM measurement path                 hybrid_kv / kv_measured / profile_vram_latency present (triton aux: True)
+  [PASS] Paper Section 6 - L-Broyden DEQ solver                            broyden marker found in cts/deq/
+  [PASS] Paper Section 5 - meta-policy + neuro-critic                      cts/policy/meta_policy.py + cts/critic/neuro_critic.py
+  [PASS] Paper Section 4 - PUCT selection rule                             PUCT marker in cts/mcts/
+  [PASS] Paper Section 6 - ACT halting penalty                             halt marker in cts/train/
+  [PASS] Paper Section 4.5 - nu-vector adaptive control                    nu_{expl,tol,temp,act} markers in cts/policy/meta_policy.py
+  [PASS] Paper Section 6 - two-stage training (DEQ warm-up + PPO)          stage1=True stage2=True
+  [PASS] Paper Appendix - contamination screening (FAISS / MinHash / BM25)  results/contamination/ or scripts/contamination_screen.py present
+
+Section 2: D-7 patch-site presence
+  [PASS] Q14 fix #1 - decode_from_z_star(problem_text=...) kwarg           
+  [PASS] Q14 fix #1 - cts_episode forwards prompt                          
+  [PASS] Q14 fix #2 - dispatcher garbage-math fallback                     
+  [PASS] Partial-save snapshot - table2_results.partial.json               
+  [PASS] Pipeline knobs - --table2-limit / --table17-limit                 
+  [PASS] Watcher forwards --table*-limit / --skip-verify                   
+
+Section 3: Reproducibility checklist hooks
+  [PASS] Configs - paper-faithful + default presets shipped                
+  [PASS] Regression tests - test directory non-empty                       
+  [PASS] Anonymous-submission helper - make_anonymous_submission.py        
+  [PASS] Post-Stage-2 pipeline orchestrator                                
+  [PASS] Reproducibility checklist - REPRODUCIBILITY.md                    
+  [PASS] Stage 2 ckpt validator - test_stage2_ppo_paper_parity.py          
+  [PASS] Static D-7 validation suite (torch-free, runs in 0.4 s)           
+  [PASS] Author's D12 sanity script                                        
+  [PASS] Garbage-math fallback helper (Q14 Fix B factored out)             
+  [PASS] Mock-based dispatcher fallback test (torch-free)                  
+  [PASS] Reviewer one-command replication script (Linux GPU)               
+  [PASS] Paper-code mapping table validator (5-pent contract)              
+  [PASS] Stage 2 training_meta static contract test                        
+  [PASS] run_cts_eval_full --dry-run mode (no torch)                       
+  [PASS] ZIP byte-invariants test (third leak-defence layer)               
+  [PASS] Paper-section alignment test (cross-doc ¡×-numbering)              
+  [PASS] Reviewer walkthrough script (drilldown navigation)                
+  [PASS] _d12_final_check --export-verdict mode                            
+  [PASS] replicate_neurips_2026.sh --ci-mode                               
+  [PASS] REVIEWER_FAQ Q16 (CI runnability guide)                           
+  [PASS] REVIEWER_FAQ Q17 (paper-section to claim crossref)                
+  [PASS] Walkthrough invariants regression test                            
+  [PASS] CHANGELOG D-7 completeness regression test                        
+  [PASS] _d12_final_check Section 5 (byte-invariants integrated)           
+  [PASS] CI workflow uploads D12 verdict artefact                          
+  [PASS] _reviewer_local_audit --json mode (programmatic verdict)          
+  [PASS] Reviewer walkthrough --html mode (browser-readable)               
+  [PASS] REPRODUCIBILITY checklist coverage test                           
+  [PASS] LIMITATIONS completeness regression test                          
+  [PASS] Pre-submission orchestrator (D12 GO/NO-GO gate)                   
+
+Section 4: Documentation marker presence
+  [PASS] REVIEWER_FAQ Q1 present                                           
+  [PASS] REVIEWER_FAQ Q11 present                                          
+  [PASS] REVIEWER_FAQ Q13 present                                          
+  [PASS] REVIEWER_FAQ Q14 present                                          
+  [PASS] REVIEWER_FAQ Q15 present                                          
+  [PASS] CHANGELOG D-7 entries (morning + afternoon)                       
+  [PASS] REPRODUCIBILITY 5-bis (Audit-fix lineage)                         
+  [PASS] REPRODUCIBILITY 5-ter (Pipeline guarantees)                       
+  [PASS] REPRODUCIBILITY 5-quat (single-host blocker)                      
+  [PASS] PAPER_VS_LOCAL.md status banner                                   
+  [PASS] PAPER_VS_LOCAL.md Why-the-Gap appendix                            
+  [PASS] LIMITATIONS.md - consolidated reviewer-facing limitations doc     
+  [PASS] REPRODUCIBILITY 5-pent paper-claim mapping (extended)             
+
+================================================================================
+Reviewer-side audit summary: 57/57 PASS
+================================================================================
+
+>>> ALL GREEN. The reviewer-facing static surface is intact:
+    - every D-7 fix the FAQ describes is present in the source,
+    - every claim with a code anchor lands on disk,
+    - every reviewer-facing doc is consistent.
+    Behavioural / numerical claims still require a GPU run on
+    your end (REVIEWER_FAQ Q15 has the canonical command).

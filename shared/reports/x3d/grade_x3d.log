@@ -1,0 +1,5 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X3Od47: n 600 strict 72 lenient 78 boxed 423
+[S0] shuf_X3Od47: n 600 strict 62 lenient 67 boxed 438
+[S0-DONE] /tmp/cts_x3d/x3d_items.json

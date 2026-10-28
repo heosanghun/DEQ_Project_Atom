@@ -1,0 +1,205 @@
+<title>CTS 관문 1 수렴 원리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column (~74ch) with full-width tables; formula pieces get a dedicated "equation strip"; prints cleanly on A4. */
+:root{
+  --bg:#f5f7f6; --surface:#ffffff; --fg:#1b2422; --muted:#5a6763; --line:#d6ddd9;
+  --accent:#1f5f74; --accent-soft:#e2edf0; --eq:#eef3f1;
+  --ok:#1d6a44; --ok-bg:#e0f0e6; --warn:#8a5a10; --warn-bg:#f6ecd5;
+  --display:"IBM Plex Sans KR","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131917; --surface:#1a2220; --fg:#e3e9e6; --muted:#98a59f; --line:#2d3834;
+  --accent:#80b9ca; --accent-soft:#1e3138; --eq:#1d2826;
+  --ok:#8fd1ac; --ok-bg:#1c3327; --warn:#e6c77c; --warn-bg:#36301c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131917; --surface:#1a2220; --fg:#e3e9e6; --muted:#98a59f; --line:#2d3834;
+  --accent:#80b9ca; --accent-soft:#1e3138; --eq:#1d2826;
+  --ok:#8fd1ac; --ok-bg:#1c3327; --warn:#e6c77c; --warn-bg:#36301c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.75}
+.wrap{max-width:940px;margin:0 auto;padding-inline:20px;padding-block:32px 64px}
+.col{max-width:74ch}
+h1{font-family:var(--display);font-size:1.9rem;line-height:1.3;margin:0 0 .4rem;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--display);font-size:1.25rem;margin:2.4rem 0 .8rem;padding-top:1.1rem;border-top:1px solid var(--line);text-wrap:balance}
+h3{font-family:var(--display);font-size:1.03rem;margin:1.5rem 0 .5rem}
+p{margin:.5rem 0}
+.kind{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 .4rem}
+.meta{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--muted);font-size:.86rem;margin:.6rem 0 1.2rem}
+.meta b{color:var(--fg);font-weight:600;margin-right:6px}
+code,.mono{font-family:var(--mono);font-size:.86em}
+.small{font-size:.85rem;color:var(--muted)}
+.lead{font-size:1.05rem;margin:1rem 0}
+.eqbox{background:var(--eq);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin:1rem 0;overflow-x:auto}
+.eqbox p{margin:0;font-family:var(--mono);font-size:1rem;line-height:1.6;white-space:nowrap}
+.eqbox .cap{font-family:var(--body);font-size:.82rem;color:var(--muted);white-space:normal;margin-top:.4rem}
+.tbl{overflow-x:auto;margin:.8rem 0 1rem}
+table{border-collapse:collapse;width:100%;background:var(--surface);font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{text-align:right;font-family:var(--mono);font-size:.85rem;white-space:nowrap}
+td.f{font-family:var(--mono);font-size:.84rem;white-space:nowrap}
+.note{border-left:3px solid var(--accent);background:var(--surface);padding:10px 14px;margin:1rem 0}
+.caution{border-left-color:var(--warn);background:var(--warn-bg)}
+.pill{display:inline-block;padding:1px 9px;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap;background:var(--ok-bg);color:var(--ok)}
+ul,ol{padding-left:1.3rem;margin:.4rem 0} li{margin:.3rem 0}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+@page{size:A4;margin:16mm 14mm}
+@media print{
+  body{background:#fff;color:#1b2422;font-size:10.5pt}
+  .wrap{padding-block:0;max-width:none}
+  h2{break-after:avoid} h3{break-after:avoid}
+  tr,.eqbox,.note{break-inside:avoid}
+  .tbl,.eqbox{overflow:visible}
+  .eqbox p{white-space:normal;font-size:9.5pt}
+}
+</style>
+
+<div class="wrap">
+<p class="kind">CTS · Stage 7 · 관문 1(G1) 해설</p>
+<h1>구슬은 왜 바닥에 멈추나 — 관문 1 수렴 원리와 계산 시간</h1>
+<div class="meta"><span>기준</span><b>2026-10-07</b><span>작성</span><b>회사 PC Claude Code(CC)</b><span>관련 판정</span><b>G1 사전등록 기준 모두 충족 · 확정</b></div>
+
+<p class="lead">AI가 문제를 읽고 만든 생각을 같은 규칙으로 조금씩 고쳐 쓰면, 그 문제만의 완성 답안(고정점)에 도착한다. 이 문서는 그 규칙의 수식을 한 조각씩 풀고, 왜 수렴하는지, 왜 흔들렸는지, 왜 문제마다 바닥이 다른지, 계산에 얼마나 걸렸는지를 설명한다.</p>
+
+<h2>0. AI의 "생각"이란</h2>
+<div class="col">
+<p>AI가 수학 문제를 읽으면 내부에 숫자 163,840개짜리 목록이 만들어진다(64칸 × 칸마다 2,560개). 이 목록이 AI의 "생각"이며 기호로 <b>z</b>라고 쓴다.</p>
+<p>이 생각을 같은 규칙으로 계속 고쳐 쓰다 보면, 더 고쳐도 바뀌지 않는 생각에 도착한다. 이것이 <b>고정점 z*</b>다. 그릇에 구슬을 떨어뜨리면 결국 바닥에 멈추는 것과 같다.</p>
+</div>
+
+<h2>1. 반복 규칙 — 수식을 한 조각씩</h2>
+<div class="eqbox">
+<p>다음 생각 = 0.75 × 지금 생각 + 0.25 × [ 계산기 Φ(지금 생각) + 0.25 × 문제 정보 ĉ₀ ]</p>
+<p>z(k+1) = 0.75·z(k) + 0.25·[ Φ(z(k)) + g₀·ĉ₀ ],  g₀ = 0.25</p>
+<p class="cap">비유: 수학 서술형 답안 초안을 계속 고쳐 쓰는 과정</p>
+</div>
+<div class="tbl"><table>
+<tr><th>수식 조각</th><th>이름</th><th>답안 고쳐 쓰기 비유</th><th>실제 뜻</th></tr>
+<tr><td class="f">z(k)</td><td>지금 생각</td><td>지금 손에 든 답안 초안</td><td>k번째 고친 생각</td></tr>
+<tr><td class="f">z(k+1)</td><td>다음 생각</td><td>한 번 더 고친 답안</td><td>k+1번째 생각</td></tr>
+<tr><td class="f">Φ(z(k))</td><td>계산기(파이)</td><td>초안을 첨삭 선생님에게 보여 주면 돌려주는 "선생님이 고친 버전"</td><td>AI 안의 모듈 묶음이 지금 생각을 넣고 계산한 결과</td></tr>
+<tr><td class="f">ĉ₀</td><td>문제 정보</td><td>책상 옆에 늘 펴 두는 문제지</td><td>문제 글을 읽고 만든 값. 문제마다 다르고, 고쳐 쓰는 동안 바뀌지 않음</td></tr>
+<tr><td class="f">0.25 × ĉ₀</td><td>문제 반영 세기 g₀</td><td>고칠 때마다 문제지를 한 번 더 확인하는 정도</td><td>문제 정보를 25 % 세기로 더함</td></tr>
+<tr><td class="f">[ Φ + 0.25·ĉ₀ ]</td><td>목표 답안</td><td>선생님 첨삭 + 문제지 확인 = "이렇게 고치면 좋겠다"는 버전</td><td>이번 걸음의 목표 지점</td></tr>
+<tr><td class="f">0.75 × z(k)</td><td>유지하는 몫</td><td>지금 초안의 75 %는 그대로 둠</td><td>—</td></tr>
+<tr><td class="f">0.25 × [목표]</td><td>반영하는 몫, 감쇠 α</td><td>선생님 의견은 25 %만 반영</td><td>α = 0.25</td></tr>
+<tr><td class="f">r</td><td>잔차(남은 고칠 거리)</td><td>이번에 고치라고 한 양 ÷ 내 답안의 길이</td><td>r = ‖목표 − 지금‖ ÷ ‖지금‖ (‖ ‖는 숫자 목록의 크기)</td></tr>
+<tr><td class="f">z*</td><td>고정점(완성 답안)</td><td>선생님이 "더 고칠 게 없다"고 하는 답안</td><td>목표 = 지금, 즉 r = 0</td></tr>
+</table></div>
+<div class="col">
+<p><b>판정 기준.</b> 남은 고칠 거리 r이 1 % 미만(r &lt; 0.01)이면 "바닥에 멈췄다(수렴)"로 본다.</p>
+<p><b>왜 한 번에 100 % 고치지 않고 25 %만 반영하나.</b> 계산기 Φ는 가끔 너무 크게 고치라고 한다. 그 말을 매번 100 % 따르면 답안이 크게 출렁인다. 그래서 조금씩만 반영한다. 이것을 감쇠(α)라고 한다.</p>
+<p class="small">설정값: 풀이기 picard, 최대 1,000걸음, 잠재 칸 64개, 출발 잡음 σ 0.020, 시드 2030(비교용 2031).</p>
+</div>
+
+<h2>2. 숫자로 직접 해 보기</h2>
+<div class="col"><p>생각을 숫자 1개라고 치고, 단순한 계산기로 계산해 본다.</p></div>
+<h3>예시 A — 계산기가 얌전할 때</h3>
+<div class="col"><p>계산기 Φ(x) = 0.5 × x, 문제 정보 ĉ₀ = 8(따라서 0.25 × 8 = 2). 완성 답안은 x = 0.5x + 2를 풀어 <b>x = 4</b>다. 생각 0에서 출발한다.</p></div>
+<div class="tbl"><table>
+<tr><th>걸음</th><th>계산</th><th>다음 생각</th><th>바닥(4)까지 남은 거리</th></tr>
+<tr><td class="n">1</td><td class="f">0.75×0 + 0.25×(0 + 2)</td><td class="n">0.50</td><td class="n">3.50</td></tr>
+<tr><td class="n">2</td><td class="f">0.75×0.50 + 0.25×(0.25 + 2)</td><td class="n">0.94</td><td class="n">3.06</td></tr>
+<tr><td class="n">3</td><td class="f">0.75×0.94 + 0.25×(0.47 + 2)</td><td class="n">1.32</td><td class="n">2.68</td></tr>
+<tr><td class="n">10</td><td>같은 규칙 반복</td><td class="n">2.95</td><td class="n">1.05</td></tr>
+<tr><td class="n">30</td><td>같은 규칙 반복</td><td class="n">3.93</td><td class="n">0.07</td></tr>
+</table></div>
+<div class="col"><p>남은 거리가 매 걸음 <b>0.875배</b>(= 0.75 + 0.25 × 0.5)로 줄어들어 4에 다가간다.</p></div>
+
+<h3>예시 B — 계산기가 과하게 고칠 때 (감쇠가 필요한 이유)</h3>
+<div class="col"><p>계산기 Φ(x) = −1.5 × x(반대 방향으로 1.5배 크게 고침). 바닥 위치는 0.8이다.</p></div>
+<div class="tbl"><table>
+<tr><th>방법</th><th>매 걸음 거리 변화</th><th>결과</th></tr>
+<tr><td>100 % 반영(감쇠 없음)</td><td class="n">−1.5배</td><td>+, −로 출렁이며 점점 멀어짐(발산)</td></tr>
+<tr><td>25 %만 반영(감쇠 0.25)</td><td class="n">0.75 + 0.25×(−1.5) = 0.375배</td><td>빠르게 0.8에 도착(수렴)</td></tr>
+</table></div>
+<div class="note"><p>바닥 위치(0.8)는 두 방법이 같다. 감쇠는 바닥의 위치는 그대로 두고 가는 길만 안정시킨다.</p></div>
+
+<h2>3. 왜 수렴하나 — 매 걸음 남은 거리가 약 2 %씩 줄어든다</h2>
+<div class="col"><ol>
+<li><b>실제 계산기는 과하게 고치는 편이다.</b> 이전 단계 측정에서 계산기 Φ는 작은 변화를 최대 약 8.2배까지 키울 수 있었다(최대 특이값 σ_max ≈ 8.2). 예시 B처럼 그대로 따르면 위험하다.</li>
+<li><b>그래서 25 %만 반영(감쇠)했다.</b></li>
+<li><b>실측으로는 매 걸음 남은 거리가 약 0.98배로 줄었다.</b> 표본 문제 1개에서 고르는 모듈을 고정하고 반복 규칙의 스펙트럼 반경을 추정한 값이 0.984다. 1보다 작으면 언젠가 바닥에 닿는다. 이 표본은 잔차 9.9 × 10⁻⁶까지 내려갔다.</li>
+<li><b>그래서 1,000번 반복한다.</b> 0.98을 계속 곱하면 약 230~290번째에 1 %가 된다. 여유 있게 1,000걸음으로 정했다. 예로 표본 문제 8번은 607번째 걸음에서 처음 0.5 % 아래로 내려갔다.</li>
+</ol></div>
+<div class="note caution"><p>0.984와 8.2는 표본으로 잰 실측값이며, 모든 문제가 반드시 수렴한다는 수학적 증명은 아니다. 그래서 최종 판정은 새 문제 520개를 실제로 계산해서 했다.</p></div>
+<p class="small">근거: <code>results/task29_lipschitz_power_results.json</code>, <code>results/task41_spectral_radius_results.json</code>(거듭제곱법 120회), <code>results/contractivity_diagnosis_results.json</code></p>
+
+<h2>4. 왜 흔들렸나 — 3등과 4등의 자리다툼</h2>
+<div class="col">
+<p><b>비유.</b> 첨삭 선생님이 여러 명 있는데, 매번 점수가 높은 3명의 의견만 듣기로 했다(top-3 라우팅).</p>
+<ul>
+<li>3등과 4등 선생님의 점수가 거의 같으면 걸음마다 3등이 바뀐다.</li>
+<li>듣는 선생님이 바뀌면 고치는 방향도 바뀌어, 답안이 완성 직전에서 왔다 갔다 한다.</li>
+<li>그래서 1,000번째 걸음에서 재면 새 문제 520개 중 <b>456개(87.7 %)</b>만 멈춰 있었다.</li>
+</ul>
+<p><b>원인 확인.</b> 듣는 선생님 3명을 고정했더니 멈추지 않던 54문제 중 <b>53개</b>가 멈췄다(P3 실험). 3·4등 경계를 매끄럽게 섞는 방법은 수렴은 했지만 원래 기계와 다른 지점으로 가서 채택하지 않았다.</p>
+<p><b>해결: 최저점 규칙.</b> 결과를 보기 전에 규칙을 정해 잠갔다(사전등록 <code>PREREG_S7_DEQ_v1.3</code>, SHA-256 254beb6f…). "50번째 걸음 이후 바닥에 가장 가까웠던 순간을 기록해 두고, 그 순간을 완성 답안으로 쓴다." 이 규칙으로 <b>517/520(99.4 %)</b>이 멈췄다(승격 기준 494개 이상).</p>
+<p class="small">공개 사항: 이 규칙은 다른 문제 일부(학습용 1,000개, 기존 80개)를 본 뒤 만들었다. 그래서 확증 근거로는 규칙을 만든 뒤 처음 계산한 새 문제 520개만 썼다.</p>
+</div>
+
+<h2>5. 왜 문제마다 다른 바닥인가 — 변별</h2>
+<div class="col">
+<p><b>비유.</b> 책상 위 문제지(ĉ₀)가 다르면 완성 답안도 다르다. 피타고라스 문제와 확률 문제의 답안이 같을 수 없다.</p>
+<ul>
+<li><b>바닥이 서로 다른가.</b> 문제끼리 완성 답안의 평균 코사인 유사도는 <b>0.569</b>였다(1이면 완전히 같음, 기준 0.75 이하).</li>
+<li><b>출발점이 달라도 같은 바닥인가.</b> 첫 초안에 섞는 잡음(시드)을 2030에서 2031로 바꿔 처음부터 다시 계산해도 520문제 중 <b>519개</b>가 같은 완성 답안에 도착했다(기준 515개 이상).</li>
+<li><b>장치가 달라도 같은가.</b> 다른 GPU에서 앵커 20문제를 계산해도 유사도 0.99999997 이상으로 사실상 같았다.</li>
+</ul>
+<p>구슬을 어디서 떨어뜨리든 그 그릇(문제)의 바닥으로 간다. 수렴과 변별이 함께 성립했다.</p>
+</div>
+
+<h2>6. 관문 1 결과</h2>
+<div class="tbl"><table>
+<tr><th>항목</th><th>결과</th><th>기준</th><th>판정</th></tr>
+<tr><td>승격(새 문제 520, 최저점 r &lt; 0.01)</td><td class="n">517/520</td><td class="n">≥494</td><td><span class="pill">충족</span></td></tr>
+<tr><td>수렴 확증(새 문제 520)</td><td class="n">99.4 %</td><td class="n">≥90 %</td><td><span class="pill">충족</span></td></tr>
+<tr><td>수렴 보조(평가 600 · 학습 1,000)</td><td class="n">596/600 · 991/1,000</td><td class="n">≥90 % · ≥950</td><td><span class="pill">충족</span></td></tr>
+<tr><td>문제 간 평균 유사도</td><td class="n">0.569</td><td class="n">≤0.75</td><td><span class="pill">충족</span></td></tr>
+<tr><td>시드를 바꿔도 같은 바닥</td><td class="n">519/520</td><td class="n">≥515</td><td><span class="pill">충족</span></td></tr>
+<tr><td>장치 간 재현(앵커 20)</td><td class="n">20/20, cos ≥ 0.99999997</td><td class="n">cos ≥ 0.9999</td><td><span class="pill">충족</span></td></tr>
+<tr><td>참고: 1,000번째 걸음 기준 수렴</td><td class="n">456/520 (87.7 %)</td><td class="n">—</td><td>보고만</td></tr>
+</table></div>
+<p class="small">원자료: <code>results_s7/p5_promote_v6.json</code>(e929f890…), <code>results_s7/p5_seedpair_v5.json</code>(0f16376f…), 집계 <code>shared/reports/RESULT-G1-final.md</code></p>
+
+<h2>7. 걸린 시간</h2>
+<div class="tbl"><table>
+<tr><th>단위</th><th>시간</th><th>설명</th></tr>
+<tr><td>1번 고쳐 쓰기(1걸음)</td><td class="n">약 0.06초</td><td>63초 ÷ 1,000걸음</td></tr>
+<tr><td>문제 1개(1,000걸음)</td><td class="n">약 63초</td><td>실측 63.11초/문항(최근 60분 평균), 첫 20문항 62.91초 · 끝 20문항 65.07초</td></tr>
+<tr><td>새 문제 520개, 계산만</td><td class="n">약 9.1시간</td><td>520 × 63초 = 32,760초</td></tr>
+<tr><td>새 문제 520개, 실제 경과</td><td class="n">약 40시간</td><td>10/5 01:53 → 10/6 17:52. 서버 불시 재부팅(10/5 04:50)과 GPU 배정 결정 대기 포함</td></tr>
+</table></div>
+<p class="small">장비: NVIDIA RTX A6000(48 GB). 1~150번은 GPU 1, 151~520번은 GPU 0에서 계산했다.</p>
+
+<h2>8. 요약</h2>
+<div class="tbl"><table>
+<tr><th>질문</th><th>답</th></tr>
+<tr><td>어떻게 고쳐 쓰나</td><td>지금 생각 75 % 유지 + (계산기 의견 + 문제 정보)를 25 % 반영</td></tr>
+<tr><td>왜 멈추나</td><td>25 %씩만 반영해 남은 거리가 매 걸음 약 0.98배로 줄어듦. 1,000걸음이면 충분</td></tr>
+<tr><td>왜 흔들렸나</td><td>3·4등 모듈이 계속 바뀌어 완성 직전에서 왕복. 최저점 규칙으로 판정</td></tr>
+<tr><td>왜 문제마다 다르나</td><td>문제 정보 ĉ₀가 다르기 때문. 출발점이 달라도 같은 바닥(519/520)</td></tr>
+<tr><td>결과</td><td>517/520 수렴(99.4 %), 관문 1 확정</td></tr>
+<tr><td>시간</td><td>문제당 약 1분, 520문제 계산 약 9시간</td></tr>
+<tr><td>범위</td><td>관문 1은 "생각이 안정되고 문제마다 다르다"까지 확인. 그 생각이 문제 풀이에 도움이 되는지는 관문 2(재평가 진행 중)가 판정</td></tr>
+</table></div>
+
+<h2>용어</h2>
+<div class="tbl"><table>
+<tr><th>용어</th><th>뜻</th></tr>
+<tr><td>DEQ(깊은 평형 모델)</td><td>층을 쌓는 대신 같은 계산을 반복해 더 이상 바뀌지 않는 지점을 답으로 쓰는 방식</td></tr>
+<tr><td>고정점 z*</td><td>반복 규칙을 적용해도 바뀌지 않는 생각</td></tr>
+<tr><td>잔차 r</td><td>바닥까지 남은 거리의 비율. 0.01 미만이면 수렴</td></tr>
+<tr><td>감쇠 α</td><td>한 번에 움직이는 비율(0.25)</td></tr>
+<tr><td>top-3 라우팅</td><td>매 걸음 점수 상위 3개 모듈만 골라 쓰는 방식</td></tr>
+<tr><td>스펙트럼 반경</td><td>반복할 때 오차가 한 걸음마다 몇 배가 되는지 나타내는 값. 1보다 작으면 줄어든다</td></tr>
+<tr><td>최저점 k*</td><td>50걸음 이후 잔차가 가장 작았던 걸음</td></tr>
+<tr><td>코사인 유사도</td><td>두 생각의 방향이 얼마나 같은지(1이면 같음)</td></tr>
+<tr><td>사전등록 · SHA-256</td><td>결과를 보기 전에 기준 문서를 잠그고 디지털 지문을 기록해, 나중에 바뀌지 않았음을 증명하는 방법</td></tr>
+</table></div>
+
+<footer>CTS 회사 PC 루프 · 2026-10-07 · 관련 문서: CTS 프로젝트 진행 보고서, <code>shared/reports/RESULT-G1-final.md</code>, <code>PREREG_S7_DEQ_v1.3</code></footer>
+</div>

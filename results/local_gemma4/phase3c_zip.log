@@ -1,0 +1,21 @@
+# Phase 3c: rebuild anonymous ZIP
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\make_anonymous_submission.py
+# start: 2026-05-01T15:49:50Z
+
+[anon-zip] repo root : D:\AI\cts
+[anon-zip] output    : anonymous_submission_neurips2026.zip
+[anon-zip] files     : 296
+[anon-zip] payload   : 2.7 MB (uncompressed)
+
+[anon-zip] DONE      : D:\AI\cts\anonymous_submission_neurips2026.zip
+[anon-zip] zip size  : 1.7 MB (compressed)
+
+Next steps for reviewers:
+  1. Upload the zip to https://anonymous.4open.science (file upload mode)
+     OR attach directly to the OpenReview supplementary material slot.
+  2. Reviewers reproduce weights/data via:
+       python scripts/download_all_benchmarks.py
+       python scripts/run_stage1_openmath.py --lora --device cuda:0
+       python scripts/run_stage2_math_ppo.py --stage1-ckpt artifacts/stage1_last.pt --device cuda:0
+  3. End-to-end re-experiment (single 24 GB GPU, ~4 h):
+       see README.md > Local Reproduction Snapshot > Re-experiment #1

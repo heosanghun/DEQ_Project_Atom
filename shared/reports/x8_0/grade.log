@@ -1,0 +1,10 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X80P47: n 600 strict 64 lenient 72 boxed 326
+[S0] shuf_X80P47: n 600 strict 66 lenient 73 boxed 322
+[S0] X80P49: n 600 strict 71 lenient 77 boxed 317
+[S0] shuf_X80P49: n 600 strict 73 lenient 80 boxed 330
+[S0] X80P50: n 600 strict 69 lenient 76 boxed 319
+Timeout during comparison
+[S0] shuf_X80P50: n 600 strict 66 lenient 69 boxed 346
+[S0-DONE] /tmp/cts_x8_0/x8_0_items.json

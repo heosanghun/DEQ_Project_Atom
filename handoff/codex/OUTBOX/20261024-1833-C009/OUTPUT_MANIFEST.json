@@ -1,0 +1,14 @@
+{
+  "task": "TASK-C009",
+  "outbox_dir": "handoff/codex/OUTBOX/20261024-1833-C009",
+  "files": {
+    "REPORT-C009.md": "03dd5b05a16261edb231b54982b1a39ebdfc391e665996028614d87d294cfe12",
+    "x8a_items_local.json": "0bf8f38575edc879529bf3cbdbdb6dc9cf32c773169055593f9a11d52f9f8ec6",
+    "c009_analysis.json": "c9364a4318216e2bb7dbfe47248f89a4b55ba7436f1579bb3c5f704785b80aa4",
+    "x8a_analyze_server_utf8.txt": "f3e28276a13220a659915057d8624f6fe8aa693fdc363527618e7f52092639f7",
+    "x8a_analyze_local_utf8.txt": "09e09cef1dd78966e689ed8439fa25a43dc6d5f575285b8f38c7fb439d192b2e",
+    "analyze_c009_fast.py": "111ba10af79b9f87b052636e46a29f0a633b409bd9705efaf63b593bf276ba28",
+    "make_manifests_c009.py": "4ab6d5c01122cb7a9e5577cdac44ff7a1f24f9bfd98476eac32f6270d7562d20",
+    "INPUT_MANIFEST.json": "e583925532068a143ac4e3cbe6501e91bfada96e48bb75f33590d26d5dc9920e"
+  }
+}

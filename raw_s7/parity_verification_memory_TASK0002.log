@@ -1,0 +1,20 @@
+=== [2026-09-28 11:47:57] free -g ===
+=== [2026-09-28 11:47:57] INITIAL free -g ===
+               total        used        free      shared  buff/cache   available
+Mem:             251          29         175           0          46         219
+Swap:              1           1           0
+               total        used        free      shared  buff/cache   available
+Mem:             251          29         175           0          46         219
+Swap:              1           1           0
+=== [2026-09-28 11:52:57] free -g ===
+               total        used        free      shared  buff/cache   available
+Mem:             251          70          99           0          81         179
+Swap:              1           1           0
+=== [2026-09-28 11:57:57] free -g ===
+               total        used        free      shared  buff/cache   available
+Mem:             251          62         102           0          86         186
+Swap:              1           1           0
+=== [2026-09-28 11:58:40] FINAL free -g ===
+               total        used        free      shared  buff/cache   available
+Mem:             251          29         135           0          86         219
+Swap:              1           1           0

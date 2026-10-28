@@ -1,0 +1,10 @@
+﻿Started (UTC): 2026-05-17 20:05:46 KST local
+Log (stdout): D:\AI\cts\logs\stage2_bg_20260517_200546.log
+Log (stderr): D:\AI\cts\logs\stage2_bg_20260517_200546.err
+CTS_GEMMA_MODEL_DIR=D:\AI\cts\gemma-4-E4B-it
+CTS_GLOBAL_SEED=42
+
+Command:
+python -u scripts/run_stage2_math_ppo.py --config paper_parity --parallel-map --stage1-ckpt artifacts/stage1_last.pt --K 64 --collect-batch 64 --ppo-epochs 4 --steps 10000 --log-every 10 --save-every 500 --device cuda:0 --broyden-max-iter 30
+
+Tail: Get-Content 'D:\AI\cts\logs\stage2_bg_20260517_200546.log' -Wait -Tail 20

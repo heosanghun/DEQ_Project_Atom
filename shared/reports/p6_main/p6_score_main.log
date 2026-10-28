@@ -1,0 +1,23 @@
+================================================================================
+CTS S7 P6 Scoring & Gate Statistics (scripts/s7_eval_score_p6_v36.py)
+Timestamp: 2026-10-07 04:41:47
+Python: /home/shoon/venv_eval/bin/python
+Bootstrap Resamples: 10,000 | Seed: 2026
+================================================================================
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+Loaded item order from /home/shoon/cts_e1_s5/results_s7/p6_item_order.json (600 items)
+Loaded Condition A from /home/shoon/cts_e1_s5/results_s7/p6_gen_A.jsonl (600 items)
+Loaded Condition B1 from /home/shoon/cts_e1_s5/results_s7/p6_gen_B1.jsonl (600 items)
+Loaded Condition C from /home/shoon/cts_e1_s5/results_s7/p6_gen_C.jsonl (600 items)
+Loaded Condition E1 from /home/shoon/cts_e1_s5/results_s7/p6_gen_E1.jsonl (600 items)
+
+--- Raw Accuracy Table ---
+Condition A   : N=600 | Strict=  1.50% | Lenient=  5.83%
+Condition B1  : N=600 | Strict=  0.83% | Lenient=  4.50%
+Condition C   : N=600 | Strict=  0.33% | Lenient=  6.67%
+Condition E1  : N=600 | Strict=  6.00% | Lenient=  9.33%
+
+[OUTPUT] Gate table JSON saved to /home/shoon/cts_e1_s5/results_s7/p6_gate_table_main.json (SHA: 6bcfe7ea9803e1aa1aa78d8e14f6599157eceeb6b163d7d643b06e4646ec1373)
+[OUTPUT] Gate table Markdown saved to /home/shoon/cts_e1_s5/results_s7/p6_gate_table_main.md (SHA: a87c62708e00020f3770748419a4be11de6e8097934888f8cce0f433cdc9e8e5)
+Scoring and gate statistics complete in 23.71s.
+

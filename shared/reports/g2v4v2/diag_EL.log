@@ -1,0 +1,46 @@
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 575/2076 [00:00<00:00, 5746.80it/s]Loading weights:  55%|█████▌    | 1150/2076 [00:02<00:01, 478.68it/s]Loading weights:  68%|██████▊   | 1404/2076 [00:02<00:01, 463.71it/s]Loading weights:  98%|█████████▊| 2037/2076 [00:02<00:00, 850.33it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 747.99it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[LM-LORA] loaded rank 16, 432 tensors
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 566/2076 [00:00<00:00, 5650.17it/s]Loading weights:  55%|█████▍    | 1132/2076 [00:02<00:01, 481.54it/s]Loading weights:  67%|██████▋   | 1382/2076 [00:02<00:01, 468.46it/s]Loading weights:  75%|███████▌  | 1564/2076 [00:02<00:00, 559.70it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 748.96it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+[PROJ-V2] decoder uses PrefixProjectorV2
+[20/600] 3s
+[40/600] 6s
+[60/600] 9s
+[80/600] 11s
+[100/600] 14s
+[120/600] 17s
+[140/600] 19s
+[160/600] 22s
+[180/600] 25s
+[200/600] 27s
+[220/600] 30s
+[240/600] 33s
+[260/600] 35s
+[280/600] 38s
+[300/600] 41s
+[320/600] 44s
+[340/600] 48s
+[360/600] 51s
+[380/600] 54s
+[400/600] 57s
+[420/600] 60s
+[440/600] 63s
+[460/600] 66s
+[480/600] 68s
+[500/600] 71s
+[520/600] 75s
+[540/600] 78s
+[560/600] 80s
+[580/600] 83s
+[600/600] 86s
+[SUM] E zsrc_k1_nll 0.8949
+[SUM] E zsrc_k1_res 0.0811
+[SUM] E shift1_nll 0.8952
+[SUM] E mean_nll 0.8977
+[SUM] E notext_own_nll 1.1832
+[SUM] E notext_shift1_nll 1.1832
+[DONE] 379s -> results_s7/g2v4v2/diag_EL.json

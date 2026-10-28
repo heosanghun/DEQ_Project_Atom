@@ -1,0 +1,40 @@
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 573/2076 [00:00<00:00, 5667.78it/s]Loading weights:  55%|█████▍    | 1140/2076 [00:02<00:01, 487.51it/s]Loading weights:  67%|██████▋   | 1391/2076 [00:02<00:01, 471.49it/s]Loading weights:  86%|████████▌ | 1789/2076 [00:02<00:00, 708.73it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 758.10it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[BRIDGE] layers [10, 20, 30, 40] of 42, params 20,971,524, center norm/slot 101.1
+/tmp/cts_x_stage/g2v10_train.py:208: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  gates = [round(float(torch.tanh(ad.gate)), 3) for ad in br.adapters.values()]
+[Step    0] loss 0.8529 ans_ce 6.9337 (n 4) gates [0.0, -0.0, -0.0, 0.0] (1s)
+[Step   50] loss 0.3103 ans_ce 1.1000 (n 4) gates [0.001, -0.005, -0.013, 0.012] (37s)
+[Step  100] loss 0.1940 ans_ce 1.4739 (n 4) gates [0.001, -0.008, -0.018, 0.012] (76s)
+[Step  150] loss 0.1724 ans_ce 1.2273 (n 4) gates [0.001, -0.008, -0.022, 0.012] (121s)
+[Step  200] loss 0.2382 ans_ce 1.2634 (n 4) gates [0.001, -0.007, -0.02, 0.012] (167s)
+[Step  250] loss 0.1205 ans_ce 0.6322 (n 4) gates [0.001, -0.006, -0.02, 0.011] (209s)
+[Step  300] loss 0.1473 ans_ce 0.6151 (n 4) gates [0.001, -0.006, -0.02, 0.012] (245s)
+[Step  350] loss 0.2049 ans_ce 1.3139 (n 4) gates [0.001, -0.007, -0.02, 0.011] (285s)
+[Step  400] loss 0.0839 ans_ce 0.3382 (n 4) gates [0.0, -0.006, -0.021, 0.01] (331s)
+[Step  450] loss 0.1188 ans_ce 0.6363 (n 4) gates [0.0, -0.007, -0.022, 0.011] (377s)
+[Step  500] loss 0.1442 ans_ce 0.4852 (n 4) gates [0.0, -0.007, -0.023, 0.013] (418s)
+[Step  550] loss 0.0831 ans_ce 0.3388 (n 4) gates [0.001, -0.007, -0.023, 0.013] (455s)
+[Step  600] loss 0.1015 ans_ce 0.6395 (n 4) gates [0.001, -0.006, -0.023, 0.013] (495s)
+[Step  650] loss 0.0584 ans_ce 0.2814 (n 4) gates [0.0, -0.007, -0.021, 0.013] (541s)
+[Step  700] loss 0.1250 ans_ce 0.8995 (n 4) gates [0.0, -0.008, -0.021, 0.014] (587s)
+[Step  750] loss 0.0866 ans_ce 0.4625 (n 4) gates [0.0, -0.007, -0.024, 0.014] (628s)
+[Step  800] loss 0.0959 ans_ce 0.5858 (n 4) gates [0.001, -0.007, -0.024, 0.015] (665s)
+[Step  850] loss 0.0626 ans_ce 0.2700 (n 4) gates [0.0, -0.007, -0.024, 0.015] (705s)
+[Step  900] loss 0.1598 ans_ce 0.8464 (n 4) gates [0.0, -0.007, -0.025, 0.015] (751s)
+[Step  950] loss 0.0738 ans_ce 0.5217 (n 4) gates [0.001, -0.009, -0.026, 0.017] (798s)
+[Step 1000] loss 0.0637 ans_ce 0.3618 (n 4) gates [0.001, -0.008, -0.026, 0.017] (838s)
+[Step 1050] loss 0.0679 ans_ce 0.4970 (n 4) gates [0.001, -0.009, -0.027, 0.018] (874s)
+[Step 1100] loss 0.0490 ans_ce 0.2716 (n 4) gates [0.0, -0.008, -0.029, 0.019] (915s)
+[Step 1150] loss 0.0550 ans_ce 0.2503 (n 4) gates [-0.0, -0.009, -0.028, 0.021] (961s)
+[Step 1200] loss 0.0481 ans_ce 0.5459 (n 4) gates [0.0, -0.009, -0.029, 0.022] (1007s)
+[Step 1250] loss 0.1641 ans_ce 0.3202 (n 4) gates [0.0, -0.009, -0.03, 0.022] (1047s)
+[Step 1300] loss 0.0747 ans_ce 0.2495 (n 4) gates [0.001, -0.008, -0.032, 0.023] (1084s)
+[Step 1350] loss 0.0815 ans_ce 0.6242 (n 4) gates [0.0, -0.009, -0.032, 0.024] (1125s)
+[Step 1400] loss 0.1067 ans_ce 0.5217 (n 4) gates [0.0, -0.008, -0.033, 0.024] (1171s)
+[Step 1450] loss 0.1219 ans_ce 0.8319 (n 4) gates [0.0, -0.01, -0.033, 0.026] (1217s)
+[Step 1499] loss 0.0872 ans_ce 0.4331 (n 4) gates [0.001, -0.008, -0.033, 0.024] (1256s)
+[SAVE] /tmp/cts_x5/bridge_X5O47.pt (84,549,739 bytes) updates 1500 seq_trunc 0 skipped 0

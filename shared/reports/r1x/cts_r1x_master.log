@@ -1,0 +1,46 @@
+=== R1x start 2026-10-12 21:43:12 ===
+93f88fb5f1b808b03f4beca7f1c6f0a3dc6725317770b55656734536a9f948ce  /tmp/cts_r1_stage/g2v5_diag.py
+fd6c2d03e3ed18d1597950edc79a01af8331d192c9f84b821a5b5bcf3f71cfe1  scripts/s7_eval_gate_p6_v36f.py
+[DG5-R1A1s49] rc=0 21:50:19
+[DG5-R1E0s50] rc=0 21:50:20
+[DG5-Ah] rc=0 21:50:27
+[DG5-R1E1s47] rc=0 21:57:27
+[DG5-R1A1s50] rc=0 21:57:31
+[DG5-R1A0s47] rc=0 21:57:36
+[DG5-Eh] rc=0 22:04:35
+[DG5-R1E1s49] rc=0 22:04:39
+[DG5-R1A0s49] rc=0 22:04:49
+[DG5-R1E1s50] rc=0 22:11:53
+[DG5-R1E0s49] rc=0 22:11:53
+[DG5-R1A0s50] rc=0 22:12:08
+[GB-OK] R1A1s49 rows=600 23:49:58
+[GB-OK] Ah rows=600 23:56:46
+[GB-OK] R1A0s49 rows=600 00:03:26
+[GB-OK] R1A0s47 rows=600 01:29:57
+[GB-OK] R1A1s50 rows=600 01:38:07
+[GB-OK] R1A0s50 rows=600 01:48:07
+[MS] Ah matched-shuffled strict +0.0233 ci [0.00333, 0.04333] b/c 25/11 p 0.0144 | lenient 0.01667
+[MS] R1A0s47 matched-shuffled strict +0.0350 ci [0.015, 0.055] b/c 29/8 p 0.0004 | lenient 0.02667
+[MS] R1A0s49 matched-shuffled strict +0.0017 ci [-0.01333, 0.01667] b/c 10/9 p 0.5000 | lenient 0.00667
+[MS] R1A0s50 matched-shuffled strict +0.0083 ci [-0.01333, 0.03] b/c 25/20 p 0.2757 | lenient 0.005
+[MS] R1A1s49 matched-shuffled strict +0.0167 ci [-0.00333, 0.03667] b/c 23/13 p 0.0662 | lenient 0.005
+[MS] R1A1s50 matched-shuffled strict +0.0017 ci [0.0, 0.005] b/c 1/0 p 0.5000 | lenient -0.01
+da16b5ab589429ac805024fbd63ba1d9419563f9c0dde914f4adeb1b5780791e  /tmp/cts_r1x/diag5_Ah.json
+d44b530450b6834c737cedb9f039e763293c5d8606f7edd7128fa7926b50623b  /tmp/cts_r1x/diag5_Eh.json
+bd42d3855fedf254da886080b419e441ee669d881f8ca61acde0fcd016e2f2f6  /tmp/cts_r1x/diag5_R1A0s47.json
+b41b6858a7756222b4b444a0238224fa3261cce33e581df3e9ff8a8bf47984cd  /tmp/cts_r1x/diag5_R1A0s49.json
+e55c396cabd43af506469bb741f6b91e5cd4ec91bebbed8fc6466b4c9fa542eb  /tmp/cts_r1x/diag5_R1A0s50.json
+23ad4228616dd59c76cacf9eca34afd90e0d3289a5ad3cfccc96d00ae73ffe3f  /tmp/cts_r1x/diag5_R1A1s49.json
+2db45771df80f7a79ea4346a1a6d91e65e3be663d8feeab11b799cd4aa882100  /tmp/cts_r1x/diag5_R1A1s50.json
+db9b1766962b6df49f8946e44c495552fcfb96469aeaaae122d976e25367d1fb  /tmp/cts_r1x/diag5_R1E0s49.json
+9bb565e0df755704d23b6b203a1a15172f9d2de1030ff84bffb315a0c81dd999  /tmp/cts_r1x/diag5_R1E0s50.json
+692cc2fa8177afd0cd38f1d4ea6b3b6e7e36325b329b0bed2283c32ce231d985  /tmp/cts_r1x/diag5_R1E1s47.json
+e734db1d5939f366a6cd5f63e41c44ddc957bacf575edde7de0c61769ade3649  /tmp/cts_r1x/diag5_R1E1s49.json
+a266d4e1490d75aaec2be31f959d3d50f3167a0ea55e60c7548fc9e871efd2a8  /tmp/cts_r1x/diag5_R1E1s50.json
+b51f4b78e8d1d18e31a03f6d80faf783e270ee1b85bc4cf5571d91652082146a  results_s7/p6r/g2v4r1x/score_MS_Ah.json
+8f1a525b3ce1cff9cd24049de94354d64fc13617f961975807b6a2844206d95c  results_s7/p6r/g2v4r1x/score_MS_R1A0s47.json
+ed26a35902ea18f3296c9ed370d2a2aea922fb407fba4cf15dfb240cef2de670  results_s7/p6r/g2v4r1x/score_MS_R1A0s49.json
+d88211e9235fa26caff09d17f8eff4adc1408d644d6c3ab4e8add91a48b5752c  results_s7/p6r/g2v4r1x/score_MS_R1A0s50.json
+c039e69d07dd479f09a54ca7cffdb9d7b2ed8e5854452c9ae2a3bf093e1281a8  results_s7/p6r/g2v4r1x/score_MS_R1A1s49.json
+071593e8bd19b64800c36c9399b1929b70d0e69b21ab1be070d0aea0d2dcf441  results_s7/p6r/g2v4r1x/score_MS_R1A1s50.json
+=== R1x end 2026-10-13 01:50:14 ===

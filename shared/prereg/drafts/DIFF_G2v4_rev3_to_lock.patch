@@ -1,0 +1,8 @@
+1c1
+< # PREREG_S7_G2v4 — G2 4차 시도(M7) 사전등록 (초안 rev2, B 재감사 전)
+---
+> # PREREG_S7_G2v4 — G2 4차 시도(M7) 사전등록 (잠금본)
+3c3
+< - **상태**: DRAFT rev2 (2026-10-11 17:2x KST). AUDIT-P014 FIX 5건과 권고 R-1~R-9를 반영했다.
+---
+> - **상태**: **LOCKED (2026-10-11 17:15 KST)** — AUDIT-P014 재감사 2 PASS(rev3 82f969788cf59d95aee06ee854a294599b273e2702fc1fcd6d10eb542ed01d80). rev1(4563782a…)·rev2(df2e219b…)·rev3 사본은 `shared/prereg/drafts/`에 보존. 잠금 이후 변경은 복사 + diff + B 감사로만.

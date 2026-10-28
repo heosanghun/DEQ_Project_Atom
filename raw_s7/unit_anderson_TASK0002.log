@@ -1,0 +1,54 @@
+================================================================================
+TASK-0002 Part (a): Anderson Acceleration Solver Unit Test
+Timestamp: 2026-09-28 11:41:42
+================================================================================
+1. Constructing linear contractive map: dim=1000, rho(A)=0.9 ...
+   Matrix A spectral radius: 0.900000 (target: 0.900000)
+   Ground truth z* norm: 32.893473
+
+2. Executing our standalone anderson_solver (20 iterations)...
+   Initial relative residual r_0: 1.000000e+00
+   Step 20 relative residual r_20: 1.115775e-11
+   Relative error to analytical z*: 1.159850e-11
+   Criterion r_20 < 1e-6: PASS
+
+3. Executing /home/shoon/ref/torchdeq anderson_solver on identical inputs...
+
+4. Step-by-step cross-validation (our solver vs torchdeq):
+Step |          r_our |         r_tdeq |       Rel Diff |   Status
+-----------------------------------------------------------------
+   2 |   4.673672e-03 |   4.673672e-03 |   0.000000e+00 |       OK
+   3 |   2.515729e-04 |   2.515729e-04 |   0.000000e+00 |       OK
+   4 |   1.391197e-05 |   1.391197e-05 |   0.000000e+00 |       OK
+   5 |   7.346220e-07 |   7.346220e-07 |   0.000000e+00 |       OK
+   6 |   6.544518e-08 |   6.544518e-08 |   0.000000e+00 |       OK
+   7 |   3.360519e-08 |   3.360519e-08 |   0.000000e+00 |       OK
+   8 |   2.305740e-08 |   2.305740e-08 |   0.000000e+00 |       OK
+   9 |   1.707626e-08 |   1.707626e-08 |   0.000000e+00 |       OK
+  10 |   1.371233e-08 |   1.371233e-08 |   0.000000e+00 |       OK
+  11 |   8.089095e-09 |   8.089095e-09 |   0.000000e+00 |       OK
+  12 |   1.228135e-09 |   1.228135e-09 |   0.000000e+00 |       OK
+  13 |   7.492314e-10 |   7.492314e-10 |   0.000000e+00 |       OK
+  14 |   5.211629e-10 |   5.211629e-10 |   0.000000e+00 |       OK
+  15 |   3.796131e-10 |   3.796131e-10 |   0.000000e+00 |       OK
+  16 |   2.313161e-10 |   2.313161e-10 |   0.000000e+00 |       OK
+  17 |   1.306811e-10 |   1.306811e-10 |   0.000000e+00 |       OK
+  18 |   3.204648e-11 |   3.204648e-11 |   0.000000e+00 |       OK
+  19 |   1.863478e-11 |   1.863478e-11 |   0.000000e+00 |       OK
+  20 |   1.115775e-11 |   1.115775e-11 |   0.000000e+00 |       OK
+-----------------------------------------------------------------
+Final Solution Norm (our):      32.89347312
+Final Solution Norm (torchdeq): 32.89347312
+Iterate Difference ||f(x_our) - x_tdeq||: 0.000000e+00
+Relative Iterate Difference:              0.000000e+00
+Our r_20:       1.11577456e-11
+torchdeq r_20:  1.11577456e-11
+Max Step Rel Diff: 0.000000e+00
+Residual Relative Difference |r_our - r_tdeq| / r_tdeq: 0.000000e+00
+
+================================================================================
+VERDICT SUMMARY:
+  Criterion 1: r_20 < 1e-6                     -> PASS (1.1158e-11)
+  Criterion 2: relative difference < 1e-6      -> PASS (max_step=0.0000e+00, r20=0.0000e+00)
+  Overall Part (a) Result:                     -> PASS
+================================================================================

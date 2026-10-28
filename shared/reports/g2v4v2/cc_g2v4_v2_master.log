@@ -1,0 +1,26 @@
+=== v2 pilot start 2026-10-11 11:30:57 ===
+f492da0f1c35a3088397d2fec1748e9b56ed82bc3b371fe33cc0846706092ab0  scripts/g2v4_m4_pilot_train.py
+85b4e94f8523d15d4d522084cd0473d3446a702df4b31e52853346bdb7366126  scripts/g2v4_diag_iterate.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-E] rc=0 11:56:04
+[TR-A] rc=0 11:56:22
+[DG-E] rc=0 12:00:39
+[DG-A] rc=0 12:01:52
+[TR-EL] rc=0 12:06:04
+[DG-EL] rc=0 12:12:54
+[PROJ-V2] out_rms init 0.9981
+[PROJ-V2] center = mean of 993 training start latents (z*), norm/slot 312.6
+[PROJ-V2] out_rms init 0.9981
+[PROJ-V2] center = mean of 993 training start latents (z_src), norm/slot 191.9
+[PROJ-V2] out_rms init 0.9981
+[PROJ-V2] center = mean of 993 training start latents (z_src), norm/slot 191.9
+1cd2b465bf33537e94099677c12fabb966775ad131b93d73502f86b778bd20d6  results_s7/g2v4v2/diag_A.json
+34afc89331feffa0c35a54a8d7262fbcdf33e8c2537131bbc5105d66d8892aa2  results_s7/g2v4v2/diag_E.json
+56f787cbe3e3b50649ac751b51c9830c998046a3d449550b5b7bec7d7a6a362c  results_s7/g2v4v2/diag_EL.json
+db9b4143533eb0ef9d3808cacb8bd1412067a94052d2db599246c5ca9e4cac50  results_s7/g2v4v2/manifest_A.json
+161638f2617477b147320e057dc1d0350204f263628e16af5a92533aad23735b  results_s7/g2v4v2/manifest_E.json
+1721f7f9764b25e8daff46b6c82714976995b0db5fb14eb8d9505dd39ea57439  results_s7/g2v4v2/manifest_EL.json
+=== v2 pilot end 2026-10-11 12:12:54 ===

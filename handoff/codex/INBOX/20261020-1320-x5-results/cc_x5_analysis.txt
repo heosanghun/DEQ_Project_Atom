@@ -1,0 +1,13 @@
+== 0) per condition (n=600): boxed / lenient / strict / strict|boxed
+  C_fmt       boxed  35.5%  lenient 15.67%  strict 12.83%  strict|boxed  36.2% (nb 213)
+  X5O47       boxed  43.0%  lenient 15.67%  strict 12.17%  strict|boxed  28.3% (nb 258)
+  shuf_X5O47  boxed  47.7%  lenient 12.17%  strict 10.17%  strict|boxed  21.3% (nb 286)
+== Stage O: oracle matched - shuffled (rule: lenient CI lower > 0) 
+  lenient (primary)    seed-mean +3.50%p  95% CI [+0.50, +6.50]  per-seed [3.5]
+  strict (secondary)   seed-mean +2.00%p  95% CI [-0.83, +4.83]  per-seed [2.0]
+== Stage O: oracle matched - C_fmt (rule: >= +5%p) 
+  lenient (primary)    seed-mean +0.00%p  95% CI [-3.00, +3.00]  per-seed [0.0]
+  strict (secondary)   seed-mean -0.67%p  95% CI [-3.67, +2.33]  per-seed [-0.67]
+== Stage O harm check: oracle shuffled - C_fmt (report rule: CI includes 0) 
+  lenient (primary)    seed-mean -3.50%p  95% CI [-6.50, -0.50]  per-seed [-3.5]
+  strict (secondary)   seed-mean -2.67%p  95% CI [-5.50, +0.17]  per-seed [-2.67]

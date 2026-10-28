@@ -1,0 +1,195 @@
+=== ENC stage1 r2 start 2026-10-27 22:57:10 launcher_sha 9d8fc31c55d68450551e0b7e8b6458635c8aea7591e6d1d10d7943692e579742 ===
+enc_helpers.py: OK
+enc_extract_r2.py: OK
+enc_compare_r2.py: OK
+info_probe_feat.py: OK
+7d7d40ffbfabd03a73fb099a92bbae5a9a587c73510f6461632e10031fbcb878  /tmp/cts_enc_stage_r2/enc_compare_r2.py
+544c704a2a028ec60a56a95ee142ca5de03c47f25e6dc4883ad195dd16f946d2  /tmp/cts_enc_stage_r2/enc_extract_r2.py
+fde29da80911f200bcd380883b5e7a1c9dba883ed3c7f1b11531486ddf5e955e  /tmp/cts_enc_stage_r2/enc_helpers.py
+8fc7e6d3d850866454c39798ef585686a1adb78f59bd55b18beb1ffdc5686ddf  /tmp/cts_enc_stage_r2/info_probe_feat.py
+008dedd5bf3eb489c92fbff9f78ce5a7a9f57889576c737b917a1dd9e5582614  /tmp/cts_enc_stage_r2/SHA256SUMS.txt
+3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c  configs/s7_train_993.json
+6c76ddb7cc4a1ee901291eee76ed99763ec5ebfec202cb30ba17f9bcee487e7c  results_s7/p6_item_order.json
+340ef5c2bfb718fc371c932746476555d8d5a2bcd54c7413acc40e35840e45a7  results_s7/zsrc_train1000_P4.pt
+0da3748af2a3776c7fa91da50268a7829233939f56218d73f4b4511a6a8e5cff  results_s7/zsrc_heldout600.pt
+f2cf899a4e26ec3ba645b2b825ebd3c7249400c0aca399e3a50e7df976c921df  data/stage2/math_train_prompts_5000.jsonl
+[DISK] output fs avail bytes 149182697472 (need >= 2e9; ~0.26e9 features + metadata)
+[HS-CONVENTION] transformers modeling files: /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma/modeling_gemma.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma3/modeling_gemma3.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma3n/modeling_gemma3n.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_assistant/modeling_gemma4_assistant.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_unified/modeling_gemma4_unified.py /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_unified_assistant/modeling_gemma4_unified_assistant.py
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma/modeling_gemma.py
+443:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma2/modeling_gemma2.py
+468:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma3/modeling_gemma3.py
+577:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma3n/modeling_gemma3n.py
+1785:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4/modeling_gemma4.py
+551:        hidden_states = self.norm_pre_attn(hidden_states)
+560:        hidden_states = self.norm_post_attn(hidden_states)
+567:        hidden_states = self.norm_out(hidden_states)
+1348:        hidden_states = self.norm(hidden_states)
+1730:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_assistant/modeling_gemma4_assistant.py
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_unified/modeling_gemma4_unified.py
+684:        hidden_states = self.norm(hidden_states)
+--- /home/shoon/system1_5/.venv/lib/python3.12/site-packages/transformers/models/gemma4_unified_assistant/modeling_gemma4_unified_assistant.py
+[CHECK] GPU5 mem=1 apps=0
+[EXTRACT] rc=0 23:01:11
+[SAVE] last64@10 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L10.feat.pt
+[SAVE] last64@21 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L21.feat.pt
+[SAVE] last64@31 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L31.feat.pt
+[SAVE] last64@42 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L42.feat.pt
+[SAVE] all@10 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L10.feat.pt
+[SAVE] all@21 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L21.feat.pt
+[SAVE] all@31 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L31.feat.pt
+[SAVE] all@42 /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L42.feat.pt
+[SAVE] meta /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_extract_meta.json prompt_len {'min': 8, 'max': 983, 'mean': 78.41242937853107, 'n_lt_64': 1016} logits logits_to_keep=1 semantics {'len_hidden_states': 43, 'hidden_states_0': 'e
+[PROBE] rc=0 23:04:21
+[BOW     ] subject            n_tr  993 n_dev 600 acc 0.740 perm 0.375 maj 0.327 | real-maj (0.4133, 0.365, 0.46) real-perm (0.365, 0.3167, 0.4133)
+[BOW     ] answer_type        n_tr  993 n_dev 600 acc 0.755 perm 0.657 maj 0.667 | real-maj (0.0883, 0.0633, 0.115) real-perm (0.0983, 0.0717, 0.125)
+[BOW     ] answer_parity      n_tr  614 n_dev 400 acc 0.590 perm 0.575 maj 0.600 | real-maj (-0.01, -0.0575, 0.04) real-perm (0.015, -0.0425, 0.0725)
+[BOW     ] answer_logmag      n_tr  614 n_dev 400 acc 0.417 perm 0.367 maj 0.330 | real-maj (0.0875, 0.0325, 0.1425) real-perm (0.05, -0.01, 0.11)
+[BOW     ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.518 perm 0.366 maj 0.354 | real-maj (0.1641, 0.1192, 0.2073) real-perm (0.152, 0.0984, 0.2038)
+[BOW     ] prompt_numcount    n_tr  993 n_dev 600 acc 0.645 perm 0.347 maj 0.373 | real-maj (0.2717, 0.2233, 0.32) real-perm (0.2983, 0.2467, 0.35)
+[zsrc    ] subject            n_tr  993 n_dev 600 acc 0.612 perm 0.300 maj 0.327 | real-maj (0.285, 0.235, 0.3367) real-perm (0.3117, 0.26, 0.3633)
+[zsrc    ] answer_type        n_tr  993 n_dev 600 acc 0.673 perm 0.658 maj 0.667 | real-maj (0.0067, -0.02, 0.0333) real-perm (0.015, -0.0133, 0.0417)
+[zsrc    ] answer_parity      n_tr  614 n_dev 400 acc 0.547 perm 0.545 maj 0.600 | real-maj (-0.0525, -0.1075, 0.0) real-perm (0.0025, -0.065, 0.0675)
+[zsrc    ] answer_logmag      n_tr  614 n_dev 400 acc 0.385 perm 0.338 maj 0.330 | real-maj (0.055, -0.01, 0.12) real-perm (0.0475, -0.0225, 0.1175)
+[zsrc    ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.465 perm 0.349 maj 0.354 | real-maj (0.1105, 0.0604, 0.1606) real-perm (0.1157, 0.0604, 0.1693)
+[zsrc    ] prompt_numcount    n_tr  993 n_dev 600 acc 0.660 perm 0.368 maj 0.373 | real-maj (0.2867, 0.235, 0.3383) real-perm (0.2917, 0.2383, 0.345)
+[all@10  ] subject            n_tr  993 n_dev 600 acc 0.840 perm 0.307 maj 0.327 | real-maj (0.5133, 0.4667, 0.56) real-perm (0.5333, 0.4883, 0.5783)
+[all@10  ] answer_type        n_tr  993 n_dev 600 acc 0.757 perm 0.643 maj 0.667 | real-maj (0.09, 0.0533, 0.1267) real-perm (0.1133, 0.0767, 0.1517)
+[all@10  ] answer_parity      n_tr  614 n_dev 400 acc 0.575 perm 0.530 maj 0.600 | real-maj (-0.025, -0.0825, 0.035) real-perm (0.045, -0.025, 0.115)
+[all@10  ] answer_logmag      n_tr  614 n_dev 400 acc 0.450 perm 0.380 maj 0.330 | real-maj (0.12, 0.0575, 0.1825) real-perm (0.07, 0.0, 0.14)
+[all@10  ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.725 perm 0.344 maj 0.354 | real-maj (0.3713, 0.323, 0.4197) real-perm (0.3817, 0.3299, 0.4318)
+[all@10  ] prompt_numcount    n_tr  993 n_dev 600 acc 0.792 perm 0.345 maj 0.373 | real-maj (0.4183, 0.3733, 0.465) real-perm (0.4467, 0.3967, 0.495)
+[all@21  ] subject            n_tr  993 n_dev 600 acc 0.847 perm 0.273 maj 0.327 | real-maj (0.52, 0.4733, 0.5667) real-perm (0.5733, 0.5267, 0.6183)
+[all@21  ] answer_type        n_tr  993 n_dev 600 acc 0.765 perm 0.658 maj 0.667 | real-maj (0.0983, 0.0633, 0.1333) real-perm (0.1067, 0.07, 0.1433)
+[all@21  ] answer_parity      n_tr  614 n_dev 400 acc 0.525 perm 0.487 maj 0.600 | real-maj (-0.075, -0.13, -0.0175) real-perm (0.0375, -0.03, 0.1075)
+[all@21  ] answer_logmag      n_tr  614 n_dev 400 acc 0.453 perm 0.403 maj 0.330 | real-maj (0.1225, 0.06, 0.185) real-perm (0.05, -0.0175, 0.1175)
+[all@21  ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.712 perm 0.356 maj 0.354 | real-maj (0.3575, 0.3092, 0.4059) real-perm (0.3558, 0.304, 0.4076)
+[all@21  ] prompt_numcount    n_tr  993 n_dev 600 acc 0.780 perm 0.303 maj 0.373 | real-maj (0.4067, 0.36, 0.455) real-perm (0.4767, 0.4283, 0.525)
+[all@31  ] subject            n_tr  993 n_dev 600 acc 0.857 perm 0.277 maj 0.327 | real-maj (0.53, 0.4833, 0.5767) real-perm (0.58, 0.5333, 0.625)
+[all@31  ] answer_type        n_tr  993 n_dev 600 acc 0.773 perm 0.645 maj 0.667 | real-maj (0.1067, 0.0717, 0.1433) real-perm (0.1283, 0.0917, 0.1667)
+[all@31  ] answer_parity      n_tr  614 n_dev 400 acc 0.547 perm 0.507 maj 0.600 | real-maj (-0.0525, -0.11, 0.005) real-perm (0.04, -0.0275, 0.1075)
+[all@31  ] answer_logmag      n_tr  614 n_dev 400 acc 0.477 perm 0.370 maj 0.330 | real-maj (0.1475, 0.085, 0.21) real-perm (0.1075, 0.04, 0.175)
+[all@31  ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.660 perm 0.351 maj 0.354 | real-maj (0.3057, 0.2556, 0.3558) real-perm (0.3092, 0.2556, 0.361)
+[all@31  ] prompt_numcount    n_tr  993 n_dev 600 acc 0.778 perm 0.338 maj 0.373 | real-maj (0.405, 0.3583, 0.4533) real-perm (0.44, 0.3883, 0.4917)
+[all@42  ] subject            n_tr  993 n_dev 600 acc 0.845 perm 0.282 maj 0.327 | real-maj (0.5183, 0.47, 0.565) real-perm (0.5633, 0.5167, 0.6083)
+[all@42  ] answer_type        n_tr  993 n_dev 600 acc 0.757 perm 0.643 maj 0.667 | real-maj (0.09, 0.055, 0.125) real-perm (0.1133, 0.0767, 0.15)
+[all@42  ] answer_parity      n_tr  614 n_dev 400 acc 0.560 perm 0.495 maj 0.600 | real-maj (-0.04, -0.1, 0.02) real-perm (0.065, 0.0, 0.1275)
+[all@42  ] answer_logmag      n_tr  614 n_dev 400 acc 0.472 perm 0.347 maj 0.330 | real-maj (0.1425, 0.08, 0.205) real-perm (0.125, 0.0575, 0.19)
+[all@42  ] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.625 perm 0.351 maj 0.354 | real-maj (0.2712, 0.2211, 0.3212) real-perm (0.2746, 0.2176, 0.3299)
+[all@42  ] prompt_numcount    n_tr  993 n_dev 600 acc 0.750 perm 0.345 maj 0.373 | real-maj (0.3767, 0.33, 0.425) real-perm (0.405, 0.3533, 0.4567)
+[last64@10] subject            n_tr  993 n_dev 600 acc 0.830 perm 0.298 maj 0.327 | real-maj (0.5033, 0.4533, 0.5517) real-perm (0.5317, 0.4867, 0.575)
+[last64@10] answer_type        n_tr  993 n_dev 600 acc 0.758 perm 0.645 maj 0.667 | real-maj (0.0917, 0.055, 0.13) real-perm (0.1133, 0.075, 0.1533)
+[last64@10] answer_parity      n_tr  614 n_dev 400 acc 0.557 perm 0.505 maj 0.600 | real-maj (-0.0425, -0.1, 0.015) real-perm (0.0525, -0.015, 0.12)
+[last64@10] answer_logmag      n_tr  614 n_dev 400 acc 0.410 perm 0.380 maj 0.330 | real-maj (0.08, 0.0175, 0.1425) real-perm (0.03, -0.0375, 0.095)
+[last64@10] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.698 perm 0.359 maj 0.354 | real-maj (0.3437, 0.2953, 0.3921) real-perm (0.3385, 0.285, 0.3903)
+[last64@10] prompt_numcount    n_tr  993 n_dev 600 acc 0.775 perm 0.355 maj 0.373 | real-maj (0.4017, 0.3567, 0.45) real-perm (0.42, 0.37, 0.47)
+[last64@21] subject            n_tr  993 n_dev 600 acc 0.832 perm 0.307 maj 0.327 | real-maj (0.505, 0.4567, 0.5517) real-perm (0.525, 0.4767, 0.5717)
+[last64@21] answer_type        n_tr  993 n_dev 600 acc 0.745 perm 0.647 maj 0.667 | real-maj (0.0783, 0.0417, 0.115) real-perm (0.0983, 0.06, 0.1383)
+[last64@21] answer_parity      n_tr  614 n_dev 400 acc 0.573 perm 0.495 maj 0.600 | real-maj (-0.0275, -0.0825, 0.0275) real-perm (0.0775, 0.01, 0.145)
+[last64@21] answer_logmag      n_tr  614 n_dev 400 acc 0.450 perm 0.400 maj 0.330 | real-maj (0.12, 0.06, 0.1825) real-perm (0.05, -0.0175, 0.12)
+[last64@21] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.679 perm 0.347 maj 0.354 | real-maj (0.3247, 0.2746, 0.3748) real-perm (0.3316, 0.2798, 0.3817)
+[last64@21] prompt_numcount    n_tr  993 n_dev 600 acc 0.795 perm 0.355 maj 0.373 | real-maj (0.4217, 0.3733, 0.47) real-perm (0.44, 0.3917, 0.4883)
+[last64@31] subject            n_tr  993 n_dev 600 acc 0.832 perm 0.270 maj 0.327 | real-maj (0.505, 0.4583, 0.5517) real-perm (0.5617, 0.515, 0.6067)
+[last64@31] answer_type        n_tr  993 n_dev 600 acc 0.773 perm 0.652 maj 0.667 | real-maj (0.1067, 0.0717, 0.1417) real-perm (0.1217, 0.0867, 0.1583)
+[last64@31] answer_parity      n_tr  614 n_dev 400 acc 0.575 perm 0.502 maj 0.600 | real-maj (-0.025, -0.0825, 0.0325) real-perm (0.0725, 0.0025, 0.14)
+[last64@31] answer_logmag      n_tr  614 n_dev 400 acc 0.487 perm 0.355 maj 0.330 | real-maj (0.1575, 0.095, 0.22) real-perm (0.1325, 0.0625, 0.2)
+[last64@31] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.649 perm 0.330 maj 0.354 | real-maj (0.2953, 0.2453, 0.3454) real-perm (0.3195, 0.2694, 0.3696)
+[last64@31] prompt_numcount    n_tr  993 n_dev 600 acc 0.737 perm 0.327 maj 0.373 | real-maj (0.3633, 0.315, 0.415) real-perm (0.41, 0.3567, 0.4617)
+[last64@42] subject            n_tr  993 n_dev 600 acc 0.838 perm 0.297 maj 0.327 | real-maj (0.5117, 0.4633, 0.56) real-perm (0.5417, 0.495, 0.5867)
+[last64@42] answer_type        n_tr  993 n_dev 600 acc 0.733 perm 0.652 maj 0.667 | real-maj (0.0667, 0.0317, 0.1017) real-perm (0.0817, 0.045, 0.1183)
+[last64@42] answer_parity      n_tr  614 n_dev 400 acc 0.540 perm 0.502 maj 0.600 | real-maj (-0.06, -0.12, 0.0) real-perm (0.0375, -0.0275, 0.1025)
+[last64@42] answer_logmag      n_tr  614 n_dev 400 acc 0.482 perm 0.367 maj 0.330 | real-maj (0.1525, 0.0875, 0.2175) real-perm (0.115, 0.05, 0.18)
+[last64@42] prompt_maxnum_log  n_tr  951 n_dev 579 acc 0.649 perm 0.361 maj 0.354 | real-maj (0.2953, 0.247, 0.3437) real-perm (0.2884, 0.2349, 0.3402)
+[last64@42] prompt_numcount    n_tr  993 n_dev 600 acc 0.732 perm 0.352 maj 0.373 | real-maj (0.3583, 0.31, 0.4083) real-perm (0.38, 0.3283, 0.4333)
+[SAVE] /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_info_probe.json
+== subject  n_dev 600  majority algebra 0.3267
+  BOW        acc 0.7400  acc-maj +0.4133 [+0.3650, +0.4600]  -zsrc +0.1283 [+0.0900, +0.1683]
+  zsrc       acc 0.6117  acc-maj +0.2850 [+0.2350, +0.3367]
+  last64@10  acc 0.8300  acc-maj +0.5033 [+0.4533, +0.5517]  -zsrc +0.2183 [+0.1750, +0.2600]
+  last64@21  acc 0.8317  acc-maj +0.5050 [+0.4567, +0.5517]  -zsrc +0.2200 [+0.1783, +0.2617]
+  last64@31  acc 0.8317  acc-maj +0.5050 [+0.4583, +0.5517]  -zsrc +0.2200 [+0.1767, +0.2633]
+  last64@42  acc 0.8383  acc-maj +0.5117 [+0.4633, +0.5600]  -zsrc +0.2267 [+0.1850, +0.2683]
+  all@10     acc 0.8400  acc-maj +0.5133 [+0.4667, +0.5600]  -zsrc +0.2283 [+0.1867, +0.2700]
+  all@21     acc 0.8467  acc-maj +0.5200 [+0.4733, +0.5667]  -zsrc +0.2350 [+0.1933, +0.2767]
+  all@31     acc 0.8567  acc-maj +0.5300 [+0.4833, +0.5767]  -zsrc +0.2450 [+0.2017, +0.2867]
+  all@42     acc 0.8450  acc-maj +0.5183 [+0.4700, +0.5650]  -zsrc +0.2333 [+0.1917, +0.2750]
+== answer_type  n_dev 600  majority integer 0.6667
+  BOW        acc 0.7550  acc-maj +0.0883 [+0.0633, +0.1150]  -zsrc +0.0817 [+0.0517, +0.1133]
+  zsrc       acc 0.6733  acc-maj +0.0067 [-0.0200, +0.0333]
+  last64@10  acc 0.7583  acc-maj +0.0917 [+0.0550, +0.1300]  -zsrc +0.0850 [+0.0467, +0.1233]
+  last64@21  acc 0.7450  acc-maj +0.0783 [+0.0417, +0.1150]  -zsrc +0.0717 [+0.0350, +0.1083]
+  last64@31  acc 0.7733  acc-maj +0.1067 [+0.0717, +0.1417]  -zsrc +0.1000 [+0.0650, +0.1350]
+  last64@42  acc 0.7333  acc-maj +0.0667 [+0.0317, +0.1017]  -zsrc +0.0600 [+0.0250, +0.0967]
+  all@10     acc 0.7567  acc-maj +0.0900 [+0.0533, +0.1267]  -zsrc +0.0833 [+0.0467, +0.1200]
+  all@21     acc 0.7650  acc-maj +0.0983 [+0.0633, +0.1333]  -zsrc +0.0917 [+0.0550, +0.1283]
+  all@31     acc 0.7733  acc-maj +0.1067 [+0.0717, +0.1433]  -zsrc +0.1000 [+0.0650, +0.1367]
+  all@42     acc 0.7567  acc-maj +0.0900 [+0.0550, +0.1250]  -zsrc +0.0833 [+0.0483, +0.1183]
+== answer_parity  n_dev 400  majority even 0.6000
+  BOW        acc 0.5900  acc-maj -0.0100 [-0.0575, +0.0400]  -zsrc +0.0425 [-0.0150, +0.1025]
+  zsrc       acc 0.5475  acc-maj -0.0525 [-0.1075, +0.0000]
+  last64@10  acc 0.5575  acc-maj -0.0425 [-0.1000, +0.0150]  -zsrc +0.0100 [-0.0500, +0.0700]
+  last64@21  acc 0.5725  acc-maj -0.0275 [-0.0825, +0.0275]  -zsrc +0.0250 [-0.0350, +0.0825]
+  last64@31  acc 0.5750  acc-maj -0.0250 [-0.0825, +0.0325]  -zsrc +0.0275 [-0.0325, +0.0875]
+  last64@42  acc 0.5400  acc-maj -0.0600 [-0.1200, +0.0000]  -zsrc -0.0075 [-0.0700, +0.0550]
+  all@10     acc 0.5750  acc-maj -0.0250 [-0.0825, +0.0350]  -zsrc +0.0275 [-0.0325, +0.0900]
+  all@21     acc 0.5250  acc-maj -0.0750 [-0.1300, -0.0175]  -zsrc -0.0225 [-0.0850, +0.0400]
+  all@31     acc 0.5475  acc-maj -0.0525 [-0.1100, +0.0050]  -zsrc +0.0000 [-0.0600, +0.0600]
+  all@42     acc 0.5600  acc-maj -0.0400 [-0.1000, +0.0200]  -zsrc +0.0125 [-0.0500, +0.0725]
+== answer_logmag  n_dev 400  majority t1 0.3300
+  BOW        acc 0.4175  acc-maj +0.0875 [+0.0325, +0.1425]  -zsrc +0.0325 [-0.0275, +0.0925]
+  zsrc       acc 0.3850  acc-maj +0.0550 [-0.0100, +0.1200]
+  last64@10  acc 0.4100  acc-maj +0.0800 [+0.0175, +0.1425]  -zsrc +0.0250 [-0.0375, +0.0875]
+  last64@21  acc 0.4500  acc-maj +0.1200 [+0.0600, +0.1825]  -zsrc +0.0650 [+0.0050, +0.1250]
+  last64@31  acc 0.4875  acc-maj +0.1575 [+0.0950, +0.2200]  -zsrc +0.1025 [+0.0475, +0.1575]
+  last64@42  acc 0.4825  acc-maj +0.1525 [+0.0875, +0.2175]  -zsrc +0.0975 [+0.0350, +0.1600]
+  all@10     acc 0.4500  acc-maj +0.1200 [+0.0575, +0.1825]  -zsrc +0.0650 [+0.0050, +0.1250]
+  all@21     acc 0.4525  acc-maj +0.1225 [+0.0600, +0.1850]  -zsrc +0.0675 [+0.0075, +0.1275]
+  all@31     acc 0.4775  acc-maj +0.1475 [+0.0850, +0.2100]  -zsrc +0.0925 [+0.0350, +0.1500]
+  all@42     acc 0.4725  acc-maj +0.1425 [+0.0800, +0.2050]  -zsrc +0.0875 [+0.0250, +0.1500]
+== prompt_maxnum_log  n_dev 579  majority t1 0.3541
+  BOW        acc 0.5181  acc-maj +0.1641 [+0.1192, +0.2073]  -zsrc +0.0535 [+0.0017, +0.1036]
+  zsrc       acc 0.4646  acc-maj +0.1105 [+0.0604, +0.1606]
+  last64@10  acc 0.6978  acc-maj +0.3437 [+0.2953, +0.3921]  -zsrc +0.2332 [+0.1848, +0.2832]
+  last64@21  acc 0.6788  acc-maj +0.3247 [+0.2746, +0.3748]  -zsrc +0.2142 [+0.1641, +0.2642]
+  last64@31  acc 0.6494  acc-maj +0.2953 [+0.2453, +0.3454]  -zsrc +0.1848 [+0.1347, +0.2349]
+  last64@42  acc 0.6494  acc-maj +0.2953 [+0.2470, +0.3437]  -zsrc +0.1848 [+0.1330, +0.2366]
+  all@10     acc 0.7254  acc-maj +0.3713 [+0.3230, +0.4197]  -zsrc +0.2608 [+0.2124, +0.3074]
+  all@21     acc 0.7116  acc-maj +0.3575 [+0.3092, +0.4059]  -zsrc +0.2470 [+0.1986, +0.2971]
+  all@31     acc 0.6598  acc-maj +0.3057 [+0.2556, +0.3558]  -zsrc +0.1952 [+0.1451, +0.2453]
+  all@42     acc 0.6252  acc-maj +0.2712 [+0.2211, +0.3212]  -zsrc +0.1606 [+0.1105, +0.2124]
+== prompt_numcount  n_dev 600  majority t1 0.3733
+  BOW        acc 0.6450  acc-maj +0.2717 [+0.2233, +0.3200]  -zsrc -0.0150 [-0.0567, +0.0250]
+  zsrc       acc 0.6600  acc-maj +0.2867 [+0.2350, +0.3383]
+  last64@10  acc 0.7750  acc-maj +0.4017 [+0.3567, +0.4500]  -zsrc +0.1150 [+0.0750, +0.1567]
+  last64@21  acc 0.7950  acc-maj +0.4217 [+0.3733, +0.4700]  -zsrc +0.1350 [+0.0950, +0.1750]
+  last64@31  acc 0.7367  acc-maj +0.3633 [+0.3150, +0.4150]  -zsrc +0.0767 [+0.0350, +0.1183]
+  last64@42  acc 0.7317  acc-maj +0.3583 [+0.3100, +0.4083]  -zsrc +0.0717 [+0.0300, +0.1133]
+  all@10     acc 0.7917  acc-maj +0.4183 [+0.3733, +0.4650]  -zsrc +0.1317 [+0.0917, +0.1733]
+  all@21     acc 0.7800  acc-maj +0.4067 [+0.3600, +0.4550]  -zsrc +0.1200 [+0.0783, +0.1600]
+  all@31     acc 0.7783  acc-maj +0.4050 [+0.3583, +0.4533]  -zsrc +0.1183 [+0.0783, +0.1600]
+  all@42     acc 0.7500  acc-maj +0.3767 [+0.3300, +0.4250]  -zsrc +0.0900 [+0.0500, +0.1317]
+== PASS (prereg rule): {'last64@10': ['answer_type'], 'last64@21': ['answer_type', 'answer_logmag'], 'last64@31': ['answer_type', 'answer_logmag'], 'last64@42': ['answer_type', 'answer_logmag'], 'all@10': ['answer_type', 'answer_logmag'], 'all@21': ['answer_type', 'answer_logmag'], 'all@31': ['answer_type', 'answer_logmag'], 'all@42': ['answer_type', 'answer_logmag']}
+== SELECTED for stage 2: last64@31
+7d7d40ffbfabd03a73fb099a92bbae5a9a587c73510f6461632e10031fbcb878  /tmp/cts_enc_stage_r2/enc_compare_r2.py
+544c704a2a028ec60a56a95ee142ca5de03c47f25e6dc4883ad195dd16f946d2  /tmp/cts_enc_stage_r2/enc_extract_r2.py
+fde29da80911f200bcd380883b5e7a1c9dba883ed3c7f1b11531486ddf5e955e  /tmp/cts_enc_stage_r2/enc_helpers.py
+8fc7e6d3d850866454c39798ef585686a1adb78f59bd55b18beb1ffdc5686ddf  /tmp/cts_enc_stage_r2/info_probe_feat.py
+008dedd5bf3eb489c92fbff9f78ce5a7a9f57889576c737b917a1dd9e5582614  /tmp/cts_enc_stage_r2/SHA256SUMS.txt
+a7d1f14820055e63350ec2e283a0653eb8b5d67eeb2beda43fd9dc97c4239dc1  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L10.feat.pt
+5271ab5c295a26e9264b843a96ef889d4c16e455cf41c1739abdc0fff4a51c15  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L21.feat.pt
+d3963a4e32e4cc9dcfed4c6b58ef04436027189409bb164e9980d5b60038ad10  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L31.feat.pt
+f2df51b8584fc6a4b93b87430034dfa71e3ab61c4034493470921a6ed9f2eae4  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/all_L42.feat.pt
+bb6bf6977a9d04a95c32e7e690f238e2758b90efed14d2912e860b1e837ac0eb  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L10.feat.pt
+25eae88bb2638324d1494bd343d3f3fbad373a7eb6f319203f475263ec7bf15f  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L21.feat.pt
+f1c5d7f56e8fdde7869a6a94684a94162fadb672aea64a14c55b21e91ad88a56  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L31.feat.pt
+49cf46fa18ff6fe47d627d2efe1e1c63437ca960f2728e141edc4ae3bafb2f7f  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/last64_L42.feat.pt
+ce539da66327c409a82ec89836ed40c94790255ab932e5be082f164df87872fd  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_extract_meta.json
+ee19f91c09c540d16a8ac0c4658c286d9c4a5b48af33aeef9f4320cd0551ed05  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_info_probe.json
+0d905c53032f30590dca44ee7b7743eab5c904de40b6e863c80d473612c46d2a  /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_compare_r2.json
+/           35183841280
+/home      148919676928
+=== ENC stage1 r2 end 2026-10-27 23:07:04 ===

@@ -1,0 +1,30 @@
+{
+ "C_fmt": [
+  "data/gen_C.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "X1O47": [
+  "data/gen_X1O47.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "shuf_X1O47": [
+  "data/genB1_X1O47.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "X1O49": [
+  "data/gen_X1O49.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "shuf_X1O49": [
+  "data/genB1_X1O49.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "X1O50": [
+  "data/gen_X1O50.jsonl",
+  "data/p6_item_order.json"
+ ],
+ "shuf_X1O50": [
+  "data/genB1_X1O50.jsonl",
+  "data/p6_item_order.json"
+ ]
+}

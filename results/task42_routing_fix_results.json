@@ -1,0 +1,53 @@
+{
+  "8": {
+    "stabilized_set": [
+      2,
+      3,
+      16
+    ],
+    "free_routing": {
+      "transitions_count": 14,
+      "k_100": 142,
+      "r_3000": 0.00010744602820804235
+    },
+    "fixed_routing": {
+      "transitions_count": 0,
+      "k_100": 59,
+      "r_3000": 3.521189540765376e-08
+    }
+  },
+  "14": {
+    "stabilized_set": [
+      2,
+      3,
+      16
+    ],
+    "free_routing": {
+      "transitions_count": 13,
+      "k_100": 177,
+      "r_3000": 0.0008947193662493411
+    },
+    "fixed_routing": {
+      "transitions_count": 0,
+      "k_100": 67,
+      "r_3000": 2.5922722770314874e-08
+    }
+  },
+  "27": {
+    "stabilized_set": [
+      2,
+      3,
+      16
+    ],
+    "free_routing": {
+      "transitions_count": 993,
+      "k_100": null,
+      "r_3000": 0.0293538388003464
+    },
+    "fixed_routing": {
+      "transitions_count": 0,
+      "k_100": 64,
+      "r_3000": 3.565812181184452e-08
+    }
+  }
+}

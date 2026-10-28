@@ -1,0 +1,25 @@
+=== X5 start 2026-10-20 09:44:43 ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f  /tmp/cts_x_stage/g2v10_train.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+568f84e615c9f97b164dcb016767e96927dc6b55452499cf1749d52baffc1429  /tmp/cts_s2/oracle_latents.pt
+0c026ea2d7e863d3035a7918cec23dd83206794db7ea2c092ed3aa97c62fad69  results_s7/p6r/g2v9x5base/gen_Ctrain.jsonl
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[TR-X5O47] rc=0 10:06:02 [Step 1499] loss 0.0872 ans_ce 0.4331 (n 4) gates [0.001, -0.008, -0.033, 0.024] (1256s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 5.0 gen_budget 480
+[SAVE] /tmp/cts_x5/bridge_X5O47.pt (84,549,739 bytes) updates 1500 seq_trunc 0 skipped 0
+[GEN-gen-X5O47] rc=0 rows=600 unique_ids=600 13:05:34
+[GEN-genB1-X5O47] rc=0 rows=600 unique_ids=600 13:05:34
+[SPEC] 3
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X5O47: n 600 strict 73 lenient 94 boxed 258
+[S0] shuf_X5O47: n 600 strict 61 lenient 73 boxed 286
+[S0-DONE] /tmp/cts_x5/x5_items.json
+a3441a57d97e6e3542c9a500210406fbcc0d99bb5f4b69d7b3a0eeae6880178e  results_s7/p6r/g2v9x5/genB1_X5O47.jsonl
+9573ad1d507743ef1361dbadf44e8558e2654f53cdf5b9d7650a78b4133c8a15  results_s7/p6r/g2v9x5/gen_X5O47.jsonl
+014516b421234e5de3f993870a9f842da0a7e8a48ee0b386872a545f2c4f96b8  /tmp/cts_x5/x5_items.json
+60e192508c4c2e97926b41444601d84b678fb2599ecf190e5e0e08e74cf74fe2  /tmp/cts_x5/manifest_X5O47.json
+afbb5fdcfc12a49e0f0df6fd875a755ef27e50e316c32a0965277ed284760e60  /tmp/cts_x5/bridge_X5O47.pt
+=== X5 end 2026-10-20 13:05:45 ===

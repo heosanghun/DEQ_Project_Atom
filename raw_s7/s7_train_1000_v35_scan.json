@@ -1,0 +1,52 @@
+{
+  "total_items": 1000,
+  "prefix_mismatches": 0,
+  "max_seq_len": 1536,
+  "excluded_count": 7,
+  "valid_count": 993,
+  "excluded_items": [
+    {
+      "qid": 74,
+      "boxed_end_token": 2002,
+      "prompt_len": 915,
+      "sol_tokens": 1087
+    },
+    {
+      "qid": 191,
+      "boxed_end_token": 1778,
+      "prompt_len": 898,
+      "sol_tokens": 880
+    },
+    {
+      "qid": 544,
+      "boxed_end_token": 2101,
+      "prompt_len": 1034,
+      "sol_tokens": 1067
+    },
+    {
+      "qid": 629,
+      "boxed_end_token": 1808,
+      "prompt_len": 865,
+      "sol_tokens": 943
+    },
+    {
+      "qid": 2727,
+      "boxed_end_token": 2547,
+      "prompt_len": 729,
+      "sol_tokens": 1819
+    },
+    {
+      "qid": 3055,
+      "boxed_end_token": 1579,
+      "prompt_len": 179,
+      "sol_tokens": 1443
+    },
+    {
+      "qid": 4208,
+      "boxed_end_token": 1625,
+      "prompt_len": 231,
+      "sol_tokens": 1394
+    }
+  ],
+  "valid_indices_sha256": "3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c"
+}

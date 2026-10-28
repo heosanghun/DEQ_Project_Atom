@@ -1,0 +1,630 @@
+--- scripts/p5_promote_v2.py
++++ scripts/p5_promote_v3.py
+@@ -1,18 +1,19 @@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+ """
+-scripts/p5_promote_v2.py - CTS S7 P5 Result Analyzer & Promotion Evaluator v2
+-Directive: TASK-0023 / AUDIT-P006 (FIX) / PREREG_S7_DEQ_v1.3 §10(b)(c)(d) / GOAL.md G1
++scripts/p5_promote_v3.py - CTS S7 P5 Result Analyzer & Promotion Evaluator v3
++Directive: TASK-0026 / AUDIT-P006 (Re-audit 1 FIX 1~5) / PREREG_S7_DEQ_v1.3 §10(b)(c)(d) / GOAL.md G1
+ 
+ Operational Standards & Audit Compliance:
+-  1. Config integrity: Enforces SHA-256 == 48abce650791c781da254a490b0f25e60dfc2a777bc77053eaf20e23b1176988 (520 unique IDs).
+-  2. Strict key queries: Looks up exact keys f"q{idx:04d}_a0.25" for the 520 canonical IDs only.
+-  3. Fixed denominators: All rates are computed against fixed denominators (520, 600, 1000). Missing/invalid items are counted as non-converged.
+-  4. Top-3 set equality: Evaluated via set(top3_lowest) == set(top3_final).
+-  5. Rescue window: Evaluates max r in k* +- 10; includes r_1000 when k* + 10 >= 1000.
+-  6. Trajectory classification: Implements 4-shape taxonomy (monotonic_decrease, increase, plateau, oscillation) on steps 500..1000.
+-  7. Discrimination: Evaluates float64 pairwise cosine and ratio of pairs > 0.95. Nearest neighbor is deferred to §10(g) p5_analyze_v5.
+-  8. Neutral quantitative reporting: Strictly zero forbidden qualitative judgment words.
++  1. Config integrity: Enforces canonical 520 SHA-256 (48abce65...) and canonical 80 SHA-256 (27899edb...).
++  2. Strict key queries: Looks up exact keys f"q{idx:04d}_a0.25" for canonical IDs.
++  3. Fixed denominators: All rates computed against fixed denominators (520, 600, 1000). Missing/invalid items counted as non-converged.
++  4. Train 1000 mandatory: Input --train1000 is required; computes primary r1000 and promotion r_min metrics against denominator 1000.
++  5. Existing 80 governance: Validates q_idx against canonical 80 set when present; computes r_min = min(4*min rho, r1000); missing rho counted as rho_missing.
++  6. Trajectory classification: Implements exact 4-shape taxonomy (monotonic_decrease, increase, plateau, oscillation) on steps 500..1000 with unclassified for non-1000 lengths.
++  7. Rescue items: Strictly PREREG §10(d)3 (r_1000 >= 1e-2 and r_lowest < 1e-2); k* < 50 items tracked and reported separately.
++  8. Output metadata: Includes script SHA-256, config SHAs, input file SHAs, and cos_nan_count.
++  9. Neutral quantitative reporting: Strictly zero forbidden qualitative judgment words.
+ """
+ 
+ from __future__ import annotations
+@@ -79,30 +80,29 @@
+ 
+ 
+ def classify_trajectory_shape(rho_traj: List[float], r_1000: float, alpha: float = 0.25) -> str:
+-    """Classify the trajectory shape of the last 500 steps (steps 500..1000)."""
+-    if not rho_traj:
+-        return "oscillation"
+-
+-    # Convert rho_traj to r_k = rho_k / alpha
++    """Classify the trajectory shape of the last 500 steps (steps 500..1000).
++
++    Precedence order:
++      1. monotonic_decrease: fraction of steps where r_k > r_{k-1} is < 0.05 (< 5%).
++      2. increase: r_1000 > 2.0 * r_500.
++      3. plateau: otherwise, max(r_{500..1000}) / min(r_{500..1000}) < 1.5.
++      4. oscillation: remainder.
++    """
++    if len(rho_traj) != 1000:
++        return "unclassified"
++
+     r_traj = [float(rho) / alpha for rho in rho_traj]
+-
+-    # If trajectory has at least 501 elements (k=0..500..999)
+-    if len(r_traj) >= 501:
+-        # Steps 500 to end
+-        sub_r = r_traj[500:] + [float(r_1000)]
+-        r_500 = r_traj[500]
+-    elif len(r_traj) >= 2:
+-        sub_r = r_traj + [float(r_1000)]
+-        r_500 = r_traj[0]
+-    else:
+-        return "oscillation"
++    sub_r = r_traj[500:] + [float(r_1000)]
++    r_500 = r_traj[500]
++
++    n_steps = len(sub_r) - 1
++    if n_steps != 500:
++        return "unclassified"
+ 
+     # 1. monotonic_decrease: fraction of increases < 5%
+-    n_steps = len(sub_r) - 1
+-    if n_steps > 0:
+-        inc_count = sum(1 for i in range(1, len(sub_r)) if sub_r[i] > sub_r[i - 1])
+-        if (inc_count / n_steps) < 0.05 and float(r_1000) <= r_500:
+-            return "monotonic_decrease"
++    inc_count = sum(1 for i in range(1, len(sub_r)) if sub_r[i] > sub_r[i - 1])
++    if (inc_count / float(n_steps)) < 0.05:
++        return "monotonic_decrease"
+ 
+     # 2. increase: r_1000 > 2.0 * r_500
+     if r_500 > 0 and float(r_1000) > 2.0 * r_500:
+@@ -148,9 +148,41 @@
+     return indices, actual_sha
+ 
+ 
+-def load_existing80_data(p1_json_path: str) -> Tuple[Dict[str, Any], str]:
++def load_canonical_heldout80_config(config_path: str = "configs/s5_heldout_80.json") -> Tuple[List[int], str]:
++    """Load and verify canonical 80 heldout config."""
++    if not os.path.exists(config_path):
++        # Fallback to relative path lookup
++        alt_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "configs", "s5_heldout_80.json")
++        if os.path.exists(alt_path):
++            config_path = alt_path
++        else:
++            sys.stderr.write(f"[ERROR] Canonical heldout 80 config missing: {config_path}\n")
++            sys.exit(1)
++
++    actual_sha = compute_sha256(config_path)
++    if actual_sha != EXPECTED_HELDOUT80_SHA256:
++        sys.stderr.write(
++            f"[ERROR] Canonical heldout 80 config SHA mismatch for {config_path}!\n"
++            f"  Expected: {EXPECTED_HELDOUT80_SHA256}\n"
++            f"  Actual:   {actual_sha}\n"
++        )
++        sys.exit(1)
++
++    with open(config_path, "r", encoding="utf-8") as f:
++        data = json.load(f)
++
++    indices = data.get("indices", data.get("heldout_indices", []))
++    if len(indices) != 80:
++        sys.stderr.write(f"[ERROR] Heldout 80 config does not contain exactly 80 items (got {len(indices)})\n")
++        sys.exit(1)
++
++    return indices, actual_sha
++
++
++def load_existing80_data(p1_json_path: str, canonical_80_ids: List[int]) -> Tuple[Dict[str, Any], str]:
+     """Load existing 80 heldout items from P1 re-evaluation records.
+-    Strictly exits with error if the file is missing, ill-formed, or count != 80.
++    Validates q_idx when present against canonical 80 IDs.
++    Computes r_min = min(4*min rho, r1000); missing rho counted as rho_missing.
+     """
+     if not os.path.exists(p1_json_path):
+         sys.stderr.write(f"[ERROR] Existing 80 P1 re-eval file missing: {p1_json_path}\n")
+@@ -174,24 +206,54 @@
+         sys.stderr.write(f"[ERROR] P1 heldout_80 must contain exactly 80 items (got {len(h80_list) if isinstance(h80_list, list) else type(h80_list)})\n")
+         sys.exit(1)
+ 
++    # Validate q_idx if present
++    entries_with_qidx = [entry["q_idx"] for entry in h80_list if isinstance(entry, dict) and "q_idx" in entry]
++    if len(entries_with_qidx) > 0:
++        if len(entries_with_qidx) != 80:
++            sys.stderr.write(f"[ERROR] Partial q_idx presence in heldout_80: {len(entries_with_qidx)} of 80\n")
++            sys.exit(1)
++        if set(entries_with_qidx) != set(canonical_80_ids):
++            sys.stderr.write(f"[ERROR] q_idx set in heldout_80 does not match canonical 80 IDs\n")
++            sys.exit(1)
++
+     r1000_vals: List[float] = []
+     rmin_vals: List[float] = []
++    rho_missing_count = 0
++
+     for idx, entry in enumerate(h80_list):
+         if not isinstance(entry, dict) or "r_1000" not in entry:
+             sys.stderr.write(f"[ERROR] Entry {idx} in heldout_80 missing 'r_1000'\n")
+             sys.exit(1)
+-        r_val = float(entry["r_1000"])
++
++        try:
++            r_val = float(entry["r_1000"])
++        except (ValueError, TypeError):
++            sys.stderr.write(f"[ERROR] Entry {idx} in heldout_80 non-numeric 'r_1000'\n")
++            sys.exit(1)
++
+         r1000_vals.append(r_val)
+ 
+-        # r_min: either from r_min field or fall back to r_1000
++        # r_min evaluation (TASK-0026 §2):
++        # 1. If explicit r_min provided, use it
++        # 2. Else if rho_traj provided, compute min(4.0 * min(rho_traj), r_1000)
++        # 3. Otherwise mark as rho_missing (not reached)
+         if "r_min" in entry:
+-            rmin_vals.append(float(entry["r_min"]))
++            try:
++                rmin_val = float(entry["r_min"])
++                rmin_vals.append(rmin_val)
++            except (ValueError, TypeError):
++                sys.stderr.write(f"[ERROR] Entry {idx} in heldout_80 non-numeric 'r_min'\n")
++                sys.exit(1)
++        elif "rho_traj" in entry and isinstance(entry["rho_traj"], list) and len(entry["rho_traj"]) > 0:
++            min_rho = min(float(x) for x in entry["rho_traj"][:1000])
++            calc_rmin = min(4.0 * min_rho, r_val)
++            rmin_vals.append(calc_rmin)
+         else:
+-            rmin_vals.append(r_val)
+-
+-    lt_1e2 = sum(1 for r in r1000_vals if r < 1e-2)
+-    lt_5e3 = sum(1 for r in r1000_vals if r < 5e-3)
+-    rmin_lt_1e2 = sum(1 for r in rmin_vals if r < 1e-2)
++            rho_missing_count += 1
++
++    lt_1e2 = sum(1 for r in r1000_vals if not math.isnan(r) and r < 1e-2)
++    lt_5e3 = sum(1 for r in r1000_vals if not math.isnan(r) and r < 5e-3)
++    rmin_lt_1e2 = sum(1 for r in rmin_vals if not math.isnan(r) and r < 1e-2)
+ 
+     stats = {
+         "n": 80,
+@@ -205,24 +267,122 @@
+         "r_lt_5e3_ratio": round(lt_5e3 / 80.0, 6),
+         "rmin_lt_1e2_count": rmin_lt_1e2,
+         "rmin_lt_1e2_ratio": round(rmin_lt_1e2 / 80.0, 6),
++        "rho_missing_count": rho_missing_count,
+     }
+     return stats, actual_sha
+ 
+ 
+-def analyze_p5_promote_v2(
++def load_train1000_data(train1000_path: Optional[str]) -> Tuple[Dict[str, Any], str]:
++    """Load and evaluate train 1,000 items (TASK-0026 §1).
++    Mandatory: exits if file is None, missing, ill-formed, or count != 1000.
++    """
++    if train1000_path is None or not os.path.exists(train1000_path):
++        sys.stderr.write(f"[ERROR] Required train 1,000 file missing or not provided: {train1000_path}\n")
++        sys.exit(1)
++
++    actual_sha = compute_sha256(train1000_path)
++
++    # Load pt or json
++    if train1000_path.endswith(".json"):
++        with open(train1000_path, "r", encoding="utf-8") as f:
++            raw_data = json.load(f)
++    else:
++        try:
++            raw_data = torch.load(train1000_path, map_location="cpu")
++        except Exception as e:
++            sys.stderr.write(f"[ERROR] Failed to load train 1000 file {train1000_path}: {e}\n")
++            sys.exit(1)
++
++    items_list: List[Dict[str, Any]] = []
++    if isinstance(raw_data, dict):
++        if "items" in raw_data and isinstance(raw_data["items"], list):
++            items_list = raw_data["items"]
++        elif "train_1000" in raw_data and isinstance(raw_data["train_1000"], list):
++            items_list = raw_data["train_1000"]
++        else:
++            # Check keys
++            for k, v in raw_data.items():
++                if isinstance(v, dict):
++                    items_list.append(v)
++    elif isinstance(raw_data, list):
++        items_list = [x for x in raw_data if isinstance(x, dict)]
++
++    if len(items_list) != 1000:
++        sys.stderr.write(f"[ERROR] train 1,000 dataset must contain exactly 1,000 items (got {len(items_list)})\n")
++        sys.exit(1)
++
++    r1000_vals: List[float] = []
++    rmin_vals: List[float] = []
++    rmin_kstar_lt_50_count = 0
++    alpha = 0.25
++
++    for idx, entry in enumerate(items_list):
++        r_f = float(entry.get("r_1000", entry.get("r_final", float("nan"))))
++        r1000_vals.append(r_f)
++
++        # r_min = min(4*min rho, r_1000)
++        rho_tr = entry.get("rho_traj", [])
++        if rho_tr and isinstance(rho_tr, list) and len(rho_tr) > 0:
++            min_rho = min(float(x) for x in rho_tr[:1000])
++            r_min_calc = min(4.0 * min_rho, r_f)
++        elif "r_lowest" in entry:
++            r_min_calc = min(float(entry["r_lowest"]), r_f)
++        elif "r_min" in entry:
++            r_min_calc = float(entry["r_min"])
++        else:
++            r_min_calc = r_f
++
++        k_st = float(entry.get("k_star", 1000))
++        if k_st < 50:
++            rmin_kstar_lt_50_count += 1
++            # Per §10(c) ①-a: k* < 50 items considered non-converged for promotion
++            rmin_vals.append(float("inf"))
++        else:
++            rmin_vals.append(r_min_calc)
++
++    N_1000 = 1000
++    r1000_lt_1e2 = sum(1 for r in r1000_vals if not math.isnan(r) and r < 1e-2)
++    r1000_lt_5e3 = sum(1 for r in r1000_vals if not math.isnan(r) and r < 5e-3)
++    rmin_lt_1e2 = sum(1 for r in rmin_vals if not math.isnan(r) and r < 1e-2)
++    rmin_lt_5e3 = sum(1 for r in rmin_vals if not math.isnan(r) and r < 5e-3)
++
++    stats = {
++        "n": N_1000,
++        "source": train1000_path,
++        "source_sha256": actual_sha,
++        "provenance": "P4/S7 train 1,000 z* and rho_traj records",
++        "r1000_lt_1e2_count": r1000_lt_1e2,
++        "r1000_lt_1e2_ratio": round(r1000_lt_1e2 / float(N_1000), 6),
++        "r1000_lt_5e3_count": r1000_lt_5e3,
++        "r1000_lt_5e3_ratio": round(r1000_lt_5e3 / float(N_1000), 6),
++        "rmin_lt_1e2_count": rmin_lt_1e2,
++        "rmin_lt_1e2_ratio": round(rmin_lt_1e2 / float(N_1000), 6),
++        "rmin_lt_5e3_count": rmin_lt_5e3,
++        "rmin_lt_5e3_ratio": round(rmin_lt_5e3 / float(N_1000), 6),
++        "kstar_lt_50_count": rmin_kstar_lt_50_count,
++    }
++    return stats, actual_sha
++
++
++def analyze_p5_promote_v3(
+     heldout520_path: str,
+     r1000_p1_path: str,
+     config_path: str,
+     train1000_path: Optional[str] = None,
++    heldout80_config_path: str = "configs/s5_heldout_80.json",
+ ) -> Dict[str, Any]:
+-    """Execute complete statistical analysis of P5 results conforming to AUDIT-P006 FIX."""
++    """Execute complete statistical analysis of P5 results conforming to AUDIT-P006 Re-audit 1 FIX."""
+     if not os.path.exists(heldout520_path):
+         sys.stderr.write(f"[ERROR] Held-out 520 file missing: {heldout520_path}\n")
+         sys.exit(1)
+ 
+     heldout_sha = compute_sha256(heldout520_path)
+     canonical_ids, config_sha = load_canonical_config(config_path)
+-    rec_80, p1_sha = load_existing80_data(r1000_p1_path)
++    canonical_80_ids, h80_config_sha = load_canonical_heldout80_config(heldout80_config_path)
++    rec_80, p1_sha = load_existing80_data(r1000_p1_path, canonical_80_ids)
++
++    # Train 1000 is required in v3
++    rec_train1000, train1000_sha = load_train1000_data(train1000_path)
+ 
+     # Load raw data dictionary
+     raw_pt = torch.load(heldout520_path, map_location="cpu")
+@@ -306,16 +466,16 @@
+             invalid_reasons["nan_inf_r"] += 1
+             continue
+ 
+-        # Validate k_star
++        # Validate k_star (Audit note: fractional k_star is invalid)
+         try:
+             k_st_val = float(item_raw["k_star"])
+             if math.isnan(k_st_val) or math.isinf(k_st_val):
+                 invalid_reasons["invalid_kstar"] += 1
+                 continue
+-            k_st = int(k_st_val)
+-            if k_st < 0 or k_st > 1000:
++            if not (0 <= k_st_val <= 1000) or (k_st_val != math.floor(k_st_val)):
+                 invalid_reasons["invalid_kstar"] += 1
+                 continue
++            k_st = int(k_st_val)
+         except (ValueError, TypeError):
+             invalid_reasons["invalid_kstar"] += 1
+             continue
+@@ -337,8 +497,9 @@
+     N_520 = 520
+     N_80 = 80
+     N_600 = 600
+-
+-    # 1. 1차 (최종점 r_1000): 520 및 600
++    N_1000 = 1000
++
++    # 1. 1차 (최종점 r_1000): 520, 80, 600, 1000
+     r1000_lt_1e2_520 = sum(1 for it in parsed_items.values() if it["r_1000"] < 1e-2)
+     r1000_lt_5e3_520 = sum(1 for it in parsed_items.values() if it["r_1000"] < 5e-3)
+ 
+@@ -365,6 +526,7 @@
+             "r1000_lt_1e2_ratio": round(r1000_lt_1e2_80 / float(N_80), 6),
+             "r1000_lt_5e3_count": r1000_lt_5e3_80,
+             "r1000_lt_5e3_ratio": round(r1000_lt_5e3_80 / float(N_80), 6),
++            "rho_missing_count": rec_80["rho_missing_count"],
+         },
+         "combined600": {
+             "total": N_600,
+@@ -372,6 +534,15 @@
+             "r1000_lt_1e2_ratio": round(r1000_lt_1e2_600 / float(N_600), 6),
+             "r1000_lt_5e3_count": r1000_lt_5e3_600,
+             "r1000_lt_5e3_ratio": round(r1000_lt_5e3_600 / float(N_600), 6),
++        },
++        "train1000": {
++            "total": N_1000,
++            "source": rec_train1000["source"],
++            "source_sha256": rec_train1000["source_sha256"],
++            "r1000_lt_1e2_count": rec_train1000["r1000_lt_1e2_count"],
++            "r1000_lt_1e2_ratio": rec_train1000["r1000_lt_1e2_ratio"],
++            "r1000_lt_5e3_count": rec_train1000["r1000_lt_5e3_count"],
++            "r1000_lt_5e3_ratio": rec_train1000["r1000_lt_5e3_ratio"],
+         }
+     }
+ 
+@@ -396,8 +567,6 @@
+ 
+     # 3. 승격 시 G1 정의 (①-a 및 ①-b)
+     # ①-b: 600 = 신규 520 r_k* (k* < 50 미도달) + 기존 80 log r_min (< 1e-2)
+-    # 신규 520의 r_k* < 1e-2 (k* >= 50) is promo_count
+-    # 기존 80의 r_min < 1e-2 count is rec_80["rmin_lt_1e2_count"]
+     count_1b_600 = promo_count + rec_80["rmin_lt_1e2_count"]
+     ratio_1b_600 = round(count_1b_600 / float(N_600), 6)
+     ratio_1b_520 = round(promo_count / float(N_520), 6)
+@@ -415,9 +584,13 @@
+             "heldout520_target_ratio": 0.900000,
+         },
+         "definition_1a_train1000": {
+-            "description": "①-a: train 1,000 r_min = min(4*min rho, r_1000) < 1e-2 집계",
+-            "status": "deferred_or_external",
+-            "train1000_file": train1000_path if train1000_path else "None",
++            "description": "①-a: train 1,000 r_min = min(4*min rho, r_1000) < 1e-2 집계 (k*<50 미도달 적용)",
++            "train1000_total": N_1000,
++            "train1000_count": rec_train1000["rmin_lt_1e2_count"],
++            "train1000_ratio": rec_train1000["rmin_lt_1e2_ratio"],
++            "train1000_source": rec_train1000["source"],
++            "train1000_source_sha256": rec_train1000["source_sha256"],
++            "kstar_lt_50_count": rec_train1000["kstar_lt_50_count"],
+         }
+     }
+ 
+@@ -449,7 +622,7 @@
+         "ratio": round(top3_set_match_count / float(N_520), 6),
+     }
+ 
+-    # 6. (d)3: 구제 문항 (r_1000 >= 1e-2 and r_lowest < 1e-2 and 50 <= k_star <= 1000)
++    # 6. (d)3: 구제 문항 (PREREG_S7_DEQ_v1.3 §10(d)3: r_1000 >= 1e-2 and r_lowest < 1e-2)
+     alpha = 0.25
+     rescue_items_list: List[Dict[str, Any]] = []
+     shape_crosstab: Dict[str, int] = {
+@@ -457,13 +630,15 @@
+         "increase": 0,
+         "plateau": 0,
+         "oscillation": 0,
++        "unclassified": 0,
+     }
+ 
+     for it in parsed_items.values():
+         r_f = it["r_1000"]
+         r_l = it["r_lowest"]
+         k_st = it["k_star"]
+-        if r_f >= 1e-2 and r_l < 1e-2 and 50 <= k_st <= 1000:
++        # Strictly §10(d)3 definition: final >= 1e-2, lowest < 1e-2
++        if r_f >= 1e-2 and r_l < 1e-2:
+             rho_tr = it["rho_traj"]
+             r_tr = [rho / alpha for rho in rho_tr]
+ 
+@@ -472,7 +647,7 @@
+             w_end = min(len(r_tr), k_st + 11)
+             window_slice = list(r_tr[w_start:w_end]) if r_tr else []
+ 
+-            # CRUCIAL FIX (AUDIT-P006 #12): If k* + 10 >= 1000, include r_1000!
++            # If k* + 10 >= 1000, include r_1000!
+             if k_st + 10 >= 1000:
+                 window_slice.append(float(r_f))
+ 
+@@ -480,7 +655,7 @@
+ 
+             # Classify trajectory shape
+             shape = classify_trajectory_shape(rho_tr, r_f, alpha)
+-            shape_crosstab[shape] += 1
++            shape_crosstab[shape] = shape_crosstab.get(shape, 0) + 1
+ 
+             rescue_items_list.append({
+                 "qid": it["qid"],
+@@ -491,10 +666,13 @@
+                 "trajectory_shape": shape,
+             })
+ 
++    kstar_lt_50_count = sum(1 for it in rescue_items_list if it["k_star"] < 50)
++
+     rescue_stats = {
+         "count": len(rescue_items_list),
+         "total": N_520,
+         "ratio": round(len(rescue_items_list) / float(N_520), 6),
++        "kstar_lt_50_count": kstar_lt_50_count,
+         "trajectory_shape_crosstab": shape_crosstab,
+         "items": rescue_items_list,
+     }
+@@ -523,6 +701,8 @@
+                 cos_nan_count += 1
+ 
+     cos_lowest_final_distribution = compute_quantiles(cos_low_fin_list)
++    if cos_lowest_final_distribution:
++        cos_lowest_final_distribution["cos_nan_count"] = cos_nan_count
+ 
+     # 8. 변별 (보고만): 520 z_star 문항 간 평균 cos, cos > 0.95 쌍 비율 (float64)
+     valid_z_tensors: List[torch.Tensor] = []
+@@ -539,6 +719,7 @@
+     discrimination_stats: Dict[str, Any] = {
+         "n_valid_items": len(valid_z_tensors),
+         "z_nan_or_missing_count": N_520 - len(valid_z_tensors),
++        "cos_nan_count": cos_nan_count,
+     }
+ 
+     if len(valid_z_tensors) > 1:
+@@ -564,23 +745,34 @@
+             "nearest_neighbor_note": "최근접 일치율·다중 평형 = §10(g), p5_analyze_v5 시드 쌍 담당 (단일 스크립트 산출 0)",
+         })
+ 
++    # Compute runtime self-hash
++    this_file = os.path.abspath(__file__)
++    script_sha = compute_sha256(this_file) if os.path.exists(this_file) else "unknown"
++
+     # Assemble summary
+     summary: Dict[str, Any] = {
+         "metadata": {
+-            "script_name": "scripts/p5_promote_v2.py",
++            "script_name": "scripts/p5_promote_v3.py",
++            "script_sha256": script_sha,
+             "heldout520_file": heldout520_path,
+             "heldout520_sha256": heldout_sha,
+             "existing80_file": r1000_p1_path,
+             "existing80_sha256": p1_sha,
+             "canonical_config_file": config_path,
+             "canonical_config_sha256": config_sha,
++            "canonical_heldout80_config_file": heldout80_config_path,
++            "canonical_heldout80_config_sha256": h80_config_sha,
++            "train1000_file": rec_train1000["source"],
++            "train1000_sha256": rec_train1000["source_sha256"],
+             "n_canonical_items": N_520,
+             "n_existing80_items": N_80,
+             "n_combined_items": N_600,
++            "n_train1000_items": N_1000,
+             "ignored_extra_keys_count": extra_keys_count,
+             "alpha_collision_keys_count": alpha_collision_count,
+             "invalid_items_count": total_invalid,
+             "invalid_breakdown": invalid_reasons,
++            "cos_nan_count": cos_nan_count,
+             "trajectory_rule": TRAJECTORY_RULE_SPEC,
+         },
+         "primary_convergence": primary_convergence,
+@@ -601,6 +793,7 @@
+     pc = summary["primary_convergence"]
+     pr = summary["promotion_evaluation"]
+     g1 = summary["promotion_g1_definitions"]["definition_1b_600"]
++    g1a = summary["promotion_g1_definitions"]["definition_1a_train1000"]
+     kd = summary["kstar_distribution"]
+     t3 = summary["top3_match"]
+     res = summary["rescue_items"]
+@@ -608,15 +801,18 @@
+     disc = summary["discrimination"]
+ 
+     lines: List[str] = [
+-        "# CTS S7 P5 수렴 및 승격 통계 집계표 (v2)",
++        "# CTS S7 P5 수렴 및 승격 통계 집계표 (v3)",
+         "",
+         "## 1. 메타데이터 및 입력 출처",
+         f"- 대상 520 파일: `{m['heldout520_file']}` (SHA-256 `{m['heldout520_sha256']}`)",
+         f"- 기존 80 파일: `{m['existing80_file']}` (SHA-256 `{m['existing80_sha256']}`)",
+-        f"- 정본 config: `{m['canonical_config_file']}` (SHA-256 `{m['canonical_config_sha256']}`, 520개)",
+-        f"- 분석 스크립트: `{m['script_name']}`",
++        f"- train 1000 파일: `{m['train1000_file']}` (SHA-256 `{m['train1000_sha256']}`)",
++        f"- 정본 520 config: `{m['canonical_config_file']}` (SHA-256 `{m['canonical_config_sha256']}`, 520개)",
++        f"- 정본 80 config: `{m['canonical_heldout80_config_file']}` (SHA-256 `{m['canonical_heldout80_config_sha256']}`, 80개)",
++        f"- 분석 스크립트: `{m['script_name']}` (SHA-256 `{m['script_sha256']}`)",
+         f"- 제외된 외래 키 개수: {m['ignored_extra_keys_count']}건 (타 알파: {m['alpha_collision_keys_count']}건)",
+         f"- 미도달/결측 집계: 총 {m['invalid_items_count']}건 (세부: {m['invalid_breakdown']})",
++        f"- 코사인 결측치 건수 (cos_nan_count): {m['cos_nan_count']}건",
+         "",
+         "## 2. 1차 수렴 지표 (최종점 r_1000)",
+         "| 집합 | 분모 | r_1000 < 1e-2 건수 (비율) | r_1000 < 5e-3 건수 (비율) |",
+@@ -624,14 +820,20 @@
+         f"| 신규 520 | {pc['heldout520']['total']} | {pc['heldout520']['r1000_lt_1e2_count']} ({pc['heldout520']['r1000_lt_1e2_ratio']:.6f}) | {pc['heldout520']['r1000_lt_5e3_count']} ({pc['heldout520']['r1000_lt_5e3_ratio']:.6f}) |",
+         f"| 기존 80 | {pc['existing80']['total']} | {pc['existing80']['r1000_lt_1e2_count']} ({pc['existing80']['r1000_lt_1e2_ratio']:.6f}) | {pc['existing80']['r1000_lt_5e3_count']} ({pc['existing80']['r1000_lt_5e3_ratio']:.6f}) |",
+         f"| 통합 600 | {pc['combined600']['total']} | {pc['combined600']['r1000_lt_1e2_count']} ({pc['combined600']['r1000_lt_1e2_ratio']:.6f}) | {pc['combined600']['r1000_lt_5e3_count']} ({pc['combined600']['r1000_lt_5e3_ratio']:.6f}) |",
++        f"| train 1000 | {pc['train1000']['total']} | {pc['train1000']['r1000_lt_1e2_count']} ({pc['train1000']['r1000_lt_1e2_ratio']:.6f}) | {pc['train1000']['r1000_lt_5e3_count']} ({pc['train1000']['r1000_lt_5e3_ratio']:.6f}) |",
+         "",
+-        "## 3. 2차 승격 지표 집계",
++        "## 3. 2차 승격 지표 집계 (신규 520)",
+         "- 조건: r_lowest < 1e-2 ∧ 50 ≤ k* ≤ 1000",
+         f"- 적격 건수: {pr['qualified_count']} / {pr['total']}",
+         f"- 산출 비율: {pr['ratio']:.6f} (기준치: {pr['threshold_target_ratio']:.6f}, 494건)",
+         f"- 494건 대비 편차: {pr['delta_from_494']:+d}건",
+         "",
+         "## 4. 승격 G1 정의 집계",
++        "### ①-a: train 1,000 집계",
++        f"- r_min < 1e-2 건수 (비율): {g1a['train1000_count']} / {g1a['train1000_total']} ({g1a['train1000_ratio']:.6f})",
++        f"- k* < 50 미도달 처리 건수: {g1a['kstar_lt_50_count']}건",
++        f"- 출처: `{g1a['train1000_source']}` (SHA-256 `{g1a['train1000_source_sha256']}`)",
++        "",
+         "### ①-b: 통합 600 및 신규 520 부분집합 집계",
+         f"- 통합 600: {g1['combined600_count']} / {g1['combined600_total']} ({g1['combined600_ratio']:.6f})",
+         f"- 신규 520 부분집합: {g1['heldout520_subset_count']} / {g1['heldout520_subset_total']} ({g1['heldout520_subset_ratio']:.6f}) (기준치: {g1['heldout520_target_count']}건 / 0.900000)",
+@@ -651,13 +853,15 @@
+         "",
+         "## 7. 구제 문항 및 궤적 모양 분류",
+         f"- 구제 대상 건수: {res['count']} / {res['total']} ({res['ratio']:.6f})",
+-        "- 궤적 분류 기준: 마지막 500걸음(500..1000) 대상 monotonic_decrease / increase / plateau / oscillation",
++        f"- 구제 문항 중 k* < 50 건수: {res['kstar_lt_50_count']}건",
++        "- 궤적 분류 기준: 마지막 500걸음(500..1000) 대상 monotonic_decrease / increase / plateau / oscillation / unclassified",
+         "| 궤적 모양 | 건수 |",
+         "|---|---|",
+-        f"| monotonic_decrease | {res['trajectory_shape_crosstab']['monotonic_decrease']} |",
+-        f"| increase | {res['trajectory_shape_crosstab']['increase']} |",
+-        f"| plateau | {res['trajectory_shape_crosstab']['plateau']} |",
+-        f"| oscillation | {res['trajectory_shape_crosstab']['oscillation']} |",
++        f"| monotonic_decrease | {res['trajectory_shape_crosstab'].get('monotonic_decrease', 0)} |",
++        f"| increase | {res['trajectory_shape_crosstab'].get('increase', 0)} |",
++        f"| plateau | {res['trajectory_shape_crosstab'].get('plateau', 0)} |",
++        f"| oscillation | {res['trajectory_shape_crosstab'].get('oscillation', 0)} |",
++        f"| unclassified | {res['trajectory_shape_crosstab'].get('unclassified', 0)} |",
+         "",
+         "## 8. z 벡터 분포 및 변별 통계",
+     ]
+@@ -667,6 +871,7 @@
+             "### cos(z_lowest, z_final) 분포 분위수",
+             f"- min: {cos_d['min']:.6f}, q25: {cos_d['q25']:.6f}, median: {cos_d['median']:.6f}, q75: {cos_d['q75']:.6f}, max: {cos_d['max']:.6f}",
+             f"- mean: {cos_d['mean']:.6f}, std: {cos_d['std']:.6f}",
++            f"- cos NaN 건수: {cos_d.get('cos_nan_count', 0)}",
+             "",
+         ])
+     else:
+@@ -685,20 +890,22 @@
+ 
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="P5 Result Analyzer & Promotion Evaluator v2 (AUDIT-P006 FIX)")
++    parser = argparse.ArgumentParser(description="P5 Result Analyzer & Promotion Evaluator v3 (AUDIT-P006 Re-audit 1 FIX)")
+     parser.add_argument("--heldout520", type=str, required=True, help="Path to heldout 520 z* pt file")
+     parser.add_argument("--r1000_p1", type=str, required=True, help="Path to existing 80 P1 JSON file")
++    parser.add_argument("--train1000", type=str, required=True, help="Path to train 1000 z* file (mandatory)")
+     parser.add_argument("--config", type=str, default="scratch/server_s7_new_heldout_520.json", help="Path to canonical 520 config")
+-    parser.add_argument("--train1000", type=str, default=None, help="Optional train 1000 z* file")
++    parser.add_argument("--heldout80_config", type=str, default="configs/s5_heldout_80.json", help="Path to canonical 80 heldout config")
+     parser.add_argument("--out_json", type=str, default=None, help="Output JSON path")
+     parser.add_argument("--out_md", type=str, default=None, help="Output Markdown path")
+     args = parser.parse_args()
+ 
+-    summary = analyze_p5_promote_v2(
++    summary = analyze_p5_promote_v3(
+         heldout520_path=args.heldout520,
+         r1000_p1_path=args.r1000_p1,
+         config_path=args.config,
+         train1000_path=args.train1000,
++        heldout80_config_path=args.heldout80_config,
+     )
+ 
+     if args.out_json:
+@@ -717,10 +924,12 @@
+     # Output short stdout line
+     pc = summary["primary_convergence"]
+     pr = summary["promotion_evaluation"]
++    g1a = summary["promotion_g1_definitions"]["definition_1a_train1000"]
+     print(
+         f"[SUMMARY] 520 r1000<1e-2: {pc['heldout520']['r1000_lt_1e2_count']}/{pc['heldout520']['total']} "
+         f"| Promo: {pr['qualified_count']}/{pr['total']} (delta={pr['delta_from_494']:+d}) "
+-        f"| 600: {pc['combined600']['r1000_lt_1e2_count']}/{pc['combined600']['total']}"
++        f"| 600: {pc['combined600']['r1000_lt_1e2_count']}/{pc['combined600']['total']} "
++        f"| train1000: {g1a['train1000_count']}/{g1a['train1000_total']}"
+     )
+ 
+ 

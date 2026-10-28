@@ -1,0 +1,61 @@
+=== g2v4 confirm resume1 start 2026-10-11 21:25:27 ===
+[NOTE] results_s7/p6r/g2v4fresh exists but is empty (created by base script line 36 mkdir before z)
+[OUT-OK]
+[SHA-OK] shared_prereg_PREREG_S7_G2v4.md
+[SHA-OK] scripts/cc_g2v4_confirm.sh
+[SHA-OK] configs/g2v4b_fresh.json
+[SHA-OK] configs/g2v4b_fresh_shard0.json
+[SHA-OK] configs/g2v4b_fresh_shard1.json
+[SHA-OK] configs/g2v4b_fresh_shard2.json
+[SHA-OK] /tmp/cts_g2v4_stage/g2v4_fresh_prep_r1.py
+[SHA-OK] scripts/g2v3_m3_eval_latents_v2.py
+[SHA-OK] scripts/s7_eval_gate_p6_v36f.py
+[SHA-OK] scripts/g2v4_proj_v2.py
+[SHA-OK] scripts/s7_eval_score_p6_v36.py
+[SHA-OK] scripts/s5_eval_grader_v2.py
+[SHA-OK] results_s7/g2v2/decoder_M7A_v36.pt
+[SHA-OK] results_s7/g2v2/decoder_M7E_v36.pt
+[SHA-OK] results_s7/g2v4m7rep/deq_Ah.pt
+[SHA-OK] results_s7/g2v4m7rep/deq_Eh.pt
+[SHA-OK] scripts/s7_train_decoder_v36.py
+[SHA-OK] scripts/g2v3_m3_full_train.py
+[SHA-OK] scripts/check_p6_decoder_version.sh
+047c538d1e826cc61bd6e162bf51f2d45ef0b2a45ef2bec9399c722c70802d0b  results_s7/g2v4/fresh_zsrcinj_shard0.pt
+0cb5a0e5e094f64838bcf3a7f27212192940d18cca71e9afc810cd70fa6f09e8  results_s7/g2v4/fresh_zsrcinj_shard1.pt
+db55440c710278aa40fb85137e8f2742a3dc2a86534ffabdde6745b477cfe9f8  results_s7/g2v4/fresh_zsrcinj_shard2.pt
+-rw-rw-r-- 1 shoon shoon 2721083392 2026-10-11 21:04:16.542039098 +0900 results_s7/g2v4/fresh_zsrcinj_1758.pt
+7c1f174fdbb72ed50685fc60dd3bfaba6a33b6b5a059ce46e917c92f61d67748  results_s7/g2v4/fresh_zsrcinj_1758.pt
+total 2657316
+drwx------ 2 shoon shoon       4096 10월 11 21:25 .
+drwx------ 3 shoon shoon       4096 10월 11 21:25 ..
+-rw-rw-r-- 1 shoon shoon 2721083392 10월 11 21:04 fresh_zsrcinj_1758.truncated_2104.pt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T  2.6G 100% /home
+/dev/sda3       436G  383G   31G  93% /
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[PREP] keys 1758 | converted z_src max|d| 0.000e+00 | r_1000<1e-2 1758/1758
+c6a5b9fb38902b5889e7f565997d512c9659ccc0f455a4548ce38903f30c6af9  /tmp/cts_g2v4_shoon/fresh_zsrcinj_1758.pt
+2efb27936448e0b2621483fcfda34ad4f09927dbb339b0c49f0b9555d6d4204d  /tmp/cts_g2v4_shoon/fresh_zsrc_1758.pt
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+[LOAD-GUARD] applied 436 DEQ tensors, unexpected 0
+9190a2527fc562f6cba93b904820329d5d280af58be1e2654696a9c56025e521  /tmp/cts_g2v4_shoon/fresh_A_latent.pt
+72ac7173f1a0da60357ef7c6cb8c0a71e39f8da4a36b5126b64299b435a67416  /tmp/cts_g2v4_shoon/fresh_E_latent.pt
+[GEN-SHARD-DONE] 1 05:12:05
+[GEN-SHARD-DONE] 0 05:20:59
+[GEN-SHARD-DONE] 2 05:46:49
+[PROJ-V2-OK] 9 logs
+[MERGE] A: 1758 rows, 1758 ids == g2v4b_fresh, json_err 0
+[MERGE] C: 1758 rows, 1758 ids == g2v4b_fresh, json_err 0
+[MERGE] E1: 1758 rows, 1758 ids == g2v4b_fresh, json_err 0
+[MERGE] B1: 1758 rows, 1758 ids == g2v4b_fresh, json_err 0
+e2edee7395421bdec447f7a6c75f27ef88f5dc230bbd2736ac87d2f22638ed66  results_s7/p6r/g2v4fresh_merged/p6_gen_A.jsonl
+3fdab13810e24da6b5353ef235588c9aa9c5b3ff177448cbfb7ee0a5009873a8  results_s7/p6r/g2v4fresh_merged/p6_gen_B1.jsonl
+1b130c2ece04c37021a9191e567773e82875ef49f8f1dbeab833b26520147372  results_s7/p6r/g2v4fresh_merged/p6_gen_C.jsonl
+d16f4bb557522baf988a9a1cd77ec3db3b1a6dcda2d661986995efc7ce8db5b0  results_s7/p6r/g2v4fresh_merged/p6_gen_E1.jsonl
+[SCORE] rc=0
+ea120d95bebf842e08b74a65b43178466ab7149aa5b10a687ab0d5bff37930a4  results_s7/p6r/g2v4fresh_merged/gate_table.json
+eeca1104460af8aacfe98ce618f21f604e95290f245fde460b934582958860e6  results_s7/p6r/g2v4fresh_merged/gate_table.md
+2b11f68b390243d26aff27f7c409b08c03bde8f46f59be5f8e42b2c9bc44a8d8  raw_s7/g2v4_fresh_score.log
+=== g2v4 confirm resume1 end 2026-10-12 05:48:20 ===

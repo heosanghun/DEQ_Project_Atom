@@ -1,0 +1,2 @@
+[aggregate_nu_table19] scanning 1 JSONL files
+[aggregate_nu_table19] aggregated 744 per-step rows across 1 method(s) and 1 domain(s); wrote -> D:\AI\cts\results\post_stage2_D11\table19\nu_stats.md

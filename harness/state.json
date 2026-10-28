@@ -1,0 +1,54 @@
+{
+  "nodes": {
+    "N1": {
+      "detail": "",
+      "status": "RUNNING",
+      "updated_at": "2026-08-19T07:35:52Z"
+    },
+    "N10": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N2": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N3": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N4": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N5": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N6": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N7": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N8": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    },
+    "N9": {
+      "detail": "",
+      "status": "PENDING",
+      "updated_at": ""
+    }
+  }
+}

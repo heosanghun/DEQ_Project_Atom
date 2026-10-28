@@ -1,0 +1,13 @@
+diff --git a/shared/archive/cts428/RULES_1cb8ce99.md b/shared/RULES.md
+index 6e36019..4a7bb06 100644
+--- a/shared/archive/cts428/RULES_1cb8ce99.md
++++ b/shared/RULES.md
+@@ -15,7 +15,7 @@ R1-5 아직 실행하지 않은 것의 결과값을 미리 적지 않는다("실
+ R2-1 원본·산출물 덮어쓰기 0, 삭제 0(잘못 둔 파일은 mv). 사전등록 개정은 직전 잠금본 복사 + 절 단위 수정 + `diff -u` 첨부만. 전면 재작성 금지.
+ R2-2 정본 코드(cts_e1, 정본 함수)는 수정 0. 실험 코드는 새 파일·새 폴더(exe_scratch/…).
+ R2-3 진행 중 파이프라인(tmux 세션)은 어떤 TASK도 kill·attach·수정하지 않는다. 정지는 감시 스크립트가 정해진 조건에서만.
+-R2-4 GPU 허용 목록(현재 GPU 0)만. 같은 GPU 동시 실행 0. GPU 4 봉인. 다른 GPU는 escalate 후 사람 허용 시.
++R2-4 GPU 0·1 사용 허용(GPU 1은 Principal 10-06 허락). GPU 4 영구 봉인. GPU 2·3·5·6·7 사용 0. 같은 GPU 동시 실행 0. 허용 목록 밖 GPU는 escalate 후 사람 허용 시. (CTS-428)
+ R2-5 서버 CPU 작업: `ulimit -v 62914560` · `nice -n 19` · torch.no_grad 기본 · 걸음 간 autograd 그래프 보존 0 · 5분마다 free -g 로그. 위반 스크립트는 실행 0.
+ R2-6 공유 venv 설치 0. 참고 코드는 /home/shoon/ref/ 격리, 복사 시 출처·커밋·라이선스 머리글.
+ R2-7 비밀정보(비밀번호·키)는 어떤 파일에도 쓰지 않는다. SSH는 키 인증만.

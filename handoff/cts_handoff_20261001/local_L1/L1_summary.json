@@ -1,0 +1,46 @@
+{
+ "summary": {
+  "n": 100,
+  "1_final_r_lt_1e-2": "6/100 (6.0%)",
+  "1_lowest_r_lt_1e-2_kstar_ge_50": "8/100 (8.0%)",
+  "1_lowest_r_lt_1e-2_any_k": "8/100 (8.0%)",
+  "1_gap_pp": 2.0,
+  "1_strict_5e-3_final_vs_lowest": [
+   "6/100 (6.0%)",
+   "8/100 (8.0%)"
+  ],
+  "2_switches_301_1000_median_nonconv_vs_conv": [
+   14.0,
+   0.0
+  ],
+  "2_switches_nonconv_gt0": "54/94 (57.4%)",
+  "2_switches_conv_gt0": "2/6 (33.3%)",
+  "3_kstar_bins": {
+   "[0,50)": 10,
+   "[50,300)": 51,
+   "[300,700)": 23,
+   "[700,1000]": 16
+  },
+  "3_top3_lowest_eq_final": "55/100 (55.0%)",
+  "3_rescued_items": [
+   "q0089",
+   "q0427"
+  ],
+  "4_rel_diff_rlog999_vs_r1000_median": 0.1430721526358006,
+  "wall_s_mean": 26.42596084356308
+ },
+ "meta": {
+  "started": "2026-09-29T16:12:44",
+  "ckpt": "D:\\AI\\cts\\artifacts\\stage1_last.lora_only.pt",
+  "ckpt_sha256": "47ecf99a8fc341f22649d6794f0d7c8c34876a20dffe3f45353a7e99718c5ae3",
+  "items_file": "D:\\AI\\cts\\configs\\s7_new_train_680.json",
+  "n": 100,
+  "max_nfe": 1000,
+  "torch": "2.7.1+cu118",
+  "zstar_canonical_sha256": "ca454090b814f7990e9bb651efc871d0c833a071b72a4b7f29da4367bc4903a8",
+  "weights_storage": "bf16 on GPU, exact fp32 upcast per module forward; heads/LoRA fp32",
+  "transition_inject_sha256": "127068435ec561c36a5e8a5e2e208763b80e53a70853ab50528ede7f84f2997c",
+  "missing_keys": 847,
+  "unexpected_keys": 0
+ }
+}

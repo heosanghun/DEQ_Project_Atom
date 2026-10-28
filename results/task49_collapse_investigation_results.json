@@ -1,0 +1,94 @@
+{
+  "task_49_2_checkpoint_sweep": {
+    "0": {
+      "step": 0,
+      "correct": 1,
+      "total": 10,
+      "pass_at_1": 0.1,
+      "avg_len": 410.9,
+      "eos_ratio": 0.3
+    },
+    "25": {
+      "step": 25,
+      "name": "Step 25",
+      "ckpt_path": "/home/shoon/retrain/ckpt/stage1c_step75_step25.pt",
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    },
+    "75": {
+      "step": 75,
+      "name": "Step 75 (m1_final_frozen)",
+      "ckpt_path": "/home/shoon/checkpoints/m1_final_frozen.pt",
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    },
+    "150": {
+      "step": 150,
+      "name": "Step 150",
+      "ckpt_path": "/home/shoon/retrain/ckpt/stage1c_step200_step150.pt",
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    },
+    "200": {
+      "step": 200,
+      "name": "Step 200",
+      "ckpt_path": "/home/shoon/retrain/ckpt/stage1c_step200.pt",
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    }
+  },
+  "task_49_3_lora_scale_sweep": {
+    "0.0": {
+      "scale": 0.0,
+      "correct": 1,
+      "total": 10,
+      "pass_at_1": 0.1,
+      "avg_len": 410.9,
+      "eos_ratio": 0.3
+    },
+    "0.25": {
+      "scale": 0.25,
+      "correct": 2,
+      "total": 10,
+      "pass_at_1": 0.2,
+      "avg_len": 410.7,
+      "eos_ratio": 0.5
+    },
+    "0.5": {
+      "scale": 0.5,
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    },
+    "0.75": {
+      "scale": 0.75,
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    },
+    "1.0": {
+      "scale": 1.0,
+      "correct": 0,
+      "total": 10,
+      "pass_at_1": 0.0,
+      "avg_len": 512.0,
+      "eos_ratio": 0.0
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "task": "TASK-C007",
+  "inbox_dir": "handoff/codex/INBOX/20261022-0015-x8_0-results",
+  "files": {
+    "RESULT-X8-0-problem-latent-20261022.md": {
+      "expected_sha256": "83ce50c37eac09870a35c3f0cf0a3f6be29200c83edf90b5556c8349b5bb39a4",
+      "actual_sha256": "83ce50c37eac09870a35c3f0cf0a3f6be29200c83edf90b5556c8349b5bb39a4",
+      "exists_locally": true,
+      "match": true
+    },
+    "cc_x8_0_analysis.txt": {
+      "expected_sha256": "57941e9d39b56dec6e60bd165b767a4f5e34eedea0c5c18fec7e812a6a848f52",
+      "actual_sha256": "57941e9d39b56dec6e60bd165b767a4f5e34eedea0c5c18fec7e812a6a848f52",
+      "exists_locally": true,
+      "match": true
+    },
+    "cts_x8_0_master.log": {
+      "expected_sha256": "f06760ab7f4216591322809d3723cd6ae489fb3499c90872cf1e7595ec3808d6",
+      "actual_sha256": "f06760ab7f4216591322809d3723cd6ae489fb3499c90872cf1e7595ec3808d6",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X80P47.jsonl": {
+      "expected_sha256": "8b60746d2a94c760e3d94cf1f8d05efc1e49cff0566cfaf5ca50d175474fe6d8",
+      "actual_sha256": "8b60746d2a94c760e3d94cf1f8d05efc1e49cff0566cfaf5ca50d175474fe6d8",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X80P49.jsonl": {
+      "expected_sha256": "a3774c5b64425fc5fa6cb863eed6b4dc7144b0dc35d32a768402cc39b3101011",
+      "actual_sha256": "a3774c5b64425fc5fa6cb863eed6b4dc7144b0dc35d32a768402cc39b3101011",
+      "exists_locally": true,
+      "match": true
+    },
+    "genB1_X80P50.jsonl": {
+      "expected_sha256": "bec226edc97c5f9521fcf1dcebc38008a91c6009d047c2f7ef686f28ce6a9687",
+      "actual_sha256": "bec226edc97c5f9521fcf1dcebc38008a91c6009d047c2f7ef686f28ce6a9687",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X80P47.jsonl": {
+      "expected_sha256": "3245a2ae90adcc9a05515977d962f20c2099f8dfe3ed1d6e418cdaa29c1294f8",
+      "actual_sha256": "3245a2ae90adcc9a05515977d962f20c2099f8dfe3ed1d6e418cdaa29c1294f8",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X80P49.jsonl": {
+      "expected_sha256": "2661b578afd01072338e5adb7ccce074c006ede66a9e47289d41235f51611533",
+      "actual_sha256": "2661b578afd01072338e5adb7ccce074c006ede66a9e47289d41235f51611533",
+      "exists_locally": true,
+      "match": true
+    },
+    "gen_X80P50.jsonl": {
+      "expected_sha256": "610d749113f9e2dd46b203878105b7e039de2f5e5d07a63072cc34958e9e84c2",
+      "actual_sha256": "610d749113f9e2dd46b203878105b7e039de2f5e5d07a63072cc34958e9e84c2",
+      "exists_locally": true,
+      "match": true
+    },
+    "grade.log": {
+      "expected_sha256": "f72d07acdba300614fb6e72ecf32fb6902d4956ab27986f4b26c0f68a0f313f1",
+      "actual_sha256": "f72d07acdba300614fb6e72ecf32fb6902d4956ab27986f4b26c0f68a0f313f1",
+      "exists_locally": true,
+      "match": true
+    },
+    "latents.log": {
+      "expected_sha256": "d44be2c34fcb7ab6cb0440680ad2e370c72c50e11bceddcee0744844b2ad4dd4",
+      "actual_sha256": "d44be2c34fcb7ab6cb0440680ad2e370c72c50e11bceddcee0744844b2ad4dd4",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X80P47.json": {
+      "expected_sha256": "afdba0c2642c3a00cd96cbe474ae18e2ad3511faffdaf756b0519fe6d9fb5b71",
+      "actual_sha256": "afdba0c2642c3a00cd96cbe474ae18e2ad3511faffdaf756b0519fe6d9fb5b71",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X80P49.json": {
+      "expected_sha256": "7bf83bb6876624b423b9ea7cb85c5bf91db1b2332cbd60e3161f9e7fd4a42eed",
+      "actual_sha256": "7bf83bb6876624b423b9ea7cb85c5bf91db1b2332cbd60e3161f9e7fd4a42eed",
+      "exists_locally": true,
+      "match": true
+    },
+    "manifest_X80P50.json": {
+      "expected_sha256": "0e3fe5c3fc665461579366eb2ad98d41e58421d7da3c528e6f98fb4d6bf63f59",
+      "actual_sha256": "0e3fe5c3fc665461579366eb2ad98d41e58421d7da3c528e6f98fb4d6bf63f59",
+      "exists_locally": true,
+      "match": true
+    },
+    "s0spec.json": {
+      "expected_sha256": "d356dbb2f5f2f484c7467d08baa73c076356b181fac1b78082cd4a5fff61becc",
+      "actual_sha256": "d356dbb2f5f2f484c7467d08baa73c076356b181fac1b78082cd4a5fff61becc",
+      "exists_locally": true,
+      "match": true
+    },
+    "s0spec_local.json": {
+      "expected_sha256": "2b44cd80ae5ea585a7e25d398f7ef5fbf8de9385e7b08450cbfd82a9894c7249",
+      "actual_sha256": "2b44cd80ae5ea585a7e25d398f7ef5fbf8de9385e7b08450cbfd82a9894c7249",
+      "exists_locally": true,
+      "match": true
+    },
+    "x8_0_analyze.py": {
+      "expected_sha256": "acfd59728f9e7935ffdec5f18641405028bfc9de98f5250813334d0b2039548c",
+      "actual_sha256": "acfd59728f9e7935ffdec5f18641405028bfc9de98f5250813334d0b2039548c",
+      "exists_locally": true,
+      "match": true
+    },
+    "x8_0_items.json": {
+      "expected_sha256": "cc23828e0619926ba02f86b62e2c21a703fc4c348ec2e94ae3a410e8c437367c",
+      "actual_sha256": "cc23828e0619926ba02f86b62e2c21a703fc4c348ec2e94ae3a410e8c437367c",
+      "exists_locally": true,
+      "match": true
+    }
+  },
+  "extra_inputs": {
+    "scripts/s5_eval_grader_v2.py": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+    "handoff/codex/scripts/s5_eval_grader_v2.py": "90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13",
+    "handoff/codex/scripts/codex_grade_local.py": "bd0c7e78e3f5046376d3fb8f4ebe211add08e1e2c99921da54340876f1128d7c",
+    "handoff/codex/data/p6_item_order.json": "6c76ddb7cc4a1ee901291eee76ed99763ec5ebfec202cb30ba17f9bcee487e7c",
+    "handoff/codex/data/dev600_records.jsonl": "6ed3b4478db7e62759767d60464dc9bd41c0295b46fc93c5f700215d2277b543",
+    "configs/s7_train_993.json": "3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c"
+  }
+}

@@ -1,0 +1,4 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] Ctrain: n 993 strict 134 lenient 159 boxed 395
+[S0] Ctrain200: n 200 strict 54 lenient 66 boxed 111
+[S0-DONE] /tmp/cts_x5base/ctrain_items.json

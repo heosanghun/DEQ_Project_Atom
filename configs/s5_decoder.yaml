@@ -1,0 +1,41 @@
+# configs/s5_decoder.yaml
+# S5 z*-Only Decoder Training Configuration (EXE-260924-30 / Ledger #334)
+
+# Model architecture & latent projection
+d_model: 2560
+hidden_size: 2560
+k_latent: 64
+adapter_hidden_dim: 2560
+adapter_num_layers: 2
+adapter_zero_init: true
+
+# Checkpoint paths
+b1_checkpoint_path: "/home/shoon/retrain_1a/B1/stage1a_B1_step5000_20260907_0054.pt"
+base_model_id: "google/gemma-4-E4B"
+
+# Training hyperparameters (Constant LR, Zero Scheduler per PREREG v6 / Ledger #334)
+lr_wproj: 1.0e-4
+lr_adapter: 3.0e-4
+weight_decay: 0.01
+max_steps: 3000
+batch_size: 8
+micro_batch_size: 4
+gradient_accumulation_steps: 2
+grad_clip: 1.0
+precision: "bf16"
+scheduler: null
+seed: 2026
+
+# Loss hyperparameters (Contrastive margin)
+loss_lambda: 1.0          # 1.0 for primary run, 0.0 for control run
+margin_m: 1.0             # 1.0 nat margin
+
+# Logging & Checkpointing
+log_interval: 100
+save_interval: 500
+eval_interval: 500
+
+# Data loader & Prompt contracts
+strict: true              # Loader strictness (Defect #8 fix)
+max_seq_len: 1536         # Length set to 1536 to guarantee 0 boxed truncations (max boxed token: 1467)
+problem_text_tokens: 0    # Problem text strictly 0 tokens

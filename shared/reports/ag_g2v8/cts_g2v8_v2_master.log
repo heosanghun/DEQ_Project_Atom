@@ -1,0 +1,162 @@
+=== [0] GPU 4 Safety Check & Unit Self-Tests ===
+0, GPU-71be98b0-6b81-9257-c622-97dc97d46480, 13 MiB, [N/A]
+1, GPU-9410691f-6857-1642-ec7c-7596970e2f48, 13 MiB, [N/A]
+2, GPU-c81311d8-d210-3857-843e-bb38d24771e1, 13 MiB, [N/A]
+3, GPU-a9fed959-7113-e747-dac4-a515ac50c160, 13 MiB, [N/A]
+4, GPU-e27bdb0d-9534-1cb5-ea0e-7d427b1e8fe5, 13 MiB, 0 %
+5, GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a, 13 MiB, 0 %
+6, GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c, 13 MiB, 0 %
+7, GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b, 13 MiB, 0 %
+[SELF-TEST PASS] params=55709 | Zero-init diff=0.0 | Mean-latent diff=0.0 | Step-0 alpha grad=1.3528e+01 | Step equiv f32 diff=2.29e-05
+[DEQ-SELF-TEST PASS] K=1 rel_res=5.4623e-01 -> K=8 rel_res=3.3411e-02 -> K=16 rel_res=3.2998e-04
+=== [1] Stage 1 (S2 Oracle) Training: Seeds 2047 (U5), 2049 (U6), 2050 (U7) ===
+=== [1b] Stage 1 Training Complete! ===
+--- Stage 1 Train Summary Seed 2047 ---
+[AUDIT-GATE-C] Verifying Zero-Init & Mean-Latent Exact Preservation on Dev items...
+[AUDIT-GATE-C PASS] Zero-init NLL diff=0.0e+00 | Mean-latent NLL diff=0.0e+00 | Greedy tokens 100% bit-identical!
+[MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.5058836340904236, "train_neg_sim": 0.01133950799703598, "match_thr": 0.04375176131725311, "train_win_rate": 100.0}
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.80%
+  >>> [DEV-60 NLL @ Step 100] matched=1.2567 | shuffled=1.3872 (Δ=+0.1305, z=2.2) | C-fmt=1.9345 (Δ=+0.6778)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2047.pt (score=+0.7430)
+  >>> [DEV-60 NLL @ Step 200] matched=1.2212 | shuffled=1.3839 (Δ=+0.1627, z=2.7) | C-fmt=1.9345 (Δ=+0.7133)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2047.pt (score=+0.7947)
+[DIAG-DONE] Full Dev-120 NLL summary: {"matched_nll": 1.1684997007250786, "shuffled_nll": 1.3720495238900186, "cfmt_nll": 1.9171852859357992, "mean_nll": 1.9171852859357992, "zero_nll": 1.7681018556157748, "notext_matched_nll": 1.1666978518168132, "notext_shuffled_nll": 1.2711130594213804, "delta_shuf_minus_matched": 0.20354982316493989, "z_shuf_minus_matched": 4.7324625152602975, "delta_cfmt_minus_matched": 0.7486855852107206}
+--- Stage 1 Train Summary Seed 2049 ---
+[AUDIT-GATE-C] Verifying Zero-Init & Mean-Latent Exact Preservation on Dev items...
+[AUDIT-GATE-C PASS] Zero-init NLL diff=0.0e+00 | Mean-latent NLL diff=0.0e+00 | Greedy tokens 100% bit-identical!
+[MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.5058836340904236, "train_neg_sim": 0.01133950799703598, "match_thr": 0.04375176131725311, "train_win_rate": 100.0}
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.78%
+  >>> [DEV-60 NLL @ Step 100] matched=1.2434 | shuffled=1.3599 (Δ=+0.1166, z=2.0) | C-fmt=1.9345 (Δ=+0.6911)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2049.pt (score=+0.7494)
+  >>> [DEV-60 NLL @ Step 200] matched=1.2415 | shuffled=1.3911 (Δ=+0.1496, z=2.4) | C-fmt=1.9345 (Δ=+0.6930)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2049.pt (score=+0.7678)
+[DIAG-DONE] Full Dev-120 NLL summary: {"matched_nll": 1.1831604797393083, "shuffled_nll": 1.373423563564817, "cfmt_nll": 1.9171852859357992, "mean_nll": 1.9171852859357992, "zero_nll": 0.8518546355267366, "notext_matched_nll": 1.183248881995678, "notext_shuffled_nll": 1.2650918185710907, "delta_shuf_minus_matched": 0.19026308382550874, "z_shuf_minus_matched": 4.320432180069141, "delta_cfmt_minus_matched": 0.7340248061964909}
+--- Stage 1 Train Summary Seed 2050 ---
+[AUDIT-GATE-C] Verifying Zero-Init & Mean-Latent Exact Preservation on Dev items...
+[AUDIT-GATE-C PASS] Zero-init NLL diff=0.0e+00 | Mean-latent NLL diff=0.0e+00 | Greedy tokens 100% bit-identical!
+[MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.5058836340904236, "train_neg_sim": 0.01133950799703598, "match_thr": 0.04375176131725311, "train_win_rate": 100.0}
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.80%
+  >>> [DEV-60 NLL @ Step 100] matched=1.3075 | shuffled=1.4194 (Δ=+0.1118, z=1.9) | C-fmt=1.9345 (Δ=+0.6269)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2050.pt (score=+0.6829)
+  >>> [DEV-60 NLL @ Step 200] matched=1.1656 | shuffled=1.3115 (Δ=+0.1459, z=2.6) | C-fmt=1.9345 (Δ=+0.7689)
+  >>> [SAVE-BEST] Saved best GCA Bridge checkpoint to /tmp/cts_g2v8_v2_s1/decoder_s2_2050.pt (score=+0.8418)
+[DIAG-DONE] Full Dev-120 NLL summary: {"matched_nll": 1.1173565925409397, "shuffled_nll": 1.3038705615947643, "cfmt_nll": 1.9171852859357992, "mean_nll": 1.9171852859357992, "zero_nll": 0.9141797715177139, "notext_matched_nll": 1.1856288209557533, "notext_shuffled_nll": 1.2850428933898608, "delta_shuf_minus_matched": 0.18651396905382475, "z_shuf_minus_matched": 4.787913214568621, "delta_cfmt_minus_matched": 0.7998286933948595}
+=== [2] Stage 1 Full Dev-600 Generation & Official Grading Across All 3 Seeds ===
+--- Stage 1 Official Grade Seed 2047 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[GRADE] ORC_matched  (n=600): strict=457 (76.17%) | lenient=458 (76.33%) | boxed=557 (92.83%)
+[GRADE] ORC_shuffled (n=600): strict=67 (11.17%) | lenient=81 (13.50%) | boxed=267 (44.50%)
+[GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_strict: Δ=+65.00%p (95% CI [+61.00%p, +69.00%p])
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_lenient: Δ=+62.83%p (95% CI [+58.83%p, +66.83%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_strict: Δ=+63.33%p (95% CI [+59.17%p, +67.33%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_lenient: Δ=+60.67%p (95% CI [+56.50%p, +64.83%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_strict: Δ=-1.67%p (95% CI [-2.83%p, -0.67%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_lenient: Δ=-2.17%p (95% CI [-3.50%p, -1.00%p])
+[GRADE-SAVED] /tmp/cts_g2v8_v2_s1/grade_s2_2047.json
+--- Stage 1 Official Grade Seed 2049 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[GRADE] ORC_matched  (n=600): strict=443 (73.83%) | lenient=444 (74.00%) | boxed=557 (92.83%)
+[GRADE] ORC_shuffled (n=600): strict=67 (11.17%) | lenient=81 (13.50%) | boxed=267 (44.50%)
+[GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_strict: Δ=+62.67%p (95% CI [+58.50%p, +66.67%p])
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_lenient: Δ=+60.50%p (95% CI [+56.33%p, +64.50%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_strict: Δ=+61.00%p (95% CI [+56.83%p, +65.00%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_lenient: Δ=+58.33%p (95% CI [+54.17%p, +62.50%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_strict: Δ=-1.67%p (95% CI [-2.83%p, -0.67%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_lenient: Δ=-2.17%p (95% CI [-3.50%p, -1.00%p])
+[GRADE-SAVED] /tmp/cts_g2v8_v2_s1/grade_s2_2049.json
+--- Stage 1 Official Grade Seed 2050 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[GRADE] ORC_matched  (n=600): strict=444 (74.00%) | lenient=445 (74.17%) | boxed=556 (92.67%)
+[GRADE] ORC_shuffled (n=600): strict=67 (11.17%) | lenient=81 (13.50%) | boxed=267 (44.50%)
+[GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_strict: Δ=+62.83%p (95% CI [+58.83%p, +67.00%p])
+[BOOTSTRAP] ORC_matched_minus_ORC_shuffled_lenient: Δ=+60.67%p (95% CI [+56.50%p, +64.83%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_strict: Δ=+61.17%p (95% CI [+57.00%p, +65.33%p])
+[BOOTSTRAP] ORC_matched_minus_C_fmt_lenient: Δ=+58.50%p (95% CI [+54.33%p, +62.67%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_strict: Δ=-1.67%p (95% CI [-2.83%p, -0.67%p])
+[BOOTSTRAP] ORC_shuffled_minus_C_fmt_lenient: Δ=-2.17%p (95% CI [-3.50%p, -1.00%p])
+[GRADE-SAVED] /tmp/cts_g2v8_v2_s1/grade_s2_2050.json
+=== [3] Stage 2 (G2 Contractive DEQ) Training: Seeds 2047 (U5), 2049 (U6), 2050 (U7) ===
+=== [3b] Stage 2 DEQ Training Complete! ===
+--- Stage 2 DEQ Train Summary Seed 2047 ---
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.24%
+[DEQ-MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.465200811624527, "train_neg_sim": 0.006075460463762283, "match_thr": 0.027375001460313797, "train_win_rate": 100.0}
+  >>> [DEV-60 DEQ @ Step 100] A=0.8779 | B1=0.8907 (ΔB1-A=+0.0128) | E=1.9349 (ΔE-A=+1.0570) | C=1.9345 (ΔC-A=+1.0565) | FP_res=0.0044
+  >>> [SAVE-BEST-DEQ] /tmp/cts_g2v8_v2_s2/deq_bridge_2047.pt (score=+1.5914)
+  >>> [DEV-60 DEQ @ Step 200] A=0.8676 | B1=0.8903 (ΔB1-A=+0.0227) | E=1.9343 (ΔE-A=+1.0667) | C=1.9345 (ΔC-A=+1.0669) | FP_res=0.0040
+  >>> [SAVE-BEST-DEQ] /tmp/cts_g2v8_v2_s2/deq_bridge_2047.pt (score=+1.6115)
+[DEQ-DIAG-DONE] {"A_nll": 0.8471826462695996, "B1_nll": 0.8742862038314343, "E_nll": 1.9172794359425704, "C_nll": 1.9171852859357992, "fp_rel_res": 0.003898538135527677, "delta_B1_minus_A": 0.02710355756183469, "delta_E_minus_A": 1.070096789672971, "delta_C_minus_A": 1.0700026396661997, "K1_rel_res": 0.5139573803747621, "K2_rel_res": 0.3663113888250127, "K4_rel_res": 0.08719749680700539, "K8_rel_res": 0.005741720736547329, "K12_rel_res": 0.002772906100268371}
+--- Stage 2 DEQ Train Summary Seed 2049 ---
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.41%
+[DEQ-MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.4652000665664673, "train_neg_sim": 0.006084317807108164, "match_thr": 0.027256015688180923, "train_win_rate": 100.0}
+  >>> [DEV-60 DEQ @ Step 100] A=0.8963 | B1=0.9216 (ΔB1-A=+0.0253) | E=1.9343 (ΔE-A=+1.0380) | C=1.9345 (ΔC-A=+1.0382) | FP_res=0.0036
+  >>> [SAVE-BEST-DEQ] /tmp/cts_g2v8_v2_s2/deq_bridge_2049.pt (score=+1.5698)
+  >>> [DEV-60 DEQ @ Step 200] A=0.8843 | B1=0.9323 (ΔB1-A=+0.0480) | E=1.9340 (ΔE-A=+1.0497) | C=1.9345 (ΔC-A=+1.0502) | FP_res=0.0137
+  >>> [SAVE-BEST-DEQ] /tmp/cts_g2v8_v2_s2/deq_bridge_2049.pt (score=+1.5990)
+[DEQ-DIAG-DONE] {"A_nll": 0.8686879345526298, "B1_nll": 0.9029653438677391, "E_nll": 1.9169660332302252, "C_nll": 1.9171852859357992, "fp_rel_res": 0.01258176721257963, "delta_B1_minus_A": 0.03427740931510925, "delta_E_minus_A": 1.0482780986775952, "delta_C_minus_A": 1.0484973513831695, "K1_rel_res": 0.5147367264824648, "K2_rel_res": 0.3677405173392166, "K4_rel_res": 0.1310731160277241, "K8_rel_res": 0.014186042493663462, "K12_rel_res": 0.009643404441682397}
+--- Stage 2 DEQ Train Summary Seed 2050 ---
+[W_TOK-INIT] Trained strictly on Train-993 (63552 slots): Train slot-token acc=99.37%
+[DEQ-MATCHER-INIT] Fitted strictly on Train-993: {"train_pos_sim": 0.46520447731018066, "train_neg_sim": 0.00608987407758832, "match_thr": 0.027605252340435982, "train_win_rate": 100.0}
+  >>> [DEV-60 DEQ @ Step 100] A=0.8759 | B1=0.9130 (ΔB1-A=+0.0371) | E=1.9348 (ΔE-A=+1.0589) | C=1.9345 (ΔC-A=+1.0586) | FP_res=0.0047
+  >>> [SAVE-BEST-DEQ] /tmp/cts_g2v8_v2_s2/deq_bridge_2050.pt (score=+1.6066)
+  >>> [DEV-60 DEQ @ Step 200] A=0.8969 | B1=0.9522 (ΔB1-A=+0.0554) | E=1.9338 (ΔE-A=+1.0369) | C=1.9345 (ΔC-A=+1.0376) | FP_res=0.0053
+[DEQ-DIAG-DONE] {"A_nll": 0.8656685148676236, "B1_nll": 0.8974304035305977, "E_nll": 1.9175900685290495, "C_nll": 1.9171852859357992, "fp_rel_res": 0.005718795040231331, "delta_B1_minus_A": 0.031761888662974025, "delta_E_minus_A": 1.0519215536614257, "delta_C_minus_A": 1.0515167710681754, "K1_rel_res": 0.5160170717927639, "K2_rel_res": 0.3681684676350809, "K4_rel_res": 0.08726119166144505, "K8_rel_res": 0.0035298362548090273, "K12_rel_res": 0.0001445952598913839}
+=== [4] Stage 2 Full Dev-600 Generation & Official Grading Across All 3 Seeds (Conditions A, B1, E, C) ===
+--- Stage 2 DEQ Official Grade Seed 2047 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[DEQ-GRADE] A_zstar      (n=600): strict=95 (15.83%) | lenient=103 (17.17%) | boxed=411 (68.50%)
+[DEQ-GRADE] B1_shuffled  (n=600): strict=77 (12.83%) | lenient=93 (15.50%) | boxed=241 (40.17%)
+[DEQ-GRADE] E_zsrc       (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_strict: Δ=+3.00%p (95% CI [+1.50%p, +4.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_lenient: Δ=+1.67%p (95% CI [+0.50%p, +3.00%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_strict: Δ=+3.00%p (95% CI [+1.33%p, +4.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_strict: Δ=+3.00%p (95% CI [+1.33%p, +4.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_strict: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_lenient: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-GRADE-SAVED] /tmp/cts_g2v8_v2_s2/grade_deq_2047.json
+--- Stage 2 DEQ Official Grade Seed 2049 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[DEQ-GRADE] A_zstar      (n=600): strict=95 (15.83%) | lenient=103 (17.17%) | boxed=412 (68.67%)
+[DEQ-GRADE] B1_shuffled  (n=600): strict=79 (13.17%) | lenient=95 (15.83%) | boxed=244 (40.67%)
+[DEQ-GRADE] E_zsrc       (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_strict: Δ=+2.67%p (95% CI [+1.17%p, +4.17%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_lenient: Δ=+1.33%p (95% CI [+0.17%p, +2.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_strict: Δ=+3.00%p (95% CI [+1.33%p, +4.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_strict: Δ=+3.00%p (95% CI [+1.33%p, +4.67%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_strict: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_lenient: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-GRADE-SAVED] /tmp/cts_g2v8_v2_s2/grade_deq_2049.json
+--- Stage 2 DEQ Official Grade Seed 2050 (Dev-600) ---
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[DEQ-GRADE] A_zstar      (n=600): strict=94 (15.67%) | lenient=103 (17.17%) | boxed=407 (67.83%)
+[DEQ-GRADE] B1_shuffled  (n=600): strict=78 (13.00%) | lenient=94 (15.67%) | boxed=242 (40.33%)
+[DEQ-GRADE] E_zsrc       (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-GRADE] C_fmt        (n=600): strict=77 (12.83%) | lenient=94 (15.67%) | boxed=213 (35.50%)
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_strict: Δ=+2.67%p (95% CI [+1.17%p, +4.17%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_B1_shuffled_lenient: Δ=+1.50%p (95% CI [+0.33%p, +2.83%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_strict: Δ=+2.83%p (95% CI [+1.17%p, +4.50%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_C_fmt_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_strict: Δ=+2.83%p (95% CI [+1.17%p, +4.50%p])
+[DEQ-BOOTSTRAP] A_zstar_minus_E_zsrc_lenient: Δ=+1.50%p (95% CI [+0.17%p, +3.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_strict: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-BOOTSTRAP] E_zsrc_minus_C_fmt_lenient: Δ=+0.00%p (95% CI [+0.00%p, +0.00%p])
+[DEQ-GRADE-SAVED] /tmp/cts_g2v8_v2_s2/grade_deq_2050.json
+=== [5] Final GPU 4 Verification & Pipeline Complete ===
+0, GPU-71be98b0-6b81-9257-c622-97dc97d46480, 13 MiB, [N/A]
+1, GPU-9410691f-6857-1642-ec7c-7596970e2f48, 13 MiB, [N/A]
+2, GPU-c81311d8-d210-3857-843e-bb38d24771e1, 13 MiB, [N/A]
+3, GPU-a9fed959-7113-e747-dac4-a515ac50c160, 13 MiB, [N/A]
+4, GPU-e27bdb0d-9534-1cb5-ea0e-7d427b1e8fe5, 13 MiB, 0 %
+5, GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a, 13 MiB, 0 %
+6, GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c, 13 MiB, 0 %
+7, GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b, 13 MiB, 0 %
+ALL_G2V8_V2_STAGES_DONE
+PIPELINE_EXITED_CODE_0

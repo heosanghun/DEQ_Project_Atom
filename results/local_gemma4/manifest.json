@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-05-01T15:49:46Z",
+  "args": {
+    "output_dir": "results/local_gemma4",
+    "device": "cuda:0",
+    "aime_limit": 30,
+    "humaneval_limit": 164,
+    "skip_baseline": true,
+    "skip_cts": true,
+    "skip_summarize": false,
+    "phase1_timeout": 4800,
+    "phase2_timeout": 10800,
+    "dry_run": false
+  },
+  "phases": [
+    {
+      "title": "Phase 3a: refresh results/runpod/RUNPOD_SUMMARY.md",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "<repo_root>\\scripts\\summarize_runpod_results.py"
+      ],
+      "log_path": "results\\local_gemma4\\phase3a_summarize.log",
+      "start_time": "2026-05-01T15:49:46.157053+00:00",
+      "elapsed_seconds": 0.24942946434020996,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "title": "Phase 3b: D12 sanity (must stay 44/44 PASS)",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "<repo_root>\\scripts\\_d12_final_check.py"
+      ],
+      "log_path": "results\\local_gemma4\\phase3b_d12.log",
+      "start_time": "2026-05-01T15:49:46.407571+00:00",
+      "elapsed_seconds": 4.407336711883545,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "title": "Phase 3c: rebuild anonymous ZIP",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "<repo_root>\\scripts\\make_anonymous_submission.py"
+      ],
+      "log_path": "results\\local_gemma4\\phase3c_zip.log",
+      "start_time": "2026-05-01T15:49:50.815688+00:00",
+      "elapsed_seconds": 0.4044351577758789,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "title": "Phase 3d: anonymous-ZIP identity audit",
+      "cmd": [
+        "C:\\Python313\\python.exe",
+        "<repo_root>\\scripts\\_audit_anon_zip.py"
+      ],
+      "log_path": "results\\local_gemma4\\phase3d_audit.log",
+      "start_time": "2026-05-01T15:49:51.221501+00:00",
+      "elapsed_seconds": 0.2288684844970703,
+      "exit_code": 0,
+      "timed_out": false
+    }
+  ],
+  "finished_at": "2026-05-01T15:49:51Z",
+  "total_phases": 4,
+  "all_passed": true
+}

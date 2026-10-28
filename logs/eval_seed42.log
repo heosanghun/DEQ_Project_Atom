@@ -1,0 +1,686 @@
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [greedy] aime seed=0
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   1%|          | 20/2076 [00:00<00:17, 115.23it/s]Loading weights:   2%|▏         | 47/2076 [00:00<00:12, 164.43it/s]Loading weights:   3%|▎         | 65/2076 [00:00<00:12, 155.96it/s]Loading weights:   4%|▍         | 81/2076 [00:00<00:15, 128.62it/s]Loading weights:   5%|▍         | 95/2076 [00:00<00:16, 119.18it/s]Loading weights:   6%|▌         | 122/2076 [00:00<00:12, 158.51it/s]Loading weights:   7%|▋         | 140/2076 [00:01<00:15, 122.06it/s]Loading weights:   7%|▋         | 155/2076 [00:01<00:15, 126.73it/s]Loading weights:   9%|▉         | 186/2076 [00:01<00:12, 156.51it/s]Loading weights:  10%|▉         | 203/2076 [00:01<00:13, 135.12it/s]Loading weights:  11%|█         | 218/2076 [00:01<00:15, 116.25it/s]Loading weights:  12%|█▏        | 240/2076 [00:01<00:13, 136.40it/s]Loading weights:  12%|█▏        | 256/2076 [00:01<00:15, 116.64it/s]Loading weights:  13%|█▎        | 269/2076 [00:02<00:16, 109.08it/s]Loading weights:  14%|█▍        | 291/2076 [00:02<00:14, 127.29it/s]Loading weights:  15%|█▍        | 308/2076 [00:02<00:13, 129.89it/s]Loading weights:  16%|█▌        | 322/2076 [00:02<00:14, 124.85it/s]Loading weights:  16%|█▌        | 335/2076 [00:02<00:15, 111.95it/s]Loading weights:  17%|█▋        | 359/2076 [00:02<00:12, 141.83it/s]Loading weights:  18%|█▊        | 375/2076 [00:02<00:13, 130.81it/s]Loading weights:  19%|█▊        | 389/2076 [00:03<00:14, 115.87it/s]Loading weights:  19%|█▉        | 402/2076 [00:03<00:14, 117.42it/s]Loading weights:  20%|██        | 421/2076 [00:03<00:12, 132.75it/s]Loading weights:  21%|██        | 437/2076 [00:03<00:13, 119.46it/s]Loading weights:  22%|██▏       | 450/2076 [00:03<00:15, 108.33it/s]Loading weights:  22%|██▏       | 463/2076 [00:03<00:15, 106.38it/s]Loading weights:  23%|██▎       | 487/2076 [00:03<00:12, 130.45it/s]Loading weights:  24%|██▍       | 501/2076 [00:03<00:13, 117.48it/s]Loading weights:  25%|██▍       | 514/2076 [00:04<00:14, 107.39it/s]Loading weights:  25%|██▌       | 529/2076 [00:04<00:14, 106.59it/s]Loading weights:  27%|██▋       | 558/2076 [00:04<00:10, 147.48it/s]Loading weights:  28%|██▊       | 575/2076 [00:04<00:13, 110.55it/s]Loading weights:  29%|██▊       | 592/2076 [00:04<00:13, 113.84it/s]Loading weights:  29%|██▉       | 612/2076 [00:04<00:11, 129.37it/s]Loading weights:  30%|███       | 627/2076 [00:05<00:13, 106.28it/s]Loading weights:  31%|███       | 640/2076 [00:05<00:13, 105.74it/s]Loading weights:  32%|███▏      | 662/2076 [00:05<00:10, 130.58it/s]Loading weights:  33%|███▎      | 685/2076 [00:05<00:10, 135.19it/s]Loading weights:  34%|███▎      | 700/2076 [00:05<00:10, 134.19it/s]Loading weights:  34%|███▍      | 715/2076 [00:05<00:11, 114.93it/s]Loading weights:  36%|███▌      | 742/2076 [00:05<00:09, 144.09it/s]Loading weights:  36%|███▌      | 742/2076 [00:20<00:09, 144.09it/s]Loading weights:  36%|███▋      | 755/2076 [00:58<19:30,  1.13it/s] Loading weights:  37%|███▋      | 758/2076 [00:59<18:18,  1.20it/s]Loading weights:  37%|███▋      | 770/2076 [00:59<13:35,  1.60it/s]Loading weights:  38%|███▊      | 779/2076 [01:01<11:09,  1.94it/s]Loading weights:  38%|███▊      | 785/2076 [01:01<09:12,  2.34it/s]Loading weights:  38%|███▊      | 791/2076 [01:01<07:25,  2.89it/s]Loading weights:  38%|███▊      | 796/2076 [01:02<06:58,  3.06it/s]Loading weights:  39%|███▊      | 800/2076 [01:02<05:47,  3.67it/s]Loading weights:  39%|███▉      | 805/2076 [01:03<04:27,  4.74it/s]Loading weights:  39%|███▉      | 809/2076 [01:03<04:07,  5.12it/s]Loading weights:  39%|███▉      | 812/2076 [01:04<04:23,  4.80it/s]Loading weights:  39%|███▉      | 820/2076 [01:04<02:42,  7.72it/s]Loading weights:  40%|███▉      | 823/2076 [01:04<02:26,  8.53it/s]Loading weights:  40%|███▉      | 826/2076 [01:05<02:26,  8.53it/s]Loading weights:  40%|███▉      | 829/2076 [01:05<03:09,  6.57it/s]Loading weights:  40%|████      | 837/2076 [01:06<01:53, 10.92it/s]Loading weights:  40%|████      | 840/2076 [01:06<01:46, 11.59it/s]Loading weights:  41%|████      | 843/2076 [01:06<02:04,  9.90it/s]Loading weights:  41%|████      | 845/2076 [01:07<03:05,  6.64it/s]Loading weights:  41%|████      | 852/2076 [01:07<01:56, 10.54it/s]Loading weights:  41%|████      | 854/2076 [01:07<01:56, 10.53it/s]Loading weights:  41%|████▏     | 857/2076 [01:08<02:13,  9.10it/s]Loading weights:  41%|████▏     | 861/2076 [01:08<02:17,  8.81it/s]Loading weights:  42%|████▏     | 863/2076 [01:09<02:33,  7.92it/s]Loading weights:  42%|████▏     | 871/2076 [01:09<01:30, 13.26it/s]Loading weights:  42%|████▏     | 874/2076 [01:09<01:51, 10.76it/s]Loading weights:  42%|████▏     | 878/2076 [01:10<01:55, 10.42it/s]Loading weights:  42%|████▏     | 880/2076 [01:10<02:11,  9.09it/s]Loading weights:  43%|████▎     | 887/2076 [01:10<01:18, 15.11it/s]Loading weights:  43%|████▎     | 890/2076 [01:10<01:14, 15.82it/s]Loading weights:  43%|████▎     | 894/2076 [01:11<01:28, 13.34it/s]Loading weights:  43%|████▎     | 897/2076 [01:12<02:28,  7.93it/s]Loading weights:  44%|████▎     | 904/2076 [01:12<01:31, 12.75it/s]Loading weights:  44%|████▎     | 908/2076 [01:12<01:40, 11.60it/s]Loading weights:  44%|████▍     | 911/2076 [01:12<01:27, 13.32it/s]Loading weights:  44%|████▍     | 914/2076 [01:13<02:21,  8.23it/s]Loading weights:  44%|████▍     | 921/2076 [01:13<01:28, 12.99it/s]Loading weights:  45%|████▍     | 924/2076 [01:14<01:26, 13.25it/s]Loading weights:  45%|████▍     | 928/2076 [01:14<01:35, 12.06it/s]Loading weights:  45%|████▍     | 930/2076 [01:15<02:35,  7.36it/s]Loading weights:  45%|████▌     | 936/2076 [01:15<01:43, 10.99it/s]Loading weights:  45%|████▌     | 942/2076 [01:15<01:20, 14.12it/s]Loading weights:  46%|████▌     | 945/2076 [01:15<01:24, 13.37it/s]Loading weights:  46%|████▌     | 947/2076 [01:16<02:17,  8.24it/s]Loading weights:  46%|████▌     | 955/2076 [01:16<01:27, 12.81it/s]Loading weights:  46%|████▌     | 958/2076 [01:17<01:25, 13.12it/s]Loading weights:  46%|████▌     | 960/2076 [01:17<01:50, 10.12it/s]Loading weights:  46%|████▋     | 962/2076 [01:17<02:07,  8.75it/s]Loading weights:  46%|████▋     | 964/2076 [01:18<02:31,  7.35it/s]Loading weights:  47%|████▋     | 972/2076 [01:18<01:17, 14.21it/s]Loading weights:  47%|████▋     | 976/2076 [01:18<01:18, 14.04it/s]Loading weights:  47%|████▋     | 979/2076 [01:18<01:20, 13.70it/s]Loading weights:  47%|████▋     | 981/2076 [01:19<02:23,  7.64it/s]Loading weights:  48%|████▊     | 989/2076 [01:19<01:22, 13.25it/s]Loading weights:  48%|████▊     | 993/2076 [01:20<01:28, 12.30it/s]Loading weights:  48%|████▊     | 996/2076 [01:20<01:20, 13.34it/s]Loading weights:  48%|████▊     | 998/2076 [01:21<02:17,  7.84it/s]Loading weights:  48%|████▊     | 1005/2076 [01:21<01:28, 12.08it/s]Loading weights:  49%|████▊     | 1010/2076 [01:21<01:28, 12.11it/s]Loading weights:  49%|████▉     | 1014/2076 [01:22<01:53,  9.35it/s]Loading weights:  49%|████▉     | 1024/2076 [01:22<01:07, 15.61it/s]Loading weights:  49%|████▉     | 1027/2076 [01:23<01:22, 12.79it/s]Loading weights:  50%|████▉     | 1031/2076 [01:23<01:44,  9.96it/s]Loading weights:  50%|█████     | 1039/2076 [01:23<01:08, 15.14it/s]Loading weights:  50%|█████     | 1042/2076 [01:24<01:02, 16.48it/s]Loading weights:  50%|█████     | 1046/2076 [01:24<00:55, 18.68it/s]Loading weights:  51%|█████     | 1049/2076 [01:25<02:03,  8.28it/s]Loading weights:  51%|█████     | 1057/2076 [01:25<01:21, 12.55it/s]Loading weights:  51%|█████     | 1060/2076 [01:25<01:14, 13.58it/s]Loading weights:  51%|█████     | 1063/2076 [01:25<01:12, 13.91it/s]Loading weights:  51%|█████▏    | 1066/2076 [01:26<02:13,  7.54it/s]Loading weights:  52%|█████▏    | 1075/2076 [01:27<01:19, 12.64it/s]Loading weights:  52%|█████▏    | 1079/2076 [01:27<01:23, 11.90it/s]Loading weights:  52%|█████▏    | 1082/2076 [01:28<01:40,  9.94it/s]Loading weights:  52%|█████▏    | 1084/2076 [01:28<01:44,  9.53it/s]Loading weights:  53%|█████▎    | 1092/2076 [01:28<01:02, 15.67it/s]Loading weights:  53%|█████▎    | 1095/2076 [01:28<00:58, 16.77it/s]Loading weights:  53%|█████▎    | 1098/2076 [01:28<01:17, 12.60it/s]Loading weights:  53%|█████▎    | 1100/2076 [01:29<02:15,  7.20it/s]Loading weights:  53%|█████▎    | 1109/2076 [01:29<01:10, 13.75it/s]Loading weights:  54%|█████▎    | 1112/2076 [01:30<01:16, 12.62it/s]Loading weights:  54%|█████▎    | 1115/2076 [01:30<01:13, 13.01it/s]Loading weights:  54%|█████▍    | 1118/2076 [01:31<01:51,  8.60it/s]Loading weights:  54%|█████▍    | 1124/2076 [01:31<01:15, 12.59it/s]Loading weights:  54%|█████▍    | 1129/2076 [01:31<01:01, 15.46it/s]Loading weights:  55%|█████▍    | 1132/2076 [01:31<01:15, 12.46it/s]Loading weights:  55%|█████▍    | 1134/2076 [01:32<02:01,  7.77it/s]Loading weights:  55%|█████▌    | 1143/2076 [01:32<01:06, 13.96it/s]Loading weights:  55%|█████▌    | 1146/2076 [01:32<01:00, 15.47it/s]Loading weights:  55%|█████▌    | 1149/2076 [01:33<01:40,  9.27it/s]Loading weights:  55%|█████▌    | 1151/2076 [01:34<01:49,  8.44it/s]Loading weights:  56%|█████▌    | 1159/2076 [01:34<01:08, 13.39it/s]Loading weights:  56%|█████▌    | 1162/2076 [01:34<01:03, 14.50it/s]Loading weights:  56%|█████▌    | 1165/2076 [01:34<01:20, 11.34it/s]Loading weights:  56%|█████▌    | 1167/2076 [01:35<01:39,  9.12it/s]Loading weights:  56%|█████▋    | 1169/2076 [01:35<01:51,  8.10it/s]Loading weights:  57%|█████▋    | 1175/2076 [01:35<01:06, 13.48it/s]Loading weights:  57%|█████▋    | 1178/2076 [01:35<00:57, 15.51it/s]Loading weights:  57%|█████▋    | 1181/2076 [01:37<02:11,  6.79it/s]Loading weights:  57%|█████▋    | 1189/2076 [01:37<01:19, 11.18it/s]Loading weights:  58%|█████▊    | 1194/2076 [01:37<01:15, 11.68it/s]Loading weights:  58%|█████▊    | 1196/2076 [01:38<01:59,  7.37it/s]Loading weights:  58%|█████▊    | 1203/2076 [01:38<01:14, 11.73it/s]Loading weights:  58%|█████▊    | 1206/2076 [01:38<01:05, 13.20it/s]Loading weights:  58%|█████▊    | 1209/2076 [01:39<01:45,  8.22it/s]Loading weights:  58%|█████▊    | 1211/2076 [01:39<01:54,  7.53it/s]Loading weights:  59%|█████▊    | 1217/2076 [01:40<01:19, 10.85it/s]Loading weights:  59%|█████▉    | 1222/2076 [01:40<01:18, 10.82it/s]Loading weights:  59%|█████▉    | 1224/2076 [01:41<01:59,  7.12it/s]Loading weights:  59%|█████▉    | 1230/2076 [01:41<01:22, 10.25it/s]Loading weights:  60%|█████▉    | 1236/2076 [01:41<01:10, 11.92it/s]Loading weights:  60%|█████▉    | 1238/2076 [01:42<01:51,  7.53it/s]Loading weights:  60%|█████▉    | 1245/2076 [01:43<01:22, 10.06it/s]Loading weights:  60%|██████    | 1250/2076 [01:43<01:20, 10.26it/s]Loading weights:  60%|██████    | 1252/2076 [01:44<01:51,  7.40it/s]Loading weights:  61%|██████    | 1259/2076 [01:44<01:26,  9.45it/s]Loading weights:  61%|██████    | 1264/2076 [01:45<01:40,  8.06it/s]Loading weights:  61%|██████    | 1265/2076 [01:46<02:21,  5.75it/s]Loading weights:  61%|██████▏   | 1273/2076 [01:46<01:23,  9.61it/s]Loading weights:  61%|██████▏   | 1276/2076 [01:46<01:13, 10.95it/s]Loading weights:  62%|██████▏   | 1278/2076 [01:47<01:23,  9.54it/s]Loading weights:  62%|██████▏   | 1280/2076 [01:47<02:10,  6.08it/s]Loading weights:  62%|██████▏   | 1282/2076 [01:48<01:51,  7.12it/s]Loading weights:  62%|██████▏   | 1288/2076 [01:48<01:08, 11.44it/s]Loading weights:  62%|██████▏   | 1292/2076 [01:49<01:36,  8.09it/s]Loading weights:  62%|██████▏   | 1294/2076 [01:49<01:45,  7.42it/s]Loading weights:  63%|██████▎   | 1301/2076 [01:49<01:03, 12.30it/s]Loading weights:  63%|██████▎   | 1305/2076 [01:49<00:50, 15.18it/s]Loading weights:  63%|██████▎   | 1308/2076 [01:50<01:43,  7.41it/s]Loading weights:  63%|██████▎   | 1315/2076 [01:50<01:04, 11.85it/s]Loading weights:  63%|██████▎   | 1318/2076 [01:51<00:58, 12.89it/s]Loading weights:  64%|██████▎   | 1321/2076 [01:52<01:47,  7.02it/s]Loading weights:  64%|██████▍   | 1329/2076 [01:52<01:08, 10.91it/s]Loading weights:  64%|██████▍   | 1332/2076 [01:52<01:03, 11.68it/s]Loading weights:  64%|██████▍   | 1335/2076 [01:53<01:34,  7.88it/s]Loading weights:  64%|██████▍   | 1337/2076 [01:53<01:38,  7.47it/s]Loading weights:  65%|██████▍   | 1343/2076 [01:53<01:04, 11.44it/s]Loading weights:  65%|██████▍   | 1346/2076 [01:53<00:55, 13.25it/s]Loading weights:  65%|██████▍   | 1349/2076 [01:55<01:51,  6.52it/s]Loading weights:  65%|██████▌   | 1356/2076 [01:55<01:06, 10.85it/s]Loading weights:  65%|██████▌   | 1359/2076 [01:55<00:57, 12.41it/s]Loading weights:  66%|██████▌   | 1362/2076 [01:55<01:09, 10.29it/s]Loading weights:  66%|██████▌   | 1365/2076 [01:56<01:38,  7.22it/s]Loading weights:  66%|██████▌   | 1371/2076 [01:56<01:04, 10.95it/s]Loading weights:  66%|██████▌   | 1374/2076 [01:56<00:55, 12.66it/s]Loading weights:  66%|██████▋   | 1377/2076 [01:57<01:29,  7.81it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:58<01:38,  7.10it/s]Loading weights:  67%|██████▋   | 1385/2076 [01:58<01:00, 11.40it/s]Loading weights:  67%|██████▋   | 1388/2076 [01:58<00:52, 13.06it/s]Loading weights:  67%|██████▋   | 1391/2076 [01:59<01:33,  7.31it/s]Loading weights:  67%|██████▋   | 1393/2076 [01:59<01:34,  7.19it/s]Loading weights:  67%|██████▋   | 1399/2076 [01:59<00:57, 11.69it/s]Loading weights:  68%|██████▊   | 1402/2076 [01:59<00:50, 13.34it/s]Loading weights:  68%|██████▊   | 1405/2076 [02:01<01:45,  6.35it/s]Loading weights:  68%|██████▊   | 1412/2076 [02:01<01:15,  8.84it/s]Loading weights:  68%|██████▊   | 1417/2076 [02:01<01:12,  9.09it/s]Loading weights:  69%|██████▊   | 1427/2076 [02:02<00:40, 16.07it/s]Loading weights:  70%|██████▉   | 1446/2076 [02:02<00:19, 33.14it/s]Loading weights:  71%|███████   | 1464/2076 [02:02<00:12, 50.37it/s]Loading weights:  71%|███████   | 1475/2076 [02:02<00:10, 58.50it/s]Loading weights:  72%|███████▏  | 1497/2076 [02:02<00:06, 84.77it/s]Loading weights:  73%|███████▎  | 1511/2076 [02:02<00:06, 88.33it/s]Loading weights:  73%|███████▎  | 1524/2076 [02:02<00:05, 93.92it/s]Loading weights:  75%|███████▍  | 1547/2076 [02:02<00:04, 111.50it/s]Loading weights:  76%|███████▌  | 1579/2076 [02:03<00:03, 155.08it/s]Loading weights:  77%|███████▋  | 1597/2076 [02:03<00:03, 139.68it/s]Loading weights:  78%|███████▊  | 1627/2076 [02:03<00:02, 171.10it/s]Loading weights:  79%|███████▉  | 1647/2076 [02:03<00:02, 174.13it/s]Loading weights:  80%|████████  | 1666/2076 [02:03<00:02, 177.41it/s]Loading weights:  81%|████████  | 1685/2076 [02:03<00:02, 179.08it/s]Loading weights:  83%|████████▎ | 1714/2076 [02:03<00:01, 191.50it/s]Loading weights:  84%|████████▍ | 1745/2076 [02:03<00:01, 214.90it/s]Loading weights:  85%|████████▌ | 1767/2076 [02:04<00:01, 184.25it/s]Loading weights:  86%|████████▋ | 1791/2076 [02:04<00:01, 145.21it/s]Loading weights:  87%|████████▋ | 1810/2076 [02:04<00:01, 153.79it/s]Loading weights:  88%|████████▊ | 1832/2076 [02:04<00:01, 159.10it/s]Loading weights:  89%|████████▉ | 1850/2076 [02:04<00:01, 154.82it/s]Loading weights:  90%|█████████ | 1873/2076 [02:04<00:01, 170.01it/s]Loading weights:  91%|█████████ | 1891/2076 [02:04<00:01, 158.88it/s]Loading weights:  92%|█████████▏| 1918/2076 [02:05<00:00, 175.37it/s]Loading weights:  94%|█████████▍| 1950/2076 [02:05<00:00, 202.80it/s]Loading weights:  95%|█████████▍| 1971/2076 [02:05<00:00, 184.42it/s]Loading weights:  96%|█████████▋| 2000/2076 [02:05<00:00, 196.34it/s]Loading weights:  98%|█████████▊| 2032/2076 [02:05<00:00, 219.69it/s]Loading weights:  99%|█████████▉| 2055/2076 [02:05<00:00, 199.98it/s]Loading weights: 100%|██████████| 2076/2076 [02:06<00:00, 126.07it/s]Loading weights: 100%|██████████| 2076/2076 [02:06<00:00, 16.47it/s] 
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+    [greedy/aime] gold='277' pred='47' match=False
+    [greedy/aime] gold='062' pred='13' match=False
+    [greedy/aime] gold='079' pred='Let $O$ be the center of the disk and $A' match=False
+    [greedy/aime] gold='070' pred='1' match=False
+    [greedy/aime] gold='065' pred='2' match=False
+    [greedy/aime] gold='441' pred='120' match=False
+    [greedy/aime] gold='396' pred='1' match=False
+    [greedy/aime] gold='244' pred='17' match=False
+    [greedy/aime] gold='029' pred='' match=False
+    [greedy/aime] gold='156' pred='' match=False
+    [greedy/aime] gold='896' pred='$80$' match=False
+    [greedy/aime] gold='161' pred='3' match=False
+    [greedy/aime] gold='039' pred='2' match=False
+    [greedy/aime] gold='681' pred='' match=False
+    [greedy/aime] gold='083' pred='90' match=False
+    [greedy/aime] gold='178' pred='$-16$' match=False
+    [greedy/aime] gold='243' pred='10' match=False
+    [greedy/aime] gold='503' pred='20' match=False
+    [greedy/aime] gold='279' pred='1' match=False
+    [greedy/aime] gold='190' pred='' match=False
+    [greedy/aime] gold='050' pred='\sqrt{145}' match=False
+    [greedy/aime] gold='754' pred='46657' match=False
+    [greedy/aime] gold='245' pred='\frac{23}{3}' match=False
+    [greedy/aime] gold='669' pred='90' match=False
+    [greedy/aime] gold='340' pred='' match=False
+    [greedy/aime] gold='132' pred='6' match=False
+    [greedy/aime] gold='223' pred='2' match=False
+    [greedy/aime] gold='107' pred='4040' match=False
+    [greedy/aime] gold='157' pred='1' match=False
+    [greedy/aime] gold='393' pred='' match=False
+  [greedy] humaneval seed=0
+    [greedy/humaneval] gold='    for idx, elem in enumerate(numbers):' pred='def has_close_elements(numbers: List[flo' match=True
+    [greedy/humaneval] gold='    result = []
+    current_string = []
+' pred='def separate_paren_groups(paren_string: ' match=False
+    [greedy/humaneval] gold='    return number % 1.0
+' pred='def truncate_number(number: float) -> fl' match=True
+    [greedy/humaneval] gold='    balance = 0
+
+    for op in operation' pred='def below_zero(operations: List[int]) ->' match=True
+    [greedy/humaneval] gold='    mean = sum(numbers) / len(numbers)
+ ' pred='def mean_absolute_deviation(numbers: Lis' match=True
+    [greedy/humaneval] gold='    if not numbers:
+        return []
+
+ ' pred='def intersperse(numbers: List[int], deli' match=True
+    [greedy/humaneval] gold='    def parse_paren_group(s):
+        de' pred='def parse_nested_parens(paren_string: st' match=False
+    [greedy/humaneval] gold='    return [x for x in strings if substr' pred='def filter_by_substring(strings: List[st' match=True
+    [greedy/humaneval] gold='    sum_value = 0
+    prod_value = 1
+
+  ' pred='def sum_product(numbers: List[int]) -> T' match=True
+    [greedy/humaneval] gold='    running_max = None
+    result = []
+
+' pred='def rolling_max(numbers: List[int]) -> L' match=True
+    [greedy/humaneval] gold='    if not string:
+        return ''
+
+  ' pred='def make_palindrome(string: str) -> str:' match=False
+    [greedy/humaneval] gold='    def xor(i, j):
+        if i == j:
+  ' pred='def string_xor(a: str, b: str) -> str:
+ ' match=True
+    [greedy/humaneval] gold='    if not strings:
+        return None
+' pred='def longest(strings: List[str]) -> Optio' match=True
+    [greedy/humaneval] gold='    while b:
+        a, b = b, a % b
+   ' pred='def greatest_common_divisor(a: int, b: i' match=True
+    [greedy/humaneval] gold='    result = []
+
+    for i in range(len(' pred='def all_prefixes(string: str) -> List[st' match=False
+    [greedy/humaneval] gold='    return ' '.join([str(x) for x in ran' pred='def string_sequence(n: int) -> str:
+    ' match=True
+    [greedy/humaneval] gold='    return len(set(string.lower()))
+' pred='def count_distinct_characters(string: st' match=True
+    [greedy/humaneval] gold='    note_map = {'o': 4, 'o|': 2, '.|': 1' pred='def parse_music(music_string: str) -> Li' match=False
+    [greedy/humaneval] gold='    times = 0
+
+    for i in range(len(st' pred='def how_many_times(string: str, substrin' match=True
+    [greedy/humaneval] gold='    value_map = {
+        'zero': 0,
+   ' pred='def sort_numbers(numbers: str) -> str:
+ ' match=False
+    [greedy/humaneval] gold='    closest_pair = None
+    distance = N' pred='def find_closest_elements(numbers: List[' match=False
+    [greedy/humaneval] gold='    min_number = min(numbers)
+    max_nu' pred='def rescale_to_unit(numbers: List[float]' match=True
+    [greedy/humaneval] gold='    return [x for x in values if isinsta' pred='def filter_integers(values: List[Any]) -' match=True
+    [greedy/humaneval] gold='    return len(string)
+' pred='def strlen(string: str) -> int:
+    """ ' match=True
+    [greedy/humaneval] gold='    for i in reversed(range(n)):
+       ' pred='def largest_divisor(n: int) -> int:
+    ' match=True
+    [greedy/humaneval] gold='    import math
+    fact = []
+    i = 2
+' pred='def factorize(n: int) -> List[int]:
+    ' match=True
+    [greedy/humaneval] gold='    import collections
+    c = collectio' pred='def remove_duplicates(numbers: List[int]' match=False
+    [greedy/humaneval] gold='    return string.swapcase()
+' pred='def flip_case(string: str) -> str:
+    "' match=True
+    [greedy/humaneval] gold='    return ''.join(strings)
+' pred='def concatenate(strings: List[str]) -> s' match=True
+    [greedy/humaneval] gold='    return [x for x in strings if x.star' pred='def filter_by_prefix(strings: List[str],' match=True
+    [greedy/humaneval] gold='    return [e for e in l if e > 0]
+' pred='def get_positive(l: list):
+    """Return' match=True
+    [greedy/humaneval] gold='    if n < 2:
+        return False
+    f' pred='def is_prime(n):
+    """Return true if a' match=True
+    [greedy/humaneval] gold='    begin, end = -1., 1.
+    while poly(' pred='def find_zero(xs: list):
+    """ xs are ' match=False
+    [greedy/humaneval] gold='    l = list(l)
+    l[::3] = sorted(l[::' pred='def sort_third(l: list):
+    """This fun' match=False
+    [greedy/humaneval] gold='    return sorted(list(set(l)))
+' pred='def unique(l: list):
+    """Return sorte' match=True
+    [greedy/humaneval] gold='    m = l[0]
+    for e in l:
+        if ' pred='def max_element(l: list):
+    """Return ' match=True
+    [greedy/humaneval] gold='    ns = []
+    for i in range(n):
+     ' pred='def fizz_buzz(n: int) -> int:
+    count ' match=False
+    [greedy/humaneval] gold='    evens = l[::2]
+    odds = l[1::2]
+  ' pred='def sort_even(l: list):
+    """This func' match=False
+    [greedy/humaneval] gold='    return encode_cyclic(encode_cyclic(s' pred='def decode_cyclic(s: str):
+    """
+    t' match=False
+    [greedy/humaneval] gold='    import math
+
+    def is_prime(p):
+  ' pred='def prime_fib(n: int):
+    """
+    prime' match=False
+    [greedy/humaneval] gold='    for i in range(len(l)):
+        for ' pred='def triples_sum_to_zero(l: list):
+    ""' match=False
+    [greedy/humaneval] gold='    return n**2
+' pred='def car_race_collision(n: int) -> int:
+ ' match=False
+    [greedy/humaneval] gold='    return [(e + 1) for e in l]
+' pred='def incr_list(l: list):
+    """Return li' match=True
+    [greedy/humaneval] gold='    for i, l1 in enumerate(l):
+        f' pred='def pairs_sum_to_zero(l):
+    """
+    pa' match=True
+    [greedy/humaneval] gold='    ret = ""
+    while x > 0:
+        re' pred='def change_base(x: int, base: int) -> st' match=True
+    [greedy/humaneval] gold='    return a * h / 2.0
+' pred='def triangle_area(a, h):
+    """Given le' match=True
+    [greedy/humaneval] gold='    results = [0, 0, 2, 0]
+    if n < 4:' pred='def fib4(n: int) -> int:
+    """The Fib4' match=False
+    [greedy/humaneval] gold='    l = sorted(l)
+    if len(l) % 2 == 1' pred='def median(l: list):
+    """Return media' match=True
+    [greedy/humaneval] gold='    for i in range(len(text)):
+        i' pred='def is_palindrome(text: str) -> bool:
+  ' match=True
+    [greedy/humaneval] gold='    ret = 1
+    for i in range(n):
+     ' pred='def modp(n: int, p: int):
+    """Return ' match=False
+    [greedy/humaneval] gold='    return "".join([chr(((ord(ch) - 5 - ' pred='def decode_shift(s: str):
+    """
+    ta' match=False
+    [greedy/humaneval] gold='    return "".join([s for s in text if s' pred='def remove_vowels(text):
+    """
+    rem' match=True
+    [greedy/humaneval] gold='    for e in l:
+        if e >= t:
+     ' pred='def below_threshold(l: list, t: int) -> ' match=True
+    [greedy/humaneval] gold='    return x + y
+' pred='def add(x: int, y: int):
+    """Add two ' match=True
+    [greedy/humaneval] gold='    return set(s0) == set(s1)
+' pred='def same_chars(s0: str, s1: str) -> bool' match=True
+    [greedy/humaneval] gold='    if n == 0:
+        return 0
+    if n' pred='def fib(n: int) -> int:
+    """Return n-' match=True
+    [greedy/humaneval] gold='    depth = 0
+    for b in brackets:
+   ' pred='def correct_bracketing(brackets: str):
+ ' match=True
+    [greedy/humaneval] gold='    if l == sorted(l) or l == sorted(l, ' pred='def monotonic(l: list) -> bool:
+    """R' match=True
+    [greedy/humaneval] gold='    ret = set()
+    for e1 in l1:
+      ' pred='def common(l1: list, l2: list):
+    """R' match=True
+    [greedy/humaneval] gold='    def is_prime(k):
+        if k < 2:
+ ' pred='def largest_prime_factor(n: int) -> int:' match=False
+    [greedy/humaneval] gold='    return sum(range(n + 1))
+' pred='def sum_to_n(n: int) -> int:
+    """sum_' match=True
+    [greedy/humaneval] gold='    depth = 0
+    for b in brackets:
+   ' pred='def correct_bracketing(brackets: str):
+ ' match=True
+    [greedy/humaneval] gold='    return [(i * x) for i, x in enumerat' pred='def derivative(xs: list):
+    """ xs rep' match=False
+    [greedy/humaneval] gold='    if n == 0:
+        return 0
+    if n' pred='def fibfib(n: int):
+    """The FibFib nu' match=True
+    [greedy/humaneval] gold='    vowels = "aeiouAEIOU"
+    n_vowels =' pred='def vowels_count(s):
+    """Write a func' match=False
+    [greedy/humaneval] gold='    s = str(x)
+    if shift > len(s):
+  ' pred='def circular_shift(x, shift):
+    """Cir' match=False
+    [greedy/humaneval] gold='    if s == "": return 0
+    return sum(' pred='def digitSum(s):
+    """Task
+    Write a' match=True
+    [greedy/humaneval] gold='    lis = list()
+    for i in s.split(' ' pred='def fruit_distribution(s,n):
+    """
+   ' match=True
+    [greedy/humaneval] gold='    if(len(arr) == 0): return []
+    eve' pred='def pluck(arr):
+    """
+    "Given an ar' match=True
+    [greedy/humaneval] gold='    frq = [0] * (max(lst) + 1)
+    for i' pred='def search(lst):
+    '''
+    You are giv' match=True
+    [greedy/humaneval] gold='    res, switch = [], True
+    while lst' pred='def strange_sort_list(lst):
+    if not l' match=False
+    [greedy/humaneval] gold='    if a + b <= c or a + c <= b or b + c' pred='def triangle_area(a, b, c):
+    if a + b' match=True
+    [greedy/humaneval] gold='    if sum(q) > w:
+        return False
+' pred='def will_it_fly(q, w):
+    if len(q) == ' match=True
+    [greedy/humaneval] gold='    ans = 0
+    for i in range(len(arr) ' pred='def smallest_change(arr):
+    """
+    Gi' match=False
+    [greedy/humaneval] gold='    l1 = 0
+    for st in lst1:
+        l' pred='def total_match(lst1, lst2):
+    '''
+   ' match=True
+    [greedy/humaneval] gold='    def is_prime(n):
+        for j in ra' pred='def is_multiply_prime(a):
+    """Write a' match=False
+    [greedy/humaneval] gold='    if (n == 1): 
+        return (x == 1' pred='def is_simple_power(x, n):
+    """Your t' match=True
+    [greedy/humaneval] gold='    a = abs(a)
+    return int(round(a **' pred='def iscube(a):
+    '''
+    Write a funct' match=True
+    [greedy/humaneval] gold='    primes = ('2', '3', '5', '7', 'B', '' pred='def hex_key(num):
+    """You have been t' match=True
+    [greedy/humaneval] gold='    return "db" + bin(decimal)[2:] + "db' pred='def decimal_to_binary(decimal):
+    """Y' match=False
+    [greedy/humaneval] gold='    if len(s) < 3:
+      return False
+
+ ' pred='def is_happy(s):
+    """You are given a ' match=False
+    [greedy/humaneval] gold='
+   
+    letter_grade = []
+    for gpa i' pred='def numerical_letter_grade(grades):
+    ' match=True
+    [greedy/humaneval] gold='    l = len(string)
+    if l == 0 or l =' pred='def prime_length(string):
+    """Write a' match=True
+    [greedy/humaneval] gold='    if n == 1: return 1
+    return 18 * ' pred='def starts_one_ends(n):
+    """
+    Give' match=False
+    [greedy/humaneval] gold='    return bin(sum(int(i) for i in str(N' pred='def solve(N):
+    """Given a positive in' match=False
+    [greedy/humaneval] gold='    return sum([lst[i] for i in range(1,' pred='def add(lst):
+    """Given a non-empty l' match=True
+    [greedy/humaneval] gold='    return ' '.join([''.join(sorted(list' pred='def anti_shuffle(s):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    coords = [(i, j) for i in range(len(' pred='def get_row(lst, x):
+    """
+    You are' match=False
+    [greedy/humaneval] gold='    return [] if len(array) == 0 else so' pred='def sort_array(array):
+    """
+    Given' match=False
+    [greedy/humaneval] gold='    d = 'abcdefghijklmnopqrstuvwxyz'
+   ' pred='def encrypt(s):
+    """Create a function' match=False
+    [greedy/humaneval] gold='    lst = sorted(set(lst))
+    return No' pred='def next_smallest(lst):
+    """
+    You ' match=False
+    [greedy/humaneval] gold='    import re
+    sentences = re.split(r' pred='def is_bored(S):
+    """
+    You'll be g' match=False
+    [greedy/humaneval] gold='    
+    if isinstance(x,int) and isinst' pred='def any_int(x, y, z):
+    if x.is_intege' match=False
+    [greedy/humaneval] gold='    vowels = "aeiouAEIOU"
+    vowels_rep' pred='def encode(message):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    def isPrime(n):
+        for i in ran' pred='def skjkasdkd(lst):
+    """You are given' match=False
+    [greedy/humaneval] gold='    if len(dict.keys()) == 0:
+        re' pred='def check_dict_case(dict):
+    """
+    G' match=False
+    [greedy/humaneval] gold='    primes = []
+    for i in range(2, n)' pred='def count_up_to(n):
+    """Implement a f' match=True
+    [greedy/humaneval] gold='    return abs(a % 10) * abs(b % 10)
+' pred='def multiply(a, b):
+    """Complete the ' match=True
+    [greedy/humaneval] gold='    count = 0
+    for i in range(0,len(s' pred='def count_upper(s):
+    """
+    Given a ' match=True
+    [greedy/humaneval] gold='    from math import floor, ceil
+
+    if' pred='def closest_integer(value):
+    '''
+    ' match=True
+    [greedy/humaneval] gold='    return [n + 2*i for i in range(n)]
+' pred='def make_a_pile(n):
+    """
+    Given a ' match=False
+    [greedy/humaneval] gold='    if not s:
+        return []
+
+    s_l' pred='def words_string(s):
+    """
+    You wil' match=False
+    [greedy/humaneval] gold='    if x > y:
+        return -1
+    if y' pred='def choose_num(x, y):
+    """This functi' match=False
+    [greedy/humaneval] gold='    if m < n:
+        return -1
+    summ' pred='def rounded_avg(n, m):
+    if n > m:
+   ' match=False
+    [greedy/humaneval] gold='    odd_digit_elements = []
+    for i in' pred='def unique_digits(x):
+    """Given a lis' match=False
+    [greedy/humaneval] gold='    dic = {
+        1: "One",
+        2:' pred='def by_length(arr):
+    """
+    Given an' match=False
+    [greedy/humaneval] gold='    ret = []
+    for i in range(1,n+1):
+' pred='def f(n):
+    result = [0] * n
+    for i' match=False
+    [greedy/humaneval] gold='    def is_palindrome(n):
+        return' pred='def even_odd_palindrome(n):
+    """
+    ' match=True
+    [greedy/humaneval] gold='    def digits_sum(n):
+        neg = 1
+ ' pred='def count_nums(arr):
+    """
+    Write a' match=False
+    [greedy/humaneval] gold='    if len(arr)==0:
+      return True
+  ' pred='def move_one_ball(arr):
+    """We have a' match=False
+    [greedy/humaneval] gold='    odd = 0
+    even = 0
+    for i in ls' pred='def exchange(lst1, lst2):
+    """In this' match=False
+    [greedy/humaneval] gold='    dict1={}
+    list1=test.split(" ")
+ ' pred='def histogram(test):
+    """Given a stri' match=False
+    [greedy/humaneval] gold='    s = ''.join([char for char in s if c' pred='def reverse_delete(s, c):
+    """Task
+  ' match=True
+    [greedy/humaneval] gold='    res = []
+    for arr in lst:
+       ' pred='def odd_count(lst):
+    """Given a list ' match=False
+    [greedy/humaneval] gold='    max_sum = 0
+    s = 0
+    for num in' pred='def minSubArraySum(nums):
+    """
+    Gi' match=False
+    [greedy/humaneval] gold='    return sum([math.ceil(sum(arr)/capac' pred='def max_fill(grid, capacity):
+    import' match=False
+    [greedy/humaneval] gold='    return sorted(sorted(arr), key=lambd' pred='def sort_array(arr):
+    """
+    In this' match=True
+    [greedy/humaneval] gold='    result = []
+    for word in s.split(' pred='def select_words(s, n):
+    """Given a s' match=True
+    [greedy/humaneval] gold='    if len(word) < 3:
+        return ""
+' pred='def get_closest_vowel(word):
+    """You ' match=False
+    [greedy/humaneval] gold='    def check(s):
+        val = 0
+      ' pred='def match_parens(lst):
+    '''
+    You a' match=False
+    [greedy/humaneval] gold='    if k == 0:
+        return []
+    arr' pred='def maximum(arr, k):
+    """
+    Given a' match=False
+    [greedy/humaneval] gold='    return sum([x for idx, x in enumerat' pred='def solution(lst):
+    """Given a non-em' match=True
+    [greedy/humaneval] gold='    return sum(elem for elem in arr[:k] ' pred='def add_elements(arr, k):
+    """
+    Gi' match=True
+    [greedy/humaneval] gold='    if n%2==0:
+        odd_collatz = [] ' pred='def get_odd_collatz(n):
+    """
+    Give' match=True
+    [greedy/humaneval] gold='    try:
+        date = date.strip()
+   ' pred='def valid_date(date):
+    """You have to' match=False
+    [greedy/humaneval] gold='    if " " in txt:
+        return txt.sp' pred='def split_words(txt):
+    if " " in txt:' match=False
+    [greedy/humaneval] gold='    count_digit = dict([(i, 0) for i in ' pred='def is_sorted(lst):
+    '''
+    Given a ' match=False
+    [greedy/humaneval] gold='    def is_prime(num):
+        if num ==' pred='def intersection(interval1, interval2):
+' match=False
+    [greedy/humaneval] gold='    if not arr: return None
+    prod = 0' pred='def prod_signs(arr):
+    if not arr:
+   ' match=True
+    [greedy/humaneval] gold='    n = len(grid)
+    val = n * n + 1
+  ' pred='def minPath(grid, k):
+    """
+    Given ' match=False
+    [greedy/humaneval] gold='    if n == 0:
+        return [1]
+    my' pred='def tri(n):
+    """Everyone knows Fibona' match=False
+    [greedy/humaneval] gold='    product = 1
+    odd_count = 0
+    fo' pred='def digits(n):
+    """Given a positive i' match=False
+    [greedy/humaneval] gold='    opening_bracket_index = []
+    closi' pred='def is_nested(string):
+    stack = []
+  ' match=False
+    [greedy/humaneval] gold='    import math
+    squared = 0
+    for ' pred='def sum_squares(lst):
+    """You are giv' match=False
+    [greedy/humaneval] gold=' 
+    check = txt.split(' ')[-1]
+    ret' pred='def check_if_last_char_is_a_letter(txt):' match=False
+    [greedy/humaneval] gold='    ind=-1
+    i=1
+    while i<len(arr):' pred='def can_arrange(arr):
+    """Create a fu' match=False
+    [greedy/humaneval] gold='    smallest = list(filter(lambda x: x <' pred='def largest_smallest_integers(lst):
+    ' match=True
+    [greedy/humaneval] gold='    temp_a, temp_b = a, b
+    if isinsta' pred='def compare_one(a, b):
+    """
+    Creat' match=False
+    [greedy/humaneval] gold='    return n%2 == 0 and n >= 8
+' pred='def is_equal_to_sum_even(n):
+    """Eval' match=False
+    [greedy/humaneval] gold='    fact_i = 1
+    special_fact = 1
+    ' pred='def special_factorial(n):
+    """The Bra' match=False
+    [greedy/humaneval] gold='    new_text = ""
+    i = 0
+    start, e' pred='def fix_spaces(text):
+    """
+    Given ' match=False
+    [greedy/humaneval] gold='    suf = ['txt', 'exe', 'dll']
+    lst ' pred='def file_name_check(file_name):
+    """C' match=True
+    [greedy/humaneval] gold='    result =[]
+    for i in range(len(ls' pred='def sum_squares(lst):
+    """
+    This f' match=True
+    [greedy/humaneval] gold='    new_lst = []
+    for word in sentenc' pred='def words_in_sentence(sentence):
+    """' match=False
+    [greedy/humaneval] gold='    a, b = x.split("/")
+    c, d = n.spl' pred='def simplify(x, n):
+    """Your task is ' match=False
+    [greedy/humaneval] gold='    def digits_sum(n):
+        neg = 1
+ ' pred='def order_by_points(nums):
+    """
+    W' match=False
+    [greedy/humaneval] gold='    
+    count = 0
+    for num in nums:
+' pred='def specialFilter(nums):
+    count = 0
+ ' match=False
+    [greedy/humaneval] gold='    A = [i*i - i + 1 for i in range(1,n+' pred='def get_max_triples(n):
+    """
+    You ' match=True
+    [greedy/humaneval] gold='    planet_names = ("Mercury", "Venus", ' pred='def bf(planet1, planet2):
+    planets = ' match=False
+    [greedy/humaneval] gold='    lst.sort()
+    new_lst = []
+    for ' pred='def sorted_list_sum(lst):
+    """Write a' match=False
+    [greedy/humaneval] gold='    if n == 1:
+        return y
+    for ' pred='def x_or_y(n, x, y):
+    """A simple pro' match=False
+    [greedy/humaneval] gold='    return sum([i**2 for i in lst if i >' pred='def double_the_difference(lst):
+    '''
+' match=True
+    [greedy/humaneval] gold='    return [abs(x-y) for x,y in zip(game' pred='def compare(game, guess):
+    """I think' match=True
+    [greedy/humaneval] gold='    strong = extensions[0]
+    my_val = ' pred='def Strongest_Extension(class_name, exte' match=False
+    [greedy/humaneval] gold='    l = len(b)
+    pat = b + b
+    for i' pred='def cycpattern_check(a, b):
+    """You a' match=False
+    [greedy/humaneval] gold='    even_count = 0
+    odd_count = 0
+   ' pred='def even_odd_count(num):
+    """Given an' match=False
+    [greedy/humaneval] gold='    num = [1, 4, 5, 9, 10, 40, 50, 90,  ' pred='def int_to_mini_roman(number):
+    """
+ ' match=False
+    [greedy/humaneval] gold='    return a*a == b*b + c*c or b*b == a*' pred='def right_angle_triangle(a, b, c):
+    '' match=False
+    [greedy/humaneval] gold='    return sorted(words, key = lambda x:' pred='def find_max(words):
+    """Write a func' match=True
+    [greedy/humaneval] gold='    if(need <= remaining):
+        retur' pred='def eat(number, need, remaining):
+    to' match=False
+    [greedy/humaneval] gold='    expression = str(operand[0])
+    for' pred='def do_algebra(operator, operand):
+    "' match=True
+    [greedy/humaneval] gold='    flg = 0
+    idx = 0
+    new_str = li' pred='def solve(s):
+    """You are given a str' match=False
+    [greedy/humaneval] gold='    import hashlib
+    return hashlib.md' pred='def string_to_md5(text):
+    """
+    Giv' match=True
+    [greedy/humaneval] gold='    lower = max(2, min(a, b))
+    upper ' pred='def generate_integers(a, b):
+    """
+   ' match=False
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                           aime   humaneval
+-------------------------------------------------
+greedy                        0.0+-0.0    47.0+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\local_gemma4_plan_i\seed42\eval\phase1_greedy\table2_results.json
+
+[orch] === 2026-05-02T15:32:45 EVAL_42 phase1_greedy ===
+CTS Evaluation Pipeline
+  Benchmarks: ['aime', 'humaneval']
+  Seeds: [0]
+  Mode: 4nu
+  Config: default
+
+  [cts_4nu] aime seed=0
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   1%|          | 15/2076 [00:00<00:16, 127.29it/s]Loading weights:   1%|▏         | 29/2076 [00:00<00:18, 113.28it/s]Loading weights:   3%|▎         | 53/2076 [00:00<00:12, 159.47it/s]Loading weights:   3%|▎         | 70/2076 [00:00<00:15, 127.33it/s]Loading weights:   4%|▍         | 84/2076 [00:00<00:17, 115.55it/s]Loading weights:   5%|▍         | 97/2076 [00:00<00:16, 117.83it/s]Loading weights:   6%|▌         | 122/2076 [00:00<00:12, 150.84it/s]Loading weights:   7%|▋         | 138/2076 [00:01<00:14, 132.12it/s]Loading weights:   7%|▋         | 153/2076 [00:01<00:16, 118.59it/s]Loading weights:   8%|▊         | 172/2076 [00:01<00:14, 133.64it/s]Loading weights:   9%|▉         | 189/2076 [00:01<00:16, 115.23it/s]Loading weights:  10%|▉         | 202/2076 [00:01<00:17, 105.75it/s]Loading weights:  10%|█         | 217/2076 [00:01<00:16, 111.07it/s]Loading weights:  11%|█         | 233/2076 [00:01<00:15, 120.98it/s]Loading weights:  12%|█▏        | 248/2076 [00:02<00:16, 112.91it/s]Loading weights:  13%|█▎        | 260/2076 [00:02<00:15, 113.97it/s]Loading weights:  13%|█▎        | 272/2076 [00:02<00:17, 101.82it/s]Loading weights:  14%|█▍        | 301/2076 [00:02<00:12, 143.90it/s]Loading weights:  15%|█▌        | 317/2076 [00:02<00:14, 124.91it/s]Loading weights:  16%|█▌        | 331/2076 [00:02<00:17, 101.90it/s]Loading weights:  17%|█▋        | 353/2076 [00:02<00:13, 124.23it/s]Loading weights:  18%|█▊        | 375/2076 [00:03<00:14, 114.88it/s]Loading weights:  19%|█▊        | 388/2076 [00:03<00:16, 100.94it/s]Loading weights:  19%|█▉        | 401/2076 [00:03<00:16, 103.14it/s]Loading weights:  21%|██        | 432/2076 [00:03<00:11, 138.07it/s]Loading weights:  22%|██▏       | 447/2076 [00:03<00:12, 128.94it/s]Loading weights:  22%|██▏       | 461/2076 [00:03<00:13, 117.00it/s]Loading weights:  23%|██▎       | 476/2076 [00:03<00:13, 116.56it/s]Loading weights:  24%|██▍       | 494/2076 [00:04<00:12, 127.82it/s]Loading weights:  24%|██▍       | 508/2076 [00:04<00:14, 106.47it/s]Loading weights:  25%|██▌       | 525/2076 [00:04<00:13, 113.48it/s]Loading weights:  26%|██▋       | 549/2076 [00:04<00:11, 137.91it/s]Loading weights:  27%|██▋       | 564/2076 [00:04<00:13, 108.35it/s]Loading weights:  28%|██▊       | 577/2076 [00:04<00:14, 102.90it/s]Loading weights:  29%|██▉       | 601/2076 [00:05<00:11, 130.85it/s]Loading weights:  30%|███       | 623/2076 [00:05<00:10, 133.75it/s]Loading weights:  31%|███       | 638/2076 [00:05<00:10, 133.17it/s]Loading weights:  32%|███▏      | 654/2076 [00:05<00:11, 126.55it/s]Loading weights:  33%|███▎      | 682/2076 [00:05<00:09, 147.38it/s]Loading weights:  34%|███▎      | 698/2076 [00:05<00:11, 124.84it/s]Loading weights:  34%|███▍      | 712/2076 [00:05<00:11, 123.83it/s]Loading weights:  35%|███▌      | 736/2076 [00:05<00:09, 141.33it/s]Loading weights:  36%|███▌      | 751/2076 [00:06<00:09, 135.72it/s]Loading weights:  36%|███▌      | 751/2076 [00:20<00:09, 135.72it/s]Loading weights:  36%|███▋      | 755/2076 [00:53<22:28,  1.02s/it] Loading weights:  37%|███▋      | 758/2076 [00:53<20:42,  1.06it/s]Loading weights:  37%|███▋      | 769/2076 [00:54<14:51,  1.47it/s]Loading weights:  37%|███▋      | 777/2076 [00:55<11:56,  1.81it/s]Loading weights:  38%|███▊      | 783/2076 [00:55<09:34,  2.25it/s]Loading weights:  38%|███▊      | 789/2076 [00:56<07:29,  2.86it/s]Loading weights:  38%|███▊      | 794/2076 [00:57<06:55,  3.09it/s]Loading weights:  39%|███▊      | 802/2076 [00:57<04:46,  4.45it/s]Loading weights:  39%|███▉      | 806/2076 [00:57<03:57,  5.34it/s]Loading weights:  40%|███▉      | 828/2076 [00:57<01:37, 12.79it/s]Loading weights:  41%|████▏     | 861/2076 [00:57<00:43, 27.78it/s]Loading weights:  43%|████▎     | 895/2076 [00:57<00:24, 47.52it/s]Loading weights:  45%|████▍     | 924/2076 [00:57<00:17, 67.31it/s]Loading weights:  46%|████▌     | 948/2076 [01:00<00:47, 23.91it/s]Loading weights:  46%|████▋     | 965/2076 [01:02<01:01, 18.05it/s]Loading weights:  47%|████▋     | 977/2076 [01:02<00:53, 20.51it/s]Loading weights:  48%|████▊     | 987/2076 [01:03<01:07, 16.18it/s]Loading weights:  48%|████▊     | 995/2076 [01:04<01:10, 15.36it/s]Loading weights:  48%|████▊     | 1001/2076 [01:04<01:20, 13.35it/s]Loading weights:  48%|████▊     | 1006/2076 [01:05<01:12, 14.86it/s]Loading weights:  49%|████▊     | 1010/2076 [01:05<01:05, 16.22it/s]Loading weights:  49%|████▉     | 1014/2076 [01:05<01:29, 11.89it/s]Loading weights:  49%|████▉     | 1017/2076 [01:06<01:35, 11.11it/s]Loading weights:  49%|████▉     | 1024/2076 [01:06<01:08, 15.34it/s]Loading weights:  50%|████▉     | 1028/2076 [01:06<01:21, 12.92it/s]Loading weights:  50%|████▉     | 1031/2076 [01:07<01:30, 11.59it/s]Loading weights:  50%|████▉     | 1033/2076 [01:07<01:47,  9.67it/s]Loading weights:  50%|█████     | 1041/2076 [01:07<01:12, 14.31it/s]Loading weights:  50%|█████     | 1044/2076 [01:08<01:18, 13.17it/s]Loading weights:  50%|█████     | 1046/2076 [01:08<01:15, 13.61it/s]Loading weights:  50%|█████     | 1048/2076 [01:09<02:12,  7.78it/s]Loading weights:  51%|█████     | 1056/2076 [01:09<01:13, 13.92it/s]Loading weights:  51%|█████     | 1059/2076 [01:09<01:07, 14.97it/s]Loading weights:  51%|█████     | 1062/2076 [01:09<01:20, 12.60it/s]Loading weights:  51%|█████▏    | 1064/2076 [01:10<01:50,  9.18it/s]Loading weights:  51%|█████▏    | 1066/2076 [01:10<02:29,  6.75it/s]Loading weights:  52%|█████▏    | 1075/2076 [01:11<01:13, 13.59it/s]Loading weights:  52%|█████▏    | 1078/2076 [01:11<01:05, 15.21it/s]Loading weights:  52%|█████▏    | 1081/2076 [01:11<01:21, 12.23it/s]Loading weights:  52%|█████▏    | 1084/2076 [01:12<02:00,  8.24it/s]Loading weights:  53%|█████▎    | 1092/2076 [01:12<01:09, 14.16it/s]Loading weights:  53%|█████▎    | 1095/2076 [01:12<01:05, 14.89it/s]Loading weights:  53%|█████▎    | 1098/2076 [01:13<01:26, 11.37it/s]Loading weights:  53%|█████▎    | 1100/2076 [01:13<02:20,  6.93it/s]Loading weights:  53%|█████▎    | 1106/2076 [01:13<01:28, 10.95it/s]Loading weights:  54%|█████▎    | 1111/2076 [01:14<01:07, 14.38it/s]Loading weights:  54%|█████▎    | 1115/2076 [01:14<01:19, 12.14it/s]Loading weights:  54%|█████▍    | 1118/2076 [01:15<01:50,  8.66it/s]Loading weights:  54%|█████▍    | 1125/2076 [01:15<01:11, 13.25it/s]Loading weights:  54%|█████▍    | 1129/2076 [01:15<00:59, 15.84it/s]Loading weights:  55%|█████▍    | 1132/2076 [01:15<01:14, 12.74it/s]Loading weights:  55%|█████▍    | 1135/2076 [01:16<01:50,  8.52it/s]Loading weights:  55%|█████▌    | 1142/2076 [01:16<01:07, 13.93it/s]Loading weights:  55%|█████▌    | 1146/2076 [01:17<01:22, 11.33it/s]Loading weights:  55%|█████▌    | 1150/2076 [01:18<01:57,  7.91it/s]Loading weights:  56%|█████▌    | 1159/2076 [01:18<01:06, 13.78it/s]Loading weights:  56%|█████▌    | 1163/2076 [01:18<01:10, 12.86it/s]Loading weights:  56%|█████▌    | 1167/2076 [01:19<01:42,  8.85it/s]Loading weights:  56%|█████▋    | 1170/2076 [01:19<01:40,  9.05it/s]Loading weights:  57%|█████▋    | 1176/2076 [01:20<01:12, 12.41it/s]Loading weights:  57%|█████▋    | 1180/2076 [01:21<01:58,  7.57it/s]Loading weights:  57%|█████▋    | 1188/2076 [01:21<01:12, 12.31it/s]Loading weights:  57%|█████▋    | 1192/2076 [01:21<01:01, 14.45it/s]Loading weights:  58%|█████▊    | 1196/2076 [01:22<01:48,  8.11it/s]Loading weights:  58%|█████▊    | 1203/2076 [01:22<01:12, 12.12it/s]Loading weights:  58%|█████▊    | 1207/2076 [01:22<01:00, 14.45it/s]Loading weights:  58%|█████▊    | 1211/2076 [01:24<01:55,  7.47it/s]Loading weights:  59%|█████▊    | 1216/2076 [01:24<01:27,  9.79it/s]Loading weights:  59%|█████▊    | 1219/2076 [01:24<01:16, 11.22it/s]Loading weights:  59%|█████▉    | 1222/2076 [01:24<01:38,  8.66it/s]Loading weights:  59%|█████▉    | 1225/2076 [01:25<01:52,  7.57it/s]Loading weights:  59%|█████▉    | 1231/2076 [01:25<01:17, 10.89it/s]Loading weights:  60%|█████▉    | 1236/2076 [01:26<01:24,  9.98it/s]Loading weights:  60%|█████▉    | 1238/2076 [01:26<01:45,  7.94it/s]Loading weights:  60%|█████▉    | 1245/2076 [01:27<01:22, 10.07it/s]Loading weights:  60%|██████    | 1249/2076 [01:27<01:25,  9.64it/s]Loading weights:  60%|██████    | 1251/2076 [01:28<01:50,  7.48it/s]Loading weights:  61%|██████    | 1258/2076 [01:28<01:16, 10.70it/s]Loading weights:  61%|██████    | 1262/2076 [01:28<01:01, 13.19it/s]Loading weights:  61%|██████    | 1265/2076 [01:29<01:54,  7.07it/s]Loading weights:  61%|██████▏   | 1273/2076 [01:30<01:09, 11.50it/s]Loading weights:  61%|██████▏   | 1276/2076 [01:31<02:13,  6.01it/s]Loading weights:  62%|██████▏   | 1278/2076 [01:32<02:44,  4.86it/s]Loading weights:  62%|██████▏   | 1280/2076 [01:32<02:45,  4.80it/s]Loading weights:  62%|██████▏   | 1282/2076 [01:32<02:20,  5.67it/s]Loading weights:  62%|██████▏   | 1286/2076 [01:33<01:35,  8.26it/s]Loading weights:  62%|██████▏   | 1289/2076 [01:33<01:16, 10.30it/s]Loading weights:  62%|██████▏   | 1292/2076 [01:33<01:40,  7.84it/s]Loading weights:  62%|██████▏   | 1294/2076 [01:34<02:13,  5.86it/s]Loading weights:  63%|██████▎   | 1301/2076 [01:34<01:10, 11.04it/s]Loading weights:  63%|██████▎   | 1304/2076 [01:34<00:59, 12.91it/s]Loading weights:  63%|██████▎   | 1307/2076 [01:35<02:00,  6.36it/s]Loading weights:  63%|██████▎   | 1315/2076 [01:36<01:12, 10.52it/s]Loading weights:  64%|██████▎   | 1320/2076 [01:36<01:20,  9.38it/s]Loading weights:  64%|██████▎   | 1322/2076 [01:37<01:39,  7.56it/s]Loading weights:  64%|██████▍   | 1329/2076 [01:37<01:17,  9.69it/s]Loading weights:  64%|██████▍   | 1334/2076 [01:38<01:14,  9.91it/s]Loading weights:  64%|██████▍   | 1336/2076 [01:38<01:48,  6.84it/s]Loading weights:  65%|██████▍   | 1342/2076 [01:39<01:11, 10.21it/s]Loading weights:  65%|██████▍   | 1345/2076 [01:39<01:02, 11.75it/s]Loading weights:  65%|██████▍   | 1348/2076 [01:39<01:10, 10.33it/s]Loading weights:  65%|██████▌   | 1350/2076 [01:40<01:49,  6.64it/s]Loading weights:  65%|██████▌   | 1356/2076 [01:40<01:06, 10.78it/s]Loading weights:  66%|██████▌   | 1360/2076 [01:41<01:30,  7.93it/s]Loading weights:  66%|██████▌   | 1364/2076 [01:41<01:23,  8.49it/s]Loading weights:  66%|██████▌   | 1371/2076 [01:41<00:54, 12.84it/s]Loading weights:  66%|██████▌   | 1374/2076 [01:42<00:51, 13.73it/s]Loading weights:  66%|██████▋   | 1377/2076 [01:42<01:24,  8.27it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:43<01:31,  7.59it/s]Loading weights:  67%|██████▋   | 1385/2076 [01:43<00:59, 11.54it/s]Loading weights:  67%|██████▋   | 1388/2076 [01:43<00:54, 12.55it/s]Loading weights:  67%|██████▋   | 1390/2076 [01:44<01:13,  9.29it/s]Loading weights:  67%|██████▋   | 1392/2076 [01:45<02:06,  5.41it/s]Loading weights:  67%|██████▋   | 1399/2076 [01:45<01:15,  8.92it/s]Loading weights:  68%|██████▊   | 1404/2076 [01:45<01:16,  8.73it/s]Loading weights:  68%|██████▊   | 1406/2076 [01:46<01:39,  6.71it/s]Loading weights:  68%|██████▊   | 1413/2076 [01:46<01:10,  9.44it/s]Loading weights:  68%|██████▊   | 1415/2076 [01:47<01:10,  9.44it/s]Loading weights:  68%|██████▊   | 1417/2076 [01:47<01:22,  8.03it/s]Loading weights:  69%|██████▊   | 1427/2076 [01:47<00:38, 16.65it/s]Loading weights:  70%|███████   | 1456/2076 [01:47<00:13, 47.06it/s]Loading weights:  71%|███████   | 1467/2076 [01:47<00:11, 51.73it/s]Loading weights:  72%|███████▏  | 1487/2076 [01:48<00:07, 74.36it/s]Loading weights:  73%|███████▎  | 1508/2076 [01:48<00:06, 91.69it/s]Loading weights:  74%|███████▎  | 1528/2076 [01:48<00:04, 112.44it/s]Loading weights:  75%|███████▍  | 1549/2076 [01:48<00:04, 119.46it/s]Loading weights:  76%|███████▌  | 1575/2076 [01:48<00:03, 139.55it/s]Loading weights:  77%|███████▋  | 1591/2076 [01:48<00:03, 124.53it/s]Loading weights:  78%|███████▊  | 1621/2076 [01:48<00:02, 162.40it/s]Loading weights:  79%|███████▉  | 1640/2076 [01:49<00:03, 131.20it/s]Loading weights:  80%|████████  | 1668/2076 [01:49<00:02, 161.53it/s]Loading weights:  81%|████████▏ | 1688/2076 [01:49<00:02, 162.41it/s]Loading weights:  82%|████████▏ | 1707/2076 [01:49<00:02, 168.70it/s]Loading weights:  83%|████████▎ | 1726/2076 [01:49<00:02, 172.96it/s]Loading weights:  84%|████████▍ | 1745/2076 [01:49<00:01, 172.48it/s]Loading weights:  85%|████████▍ | 1764/2076 [01:49<00:02, 147.63it/s]Loading weights:  86%|████████▋ | 1791/2076 [01:49<00:01, 165.91it/s]Loading weights:  87%|████████▋ | 1809/2076 [01:50<00:02, 103.70it/s]Loading weights:  88%|████████▊ | 1832/2076 [01:50<00:02, 120.64it/s]Loading weights:  89%|████████▉ | 1848/2076 [01:50<00:01, 115.24it/s]Loading weights:  90%|████████▉ | 1868/2076 [01:50<00:01, 130.69it/s]Loading weights:  91%|█████████ | 1884/2076 [01:50<00:01, 123.72it/s]Loading weights:  92%|█████████▏| 1915/2076 [01:50<00:00, 162.79it/s]Loading weights:  93%|█████████▎| 1934/2076 [01:51<00:00, 153.52it/s]Loading weights:  94%|█████████▍| 1955/2076 [01:51<00:00, 151.83it/s]Loading weights:  95%|█████████▌| 1974/2076 [01:51<00:00, 145.88it/s]Loading weights:  96%|█████████▌| 1996/2076 [01:51<00:00, 153.12it/s]Loading weights:  97%|█████████▋| 2019/2076 [01:51<00:00, 169.32it/s]Loading weights:  98%|█████████▊| 2037/2076 [01:51<00:00, 168.26it/s]Loading weights:  99%|█████████▉| 2056/2076 [01:51<00:00, 169.43it/s]Loading weights: 100%|██████████| 2076/2076 [01:52<00:00, 119.36it/s]Loading weights: 100%|██████████| 2076/2076 [01:52<00:00, 18.52it/s] 
+[lora] manual LoRA r=8 alpha=16 applied to 108 nn.Linear modules in Gemma4TextModel
+  [ckpt] stage1=True stage2=True (meta_policy=True, critic=True)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [CTS episode error] CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 23.99 GiB of which 0 bytes is free. Of the allocated memory 37.92 GiB is allocated by PyTorch, and 14.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  [cts_4nu] humaneval seed=0
+Traceback (most recent call last):
+  File "D:\AI\cts\scripts\run_cts_eval_full.py", line 175, in run_single_evaluation
+    scores = _run_cts_on_problems(method, problems, cfg, device, model_dir, benchmark=benchmark, seed=seed, nu_trace_dir=nu_trace_dir)
+  File "D:\AI\cts\scripts\run_cts_eval_full.py", line 632, in _run_cts_on_problems
+    apply_paper_lora(
+    ~~~~~~~~~~~~~~~~^
+        bb,
+        ^^^
+    ...<4 lines>...
+        verbose=True,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI\cts\cts\train\lora_compat.py", line 132, in apply_paper_lora
+    raise RuntimeError(
+    ...<4 lines>...
+    )
+RuntimeError: apply_paper_lora: no nn.Linear children matched target_modules=['q_proj', 'v_proj', 'o_proj']; check transformers version (Gemma 4 q_proj/v_proj/o_proj attribute names) and the Gemma4TextModel module structure.
+
+================================================================================
+Table 2: Budget-capped performance (10^14 MACs max)
+================================================================================
+Method                           aime   humaneval
+-------------------------------------------------
+cts_4nu                       0.0+-0.0     0.0+-0.0
+================================================================================
+
+Wilcoxon signed-rank tests (Bonferroni n=12, family-wise α=0.05):
+------------------------------------------------------------------------
+
+  [primary] no comparable pairs available (need both methods + same n).
+
+Results saved to D:\AI\cts\results\local_gemma4_plan_i\seed42\eval\phase2_cts_4nu\table2_results.json
+
+[orch] === 2026-05-02T18:04:39 EVAL_42 phase2_cts_4nu ===

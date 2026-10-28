@@ -1,0 +1,98 @@
+{
+  "8": {
+    "broyden": {
+      "solver": "L-Broyden",
+      "ms_per_step_mean": 48.54088741260487,
+      "ms_per_step_median": 48.68054389953613,
+      "ms_per_step_std": 6.115425327123636,
+      "total_steps_executed": 999,
+      "total_wall_clock_s": 49.62848949432373,
+      "k_100_crit_b": null,
+      "wall_clock_crit_b_s": null,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "picard": {
+      "solver": "Picard",
+      "ms_per_step_mean": 46.88121962547302,
+      "ms_per_step_median": 46.677350997924805,
+      "ms_per_step_std": 1.1851439905312322,
+      "total_steps_executed": 1000,
+      "total_wall_clock_s": 46.88168549537659,
+      "k_100_crit_b": 142,
+      "wall_clock_crit_b_s": 6.618680477142334,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "speedup_step_ratio": 1.0354015488588113,
+    "vram_difference_mib": 0.0
+  },
+  "14": {
+    "broyden": {
+      "solver": "L-Broyden",
+      "ms_per_step_mean": 31.6452698425965,
+      "ms_per_step_median": 31.53681755065918,
+      "ms_per_step_std": 1.793697440356424,
+      "total_steps_executed": 999,
+      "total_wall_clock_s": 31.648213148117065,
+      "k_100_crit_b": null,
+      "wall_clock_crit_b_s": null,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "picard": {
+      "solver": "Picard",
+      "ms_per_step_mean": 29.859819889068604,
+      "ms_per_step_median": 29.58500385284424,
+      "ms_per_step_std": 1.412719375664365,
+      "total_steps_executed": 1000,
+      "total_wall_clock_s": 29.860333681106567,
+      "k_100_crit_b": 179,
+      "wall_clock_crit_b_s": 5.296341896057129,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "speedup_step_ratio": 1.059794397962244,
+    "vram_difference_mib": 0.0
+  },
+  "27": {
+    "broyden": {
+      "solver": "L-Broyden",
+      "ms_per_step_mean": 31.049179959225583,
+      "ms_per_step_median": 30.8377742767334,
+      "ms_per_step_std": 2.0200446293879724,
+      "total_steps_executed": 999,
+      "total_wall_clock_s": 31.053269624710083,
+      "k_100_crit_b": null,
+      "wall_clock_crit_b_s": null,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "picard": {
+      "solver": "Picard",
+      "ms_per_step_mean": 28.70099925994873,
+      "ms_per_step_median": 28.351426124572754,
+      "ms_per_step_std": 1.611741032119994,
+      "total_steps_executed": 1000,
+      "total_wall_clock_s": 28.70147132873535,
+      "k_100_crit_b": null,
+      "wall_clock_crit_b_s": null,
+      "peak_vram_bytes": 0,
+      "peak_vram_mib": 0.0,
+      "peak_vram_gib": 0.0,
+      "is_grad_enabled": false
+    },
+    "speedup_step_ratio": 1.0818152942344994,
+    "vram_difference_mib": 0.0
+  }
+}

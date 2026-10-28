@@ -1,0 +1,21 @@
+{
+  "telemetry_n": 1500,
+  "steps_contiguous": true,
+  "finite_telemetry": true,
+  "ans_n_counts": {
+    "4": 1500
+  },
+  "last200_loss": 0.0909659529622877,
+  "last200_ans_ce": 0.49176877274273467,
+  "loss_difference": 0.0,
+  "ans_ce_difference": 0.0,
+  "replaced_plus_appended": 992,
+  "budget_truncated_pct_of_retained": 57.96370967741935,
+  "budget_truncated_pct_of_listed": 57.90533736153071,
+  "visits_minus_steps_times_batch": 0,
+  "train_sha_matches": true,
+  "dev_sha_matches": true,
+  "raw_train_targets_reconstructed": false,
+  "excluded_id_available": false,
+  "training_counts_source": "reported manifest; aggregate consistency checked, not independent replay"
+}

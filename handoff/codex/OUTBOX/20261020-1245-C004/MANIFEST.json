@@ -1,0 +1,50 @@
+{
+  "observed_at_kst": "2026-10-20T12:45:00+09:00",
+  "time_precision": "minute",
+  "workspace": "D:\\AI\\cts",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "606fab6d2712ed4c8cfd336784b71d962ca9d296d9ed6dc94ac8f569fae75f6f"
+    },
+    {
+      "path": "handoff/codex/AGENTS.md",
+      "sha256": "9616b9816ac652439581ffeba1e6aff1eb28442063c3a631fd895018e4cccc44"
+    },
+    {
+      "path": "handoff/codex/README.md",
+      "sha256": "883f0eabd531bafb0674a3fe3995e90aac4a6397ad2370bc37019811b4a21cc1"
+    },
+    {
+      "path": "handoff/codex/CONTEXT.md",
+      "sha256": "074c99e6703ccce6039b503f7cd1d629ce519e62799744b66902a7046158b04f"
+    },
+    {
+      "path": "handoff/codex/INBOX/ANSWER-C003b-20261020-0930.md",
+      "sha256": "5afe040f2b485c76f9e77453e3e797d7fc6121ab57eb226157a818509c865ce9"
+    },
+    {
+      "path": "handoff/codex/INBOX/ANSWER-C003-20261020-0900.md",
+      "sha256": "585474c6bd491621fe171e6ca3a89f53c86bac3ce1d97623c7e5cfb59d3c674b"
+    },
+    {
+      "path": "shared/STATE.md",
+      "sha256": "5709b35539d5a3479607e5795e354058db58b0bfa67e6d13a66bbe065a74d42c"
+    }
+  ],
+  "state_content_review": "top 90 lines; full-file SHA256 recorded",
+  "inbox_names": [
+    "ACK-C001-C002-20261020-0750.md",
+    "ANSWER-C003-20261020-0900.md",
+    "ANSWER-C003b-20261020-0930.md",
+    "TASK-C001.md",
+    "TASK-C002.md",
+    "TASK-C003.md"
+  ],
+  "outputs": [
+    {
+      "path": "QUESTION-C004.md",
+      "sha256": "5da131913dbd27a7f3527d7a70937344f432d225c56f0f4c5e0333bd21a67583"
+    }
+  ]
+}

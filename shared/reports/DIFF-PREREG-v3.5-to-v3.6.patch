@@ -1,0 +1,59 @@
+--- PREREG_S7_D_v3_5.md
++++ PREREG_S7_D_v3_6.md
+@@ -1,11 +1,11 @@
+-# PREREG_S7_D_v3_5.md — 문제 글 + z* 결합 디코더 (S7-D) 사전등록 v3.5 (잠금본)
+-
+-- **등록 일시**: 2026-09-28 (초안 작성 → 13:15 잠금)
+-- **지침**: 원장 #363~#368, #375, #377, #378, **#392(외부 감사)** + AUDIT-0002 재감사 + proposals/RCA-G1G2-20260928.md + audits/EXT-0001_prereg_drafts.md
++# PREREG_S7_D_v3_6.md — 문제 글 + z* 결합 디코더 (S7-D) 사전등록 v3.6 (잠금본)
++
++- **등록 일시**: 2026-10-04 (원장 #419)
++- **지침**: 원장 #363~#368, #375, #377, #378, #392(외부 감사), **#419** + AUDIT-0002 재감사 + proposals/RCA-G1G2-20260928.md + audits/EXT-0001_prereg_drafts.md + AUDIT-P002 재감사
+ - **발신**: A / **수신**: Principal, 외부 감사인 / **사본**: B, Antigravity
+ - **소속**: Stage 7 (S7-D: Text + z* Augmented Generation)
+-- **문서 잠금 상태**: **LOCKED (잠금 2026-09-28 13:15 — AUDIT-P001 재감사 2 PASS, 외부 감사 원장 #392 지시 3. 결과 열람 전 변경 0, 개정은 복사+diff)** (감사 대상 초안 SHA-256 `6b319ef1e5486ea188578dba2268022200823a7f038288bccc6aac53d2253f1c`)
+-- **v3.4 대비 변경 요약**: (가) §4 조건 E(z_src 대조) 추가, (나) §5 주 게이트 3(우월성)·4(DEQ 귀속) 추가 및 주장 해석 규칙, (다) §5-2 학습 전 기술 진단(글만 기준선·정보 탐침) 신설, (라) §7 채점기를 검증된 v2로 교체, (마) 디코더 입력 z*를 저장된 최종점 `z_star` 한 종류로 고정(PREREG_S7_DEQ_v1.2 §10: 최소점은 2차 지표), (마-2) G2 PASS = 게이트 2 ∧ 3 ∧ 4, 게이트 1 보조 강등, 판정 통계 = 정확 McNemar + 대응 부트스트랩, 보조 조건 F(평균 z*), (바) §8 예산·일정 갱신(Step 3 자동 연쇄 정정, 마스터 순서 참조), (사) "v3.2" 잔존 표기 정정, (아) §9-1 Step 3 계산 경로 정정, §9-3 학습 착수 조건을 두 사전등록 잠금 + 마스터 순서 ⑥으로 교체, (자) math-verify 등 채점 의존성 버전 고정. §2·§3·§6·§7 학습 하이퍼파라미터와 게이트 1·2 수치는 불변.
++- **문서 잠금 상태**: **LOCKED (잠금 2026-10-04 — AUDIT-P002 감사 PASS, 원장 #419 지시. 결과 열람 전 변경 0, 개정은 복사+diff)** (선행 잠금본 v3.5 SHA-256 `5d7e32aa1edfebf7611f0f16769ebb344433e8ca3a554b7321d7e0979d9600ed`)
++- **v3.5 대비 변경 요약**: 개정 사유 = PRE4 글만 NLL 5.85 vs 1.01(입력 동일). 디코더 언어 모델 = 조건 C와 동일한 순정 Gemma-4-e4b(경로·SHA 명시, Task 1(c) 결과). z*·z_src 계산은 기존 정본 백본 그대로. PrefixProjector·학습 하이퍼파라미터·993문항·게이트 불변.
+ - **선행 등록 문서 보존 상태**:
+   - `PREREG_S7_D.md` (v1, SHA: `26a1f0e32d5108a9773eb4e95e14742cd898603b16b7b05b761666a09ff5ec91`)
+   - `PREREG_S7_D_v2.md` (v2, SHA: `cf6628d26db7e595cc31a898696762c2dccf0f8316a5e41b434f3c153c27bfad`)
+@@ -14,6 +14,7 @@
+   - `PREREG_S7_D_v3_2.md` (v3.2, SHA: `560c7fea987f9c065ed9339180f635eb70d49d8e654e3541a8bc011317e53f6c`)
+   - `PREREG_S7_D_v3_3.md` (v3.3, SHA: `35881fc584ea81a49fcc8d032f52d251e4e01657d250606e1c270628cd357c17`, **무효 — §3 입력 양식 회귀 오류로 잠금 불인정**)
+   - `PREREG_S7_D_v3_4.md` (v3.4, SHA: `88c308625fb10b62b29ef3426052ffd23f84ad5c856b071c272ab412f183c772`)
++  - `PREREG_S7_D_v3_5.md` (v3.5, SHA: `5d7e32aa1edfebf7611f0f16769ebb344433e8ca3a554b7321d7e0979d9600ed`)
+ 
+ ---
+ 
+@@ -30,11 +31,20 @@
+ 
+ ## 2. 모델 규격 및 정본 파라미터 (Architecture & Parameters)
+ 
+-### (a) 백본 및 디코더 프로젝터 파라미터 총계
+-- **기저 백본 모델**: **`Gemma 4 e4b`** (`google/gemma-4-e4b`)
+-  - 가중치 체크포인트 정본 SHA: `58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377`
++### (a) 백본 및 디코더 프로젝터 파라미터 총계 (v3.6 정본 명시 — 원장 #419)
++- **인지적 고정점 $z^*$ 및 $z_{\text{src}}$ 연산 백본**: 기존 정본 백본 그대로 동결 유지.
++  - 가중치 체크포인트: `/home/shoon/checkpoints/m1_final_frozen.pt` (SHA: `f2119bbe5c0ad914ee00c34e9109674d15de07c5e028e288ab05b88dd448d1f9`)
++  - $z^*$ 및 $z_{\text{src}}$ 추출 시 기존 CTS 정본 DEQ 파이프라인 그대로 사용.
++- **디코더 언어 모델 (Language Model for Decoder Generation)**: **조건 C와 동일한 순정 `Gemma-4-e4b`** (Task 1(c) 결과 특정)
++  - 개정 사유: PRE4 글만 NLL 5.85 vs 1.01 (입력 동일 대조 결과 LoRA 어댑터에 의한 언어 모델링 열화 +3.69 NLL 분리 확인, 원장 #419 Task 1(b)·(c)).
++  - 스냅샷 디렉터리: `/home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377`
++  - 가중치 체크포인트 정본 파일: `model.safetensors` (15,992,595,884 bytes)
++    - SHA-256: `43fb96cec3045b72852c787540300dc5b258634b7a025f7c80355ac0788b9651`
++  - 설정 파일 `config.json` SHA-256: `f27a045f32c39fb9cd930204920de6b0962810cf09929a8810901ffaec780f20`
++  - 모델 아키텍처: `Gemma4ForConditionalGeneration` (`model_type: gemma4`)
+   - $d_{\text{model}} = 2560$, 어휘 사전 크기 $V = 256,000$.
+-- **PrefixProjector 파라미터 총계**: **정확히 19,665,920개**
++  - 디코더 가중치 적재 시 missing/unexpected keys 엄격 0건.
++- **PrefixProjector 파라미터 총계**: **정확히 19,665,920개 (완전 불변)**
+   - $W_{\text{proj}}$ (`nn.Linear(2560, 2560)`, bias 없음, Spectral Norm 적용): $2560 \times 2560 = \mathbf{6,553,600}$ 파라미터.
+   - Adapter FC1 (`nn.Linear(2560, 2560)`, bias 포함): $2560 \times 2560 + 2560 = \mathbf{6,556,160}$ 파라미터.
+   - Adapter FC2 (`nn.Linear(2560, 2560)`, bias 포함): $2560 \times 2560 + 2560 = \mathbf{6,556,160}$ 파라미터.
+@@ -286,4 +296,4 @@
+ 
+ ## 10. 사전등록 잠금 (LOCKED)
+ 
+-본 문서(`PREREG_S7_D_v3_5.md`)는 v3.4의 학습 하이퍼파라미터·입력 양식·데이터 분할·게이트 1·2 수치를 그대로 유지하고, 조건 E·주 게이트 3·4·주장 해석 규칙·학습 전 기술 진단·검증된 채점기·z* 정의 통일을 추가한 문서로, 2026-09-28 13:15에 잠금되었다(AUDIT-P001 재감사 2 PASS, 원장 #392). GOAL.md G2 개정은 Principal 승인 후 적용한다. 사후 수정은 불가하며 개정은 복사+절 수정+diff로만 한다.
++본 문서(`PREREG_S7_D_v3_6.md`)는 v3.5의 PrefixProjector(19,665,920개), 학습 하이퍼파라미터(AdamW, lr 1e-4/3e-4, micro 2, accum 4, effective 8, 3000 steps, margin 1.0), 993문항 데이터셋, 주 게이트 1~4 기준을 엄격히 불변으로 유지하고, PRE4 글만 NLL 대조(5.85 vs 1.01) 및 원인 분리(원장 #419 Task 1(b)·(c))에 따라 디코더 언어 모델을 조건 C와 동일한 순정 Gemma-4-e4b Base(`58c4d7b5`, SHA `43fb96ce...`)로 명시하며, $z^*$·$z_{\text{src}}$ 계산은 기존 정본 백본(`m1_final_frozen.pt`)을 그대로 유지하도록 개정한 문서이다. 2026-10-04에 잠금되었으며(AUDIT-P002 감사 PASS, 원장 #419), 사후 수정은 일체 불가하며 개정은 복사+절 수정+diff로만 한다.

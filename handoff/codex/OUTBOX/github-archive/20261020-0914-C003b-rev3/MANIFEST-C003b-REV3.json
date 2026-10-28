@@ -1,0 +1,17 @@
+{
+  "author": "Codex",
+  "created_kst": "2026-10-20T09:14:06.888561+09:00",
+  "input_commit": "b90c9b98c6781b8ca9606e70db01446625c72d69",
+  "scope": "static change comparison only; C004 pending result artifacts",
+  "input_sha256": {
+    "ANSWER-C003b-20261020-0930.md": "5afe040f2b485c76f9e77453e3e797d7fc6121ab57eb226157a818509c865ce9",
+    "scripts/g2v10_train.py": "48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f",
+    "scripts/cc_x5.sh": "1dad8f07681b55b859be1814d71e56aee821895db4ffb90791f965642af6abc4"
+  },
+  "artifacts": {
+    "REPLY-C003b-REV3-20261020.md": {
+      "sha256": "412406d8afa7919590e07b18cac2ad04d2b5f15fd46ef7463a363b962759813a",
+      "bytes": 5189
+    }
+  }
+}

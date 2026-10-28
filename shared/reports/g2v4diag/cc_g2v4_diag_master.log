@@ -1,0 +1,47 @@
+=== g2v4 diag start 2026-10-11 08:53:57 ===
+120dc83dfe02fc695f08b1b2e9bf1a600de6ca9f5b13646e520d37a3508f5cbb  scripts/g2v4_diag_iterate.py
+36e0f18addc8d46f6d8bf376cd95e89cf9eb75a1f15c4e8b714141efe5a49c99  scripts/g2v3_m3_full_train.py
+73db9dafd33e49e963d48aad4797c6b0eb7856e5e8e847fbb3b8dc0e5109921b  scripts/g2v3_m3_eval_latents_v2.py
+d43613d6b640b965c9c8a3d6ad422d7a8492fe0b0c2eed9a379064495c200433  results_s7/g2v2/zstar_zsrcinj_dev600.pt
+0da3748af2a3776c7fa91da50268a7829233939f56218d73f4b4511a6a8e5cff  results_s7/zsrc_heldout600.pt
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[A] rc=0
+[E] rc=0
+[SUM] A zstar_k1_nll 0.8782
+[SUM] A zstar_k1_res 0.0068
+[SUM] A zstar_k2_nll 0.8778
+[SUM] A zstar_k2_res 0.0062
+[SUM] A zstar_k4_nll 0.8784
+[SUM] A zstar_k4_res 0.0052
+[SUM] A zstar_k8_nll 0.8786
+[SUM] A zstar_k8_res 0.0039
+[SUM] A zstar_k16_nll 0.8791
+[SUM] A zstar_k16_res 0.0025
+[SUM] A zsrc_k1_nll 1.6519
+[SUM] A zsrc_k1_res 0.0639
+[SUM] A zsrc_k2_nll 1.5073
+[SUM] A zsrc_k2_res 0.0543
+[SUM] A zsrc_k4_nll 1.2248
+[SUM] A zsrc_k4_res 0.0405
+[SUM] A zsrc_k8_nll 0.9906
+[SUM] A zsrc_k8_res 0.0249
+[SUM] A zsrc_k16_nll 0.9099
+[SUM] A zsrc_k16_res 0.0118
+[SUM] A shift1_nll 0.8777
+[SUM] A mean_nll 0.8767
+[DONE] 912s -> results_s7/g2v4diag/diag_A.json
+[SUM] E zsrc_k1_nll 0.8933
+[SUM] E zsrc_k1_res 0.0533
+[SUM] E zsrc_k2_nll 0.8929
+[SUM] E zsrc_k2_res 0.0475
+[SUM] E zsrc_k4_nll 0.8943
+[SUM] E zsrc_k4_res 0.0382
+[SUM] E zsrc_k8_nll 0.8976
+[SUM] E zsrc_k8_res 0.0255
+[SUM] E zsrc_k16_nll 0.9045
+[SUM] E zsrc_k16_res 0.0124
+[SUM] E shift1_nll 0.8941
+[SUM] E mean_nll 0.8933
+[DONE] 494s -> results_s7/g2v4diag/diag_E.json
+=== g2v4 diag end 2026-10-11 09:09:51 ===

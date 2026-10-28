@@ -1,0 +1,53 @@
+=== R1 dev start 2026-10-12 15:06:06 ===
+fd6c2d03e3ed18d1597950edc79a01af8331d192c9f84b821a5b5bcf3f71cfe1  scripts/s7_eval_gate_p6_v36f.py
+73db9dafd33e49e963d48aad4797c6b0eb7856e5e8e847fbb3b8dc0e5109921b  scripts/g2v3_m3_eval_latents_v2.py
+547e1d91aa998908a0c436198f9890be961f18d643efec2c43dd700d415587cd  scripts/s7_eval_score_p6_v36.py
+90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13  scripts/s5_eval_grader_v2.py
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T  2.5G 100% /home
+/dev/sda3       436G  391G   23G  95% /
+[EV-OK] R1A0s47 rows=600 16:34:41
+[EV-OK] R1E1s49 rows=600 16:48:23
+[EV-OK] R1A1s50 rows=600 16:51:52
+[EV-OK] R1A0s49 rows=600 18:22:51
+[EV-OK] R1E1s50 rows=600 18:27:03
+[EV-OK] R1E0s49 rows=600 18:37:27
+[EV-OK] R1A1s49 rows=600 20:03:06
+[EV-OK] R1E0s50 rows=600 20:05:51
+[EV-OK] R1A0s50 rows=600 20:06:13
+[EV-OK] R1E1s47 rows=600 21:37:52
+[PAIR] AE_l0_s47 (R1A0s47 - Eh): acc1 0.0967 acc2 0.0483 delta +0.0483 ci [0.02333, 0.075] b/c 47/18 p 0.0002
+[PAIR] AE_l0_s49 (R1A0s49 - R1E0s49): acc1 0.0183 acc2 0.0783 delta -0.0600 ci [-0.08333, -0.03667] b/c 9/45 p 1.0000
+[PAIR] AE_l0_s50 (R1A0s50 - R1E0s50): acc1 0.0567 acc2 0.0617 delta -0.0050 ci [-0.02833, 0.01833] b/c 23/26 p 0.7159
+[PAIR] AE_l1_s47 (Ah - R1E1s47): acc1 0.0783 acc2 0.0967 delta -0.0183 ci [-0.04667, 0.01] b/c 29/40 p 0.9260
+[PAIR] AE_l1_s49 (R1A1s49 - R1E1s49): acc1 0.0433 acc2 0.0750 delta -0.0317 ci [-0.055, -0.01] b/c 14/33 p 0.9985
+[PAIR] AE_l1_s50 (R1A1s50 - R1E1s50): acc1 0.0017 acc2 0.0650 delta -0.0633 ci [-0.08333, -0.04333] b/c 1/39 p 1.0000
+[PAIR] AA_s47 (Ah - R1A0s47): acc1 0.0783 acc2 0.0967 delta -0.0183 ci [-0.04667, 0.01] b/c 33/44 p 0.9145
+[PAIR] AA_s49 (R1A1s49 - R1A0s49): acc1 0.0433 acc2 0.0183 delta +0.0250 ci [0.00667, 0.04333] b/c 23/8 p 0.0053
+[PAIR] AA_s50 (R1A1s50 - R1A0s50): acc1 0.0017 acc2 0.0567 delta -0.0550 ci [-0.075, -0.03667] b/c 1/34 p 1.0000
+[PAIR] EE_s47 (R1E1s47 - Eh): acc1 0.0967 acc2 0.0483 delta +0.0483 ci [0.02333, 0.075] b/c 46/17 p 0.0002
+[PAIR] EE_s49 (R1E1s49 - R1E0s49): acc1 0.0750 acc2 0.0783 delta -0.0033 ci [-0.02667, 0.02167] b/c 26/28 p 0.6583
+[PAIR] EE_s50 (R1E1s50 - R1E0s50): acc1 0.0650 acc2 0.0617 delta +0.0033 ci [-0.01833, 0.025] b/c 24/22 p 0.4415
+ff0ada78f38921ca4f2109f8168e1e073e5c68569ea85027e7da7027925fd9a9  results_s7/p6r/g2v4r1/score_AA_s47.json
+1afe352569cf10b6aa966ca3f5e1d1f88f4d459be6ec0fd52b3b4eec03078311  results_s7/p6r/g2v4r1/score_AA_s49.json
+4e070dcd7deecba55e86d5115eb56eeefb8e420e799704812ceb4897ab7033a9  results_s7/p6r/g2v4r1/score_AA_s50.json
+94975309ed18f78b17cce655b8cfe64f2ca789ffebe05442731db594c4431e0f  results_s7/p6r/g2v4r1/score_AE_l0_s47.json
+dac5956a3c22d145c92381a2bba8d9a8e7adca0676644f684d92d90bf345b1ec  results_s7/p6r/g2v4r1/score_AE_l0_s49.json
+23aa2b03645627fa3d910731cf7040a187d030c730bd87d3942eeabf6accef94  results_s7/p6r/g2v4r1/score_AE_l0_s50.json
+d3da7d12666ef03ed8625752a5a1c84e4fadf8efde5729f7e84772087179bd68  results_s7/p6r/g2v4r1/score_AE_l1_s47.json
+d309d6ae243762a17ee45a94d8c226502e5f1f0397177266cf63b89ac599743d  results_s7/p6r/g2v4r1/score_AE_l1_s49.json
+6886128520318976f41e782b91e8c24f9700b7baf101ac79124f661de5d9dce7  results_s7/p6r/g2v4r1/score_AE_l1_s50.json
+6b8d68bb70f4395daa40bd2c2ef2cbe5e29a8e970623f09efac13e4a1ff10c66  results_s7/p6r/g2v4r1/score_EE_s47.json
+c85e010046ae24b051b948f6a46b3056568571093d5d1f923bb924ef018f16ac  results_s7/p6r/g2v4r1/score_EE_s49.json
+17b15eae822576668b9311e9c2f7f197525424fbe01108dc78c0061610fd6daf  results_s7/p6r/g2v4r1/score_EE_s50.json
+8c23fdf6e36402d4c650e6c92727adf25765d5fd3091e4b83b44f8550a58b21d  results_s7/p6r/g2v4r1/gen_R1A0s47.jsonl
+1bea73ff19502c2db6c02c9f4fb520c2837d66e451069cc88fd8a11d2fe43883  results_s7/p6r/g2v4r1/gen_R1A0s49.jsonl
+90b7659bb099a72e2996f8bf9be2347e21ad76f75b134d2f31130a27aa4bd0e1  results_s7/p6r/g2v4r1/gen_R1A0s50.jsonl
+96d5d4c9d931710c085de1cce0b419d0333acc9258484b11fe9b877f7d369c9b  results_s7/p6r/g2v4r1/gen_R1A1s49.jsonl
+5f2113d5dabd962d953079995982e182b1e89e5619d66a5a6e0cb116e83b430c  results_s7/p6r/g2v4r1/gen_R1A1s50.jsonl
+5b2ff4727ec256a6326d4341ec8b5adbe2860644257cb6ba5e23f1d90135acf9  results_s7/p6r/g2v4r1/gen_R1E0s49.jsonl
+bb00e636037ea8c9572a128c2d10e07342b81e20eae119636eec1f3f545a753b  results_s7/p6r/g2v4r1/gen_R1E0s50.jsonl
+b0d5a3dfafe9446210dcf4723e7d1a21777d32907bb0348e732517ebe3c49572  results_s7/p6r/g2v4r1/gen_R1E1s47.jsonl
+637a23d62ff0d7c9b0c86e012bccc931047d6ba2ee1791e3185c2541753a82f9  results_s7/p6r/g2v4r1/gen_R1E1s49.jsonl
+c321898189f08ab838c5dd3c8540b1700bef2237ee30732413e609daa71619fd  results_s7/p6r/g2v4r1/gen_R1E1s50.jsonl
+=== R1 dev end 2026-10-12 21:42:14 ===

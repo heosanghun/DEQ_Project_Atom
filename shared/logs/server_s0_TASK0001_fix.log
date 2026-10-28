@@ -1,0 +1,136 @@
+=== F1 Time (server date / log mtime / last line)
+2026-09-28 11:16:26 +0900
+2026-09-28 11:15:46.187411321 +0900 raw_s7/s7_zstar_pipeline.log
+[109/680] Q#0780 (alpha=0.25) | rho@1000=7.7222e-05 | rho@2000=7.7222e-05 | min=7.7222e-05 | shape=monotonic_decrease | norm=4900.55 | 176.9s
+=== F2 Kernel OOM (permission denied verbatim included)
+--- dmesg
+dmesg: read kernel buffer failed: Operation not permitted
+=== F3 Processes
+verify_frozen_parity:
+(0건)
+run_s7_zstar / s6_damping_run:
+3527236  712777    13:06:57 bash -c bash /home/shoon/cts_e1_s5/scripts/run_s7_zstar_pipeline.sh 2>&1 | tee -a /home/shoon/cts_e1_s5/raw_s7/s7_zstar_pipeline.log
+3527238 3527236    13:06:57 bash /home/shoon/cts_e1_s5/scripts/run_s7_zstar_pipeline.sh
+3781314 3527238    05:15:05 /home/shoon/system1_5/.venv/bin/python scripts/s6_damping_run.py --alpha 0.25 --items /home/shoon/cts_e1_s5/configs/s7_new_train_680.json --device cuda:0 --out /home/shoon/cts_e1_s5/results_s7/zstar_s7_a0.25_train680.pt --raw_dir /home/shoon/cts_e1_s5/raw_s7 --max_nfe 1000
+--- GPU compute apps
+gpu_uuid, pid, used_gpu_memory [MiB]
+GPU-71be98b0-6b81-9257-c622-97dc97d46480, 3781314, 31422 MiB
+0, GPU-71be98b0-6b81-9257-c622-97dc97d46480, 31452 MiB, 99 %
+1, GPU-9410691f-6857-1642-ec7c-7596970e2f48, 16 MiB, 0 %
+2, GPU-c81311d8-d210-3857-843e-bb38d24771e1, 16 MiB, 0 %
+3, GPU-a9fed959-7113-e747-dac4-a515ac50c160, 16 MiB, 0 %
+4, GPU-e27bdb0d-9534-1cb5-ea0e-7d427b1e8fe5, 16 MiB, 0 %
+5, GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a, 16 MiB, 0 %
+6, GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c, 16 MiB, 0 %
+7, GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b, 16 MiB, 0 %
+=== F4 tmux sessions and GPU4 equiphase status
+cts_speed_profile_gpu1_20260716: 1 windows (created Thu Jul 16 19:02:30 2026)
+cts_stage1_repeat1_fixedz0_300_20260716: 1 windows (created Thu Jul 16 18:28:42 2026)
+cts_stage1_rootwarm_dynamic100_20260716: 1 windows (created Thu Jul 16 19:07:10 2026)
+cts_stage1_rootwarm_dynamic100_v2_20260716: 1 windows (created Thu Jul 16 19:29:53 2026)
+cts_stage1_rootwarm_fixedsupport100_20260716: 1 windows (created Thu Jul 16 19:34:46 2026)
+equiphase_gpu4_bench: 1 windows (created Thu Jul 16 12:29:23 2026)
+equiphase_gpu4_eval: 1 windows (created Thu Jul 16 09:52:25 2026)
+equiphase_gpu4_training: 1 windows (created Wed Jul 15 12:19:41 2026)
+full6: 1 windows (created Mon Sep 21 16:08:27 2026)
+repro: 1 windows (created Tue Sep 15 05:28:28 2026)
+s7_watcher: 1 windows (created Sun Sep 27 23:38:02 2026)
+s7_zstar_gpu0: 1 windows (created Sun Sep 27 22:09:27 2026)
+equiphase processes:
+ 712777 81-21:38:57 tmux new-session -d -s equiphase_training
+1215407 39-18:45:02 bash -c while true; do /home/shoon/miniconda3/envs/equiphase-b/bin/python /home/shoon/equiphase_paperb/harness/watchdog.py; sleep 1800; done
+=== F5 run_s7_zstar_pipeline.sh content and config counts
+#!/bin/bash
+set -euo pipefail
+
+# scripts/run_s7_zstar_pipeline.sh
+# Directive: 원장 #367 Point 2
+# Execute S7 z* calculation with alpha=0.25 on GPU 0:
+# 1. Existing 400 (results_s7/zstar_s7_a0.25_400.pt)
+# 2. New 1,200: Train 680 (results_s7/zstar_s7_a0.25_train680.pt) -> Heldout 520 (results_s7/zstar_s7_a0.25_heldout520.pt)
+# Zero overwriting, per-item incremental saving and automatic resume.
+
+BASE_DIR="/home/shoon/cts_e1_s5"
+cd "${BASE_DIR}"
+
+PYTHON="/home/shoon/system1_5/.venv/bin/python"
+ALPHA=0.25
+DEVICE="cuda:0"
+MAX_NFE=1000
+RAW_DIR="${BASE_DIR}/raw_s7"
+RESULTS_DIR="${BASE_DIR}/results_s7"
+
+mkdir -p "${RESULTS_DIR}" "${RAW_DIR}"
+
+echo "================================================================================"
+echo "S7 z* PIPELINE LAUNCH (Alpha: ${ALPHA}, Device: ${DEVICE})"
+echo "Timestamp: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "================================================================================"
+
+# Step 1: Existing 400 items
+echo "[STEP 1/3] Computing existing 400 items..."
+"${PYTHON}" scripts/s6_damping_run.py \
+  --alpha ${ALPHA} \
+  --items "${BASE_DIR}/configs/s7_items_400.json" \
+  --device "${DEVICE}" \
+  --out "${RESULTS_DIR}/zstar_s7_a0.25_400.pt" \
+  --raw_dir "${RAW_DIR}" \
+  --max_nfe ${MAX_NFE}
+
+echo "[STEP 1/3] Step 1 (400 items) completed at $(date '+%Y-%m-%d %H:%M:%S')"
+
+# Step 2: New Train 680 items
+echo "[STEP 2/3] Computing new train 680 items..."
+"${PYTHON}" scripts/s6_damping_run.py \
+  --alpha ${ALPHA} \
+  --items "${BASE_DIR}/configs/s7_new_train_680.json" \
+  --device "${DEVICE}" \
+  --out "${RESULTS_DIR}/zstar_s7_a0.25_train680.pt" \
+  --raw_dir "${RAW_DIR}" \
+  --max_nfe ${MAX_NFE}
+
+echo "[STEP 2/3] Step 2 (train 680 items) completed at $(date '+%Y-%m-%d %H:%M:%S')"
+
+# Step 3: New Held-out 520 items
+echo "[STEP 3/3] Computing new heldout 520 items..."
+"${PYTHON}" scripts/s6_damping_run.py \
+  --alpha ${ALPHA} \
+  --items "${BASE_DIR}/configs/s7_new_heldout_520.json" \
+  --device "${DEVICE}" \
+  --out "${RESULTS_DIR}/zstar_s7_a0.25_heldout520.pt" \
+  --raw_dir "${RAW_DIR}" \
+  --max_nfe ${MAX_NFE}
+
+echo "[STEP 3/3] Step 3 (heldout 520 items) completed at $(date '+%Y-%m-%d %H:%M:%S')"
+
+echo "================================================================================"
+echo "S7 z* PIPELINE COMPLETED SUCCESSFULLY at $(date '+%Y-%m-%d %H:%M:%S')"
+echo "================================================================================"
+-rw-rw-r--  1 shoon shoon  6285  9월 27 21:52 s7_heldout_600.json
+-rw-rw-r--  1 shoon shoon  4078  9월 27 21:26 s7_items_400.json
+-rw-rw-r--  1 shoon shoon 11845  9월 27 22:08 s7_new_1200.json
+-rw-rw-r--  1 shoon shoon  5138  9월 27 22:08 s7_new_heldout_520.json
+-rw-rw-r--  1 shoon shoon  6689  9월 27 22:08 s7_new_train_680.json
+-rw-rw-r--  1 shoon shoon 10182  9월 27 21:52 s7_train_1000.json
+configs/s7_heldout_600.json {'indices': 600}
+configs/s7_items_400.json {'indices': 400}
+configs/s7_new_1200.json {'indices': 1200}
+configs/s7_new_heldout_520.json {'indices': 520}
+configs/s7_new_train_680.json {'indices': 680}
+configs/s7_train_1000.json {'indices': 1000}
+=== Observation: rho@2000 in s6_damping_run.py
+10:Logs: rho@1000, rho@2000, min_rho, trajectory every 10 steps, and 4-way classification.
+131:    max_nfe: int = 2000,
+148:    print(f"Device: {device_str} | Max NFE: {max_nfe} | Tol: {tol} | Sigma: {sigma_noise}")
+180:        log_f.write(f"Device: {device_str} | Max NFE: {max_nfe} | Tol: {tol} | Sigma: {sigma_noise}\n")
+198:                "rho_at_2000": float(existing_rec["rho_2000"]),
+217:            max_nfe=max_nfe,
+225:        rho_2000 = float(rho_traj[1999]) if len(rho_traj) >= 2000 else float(rho_traj[-1])
+233:        log_f.write(f"rho@1000: {rho_1000:.8e} | rho@2000: {rho_2000:.8e} | min_rho: {min_rho:.8e} | reached_5e-3: {converged} | shape: {shape_type}\n")
+243:            f"rho@1000={rho_1000:.4e} | rho@2000={rho_2000:.4e} | min={min_rho:.4e} | "
+252:            "max_nfe": int(max_nfe),
+269:            "rho_2000": rho_2000,
+282:            "rho_at_2000": rho_2000,
+310:            "max_nfe": max_nfe,
+359:    parser.add_argument("--max_nfe", type=int, default=2000, help="Maximum Picard iterations (default 2000)")
+382:        max_nfe=args.max_nfe,

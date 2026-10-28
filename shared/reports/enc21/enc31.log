@@ -1,0 +1,11 @@
+[BACKBONE-EVIDENCE] loading from: /home/shoon/.cache/huggingface/hub/models--google--gemma-4-e4b/snapshots/58c4d7b5cbe175834bd5cde6fcdbe0cfcf739377
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 578/2076 [00:00<00:00, 5721.65it/s]Loading weights:  55%|█████▌    | 1151/2076 [00:01<00:01, 538.78it/s]Loading weights:  68%|██████▊   | 1406/2076 [00:02<00:01, 529.30it/s]Loading weights:  99%|█████████▉| 2058/2076 [00:02<00:00, 975.44it/s]Loading weights: 100%|██████████| 2076/2076 [00:02<00:00, 845.67it/s]
+[CTS] Offloaded vision/audio encoders, saved ~0.88 GB VRAM
+[200/1593]
+[400/1593]
+[600/1593]
+[800/1593]
+[1000/1593]
+[1200/1593]
+[1400/1593]
+[SAVE] /home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc21/enc31.pt items 1593 scale 2.513243 zsrc_norm 290.45 enc_norm 115.57 stretched 1016

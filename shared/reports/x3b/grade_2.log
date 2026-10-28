@@ -1,0 +1,19 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X3O47: n 600 strict 56 lenient 63 boxed 408
+[S0] shuf_X3O47: n 600 strict 46 lenient 48 boxed 410
+[S0] X3A47: n 600 strict 43 lenient 44 boxed 485
+[S0] shuf_X3A47: n 600 strict 41 lenient 45 boxed 503
+[S0] X3E47: n 600 strict 49 lenient 51 boxed 512
+Timeout during comparison
+Timeout during comparison
+[S0] shuf_X3E47: n 600 strict 52 lenient 53 boxed 526
+[S0] X3A49: n 600 strict 55 lenient 57 boxed 483
+[S0] shuf_X3A49: n 600 strict 42 lenient 46 boxed 486
+[S0] X3E49: n 600 strict 56 lenient 61 boxed 490
+[S0] shuf_X3E49: n 600 strict 44 lenient 47 boxed 474
+[S0] X3A50: n 600 strict 49 lenient 51 boxed 487
+[S0] shuf_X3A50: n 600 strict 43 lenient 46 boxed 500
+[S0] X3E50: n 600 strict 41 lenient 46 boxed 492
+[S0] shuf_X3E50: n 600 strict 49 lenient 51 boxed 501
+[S0-DONE] /tmp/cts_x3b/x3_items.json

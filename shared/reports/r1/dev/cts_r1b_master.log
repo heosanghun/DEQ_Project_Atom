@@ -1,0 +1,57 @@
+=== R1 train start 2026-10-12 11:19:31 ===
+286bdd1d3a933b5a504ac14c23cd64830b029d9690e0797845a3112625a8e912  /tmp/cts_r1_stage/g2v5_train.py
+85b4e94f8523d15d4d522084cd0473d3446a702df4b31e52853346bdb7366126  scripts/g2v4_diag_iterate.py
+7cabcef2e13bb524a6815add5198853f21e8437fd04d018a6cef2227161df47a  scripts/g2v4_proj_v2.py
+3088a153f1d7ffabf77423a9354cd97795b9dae2daa7f429255bacfd4293784c  configs/s7_train_993.json
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc1       3.6T  3.4T  2.5G 100% /home
+/dev/sda3       436G  390G   24G  95% /
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[TR-R1A1s50] rc=0 12:08:49
+[TR-R1E1s49] rc=0 12:09:34
+[TR-R1A0s47] rc=0 12:10:19
+[DG-R1E1s49] rc=0 12:14:12
+[DG-R1A1s50] rc=0 12:14:26
+[DG-R1A0s47] rc=0 12:15:48
+[TR-R1E0s49] rc=0 13:03:48
+[TR-R1E1s50] rc=0 13:04:06
+[DG-R1E0s49] rc=0 13:08:21
+[TR-R1A0s49] rc=0 13:08:34
+[DG-R1E1s50] rc=0 13:08:43
+[DG-R1A0s49] rc=0 13:14:09
+[TR-R1E0s50] rc=0 13:57:59
+[TR-R1A1s49] rc=0 13:58:46
+[DG-R1E0s50] rc=0 14:02:34
+[DG-R1A1s49] rc=0 14:04:15
+[TR-R1A0s50] rc=0 14:07:20
+[DG-R1A0s50] rc=0 14:12:53
+[TR-R1E1s47] rc=0 15:01:27
+[DG-R1E1s47] rc=0 15:05:56
+      7   "ift_e": false,
+      3   "ift_e": true,
+      4   "n_text_dropped": 5995,
+      4   "n_text_dropped": 6058,
+      2   "n_text_dropped": 6061,
+c96bd650a4f7249be5de3d990f234ce4da2b195ac27d20e3eced609709eee3f9  /tmp/cts_r1b/diag_R1A0s47.json
+aa2261cb274ddd471e92e0c0a7278bc4837e85b0cdb5a17aa96e55e0d62007f8  /tmp/cts_r1b/diag_R1A0s49.json
+98ebd72c070fd70f55e3db8e68129a754239f2405899df2551087cf49e77feb0  /tmp/cts_r1b/diag_R1A0s50.json
+ebac3dd6f8718609898521c84a2c9e9758ce10e09396a55acdedcf232d4f82f7  /tmp/cts_r1b/diag_R1A1s49.json
+34e311f5bb03da6ae8b314c0cf4e284a1046be9df9fa1496d8f1d6d5a3bdef0e  /tmp/cts_r1b/diag_R1A1s50.json
+a9a6446e28807ca90f1f6e3a1e8d9ce8472f2fe6b8aafd6db878720ab57747f3  /tmp/cts_r1b/diag_R1E0s49.json
+ea772efeed3d5d9b52ed1d216de191e84c27651ee89e7f8a8e9238fd258b2bf7  /tmp/cts_r1b/diag_R1E0s50.json
+fee1d0e6b30c7f5a59e6d7ee48f967886f29875e20804eb499dc008f47404546  /tmp/cts_r1b/diag_R1E1s47.json
+334bc140d2d29d2c9139377c2c874e2bf58b9ed3c744d5078afc6c99adc2954c  /tmp/cts_r1b/diag_R1E1s49.json
+a659cae677b77a361157e9df5c1e0e885899e7570aa97b840661149808903274  /tmp/cts_r1b/diag_R1E1s50.json
+974701cb8a4dbc3066c7a041d0a9e24a8a0a76994ea6284f568b0ccc09f132a0  /tmp/cts_r1b/manifest_R1A0s47.json
+117feaf56e120126e2e475b75de55a82d908215831fa4495acea677b5db4e5e0  /tmp/cts_r1b/manifest_R1A0s49.json
+ca41f8618d5c80af87e5dee4fe81ec6fa1ef1f1aab163538d63ee3af275267a0  /tmp/cts_r1b/manifest_R1A0s50.json
+8183439ad9ff14d30464f61dea6e602d270b3972b0e85cbf8f5d2c41b687aacd  /tmp/cts_r1b/manifest_R1A1s49.json
+b8ea43f55c0ed8b7bd4d870e6e1eca91f74a17eb7c4a464103d183978e1d59c5  /tmp/cts_r1b/manifest_R1A1s50.json
+71a5ab8c3633b0f94d070ecae68eda03dad78af0c0a717f52aa0238f9aa564b1  /tmp/cts_r1b/manifest_R1E0s49.json
+49838f1c213f606ad6944ad174c1bbc9b70ca517056b4903eb514b570aa144f2  /tmp/cts_r1b/manifest_R1E0s50.json
+95399784d606e051c671a05cec5797e5997a465317a8b96fc7fdcb02a475b915  /tmp/cts_r1b/manifest_R1E1s47.json
+56b65c7b4c5d07f9f1e099e129cc09e6528b35d9d441a26c77260b0ec9595e42  /tmp/cts_r1b/manifest_R1E1s49.json
+346e14f7476c6e215796aaf2aa7174806f1239e8b61cd72c1c315af9cd75c1d4  /tmp/cts_r1b/manifest_R1E1s50.json
+=== R1 train end 2026-10-12 15:05:56 ===

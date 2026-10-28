@@ -1,0 +1,28 @@
+== per condition
+  C_fmt       boxed  35.5%  lenient 15.67%  strict 12.83%
+  X5O47       boxed  43.0%  lenient 15.67%  strict 12.17%
+  shuf_X5O47  boxed  47.7%  lenient 12.17%  strict 10.17%
+  X6R49       boxed  56.2%  lenient 16.50%  strict 15.83%
+  shuf_X6R49  boxed  53.0%  lenient 12.00%  strict 10.67%
+  X6R50       boxed  49.7%  lenient 14.83%  strict 13.50%
+  shuf_X6R50  boxed  49.5%  lenient 12.33%  strict 10.50%
+  X6S47       boxed  46.2%  lenient 12.67%  strict 11.67%
+  shuf_X6S47  boxed  52.2%  lenient 10.83%  strict  9.50%
+== X6-R pooled 3 seeds: matched - shuffled (O-A: CI lower > 0)
+  lenient  mean +3.50%p  95% CI [+1.56, +5.44]  per-run [3.5, 4.5, 2.5]
+  strict   mean +3.39%p  95% CI [+1.50, +5.28]  per-run [2.0, 5.17, 3.0]
+== X6-R pooled 3 seeds: matched - C_fmt (O-B: >= +5%p)
+  lenient  mean +0.00%p  95% CI [-2.44, +2.39]  per-run [0.0, 0.83, -0.83]
+  strict   mean +1.00%p  95% CI [-1.44, +3.44]  per-run [-0.67, 3.0, 0.67]
+== X6-R pooled: shuffled - C_fmt (harm report)
+  lenient  mean -3.50%p  95% CI [-6.00, -1.11]  per-run [-3.5, -3.67, -3.33]
+  strict   mean -2.39%p  95% CI [-4.83, -0.00]  per-run [-2.67, -2.17, -2.33]
+== X6-S (aw20, 3000 steps): matched - shuffled (O-A)
+  lenient  mean +1.83%p  95% CI [-1.17, +4.83]  per-run [1.83]
+  strict   mean +2.17%p  95% CI [-0.83, +5.17]  per-run [2.17]
+== X6-S: matched - C_fmt (O-B)
+  lenient  mean -3.00%p  95% CI [-6.17, +0.00]  per-run [-3.0]
+  strict   mean -1.17%p  95% CI [-4.00, +1.67]  per-run [-1.17]
+== X6-S: shuffled - C_fmt (harm report)
+  lenient  mean -4.83%p  95% CI [-8.00, -1.83]  per-run [-4.83]
+  strict   mean -3.33%p  95% CI [-6.33, -0.33]  per-run [-3.33]

@@ -1,0 +1,28 @@
+{
+  "started_at_utc": "2026-04-26T04:56:06+00:00",
+  "smoke": true,
+  "args": {
+    "seeds": 5,
+    "device": "cuda:0",
+    "output_root": "D:\\AI\\cts\\results\\smoke_preflight"
+  },
+  "phases": {
+    "verify_stage2": {
+      "status": "FAIL",
+      "duration_s": 2.5,
+      "details": {
+        "reason": "ckpt missing policy/critic state-dicts",
+        "top_level_keys": [
+          "meta",
+          "value_head",
+          "critic_z",
+          "config_name",
+          "W",
+          "text_dim"
+        ]
+      }
+    }
+  },
+  "final_verdict": "FAIL_PHASE_1",
+  "ended_at_utc": "2026-04-26T04:56:09+00:00"
+}

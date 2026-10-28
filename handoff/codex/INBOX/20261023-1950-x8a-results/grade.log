@@ -1,0 +1,9 @@
+[GRADER-VERIFIED] scripts/s5_eval_grader_v2.py SHA: 90cc93e4b76704b209291ac43999a3f829ac79f7234c60362f95bccadd12fa13
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X8A47: n 600 strict 67 lenient 89 boxed 301
+[S0] shuf_X8A47: n 600 strict 55 lenient 68 boxed 308
+[S0] X8A49: n 600 strict 83 lenient 95 boxed 306
+[S0] shuf_X8A49: n 600 strict 82 lenient 91 boxed 351
+[S0] X8A50: n 600 strict 70 lenient 83 boxed 314
+[S0] shuf_X8A50: n 600 strict 71 lenient 85 boxed 290
+[S0-DONE] /tmp/cts_x8a/x8a_items.json

@@ -1,0 +1,1164 @@
+{
+ "source": "/home/shoon/cts_e1_s5/results_s7/cc_archive_20261027/enc_stage1_r2/enc_info_probe.json",
+ "rule": "enc_compare_r2.py - PREREG-ENC-STAGE1 primary analysis, revision 2 (CC 2026-10-27; r1 enc_compare.py).\nChanges (Codex ENC-PREFLIGHT item 2): before any statistic, verify that exactly 8 candidates + BOW + zsrc are present, and that for\nevery task the set of eligible dev ids AND the gold label of every id are identical across all 10 feature sets (fail otherwise).\nStatistics use unrounded values; the pass rule is applied to unrounded CI bounds; full-precision results are written to JSON.\nRule (prereg, fixed before results): primary tasks answer_type, answer_logmag. A candidate passes if for at least one primary task\n(acc - train-majority) CI lower > 0 AND (candidate - zsrc, paired per item) CI lower > 0. Among passing candidates the one with the\nlargest mean (acc - majority) over the two primary tasks is selected for stage 2. Item bootstrap B=10000, random.Random(2026),\nsame resampling procedure as info_probe_feat.boot_diff but without rounding. answer_parity reported only.\nusage: python enc_compare_r2.py enc_info_probe.json out.json",
+ "tasks": {
+  "subject": {
+   "n_dev": 600,
+   "acc_train_majority": 0.32666666666666666,
+   "by_set": {
+    "BOW": {
+     "acc": 0.74,
+     "real_minus_majority_rounded_src": [
+      0.4133,
+      0.365,
+      0.46
+     ],
+     "acc_minus_majority": [
+      0.41333333333333333,
+      0.365,
+      0.46
+     ],
+     "minus_zsrc": [
+      0.12833333333333333,
+      0.09,
+      0.16833333333333333
+     ]
+    },
+    "zsrc": {
+     "acc": 0.6116666666666667,
+     "real_minus_majority_rounded_src": [
+      0.285,
+      0.235,
+      0.3367
+     ],
+     "acc_minus_majority": [
+      0.285,
+      0.235,
+      0.33666666666666667
+     ]
+    },
+    "last64@10": {
+     "acc": 0.83,
+     "real_minus_majority_rounded_src": [
+      0.5033,
+      0.4533,
+      0.5517
+     ],
+     "acc_minus_majority": [
+      0.5033333333333333,
+      0.4533333333333333,
+      0.5516666666666666
+     ],
+     "minus_zsrc": [
+      0.21833333333333332,
+      0.175,
+      0.26
+     ]
+    },
+    "last64@21": {
+     "acc": 0.8316666666666667,
+     "real_minus_majority_rounded_src": [
+      0.505,
+      0.4567,
+      0.5517
+     ],
+     "acc_minus_majority": [
+      0.505,
+      0.45666666666666667,
+      0.5516666666666666
+     ],
+     "minus_zsrc": [
+      0.22,
+      0.17833333333333334,
+      0.26166666666666666
+     ]
+    },
+    "last64@31": {
+     "acc": 0.8316666666666667,
+     "real_minus_majority_rounded_src": [
+      0.505,
+      0.4583,
+      0.5517
+     ],
+     "acc_minus_majority": [
+      0.505,
+      0.4583333333333333,
+      0.5516666666666666
+     ],
+     "minus_zsrc": [
+      0.22,
+      0.17666666666666667,
+      0.2633333333333333
+     ]
+    },
+    "last64@42": {
+     "acc": 0.8383333333333334,
+     "real_minus_majority_rounded_src": [
+      0.5117,
+      0.4633,
+      0.56
+     ],
+     "acc_minus_majority": [
+      0.5116666666666667,
+      0.4633333333333333,
+      0.56
+     ],
+     "minus_zsrc": [
+      0.22666666666666666,
+      0.185,
+      0.2683333333333333
+     ]
+    },
+    "all@10": {
+     "acc": 0.84,
+     "real_minus_majority_rounded_src": [
+      0.5133,
+      0.4667,
+      0.56
+     ],
+     "acc_minus_majority": [
+      0.5133333333333333,
+      0.4666666666666667,
+      0.56
+     ],
+     "minus_zsrc": [
+      0.22833333333333333,
+      0.18666666666666668,
+      0.27
+     ]
+    },
+    "all@21": {
+     "acc": 0.8466666666666667,
+     "real_minus_majority_rounded_src": [
+      0.52,
+      0.4733,
+      0.5667
+     ],
+     "acc_minus_majority": [
+      0.52,
+      0.47333333333333333,
+      0.5666666666666667
+     ],
+     "minus_zsrc": [
+      0.235,
+      0.19333333333333333,
+      0.27666666666666667
+     ]
+    },
+    "all@31": {
+     "acc": 0.8566666666666667,
+     "real_minus_majority_rounded_src": [
+      0.53,
+      0.4833,
+      0.5767
+     ],
+     "acc_minus_majority": [
+      0.53,
+      0.48333333333333334,
+      0.5766666666666667
+     ],
+     "minus_zsrc": [
+      0.245,
+      0.20166666666666666,
+      0.2866666666666667
+     ]
+    },
+    "all@42": {
+     "acc": 0.845,
+     "real_minus_majority_rounded_src": [
+      0.5183,
+      0.47,
+      0.565
+     ],
+     "acc_minus_majority": [
+      0.5183333333333333,
+      0.47,
+      0.565
+     ],
+     "minus_zsrc": [
+      0.23333333333333334,
+      0.19166666666666668,
+      0.275
+     ]
+    }
+   },
+   "majority_class": "algebra"
+  },
+  "answer_type": {
+   "n_dev": 600,
+   "acc_train_majority": 0.6666666666666666,
+   "by_set": {
+    "BOW": {
+     "acc": 0.755,
+     "real_minus_majority_rounded_src": [
+      0.0883,
+      0.0633,
+      0.115
+     ],
+     "acc_minus_majority": [
+      0.08833333333333333,
+      0.06333333333333334,
+      0.115
+     ],
+     "minus_zsrc": [
+      0.08166666666666667,
+      0.051666666666666666,
+      0.11333333333333333
+     ]
+    },
+    "zsrc": {
+     "acc": 0.6733333333333333,
+     "real_minus_majority_rounded_src": [
+      0.0067,
+      -0.02,
+      0.0333
+     ],
+     "acc_minus_majority": [
+      0.006666666666666667,
+      -0.02,
+      0.03333333333333333
+     ]
+    },
+    "last64@10": {
+     "acc": 0.7583333333333333,
+     "real_minus_majority_rounded_src": [
+      0.0917,
+      0.055,
+      0.13
+     ],
+     "acc_minus_majority": [
+      0.09166666666666666,
+      0.055,
+      0.13
+     ],
+     "minus_zsrc": [
+      0.085,
+      0.04666666666666667,
+      0.12333333333333334
+     ]
+    },
+    "last64@21": {
+     "acc": 0.745,
+     "real_minus_majority_rounded_src": [
+      0.0783,
+      0.0417,
+      0.115
+     ],
+     "acc_minus_majority": [
+      0.07833333333333334,
+      0.041666666666666664,
+      0.115
+     ],
+     "minus_zsrc": [
+      0.07166666666666667,
+      0.035,
+      0.10833333333333334
+     ]
+    },
+    "last64@31": {
+     "acc": 0.7733333333333333,
+     "real_minus_majority_rounded_src": [
+      0.1067,
+      0.0717,
+      0.1417
+     ],
+     "acc_minus_majority": [
+      0.10666666666666667,
+      0.07166666666666667,
+      0.14166666666666666
+     ],
+     "minus_zsrc": [
+      0.1,
+      0.065,
+      0.135
+     ]
+    },
+    "last64@42": {
+     "acc": 0.7333333333333333,
+     "real_minus_majority_rounded_src": [
+      0.0667,
+      0.0317,
+      0.1017
+     ],
+     "acc_minus_majority": [
+      0.06666666666666667,
+      0.03166666666666667,
+      0.10166666666666667
+     ],
+     "minus_zsrc": [
+      0.06,
+      0.025,
+      0.09666666666666666
+     ]
+    },
+    "all@10": {
+     "acc": 0.7566666666666667,
+     "real_minus_majority_rounded_src": [
+      0.09,
+      0.0533,
+      0.1267
+     ],
+     "acc_minus_majority": [
+      0.09,
+      0.05333333333333334,
+      0.12666666666666668
+     ],
+     "minus_zsrc": [
+      0.08333333333333333,
+      0.04666666666666667,
+      0.12
+     ]
+    },
+    "all@21": {
+     "acc": 0.765,
+     "real_minus_majority_rounded_src": [
+      0.0983,
+      0.0633,
+      0.1333
+     ],
+     "acc_minus_majority": [
+      0.09833333333333333,
+      0.06333333333333334,
+      0.13333333333333333
+     ],
+     "minus_zsrc": [
+      0.09166666666666666,
+      0.055,
+      0.12833333333333333
+     ]
+    },
+    "all@31": {
+     "acc": 0.7733333333333333,
+     "real_minus_majority_rounded_src": [
+      0.1067,
+      0.0717,
+      0.1433
+     ],
+     "acc_minus_majority": [
+      0.10666666666666667,
+      0.07166666666666667,
+      0.14333333333333334
+     ],
+     "minus_zsrc": [
+      0.1,
+      0.065,
+      0.13666666666666666
+     ]
+    },
+    "all@42": {
+     "acc": 0.7566666666666667,
+     "real_minus_majority_rounded_src": [
+      0.09,
+      0.055,
+      0.125
+     ],
+     "acc_minus_majority": [
+      0.09,
+      0.055,
+      0.125
+     ],
+     "minus_zsrc": [
+      0.08333333333333333,
+      0.04833333333333333,
+      0.11833333333333333
+     ]
+    }
+   },
+   "majority_class": "integer"
+  },
+  "answer_parity": {
+   "n_dev": 400,
+   "acc_train_majority": 0.6,
+   "by_set": {
+    "BOW": {
+     "acc": 0.59,
+     "real_minus_majority_rounded_src": [
+      -0.01,
+      -0.0575,
+      0.04
+     ],
+     "acc_minus_majority": [
+      -0.01,
+      -0.0575,
+      0.04
+     ],
+     "minus_zsrc": [
+      0.0425,
+      -0.015,
+      0.1025
+     ]
+    },
+    "zsrc": {
+     "acc": 0.5475,
+     "real_minus_majority_rounded_src": [
+      -0.0525,
+      -0.1075,
+      0.0
+     ],
+     "acc_minus_majority": [
+      -0.0525,
+      -0.1075,
+      0.0
+     ]
+    },
+    "last64@10": {
+     "acc": 0.5575,
+     "real_minus_majority_rounded_src": [
+      -0.0425,
+      -0.1,
+      0.015
+     ],
+     "acc_minus_majority": [
+      -0.0425,
+      -0.1,
+      0.015
+     ],
+     "minus_zsrc": [
+      0.01,
+      -0.05,
+      0.07
+     ]
+    },
+    "last64@21": {
+     "acc": 0.5725,
+     "real_minus_majority_rounded_src": [
+      -0.0275,
+      -0.0825,
+      0.0275
+     ],
+     "acc_minus_majority": [
+      -0.0275,
+      -0.0825,
+      0.0275
+     ],
+     "minus_zsrc": [
+      0.025,
+      -0.035,
+      0.0825
+     ]
+    },
+    "last64@31": {
+     "acc": 0.575,
+     "real_minus_majority_rounded_src": [
+      -0.025,
+      -0.0825,
+      0.0325
+     ],
+     "acc_minus_majority": [
+      -0.025,
+      -0.0825,
+      0.0325
+     ],
+     "minus_zsrc": [
+      0.0275,
+      -0.0325,
+      0.0875
+     ]
+    },
+    "last64@42": {
+     "acc": 0.54,
+     "real_minus_majority_rounded_src": [
+      -0.06,
+      -0.12,
+      0.0
+     ],
+     "acc_minus_majority": [
+      -0.06,
+      -0.12,
+      0.0
+     ],
+     "minus_zsrc": [
+      -0.0075,
+      -0.07,
+      0.055
+     ]
+    },
+    "all@10": {
+     "acc": 0.575,
+     "real_minus_majority_rounded_src": [
+      -0.025,
+      -0.0825,
+      0.035
+     ],
+     "acc_minus_majority": [
+      -0.025,
+      -0.0825,
+      0.035
+     ],
+     "minus_zsrc": [
+      0.0275,
+      -0.0325,
+      0.09
+     ]
+    },
+    "all@21": {
+     "acc": 0.525,
+     "real_minus_majority_rounded_src": [
+      -0.075,
+      -0.13,
+      -0.0175
+     ],
+     "acc_minus_majority": [
+      -0.075,
+      -0.13,
+      -0.0175
+     ],
+     "minus_zsrc": [
+      -0.0225,
+      -0.085,
+      0.04
+     ]
+    },
+    "all@31": {
+     "acc": 0.5475,
+     "real_minus_majority_rounded_src": [
+      -0.0525,
+      -0.11,
+      0.005
+     ],
+     "acc_minus_majority": [
+      -0.0525,
+      -0.11,
+      0.005
+     ],
+     "minus_zsrc": [
+      0.0,
+      -0.06,
+      0.06
+     ]
+    },
+    "all@42": {
+     "acc": 0.56,
+     "real_minus_majority_rounded_src": [
+      -0.04,
+      -0.1,
+      0.02
+     ],
+     "acc_minus_majority": [
+      -0.04,
+      -0.1,
+      0.02
+     ],
+     "minus_zsrc": [
+      0.0125,
+      -0.05,
+      0.0725
+     ]
+    }
+   },
+   "majority_class": "even"
+  },
+  "answer_logmag": {
+   "n_dev": 400,
+   "acc_train_majority": 0.33,
+   "by_set": {
+    "BOW": {
+     "acc": 0.4175,
+     "real_minus_majority_rounded_src": [
+      0.0875,
+      0.0325,
+      0.1425
+     ],
+     "acc_minus_majority": [
+      0.0875,
+      0.0325,
+      0.1425
+     ],
+     "minus_zsrc": [
+      0.0325,
+      -0.0275,
+      0.0925
+     ]
+    },
+    "zsrc": {
+     "acc": 0.385,
+     "real_minus_majority_rounded_src": [
+      0.055,
+      -0.01,
+      0.12
+     ],
+     "acc_minus_majority": [
+      0.055,
+      -0.01,
+      0.12
+     ]
+    },
+    "last64@10": {
+     "acc": 0.41,
+     "real_minus_majority_rounded_src": [
+      0.08,
+      0.0175,
+      0.1425
+     ],
+     "acc_minus_majority": [
+      0.08,
+      0.0175,
+      0.1425
+     ],
+     "minus_zsrc": [
+      0.025,
+      -0.0375,
+      0.0875
+     ]
+    },
+    "last64@21": {
+     "acc": 0.45,
+     "real_minus_majority_rounded_src": [
+      0.12,
+      0.06,
+      0.1825
+     ],
+     "acc_minus_majority": [
+      0.12,
+      0.06,
+      0.1825
+     ],
+     "minus_zsrc": [
+      0.065,
+      0.005,
+      0.125
+     ]
+    },
+    "last64@31": {
+     "acc": 0.4875,
+     "real_minus_majority_rounded_src": [
+      0.1575,
+      0.095,
+      0.22
+     ],
+     "acc_minus_majority": [
+      0.1575,
+      0.095,
+      0.22
+     ],
+     "minus_zsrc": [
+      0.1025,
+      0.0475,
+      0.1575
+     ]
+    },
+    "last64@42": {
+     "acc": 0.4825,
+     "real_minus_majority_rounded_src": [
+      0.1525,
+      0.0875,
+      0.2175
+     ],
+     "acc_minus_majority": [
+      0.1525,
+      0.0875,
+      0.2175
+     ],
+     "minus_zsrc": [
+      0.0975,
+      0.035,
+      0.16
+     ]
+    },
+    "all@10": {
+     "acc": 0.45,
+     "real_minus_majority_rounded_src": [
+      0.12,
+      0.0575,
+      0.1825
+     ],
+     "acc_minus_majority": [
+      0.12,
+      0.0575,
+      0.1825
+     ],
+     "minus_zsrc": [
+      0.065,
+      0.005,
+      0.125
+     ]
+    },
+    "all@21": {
+     "acc": 0.4525,
+     "real_minus_majority_rounded_src": [
+      0.1225,
+      0.06,
+      0.185
+     ],
+     "acc_minus_majority": [
+      0.1225,
+      0.06,
+      0.185
+     ],
+     "minus_zsrc": [
+      0.0675,
+      0.0075,
+      0.1275
+     ]
+    },
+    "all@31": {
+     "acc": 0.4775,
+     "real_minus_majority_rounded_src": [
+      0.1475,
+      0.085,
+      0.21
+     ],
+     "acc_minus_majority": [
+      0.1475,
+      0.085,
+      0.21
+     ],
+     "minus_zsrc": [
+      0.0925,
+      0.035,
+      0.15
+     ]
+    },
+    "all@42": {
+     "acc": 0.4725,
+     "real_minus_majority_rounded_src": [
+      0.1425,
+      0.08,
+      0.205
+     ],
+     "acc_minus_majority": [
+      0.1425,
+      0.08,
+      0.205
+     ],
+     "minus_zsrc": [
+      0.0875,
+      0.025,
+      0.15
+     ]
+    }
+   },
+   "majority_class": "t1"
+  },
+  "prompt_maxnum_log": {
+   "n_dev": 579,
+   "acc_train_majority": 0.3540587219343696,
+   "by_set": {
+    "BOW": {
+     "acc": 0.5181347150259067,
+     "real_minus_majority_rounded_src": [
+      0.1641,
+      0.1192,
+      0.2073
+     ],
+     "acc_minus_majority": [
+      0.16407599309153714,
+      0.11917098445595854,
+      0.20725388601036268
+     ],
+     "minus_zsrc": [
+      0.0535405872193437,
+      0.0017271157167530224,
+      0.10362694300518134
+     ]
+    },
+    "zsrc": {
+     "acc": 0.46459412780656306,
+     "real_minus_majority_rounded_src": [
+      0.1105,
+      0.0604,
+      0.1606
+     ],
+     "acc_minus_majority": [
+      0.11053540587219343,
+      0.06044905008635579,
+      0.16062176165803108
+     ]
+    },
+    "last64@10": {
+     "acc": 0.697754749568221,
+     "real_minus_majority_rounded_src": [
+      0.3437,
+      0.2953,
+      0.3921
+     ],
+     "acc_minus_majority": [
+      0.3436960276338515,
+      0.29533678756476683,
+      0.3920552677029361
+     ],
+     "minus_zsrc": [
+      0.23316062176165803,
+      0.1848013816925734,
+      0.28324697754749567
+     ]
+    },
+    "last64@21": {
+     "acc": 0.6787564766839378,
+     "real_minus_majority_rounded_src": [
+      0.3247,
+      0.2746,
+      0.3748
+     ],
+     "acc_minus_majority": [
+      0.32469775474956825,
+      0.27461139896373055,
+      0.3747841105354059
+     ],
+     "minus_zsrc": [
+      0.2141623488773748,
+      0.16407599309153714,
+      0.26424870466321243
+     ]
+    },
+    "last64@31": {
+     "acc": 0.6493955094991365,
+     "real_minus_majority_rounded_src": [
+      0.2953,
+      0.2453,
+      0.3454
+     ],
+     "acc_minus_majority": [
+      0.29533678756476683,
+      0.2452504317789292,
+      0.3454231433506045
+     ],
+     "minus_zsrc": [
+      0.1848013816925734,
+      0.13471502590673576,
+      0.23488773747841105
+     ]
+    },
+    "last64@42": {
+     "acc": 0.6493955094991365,
+     "real_minus_majority_rounded_src": [
+      0.2953,
+      0.247,
+      0.3437
+     ],
+     "acc_minus_majority": [
+      0.29533678756476683,
+      0.2469775474956822,
+      0.3436960276338515
+     ],
+     "minus_zsrc": [
+      0.1848013816925734,
+      0.13298791018998274,
+      0.23661485319516407
+     ]
+    },
+    "all@10": {
+     "acc": 0.7253886010362695,
+     "real_minus_majority_rounded_src": [
+      0.3713,
+      0.323,
+      0.4197
+     ],
+     "acc_minus_majority": [
+      0.37132987910189985,
+      0.3229706390328152,
+      0.41968911917098445
+     ],
+     "minus_zsrc": [
+      0.2607944732297064,
+      0.21243523316062177,
+      0.307426597582038
+     ]
+    },
+    "all@21": {
+     "acc": 0.7115716753022453,
+     "real_minus_majority_rounded_src": [
+      0.3575,
+      0.3092,
+      0.4059
+     ],
+     "acc_minus_majority": [
+      0.35751295336787564,
+      0.30915371329879104,
+      0.4058721934369603
+     ],
+     "minus_zsrc": [
+      0.2469775474956822,
+      0.19861830742659758,
+      0.2970639032815199
+     ]
+    },
+    "all@31": {
+     "acc": 0.6597582037996546,
+     "real_minus_majority_rounded_src": [
+      0.3057,
+      0.2556,
+      0.3558
+     ],
+     "acc_minus_majority": [
+      0.30569948186528495,
+      0.2556131260794473,
+      0.35578583765112265
+     ],
+     "minus_zsrc": [
+      0.19516407599309155,
+      0.14507772020725387,
+      0.2452504317789292
+     ]
+    },
+    "all@42": {
+     "acc": 0.6252158894645942,
+     "real_minus_majority_rounded_src": [
+      0.2712,
+      0.2211,
+      0.3212
+     ],
+     "acc_minus_majority": [
+      0.2711571675302245,
+      0.22107081174438686,
+      0.32124352331606215
+     ],
+     "minus_zsrc": [
+      0.16062176165803108,
+      0.11053540587219343,
+      0.21243523316062177
+     ]
+    }
+   },
+   "majority_class": "t1"
+  },
+  "prompt_numcount": {
+   "n_dev": 600,
+   "acc_train_majority": 0.37333333333333335,
+   "by_set": {
+    "BOW": {
+     "acc": 0.645,
+     "real_minus_majority_rounded_src": [
+      0.2717,
+      0.2233,
+      0.32
+     ],
+     "acc_minus_majority": [
+      0.27166666666666667,
+      0.22333333333333333,
+      0.32
+     ],
+     "minus_zsrc": [
+      -0.015,
+      -0.056666666666666664,
+      0.025
+     ]
+    },
+    "zsrc": {
+     "acc": 0.66,
+     "real_minus_majority_rounded_src": [
+      0.2867,
+      0.235,
+      0.3383
+     ],
+     "acc_minus_majority": [
+      0.2866666666666667,
+      0.235,
+      0.3383333333333333
+     ]
+    },
+    "last64@10": {
+     "acc": 0.775,
+     "real_minus_majority_rounded_src": [
+      0.4017,
+      0.3567,
+      0.45
+     ],
+     "acc_minus_majority": [
+      0.40166666666666667,
+      0.3566666666666667,
+      0.45
+     ],
+     "minus_zsrc": [
+      0.115,
+      0.075,
+      0.15666666666666668
+     ]
+    },
+    "last64@21": {
+     "acc": 0.795,
+     "real_minus_majority_rounded_src": [
+      0.4217,
+      0.3733,
+      0.47
+     ],
+     "acc_minus_majority": [
+      0.4216666666666667,
+      0.37333333333333335,
+      0.47
+     ],
+     "minus_zsrc": [
+      0.135,
+      0.095,
+      0.175
+     ]
+    },
+    "last64@31": {
+     "acc": 0.7366666666666667,
+     "real_minus_majority_rounded_src": [
+      0.3633,
+      0.315,
+      0.415
+     ],
+     "acc_minus_majority": [
+      0.36333333333333334,
+      0.315,
+      0.415
+     ],
+     "minus_zsrc": [
+      0.07666666666666666,
+      0.035,
+      0.11833333333333333
+     ]
+    },
+    "last64@42": {
+     "acc": 0.7316666666666667,
+     "real_minus_majority_rounded_src": [
+      0.3583,
+      0.31,
+      0.4083
+     ],
+     "acc_minus_majority": [
+      0.35833333333333334,
+      0.31,
+      0.4083333333333333
+     ],
+     "minus_zsrc": [
+      0.07166666666666667,
+      0.03,
+      0.11333333333333333
+     ]
+    },
+    "all@10": {
+     "acc": 0.7916666666666666,
+     "real_minus_majority_rounded_src": [
+      0.4183,
+      0.3733,
+      0.465
+     ],
+     "acc_minus_majority": [
+      0.41833333333333333,
+      0.37333333333333335,
+      0.465
+     ],
+     "minus_zsrc": [
+      0.13166666666666665,
+      0.09166666666666666,
+      0.17333333333333334
+     ]
+    },
+    "all@21": {
+     "acc": 0.78,
+     "real_minus_majority_rounded_src": [
+      0.4067,
+      0.36,
+      0.455
+     ],
+     "acc_minus_majority": [
+      0.4066666666666667,
+      0.36,
+      0.455
+     ],
+     "minus_zsrc": [
+      0.12,
+      0.07833333333333334,
+      0.16
+     ]
+    },
+    "all@31": {
+     "acc": 0.7783333333333333,
+     "real_minus_majority_rounded_src": [
+      0.405,
+      0.3583,
+      0.4533
+     ],
+     "acc_minus_majority": [
+      0.405,
+      0.35833333333333334,
+      0.4533333333333333
+     ],
+     "minus_zsrc": [
+      0.11833333333333333,
+      0.07833333333333334,
+      0.16
+     ]
+    },
+    "all@42": {
+     "acc": 0.75,
+     "real_minus_majority_rounded_src": [
+      0.3767,
+      0.33,
+      0.425
+     ],
+     "acc_minus_majority": [
+      0.37666666666666665,
+      0.33,
+      0.425
+     ],
+     "minus_zsrc": [
+      0.09,
+      0.05,
+      0.13166666666666665
+     ]
+    }
+   },
+   "majority_class": "t1"
+  }
+ },
+ "pass": {
+  "last64@10": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type"
+   ],
+   "mean_primary_acc_minus_majority": 0.08583333333333333
+  },
+  "last64@21": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.09916666666666667
+  },
+  "last64@31": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.13208333333333333
+  },
+  "last64@42": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.10958333333333334
+  },
+  "all@10": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.105
+  },
+  "all@21": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.11041666666666666
+  },
+  "all@31": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.12708333333333333
+  },
+  "all@42": {
+   "pass": true,
+   "tasks_passed": [
+    "answer_type",
+    "answer_logmag"
+   ],
+   "mean_primary_acc_minus_majority": 0.11624999999999999
+  }
+ },
+ "selected": "last64@31"
+}

@@ -1,0 +1,32 @@
+--- scripts/archive/s7_train_decoder_v36_orig_05bb5fa6.py
++++ scripts/s7_train_decoder_v36.py
+@@ -778,10 +778,26 @@
+         projector.load_state_dict(res_ckpt["state_dict"])
+         if "optimizer_state_dict" in res_ckpt and optimizer is not None:
+             optimizer.load_state_dict(res_ckpt["optimizer_state_dict"])
+-        if "torch_rng_state" in res_ckpt:
+-            torch.set_rng_state(res_ckpt["torch_rng_state"])
++        if "torch_rng_state" in res_ckpt and res_ckpt["torch_rng_state"] is not None:
++            t_rng = res_ckpt["torch_rng_state"]
++            if isinstance(t_rng, torch.Tensor):
++                t_rng = t_rng.to(dtype=torch.uint8, device="cpu")
++            elif isinstance(t_rng, (bytes, bytearray)):
++                t_rng = torch.ByteTensor(list(t_rng))
++            try:
++                torch.set_rng_state(t_rng)
++            except Exception as e:
++                print(f"[RESUME] Warning setting torch_rng_state: {e}", flush=True)
+         if "cuda_rng_state" in res_ckpt and res_ckpt["cuda_rng_state"] is not None and torch.cuda.is_available():
+-            torch.cuda.set_rng_state(res_ckpt["cuda_rng_state"])
++            c_rng = res_ckpt["cuda_rng_state"]
++            if isinstance(c_rng, torch.Tensor):
++                c_rng = c_rng.to(dtype=torch.uint8, device="cpu")
++            elif isinstance(c_rng, (bytes, bytearray)):
++                c_rng = torch.ByteTensor(list(c_rng))
++            try:
++                torch.cuda.set_rng_state(c_rng)
++            except Exception as e:
++                print(f"[RESUME] Warning setting cuda_rng_state: {e}", flush=True)
+         if "numpy_rng_state" in res_ckpt:
+             try:
+                 rng.bit_generator.state = res_ckpt["numpy_rng_state"]

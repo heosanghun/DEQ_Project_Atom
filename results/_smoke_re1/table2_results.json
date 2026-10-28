@@ -1,0 +1,11 @@
+{
+  "cts_4nu": {
+    "math500": {
+      "mean": 0.5,
+      "std": 0.0,
+      "ci_lower": 0.5,
+      "ci_upper": 0.5,
+      "n_samples": 1
+    }
+  }
+}

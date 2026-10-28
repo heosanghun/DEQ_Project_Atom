@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-04-30T06:54:30Z",
+  "args": {
+    "output_dir": "results/local_gemma4",
+    "device": "cuda:0",
+    "aime_limit": 30,
+    "humaneval_limit": 30,
+    "skip_baseline": false,
+    "skip_cts": false,
+    "skip_summarize": false,
+    "phase1_timeout": 5400,
+    "phase2_timeout": 18000,
+    "dry_run": false
+  },
+  "phases": []
+}

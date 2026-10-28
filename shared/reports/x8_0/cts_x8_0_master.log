@@ -1,0 +1,55 @@
+=== X8-0 start 2026-10-21 16:57:49 launcher_sha d71b45943ed17a49665a127c6d43e83c46dc303f0ba8497f01712350ad5f2346 ===
+ef3fbd5ed5d227c5b765fc01b95bcd920d4433b005e32e3057dcb479f2d1457d  /tmp/cts_x_stage/g2v9_xattn.py
+48b71ffb94263284f611a35ce4a58bc9fb7609d9b74c18fe31cc95c8c3afe48f  /tmp/cts_x_stage/g2v10_train.py
+14e466006b9a29c4d30181c424f5e6fb9872c781d03c3313c71fc433f7c2f3b3  /tmp/cts_x_stage/g2v9_gen.py
+115eb94aa2f9cdb3b3e7344a03316f34bee7eb4ca6185d08546a63a30a02a46c  /tmp/cts_x_stage/g2v8x_problem_latents.py
+5172ad4a24e9e9f1de75c471ef0a35836f5296f60940c7c83b4245a5bf07dcae  /tmp/cts_x_stage/make_s0spec_x.py
+0c026ea2d7e863d3035a7918cec23dd83206794db7ea2c092ed3aa97c62fad69  results_s7/p6r/g2v9x5base/gen_Ctrain.jsonl
+[SELFTEST-OK] identity-at-init, gate-grad-at-init, effect-after-open, grad-flow, none-latent-identity; params 4098
+[CHECK] GPU-84d7eeb0-65e0-a5b1-d7db-d09ef59fe03a mem=13 apps=0
+[CHECK] GPU-f99bbac4-fb7d-cc1f-3edd-3495951ff44c mem=13 apps=0
+[CHECK] GPU-0eb58a21-c10d-3ad0-14c1-9e8b8b1ebf5b mem=13 apps=0
+[LAT] rc=0 16:59:27 [SAVE] items 1593 (short<64: 1031) keys 3186 -> /tmp/cts_x8_0/problem_latents.pt
+019ebefd40aea9c3af5236d124eefba7869eaaa8dece93679374fb401d22a3ae  /tmp/cts_x8_0/problem_latents.pt
+[TR-X80P47] rc=0 17:20:54 [Step 1499] loss 0.1312 ans_ce 0.9375 (n 4) gates [0.0, -0.01, -0.032, 0.019] (1250s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[TR-X80P49] rc=0 17:20:57 [Step 1499] loss 0.0942 ans_ce 0.6941 (n 4) gates [0.0, -0.008, -0.035, -0.019] (1250s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[TR-X80P50] rc=0 17:21:01 [Step 1499] loss 0.1241 ans_ce 0.6367 (n 4) gates [-0.0, 0.01, 0.031, 0.018] (1255s)
+[DATA] items 992 of 993 | targets rows dup 0 empty 0 missing 0 | {'replaced': 341, 'appended': 651, 'skip_no_gold': 1, 'skip_no_target': 0, 'budget_truncated': 575, 'skip_answer_truncated': 0, 'finished_own': 437} | answer_weight 
+[GEN-X80P50] rc=0 rows=600 20:17:59
+[GEN-X80P47] rc=0 rows=600 20:24:04
+[GEN-X80P49] rc=0 rows=600 20:28:20
+[GENS-X80P50] rc=0 rows=600 23:14:18
+[GENS-X80P47] rc=0 rows=600 23:20:40
+[GENS-X80P49] rc=0 rows=600 23:31:31
+[CHECK-gen-X80P47] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X80P47] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X80P49] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X80P49] rc=0 rows=600 unique_ids=600
+[CHECK-gen-X80P50] rc=0 rows=600 unique_ids=600
+[CHECK-genB1-X80P50] rc=0 rows=600 unique_ids=600
+[SPEC] 7
+[S0] C_fmt: n 600 strict 77 lenient 94 boxed 213
+[S0] X80P47: n 600 strict 64 lenient 72 boxed 326
+[S0] shuf_X80P47: n 600 strict 66 lenient 73 boxed 322
+[S0] X80P49: n 600 strict 71 lenient 77 boxed 317
+[S0] shuf_X80P49: n 600 strict 73 lenient 80 boxed 330
+[S0] X80P50: n 600 strict 69 lenient 76 boxed 319
+[S0] shuf_X80P50: n 600 strict 66 lenient 69 boxed 346
+[S0-DONE] /tmp/cts_x8_0/x8_0_items.json
+8b60746d2a94c760e3d94cf1f8d05efc1e49cff0566cfaf5ca50d175474fe6d8  results_s7/p6r/g2v9x8_0/genB1_X80P47.jsonl
+a3774c5b64425fc5fa6cb863eed6b4dc7144b0dc35d32a768402cc39b3101011  results_s7/p6r/g2v9x8_0/genB1_X80P49.jsonl
+bec226edc97c5f9521fcf1dcebc38008a91c6009d047c2f7ef686f28ce6a9687  results_s7/p6r/g2v9x8_0/genB1_X80P50.jsonl
+3245a2ae90adcc9a05515977d962f20c2099f8dfe3ed1d6e418cdaa29c1294f8  results_s7/p6r/g2v9x8_0/gen_X80P47.jsonl
+2661b578afd01072338e5adb7ccce074c006ede66a9e47289d41235f51611533  results_s7/p6r/g2v9x8_0/gen_X80P49.jsonl
+610d749113f9e2dd46b203878105b7e039de2f5e5d07a63072cc34958e9e84c2  results_s7/p6r/g2v9x8_0/gen_X80P50.jsonl
+cc23828e0619926ba02f86b62e2c21a703fc4c348ec2e94ae3a410e8c437367c  /tmp/cts_x8_0/x8_0_items.json
+afdba0c2642c3a00cd96cbe474ae18e2ad3511faffdaf756b0519fe6d9fb5b71  /tmp/cts_x8_0/manifest_X80P47.json
+7bf83bb6876624b423b9ea7cb85c5bf91db1b2332cbd60e3161f9e7fd4a42eed  /tmp/cts_x8_0/manifest_X80P49.json
+0e3fe5c3fc665461579366eb2ad98d41e58421d7da3c528e6f98fb4d6bf63f59  /tmp/cts_x8_0/manifest_X80P50.json
+04907b1ba67b7f618358aeee88c5e7ce13e2a2caebe3f640bbd1a7b5abb31cfe  /tmp/cts_x8_0/bridge_X80P47.pt
+61639ff85af203bf7e4e729d5e8d0a0d633ba34d61c33449acf816099ea653e5  /tmp/cts_x8_0/bridge_X80P49.pt
+57564f5ea8f3e395a84585f914d26ea26d7e5f4d7fb45c4c30b3299439dd4065  /tmp/cts_x8_0/bridge_X80P50.pt
+019ebefd40aea9c3af5236d124eefba7869eaaa8dece93679374fb401d22a3ae  /tmp/cts_x8_0/problem_latents.pt
+=== X8-0 end 2026-10-21 23:32:05 ===

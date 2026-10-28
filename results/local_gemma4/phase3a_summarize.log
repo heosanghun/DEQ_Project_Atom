@@ -1,0 +1,5 @@
+# Phase 3a: refresh results/runpod/RUNPOD_SUMMARY.md
+# cmd: C:\Python313\python.exe D:\AI\cts\scripts\summarize_runpod_results.py
+# start: 2026-05-01T15:49:46Z
+
+[summary] wrote D:\AI\cts\results\runpod\RUNPOD_SUMMARY.md  (141 lines)

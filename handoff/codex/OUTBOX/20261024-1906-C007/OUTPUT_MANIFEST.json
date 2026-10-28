@@ -1,0 +1,14 @@
+{
+  "task": "TASK-C007",
+  "outbox_dir": "handoff/codex/OUTBOX/20261024-1906-C007",
+  "files": {
+    "REPORT-C007.md": "1f78a3fda07408d5c504f4f35bdf84930c6f0297082e35e9976df47c3f97232a",
+    "x8_0_items_local.json": "a4b9ff16733566045ab9685cb098b3450a33919ccee8a83703bceccfebaefc85",
+    "c007_analysis.json": "e1bbb9f277360e61f092bb938c57f2e002dc3c45b2636c15f3b32fe124c06772",
+    "x8_0_analyze_server_utf8.txt": "57941e9d39b56dec6e60bd165b767a4f5e34eedea0c5c18fec7e812a6a848f52",
+    "x8_0_analyze_local_utf8.txt": "000a499582778dac2aad7373f36935e2af8603eb4023cfea409ca30b878bd516",
+    "analyze_c007.py": "7d0799666c7f5357868ab4309c7bc63142f576af0d543bcea28b10bd1ed1b3b9",
+    "make_manifests_c007.py": "fe641c6980cf4baef8e1f779ca83602b749f6c74ac7019467a59eaed03ef8018",
+    "INPUT_MANIFEST.json": "ccb09b709cc1a39815e6841813124bc4aaa7921cbd9cc0689464e81cbe3011da"
+  }
+}

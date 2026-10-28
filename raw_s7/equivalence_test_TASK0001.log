@@ -1,0 +1,22 @@
+=== EQUIVALENCE TEST (RTX 4090 vs A100 SERVER) ===
+Timestamp: 2026-09-28 23:27:22
+Device: cuda:0 | Alpha: 0.25 | Max NFE: 1000 | Tol: 0.0 | Sigma: 0.02 | Seed: 2030 | g0: 0.25
+--------------------------------------------------------------------------------
+Q#0583: rho_local=4.148586e-02, rho_server=4.955900e-03, rel_diff=7.3710e+00, r_loc=1.659435e-01 (미수렴), r_srv=1.982360e-02 (미수렴), match=True, shape_loc=oscillation, shape_srv=oscillation
+Q#0587: rho_local=2.767108e-02, rho_server=4.349400e-07, rel_diff=6.3619e+04, r_loc=1.106843e-01 (미수렴), r_srv=1.739760e-06 (초고정밀 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#0597: rho_local=3.037447e-04, rho_server=4.728200e-03, rel_diff=9.3576e-01, r_loc=1.214979e-03 (엄격 수렴), r_srv=1.891280e-02 (미수렴), match=False, shape_loc=oscillation, shape_srv=plateau
+Q#0610: rho_local=4.470280e-02, rho_server=9.442800e-05, rel_diff=4.7241e+02, r_loc=1.788112e-01 (미수렴), r_srv=3.777120e-04 (초고정밀 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#0780: rho_local=3.215547e-02, rho_server=7.722200e-05, rel_diff=4.1540e+02, r_loc=1.286219e-01 (미수렴), r_srv=3.088880e-04 (초고정밀 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1022: rho_local=2.528717e-02, rho_server=1.660400e-04, rel_diff=1.5130e+02, r_loc=1.011487e-01 (미수렴), r_srv=6.641600e-04 (초고정밀 수렴), match=False, shape_loc=increase, shape_srv=monotonic_decrease
+Q#1099: rho_local=2.681038e-02, rho_server=5.649600e-03, rel_diff=3.7455e+00, r_loc=1.072415e-01 (미수렴), r_srv=2.259840e-02 (미수렴), match=True, shape_loc=oscillation, shape_srv=plateau
+Q#1169: rho_local=2.028047e-02, rho_server=5.758300e-06, rel_diff=3.5210e+03, r_loc=8.112188e-02 (미수렴), r_srv=2.303320e-05 (초고정밀 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1352: rho_local=1.733573e-04, rho_server=8.998700e-04, rel_diff=8.0735e-01, r_loc=6.934290e-04 (초고정밀 수렴), r_srv=3.599480e-03 (엄격 수렴), match=False, shape_loc=oscillation, shape_srv=oscillation
+Q#1355: rho_local=2.555173e-02, rho_server=6.067000e-04, rel_diff=4.1116e+01, r_loc=1.022069e-01 (미수렴), r_srv=2.426800e-03 (엄격 수렴), match=False, shape_loc=increase, shape_srv=monotonic_decrease
+Q#1364: rho_local=2.770920e-02, rho_server=2.866400e-05, rel_diff=9.6569e+02, r_loc=1.108368e-01 (미수렴), r_srv=1.146560e-04 (초고정밀 수렴), match=False, shape_loc=increase, shape_srv=monotonic_decrease
+Q#1365: rho_local=8.493107e-02, rho_server=2.763900e-03, rel_diff=2.9729e+01, r_loc=3.397243e-01 (미수렴), r_srv=1.105560e-02 (미수렴), match=True, shape_loc=oscillation, shape_srv=oscillation
+Q#1367: rho_local=3.095827e-02, rho_server=3.207000e-04, rel_diff=9.5533e+01, r_loc=1.238331e-01 (미수렴), r_srv=1.282800e-03 (엄격 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1403: rho_local=1.141001e-04, rho_server=5.468200e-06, rel_diff=1.9866e+01, r_loc=4.564006e-04 (초고정밀 수렴), r_srv=2.187280e-05 (초고정밀 수렴), match=True, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1470: rho_local=1.639924e-02, rho_server=1.410300e-03, rel_diff=1.0628e+01, r_loc=6.559697e-02 (미수렴), r_srv=5.641200e-03 (S5 동치 완보 수렴), match=False, shape_loc=oscillation, shape_srv=oscillation
+Q#1614: rho_local=3.342849e-02, rho_server=2.036800e-03, rel_diff=1.5412e+01, r_loc=1.337140e-01 (미수렴), r_srv=8.147200e-03 (S5 동치 완보 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1661: rho_local=4.130866e-02, rho_server=4.991900e-03, rel_diff=7.2751e+00, r_loc=1.652346e-01 (미수렴), r_srv=1.996760e-02 (미수렴), match=True, shape_loc=oscillation, shape_srv=monotonic_decrease
+Q#1756: rho_local=2.650285e-02, rho_server=3.817900e-07, rel_diff=6.9416e+04, r_loc=1.060114e-01 (미수렴), r_srv=1.527160e-06 (초고정밀 수렴), match=False, shape_loc=oscillation, shape_srv=monotonic_decrease

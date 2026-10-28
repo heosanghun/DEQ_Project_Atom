@@ -1,0 +1,23 @@
+{
+  "partial": true,
+  "wrote_at_utc": "2026-04-30T07:12:55Z",
+  "table2": {
+    "greedy": {
+      "aime": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "n_samples": 1
+      }
+    }
+  },
+  "raw_scores": {
+    "greedy": {
+      "aime": [
+        0.0
+      ],
+      "humaneval": []
+    }
+  }
+}
